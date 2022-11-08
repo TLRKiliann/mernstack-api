@@ -1,0 +1,16 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test LastNotes 1 1`] = `
+<div>
+  1 - Hello Last ! 
+  <div
+    style={
+      {
+        "color": "white",
+      }
+    }
+  >
+    2 - SubComponent subLast: 
+  </div>
+</div>
+`;

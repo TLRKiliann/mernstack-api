@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test AgeNotes 1 1`] = `
+<div>
+  Hello Age ! 
+</div>
+`;
