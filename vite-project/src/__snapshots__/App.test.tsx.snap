@@ -1,0 +1,182 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test App 1 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Notes MERN-stack API
+  </h1>
+  <div
+    style={
+      {
+        "border": "1px solid orange",
+      }
+    }
+  >
+    <div>
+      Hello First ! 
+      Jess
+    </div>
+    <div>
+      1 - Hello Last ! 
+      Fruital
+      <div
+        style={
+          {
+            "color": "white",
+          }
+        }
+      >
+        2 - SubComponent subLast: 
+        Fruital
+      </div>
+    </div>
+    <div>
+      Hello Age ! 
+      42
+    </div>
+    <div>
+      <label>
+        1 - Hello LocalNote ! 
+        Highland
+      </label>
+      <button
+        onClick={[Function]}
+        style={
+          {
+            "marginLeft": "10px",
+          }
+        }
+      >
+        Abbr location
+      </button>
+      <div
+        style={
+          {
+            "border": "1px solid lightgreen",
+            "color": "lightgreen",
+          }
+        }
+      >
+        2 - SubComponent subLocation: 
+        Highland
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      {
+        "border": "1px solid orange",
+      }
+    }
+  >
+    <div>
+      Hello First ! 
+      Celestine
+    </div>
+    <div>
+      1 - Hello Last ! 
+      NeverMind
+      <div
+        style={
+          {
+            "color": "white",
+          }
+        }
+      >
+        2 - SubComponent subLast: 
+        NeverMind
+      </div>
+    </div>
+    <div>
+      Hello Age ! 
+      33
+    </div>
+    <div>
+      <label>
+        1 - Hello LocalNote ! 
+        Kentuky
+      </label>
+      <button
+        onClick={[Function]}
+        style={
+          {
+            "marginLeft": "10px",
+          }
+        }
+      >
+        Abbr location
+      </button>
+      <div
+        style={
+          {
+            "border": "1px solid lightgreen",
+            "color": "lightgreen",
+          }
+        }
+      >
+        2 - SubComponent subLocation: 
+        Kentuky
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      {
+        "border": "1px solid orange",
+      }
+    }
+  >
+    <div>
+      Hello First ! 
+      Ness
+    </div>
+    <div>
+      1 - Hello Last ! 
+      Namibi
+      <div
+        style={
+          {
+            "color": "white",
+          }
+        }
+      >
+        2 - SubComponent subLast: 
+        Namibi
+      </div>
+    </div>
+    <div>
+      Hello Age ! 
+      22
+    </div>
+    <div>
+      <label>
+        1 - Hello LocalNote ! 
+        Zeland
+      </label>
+      <button
+        onClick={[Function]}
+        style={
+          {
+            "marginLeft": "10px",
+          }
+        }
+      >
+        Abbr location
+      </button>
+      <div
+        style={
+          {
+            "border": "1px solid lightgreen",
+            "color": "lightgreen",
+          }
+        }
+      >
+        2 - SubComponent subLocation: 
+        Zeland
+      </div>
+    </div>
+  </div>
+</div>
+`;
