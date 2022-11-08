@@ -13,7 +13,7 @@ export default class LocalNotes extends Component<notesType> {
     console.log(this.state.location)
     return(
       <div>
-        Hello Local ! {this.state.location}
+        Hello LocalNote ! {this.state.location}
 
         <SubLocalComp subLocation={this.state.location} />
       </div>
