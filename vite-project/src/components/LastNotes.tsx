@@ -1,9 +1,9 @@
 import { Component } from 'react'
-import notesType from './Model/notesType'
+import {notesType} from '../Models/notesType'
 import SubLastComp from './last/SubLastComp'
 
 export default class LastNotes extends Component<notesType> {
-  constructor(props) {
+  constructor(props:any) {
     super(props)
   }
   render() {

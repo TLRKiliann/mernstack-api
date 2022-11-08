@@ -1,7 +1,7 @@
-export type notesType {
-  id: number
-  name: string
-  lastname: string
-  age: number
+export type notesType = {
+  id?: number | null
+  name?: string
+  lastname?: string
+  age?: number
   location: string
 }

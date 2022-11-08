@@ -1,7 +1,7 @@
 import { Component } from 'react'
 
 interface DerivedProps {
-  children: React.node
+  children: React.ReactNode
 }
 
 export default class DerivedLocalNotes extends Component<DerivedProps> {

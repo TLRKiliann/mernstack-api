@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import notesType from './Model/notesType'
+import {notesType} from '../Models/notesType'
 import SubLocalComp from './location/SubLocalComp'
 import DerivedLocalNotes from './DerivedLocalNotes'
 
@@ -7,8 +7,8 @@ interface childrenProps {
   children: string
 }
 
-export default class LocalNotes extends Component<childrenProps, notesType> {
-  constructor(props) {
+export default class LocalNotes extends Component<notesType, childrenProps> {
+  constructor(props:any) {
     super(props)
     this.state = {
       location: this.props.location
@@ -17,7 +17,7 @@ export default class LocalNotes extends Component<childrenProps, notesType> {
   }
 
   handleReduce = () => {
-    const toSlice = this.state.location.slice(0, 1);
+    const toSlice = this.state?.location.slice(0, 1);
     this.setState({location: toSlice});
   }
   render() {
