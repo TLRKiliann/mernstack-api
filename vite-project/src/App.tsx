@@ -23,7 +23,7 @@ class App extends Component<notesType> {
       <div className="App">
         <h1>Notes MERN-stack API</h1>
         {this.state.Notes.map(n => (
-          <div key={n.id}>
+          <div key={n.id} style={{border: "1px solid orange"}}>
             <FirstNotes
               name={n.name}
             />
