@@ -1,8 +1,8 @@
 import { Component } from 'react'
-import notesType from './Model/notesType'
+import {notesType} from '../Models/notesType'
 
 export default class FirstNotes extends Component<notesType> {
-  constructor(props) {
+  constructor(props:any) {
     super(props)
   }
   render() {

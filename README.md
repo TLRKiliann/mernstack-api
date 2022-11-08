@@ -2,6 +2,9 @@
 
 with MySQL db in LAN
 
+- code : class react with ts
+
+- style : Sass
 
 ---
 
