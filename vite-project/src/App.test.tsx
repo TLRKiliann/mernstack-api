@@ -6,27 +6,41 @@ import {fireEvent, render, screen} from '@testing-library/react';
 //import { act } from 'react-dom/test-utils';
 import {create} from 'react-test-renderer';
 import App from "./App.tsx";
-import FirstNotes from "./App.tsx";
-import LastNotes from "./App.tsx";
-import LocalNotes from "./App.tsx";
+import Header from "./App.tsx";
+
+import MainTitle from "./App.tsx";
+import MainComp from "./App.tsx";
+
+import Review from "./App.tsx";
+import Footer from "./App.tsx";
 
 test('MatchSnapShot test App 1', () => {
 	const tree = create(<App />)
 	expect(tree.toJSON()).toMatchSnapshot();
 })
 
-test('MatchSnapShot test FirstNotes 1', () => {
-	const tree = create(<FirstNotes />)
+test('MatchSnapShot test Header 1', () => {
+	const tree = create(<Header />)
 	expect(tree.toJSON()).toMatchSnapshot();
 })
 
-test('MatchSnapShot test LastNotes 1', () => {
-	const tree = create(<LastNotes />)
+test('MatchSnapShot test MainTitle 1', () => {
+  const tree = create(<MainTitle />)
+  expect(tree.toJSON()).toMatchSnapshot();
+})
+
+test('MatchSnapShot test MainComp 1', () => {
+  const tree = create(<MainComp />)
+  expect(tree.toJSON()).toMatchSnapshot();
+})
+
+test('MatchSnapShot test Review 1', () => {
+	const tree = create(<Review />)
 	expect(tree.toJSON()).toMatchSnapshot();
 })
 
-test('MatchSnapShot test LocalNotes 1', () => {
-	const tree = create(<LocalNotes />)
+test('MatchSnapShot test Footer 1', () => {
+	const tree = create(<Footer />)
 	expect(tree.toJSON()).toMatchSnapshot();
 })
 

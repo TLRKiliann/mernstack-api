@@ -2,45 +2,1159 @@
 
 exports[`MatchSnapShot test App 1 1`] = `
 <div>
-  <h1>
-    Title of mern-stack
-  </h1>
-  <p>
-    Super, c'est affiché
-  </p>
+  <div
+    className="wallIntro"
+  >
+    <h1>
+      Wellcome To ChatRoom !
+    </h1>
+  </div>
+  <div
+    className="btn--voletsLeft"
+  >
+    <button>
+      Click me(L)
+    </button>
+  </div>
+  <div
+    className="btn--voletsRight"
+  >
+    <button>
+      Click me(R)
+    </button>
+  </div>
+  <div
+    className="div--headernav"
+  >
+    <nav>
+      <ul>
+        <li>
+          Main
+        </li>
+        <li>
+          Documents
+        </li>
+        <li>
+          Quiz
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "border": "1px solid lightgreen",
+        "borderRadius": "10px",
+        "boxShadow": "0px 0px 10px lightgreen",
+        "color": "whitesmoke",
+        "fontFamily": "Consolas, serif",
+        "height": "auto",
+        "margin": "auto",
+        "marginTop": "100px",
+        "textAlign": "center",
+        "width": "600px",
+      }
+    }
+  >
+    <h1>
+      Title of mern-stack
+    </h1>
+    <h2>
+      Text Header
+    </h2>
+    <h4>
+      MY SECOND TEXT HEADER
+    </h4>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "color": "lightgreen",
+        "fontSize": "1.2rem",
+        "margin": "auto",
+        "marginTop": "40px",
+        "padding": "20px 40px",
+        "width": "600px",
+      }
+    }
+  >
+    <h2
+      style={
+        {
+          "textAlign": "center",
+        }
+      }
+    >
+      All Members !
+    </h2>
+    <div>
+      <p>
+        Pierre
+         
+        Dujardin
+         - 
+        44
+         ans - 
+        male
+      </p>
+      <p>
+        Celestine
+         
+        Chakra
+         - 
+        37
+         ans - 
+        female
+      </p>
+      <p>
+        Gérard
+         
+        Golan
+         - 
+        28
+         ans - 
+        male
+      </p>
+      <p>
+        Juju
+         
+        Ptitcoeur
+         - 
+        42
+         ans - 
+        female
+      </p>
+      <p>
+        Nathi
+         
+        Naelle
+         - 
+        34
+         ans - 
+        female
+      </p>
+    </div>
+    <span />
+  </div>
+  <div
+    className="div--review"
+  >
+    <h1>
+      Reports
+    </h1>
+    <p>
+      Pierre
+       
+      43
+    </p>
+    <p>
+      Celestine
+       
+      3
+    </p>
+    <p>
+      Gérard
+       
+      14
+    </p>
+    <p>
+      Juju
+       
+      21
+    </p>
+    <p>
+      Nathi
+       
+      99
+    </p>
+    <p>
+      blablabla blablabla blablablablablabla blablabl ablabla blablablabl ablablabl ablablabla blablablablablablablablablablablablablablabla
+    </p>
+  </div>
+  <div
+    className="div--navfooter"
+  >
+    <nav>
+      <ul>
+        <li>
+          Contact
+        </li>
+        <li>
+          About US
+        </li>
+        <li>
+          Rules
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 `;
 
-exports[`MatchSnapShot test FirstNotes 1 1`] = `
+exports[`MatchSnapShot test Footer 1 1`] = `
 <div>
-  <h1>
-    Title of mern-stack
-  </h1>
-  <p>
-    Super, c'est affiché
-  </p>
+  <div
+    className="wallIntro"
+  >
+    <h1>
+      Wellcome To ChatRoom !
+    </h1>
+  </div>
+  <div
+    className="btn--voletsLeft"
+  >
+    <button>
+      Click me(L)
+    </button>
+  </div>
+  <div
+    className="btn--voletsRight"
+  >
+    <button>
+      Click me(R)
+    </button>
+  </div>
+  <div
+    className="div--headernav"
+  >
+    <nav>
+      <ul>
+        <li>
+          Main
+        </li>
+        <li>
+          Documents
+        </li>
+        <li>
+          Quiz
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "border": "1px solid lightgreen",
+        "borderRadius": "10px",
+        "boxShadow": "0px 0px 10px lightgreen",
+        "color": "whitesmoke",
+        "fontFamily": "Consolas, serif",
+        "height": "auto",
+        "margin": "auto",
+        "marginTop": "100px",
+        "textAlign": "center",
+        "width": "600px",
+      }
+    }
+  >
+    <h1>
+      Title of mern-stack
+    </h1>
+    <h2>
+      Text Header
+    </h2>
+    <h4>
+      MY SECOND TEXT HEADER
+    </h4>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "color": "lightgreen",
+        "fontSize": "1.2rem",
+        "margin": "auto",
+        "marginTop": "40px",
+        "padding": "20px 40px",
+        "width": "600px",
+      }
+    }
+  >
+    <h2
+      style={
+        {
+          "textAlign": "center",
+        }
+      }
+    >
+      All Members !
+    </h2>
+    <div>
+      <p>
+        Pierre
+         
+        Dujardin
+         - 
+        44
+         ans - 
+        male
+      </p>
+      <p>
+        Celestine
+         
+        Chakra
+         - 
+        37
+         ans - 
+        female
+      </p>
+      <p>
+        Gérard
+         
+        Golan
+         - 
+        28
+         ans - 
+        male
+      </p>
+      <p>
+        Juju
+         
+        Ptitcoeur
+         - 
+        42
+         ans - 
+        female
+      </p>
+      <p>
+        Nathi
+         
+        Naelle
+         - 
+        34
+         ans - 
+        female
+      </p>
+    </div>
+    <span />
+  </div>
+  <div
+    className="div--review"
+  >
+    <h1>
+      Reports
+    </h1>
+    <p>
+      Pierre
+       
+      43
+    </p>
+    <p>
+      Celestine
+       
+      3
+    </p>
+    <p>
+      Gérard
+       
+      14
+    </p>
+    <p>
+      Juju
+       
+      21
+    </p>
+    <p>
+      Nathi
+       
+      99
+    </p>
+    <p>
+      blablabla blablabla blablablablablabla blablabl ablabla blablablabl ablablabl ablablabla blablablablablablablablablablablablablablabla
+    </p>
+  </div>
+  <div
+    className="div--navfooter"
+  >
+    <nav>
+      <ul>
+        <li>
+          Contact
+        </li>
+        <li>
+          About US
+        </li>
+        <li>
+          Rules
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 `;
 
-exports[`MatchSnapShot test LastNotes 1 1`] = `
+exports[`MatchSnapShot test Header 1 1`] = `
 <div>
-  <h1>
-    Title of mern-stack
-  </h1>
-  <p>
-    Super, c'est affiché
-  </p>
+  <div
+    className="wallIntro"
+  >
+    <h1>
+      Wellcome To ChatRoom !
+    </h1>
+  </div>
+  <div
+    className="btn--voletsLeft"
+  >
+    <button>
+      Click me(L)
+    </button>
+  </div>
+  <div
+    className="btn--voletsRight"
+  >
+    <button>
+      Click me(R)
+    </button>
+  </div>
+  <div
+    className="div--headernav"
+  >
+    <nav>
+      <ul>
+        <li>
+          Main
+        </li>
+        <li>
+          Documents
+        </li>
+        <li>
+          Quiz
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "border": "1px solid lightgreen",
+        "borderRadius": "10px",
+        "boxShadow": "0px 0px 10px lightgreen",
+        "color": "whitesmoke",
+        "fontFamily": "Consolas, serif",
+        "height": "auto",
+        "margin": "auto",
+        "marginTop": "100px",
+        "textAlign": "center",
+        "width": "600px",
+      }
+    }
+  >
+    <h1>
+      Title of mern-stack
+    </h1>
+    <h2>
+      Text Header
+    </h2>
+    <h4>
+      MY SECOND TEXT HEADER
+    </h4>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "color": "lightgreen",
+        "fontSize": "1.2rem",
+        "margin": "auto",
+        "marginTop": "40px",
+        "padding": "20px 40px",
+        "width": "600px",
+      }
+    }
+  >
+    <h2
+      style={
+        {
+          "textAlign": "center",
+        }
+      }
+    >
+      All Members !
+    </h2>
+    <div>
+      <p>
+        Pierre
+         
+        Dujardin
+         - 
+        44
+         ans - 
+        male
+      </p>
+      <p>
+        Celestine
+         
+        Chakra
+         - 
+        37
+         ans - 
+        female
+      </p>
+      <p>
+        Gérard
+         
+        Golan
+         - 
+        28
+         ans - 
+        male
+      </p>
+      <p>
+        Juju
+         
+        Ptitcoeur
+         - 
+        42
+         ans - 
+        female
+      </p>
+      <p>
+        Nathi
+         
+        Naelle
+         - 
+        34
+         ans - 
+        female
+      </p>
+    </div>
+    <span />
+  </div>
+  <div
+    className="div--review"
+  >
+    <h1>
+      Reports
+    </h1>
+    <p>
+      Pierre
+       
+      43
+    </p>
+    <p>
+      Celestine
+       
+      3
+    </p>
+    <p>
+      Gérard
+       
+      14
+    </p>
+    <p>
+      Juju
+       
+      21
+    </p>
+    <p>
+      Nathi
+       
+      99
+    </p>
+    <p>
+      blablabla blablabla blablablablablabla blablabl ablabla blablablabl ablablabl ablablabla blablablablablablablablablablablablablablabla
+    </p>
+  </div>
+  <div
+    className="div--navfooter"
+  >
+    <nav>
+      <ul>
+        <li>
+          Contact
+        </li>
+        <li>
+          About US
+        </li>
+        <li>
+          Rules
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 `;
 
-exports[`MatchSnapShot test LocalNotes 1 1`] = `
+exports[`MatchSnapShot test MainComp 1 1`] = `
 <div>
-  <h1>
-    Title of mern-stack
-  </h1>
-  <p>
-    Super, c'est affiché
-  </p>
+  <div
+    className="wallIntro"
+  >
+    <h1>
+      Wellcome To ChatRoom !
+    </h1>
+  </div>
+  <div
+    className="btn--voletsLeft"
+  >
+    <button>
+      Click me(L)
+    </button>
+  </div>
+  <div
+    className="btn--voletsRight"
+  >
+    <button>
+      Click me(R)
+    </button>
+  </div>
+  <div
+    className="div--headernav"
+  >
+    <nav>
+      <ul>
+        <li>
+          Main
+        </li>
+        <li>
+          Documents
+        </li>
+        <li>
+          Quiz
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "border": "1px solid lightgreen",
+        "borderRadius": "10px",
+        "boxShadow": "0px 0px 10px lightgreen",
+        "color": "whitesmoke",
+        "fontFamily": "Consolas, serif",
+        "height": "auto",
+        "margin": "auto",
+        "marginTop": "100px",
+        "textAlign": "center",
+        "width": "600px",
+      }
+    }
+  >
+    <h1>
+      Title of mern-stack
+    </h1>
+    <h2>
+      Text Header
+    </h2>
+    <h4>
+      MY SECOND TEXT HEADER
+    </h4>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "color": "lightgreen",
+        "fontSize": "1.2rem",
+        "margin": "auto",
+        "marginTop": "40px",
+        "padding": "20px 40px",
+        "width": "600px",
+      }
+    }
+  >
+    <h2
+      style={
+        {
+          "textAlign": "center",
+        }
+      }
+    >
+      All Members !
+    </h2>
+    <div>
+      <p>
+        Pierre
+         
+        Dujardin
+         - 
+        44
+         ans - 
+        male
+      </p>
+      <p>
+        Celestine
+         
+        Chakra
+         - 
+        37
+         ans - 
+        female
+      </p>
+      <p>
+        Gérard
+         
+        Golan
+         - 
+        28
+         ans - 
+        male
+      </p>
+      <p>
+        Juju
+         
+        Ptitcoeur
+         - 
+        42
+         ans - 
+        female
+      </p>
+      <p>
+        Nathi
+         
+        Naelle
+         - 
+        34
+         ans - 
+        female
+      </p>
+    </div>
+    <span />
+  </div>
+  <div
+    className="div--review"
+  >
+    <h1>
+      Reports
+    </h1>
+    <p>
+      Pierre
+       
+      43
+    </p>
+    <p>
+      Celestine
+       
+      3
+    </p>
+    <p>
+      Gérard
+       
+      14
+    </p>
+    <p>
+      Juju
+       
+      21
+    </p>
+    <p>
+      Nathi
+       
+      99
+    </p>
+    <p>
+      blablabla blablabla blablablablablabla blablabl ablabla blablablabl ablablabl ablablabla blablablablablablablablablablablablablablabla
+    </p>
+  </div>
+  <div
+    className="div--navfooter"
+  >
+    <nav>
+      <ul>
+        <li>
+          Contact
+        </li>
+        <li>
+          About US
+        </li>
+        <li>
+          Rules
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test MainTitle 1 1`] = `
+<div>
+  <div
+    className="wallIntro"
+  >
+    <h1>
+      Wellcome To ChatRoom !
+    </h1>
+  </div>
+  <div
+    className="btn--voletsLeft"
+  >
+    <button>
+      Click me(L)
+    </button>
+  </div>
+  <div
+    className="btn--voletsRight"
+  >
+    <button>
+      Click me(R)
+    </button>
+  </div>
+  <div
+    className="div--headernav"
+  >
+    <nav>
+      <ul>
+        <li>
+          Main
+        </li>
+        <li>
+          Documents
+        </li>
+        <li>
+          Quiz
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "border": "1px solid lightgreen",
+        "borderRadius": "10px",
+        "boxShadow": "0px 0px 10px lightgreen",
+        "color": "whitesmoke",
+        "fontFamily": "Consolas, serif",
+        "height": "auto",
+        "margin": "auto",
+        "marginTop": "100px",
+        "textAlign": "center",
+        "width": "600px",
+      }
+    }
+  >
+    <h1>
+      Title of mern-stack
+    </h1>
+    <h2>
+      Text Header
+    </h2>
+    <h4>
+      MY SECOND TEXT HEADER
+    </h4>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "color": "lightgreen",
+        "fontSize": "1.2rem",
+        "margin": "auto",
+        "marginTop": "40px",
+        "padding": "20px 40px",
+        "width": "600px",
+      }
+    }
+  >
+    <h2
+      style={
+        {
+          "textAlign": "center",
+        }
+      }
+    >
+      All Members !
+    </h2>
+    <div>
+      <p>
+        Pierre
+         
+        Dujardin
+         - 
+        44
+         ans - 
+        male
+      </p>
+      <p>
+        Celestine
+         
+        Chakra
+         - 
+        37
+         ans - 
+        female
+      </p>
+      <p>
+        Gérard
+         
+        Golan
+         - 
+        28
+         ans - 
+        male
+      </p>
+      <p>
+        Juju
+         
+        Ptitcoeur
+         - 
+        42
+         ans - 
+        female
+      </p>
+      <p>
+        Nathi
+         
+        Naelle
+         - 
+        34
+         ans - 
+        female
+      </p>
+    </div>
+    <span />
+  </div>
+  <div
+    className="div--review"
+  >
+    <h1>
+      Reports
+    </h1>
+    <p>
+      Pierre
+       
+      43
+    </p>
+    <p>
+      Celestine
+       
+      3
+    </p>
+    <p>
+      Gérard
+       
+      14
+    </p>
+    <p>
+      Juju
+       
+      21
+    </p>
+    <p>
+      Nathi
+       
+      99
+    </p>
+    <p>
+      blablabla blablabla blablablablablabla blablabl ablabla blablablabl ablablabl ablablabla blablablablablablablablablablablablablablabla
+    </p>
+  </div>
+  <div
+    className="div--navfooter"
+  >
+    <nav>
+      <ul>
+        <li>
+          Contact
+        </li>
+        <li>
+          About US
+        </li>
+        <li>
+          Rules
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test Review 1 1`] = `
+<div>
+  <div
+    className="wallIntro"
+  >
+    <h1>
+      Wellcome To ChatRoom !
+    </h1>
+  </div>
+  <div
+    className="btn--voletsLeft"
+  >
+    <button>
+      Click me(L)
+    </button>
+  </div>
+  <div
+    className="btn--voletsRight"
+  >
+    <button>
+      Click me(R)
+    </button>
+  </div>
+  <div
+    className="div--headernav"
+  >
+    <nav>
+      <ul>
+        <li>
+          Main
+        </li>
+        <li>
+          Documents
+        </li>
+        <li>
+          Quiz
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "border": "1px solid lightgreen",
+        "borderRadius": "10px",
+        "boxShadow": "0px 0px 10px lightgreen",
+        "color": "whitesmoke",
+        "fontFamily": "Consolas, serif",
+        "height": "auto",
+        "margin": "auto",
+        "marginTop": "100px",
+        "textAlign": "center",
+        "width": "600px",
+      }
+    }
+  >
+    <h1>
+      Title of mern-stack
+    </h1>
+    <h2>
+      Text Header
+    </h2>
+    <h4>
+      MY SECOND TEXT HEADER
+    </h4>
+  </div>
+  <div
+    style={
+      {
+        "background": "#161616",
+        "color": "lightgreen",
+        "fontSize": "1.2rem",
+        "margin": "auto",
+        "marginTop": "40px",
+        "padding": "20px 40px",
+        "width": "600px",
+      }
+    }
+  >
+    <h2
+      style={
+        {
+          "textAlign": "center",
+        }
+      }
+    >
+      All Members !
+    </h2>
+    <div>
+      <p>
+        Pierre
+         
+        Dujardin
+         - 
+        44
+         ans - 
+        male
+      </p>
+      <p>
+        Celestine
+         
+        Chakra
+         - 
+        37
+         ans - 
+        female
+      </p>
+      <p>
+        Gérard
+         
+        Golan
+         - 
+        28
+         ans - 
+        male
+      </p>
+      <p>
+        Juju
+         
+        Ptitcoeur
+         - 
+        42
+         ans - 
+        female
+      </p>
+      <p>
+        Nathi
+         
+        Naelle
+         - 
+        34
+         ans - 
+        female
+      </p>
+    </div>
+    <span />
+  </div>
+  <div
+    className="div--review"
+  >
+    <h1>
+      Reports
+    </h1>
+    <p>
+      Pierre
+       
+      43
+    </p>
+    <p>
+      Celestine
+       
+      3
+    </p>
+    <p>
+      Gérard
+       
+      14
+    </p>
+    <p>
+      Juju
+       
+      21
+    </p>
+    <p>
+      Nathi
+       
+      99
+    </p>
+    <p>
+      blablabla blablabla blablablablablabla blablabl ablabla blablablabl ablablabl ablablabla blablablablablablablablablablablablablablabla
+    </p>
+  </div>
+  <div
+    className="div--navfooter"
+  >
+    <nav>
+      <ul>
+        <li>
+          Contact
+        </li>
+        <li>
+          About US
+        </li>
+        <li>
+          Rules
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 `;
 
