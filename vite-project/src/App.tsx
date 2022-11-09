@@ -1,68 +1,101 @@
-import { Component } from 'react'
-import {notesType} from './Models/notesType'
-import { Notes } from './Notes'
-import FirstNotes from './components/FirstNotes'
-import LastNotes from './components/LastNotes'
-import AgeNotes from './components/AgeNotes'
-import LocalNotes from './components/LocalNotes'
-import DerivedLocalNotes from './components/DerivedLocalNotes'
+import {Component} from 'react'
+import {db_notes} from './notes/db_notes'
+import Header from './components/Header'
+import MainTitle from './components/MainTitle'
+import MainComp from './components/MainComp'
+import Review from './components/Review'
+import Footer from './components/Footer'
 import './App.scss'
 
-
-class App extends Component<notesType, {}> {
-  constructor(props:any) {
-    super(props)
-    this.state = {
-      Notes: [],
-      childNote: "Ok cool! (It's a child)",
-      secondChildNote: "Ok cool 2x! (It's my second child)",
-      childNoteExtend: ["Ok cool! (It's a child)", "Ok cool 2x! (It's my second child)"]
-    }
+export default class App extends Component<{}> {
+  state = {
+    notes: [],
+    textHeader: "Text Header",
+    secondTextHeader: "MY SECOND TEXT HEADER",
+    isClosed: false,
+    isLefted: false
   }
 
   componentDidMount() {
-    this.setState({Notes})
     console.log("Mounted !")
+    this.setState({notes: db_notes})
+  }
+
+  handleVoletsRight = () => {
+    console.log(this.state.isClosed)
+    this.setState({isClosed: !this.state.isClosed})
+  }
+
+  handleVoletsLeft = () => {
+    console.log(this.state.isLefted)
+    this.setState({isLefted: !this.state.isLefted})
   }
 
   render() {
-    return (
-      <div className="App">
-        <h1>Notes MERN-stack API</h1>
-        {this.state.Notes.map(n => (
-          <div key={n?.id} style={{border: "1px solid orange"}}>
-            <FirstNotes
-              name={n?.name}
-            />
-            <LastNotes
-              lastname={n?.lastname}
-            />
-            <AgeNotes
-              age={n?.age}
-            />
+    console.log(this.state.notes)
+    return(
+      <div>
+        <div className="wallIntro">
+          <h1>Wellcome To ChatRoom !</h1>
+        </div>
+        
+        <div className="btn--voletsLeft">
+          <button onClick={this.handleVoletsLeft}>
+            Click me(L)
+          </button>
+        </div>
+        <div className="btn--voletsRight">
+          <button onClick={this.handleVoletsRight}>
+            Click me(R)
+          </button>
+        </div>
 
-            <LocalNotes
-              location={n?.location}
-            />
-            
-            <LocalNotes location={n?.location}>
-              <DerivedLocalNotes>
-                {this.state.childNote}
-              </DerivedLocalNotes>
-            </LocalNotes>
 
-            <LocalNotes location={n?.location}>
-              <DerivedLocalNotes>
-                {this.state.childNoteExtend}
-              </DerivedLocalNotes>
-            </LocalNotes>
-
+        {this.state.isClosed ? (
+          <div className="volet--R">
+            <div className="subvolet--R">
+              <button onClick={this.handleVoletsRight}>Close</button>
+              <p>Volet R 1</p>
+            </div>
           </div>
-          ))
+          ) : (
+          <div className="volet--R2">
+            <div className="subvolet--R2">
+              Volet R 2
+            </div>
+          </div>
+          )
         }
+
+        {this.state.isLefted ? (
+          <div className="volet--L">
+            <div className="subvolet--L">
+              <p>Volet L 1</p>
+              <button onClick={this.handleVoletsLeft}>Close</button>
+            </div>
+          </div>
+          ) : (
+          <div className="volet--L2">
+            <div className="subvolet--L2">
+              Volet L 2
+            </div>
+          </div>
+          )
+        }
+
+        <Header />
+        <MainTitle
+          textHeader={this.state.textHeader}
+          secondTextHeader={this.state.secondTextHeader}
+        />
+
+        <MainComp notes={this.state.notes} />
+
+        <Review result={this.state.notes} />
+
+        <Footer />
+
       </div>
     )
   }
 }
-
-export default App

@@ -67,9 +67,9 @@ import App from "../App.jsx";
 ## Debug
 
 - install ndb globally
-└─ $ ▶ npm install -g ndb
-or
 └─ $ ▶ pnpm install -g ndb
+or
+└─ $ ▶ npm install -g ndb
 
 - alternatively, with yarn
 └─ $ ▶ yarn global add ndb
@@ -78,3 +78,24 @@ or
 └─ $ ▶ ndb npm run test
 or
 └─ $ ▶ ndb pnpm run test
+
+---
+
+Coverage of moment :
+
+ % Coverage report from c8
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |     100 |      100 |     100 |     100 |                   
+ src            |     100 |      100 |     100 |     100 |                   
+  App.tsx       |     100 |      100 |     100 |     100 |                   
+ src/components |     100 |      100 |     100 |     100 |                   
+  Footer.tsx    |     100 |      100 |     100 |     100 |                   
+  Header.tsx    |     100 |      100 |     100 |     100 |                   
+  MainComp.tsx  |     100 |      100 |     100 |     100 |                   
+  MainTitle.tsx |     100 |      100 |     100 |     100 |                   
+  Review.tsx    |     100 |      100 |     100 |     100 |                   
+ src/notes      |     100 |      100 |     100 |     100 |                   
+  db_notes.ts   |     100 |      100 |     100 |     100 |                   
+----------------|---------|----------|---------|---------|-------------------
