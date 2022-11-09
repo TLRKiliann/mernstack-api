@@ -25,5 +25,6 @@ exports[`MatchSnapShot test LocalNotes 1 1`] = `
   >
     2 - SubComponent subLocation: 
   </div>
+  <div />
 </div>
 `;

@@ -1,22 +1,22 @@
 import { Component } from 'react'
-import {notesType} from './Models/notesType'
+import { notesType } from './Models/notesType'
 import { Notes } from './Notes'
 import FirstNotes from './components/FirstNotes'
 import LastNotes from './components/LastNotes'
 import AgeNotes from './components/AgeNotes'
 import LocalNotes from './components/LocalNotes'
-import DerivedLocalNotes from './components/DerivedLocalNotes'
+import DerivedLocalNotes from './components/location/DerivedLocalNotes'
 import './App.scss'
 
 
-class App extends Component<notesType, {}> {
+class App extends Component<{}> {
   constructor(props:any) {
     super(props)
     this.state = {
       Notes: [],
-      childNote: "Ok cool! (It's a child)",
-      secondChildNote: "Ok cool 2x! (It's my second child)",
-      childNoteExtend: ["Ok cool! (It's a child)", "Ok cool 2x! (It's my second child)"]
+      childNote: "My First child (1x)",
+      secondChildNote: "It's my second child (2x)",
+      childNoteExtend: ["t's thirdth child (3x)", "Ok cool 3x! It's my third child list"]
     }
   }
 
@@ -29,29 +29,29 @@ class App extends Component<notesType, {}> {
     return (
       <div className="App">
         <h1>Notes MERN-stack API</h1>
-        {this.state.Notes.map(n => (
-          <div key={n?.id} style={{border: "1px solid orange"}}>
+        {this.state.Notes.map(note => (
+          <div key={note.id} style={{border: "1px solid orange"}}>
             <FirstNotes
-              name={n?.name}
+              name={note.name}
             />
             <LastNotes
-              lastname={n?.lastname}
+              lastname={note.lastname}
             />
             <AgeNotes
-              age={n?.age}
+              age={note.age}
             />
 
             <LocalNotes
-              location={n?.location}
+              location={note.location}
             />
             
-            <LocalNotes location={n?.location}>
+            <LocalNotes location={note.location}>
               <DerivedLocalNotes>
-                {this.state.childNote}
+                {this.state.childNote} {this.state.secondChildNote} {this.state.childNoteExtend}
               </DerivedLocalNotes>
             </LocalNotes>
 
-            <LocalNotes location={n?.location}>
+            <LocalNotes location={note.location}>
               <DerivedLocalNotes>
                 {this.state.childNoteExtend}
               </DerivedLocalNotes>

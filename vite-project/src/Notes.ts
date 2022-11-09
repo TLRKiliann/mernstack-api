@@ -9,7 +9,7 @@ export const Notes = [
   {
     "id": 2,
     "name": "Celestine",
-    "lastname": "NeverMind",
+    "lastname": "Auclair",
     "age": 33,
     "location": "Kentuky"
   },

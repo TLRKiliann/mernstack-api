@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import {notesType} from '../Models/notesType'
 import SubLocalComp from './location/SubLocalComp'
-import DerivedLocalNotes from './DerivedLocalNotes'
+import DerivedLocalNotes from './location/DerivedLocalNotes'
 
 interface childrenProps {
-  children: string
+  location: string | undefined
+  children: React.ReactNode
 }
 
 export default class LocalNotes extends Component<notesType, childrenProps> {
@@ -17,15 +18,19 @@ export default class LocalNotes extends Component<notesType, childrenProps> {
   }
 
   handleReduce = () => {
-    const toSlice = this.state?.location.slice(0, 1);
-    this.setState({location: toSlice});
+    if (this.state.location.length >= 1) {
+      const toSlice = this.state.location.slice(0, 1);
+      this.setState({location: toSlice});
+    }
+    else {
+      this.setState({location : "ok"});
+    }
   }
   render() {
-    //console.log("localNotes:", this.state.location)
-    //Interesting state - props
+    console.log("localNotes:", this.state.location)
     return(
-      <div>
-        <label>1 - Hello LocalNote ! {this.props.location}</label>
+      <div style={{margin: '10px', border: '1px solid yellow'}}>
+        <label>1 - Reusable BTN ! {this.props.location}</label>
         <button
           onClick={this.handleReduce}
           style={{marginLeft: '10px'}}
