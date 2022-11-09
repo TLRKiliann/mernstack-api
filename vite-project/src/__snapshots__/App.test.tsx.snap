@@ -1,42 +1,46 @@
 // Vitest Snapshot v1
 
 exports[`MatchSnapShot test App 1 1`] = `
-<div
-  className="App"
->
+<div>
   <h1>
-    Notes MERN-stack API
+    Title of mern-stack
   </h1>
+  <p>
+    Super, c'est affiché
+  </p>
 </div>
 `;
 
 exports[`MatchSnapShot test FirstNotes 1 1`] = `
-<div
-  className="App"
->
+<div>
   <h1>
-    Notes MERN-stack API
+    Title of mern-stack
   </h1>
+  <p>
+    Super, c'est affiché
+  </p>
 </div>
 `;
 
 exports[`MatchSnapShot test LastNotes 1 1`] = `
-<div
-  className="App"
->
+<div>
   <h1>
-    Notes MERN-stack API
+    Title of mern-stack
   </h1>
+  <p>
+    Super, c'est affiché
+  </p>
 </div>
 `;
 
 exports[`MatchSnapShot test LocalNotes 1 1`] = `
-<div
-  className="App"
->
+<div>
   <h1>
-    Notes MERN-stack API
+    Title of mern-stack
   </h1>
+  <p>
+    Super, c'est affiché
+  </p>
 </div>
 `;
 

@@ -1,68 +1,56 @@
-import { Component } from 'react'
-import { notesType } from './Models/notesType'
-import { Notes } from './Notes'
-import FirstNotes from './components/FirstNotes'
-import LastNotes from './components/LastNotes'
-import AgeNotes from './components/AgeNotes'
-import LocalNotes from './components/LocalNotes'
-import DerivedLocalNotes from './components/location/DerivedLocalNotes'
+import {Component} from 'react'
+import {db_notes} from './notes/db_notes'
+import Header from './components/Header'
+import MainTitle from './components/MainTitle'
+import MainComp from './components/MainComp'
+import Review from './components/Review'
+import Footer from './components/Footer'
 import './App.scss'
 
-
-class App extends Component<{}> {
-  constructor(props:any) {
-    super(props)
-    this.state = {
-      Notes: [],
-      childNote: "My First child (1x)",
-      secondChildNote: "It's my second child (2x)",
-      childNoteExtend: ["t's thirdth child (3x)", "Ok cool 3x! It's my third child list"]
-    }
+export default class App extends Component<{}> {
+  state = {
+    notes: [],
+    textHeader: "Text Header",
+    secondTextHeader: "MY SECOND TEXT HEADER"
   }
 
   componentDidMount() {
-    this.setState({Notes})
     console.log("Mounted !")
+    this.setState({notes: db_notes})
   }
 
   render() {
-    return (
-      <div className="App">
-        <h1>Notes MERN-stack API</h1>
-        {this.state.Notes.map(note => (
-          <div key={note.id} style={{border: "1px solid orange"}}>
-            <FirstNotes
-              name={note.name}
-            />
-            <LastNotes
-              lastname={note.lastname}
-            />
-            <AgeNotes
-              age={note.age}
-            />
+    console.log(this.state.notes)
+    return(
+      <div>
+        <div className="wallIntro">
+          <h1>Wellcome To ChatRoom !</h1>
+        </div>
+        
+        <div className="btn--voletsLeft">
+          <button>
+            Click me(L)
+          </button>
+        </div>
+        <div className="btn--voletsRight">
+          <button>
+            Click me(R)
+          </button>
+        </div>
 
-            <LocalNotes
-              location={note.location}
-            />
-            
-            <LocalNotes location={note.location}>
-              <DerivedLocalNotes>
-                {this.state.childNote} {this.state.secondChildNote} {this.state.childNoteExtend}
-              </DerivedLocalNotes>
-            </LocalNotes>
+        <Header />
+        <MainTitle
+          textHeader={this.state.textHeader}
+          secondTextHeader={this.state.secondTextHeader}
+        />
 
-            <LocalNotes location={note.location}>
-              <DerivedLocalNotes>
-                {this.state.childNoteExtend}
-              </DerivedLocalNotes>
-            </LocalNotes>
+        <MainComp notes={this.state.notes} />
 
-          </div>
-          ))
-        }
+        <Review result={this.state.notes} />
+
+        <Footer />
+
       </div>
     )
   }
 }
-
-export default App
