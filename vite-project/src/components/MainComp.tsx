@@ -18,7 +18,7 @@ export default class MainComp extends Component<MainCompProps> {
   render() {
     return(
       <div style={this.mainColor}>
-        <h2 style={{textAlign: 'center'}}>
+        <h2 style={{textAlign: 'center', color:'#999999'}}>
           All Members !
         </h2>
         <div>

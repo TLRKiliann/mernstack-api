@@ -6,6 +6,8 @@ import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
 import Review from '../components/Review'
 import Footer from '../components/Footer'
+import VoletRight from './Volets/VoletRight'
+import VoletLeft from './Volets/VoletLeft'
 import '../stylePages/Home.scss'
 
 
@@ -52,41 +54,15 @@ export default class Home extends Component<notesType> {
           </button>
         </div>
 
+        <VoletRight
+          isClosed={this.state.isClosed}
+          handleVoletsRight={this.handleVoletsRight}
+        />
 
-        {this.state.isClosed ? (
-          <div className="volet--R">
-            <div className="subvolet--R">
-              <button onClick={this.handleVoletsRight}>X</button>
-              <p>Volet R 1</p>
-            </div>
-          </div>
-          ) : (
-          <div className="volet--R2">
-            <div className="subvolet--R2">
-              <button onClick={this.handleVoletsRight}>X</button>
-              <p>Volet R 2</p>
-            </div>
-          </div>
-          )
-        }
-
-
-        {this.state.isLefted ? (
-          <div className="volet--L">
-            <div className="subvolet--L">
-              <p>Volet L 1</p>
-              <button onClick={this.handleVoletsLeft}>Close</button>
-            </div>
-          </div>
-          ) : (
-          <div className="volet--L2">
-            <div className="subvolet--L2">
-              <p>Volet L 2</p>
-              <button onClick={this.handleVoletsLeft}>Close</button>
-            </div>
-          </div>
-          )
-        }
+        <VoletLeft 
+          isLefted={this.state.isLefted}
+          handleVoletsLeft={this.handleVoletsLeft} 
+        />
 
         <MainTitle
           textHeader={this.state.textHeader}

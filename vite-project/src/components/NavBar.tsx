@@ -16,13 +16,28 @@ export default class NavBar extends Component {
 
           <ul>
             <li className="li--tag">
-              <Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/'>Home</Link>
+              <Link
+                style={{textDecoration: 'none', color: '#999999'}}
+                to='/'
+              >
+                Home
+              </Link>
             </li>
             <li className="li--tag">
-              <Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/chat'>Chat</Link>
+              <Link
+                style={{textDecoration: 'none', color: '#999999'}}
+                to='/chat'
+              >
+                Chat
+              </Link>
             </li>
             <li className="li--tag">
-              <Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/contact'>Contact</Link>
+              <Link
+                style={{textDecoration: 'none', color: '#999999'}}
+                to='/contact'
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>

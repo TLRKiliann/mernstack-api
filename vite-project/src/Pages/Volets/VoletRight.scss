@@ -1,0 +1,117 @@
+/*VOLETS*/
+/*Right volet*/
+
+.volet--R {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 300px;
+  min-height: 120vh;
+  overflow: hidden;
+}
+
+@keyframes volet--rightdisplay {
+  0% {
+    transform: translateX(300px);
+    overflow: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    overflow: hidden;
+  }
+}
+
+.subvolet--R {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  width: 300px;
+  min-height: 120vh;
+  background-color: #383838;
+  border-left: 1px solid slategray;
+  box-shadow: 0px 0px 5px slategray;
+
+  transform: translateX(0px);
+
+  animation-name: volet--rightdisplay;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  z-index: 5;
+}
+
+.subvolet--R button {
+  margin: 10px 10px;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50% 50%;
+  background: dimgrey;
+  color: lightgreen;
+}
+
+.subvolet--R p {
+  margin: 20px 20px;
+  padding: 5px 10px;
+  background: dimgrey;
+  color: lightgreen;
+}
+
+.volet--R2 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 300px;
+  min-height: 120vh;
+  overflow: hidden;
+}
+
+.subvolet--R2 {
+  position: relative;
+  width: 300px;
+  top: 0px;
+  right: -300px;
+  width: 300px;
+  min-height: 120vh;
+  background-color: #383838;
+  border-left: 1px solid slategray;
+  box-shadow: 0px 0px 5px slategray;
+
+  transform: translateX(0px);
+
+  animation-name: volet--righthidden;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  z-index: 5;
+}
+
+@keyframes volet--righthidden {
+  0% {
+    transform: translateX(-300px);
+    overflow: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    overflow: hidden;
+  }
+}
+
+.subvolet--R2 button {
+  margin: 10px 10px;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50% 50%;
+  background: dimgrey;
+  color: lightgreen;
+}
+
+.subvolet--R2 p {
+  margin: 20px 20px;
+  padding: 5px 10px;
+  background: dimgrey;
+  color: lightgreen;
+}

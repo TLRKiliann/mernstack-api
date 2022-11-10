@@ -5,10 +5,18 @@ import React from "react";
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 import {create} from 'react-test-renderer';
+import { expect, vi } from 'vitest'
 import App from "./App.tsx";
 
-test('MatchSnapShot test App 1', () => {
-	const tree = create(<App />)
-	expect(tree.toJSON()).toMatchSnapshot();
-})
+/*const fn = vi.fn()
 
+fn('hello', 1)
+
+expect(vi.isMockFunction(fn)).toBe(true)
+expect(fn.mock.calls[0]).toEqual(['hello', 1])
+
+fn.mockImplementation(arg => arg)
+
+fn('world', 2)
+
+expect(fn.mock.results[1].value).toBe('world')*/

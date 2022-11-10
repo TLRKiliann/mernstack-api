@@ -15,9 +15,9 @@ export default class Header extends Component<HeaderProps> {
     textAlign: 'center',
     fontFamily: "Consolas, serif",
     background: '#161616',
-    border: '1px solid lightgreen',
+    border: '1px solid slategrey',
     borderRadius: '10px',
-    boxShadow: '0px 0px 10px lightgreen',
+    boxShadow: '0px 0px 10px slategrey',
     color: 'whitesmoke'
   }
   render() {

@@ -52,7 +52,6 @@ describe('suite name', () => {
   })
 })
 
-
 const getLatest = (index = messages.items.length - 1) => messages.items[index]
 
 const messages = {

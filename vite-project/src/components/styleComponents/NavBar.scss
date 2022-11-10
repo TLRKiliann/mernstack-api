@@ -18,11 +18,14 @@ nav {
   margin: auto;
   display: flex;
   justify-content: right;
+  z-index: 4;
 }
 
 .div--img {
+  position: relative;
   width: 55px;
   margin: auto;
+  z-index: 4;
 }
 
 .div--headernav ul {
@@ -42,7 +45,7 @@ nav {
   font-weight: bold;
 }
 
-.li--tag Link:hover {
+.li--tag:hover {
   color: white;
 }
 
