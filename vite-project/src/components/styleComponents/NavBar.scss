@@ -3,24 +3,46 @@
   top: 0px;
   right: 0px;
   left: 0px;
+  width: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
   background-color: #000000;
   border-bottom: 1px solid slategray;
   box-shadow: 0px 0px 10px slategray;
-  z-index: 10;
+  z-index: 4;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: right;
+}
+
+.div--img {
+  width: 55px;
+  margin: auto;
 }
 
 .div--headernav ul {
-  display: flex;
+  min-width: 90%;
   margin: auto;
+  display: flex;
+  justify-content: right;
 }
 
-.div--headernav li {
+.div--headernav > nav > ul > li {
+  width: 200px;
   padding: 20px 0px;
-  margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   font-family: 'Consolase';
   font-size: 1.4rem;
-  color: lightgreen;
+  font-weight: bold;
 }
+
+.li--tag Link:hover {
+  color: white;
+}
+

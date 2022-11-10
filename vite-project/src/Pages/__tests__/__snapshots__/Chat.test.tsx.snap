@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test Chat 1`] = `
+<div>
+  <div
+    className="title--chat"
+  >
+    <h1>
+      Chat
+    </h1>
+  </div>
+</div>
+`;

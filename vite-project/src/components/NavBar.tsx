@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
+import koalatree from '../assets/koala_tree.png'
 import './styleComponents/NavBar.scss'
 
 
@@ -8,15 +9,20 @@ export default class NavBar extends Component {
     return(
       <div className="div--headernav">
         <nav >
+
+          <div className="div--img">
+            <img src={koalatree} width='53px' height='58px' alt='no img navbar'/>
+          </div>
+
           <ul>
-            <li>
-              <Link to='/'>Home</Link>
+            <li className="li--tag">
+              <Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/'>Home</Link>
             </li>
-            <li>
-              <Link to='/chat'>Chat</Link>
+            <li className="li--tag">
+              <Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/chat'>Chat</Link>
             </li>
-            <li>
-              <Link to='/contact'>Contact</Link>
+            <li className="li--tag">
+              <Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/contact'>Contact</Link>
             </li>
           </ul>
         </nav>

@@ -23,7 +23,7 @@ export default class Header extends Component<HeaderProps> {
   render() {
     return(
       <div style={this.myColor}>
-        <h1>Title of mern-stack</h1>
+        <h1>Chat-Room STACK</h1>
         <h2>{this.props.textHeader}</h2>
         <h4>{this.props.secondTextHeader}</h4>
       </div>

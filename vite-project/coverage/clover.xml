@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668013191143" clover="3.2.0">
-  <project timestamp="1668013191143" name="All files">
-    <metrics statements="240" coveredstatements="240" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8" elements="258" coveredelements="258" complexity="0" loc="240" ncloc="240" packages="3" files="7" classes="7"/>
+<coverage generated="1668087070407" clover="3.2.0">
+  <project timestamp="1668087070407" name="All files">
+    <metrics statements="350" coveredstatements="334" conditionals="15" coveredconditionals="13" methods="13" coveredmethods="11" elements="378" coveredelements="358" complexity="0" loc="350" ncloc="350" packages="4" files="10" classes="10"/>
     <package name="src">
-      <metrics statements="56" coveredstatements="56" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/App.tsx">
-        <metrics statements="56" coveredstatements="56" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Pages">
+      <metrics statements="133" coveredstatements="117" conditionals="6" coveredconditionals="4" methods="6" coveredmethods="4"/>
+      <file name="Chat.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/Pages/Chat.tsx">
+        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="Contact.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/Pages/Contact.tsx">
+        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="Home.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/Pages/Home.tsx">
+        <metrics statements="105" coveredstatements="89" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -22,50 +84,99 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="12" type="stmt"/>
-        <line num="24" count="12" type="stmt"/>
-        <line num="25" count="12" type="stmt"/>
-        <line num="26" count="12" type="stmt"/>
-        <line num="27" count="12" type="stmt"/>
-        <line num="28" count="12" type="stmt"/>
-        <line num="29" count="12" type="stmt"/>
-        <line num="30" count="12" type="stmt"/>
-        <line num="31" count="12" type="stmt"/>
-        <line num="32" count="12" type="stmt"/>
-        <line num="33" count="12" type="stmt"/>
-        <line num="34" count="12" type="stmt"/>
-        <line num="35" count="12" type="stmt"/>
-        <line num="36" count="12" type="stmt"/>
-        <line num="37" count="12" type="stmt"/>
-        <line num="38" count="12" type="stmt"/>
-        <line num="39" count="12" type="stmt"/>
-        <line num="40" count="12" type="stmt"/>
-        <line num="41" count="12" type="stmt"/>
-        <line num="42" count="12" type="stmt"/>
-        <line num="43" count="12" type="stmt"/>
-        <line num="44" count="12" type="stmt"/>
-        <line num="45" count="12" type="stmt"/>
-        <line num="46" count="12" type="stmt"/>
-        <line num="47" count="12" type="stmt"/>
-        <line num="48" count="12" type="stmt"/>
-        <line num="49" count="12" type="stmt"/>
-        <line num="50" count="12" type="stmt"/>
-        <line num="51" count="12" type="stmt"/>
-        <line num="52" count="12" type="stmt"/>
-        <line num="53" count="12" type="stmt"/>
-        <line num="54" count="12" type="stmt"/>
-        <line num="55" count="12" type="stmt"/>
-        <line num="56" count="12" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="10" type="stmt"/>
+        <line num="38" count="10" type="stmt"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="40" count="10" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="43" count="10" type="stmt"/>
+        <line num="44" count="10" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="46" count="10" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+        <line num="48" count="10" type="stmt"/>
+        <line num="49" count="10" type="stmt"/>
+        <line num="50" count="10" type="stmt"/>
+        <line num="51" count="10" type="stmt"/>
+        <line num="52" count="10" type="stmt"/>
+        <line num="53" count="10" type="stmt"/>
+        <line num="54" count="10" type="stmt"/>
+        <line num="55" count="10" type="stmt"/>
+        <line num="56" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="10" type="stmt"/>
+        <line num="63" count="10" type="stmt"/>
+        <line num="64" count="10" type="stmt"/>
+        <line num="65" count="10" type="stmt"/>
+        <line num="66" count="10" type="stmt"/>
+        <line num="67" count="10" type="stmt"/>
+        <line num="68" count="10" type="stmt"/>
+        <line num="69" count="10" type="stmt"/>
+        <line num="70" count="10" type="stmt"/>
+        <line num="71" count="10" type="stmt"/>
+        <line num="72" count="10" type="stmt"/>
+        <line num="73" count="10" type="stmt"/>
+        <line num="74" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="10" type="stmt"/>
+        <line num="81" count="10" type="stmt"/>
+        <line num="82" count="10" type="stmt"/>
+        <line num="83" count="10" type="stmt"/>
+        <line num="84" count="10" type="stmt"/>
+        <line num="85" count="10" type="stmt"/>
+        <line num="86" count="10" type="stmt"/>
+        <line num="87" count="10" type="stmt"/>
+        <line num="88" count="10" type="stmt"/>
+        <line num="89" count="10" type="stmt"/>
+        <line num="90" count="10" type="stmt"/>
+        <line num="91" count="10" type="stmt"/>
+        <line num="92" count="10" type="stmt"/>
+        <line num="93" count="10" type="stmt"/>
+        <line num="94" count="10" type="stmt"/>
+        <line num="95" count="10" type="stmt"/>
+        <line num="96" count="10" type="stmt"/>
+        <line num="97" count="10" type="stmt"/>
+        <line num="98" count="10" type="stmt"/>
+        <line num="99" count="10" type="stmt"/>
+        <line num="100" count="10" type="stmt"/>
+        <line num="101" count="10" type="stmt"/>
+        <line num="102" count="10" type="stmt"/>
+        <line num="103" count="10" type="stmt"/>
+        <line num="104" count="10" type="stmt"/>
+        <line num="105" count="10" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="137" coveredstatements="137" conditionals="7" coveredconditionals="7" methods="5" coveredmethods="5"/>
+      <metrics statements="148" coveredstatements="148" conditionals="7" coveredconditionals="7" methods="5" coveredmethods="5"/>
       <file name="Footer.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/components/Footer.tsx">
         <metrics statements="25" coveredstatements="25" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -74,55 +185,28 @@
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="12" type="stmt"/>
-        <line num="8" count="12" type="stmt"/>
-        <line num="9" count="12" type="stmt"/>
-        <line num="10" count="12" type="stmt"/>
-        <line num="11" count="12" type="stmt"/>
-        <line num="12" count="12" type="stmt"/>
-        <line num="13" count="12" type="stmt"/>
-        <line num="14" count="12" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="16" count="12" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
-        <line num="19" count="12" type="stmt"/>
-        <line num="20" count="12" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
-        <line num="22" count="12" type="stmt"/>
-        <line num="23" count="12" type="stmt"/>
-        <line num="24" count="12" type="stmt"/>
-        <line num="25" count="12" type="stmt"/>
-      </file>
-      <file name="Header.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/components/Header.tsx">
-        <metrics statements="24" coveredstatements="24" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="12" type="stmt"/>
-        <line num="7" count="12" type="stmt"/>
-        <line num="8" count="12" type="stmt"/>
-        <line num="9" count="12" type="stmt"/>
-        <line num="10" count="12" type="stmt"/>
-        <line num="11" count="12" type="stmt"/>
-        <line num="12" count="12" type="stmt"/>
-        <line num="13" count="12" type="stmt"/>
-        <line num="14" count="12" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="16" count="12" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
-        <line num="19" count="12" type="stmt"/>
-        <line num="20" count="12" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
-        <line num="22" count="12" type="stmt"/>
-        <line num="23" count="12" type="stmt"/>
-        <line num="24" count="12" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
       </file>
       <file name="MainComp.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/components/MainComp.tsx">
-        <metrics statements="35" coveredstatements="35" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="38" coveredstatements="38" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -137,27 +221,30 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="12" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
-        <line num="19" count="12" type="stmt"/>
-        <line num="20" count="12" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
-        <line num="22" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="30" type="stmt"/>
-        <line num="24" count="30" type="stmt"/>
-        <line num="25" count="30" type="stmt"/>
-        <line num="26" count="30" type="stmt"/>
-        <line num="27" count="12" type="stmt"/>
-        <line num="28" count="12" type="stmt"/>
-        <line num="29" count="12" type="stmt"/>
-        <line num="30" count="12" type="stmt"/>
-        <line num="31" count="12" type="stmt"/>
-        <line num="32" count="12" type="stmt"/>
-        <line num="33" count="12" type="stmt"/>
-        <line num="34" count="12" type="stmt"/>
-        <line num="35" count="12" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="25" type="stmt"/>
+        <line num="27" count="25" type="stmt"/>
+        <line num="28" count="25" type="stmt"/>
+        <line num="29" count="25" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+        <line num="35" count="10" type="stmt"/>
+        <line num="36" count="10" type="stmt"/>
+        <line num="37" count="10" type="stmt"/>
+        <line num="38" count="10" type="stmt"/>
       </file>
       <file name="MainTitle.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/components/MainTitle.tsx">
         <metrics statements="32" coveredstatements="32" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -184,15 +271,50 @@
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="12" type="stmt"/>
-        <line num="25" count="12" type="stmt"/>
-        <line num="26" count="12" type="stmt"/>
-        <line num="27" count="12" type="stmt"/>
-        <line num="28" count="12" type="stmt"/>
-        <line num="29" count="12" type="stmt"/>
-        <line num="30" count="12" type="stmt"/>
-        <line num="31" count="12" type="stmt"/>
-        <line num="32" count="12" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+      </file>
+      <file name="NavBar.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/components/NavBar.tsx">
+        <metrics statements="32" coveredstatements="32" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
       </file>
       <file name="Review.tsx" path="/home/esteban/Documents/virtual/api-router-mysql/mernstack-api/vite-project/src/components/Review.tsx">
         <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -200,23 +322,23 @@
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="12" type="stmt"/>
-        <line num="7" count="12" type="stmt"/>
-        <line num="8" count="12" type="stmt"/>
-        <line num="9" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="30" type="stmt"/>
-        <line num="11" count="30" type="stmt"/>
-        <line num="12" count="12" type="stmt"/>
-        <line num="13" count="12" type="stmt"/>
-        <line num="14" count="12" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="16" count="12" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
-        <line num="19" count="12" type="stmt"/>
-        <line num="20" count="12" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="25" type="stmt"/>
+        <line num="16" count="25" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
       </file>
     </package>
     <package name="src.notes">
@@ -269,7 +391,7 @@
         <line num="44" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="47" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="5" type="cond" truecount="1" falsecount="0"/>
       </file>
     </package>
   </project>
