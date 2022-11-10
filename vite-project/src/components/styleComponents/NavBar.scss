@@ -1,0 +1,51 @@
+.div--headernav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  border-bottom: 1px solid slategray;
+  box-shadow: 0px 0px 10px slategray;
+  z-index: 4;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: right;
+  z-index: 4;
+}
+
+.div--img {
+  position: relative;
+  width: 55px;
+  margin: auto;
+  z-index: 4;
+}
+
+.div--headernav ul {
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: right;
+}
+
+.div--headernav > nav > ul > li {
+  width: 200px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Consolase';
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.li--tag:hover {
+  color: white;
+}
+

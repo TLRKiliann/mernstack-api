@@ -1,8 +1,11 @@
 import { Component } from 'react'
-import {notesType} from '../../notes/notesType'
+import { notesType } from '../notes/notestype';
 
+interface MainCompProps {
+  notes: notesType[]
+}
 
-export default class MainComp extends Component<notesType> {
+export default class MainComp extends Component<MainCompProps> {
   mainColor = {
     width: '600px',
     margin: 'auto',
@@ -15,7 +18,7 @@ export default class MainComp extends Component<notesType> {
   render() {
     return(
       <div style={this.mainColor}>
-        <h2 style={{textAlign: 'center'}}>
+        <h2 style={{textAlign: 'center', color:'#999999'}}>
           All Members !
         </h2>
         <div>

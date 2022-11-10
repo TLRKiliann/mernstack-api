@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/MainTitle.tsx</title>
+    <title>Code coverage report for src/components/NavBar.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> MainTitle.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> NavBar.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -117,42 +117,42 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span></td><td class="text"><pre class="prettyprint lang-js">import {Component} from 'react'
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Component } from 'react'
+import { Link } from 'react-router-dom'
+import koalatree from '../assets/koala_tree.png'
+import './styleComponents/NavBar.scss'
 &nbsp;
-interface HeaderProps {
-  textHeader: string
-  secondTextHeader: string
-}
 &nbsp;
-export default class Header extends Component&lt;HeaderProps&gt; {
-&nbsp;
-  myColor = {
-    width: '600px',
-    margin: 'auto',
-    marginTop: '100px',
-    height: 'auto',
-    textAlign: 'center',
-    fontFamily: "Consolas, serif",
-    background: '#161616',
-    border: '1px solid lightgreen',
-    borderRadius: '10px',
-    boxShadow: '0px 0px 10px lightgreen',
-    color: 'whitesmoke'
-  }
+export default class NavBar extends Component {
   render() {
     return(
-      &lt;div style={this.myColor}&gt;
-        &lt;h1&gt;Chat-Room STACK&lt;/h1&gt;
-        &lt;h2&gt;{this.props.textHeader}&lt;/h2&gt;
-        &lt;h4&gt;{this.props.secondTextHeader}&lt;/h4&gt;
+      &lt;div className="div--headernav"&gt;
+        &lt;nav &gt;
+&nbsp;
+          &lt;div className="div--img"&gt;
+            &lt;img src={koalatree} width='53px' height='58px' alt='no img navbar'/&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;ul&gt;
+            &lt;li className="li--tag"&gt;
+              &lt;Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/'&gt;Home&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li className="li--tag"&gt;
+              &lt;Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/chat'&gt;Chat&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li className="li--tag"&gt;
+              &lt;Link style={{textDecoration: 'none', color: 'lightgreen'}} to='/contact'&gt;Contact&lt;/Link&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
       &lt;/div&gt;
     )
   }
