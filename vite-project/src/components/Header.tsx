@@ -1,7 +1,7 @@
-import {Component} from 'react'
-import './Header.scss'
+//import {Component} from 'react'
+//import './Header.scss'
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
     return(
       <div className="div--headernav">

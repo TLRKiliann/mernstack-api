@@ -1,0 +1,26 @@
+.div--headernav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  background-color: #000000;
+  border-bottom: 1px solid slategray;
+  box-shadow: 0px 0px 10px slategray;
+  z-index: 10;
+}
+
+.div--headernav ul {
+  display: flex;
+  margin: auto;
+}
+
+.div--headernav li {
+  padding: 20px 0px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Consolase';
+  font-size: 1.4rem;
+  color: lightgreen;
+}
