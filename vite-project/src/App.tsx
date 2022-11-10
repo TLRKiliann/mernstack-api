@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {db_notes} from './notes/db_notes'
+import {notesType} from './notes/notestype'
 import Header from './components/Header'
 import MainTitle from './components/MainTitle'
 import MainComp from './components/MainComp'
@@ -7,7 +8,7 @@ import Review from './components/Review'
 import Footer from './components/Footer'
 import './App.scss'
 
-export default class App extends Component<{}> {
+export default class App extends Component<notesType> {
   state = {
     notes: [],
     textHeader: "Text Header",
@@ -54,18 +55,20 @@ export default class App extends Component<{}> {
         {this.state.isClosed ? (
           <div className="volet--R">
             <div className="subvolet--R">
-              <button onClick={this.handleVoletsRight}>Close</button>
+              <button onClick={this.handleVoletsRight}>X</button>
               <p>Volet R 1</p>
             </div>
           </div>
           ) : (
           <div className="volet--R2">
             <div className="subvolet--R2">
-              Volet R 2
+              <button onClick={this.handleVoletsRight}>X</button>
+              <p>Volet R 2</p>
             </div>
           </div>
           )
         }
+
 
         {this.state.isLefted ? (
           <div className="volet--L">
@@ -77,13 +80,15 @@ export default class App extends Component<{}> {
           ) : (
           <div className="volet--L2">
             <div className="subvolet--L2">
-              Volet L 2
+              <p>Volet L 2</p>
+              <button onClick={this.handleVoletsLeft}>Close</button>
             </div>
           </div>
           )
         }
 
         <Header />
+
         <MainTitle
           textHeader={this.state.textHeader}
           secondTextHeader={this.state.secondTextHeader}
@@ -91,7 +96,7 @@ export default class App extends Component<{}> {
 
         <MainComp notes={this.state.notes} />
 
-        <Review result={this.state.notes} />
+        <Review results={this.state.notes} />
 
         <Footer />
 

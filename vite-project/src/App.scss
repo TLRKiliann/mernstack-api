@@ -69,56 +69,84 @@
 
 /*VOLETS*/
 
+.firstVolet--R {
+}
+
 .volet--R {
   position: absolute;
   top: 0px;
-  right: -300px;
+  right: 0px;
   width: 300px;
   min-height: 120vh;
-  
-  background-color: slateblue;
-  
-  transform: translateX(-300px);
-  animation-name: volet--rightdisplay;
-  animation-delay: 0s;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-  z-index: 5;
   overflow: hidden;
 }
 
 @keyframes volet--rightdisplay {
   0% {
-    transform: translateX(0px);
+    transform: translateX(300px);
     overflow: hidden;
   }
   100% {
-    transform: translateX(-300px);
+    transform: translateX(0px);
     overflow: hidden;
   }
 }
 
 .subvolet--R {
   position: relative;
+  top: 0px;
+  right: 0px;
   width: 300px;
-  margin-top: 10px;
-  left: 20px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: left;
+  min-height: 120vh;
+  background-color: #383838;
+  border-left: 1px solid orange;
+  box-shadow: 0px 0px 5px red;
+
+  transform: translateX(0px);
+  animation-name: volet--rightdisplay;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  z-index: 5;
+}
+
+.subvolet--R button {
+  margin: 10px 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: dimgrey;
+  color: lightgreen;
+}
+
+.subvolet--R p {
+  margin: 20px 20px;
+  padding: 5px 10px;
+  background: dimgrey;
+  color: lightgreen;
 }
 
 .volet--R2 {
   position: absolute;
   top: 0px;
+  right: 0px;
+  width: 300px;
+  min-height: 120vh;
+  overflow: hidden;
+}
+
+.subvolet--R2 {
+  position: relative;
+  width: 300px;
+  top: 0px;
   right: -300px;
   width: 300px;
   min-height: 120vh;
-  
-  background-color: lightgreen;
-  
+  background-color: #383838;
+  border-left: 1px solid orange;
+  box-shadow: 0px 0px 5px red;
+
   transform: translateX(0px);
   animation-name: volet--righthidden;
   animation-delay: 0s;
@@ -126,7 +154,6 @@
   animation-iteration-count: 1;
   animation-timing-function: ease;
   z-index: 5;
-  overflow: hidden;
 }
 
 @keyframes volet--righthidden {
@@ -140,11 +167,21 @@
   }
 }
 
-.subvolet--R2 {
-  width: 300px;
-  overflow: hidden;
+.subvolet--R2 button {
+  margin: 10px 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: dimgrey;
+  color: lightgreen;
 }
 
+.subvolet--R2 p {
+  margin: 20px 20px;
+  padding: 5px 10px;
+  background: dimgrey;
+  color: lightgreen;
+}
 
 .volet--L {
   position: absolute;
@@ -153,7 +190,9 @@
   width: 300px;
   min-height: 120vh;
 
-  background-color: slateblue;
+  background-color: #383838;
+  border-right: 1px solid orange;
+  box-shadow: 0px 0px 5px red;
   
   transform: translateX(300px);
   animation-name: volet--leftdisplay;
@@ -194,7 +233,9 @@
   width: 300px;
   min-height: 120vh;
   
-  background-color: lightgreen;
+  background-color: #383838;
+  border-right: 1px solid orange;
+  box-shadow: 0px 0px 5px red;
   
   transform: translateX(0px);
   animation-name: volet--lefthidden;
