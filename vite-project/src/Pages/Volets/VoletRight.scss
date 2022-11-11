@@ -6,7 +6,7 @@
   top: 0px;
   right: 0px;
   width: 300px;
-  min-height: 120vh;
+  min-height: 100%;
   overflow: hidden;
 }
 
@@ -59,9 +59,9 @@
 }
 
 .subvolet--R img {
-  margin: 0 30%;
+  margin: -10px 20px;
   padding: 5px 10px;
-  background: lightgreen;
+  background: #383838;
   color: lightgreen;
 }
 
@@ -84,6 +84,14 @@ section h1 {
 }
 
 .li:hover {
+  color: orange;
+}
+
+.link--tagvolet {
+  text-decoration: none;
+}
+
+.link--tagvolet:hover {
   color: orange;
 }
 
@@ -143,5 +151,12 @@ section h1 {
   margin: 20px 20px;
   padding: 5px 10px;
   background: dimgrey;
+  color: lightgreen;
+}
+
+.subvolet--R2 img {
+  margin: -10px 20px;
+  padding: 5px 10px;
+  background: #383838;
   color: lightgreen;
 }

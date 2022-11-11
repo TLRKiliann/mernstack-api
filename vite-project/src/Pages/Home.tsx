@@ -1,6 +1,6 @@
-import {Component} from 'react'
-import {db_notes} from '../notes/db_notes'
-import {notesType} from '../notes/notestype'
+import { Component } from 'react'
+import { db_notes } from '../notes/db_notes'
+import { notesType } from '../notes/notestype'
 //import Header from '../components/Header'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
@@ -40,17 +40,17 @@ export default class Home extends Component<notesType> {
     return(
       <div>
         <div className="wallIntro">
-          <h1>Wellcome To ChatRoom !</h1>
+          <h1>Wellcome To Chat-Room !</h1>
         </div>
         
         <div className="btn--voletsLeft">
           <button onClick={this.handleVoletsLeft}>
-            Click me(L)
+            Chat-Room Assistance
           </button>
         </div>
         <div className="btn--voletsRight">
           <button onClick={this.handleVoletsRight}>
-            Click me(R)
+            Chat-Room Computing
           </button>
         </div>
 

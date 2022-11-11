@@ -9,7 +9,7 @@ export default class MainComp extends Component<MainCompProps> {
   mainColor = {
     width: '600px',
     margin: 'auto',
-    marginTop: '40px',
+    marginTop: '20px',
     padding: '20px 40px',
     fontSize: '1.2rem',
     background: '#161616',
@@ -18,8 +18,8 @@ export default class MainComp extends Component<MainCompProps> {
   render() {
     return(
       <div style={this.mainColor}>
-        <h2 style={{textAlign: 'center', color:'#999999'}}>
-          All Members !
+        <h2 style={{textAlign: 'center', color:'whitesmoke'}}>
+          Member Connected !
         </h2>
         <div>
         {this.props.notes.map(note => (

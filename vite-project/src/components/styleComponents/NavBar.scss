@@ -45,7 +45,15 @@ nav {
   font-weight: bold;
 }
 
-.li--tag:hover {
-  color: white;
+.link--tagnav {
+  text-decoration: none;
+  text-shadow: 1px 1px 1px purple,
+  2px 2px 1px slategrey;
+  color: lightgrey;
 }
+
+.link--tagnav:hover {
+  color: grey;
+}
+
 

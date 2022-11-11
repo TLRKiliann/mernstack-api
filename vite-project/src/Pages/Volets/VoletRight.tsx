@@ -18,125 +18,113 @@ export default class VoletRight extends Component<VoletRightProps> {
             <div className="subvolet--R">
               <button onClick={this.props.handleVoletsRight}>X</button>
               <p>Volet R 1</p>
-              <img src={mother} width='100px' alt='no img volet-R 1' />
+              <img
+                src={mother}
+                width='240px'
+                height='140px'
+                alt='no img volet-R 1'
+              />
               <section>
                 <h1>Links</h1>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}
                   >
                     Hard Drive
                   </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>CPU</Link>
+                  >
+                    CPU
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>RAM</Link>
+                  >
+                    RAM
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Drivers</Link>
+                  >
+                    Drivers
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Systemd</Link>
+                  >
+                    Systemd
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Process</Link>
+                  >
+                    Process
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>internet</Link>
+                  >
+                    internet
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Client-Serveur</Link>
+                  >
+                    Client-Serveur
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Internet Protocol</Link>
+                  >
+                    Internet Protocol
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Request - Response</Link>
+                  >
+                    Request - Response
+                  </Link>
                 </li>
 
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>SSH - SCP</Link>
+                  >
+                    SSH - SCP
+                  </Link>
                 </li>
 
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>HTTP - HTTPS</Link>
+                  >
+                    HTTP - HTTPS
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Fire-Wall</Link>
+                  >
+                    Fire-Wall
+                  </Link>
                 </li>
                 <li className="li">
-                  <Link
+                  <Link className="link--tagvolet"
                     to='/linksvoletright'
-                    style={{
-                      textDecoration: 'none',
-                      color: 'lightgreen'
-                    }}>Proxy - VPN</Link>
+                  >
+                    Proxy - VPN
+                  </Link>
                 </li>
               </section>
             </div>
@@ -144,8 +132,119 @@ export default class VoletRight extends Component<VoletRightProps> {
           ) : (
           <div className="volet--R2">
             <div className="subvolet--R2">
+
               <button onClick={this.props.handleVoletsRight}>X</button>
               <p>Volet R 2</p>
+
+              <img
+                src={mother}
+                width='240px'
+                height='140px'
+                alt='no img volet-R 1'
+              />
+              <section>
+                <h1>Links</h1>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Hard Drive
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    CPU
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    RAM
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Drivers
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Systemd
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Process
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    internet
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Client-Serveur
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Internet Protocol
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Request - Response
+                  </Link>
+                </li>
+
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    SSH - SCP
+                  </Link>
+                </li>
+
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    HTTP - HTTPS
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Fire-Wall
+                  </Link>
+                </li>
+                <li className="li">
+                  <Link className="link--tagvolet"
+                    to='/linksvoletright'
+                  >
+                    Proxy - VPN
+                  </Link>
+                </li>
+              </section>
             </div>
           </div>
           )
