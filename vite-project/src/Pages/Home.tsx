@@ -36,7 +36,7 @@ export default class Home extends Component<notesType> {
   }
 
   render() {
-    console.log(this.state.notes)
+    //console.log(this.state.notes)
     return(
       <div>
         <div className="wallIntro">
