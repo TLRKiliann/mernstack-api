@@ -1,29 +1,41 @@
+.div--imgbg {
+}
+
+.img--bg {
+  position: fixed;
+  top: 0px;
+  min-height: auto;
+  opacity: 1;
+  z-index: -10;
+}
+
 .wallIntro {
   position: absolute;
   top: 0px;
   right: 0px;
-  bottom: 0px;
   left: 0px;
-  height: 100%;
-  background-color: #242424;
+  min-height: 100%;
+  background-color: #161616;
   opacity: 0;
 
   animation-name: wall;
   animation-delay: 0s;
   animation-duration: 3s;
   animation-timing-function: ease;
-  z-index: 3;
 }
 
 @keyframes wall {
   0% {
     opacity: 1;
+    z-index: 20;
   }
   70% {
     opacity: 1;
+    z-index: 20;
   }
   100% {
     opacity: 0;
+    z-index: 20;
   }
 }
 
@@ -43,7 +55,7 @@
 .btn--voletsLeft {
   position: absolute;
   margin-top: 1%;
-  margin-left: 8%;
+  margin-left: 6%;
   border-radius: 15px;
   z-index: 4;
 }
@@ -52,22 +64,26 @@
   position: absolute;
   right: 0px;
   margin-top: 1%;
-  margin-right: 8%;
+  margin-right: 6%;
   border-radius: 15px;
   z-index: 4;
 }
 
 .btn--voletsLeft button {
   padding: 20px 40px;
-  background-color: #161616;
-  border-radius: 7px;
-  box-shadow: inset 0px 50px 25px 0 #000, 
+  font-family: 'Consolas';
+  font-size: 0.9rem;
+
+  border: 2mm ridge royalblue;
+  border-radius: 40px;
+  box-shadow: inset 0px 50px 25px 0 royalblue, 
     inset 0 66px 15px 0px #ccc,
     inset 0 99px 5px 0px #fff;
   &:hover {
     box-shadow: inset 0px 50px 25px 0 #424242, 
       inset 0 66px 15px 0px #aaa,
       inset 0 99px 5px 0px #161616;
+    border: 2mm ridge grey;
     color: lightgreen;
     cursor: pointer;
   }
@@ -75,15 +91,19 @@
 
 .btn--voletsRight button {
   padding: 20px 40px;
-  background-color: #161616;
-  border-radius: 7px;
-  box-shadow: inset 0px 50px 25px 0 #000, 
+  font-family: 'Consolas';
+  font-size: 0.9rem;
+
+  border: 2mm ridge royalblue;
+  border-radius: 40px;
+  box-shadow: inset 0px 50px 25px 0 royalblue, 
     inset 0 66px 15px 0px #ccc,
     inset 0 99px 5px 0px #fff;
   &:hover {
     box-shadow: inset 0px 50px 25px 0 #424242, 
       inset 0 66px 15px 0px #aaa,
       inset 0 99px 5px 0px #161616;
+    border: 2mm ridge grey;
     color: lightgreen;
     cursor: pointer;
   }

@@ -3,7 +3,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  width: -300px;
+  width: -400px;
   min-height: 120vh;
   overflow: hidden;
 }
@@ -12,10 +12,10 @@
   position: relative;
   top: 0px;
   left: 0px;
-  width: 300px;
+  width: 400px;
   min-height: 120vh;
-  background-color: #383838;
-  border-right: 1px solid slategray;
+  background-color: royalblue;
+  border-right: 1px solid blue;
 
   transform: translateX(0px);
 
@@ -29,7 +29,7 @@
 
 @keyframes volet--leftdisplay {
   0% {
-    transform: translateX(-300px);
+    transform: translateX(-400px);
     overflow: hidden;
   }
   100% {
@@ -40,27 +40,76 @@
 
 .subvolet--L button {
   margin-top: 10px;
-  margin-left: 250px;
+  margin-left: 350px;
   width: 30px;
   height: 30px;
 
   border-radius: 50% 50%;
   background: dimgrey;
   color: lightgreen;
+  &:hover {
+    cursor: pointer;
+    background: grey;
+    color: whitesmoke;
+  }
 }
 
 .subvolet--L p {
   margin: 20px 20px;
   padding: 5px 10px;
-  background: dimgrey;
-  color: lightgreen;
+  text-align: center;
+  background: lightblue;
+  border: 2mm ridge royalblue;
+  box-shadow: 0px 0px 4px whitesmoke;
+  border-radius: 5px;
+  color: royalblue;
+}
+
+.section--voletl {
+  margin: 20px 20px;
+  padding: 20px 40px;
+  background: lightblue;
+  border: 2mm ridge royalblue;
+  box-shadow: 0px 0px 4px whitesmoke;
+  border-radius: 10px;
+}
+
+.span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.li {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: blue;
+}
+
+.li {
+  margin-bottom: 10px;
+  &:hover {
+    color: orange;
+  }
+}
+
+.link--tagvoletl {
+  margin: 2px 0px;
+  text-decoration: none;
+  font-family: 'Consolas';
+  font-size: 1.2rem;
+  color: royalblue;
+  &:hover {
+    color: navy;
+  }
 }
 
 .volet--L2 {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: -300px;
+  width: -400px;
   min-height: 120vh;
   overflow: hidden;
 }
@@ -68,14 +117,13 @@
 .subvolet--L2 {
   position: relative;
   top: 0px;
-  left: -1px;
-  width: 300px;
+  left: 0px;
+  width: 400px;
   min-height: 120vh;
-  background-color: #383838;
-  border-right: 1px solid slategray;
-  box-shadow: 0px 0px 5px slategray;
+  background-color: royalblue;
+  border-right: 1px solid blue;
 
-  transform: translateX(-300px);
+  transform: translateX(-400px);
 
   animation-name: volet--lefthidden;
   animation-delay: 0s;
@@ -91,25 +139,32 @@
     overflow: hidden;
   }
   100% {
-    transform: translateX(-300px);
+    transform: translateX(-400px);
     overflow: hidden;
   }
 }
 
 .subvolet--L2 button {
   margin-top: 10px;
-  margin-left: 250px;
+  margin-left: 350px;
   width: 30px;
   height: 30px;
-
-  border-radius: 50% 50%;
   background: dimgrey;
+  border-radius: 50% 50%;
   color: lightgreen;
+  &:hover {
+    cursor: pointer;
+    background: grey;
+    color: whitesmoke;
+  }
 }
 
 .subvolet--L2 p {
   margin: 20px 20px;
   padding: 5px 10px;
-  background: dimgrey;
-  color: lightgreen;
+  text-align: center;
+  background: lightblue;
+  border: 2mm ridge royalblue;
+  box-shadow: 0px 0px 3px whitesmoke;
+  color: royalblue;
 }

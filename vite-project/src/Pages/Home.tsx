@@ -1,13 +1,13 @@
-import {Component} from 'react'
-import {db_notes} from '../notes/db_notes'
-import {notesType} from '../notes/notestype'
+import { Component } from 'react'
+import { db_notes } from '../notes/db_notes'
+import { notesType } from '../notes/notestype'
 //import Header from '../components/Header'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
-import Review from '../components/Review'
 import Footer from '../components/Footer'
 import VoletRight from './Volets/VoletRight'
 import VoletLeft from './Volets/VoletLeft'
+import bgImg from '../assets/wallpaper_riverforest.jpg'
 import '../stylePages/Home.scss'
 
 
@@ -36,21 +36,31 @@ export default class Home extends Component<notesType> {
   }
 
   render() {
-    console.log(this.state.notes)
+    //console.log(this.state.notes)
     return(
       <div>
+        <div className="div--imgbg">
+          <img
+            src={bgImg}
+            width="100%"
+            height="100%"
+            className='img--bg'
+            alt='no bg'
+          />
+        </div>
+
         <div className="wallIntro">
-          <h1>Wellcome To ChatRoom !</h1>
+          <h1>Wellcome To Chat-Room !</h1>
         </div>
         
         <div className="btn--voletsLeft">
           <button onClick={this.handleVoletsLeft}>
-            Click me(L)
+            Chat-Room Assistance
           </button>
         </div>
         <div className="btn--voletsRight">
           <button onClick={this.handleVoletsRight}>
-            Click me(R)
+            Chat-Room Computing
           </button>
         </div>
 
@@ -59,7 +69,8 @@ export default class Home extends Component<notesType> {
           handleVoletsRight={this.handleVoletsRight}
         />
 
-        <VoletLeft 
+        <VoletLeft
+          notes={this.state.notes}
           isLefted={this.state.isLefted}
           handleVoletsLeft={this.handleVoletsLeft} 
         />
@@ -70,8 +81,6 @@ export default class Home extends Component<notesType> {
         />
 
         <MainComp notes={this.state.notes} />
-
-        <Review results={this.state.notes} />
 
         <Footer />
 

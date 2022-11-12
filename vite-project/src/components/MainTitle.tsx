@@ -8,17 +8,18 @@ interface HeaderProps {
 export default class Header extends Component<HeaderProps> {
 
   myColor = {
-    width: '600px',
+    width: '40%',
     margin: 'auto',
     marginTop: '100px',
     height: 'auto',
     textAlign: 'center',
     fontFamily: "Consolas, serif",
-    background: '#161616',
-    border: '1px solid slategrey',
-    borderRadius: '10px',
-    boxShadow: '0px 0px 10px slategrey',
-    color: 'whitesmoke'
+    backgroundColor: 'rgba(45, 85, 255, 0.4)',
+    border: '2mm ridge royalblue',
+    borderRadius: '12px',
+    boxShadow: '0px 0px 4px whitesmoke',
+    color: 'lightblue',
+    textShadow: '2px 1px 2px blue'
   }
   render() {
     return(

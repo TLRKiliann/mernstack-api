@@ -10,6 +10,7 @@ specifiers:
   jsdom: ^20.0.2
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-icons: ^4.6.0
   react-router-dom: ^6.4.3
   react-test-renderer: ^18.2.0
   sass: ^1.56.0
@@ -20,6 +21,7 @@ specifiers:
 dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.6.0_react@18.2.0
   react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -1992,6 +1994,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-icons/4.6.0_react@18.2.0:
+    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
