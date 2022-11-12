@@ -29,7 +29,7 @@ export default class VoletRight extends Component<VoletRightProps> {
                   <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
-                    Hard Drive
+                    Hard Disk - SSD
                   </Link>
                 </li>
                 <li className="li--right">
@@ -153,7 +153,7 @@ export default class VoletRight extends Component<VoletRightProps> {
                   <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
-                    Hard Drive
+                    Hard Disk - SSD
                   </Link>
                 </li>
                 <li className="li--right">

@@ -86,6 +86,8 @@
 
 .li--right {
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed blue;
   color: royalblue;
   &:hover {
     color: orange;

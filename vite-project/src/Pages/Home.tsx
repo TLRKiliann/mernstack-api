@@ -55,12 +55,12 @@ export default class Home extends Component<notesType> {
         
         <div className="btn--voletsLeft">
           <button onClick={this.handleVoletsLeft}>
-            Chat-Room Assistance
+            Search User
           </button>
         </div>
         <div className="btn--voletsRight">
           <button onClick={this.handleVoletsRight}>
-            Chat-Room Computing
+            Chat-Room
           </button>
         </div>
 
