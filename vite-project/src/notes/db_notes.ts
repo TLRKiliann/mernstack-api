@@ -6,7 +6,7 @@ export const db_notes = [
 		"age": 44,
 		"email": "dujardin.pierre@gmail.com",
 		"gender": "male",
-		"result": 43
+		"isConnected": true
 	},
 	{
 		"id": 2,
@@ -15,8 +15,7 @@ export const db_notes = [
 		"age": 37,
 		"email": "Chakra.Celestine@gmail.com",
 		"gender": "female",
-		"result": 3
-	},
+		"isConnected": false	},
 	{
 		"id": 3,
 		"firstName": "Gérard",
@@ -24,7 +23,7 @@ export const db_notes = [
 		"age": 28,
 		"email": "gg.golan@mail.com",
 		"gender": "male",
-		"result": 14
+		"isConnected": false
 	},
 	{
 		"id": 4,
@@ -33,7 +32,7 @@ export const db_notes = [
 		"age": 42,
 		"email": "juju.atouspris@mail.com",
 		"gender": "female",
-		"result": 21
+		"isConnected": true
 	},
 	{
 		"id": 5,
@@ -42,6 +41,24 @@ export const db_notes = [
 		"age": 34,
 		"email": "nathanelle.nord@mail.com",
 		"gender": "female",
-		"result": 99
+		"isConnected": true
+	},
+	{
+		"id": 6,
+		"firstName": "Simly",
+		"lastName": "Farwth",
+		"age": 35,
+		"email": "simly.farfar@mail.com",
+		"gender": "female",
+		"isConnected": true
+	},
+	{
+		"id": 7,
+		"firstName": "Jess",
+		"lastName": "Natinger",
+		"age": 31,
+		"email": "Jess.natinger@mail.com",
+		"gender": "female",
+		"isConnected": true
 	}
 ]
