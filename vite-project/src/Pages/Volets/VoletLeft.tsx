@@ -44,7 +44,7 @@ export default class VoletLeft extends Component<VoletLeftProps> {
                       )
                     }
                     <Link className="link--tagvoletl"
-                      to='/linksvoletright'
+                      to={`/linksvoletright/${note.id}`}
                     >
                       {note.firstName} {note.lastName}
                     </Link>
@@ -82,7 +82,7 @@ export default class VoletLeft extends Component<VoletLeftProps> {
                       )
                     }
                     <Link className="link--tagvoletl"
-                      to='/linksvoletright'
+                      to={`/linksvoletright/${note.id}`}
                     >
                       {note.firstName} {note.lastName}
                     </Link>
