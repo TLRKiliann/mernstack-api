@@ -1,5 +1,8 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { MdConnectWithoutContact } from 'react-icons/md'
+import { TbPlugConnected } from 'react-icons/tb'
+import { BsFillChatDotsFill } from 'react-icons/bs'
 import mother from '../../assets/motherboard.png'
 import './VoletLeft.scss'
 
@@ -17,232 +20,75 @@ export default class VoletLeft extends Component<VoletLeftProps> {
           <div className="volet--L">
             <div className="subvolet--L">
               <button onClick={this.props.handleVoletsLeft}>X</button>
-              <p>Volet L 1</p>
+              <p>Users State Connection</p>
+                
+              <span className="span">
+                <BsFillChatDotsFill size={64}/>
+              </span>
 
-              <img
-                src={mother}
-                width='240px'
-                height='140px'
-                alt='no img volet-R 1'
-              />
-              <section>
-                <h1>Links</h1>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Hard Drive
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    CPU
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    RAM
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Drivers
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Systemd
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Process
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    internet
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Client-Serveur
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Internet Protocol
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Request - Response
-                  </Link>
-                </li>
-
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    SSH - SCP
-                  </Link>
-                </li>
-
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    HTTP - HTTPS
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Fire-Wall
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Proxy - VPN
-                  </Link>
-                </li>
+              <section className="section--voletl">
+                {this.props.notes.map(note => (
+                  <li key={note.id} className="li">
+                    {note.isConnected ? (
+                      <MdConnectWithoutContact
+                        size={24}
+                        style={{
+                          marginRight: '10px',
+                        }}
+                      />
+                      ) : (
+                      <TbPlugConnected
+                        size={24}
+                        style={{marginRight: '10px'}}
+                      />
+                      )
+                    }
+                    <Link className="link--tagvoletl"
+                      to='/linksvoletright'
+                    >
+                      {note.firstName} {note.lastName}
+                    </Link>
+                  </li>
+                  ))
+                }
               </section>
             </div>
           </div>
+          
           ) : (
+
           <div className="volet--L2">
             <div className="subvolet--L2">
               <button onClick={this.props.handleVoletsLeft}>X</button>
-              <p>Volet L 2</p>
+              <p>Users State Connection</p>
 
-              <img src={mother}
-                width='240px'
-                height='140px'
-                alt='no img volet-R 1'
-              />
-              <section>
-                <h1>Links</h1>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Hard Drive
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    CPU
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    RAM
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Drivers
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Systemd
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Process
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    internet
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Client-Serveur
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Internet Protocol
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Request - Response
-                  </Link>
-                </li>
+              <span className="span">
+                <BsFillChatDotsFill size={64}/>
+              </span>
 
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    SSH - SCP
-                  </Link>
-                </li>
-
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    HTTP - HTTPS
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Fire-Wall
-                  </Link>
-                </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
-                    to='/linksvoletright'
-                  >
-                    Proxy - VPN
-                  </Link>
-                </li>
+              <section className="section--voletl">
+                {this.props.notes.map(note => (
+                  <li key={note.id} className="li">
+                    {note.isConnected ? (
+                      <MdConnectWithoutContact
+                        size={24}
+                        style={{marginRight: '10px'}}
+                      />
+                      ) : (
+                      <TbPlugConnected
+                        size={24}
+                        style={{marginRight: '10px'}}
+                      />
+                      )
+                    }
+                    <Link className="link--tagvoletl"
+                      to='/linksvoletright'
+                    >
+                      {note.firstName} {note.lastName}
+                    </Link>
+                  </li>
+                  ))
+                }
               </section>
             </div>
           </div>

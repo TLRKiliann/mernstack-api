@@ -17,113 +17,119 @@ export default class VoletRight extends Component<VoletRightProps> {
           <div className="volet--R">
             <div className="subvolet--R">
               <button onClick={this.props.handleVoletsRight}>X</button>
-              <p>Volet R 1</p>
+              <p>Chat Rooms</p>
               <img
                 src={mother}
                 width='240px'
                 height='140px'
                 alt='no img volet-R 1'
               />
-              <section>
-                <h1>Links</h1>
-                <li className="li">
-                  <Link className="link--tagvolet"
+              <section className="section--voletr">
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Hard Drive
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     CPU
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     RAM
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Drivers
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Systemd
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Process
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     internet
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Client-Serveur
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Internet Protocol
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Request - Response
                   </Link>
                 </li>
 
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     SSH - SCP
                   </Link>
                 </li>
 
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     HTTP - HTTPS
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Fire-Wall
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Proxy - VPN
+                  </Link>
+                </li>
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
+                    to='/linksvoletright'
+                  >
+                    Cyber-security
                   </Link>
                 </li>
               </section>
@@ -134,7 +140,7 @@ export default class VoletRight extends Component<VoletRightProps> {
             <div className="subvolet--R2">
 
               <button onClick={this.props.handleVoletsRight}>X</button>
-              <p>Volet R 2</p>
+              <p>Chat Rooms</p>
 
               <img
                 src={mother}
@@ -142,106 +148,112 @@ export default class VoletRight extends Component<VoletRightProps> {
                 height='140px'
                 alt='no img volet-R 1'
               />
-              <section>
-                <h1>Links</h1>
-                <li className="li">
-                  <Link className="link--tagvolet"
+              <section className="section--voletr">
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Hard Drive
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     CPU
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     RAM
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Drivers
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Systemd
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Process
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     internet
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Client-Serveur
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Internet Protocol
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Request - Response
                   </Link>
                 </li>
 
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     SSH - SCP
                   </Link>
                 </li>
 
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     HTTP - HTTPS
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Fire-Wall
                   </Link>
                 </li>
-                <li className="li">
-                  <Link className="link--tagvolet"
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
                     to='/linksvoletright'
                   >
                     Proxy - VPN
+                  </Link>
+                </li>
+                <li className="li--right">
+                  <Link className="link--tagvoletr"
+                    to='/linksvoletright'
+                  >
+                    Cyber-security
                   </Link>
                 </li>
               </section>
