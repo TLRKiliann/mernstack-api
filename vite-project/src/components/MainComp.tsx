@@ -1,37 +1,44 @@
 import { Component } from 'react'
 import { notesType } from '../notes/notestype';
+import './MainComp.scss'
 
 interface MainCompProps {
   notes: notesType[]
 }
 
 export default class MainComp extends Component<MainCompProps> {
-  mainColor = {
-    width: '600px',
-    margin: 'auto',
-    marginTop: '20px',
-    padding: '20px 40px',
-    fontSize: '1.2rem',
-    background: '#161616',
-    color: 'lightgreen'
-  };
   render() {
     return(
-      <div style={this.mainColor}>
-        <h2 style={{textAlign: 'center', color:'whitesmoke'}}>
-          Member Connected !
-        </h2>
-        <div>
-        {this.props.notes.map(note => (
-          <p key={note.id}>
-            {note.firstName} {note.lastName} - {note.age} ans - {note.gender}
-          </p>
-          ))
-        }
-        </div>
-        <span>
+      <div className="master--maincomp">
 
-        </span>
+        <div className="submaster--maincomp">
+            
+          <div className="bg--colormaincomp">
+
+            <h2 className='h2--maincomp'>
+              Member Connected !
+            </h2>
+
+            <div>
+
+            {this.props.notes.map(note => (
+              <div key={note.id}>
+              {note.isConnected ? (
+                <div className="div--connection">
+                  {note.firstName} {note.lastName} :&nbsp;
+                    <div style={{color: 'green'}}>
+                      "Connected"
+                    </div>
+                </div>
+                ) : null
+              }
+              </div>
+              ))
+            }
+            </div>
+          </div>
+
+        </div>
       </div>
     )
   }

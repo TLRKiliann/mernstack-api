@@ -5,7 +5,7 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 300px;
+  width: 400px;
   min-height: 100%;
   overflow: hidden;
 }
@@ -25,11 +25,10 @@
   position: relative;
   top: 0px;
   right: 0px;
-  width: 300px;
+  width: 400px;
   min-height: 120vh;
-  background-color: #383838;
-  border-left: 1px solid slategray;
-  box-shadow: 0px 0px 5px slategray;
+  background-color: royalblue;
+  border-left: 1px solid blue;
 
   transform: translateX(0px);
 
@@ -49,50 +48,58 @@
   border-radius: 50% 50%;
   background: dimgrey;
   color: lightgreen;
+  &:hover {
+    cursor: pointer;
+    background: grey;
+    color: whitesmoke;
+  }
 }
 
 .subvolet--R p {
   margin: 20px 20px;
   padding: 5px 10px;
-  background: dimgrey;
-  color: lightgreen;
+  text-align: center;
+  background: lightblue;
+  border: 2mm ridge royalblue;
+  box-shadow: 0px 0px 4px whitesmoke;
+  border-radius: 5px;
+  color: royalblue;
 }
 
 .subvolet--R img {
-  margin: -10px 20px;
-  padding: 5px 10px;
-  background: #383838;
-  color: lightgreen;
-}
-
-section {
-  padding: 0px 40px;
+  margin: -10px 0px;
+  width: 60%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  background: royalblue;
+  color: whitesmoke;
+}
+
+.section--voletr {
   margin: 20px 20px;
-  background: dimgrey;
-  color: lightgreen;
+  padding: 20px 40px;
+  background: lightblue;
+  border: 2mm ridge royalblue;
+  box-shadow: 0px 0px 4px whitesmoke;
+  border-radius: 10px;
 }
 
-section h1 {
-  font-family: 'Consolas';
-  color: lightgreen;
-}
-
-.li {
+.li--right {
   margin-bottom: 10px;
+  color: royalblue;
+  &:hover {
+    color: orange;
+  }
 }
 
-.li:hover {
-  color: orange;
-}
-
-.link--tagvolet {
+.link--tagvoletr {
   text-decoration: none;
+  font-weight: bold;
+  color: royalblue;
 }
 
-.link--tagvolet:hover {
-  color: orange;
+.link--tagvoletr:hover {
+  color: navy;
 }
 
 
@@ -100,21 +107,20 @@ section h1 {
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 300px;
-  min-height: 120vh;
+  width: 400px;
+  min-height: 100%;
   overflow: hidden;
 }
 
 .subvolet--R2 {
   position: relative;
-  width: 300px;
+  width: 400px;
   top: 0px;
-  right: -300px;
-  width: 300px;
+  right: -400px;
+  width: 400px;
   min-height: 120vh;
-  background-color: #383838;
-  border-left: 1px solid slategray;
-  box-shadow: 0px 0px 5px slategray;
+  background-color: royalblue;
+  border-left: 1px solid blue;
 
   transform: translateX(0px);
 
@@ -128,7 +134,7 @@ section h1 {
 
 @keyframes volet--righthidden {
   0% {
-    transform: translateX(-300px);
+    transform: translateX(-400px);
     overflow: hidden;
   }
   100% {
@@ -145,18 +151,29 @@ section h1 {
   border-radius: 50% 50%;
   background: dimgrey;
   color: lightgreen;
+  &:hover {
+    cursor: pointer;
+    background: grey;
+    color: whitesmoke;
+  }
 }
 
 .subvolet--R2 p {
   margin: 20px 20px;
   padding: 5px 10px;
-  background: dimgrey;
-  color: lightgreen;
+  text-align: center;
+  background: lightblue;
+  border: 2mm ridge royalblue;
+  box-shadow: 0px 0px 4px whitesmoke;
+  border-radius: 5px;
+  color: royalblue;
 }
 
 .subvolet--R2 img {
-  margin: -10px 20px;
-  padding: 5px 10px;
-  background: #383838;
-  color: lightgreen;
+  margin: -10px 0px;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  background: royalblue;
+  color: whitesmoke;
 }
