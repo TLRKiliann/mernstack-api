@@ -4,6 +4,8 @@ export type notesType = {
 	lastName: string
 	age: number
 	email: string
-	gender: 'male' | 'female'
+	location: string
+	gender: string
 	result: number
+	isConnected: boolean
 }
