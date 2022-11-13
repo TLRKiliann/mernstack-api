@@ -5,7 +5,7 @@ import NavBar from './components/NavBar'
 import Home from './Pages/Home'
 import Chat from './Pages/Chat'
 import Contact from './Pages/Contact'
-import LinksVoletR from './components/LinksVoletR'
+import ChatUser from './components/ChatUser'
 import './App.scss'
 
 const App:React.FC<{}> = () => {
@@ -16,7 +16,7 @@ const App:React.FC<{}> = () => {
         <Route exact path='/' element={<Home />} />
         <Route path='/chat' element={<Chat />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path="/linksvoletright/:id" element={<LinksVoletR />} />
+        <Route path="/chatuser/:id" element={<ChatUser />} />
       </Routes>
     </div>
   )
