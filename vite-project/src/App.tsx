@@ -16,11 +16,7 @@ const App:React.FC<{}> = () => {
         <Route exact path='/' element={<Home />} />
         <Route path='/chat' element={<Chat />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path="/linksvoletright/1" element={<LinksVoletR />} />
-        <Route path="/linksvoletright/2" element={<LinksVoletR />} />
-        <Route path="/linksvoletright/3" element={<LinksVoletR />} />
-          ))
-        }
+        <Route path="/linksvoletright/:id" element={<LinksVoletR />} />
       </Routes>
     </div>
   )
