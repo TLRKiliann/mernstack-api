@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { db_notes } from '../notes/db_notes'
 import { notesType } from '../notes/notestype'
-import smileGirl from '../assets/happywoman.jpeg'
+import smileGirl from '../assets/smile.png'
+import backImg from '../assets/layer_4.png'
 import './styleComponents/ChatUser.scss'
 
 const LinksVoletR = (notesType) => {
@@ -29,9 +30,18 @@ const LinksVoletR = (notesType) => {
   return(
     <div className="chatuser">
 
-      <div className="img--bgchat">
+      <div className="img--bgTwochat">
         <img
           src={smileGirl}
+          width='50%'
+          height='60%'
+          alt='no img chat'
+        />
+      </div>
+
+      <div className="img--bgOnechat">
+        <img
+          src={backImg}
           width='100%'
           height='100%'
           alt='no img chat'
@@ -45,6 +55,8 @@ const LinksVoletR = (notesType) => {
           <h2>External User</h2>
           {newNotes.slice(0, 1).map(note => (
             <span key={note.id}>
+              <h2>{note.firstName}</h2>
+              <h2>{note.lastName}</h2>
               <p>ID: {note.id}</p>
               <p>Firstname: {note.firstName}</p> 
               <p>Lastname: {note.lastName}</p>
@@ -58,6 +70,13 @@ const LinksVoletR = (notesType) => {
             </span>
             ))
           }
+
+          <div className="div--msgchat">
+            <label>Message :</label>
+            <textarea />
+            <button>Send !</button>
+          </div>
+
         </div>
 
         <div className="central--frame">
@@ -70,6 +89,8 @@ const LinksVoletR = (notesType) => {
           <h2>You</h2>
           {newNotes.slice(0, 1).map(note => (
             <span key={note.id}>
+              <h2>{note.firstName}</h2>
+              <h2>{note.lastName}</h2>
               <p>ID: {note.id}</p>
               <p>Firstname: {note.firstName}</p> 
               <p>Lastname: {note.lastName}</p>
@@ -83,9 +104,15 @@ const LinksVoletR = (notesType) => {
             </span>
             ))
           }
+          
+          <div className="div--msgchat">
+            <label>Message :</label>
+            <textarea />
+            <button>Send !</button>
+          </div>
+
         </div>
       </div>
-
     </div>
   )
 }
