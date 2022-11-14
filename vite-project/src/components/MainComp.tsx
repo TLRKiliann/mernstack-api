@@ -1,6 +1,6 @@
 import React from 'react'
 import { notesType } from '../notes/notestype';
-import './MainComp.scss'
+import './styleComponents/MainComp.scss'
 
 interface MainCompProps {
   notes: notesType[]
