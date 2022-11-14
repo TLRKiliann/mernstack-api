@@ -14,7 +14,7 @@
   left: 0px;
   width: 400px;
   min-height: 120vh;
-  background-color: royalblue;
+  background-color: rgba(45, 85, 255, 0.4);
   border-right: 1px solid blue;
 
   transform: translateX(0px);
@@ -46,11 +46,11 @@
 
   border-radius: 50% 50%;
   background: dimgrey;
-  color: lightgreen;
+  color: whitesmoke;
   &:hover {
     cursor: pointer;
     background: grey;
-    color: whitesmoke;
+    color: lightgreen;
   }
 }
 
@@ -58,19 +58,18 @@
   margin: 20px 20px;
   padding: 5px 10px;
   text-align: center;
-  background: lightblue;
+  background-color: rgba(45, 85, 255, 0.6);
   border: 2mm ridge royalblue;
-  box-shadow: 0px 0px 4px whitesmoke;
   border-radius: 5px;
-  color: royalblue;
+  font-weight: bold;
+  color: whitesmoke;
 }
 
 .section--voletl {
   margin: 20px 20px;
   padding: 10px 40px;
-  background: lightblue;
+  background-color: rgba(45, 85, 255, 0.6);
   border: 2mm ridge royalblue;
-  box-shadow: 0px 0px 4px whitesmoke;
   border-radius: 10px;
 }
 
@@ -86,11 +85,7 @@
   display: flex;
   align-items: center;
   font-weight: bold;
-  border-bottom: 1px dashed blue;
-  color: blue;
-  &:hover {
-    color: orange;
-  }
+  border-bottom: 1px dashed whitesmoke;
 }
 
 .link--tagvoletl {
@@ -98,9 +93,9 @@
   text-decoration: none;
   font-family: 'Consolas';
   font-size: 1.2rem;
-  color: royalblue;
+  color: whitesmoke;
   &:hover {
-    color: navy;
+    color: grey;
   }
 }
 
@@ -119,7 +114,7 @@
   left: 0px;
   width: 400px;
   min-height: 120vh;
-  background-color: royalblue;
+  background-color: rgba(45, 85, 255, 0.4);
   border-right: 1px solid blue;
 
   transform: translateX(-400px);
@@ -150,11 +145,11 @@
   height: 30px;
   background: dimgrey;
   border-radius: 50% 50%;
-  color: lightgreen;
+  color: whitesmoke;
   &:hover {
     cursor: pointer;
     background: grey;
-    color: whitesmoke;
+    color: lightgreen;
   }
 }
 
@@ -162,8 +157,9 @@
   margin: 20px 20px;
   padding: 5px 10px;
   text-align: center;
-  background: lightblue;
+  background-color: rgba(45, 85, 255, 0.6);
   border: 2mm ridge royalblue;
   box-shadow: 0px 0px 3px whitesmoke;
-  color: royalblue;
+  font-weight: bold;
+  color: whitesmoke;
 }

@@ -5,8 +5,8 @@ import { notesType } from '../notes/notestype'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
-import VoletRight from './Volets/VoletRight'
-import VoletLeft from './Volets/VoletLeft'
+import VoletRight from './volets/VoletRight'
+import VoletLeft from './volets/VoletLeft'
 import bgImg from '../assets/wallpaper_riverforest.jpg'
 import '../stylePages/Home.scss'
 
@@ -16,7 +16,7 @@ export default class Home extends Component<notesType> {
     notes: [],
     textHeader: "Text Header",
     secondTextHeader: "MY SECOND TEXT HEADER",
-    isClosed: false,
+    isOpen: false,
     isLefted: false
   }
 
@@ -26,8 +26,8 @@ export default class Home extends Component<notesType> {
   }
 
   handleVoletsRight = () => {
-    console.log(this.state.isClosed)
-    this.setState({isClosed: !this.state.isClosed})
+    console.log(this.state.isOpen)
+    this.setState({isOpen: !this.state.isOpen})
   }
 
   handleVoletsLeft = () => {
@@ -53,19 +53,36 @@ export default class Home extends Component<notesType> {
           <h1>Wellcome To Chat-Room !</h1>
         </div>
         
-        <div className="btn--voletsLeft">
-          <button onClick={this.handleVoletsLeft}>
-            Search User
-          </button>
-        </div>
-        <div className="btn--voletsRight">
-          <button onClick={this.handleVoletsRight}>
-            Chat-Room
-          </button>
+        {this.state.isOpen ? null : (
+          <div className="btn--voletsRight">
+            <button onClick={this.handleVoletsRight}>
+              Chat-Computer
+            </button>
+          </div>
+          )
+        }
+
+        {this.state.isLefted ? null : (
+          <div className="btn--voletsLeft">
+            <button onClick={this.handleVoletsLeft}>
+              Chat-Room
+            </button>
+          </div>
+          )
+        }
+
+        <div className="animation--alternrota">
+          <div className="webdevanim">
+            <h1>Chat-Room</h1>
+          </div>
+
+          <div className="computinganim">
+            <h1>Chat-Computing</h1>
+          </div>
         </div>
 
         <VoletRight
-          isClosed={this.state.isClosed}
+          isOpen={this.state.isOpen}
           handleVoletsRight={this.handleVoletsRight}
         />
 

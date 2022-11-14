@@ -17,7 +17,7 @@ export const db_notes = [
 		"email": "Chakra.Celestine@gmail.com",
 		"location": "Grancy",
 		"gender": "female",
-		"isConnected": true	},
+		"isConnected": false	},
 	{
 		"id": 3,
 		"firstName": "Gérard",
@@ -56,7 +56,7 @@ export const db_notes = [
 		"email": "simly.farfar@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 7,

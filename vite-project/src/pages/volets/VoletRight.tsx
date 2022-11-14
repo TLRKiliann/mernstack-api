@@ -5,7 +5,7 @@ import './VoletRight.scss'
 
 
 interface VoletRightProps {
-  isClosed: boolean
+  isOpen: boolean
   handleVoletsRight: () => void
 }
 
@@ -13,7 +13,7 @@ export default class VoletRight extends Component<VoletRightProps> {
   render() {
     return(
       <div>
-        {this.props.isClosed ? (
+        {this.props.isOpen ? (
           <div className="volet--R">
             <div className="subvolet--R">
               <button onClick={this.props.handleVoletsRight}>X</button>

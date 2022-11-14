@@ -14,7 +14,7 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  min-height: 100%;
+  min-height: 120vh;
   background-color: #161616;
   opacity: 0;
 
@@ -106,5 +106,53 @@
     border: 2mm ridge grey;
     color: lightgreen;
     cursor: pointer;
+  }
+}
+
+
+/*Animation of main page*/
+.animation--alternrota {
+  position: absolute;
+  width: 90%;
+  margin: auto 100px;
+  margin-top: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.webdevanim {
+  animation-name: rotate-logo;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.computinganim {
+  animation-name: rotate-logo-2;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rotate-logo {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(3, -2, 3, 360deg);
+  }
+}
+
+@keyframes rotate-logo-2 {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(-3, 2, -3, 360deg);
   }
 }
