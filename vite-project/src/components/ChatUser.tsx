@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { db_notes } from '../notes/db_notes'
 import { notesType } from '../notes/notestype'
 import smileGirl from '../assets/smile.png'
-import backImg from '../assets/layer_4.png'
+import backImg from '../assets/world_bin.png'
 import './styleComponents/ChatUser.scss'
 
 const LinksVoletR = (notesType) => {
