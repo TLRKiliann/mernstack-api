@@ -1,9 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../stylePages/PageNotFound.scss'
 
 const PageNotFound: React.FC = () => {
+
+	const colorErrorNotFound = {
+		marginTop: '25%',
+		backgroundColor: '#242424',
+		textAlign: 'center',
+		fontSize: '2rem',
+		fontFamily: 'Consolas',
+		color: 'white'
+	};
+
 	return(
-		<div style={{marginTop: '120px', color: 'white'}}>
+		<div style={colorErrorNotFound}>
 			<h1>Error page not found !</h1>
 			<Link to="/" >Redirect to home page.</Link>
 		</div>
