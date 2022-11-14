@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React from 'react'
 import { notesType } from '../notes/notestype';
 import './MainComp.scss'
 
@@ -6,40 +6,46 @@ interface MainCompProps {
   notes: notesType[]
 }
 
-export default class MainComp extends Component<MainCompProps> {
-  render() {
-    return(
-      <div className="master--maincomp">
+const MainComp: React.FC = (props: MainCompProps) => {
 
-        <div className="submaster--maincomp">
-            
-          <div className="bg--colormaincomp">
+  return(
+    <div className="master--maincomp">
 
-            <h2 className='h2--maincomp'>
-              Member Connected !
-            </h2>
+      <div className="submaster--maincomp">
+          
+        <div className="bg--colormaincomp">
 
-            <div>
+          <h2 className='h2--maincomp'>
+            Member Connected !
+          </h2>
 
-            {this.props.notes.map(note => (
-              <div key={note.id}>
-              {note.isConnected ? (
-                <div className="div--connection">
-                  {note.firstName} {note.lastName} :&nbsp;
-                    <div style={{color: 'green'}}>
-                      "Connected"
-                    </div>
-                </div>
-                ) : null
-              }
+          <div>
+
+          {props.notes.slice(0, 10).map(note => (
+            <div key={note.id}>
+            {note.isConnected ? (
+              <div className="div--connection">
+                {note.firstName} {note.lastName} :&nbsp;
+                  <div 
+                    style={{
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      color: 'lightgreen'
+                    }}>
+                    "Connected"
+                  </div>
               </div>
-              ))
+              ) : null
             }
             </div>
+            ))
+          }
           </div>
-
         </div>
+
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default MainComp
