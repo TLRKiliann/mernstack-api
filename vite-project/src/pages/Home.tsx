@@ -71,6 +71,16 @@ export default class Home extends Component<notesType> {
           )
         }
 
+        <div className="animation--alternrota">
+          <div className="webdevanim">
+            <h1>Chat-Room</h1>
+          </div>
+
+          <div className="computinganim">
+            <h1>Chat-Computing</h1>
+          </div>
+        </div>
+
         <VoletRight
           isOpen={this.state.isOpen}
           handleVoletsRight={this.handleVoletsRight}
