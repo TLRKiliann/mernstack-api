@@ -6,27 +6,63 @@ import smileGirl from '../assets/smile.png'
 import backImg from '../assets/world_bin.png'
 import './styleComponents/ChatUser.scss'
 
-const LinksVoletR = (notesType) => {
+const ChatRoom = () => {
 
   const [notes, setNotes] = useState<Array<notesType>>(db_notes)
   const [newNotes, setNewNotes] = useState<Array<notesType>>([])
 
-  const {id} = useParams<number>(0)
+  const [message, setMessage] = useState<string | null>('')
+  const [frameMsg, setFrameMsg] = useState<string | null>([])
+  const [display, setDisplay] = useState<boolan>(false);
+
+  const [vsMsg, setVsMsg] = useState<string | null>('')
+  const [vsFrameMsg, setVsFrameMsg] = useState<string | null>([])
+  const [vsDisplay, setVsDisplay] = useState<boolan>(false);
+
+  const id = useParams<number>(null)
 
   useEffect(() => {
-    //console.log(`chatuser/${id}`)
-    handleProps(id)
-  }, [id])
+    setNotes(db_notes)
+    setNewNotes(db_notes)
+    console.log("useParams", id)
+    handleParams(id)
+    setDisplay(false)
+    setVsDisplay(false)
+  }, [])
 
-  const handleProps = (id: number) => {
+  const handleParams = (id: number) => {
     const newId = Number(id)
-    //console.log("Number id", newId)
     const newNote = notes.filter(note => {
       return note.id === newId
     })
-    setNewNotes(newNotes.concat(newNote))
   }
-  
+
+  console.log("newNotes", newNotes)
+
+  const handleSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMessage(event.target.value)
+  }
+
+  const handleSubmitMsg = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(message)
+    setFrameMsg(frameMsg.concat(message))
+    setMessage("")
+    setDisplay(true)
+  }
+
+  const handleVsSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setVsMsg(event.target.value)
+  }
+
+  const handleVsSubmitMsg = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(vsMsg)
+    setVsFrameMsg(vsMsg)
+    setVsMsg("")
+    setVsDisplay(true)
+  }
+
   return(
     <div className="chatuser">
 
@@ -48,7 +84,7 @@ const LinksVoletR = (notesType) => {
         />
       </div>
 
-      <h1>Chat-Room for Usr from left volet !</h1>
+      <h1 className="title--chatroom">Chat-Room</h1>
 
       <div className="three--components">
         <div className="external--user">
@@ -70,21 +106,35 @@ const LinksVoletR = (notesType) => {
             </span>
             ))
           }
-
-          <div className="div--msgchat">
-            <label>Message :</label>
-            <textarea />
-            <button>Send !</button>
-          </div>
-
+          <form onSubmit={(event) => handleVsSubmitMsg(event)}>
+            <div className="div--msgchat">
+              <label>Message :</label>
+              <textarea
+                name="txt--area2"
+                value={vsMsg}
+                onChange={handleVsSendMsg}
+              />
+              <button type='submit'>Send !</button>
+            </div>
+          </form>
         </div>
 
         <div className="central--frame">
-          <span>
-            Central frame
-          </span>
-        </div>
+          {display ? (
+            <span className="span--frame">
+              {frameMsg}
+            </span>
+            ) : null
+          }
 
+          {vsDisplay ? (
+            <span className="span--frame2">
+              {vsFrameMsg}
+            </span>
+            ) : null
+          }
+        </div>
+        
         <div className="internal--user">
           <h2>You</h2>
           {newNotes.slice(0, 1).map(note => (
@@ -104,12 +154,17 @@ const LinksVoletR = (notesType) => {
             </span>
             ))
           }
-          
-          <div className="div--msgchat">
-            <label>Message :</label>
-            <textarea />
-            <button>Send !</button>
-          </div>
+          <form onSubmit={(event) => handleSubmitMsg(event)}>
+            <div className="div--msgchat">
+              <label>Message :</label>
+              <textarea
+                name="txt--area"
+                value={message}
+                onChange={handleSendMsg}
+              />
+              <button type='submit'>Send !</button>
+            </div>
+          </form>
 
         </div>
       </div>
@@ -117,4 +172,4 @@ const LinksVoletR = (notesType) => {
   )
 }
 
-export default LinksVoletR
+export default ChatRoom
