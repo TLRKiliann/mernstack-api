@@ -120,6 +120,7 @@
   justify-content: space-between;
 }
 
+/*
 .webdevanim {
   animation-name: rotate-logo;
   animation-delay: 0s;
@@ -132,10 +133,10 @@
 .computinganim {
   animation-name: rotate-logo-2;
   animation-delay: 0s;
-  animation-duration: 3s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out infinite;
-  animation-direction: alternate;
+  animation-direction: linear;
 }
 
 @keyframes rotate-logo {
@@ -149,9 +150,25 @@
 
 @keyframes rotate-logo-2 {
   0% {
-    transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(3, -3, 2, 0deg);
+  }
+  20% {
+    transform: rotate3d(-3, 2, -2, 360deg);
+  }
+  30% {
+    transform: rotateY(0deg)
+  }
+  50% {
+    transform: rotateY(360deg)
+  }
+  70% {
+    transform: rotate3d(3, -2, 3, 360deg);
+  }
+  80% {
+    transform: rotateX(0deg)
   }
   100% {
-    transform: rotate3d(-3, 2, -3, 360deg);
+    transform: rotateX(360deg)
   }
 }
+*/

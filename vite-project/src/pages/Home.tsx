@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import { db_notes } from '../notes/db_notes'
 import { notesType } from '../notes/notestype'
-//import Header from '../components/Header'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
