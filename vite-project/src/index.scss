@@ -1,6 +1,13 @@
+@import './App.scss';
+@import './stylePages/Login.scss';
 @import './stylePages/Home.scss';
 @import './stylePages/Chat.scss';
 @import './stylePages/Contact.scss';
+@import './pages/volets/VoletRight.scss';
+@import './pages/volets/VoletLeft.scss';
+@import './components/styleComponents/ChatUser.scss';
+@import './components/styleComponents/Footer.scss';
+@import './components/styleComponents/MainComp.scss';
 @import './components/styleComponents/NavBar.scss';
 
 :root {
