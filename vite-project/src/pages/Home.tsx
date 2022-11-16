@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import { db_notes } from '../notes/db_notes'
-import { notesType } from '../notes/notestype'
+import { db_users } from '../models/db_users'
+import { userType } from '../models/userType'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
@@ -10,9 +10,9 @@ import bgImg from '../assets/wallpaper_riverforest.jpg'
 import '../stylePages/Home.scss'
 
 
-export default class Home extends Component<notesType> {
+export default class Home extends Component<userType> {
   state = {
-    notes: [],
+    users: [],
     textHeader: "Text Header",
     secondTextHeader: "MY SECOND TEXT HEADER",
     isOpen: false,
@@ -21,7 +21,7 @@ export default class Home extends Component<notesType> {
 
   componentDidMount() {
     console.log("Mounted !")
-    this.setState({notes: db_notes})
+    this.setState({users: db_users})
   }
 
   handleVoletsRight = () => {
@@ -35,7 +35,7 @@ export default class Home extends Component<notesType> {
   }
 
   render() {
-    //console.log(this.state.notes)
+    //console.log(this.state.users)
     return(
       <div>
         <div className="div--imgbg">
@@ -86,7 +86,7 @@ export default class Home extends Component<notesType> {
         />
 
         <VoletLeft
-          notes={this.state.notes}
+          users={this.state.users}
           isLefted={this.state.isLefted}
           handleVoletsLeft={this.handleVoletsLeft} 
         />
@@ -96,7 +96,7 @@ export default class Home extends Component<notesType> {
           secondTextHeader={this.state.secondTextHeader}
         />
 
-        <MainComp notes={this.state.notes} />
+        <MainComp users={this.state.users} />
 
         <Footer />
 

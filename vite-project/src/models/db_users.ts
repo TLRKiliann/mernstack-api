@@ -1,4 +1,4 @@
-export const db_notes = [
+export const db_users = [
 	{
 		"id": 1,
 		"firstName": "Pierre",
