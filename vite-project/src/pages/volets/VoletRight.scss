@@ -1,6 +1,5 @@
 /*VOLETS*/
 /*Right volet*/
-
 .volet--R {
   position: absolute;
   top: 0px;
@@ -37,7 +36,7 @@
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
-  z-index: 5;
+  z-index: 11;
 }
 
 .subvolet--R button {
@@ -87,7 +86,7 @@
 .li--right {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed blue;
+  border-bottom: 1px dashed whitesmoke;
   color: whitesmoke;
   &:hover {
     color: orange;
@@ -98,12 +97,10 @@
   text-decoration: none;
   font-weight: bold;
   color: whitesmoke;
+  &:hover {
+    color: steelblue;
+  }
 }
-
-.link--tagvoletr:hover {
-  color: grey;
-}
-
 
 .volet--R2 {
   position: absolute;
@@ -131,7 +128,7 @@
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
-  z-index: 5;
+  z-index: 11;
 }
 
 @keyframes volet--righthidden {

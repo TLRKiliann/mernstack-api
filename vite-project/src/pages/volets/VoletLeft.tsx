@@ -8,7 +8,7 @@ import './VoletLeft.scss'
 
 
 interface VoletLeftProps {
-  isLefted: boolean
+  isOpenL: boolean
   handleVoletsLeft: () => void
 }
 
@@ -16,7 +16,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
   return(
     <div>
-      {props.isLefted ? (
+      {props.isOpenL ? (
         <div className="volet--L">
           <div className="subvolet--L">
             <button onClick={props.handleVoletsLeft}>X</button>

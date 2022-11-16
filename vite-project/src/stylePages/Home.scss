@@ -26,11 +26,11 @@
 
 @keyframes wall {
   0% {
-    opacity: 1;
+    opacity: 0;
     z-index: 20;
   }
   70% {
-    opacity: 1;
+    opacity: 0;
     z-index: 20;
   }
   100% {
@@ -109,7 +109,9 @@
   }
 }
 
+
 /*Animation of main page*/
+
 .animation--alternrota {
   position: absolute;
   width: 90%;
@@ -129,16 +131,18 @@
   animation-timing-function: ease-in-out infinite;
   animation-direction: alternate;
 }
+*/
 
 .computinganim {
   animation-name: rotate-logo-2;
   animation-delay: 0s;
-  animation-duration: 6s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out infinite;
   animation-direction: linear;
 }
 
+/*
 @keyframes rotate-logo {
   0% {
     transform: rotate3d(0, 0, 0, 0deg);
@@ -147,28 +151,43 @@
     transform: rotate3d(3, -2, 3, 360deg);
   }
 }
+*/
 
 @keyframes rotate-logo-2 {
   0% {
-    transform: rotate3d(3, -3, 2, 0deg);
+    transform: rotate3d(2, -2, -2, 0deg);
+  }
+  10% {
+    transform: rotate3d(3, -1, 3, 90deg);
   }
   20% {
-    transform: rotate3d(-3, 2, -2, 360deg);
+    transform: rotate3d(2, -3, -3, 180deg);
   }
   30% {
-    transform: rotateY(0deg)
+    transform: rotate3d(-2, 2, -1, 90deg);
+  }
+  40% {
+    transform: rotate3d(-3, -2, -2, 180deg);
   }
   50% {
-    transform: rotateY(360deg)
+    transform: rotate3d(3, 0, 3, 90deg);
+  }
+  60% {
+    transform: rotate3d(-3, 2, -2, 180deg);
   }
   70% {
-    transform: rotate3d(3, -2, 3, 360deg);
+    transform: rotate3d(3, -2, 1, 360deg);
   }
   80% {
+    transform: rotateY(360deg)
+  }
+  90% {
     transform: rotateX(0deg)
   }
-  100% {
+  95% {
     transform: rotateX(360deg)
   }
+  100% {
+    transform: rotate3d(-2, -1, 2, 360deg);
+  }
 }
-*/

@@ -10,13 +10,13 @@ import bgImg from '../assets/wallpaper_riverforest.jpg'
 import '../stylePages/Home.scss'
 
 
-export default class Home extends Component<userType> {
+export default class Home extends Component {
   state = {
     users: [],
     textHeader: "Text Header",
     secondTextHeader: "MY SECOND TEXT HEADER",
-    isOpen: false,
-    isLefted: false
+    isOpenRight: false,
+    isOpenL: false
   }
 
   componentDidMount() {
@@ -25,13 +25,11 @@ export default class Home extends Component<userType> {
   }
 
   handleVoletsRight = () => {
-    console.log(this.state.isOpen)
-    this.setState({isOpen: !this.state.isOpen})
+    this.setState({isOpenRight: !this.state.isOpenRight})
   }
 
   handleVoletsLeft = () => {
-    console.log(this.state.isLefted)
-    this.setState({isLefted: !this.state.isLefted})
+    this.setState({isOpenL: !this.state.isOpenL})
   }
 
   render() {
@@ -52,22 +50,18 @@ export default class Home extends Component<userType> {
           <h1>Wellcome To Chat-Room !</h1>
         </div>
         
-        {this.state.isOpen ? null : (
-          <div className="btn--voletsRight">
+        {!this.state.isOpenRight && <div className="btn--voletsRight">
             <button onClick={this.handleVoletsRight}>
               Chat-Computer
             </button>
           </div>
-          )
         }
 
-        {this.state.isLefted ? null : (
-          <div className="btn--voletsLeft">
+        {!this.state.isOpenL && <div className="btn--voletsLeft">
             <button onClick={this.handleVoletsLeft}>
               Chat-Room
             </button>
           </div>
-          )
         }
 
         <div className="animation--alternrota">
@@ -81,13 +75,13 @@ export default class Home extends Component<userType> {
         </div>
 
         <VoletRight
-          isOpen={this.state.isOpen}
+          isOpenRight={this.state.isOpenRight}
           handleVoletsRight={this.handleVoletsRight}
         />
 
         <VoletLeft
           users={this.state.users}
-          isLefted={this.state.isLefted}
+          isOpenL={this.state.isOpenL}
           handleVoletsLeft={this.handleVoletsLeft} 
         />
 
