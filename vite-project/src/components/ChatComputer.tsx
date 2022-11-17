@@ -1,41 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { computers } from '../models/db_computer'
+import { db_computers } from '../models/db_computers'
 import { computerType } from '../models/computerType'
 import './styleComponents/ChatComputer.scss'
 
 const ChatComputer: React.FC = () => {
 
   const [roomUsers, setRoomUsers] = useState<Array<computerType>>([])
-  const [newRoomUsers, setNewRoomUsers] = useState<Array<computerType>>([])
-  
-  const { id } = useParams<number>(null)
+  //const [newRooms, setNewRooms] = useState<computerType>({})
+
+  let { id } = useParams<number>(null)
 
   useEffect(() => {
-    console.log("ChatComputer useEffect")
-    setRoomUsers(computers)
-    handleParams(id)
+    setRoomUsers(db_computers)
+    console.log("useParams", id)
   }, [])
 
-  const handleParams = (id: number) => {
-    const computerId = Number(id)
-    //console.log("computerId", computerId)
-    const newRoomUser = roomUsers.filter(newRoom => newRoom.id === computerId)
-    setNewRoomUsers(newRoomUser)
+  const titleById = () => {
+    const findId = roomUsers.find(room => room.id === id);
+    console.log(findId)
+    const truc = setRoomUsers(roomUsers.map(i => i.id === id ? {...i, id: findId, title: i.title} : i))
+    console.log("truc", truc)
+    return truc
   }
 
   return(
     <div>
-
       <div className="title--computerroom">
         <h1>Chat computer</h1>
       </div>
-
-      <div>
-        {newRoomUsers.slice(0, 1).map(newRoom => (
-          <span key={newRoom.id}>
-            <h2>{newRoom.id} {newRoom.title}</h2>
-          </span>
+      <div style={{color: 'white'}}>
+        {roomUsers.slice(0, 1).map(room => (
+          <span key={id}>{id} {titleById}</span>
           ))
         }
       </div>
@@ -44,5 +40,3 @@ const ChatComputer: React.FC = () => {
 }
 
 export default ChatComputer;
-
-//<img src={newRoom.img_bg} alt={newRoom.img_bg} />
