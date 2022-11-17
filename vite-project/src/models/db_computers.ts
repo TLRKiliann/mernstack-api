@@ -1,4 +1,4 @@
-export const computers = [
+export const db_computers = [
 	{
 		'id': 1,
 		'title': "Hard Disk - SSD",
