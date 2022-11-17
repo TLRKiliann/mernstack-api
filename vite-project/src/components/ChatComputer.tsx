@@ -7,21 +7,22 @@ import './styleComponents/ChatComputer.scss'
 const ChatComputer: React.FC = () => {
 
   const [roomUsers, setRoomUsers] = useState<Array<computerType>>([])
-  //const [newRooms, setNewRooms] = useState<computerType>({})
+  const [newRooms, setNewRooms] = useState<computerType>()
+  console.log("newRooms", newRooms)
 
   let { id } = useParams<number>(null)
 
   useEffect(() => {
     setRoomUsers(db_computers)
-    console.log("useParams", id)
+    handleRoom(id)
   }, [])
 
-  const titleById = () => {
-    const findId = roomUsers.find(room => room.id === id);
-    console.log(findId)
-    const truc = setRoomUsers(roomUsers.map(i => i.id === id ? {...i, id: findId, title: i.title} : i))
-    console.log("truc", truc)
-    return truc
+  const handleRoom = (id: number) => {
+    const computeId = Number(id)
+    const findRoom = roomUsers.filter(room => (
+      room.id === Number(computeId)
+    ))
+    setNewRooms(findRoom)
   }
 
   return(
@@ -29,12 +30,17 @@ const ChatComputer: React.FC = () => {
       <div className="title--computerroom">
         <h1>Chat computer</h1>
       </div>
-      <div style={{color: 'white'}}>
-        {roomUsers.slice(0, 1).map(room => (
-          <span key={id}>{id} {titleById}</span>
-          ))
-        }
+
+      <div>
       </div>
+      
+      {newRooms ? (
+        newRooms.map(r => (
+          <span key={r.id}>{r.id} - {r.title} - {r.img_bg}</span>
+          ))
+        
+        ) : null
+      }
     </div>
   )
 }
