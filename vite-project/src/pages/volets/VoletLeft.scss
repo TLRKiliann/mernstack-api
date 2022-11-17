@@ -3,9 +3,20 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  width: -400px;
+  width: 400px;
   min-height: 120vh;
   overflow: hidden;
+}
+
+@keyframes volet--leftdisplay {
+  0% {
+    transform: translateX(-400px);
+    overflow: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    overflow: hidden;
+  }
 }
 
 .subvolet--L {
@@ -21,21 +32,10 @@
 
   animation-name: volet--leftdisplay;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   z-index: 11;
-}
-
-@keyframes volet--leftdisplay {
-  0% {
-    transform: translateX(-400px);
-    overflow: hidden;
-  }
-  100% {
-    transform: translateX(0px);
-    overflow: hidden;
-  }
 }
 
 .subvolet--L button {
@@ -95,7 +95,7 @@
   font-size: 1.2rem;
   color: whitesmoke;
   &:hover {
-    color: grey;
+    color: steelblue;
   }
 }
 
@@ -121,7 +121,7 @@
 
   animation-name: volet--lefthidden;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   z-index: 11;

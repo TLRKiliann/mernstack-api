@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import { MdConnectWithoutContact } from 'react-icons/md'
 import { TbPlugConnected } from 'react-icons/tb'
 import { BsFillChatDotsFill } from 'react-icons/bs'
-import mother from '../../assets/motherboard.png'
 import './VoletLeft.scss'
 
 
 interface VoletLeftProps {
-  isLefted: boolean
+  isOpenL: boolean
   handleVoletsLeft: () => void
 }
 
@@ -16,7 +15,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
   return(
     <div>
-      {props.isLefted ? (
+      {props.isOpenL ? (
         <div className="volet--L">
           <div className="subvolet--L">
             <button onClick={props.handleVoletsLeft}>X</button>
@@ -27,13 +26,13 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             </span>
 
             <section className="section--voletl">
-              {props.notes.map(note => (
-                <li key={note.id} className="li"
-                  style={note.isConnected 
+              {props.users.map(user => (
+                <li key={user.id} className="li"
+                  style={user.isConnected 
                   ? {color: 'lightgreen'}
                   : {color: 'orange'}}
                 >
-                  {note.isConnected ? (
+                  {user.isConnected ? (
                     <MdConnectWithoutContact
                       size={24}
                       style={{
@@ -48,9 +47,9 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                     )
                   }
                   <Link className="link--tagvoletl"
-                    to={`/chatuser/${note.id}`}
+                    to={`/chatuser/${user.id}`}
                   >
-                    {note.firstName} {note.lastName}
+                    {user.firstName} {user.lastName}
                   </Link>
                 </li>
                 ))
@@ -71,9 +70,9 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             </span>
 
             <section className="section--voletl">
-              {props.notes.map(note => (
-                <li key={note.id} className="li">
-                  {note.isConnected ? (
+              {props.users.map(user => (
+                <li key={user.id} className="li">
+                  {user.isConnected ? (
                     <MdConnectWithoutContact
                       size={24}
                       style={{marginRight: '10px'}}
@@ -86,9 +85,9 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                     )
                   }
                   <Link className="link--tagvoletl"
-                    to={`/chatuser/${note.id}`}
+                    to={`/chatuser/${user.id}`}
                   >
-                    {note.firstName} {note.lastName}
+                    {user.firstName} {user.lastName}
                   </Link>
                 </li>
                 ))

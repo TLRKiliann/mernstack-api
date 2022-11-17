@@ -1,4 +1,4 @@
-export const db_notes = [
+export const db_users = [
 	{
 		"id": 1,
 		"firstName": "Pierre",
@@ -17,7 +17,7 @@ export const db_notes = [
 		"email": "Chakra.Celestine@gmail.com",
 		"location": "Grancy",
 		"gender": "female",
-		"isConnected": false	},
+		"isConnected": true	},
 	{
 		"id": 3,
 		"firstName": "Gérard",
@@ -56,12 +56,42 @@ export const db_notes = [
 		"email": "simly.farfar@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
-		"isConnected": false
+		"isConnected": true
 	},
 	{
 		"id": 7,
 		"firstName": "Jess",
 		"lastName": "Natinger",
+		"age": 31,
+		"email": "Jess.natinger@mail.com",
+		"location": "Leviathan",
+		"gender": "female",
+		"isConnected": true
+	},
+	{
+		"id": 8,
+		"firstName": "Steve",
+		"lastName": "Jobs",
+		"age": 34,
+		"email": "nathanelle.nord@mail.com",
+		"location": "Taiwan",
+		"gender": "female",
+		"isConnected": true
+	},
+	{
+		"id": 9,
+		"firstName": "Bill",
+		"lastName": "Gates",
+		"age": 35,
+		"email": "simly.farfar@mail.com",
+		"location": "Rushfort",
+		"gender": "female",
+		"isConnected": true
+	},
+	{
+		"id": 10,
+		"firstName": "Jason",
+		"lastName": "Statham",
 		"age": 31,
 		"email": "Jess.natinger@mail.com",
 		"location": "Leviathan",

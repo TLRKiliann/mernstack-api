@@ -1,6 +1,8 @@
 import { Component } from 'react'
-import { db_notes } from '../notes/db_notes'
-import { notesType } from '../notes/notestype'
+import { db_users } from '../models/db_users'
+import { userType } from '../models/userType'
+import { computers } from '../models/db_computer'
+import { computerType } from '../models/computerType'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
@@ -10,32 +12,32 @@ import bgImg from '../assets/wallpaper_riverforest.jpg'
 import '../stylePages/Home.scss'
 
 
-export default class Home extends Component<notesType> {
+export default class Home extends Component {
   state = {
-    notes: [],
+    users: [],
+    computers: [],
     textHeader: "Text Header",
     secondTextHeader: "MY SECOND TEXT HEADER",
-    isOpen: false,
-    isLefted: false
+    isOpenRight: false,
+    isOpenL: false
   }
 
   componentDidMount() {
     console.log("Mounted !")
-    this.setState({notes: db_notes})
+    this.setState({users: db_users})
+    this.setState({computers: computers})
   }
 
   handleVoletsRight = () => {
-    console.log(this.state.isOpen)
-    this.setState({isOpen: !this.state.isOpen})
+    this.setState({isOpenRight: !this.state.isOpenRight})
   }
 
   handleVoletsLeft = () => {
-    console.log(this.state.isLefted)
-    this.setState({isLefted: !this.state.isLefted})
+    this.setState({isOpenL: !this.state.isOpenL})
   }
 
   render() {
-    //console.log(this.state.notes)
+    //console.log(this.state.users)
     return(
       <div>
         <div className="div--imgbg">
@@ -52,22 +54,18 @@ export default class Home extends Component<notesType> {
           <h1>Wellcome To Chat-Room !</h1>
         </div>
         
-        {this.state.isOpen ? null : (
-          <div className="btn--voletsRight">
+        {!this.state.isOpenRight && <div className="btn--voletsRight">
             <button onClick={this.handleVoletsRight}>
               Chat-Computer
             </button>
           </div>
-          )
         }
 
-        {this.state.isLefted ? null : (
-          <div className="btn--voletsLeft">
+        {!this.state.isOpenL && <div className="btn--voletsLeft">
             <button onClick={this.handleVoletsLeft}>
               Chat-Room
             </button>
           </div>
-          )
         }
 
         <div className="animation--alternrota">
@@ -81,13 +79,14 @@ export default class Home extends Component<notesType> {
         </div>
 
         <VoletRight
-          isOpen={this.state.isOpen}
+          computers={this.state.computers}
+          isOpenRight={this.state.isOpenRight}
           handleVoletsRight={this.handleVoletsRight}
         />
 
         <VoletLeft
-          notes={this.state.notes}
-          isLefted={this.state.isLefted}
+          users={this.state.users}
+          isOpenL={this.state.isOpenL}
           handleVoletsLeft={this.handleVoletsLeft} 
         />
 
@@ -96,7 +95,7 @@ export default class Home extends Component<notesType> {
           secondTextHeader={this.state.secondTextHeader}
         />
 
-        <MainComp notes={this.state.notes} />
+        <MainComp users={this.state.users} />
 
         <Footer />
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import { notesType } from '../notes/notestype';
+import { userType } from '../models/userType';
 import './styleComponents/MainComp.scss'
 
 interface MainCompProps {
-  notes: notesType[]
+  users: userType[]
 }
 
 const MainComp: React.FC = (props: MainCompProps) => {
@@ -21,25 +21,26 @@ const MainComp: React.FC = (props: MainCompProps) => {
 
           <div>
 
-          {props.notes.slice(0, 10).map(note => (
-            <div key={note.id}>
-            {note.isConnected ? (
-              <div className="div--connection">
-                {note.firstName} {note.lastName} :&nbsp;
-                  <div 
-                    style={{
-                      fontSize: '1.1rem',
-                      fontWeight: 'bold',
-                      color: 'lightgreen'
-                    }}>
-                    "Connected"
-                  </div>
+            {props.users.slice(0, 10).map(user => (
+              <div key={user.id}>
+              {user.isConnected ? (
+                <div className="div--connection">
+                  {user.firstName} {user.lastName} :&nbsp;
+                    <div 
+                      style={{
+                        fontSize: '1.1rem',
+                        fontWeight: 'bold',
+                        color: 'lightgreen'
+                      }}>
+                      "Connected"
+                    </div>
+                </div>
+                ) : null
+              }
               </div>
-              ) : null
+              ))
             }
-            </div>
-            ))
-          }
+
           </div>
         </div>
 

@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { db_notes } from '../notes/db_notes'
-import { notesType } from '../notes/notestype'
+import { db_users } from '../models/db_users'
+import { userType } from '../models/userType'
 import smileGirl from '../assets/smile.png'
 import backImg from '../assets/world_bin.png'
 import './styleComponents/ChatUser.scss'
 
-const ChatRoom = () => {
+const ChatRoom: React.FC = () => {
 
-  const [notes, setNotes] = useState<Array<notesType>>(db_notes)
-  const [newNotes, setNewNotes] = useState<Array<notesType>>([])
+  const [users, setUsers] = useState<Array<userType>>([])
+  const [newUsers, setNewUsers] = useState<Array<userType>>([])
 
   const [message, setMessage] = useState<string | null>('')
   const [frameMsg, setFrameMsg] = useState<string | null>([])
@@ -19,11 +19,11 @@ const ChatRoom = () => {
   const [vsFrameMsg, setVsFrameMsg] = useState<string | null>([])
   const [vsDisplay, setVsDisplay] = useState<boolan>(false);
 
-  const id = useParams<number>(null)
+  const { id } = useParams<number>(null)
 
   useEffect(() => {
-    setNotes(db_notes)
-    setNewNotes(db_notes)
+    setUsers(db_users)
+    setNewUsers(db_users)
     console.log("useParams", id)
     handleParams(id)
     setDisplay(false)
@@ -32,12 +32,12 @@ const ChatRoom = () => {
 
   const handleParams = (id: number) => {
     const newId = Number(id)
-    const newNote = notes.filter(note => {
-      return note.id === newId
+    const newUser = users.filter(user => {
+      return user.id === newId
     })
   }
 
-  console.log("newNotes", newNotes)
+  console.log("newUsers", newUsers)
 
   const handleSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value)
@@ -89,18 +89,18 @@ const ChatRoom = () => {
       <div className="three--components">
         <div className="external--user">
           <h2>External User</h2>
-          {newNotes.slice(0, 1).map(note => (
-            <span key={note.id}>
-              <h2>{note.firstName}</h2>
-              <h2>{note.lastName}</h2>
-              <p>ID: {note.id}</p>
-              <p>Firstname: {note.firstName}</p> 
-              <p>Lastname: {note.lastName}</p>
-              <p>Age: {note.age}</p>
-              <p>Email: {note.email}</p>
-              <p>Location: {note.location}</p>
-              <p>Gender: {note.gender}</p>
-              <p>Connection: {note.isConnected 
+          {newUsers.slice(0, 1).map(user => (
+            <span key={user.id}>
+              <h2>{user.firstName}</h2>
+              <h2>{user.lastName}</h2>
+              <p>ID: {user.id}</p>
+              <p>Firstname: {user.firstName}</p> 
+              <p>Lastname: {user.lastName}</p>
+              <p>Age: {user.age}</p>
+              <p>Email: {user.email}</p>
+              <p>Location: {user.location}</p>
+              <p>Gender: {user.gender}</p>
+              <p>Connection: {user.isConnected 
                 ? 'Connected' 
                 : 'Disconnected...'}</p>
             </span>
@@ -137,18 +137,18 @@ const ChatRoom = () => {
         
         <div className="internal--user">
           <h2>You</h2>
-          {newNotes.slice(0, 1).map(note => (
-            <span key={note.id}>
-              <h2>{note.firstName}</h2>
-              <h2>{note.lastName}</h2>
-              <p>ID: {note.id}</p>
-              <p>Firstname: {note.firstName}</p> 
-              <p>Lastname: {note.lastName}</p>
-              <p>Age: {note.age}</p>
-              <p>Email: {note.email}</p>
-              <p>Location: {note.location}</p>
-              <p>Gender: {note.gender}</p>
-              <p>Connection: {note.isConnected 
+          {newUsers.slice(0, 1).map(user => (
+            <span key={user.id}>
+              <h2>{user.firstName}</h2>
+              <h2>{user.lastName}</h2>
+              <p>ID: {user.id}</p>
+              <p>Firstname: {user.firstName}</p> 
+              <p>Lastname: {user.lastName}</p>
+              <p>Age: {user.age}</p>
+              <p>Email: {user.email}</p>
+              <p>Location: {user.location}</p>
+              <p>Gender: {user.gender}</p>
+              <p>Connection: {user.isConnected 
                 ? 'Connected' 
                 : 'Disconnected...'}</p>
             </span>
