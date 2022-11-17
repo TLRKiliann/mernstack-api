@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { MdConnectWithoutContact } from 'react-icons/md'
 import { TbPlugConnected } from 'react-icons/tb'
 import { BsFillChatDotsFill } from 'react-icons/bs'
-import mother from '../../assets/motherboard.png'
 import './VoletLeft.scss'
 
 
