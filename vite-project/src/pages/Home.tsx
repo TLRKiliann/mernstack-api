@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
+import { computers } from '../models/db_computer'
+import { computerType } from '../models/computerType'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
@@ -13,6 +15,7 @@ import '../stylePages/Home.scss'
 export default class Home extends Component {
   state = {
     users: [],
+    computers: [],
     textHeader: "Text Header",
     secondTextHeader: "MY SECOND TEXT HEADER",
     isOpenRight: false,
@@ -22,6 +25,7 @@ export default class Home extends Component {
   componentDidMount() {
     console.log("Mounted !")
     this.setState({users: db_users})
+    this.setState({computers: computers})
   }
 
   handleVoletsRight = () => {
@@ -75,6 +79,7 @@ export default class Home extends Component {
         </div>
 
         <VoletRight
+          computers={this.state.computers}
           isOpenRight={this.state.isOpenRight}
           handleVoletsRight={this.handleVoletsRight}
         />
