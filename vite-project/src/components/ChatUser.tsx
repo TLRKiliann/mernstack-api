@@ -25,17 +25,9 @@ const ChatRoom: React.FC = () => {
     setUsers(db_users)
     setNewUsers(db_users)
     console.log("useParams", id)
-    handleParams(id)
     setDisplay(false)
     setVsDisplay(false)
   }, [])
-
-  const handleParams = (id: number) => {
-    const newId = Number(id)
-    const newUser = users.filter(user => {
-      return user.id === newId
-    })
-  }
 
   console.log("newUsers", newUsers)
 
@@ -90,7 +82,7 @@ const ChatRoom: React.FC = () => {
         <div className="external--user">
           <h2>External User</h2>
           {newUsers.slice(0, 1).map(user => (
-            <span key={user.id}>
+            <span key={id}>
               <h2>{user.firstName}</h2>
               <h2>{user.lastName}</h2>
               <p>ID: {user.id}</p>
@@ -138,7 +130,7 @@ const ChatRoom: React.FC = () => {
         <div className="internal--user">
           <h2>You</h2>
           {newUsers.slice(0, 1).map(user => (
-            <span key={user.id}>
+            <span key={id}>
               <h2>{user.firstName}</h2>
               <h2>{user.lastName}</h2>
               <p>ID: {user.id}</p>

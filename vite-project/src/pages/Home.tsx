@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
-import { computers } from '../models/db_computer'
+import { db_computers } from '../models/db_computers'
 import { computerType } from '../models/computerType'
 import MainTitle from '../components/MainTitle'
 import MainComp from '../components/MainComp'
@@ -25,7 +25,7 @@ export default class Home extends Component {
   componentDidMount() {
     console.log("Mounted !")
     this.setState({users: db_users})
-    this.setState({computers: computers})
+    this.setState({computers: db_computers})
   }
 
   handleVoletsRight = () => {
