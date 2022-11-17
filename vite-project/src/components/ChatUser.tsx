@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
@@ -6,7 +6,7 @@ import smileGirl from '../assets/smile.png'
 import backImg from '../assets/world_bin.png'
 import './styleComponents/ChatUser.scss'
 
-const ChatRoom = () => {
+const ChatRoom: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
   const [newUsers, setNewUsers] = useState<Array<userType>>([])
@@ -19,7 +19,7 @@ const ChatRoom = () => {
   const [vsFrameMsg, setVsFrameMsg] = useState<string | null>([])
   const [vsDisplay, setVsDisplay] = useState<boolan>(false);
 
-  const id = useParams<number>(null)
+  const { id } = useParams<number>(null)
 
   useEffect(() => {
     setUsers(db_users)
