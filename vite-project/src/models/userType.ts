@@ -1,4 +1,4 @@
-export type notesType = {
+export type userType = {
 	id: number
 	firstName: string
 	lastName: string
