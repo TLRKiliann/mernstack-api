@@ -10,7 +10,7 @@ const ChatRoom: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
   const [newUsers, setNewUsers] = useState<Array<userType>>([])
-
+  console.log("newUsers", newUsers)
   const [message, setMessage] = useState<string | null>('')
   const [frameMsg, setFrameMsg] = useState<string | null>([])
   const [display, setDisplay] = useState<boolan>(false);
@@ -19,25 +19,21 @@ const ChatRoom: React.FC = () => {
   const [vsFrameMsg, setVsFrameMsg] = useState<string | null>([])
   const [vsDisplay, setVsDisplay] = useState<boolan>(false);
 
-  const { id } = useParams<number>(null)
+  const { firstName } = useParams<{firstName?: string}>();
+  console.log("{firstName}", {firstName})
 
   useEffect(() => {
     setUsers(db_users)
-    setNewUsers(db_users)
-    console.log("useParams", id)
-    handleParams(id)
+    handleUser()
     setDisplay(false)
     setVsDisplay(false)
   }, [])
 
-  const handleParams = (id: number) => {
-    const newId = Number(id)
-    const newUser = users.filter(user => {
-      return user.id === newId
-    })
+  const handleUser = () => {
+    const findUser = users.filter(usr => usr.firstName === firstName)
+    console.log("findUser", findUser)
+    setNewUsers(findUser)
   }
-
-  console.log("newUsers", newUsers)
 
   const handleSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value)
@@ -87,6 +83,7 @@ const ChatRoom: React.FC = () => {
       <h1 className="title--chatroom">Chat-Room</h1>
 
       <div className="three--components">
+        {firstName}
         <div className="external--user">
           <h2>External User</h2>
           {newUsers.slice(0, 1).map(user => (
