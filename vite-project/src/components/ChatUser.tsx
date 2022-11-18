@@ -9,32 +9,44 @@ import './styleComponents/ChatUser.scss'
 const ChatRoom: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
-  const [newUsers, setNewUsers] = useState<Array<userType>>([])
-  console.log("newUsers", newUsers)
+  const [newUsers, setNewUsers] = useState<userType>({})
+
   const [message, setMessage] = useState<string | null>('')
   const [frameMsg, setFrameMsg] = useState<string | null>([])
-  const [display, setDisplay] = useState<boolan>(false);
+  const [display, setDisplay] = useState<boolean>(false);
 
   const [vsMsg, setVsMsg] = useState<string | null>('')
   const [vsFrameMsg, setVsFrameMsg] = useState<string | null>([])
-  const [vsDisplay, setVsDisplay] = useState<boolan>(false);
+  const [vsDisplay, setVsDisplay] = useState<boolean>(false);
 
   const { firstName } = useParams<{firstName?: string}>();
-  console.log("{firstName}", {firstName})
 
   useEffect(() => {
-    setUsers(db_users)
-    handleUser()
+    setUsers<userType>(db_users)
+    //handleUser(firstName)
+    //console.log(handleUser(firstName))
+    console.log(newUsers)
     setDisplay(false)
     setVsDisplay(false)
   }, [])
 
-  const handleUser = () => {
-    const findUser = users.filter(usr => usr.firstName === firstName)
-    console.log("findUser", findUser)
-    setNewUsers(findUser)
-  }
+  /*useEffect(() => {
+    console.log(newUsers)
+  }, [newUsers])
 
+  const handleUser = (firstName: string) => {
+    const convName = firstName
+    const findUser = users.find(user => user.firstName === convName)
+    if (findUser !== undefined) {
+      setNewUsers({findUser})
+      //console.log("Super", Object.values(newUsers.findUser))
+    }
+    else {
+      console.log("Ha maybe next time...")
+      setNewUsers("")
+    }
+  }*/
+  
   const handleSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value)
   }
@@ -81,6 +93,76 @@ const ChatRoom: React.FC = () => {
       </div>
 
       <h1 className="title--chatroom">Chat-Room</h1>
+
+      <div className="three--components">
+        <div className="external--user">
+          <h2>{firstName}</h2>
+
+          <form onSubmit={(event) => handleVsSubmitMsg(event)}>
+            <div className="div--msgchat">
+              <label>Message :</label>
+              <textarea
+                name="txt--area2"
+                value={vsMsg}
+                onChange={(event) => handleVsSendMsg(event)}
+              />
+              <button type='submit'>Send !</button>
+            </div>
+          </form>
+        </div>
+
+        <div className="central--frame">
+          {display ? (
+            <span className="span--frame">
+              {frameMsg}
+            </span>
+            ) : null
+          }
+
+          {vsDisplay ? (
+            <span className="span--frame2">
+              {vsFrameMsg}
+            </span>
+            ) : null
+          }
+        </div>
+        
+        <div className="internal--user">
+          <h2>You</h2>
+
+          <form onSubmit={(event) => handleSubmitMsg(event)}>
+            <div className="div--msgchat">
+              <label>Message :</label>
+              <textarea
+                name="txt--area"
+                value={message}
+                onChange={(event) => handleSendMsg(event)}
+              />
+              <button type='submit'>Send !</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ChatRoom
+
+/*
+      ? {...user,
+        id: id,
+        firstName: convName,
+        lastName: lastName,
+        age: age,
+        email: email,
+        location: location,
+        gender: gender,
+        isConnected: isConnected
+      } : user
+    )
+
 
       <div className="three--components">
         {firstName}
@@ -162,11 +244,4 @@ const ChatRoom: React.FC = () => {
               <button type='submit'>Send !</button>
             </div>
           </form>
-
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default ChatRoom
+*/

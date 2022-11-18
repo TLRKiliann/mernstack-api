@@ -56,7 +56,7 @@ export default class Home extends Component {
         
         {!this.state.isOpenRight && <div className="btn--voletsRight">
             <button onClick={this.handleVoletsRight}>
-              Chat-Computer
+              Computing
             </button>
           </div>
         }
@@ -74,7 +74,7 @@ export default class Home extends Component {
           </div>
 
           <div className="computinganim">
-            <h1>Chat-Computing</h1>
+            <h1>Computing</h1>
           </div>
         </div>
 

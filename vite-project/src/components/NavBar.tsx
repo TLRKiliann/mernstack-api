@@ -26,9 +26,9 @@ export default class NavBar extends Component {
             <li>
               <Link
                 className="link--tagnav"
-                to='/chat'
+                to='/services'
               >
-                Chat
+                Services
               </Link>
             </li>
             <li>

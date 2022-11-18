@@ -6,6 +6,5 @@ export type userType = {
 	email: string
 	location: string
 	gender: string
-	result: number
 	isConnected: boolean
 }
