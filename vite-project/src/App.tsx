@@ -29,7 +29,7 @@ const App:React.FC = () => {
             <Contact />
           </PrivateRoute>
         } />
-        <Route exact path='/chatuser/:id' element={
+        <Route exact path='/chatuser/:firstName' element={
           <PrivateRoute>
             <ChatUser />
           </PrivateRoute>
