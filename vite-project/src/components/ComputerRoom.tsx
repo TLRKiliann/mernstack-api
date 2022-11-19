@@ -1,18 +1,22 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import './styleComponents/ComputerRoom.scss'
 
-const ComputerRoom: React.FC = () => {
+interface ComputerRoomProps {
+  link: string
+}
 
-	//console.log(`/computerroom/${key}`)
-	const { params } = useLocation<{title?: string}>(null)
-	console.log("params", params)
-	console.log("{params}", {params})
+const ComputerRoom: React.FC = ({props}: ComputerRoomProps) => {
 
-	return(
-		<div className="nextcomp--room">
-			<h1>Computer Room</h1>
-		</div>
-	)
+  const params = useParams<{ link?: object }>()
+  console.log("{params}", typeof params)
+
+  return(
+    <div className="nextcomp--room">
+      <h1>Room {Object.values(params)}</h1>
+      <p>{props}</p>
+    </div>
+  )
 }
 
 export default ComputerRoom;
