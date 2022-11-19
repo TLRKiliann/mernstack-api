@@ -6,6 +6,7 @@
 @import './pages/volets/VoletRight.scss';
 @import './pages/volets/VoletLeft.scss';
 @import './components/styleComponents/ChatUser.scss';
+@import './components/styleComponents/ChatComputer.scss';
 @import './components/styleComponents/Footer.scss';
 @import './components/styleComponents/MainComp.scss';
 @import './components/styleComponents/NavBar.scss';
@@ -14,10 +15,8 @@
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
 
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
