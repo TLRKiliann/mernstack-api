@@ -2,11 +2,22 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from "react-router-dom"
 import { db_computers } from '../models/db_computers'
 import { db_computeOne } from '../models/db_computeList'
+import { db_computeTwo } from '../models/db_computeList'
+import { db_computeThree } from '../models/db_computeList'
+import { db_computeFour } from '../models/db_computeList'
+import { db_computeFive } from '../models/db_computeList'
+import { db_computeSix } from '../models/db_computeList'
+import { db_computeSeven } from '../models/db_computeList'
+import { db_computeEight } from '../models/db_computeList'
+import { db_computeNine } from '../models/db_computeList'
+import { db_computeTen } from '../models/db_computeList'
+import { db_computeEleven } from '../models/db_computeList'
+import { db_computeTwelve } from '../models/db_computeList'
 import { computerType } from '../models/computerType'
 import img_1 from '../assets/hdd.jpg'
 import img_2 from '../assets/cpu.jpg'
 import img_3 from '../assets/ram.jpg'
-//import img_4 from '../assets/drivers.jpg'
+import img_4 from '../assets/motherboard.png'
 import img_5 from '../assets/systemd.jpg'
 import img_6 from '../assets/process.jpg'
 import img_7 from '../assets/world_bin.png'
@@ -22,8 +33,10 @@ const ChatComputer: React.FC = () => {
   const [newComputer, setNewComputer] = useState<computerType>([])
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
-  const [links, setLinks] = useState<Partial<string>>({})
+  const [links, setLinks] = useState<Array<computerType>>([])
 
+
+  console.log(links, "links")
   //console.log("computerDb2", computerDb)
 
   useEffect(() => {
@@ -40,132 +53,62 @@ const ChatComputer: React.FC = () => {
         setComputerDb("Hard Disk - SSD")
         setImgBg(img_1)
         setLinks(db_computeOne)
-        console.log(db_computeOne)
+        //console.log(db_computeOne)
         break
       case "2":
         setComputerDb("CPU")
         setImgBg(img_2)
-        setLinks({
-          "link1": 'Generation i3-i5-i7',
-          "link2": 'Pin',
-          "link3": 'Ghz & Max Boost',
-          "link4": 'Read/Write speed',
-          "link5": 'I/O'
-        })
+        setLinks(db_computeTwo)
         break
       case "3":
         setComputerDb("RAM")
         setImgBg(img_3)
-        setLinks({
-          "link1": 'RAM 4GB 8GB 16GB',
-          "link2": 'Corasaire - Asus',
-          "link3": 'USB - Ext.HDD - RAM',
-          "link4": 'read/write speed',
-          "link5": 'I/O'
-        })
+        setLinks(db_computeThree)
         break
       case "4":
         setComputerDb("Drivers")
-        setImgBg(img_7)
-        setLinks({
-          "link1": 'Devices Drivers',
-          "link2": 'UART - SPI - I2C',
-          "link3": 'System Calls',
-          "link4": 'Device Controller',
-          "link5": 'I/O'
-        })
+        setImgBg(img_4)
+        setLinks(db_computeFour)
         break
       case "5":
         setComputerDb("Systemd")
         setImgBg(img_5)
-        setLinks({
-          "link1": 'System V5 - Systemd',
-          "link2": 'files/folder',
-          "link3": 'inode - modules - runlevel',
-          "link4": 'read/write',
-          "link5": 'I/O'
-        })
+        setLinks(db_computeFive)
         break
       case "6":
         setComputerDb("Process")
         setImgBg(img_6)
-        setLinks({
-          "link1": 'Process - RAM - CPU',
-          "link2": 'PID(PPID) - JOBS - Daemons -Nice',
-          "link3": '/proc/(pid)',
-          "link4": 'top & free -h',
-          "link5": 'vmstat -s',
-          "link6": 'I/O'
-        })
+        setLinks(db_computeSix)
         break
       case "7":
         setComputerDb("Client-Server")
         setImgBg(img_7)
-        setLinks({
-          "link1": 'Database (MySQL - mariadb - Mongoose)',
-          "link2": 'Web-App - Web-Site',
-          "link3": 'Update - Upgrade',
-          "link4": 'Passwd - Usr - Root',
-          "link5": 'Hyper-Virtualisation - Security'
-        })
+        setLinks(db_computeSeven)
         break
       case "8":
         setComputerDb("Protocols")
-        setImgBg(img_3)
-        setLinks({
-          "link1": 'SSH & SCP',
-          "link2": 'IP',
-          "link3": 'TCP',
-          "link4": 'HTTP & HTTPS'
-        })
+        setImgBg(img_7)
+        setLinks(db_computeEight)
         break
       case "9":
         setComputerDb("Request - Response")
         setImgBg(img_8)
-        setLinks({
-          "link1": 'Request',
-          "link2": 'Response',
-          "link3": 'Data & Metadata',
-          "link4": 'Model OSI',
-          "link5": 'WireShark - TCPdump'
-        })
+        setLinks(db_computeNine)
         break
       case "10":
         setComputerDb("Fire-Wall")
         setImgBg(img_9)
-        setLinks({
-          "link1": 'diff UFW - Iptable',
-          "link2": 'Configuration',
-          "link3": 'CLI',
-          "link4": 'nmap - zenmap',
-          "link5": 'I/O'
-        })
+        setLinks(db_computeTen)
         break
       case "11":
         setComputerDb("Proxy - VPN")
-        setImgBg(img_3)
-        setLinks({
-          "link1": 'diff HDD - SSD',
-          "link2": 'HDD rpm',
-          "link3": 'SSD cell memory',
-          "link4": 'read/write speed',
-          "link5": 'I/O'
-        })
+        setImgBg(img_12)
+        setLinks(db_computeEleven)
         break
       case "12":
         setComputerDb("Cyber-Security")
         setImgBg(img_12)
-        setLinks({
-          "link1": 'nmap - zenmap',
-          "link2": 'Burp Suite',
-          "link3": 'Gobuster',
-          "link4": 'Scapy',
-          "link5": 'Metasploit',
-          "link6": 'Brute-Force',
-          "link7": 'Reverse-shell',
-          "link8": 'Reverse-engeenering',
-          "link9": 'OSINT'
-        })
+        setLinks(db_computeTwelve)
         break
       default:
         console.log("end of switch loop !")
@@ -189,7 +132,7 @@ const ChatComputer: React.FC = () => {
         <div className='compter--room'>
           {Object.values(links).map((val) => (
             <h2 key={val.title}>
-              <Link to={`/chatcomputer/${id}/computerroom/${val.title}`}
+              <Link to={`/computerroom/${val.link}`}
                 className="link--toroom">
                 {val.link}
               </Link>
@@ -202,19 +145,3 @@ const ChatComputer: React.FC = () => {
 }
 
 export default ChatComputer;
-
-//<p>{Object.entries(links)}</p>
-//<p>{Object.values(links)}</p>
-//<p>{Object.keys(links)}</p>
-
-/*
-          {Object.entries(links).map(([key, val]) => (
-            <h2 key={key}>
-              <Link to={`/computerroom/${key}`}
-                className="link--toroom">
-                {val}
-              </Link>
-            </h2>
-            ))
-          }
-*/

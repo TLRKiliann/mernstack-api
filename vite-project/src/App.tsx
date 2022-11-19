@@ -40,7 +40,7 @@ const App:React.FC = () => {
             <ChatComputer />
           </PrivateRoute>
         } />
-        <Route exact path='/chatcomputer/:id/computerroom/:title' element={
+        <Route path='/computerroom/:link' element={
           <PrivateRoute>
             <ComputerRoom />
           </PrivateRoute>
