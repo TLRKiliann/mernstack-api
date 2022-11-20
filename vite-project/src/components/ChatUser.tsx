@@ -9,7 +9,8 @@ import './styleComponents/ChatUser.scss'
 const ChatRoom: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
-  const [newUsers, setNewUsers] = useState<userType>({})
+  const [newNames, setNewNames] = useState<Array<userType>>([])
+  console.log(newNames, "newNames")
 
   const [message, setMessage] = useState<string | null>('')
   const [frameMsg, setFrameMsg] = useState<string | null>([])
@@ -19,35 +20,19 @@ const ChatRoom: React.FC = () => {
   const [vsFrameMsg, setVsFrameMsg] = useState<string | null>([])
   const [vsDisplay, setVsDisplay] = useState<boolean>(false);
 
-  const { firstName } = useParams<{firstName?: string}>();
+  const {firstName} = useParams<{firstName?: string}>();
+  console.log({firstName})
 
   useEffect(() => {
-    setUsers<userType>(db_users)
-    //handleUser(firstName)
-    //console.log(handleUser(firstName))
-    console.log(newUsers)
+    setUsers(db_users)
+    const findName = db_users.find(user => user.firstName === firstName)
+    console.log(findName, "i'm findid")
+    setNewNames(findName)
     setDisplay(false)
     setVsDisplay(false)
   }, [])
 
-  /*useEffect(() => {
-    console.log(newUsers)
-  }, [newUsers])
-
-  const handleUser = (firstName: string) => {
-    const convName = firstName
-    const findUser = users.find(user => user.firstName === convName)
-    if (findUser !== undefined) {
-      setNewUsers({findUser})
-      //console.log("Super", Object.values(newUsers.findUser))
-    }
-    else {
-      console.log("Ha maybe next time...")
-      setNewUsers("")
-    }
-  }*/
-  
-  const handleSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSendMsg = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value)
   }
 
@@ -59,7 +44,7 @@ const ChatRoom: React.FC = () => {
     setDisplay(true)
   }
 
-  const handleVsSendMsg = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVsSendMsg = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setVsMsg(event.target.value)
   }
 
@@ -96,7 +81,14 @@ const ChatRoom: React.FC = () => {
 
       <div className="three--components">
         <div className="external--user">
-          <h2>{firstName}</h2>
+          <h2>
+            {firstName} - {Object.values(newNames).map((val) => (
+              <div>
+                <p key={val} style={{margin: "auto"}}>{val}</p>
+              </div>
+              ))
+            }
+          </h2>
 
           <form onSubmit={(event) => handleVsSubmitMsg(event)}>
             <div className="div--msgchat">
