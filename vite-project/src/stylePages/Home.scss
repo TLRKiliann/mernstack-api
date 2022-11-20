@@ -128,9 +128,8 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out infinite;
   animation-direction: alternate;
-}*/
+}
 
-/*
 .computinganim {
   animation-name: rotate-logo-2;
   animation-delay: 0s;
@@ -139,9 +138,7 @@
   animation-timing-function: ease-in-out infinite;
   animation-direction: linear;
 }
-*/
 
-/*
 @keyframes rotate-logo {
   0% {
     transform: rotate3d(0, 0, 0, 0deg);
@@ -149,9 +146,8 @@
   25% {
     transform: rotate3d(3, -2, 3, 360deg);
   }
-}*/
+}
 
-/*
 @keyframes rotate-logo-2 {
   0% {
     transform: rotate3d(2, -2, -2, 0deg);

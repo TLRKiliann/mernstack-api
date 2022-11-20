@@ -8,6 +8,7 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import ChatUser from './components/ChatUser'
 import ChatComputer from './components/ChatComputer'
+import ComputerRoom from './components/ComputerRoom'
 import ErrorPageNotFound from './pages/PageNotFound'
 import './App.scss'
 
@@ -37,6 +38,11 @@ const App:React.FC = () => {
         <Route exact path='/chatcomputer/:id' element={
           <PrivateRoute>
             <ChatComputer />
+          </PrivateRoute>
+        } />
+        <Route path='/computerroom/:link' element={
+          <PrivateRoute>
+            <ComputerRoom />
           </PrivateRoute>
         } />
         <Route path='*' element={<ErrorPageNotFound />} />
