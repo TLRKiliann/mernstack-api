@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
-import smileGirl from '../assets/smile.png'
 import backImg from '../assets/world_bin.png'
 import './styleComponents/ChatUser.scss'
 
@@ -58,15 +57,6 @@ const ChatRoom: React.FC = () => {
 
   return(
     <div className="chatuser">
-
-      <div className="img--bgTwochat">
-        <img
-          src={smileGirl}
-          width='50%'
-          height='60%'
-          alt='no img chat'
-        />
-      </div>
 
       <div className="img--bgOnechat">
         <img
