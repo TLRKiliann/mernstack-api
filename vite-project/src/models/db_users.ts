@@ -36,7 +36,7 @@ export const db_users = [
 		"email": "juju.atouspris@mail.com",
 		"location": "Nolathan",
 		"gender": "female",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 5,
@@ -46,7 +46,7 @@ export const db_users = [
 		"email": "nathanelle.nord@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 6,
