@@ -17,8 +17,8 @@ export default class Header extends Component<HeaderProps> {
     backgroundColor: 'rgba(45, 85, 255, 0.4)',
     border: '2mm ridge royalblue',
     borderRadius: '12px',
-    color: 'lightblue',
-    textShadow: '2px 1px 2px blue'
+    color: 'whitesmoke',
+    textShadow: '2px 1px 1px purple'
   }
   render() {
     return(
