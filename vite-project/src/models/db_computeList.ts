@@ -13,11 +13,11 @@ export const db_computeOne = [
   },
   {
     "title": 4,
-    "link": "read/write speed",
+    "link": "read-write speed",
   },
   {
     "title": 5,
-    "link": "I/O"
+    "link": "Input- Output"
   }
 ]
 
@@ -36,11 +36,11 @@ export const db_computeTwo = [
   },
   {
     "title": 4,
-    "link": "Read/Write speed",
+    "link": "Read-Write speed",
   },
   {
     "title": 5,
-    "link": "I/O"
+    "link": "Input- Output"
   }
 ]
 
@@ -59,11 +59,11 @@ export const db_computeThree = [
   },
   {
     "title": 4,
-    "link": "Read/Write speed",
+    "link": "Read-Write speed",
   },
   {
     "title": 5,
-    "link": "I/O"
+    "link": "Input- Output"
   }
 ]
 
@@ -86,7 +86,7 @@ export const db_computeFour = [
   },
   {
     "title": 5,
-    "link": "I/O"
+    "link": "Input- Output"
   }
 ]
 
@@ -105,11 +105,11 @@ export const db_computeFive = [
   },
   {
     "title": 4,
-    "link": "Read/Write speed",
+    "link": "Read-Write speed",
   },
   {
     "title": 5,
-    "link": "I/O"
+    "link": "Input- Output"
   }
 ]
 
@@ -136,7 +136,7 @@ export const db_computeSix = [
   },
   {
     "title": 6,
-    "link": "I/O"
+    "link": "Input- Output"
   }
 ]
 

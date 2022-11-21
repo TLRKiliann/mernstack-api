@@ -1,6 +1,9 @@
 .img--bg {
   position: fixed;
   top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
   min-height: auto;
   opacity: 1;
   z-index: -10;
@@ -11,7 +14,7 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  min-height: 120vh;
+  min-height: 90vh;
   background-color: #161616;
   opacity: 0;
 
@@ -69,18 +72,15 @@
 .btn--voletsLeft button {
   padding: 20px 40px;
   font-family: 'Consolas';
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 
   border: 2mm ridge royalblue;
   border-radius: 40px;
-  box-shadow: inset 0px 50px 25px 0 royalblue, 
-    inset 0 66px 15px 0px #ccc,
-    inset 0 99px 5px 0px #fff;
+  background-color: rgba(45, 85, 255, 0.4);
   &:hover {
-    box-shadow: inset 0px 50px 25px 0 #424242, 
-      inset 0 66px 15px 0px #aaa,
-      inset 0 99px 5px 0px #161616;
-    border: 2mm ridge grey;
+    background-color: rgba(45, 85, 255, 0.6);
+    border: 2mm ridge royalblue;
     color: lightgreen;
     cursor: pointer;
   }
@@ -89,18 +89,15 @@
 .btn--voletsRight button {
   padding: 20px 40px;
   font-family: 'Consolas';
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 
   border: 2mm ridge royalblue;
   border-radius: 40px;
-  box-shadow: inset 0px 50px 25px 0 royalblue, 
-    inset 0 66px 15px 0px #ccc,
-    inset 0 99px 5px 0px #fff;
+  background-color: rgba(45, 85, 255, 0.4);
   &:hover {
-    box-shadow: inset 0px 50px 25px 0 #424242, 
-      inset 0 66px 15px 0px #aaa,
-      inset 0 99px 5px 0px #161616;
-    border: 2mm ridge grey;
+    background-color: rgba(45, 85, 255, 0.6);
+    border: 2mm ridge royalblue;
     color: lightgreen;
     cursor: pointer;
   }
@@ -119,6 +116,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Consolas';
 }
 /*
 .webdevanim {
