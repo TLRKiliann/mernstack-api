@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
-import zoomImg from '../assets/circle.jpg'
+import zoomImg from '../assets/bg_login.png'
 import '../stylePages/Login.scss'
 
 
@@ -65,7 +65,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     const isFormValid = validateForm();
     if (isFormValid) {
-      setMessage('👉 Tentative de connexion en cours ...');
+      setMessage('👉  Tentative de connexion en cours ...');
 
       AuthenticationService
         .login(form.username.value, form.password.value)
@@ -80,9 +80,14 @@ const Login: React.FC = () => {
   }
 
   return(
-    <div>
+    <div className="bg--loginimg">
       <div className="zoom--img">
-        <img src={zoomImg} width="100%" height="100%" alt={zoomImg}/>
+        <img
+          src={zoomImg}
+          width="100%"
+          height="100%"
+          alt={zoomImg}
+        />
       </div>
 
       <form
