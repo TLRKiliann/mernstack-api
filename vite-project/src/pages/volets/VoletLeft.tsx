@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdConnectWithoutContact } from 'react-icons/md'
 import { TbPlugConnected } from 'react-icons/tb'
@@ -13,17 +13,71 @@ interface VoletLeftProps {
 
 const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
+  const [searchUser, setSearchUser] = useState<Array<string>>([])
+  const [userFound, setUserFound] = useState<Array<string>>([])
+  console.log(searchUser)
+
+  const handleSearchInput = (e: React.ChangeEvent<HTMLIputElement>): void => {
+    setSearchUser(e.target.value)
+  }
+
+  const handleSearchUser = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const findByFirstName = props.users.map(user => user).filter(user => {
+      return user.firstName === searchUser
+      ? `${user.firstname} ${user.lastName}`
+      : null
+    })
+    event.preventDefault();
+    if (searchUser === "") {
+      setSearchUser([]);
+    } else {
+      setUserFound(findByFirstName)
+      setSearchUser("")
+    }
+  };
+
   return(
     <div>
       {props.isOpenL ? (
         <div className="volet--L">
           <div className="subvolet--L">
-            <button onClick={props.handleVoletsLeft}>X</button>
+            <button 
+              className="btn--volet"
+              onClick={props.handleVoletsLeft}>X</button>
             <p>Users State Connection</p>
               
             <span className="span">
               <BsFillChatDotsFill size={64}/>
             </span>
+
+            <div className="form--search">
+              <input
+                type="text"
+                value={searchUser}
+                onChange={(e) => handleSearchInput(e)}
+                placeholder="Search by firstname"
+                className="search--input"
+              />
+              <button
+                onClick={handleSearchUser}
+                className="btn--search"
+              >
+                Enter
+              </button>
+            </div>
+
+            {userFound.map(userf => (
+              <div key={userf.firstName} className="result--search">
+                <p>{userf.firstName} {userf.lastName} 
+                  <span 
+                    style={userf.isConnected ? {color: 'lightgreen'} 
+                      : {color: 'orange'}}
+                  >
+                    &nbsp;{userf.isConnected ? "Connected" : "No Connected"}
+                  </span>
+                </p>
+              </div>
+              ))}
 
             <section className="section--voletl">
               {props.users.map(user => (
@@ -55,6 +109,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                 ))
               }
             </section>
+          
           </div>
         </div>
         
@@ -62,12 +117,30 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
         <div className="volet--L2">
           <div className="subvolet--L2">
-            <button onClick={props.handleVoletsLeft}>X</button>
+            <button
+              className="btn--volet"
+              onClick={props.handleVoletsLeft}>X</button>
             <p>Users State Connection</p>
 
             <span className="span">
               <BsFillChatDotsFill size={64}/>
             </span>
+
+            <div className="form--search">
+              <input
+                type="text"
+                value={searchUser}
+                onChange={(e) => handleSearchInput(e)}
+                placeholder="Search by firstname"
+                className="search--input"
+              />
+              <button
+                onClick={handleSearchUser}
+                className="btn--search"
+              >
+                Enter
+              </button>
+            </div>
 
             <section className="section--voletl">
               {props.users.map(user => (
@@ -93,6 +166,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                 ))
               }
             </section>
+
           </div>
         </div>
         )

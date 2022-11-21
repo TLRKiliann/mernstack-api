@@ -4,7 +4,7 @@
   top: 0px;
   left: 0px;
   width: 400px;
-  min-height: 120vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -23,10 +23,9 @@
   position: relative;
   top: 0px;
   left: 0px;
-  width: -400px;
-  min-height: 120vh;
+  width: 400px;
+  min-height: 100vh;
   background-color: rgba(45, 85, 255, 0.4);
-  border-right: 1px solid blue;
   transform: translateX(0px);
 
   animation-name: volet--leftdisplay;
@@ -36,7 +35,7 @@
   z-index: 11;
 }
 
-.subvolet--L button {
+.subvolet--L .btn--volet {
   margin-top: 10px;
   margin-left: 350px;
   width: 30px;
@@ -64,7 +63,7 @@
 }
 
 .section--voletl {
-  margin: 20px 20px;
+  margin: 0px 20px;
   padding: 10px 40px;
   background-color: rgba(45, 85, 255, 0.6);
   border: 2mm ridge royalblue;
@@ -74,6 +73,50 @@
 .span {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+/*Search UserName*/
+.form--search {
+  margin: 20px 0px;
+  margin-left: 40px;
+  display: inline-block;
+  align-items: center;
+}
+
+.search--input {
+  margin: auto;
+  padding: 3px 10px;
+  font-size: 1.0rem;
+  color: whitesmoke;
+  border: 3px inset rgba(45, 85, 255, 0.6);
+  background-color: rgba(45, 85, 255, 0.6);
+}
+
+.search--input::placeholder {
+  color: whitesmoke;
+  opacity: 1;
+}
+
+.btn--search {
+  padding: 7px 10px;
+  margin: auto;
+  margin-top: 0px;
+  margin-left: 10px;
+  font-weight: bold;
+  border: 1px solid royalblue;
+  outline: 0;
+  border-radius: 7px;
+  background-color: royalblue;
+  &:hover {
+    background-color: rgba(45, 85, 255, 0.4);
+    border: 1px solid rgba(45, 85, 255, 0.4);
+  }
+}
+
+.result--search {
+  margin: auto;
+  display: flex;
   justify-content: center;
 }
 
@@ -102,7 +145,7 @@
   top: 0px;
   left: 0px;
   width: 400px;
-  min-height: 120vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -110,10 +153,9 @@
   position: relative;
   top: 0px;
   left: 0px;
-  width: -400px;
-  min-height: 120vh;
+  width: 400px;
+  min-height: 100vh;
   background-color: rgba(45, 85, 255, 0.4);
-  border-right: 1px solid blue;
   transform: translateX(-400px);
 
   animation-name: volet--lefthidden;
@@ -134,7 +176,7 @@
   }
 }
 
-.subvolet--L2 button {
+.subvolet--L2 .btn--volet {
   margin-top: 10px;
   margin-left: 350px;
   width: 30px;
@@ -150,7 +192,6 @@
   text-align: center;
   background-color: rgba(45, 85, 255, 0.6);
   border: 2mm ridge royalblue;
-  box-shadow: 0px 0px 3px whitesmoke;
   font-weight: bold;
   color: whitesmoke;
 }
