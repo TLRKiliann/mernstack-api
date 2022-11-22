@@ -90,48 +90,51 @@ const Login: React.FC = () => {
         />
       </div>
 
-      <form
-        onSubmit={(e) => handleSubmit(e)}
-        className="submit"
-      >
+      <div className="div--submit">
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className="submit"
+        >
 
-        {message && <div className="form-group">
-          <div className="error--message">
-            {message}
+          {message && <div className="form-group">
+            <div className="error--message">
+              {message}
+            </div>
           </div>
-        </div>
-        }
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={form.username.value}
-          onChange={(e) => handleInputChange(e)}
-          placeholder="username"
-          autoComplete="off"
-          required
-        />
-        {form.username.error &&
-          <div className="error username"> 
-           {form.username.error} 
-          </div>
-        } 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={form.password.value}
-          onChange={(e) => handleInputChange(e)}
-          placeholder="password"
-          required
-        />
-        {form.password.error &&
-          <div className="error password"> 
-            {form.password.error} 
-          </div>
-        } 
-        <button type="submit">Enter</button>
-      </form>
+          }
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            value={form.username.value}
+            onChange={(e) => handleInputChange(e)}
+            placeholder="username"
+            autoComplete="off"
+            required
+          />
+          {form.username.error &&
+            <div className="error username"> 
+             {form.username.error} 
+            </div>
+          } 
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={form.password.value}
+            onChange={(e) => handleInputChange(e)}
+            placeholder="password"
+            required
+          />
+          {form.password.error &&
+            <div className="error password"> 
+              {form.password.error} 
+            </div>
+          } 
+          <button type="submit">Enter</button>
+        </form>
+      </div>
+
     </div>
   )
 }
