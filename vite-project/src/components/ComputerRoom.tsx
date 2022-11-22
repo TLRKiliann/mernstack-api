@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
+import worldData from '../assets/world_data.jpg'
 import './styleComponents/ComputerRoom.scss'
 
 const ComputerRoom: React.FC = () => {
@@ -19,6 +20,9 @@ const ComputerRoom: React.FC = () => {
       case 'RAM 4GB 8GB 16GB':
         setRoomStyle("Gigabyte")
         break
+      case 'Corasaire - Asus':
+        setRoomStyle("Model of RAM")
+        break
       default:
         console.log("End of loop")
         break
@@ -34,16 +38,34 @@ const ComputerRoom: React.FC = () => {
         </div>
       </div>
 
-      <h1>Room {Object.values(params)}</h1>
+      <h1 className="title--room">Room {Object.values(params)}</h1>
       
       <div className="div--terminaluser">
-        <textarea className="textarea--terminal">
-        </textarea>
+
+        <div className="section--terminal">          
+          <div className="div--worldbg">
+            <img src={worldData} width="100%" height="100%" alt={worldData} />
+          </div>
+
+          <section className="terminal">
+          
+            <p>└─ $ ▶ Jerry :&nbsp;</p>
+            
+            <div className="subterminal">
+            </div>
+          
+          </section>
+        </div>
+        
         <section className="user--online">
           {Object.values(users).map((val, key) => (
-            <p key={key}>
-              {val.firstName} {val.isConnected}
-            </p>
+            val.isConnected && (
+              <p key={key} className="all--usersbanner">
+                {val.firstName} {val.isConnected
+                  ? "Connected" : null}
+              </p>
+            )
+
             ))
           }
         </section>
@@ -54,14 +76,3 @@ const ComputerRoom: React.FC = () => {
 }
 
 export default ComputerRoom;
-
-/*
-    switch(params) {
-      case 'RAM 4GB 8GB 16GB':
-        console.log("ok !!!!!!!!!!!!!")
-        break
-      default:
-        console.log("End of loop")
-        break
-    }
-*/
