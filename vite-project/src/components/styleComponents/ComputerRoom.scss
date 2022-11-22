@@ -1,4 +1,104 @@
+body {
+  background: #242424;
+}
+
 .nextcomp--room {
   margin-top: 100px;
   margin-left: 20px;
+}
+
+.div--animationroomStyle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.div--animationGigabyte {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 85%;
+  margin: auto;
+  margin-top: 300px;
+  display: flex;
+  opacity: 0;
+
+  animation-name: rotation--bg;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  z-index: 2;
+  border: 1px solid orange;
+}
+
+@keyframes rotation--bg {
+  0% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.rotation--roomstyle {
+  margin: auto;
+  font-family: 'Consolas';
+  font-size: 2rem;
+  opacity: 0;
+
+  animation-name: rotation-room;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-direction: linear;
+  border: 1px solid yellow;
+}
+
+@keyframes rotation-room {
+  0% {
+    transform: rotate3d(2, -2, 1, 0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate3d(-3, 2, -3, 360deg);
+    opacity: 1;
+  }
+}
+
+.div--terminaluser {
+  margin: auto;
+  margin-left: 20px;
+  width: 90%;
+  height: 70vh;
+  display: flex;
+  flex-direction: inline-block;
+
+  border: 1px solid white;
+}
+
+.textarea--terminal {
+  width: 80%;
+  background-color: #161616;
+  box-shadow: 0px 0px 4px slategray;
+  color: lightgreen;
+
+  border: 1px solid orange;
+}
+
+.user--online {
+  width: 25%;
+  padding-left: 20px;
+  background-color: black;
+
+  border: 1px solid yellow;
 }
