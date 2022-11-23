@@ -48,12 +48,13 @@ const ComputerRoom: React.FC = () => {
           </div>
 
           <section className="terminal">
-          
-            <p>└─ $ ▶ Jerry :&nbsp;</p>
+            <div className="div--terminal">
+              <p>└─ $ ▶ Jerry :&nbsp;</p>
+            </div>
             
             <div className="subterminal">
+              <input type="text" placeholder="└─ $ ▶" /> 
             </div>
-          
           </section>
         </div>
         
