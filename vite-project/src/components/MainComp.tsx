@@ -30,11 +30,11 @@ const MainComp: React.FC = (props: MainCompProps) => {
               {user.isConnected ? (
                 <div className="div--connection">
                   <img
-                    src={rebeka}
+                    src={user.img}
                     width="40px"
                     height="40px"
                     className="img--connector"
-                    alt={rebeka}
+                    alt={user.img}
                   />
                   {user.firstName} {user.lastName} :&nbsp;
                     <div 
