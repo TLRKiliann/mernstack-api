@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom'
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
 import worldData from '../assets/world_connected.png'
-import rebeka from '../assets/rebeka_smile.jpg'
-import jeanne from '../assets/jeanne_smile.jpg'
-import paula from '../assets/paula_smile.jpg'
-import celestine from '../assets/celestine_smile.jpg'
+//import rebeka from '../assets/rebeka_smile.jpg'
+//import jeanne from '../assets/jeanne_smile.jpg'
+//import paula from '../assets/paula_smile.jpg'
+//import celestine from '../assets/celestine_smile.jpg'
 import './styleComponents/ComputerRoom.scss'
 
 const ComputerRoom: React.FC = () => {
@@ -41,8 +41,10 @@ const ComputerRoom: React.FC = () => {
     }
   }, [])
 
+  /*
   const imgAll = [rebeka, jeanne, paula, celestine]
   console.log(imgAll)
+  */
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputUser(e.target.value)
@@ -85,7 +87,12 @@ const ComputerRoom: React.FC = () => {
                 placeholder="└─ $ ▶"
                 required
               /> 
-              <button type="button" onClick={(e) => handleInput(e)}>Enter</button>
+              <button
+                type="button"
+                onClick={(e) => handleInput(e)}
+              >
+                Enter
+              </button>
             </div>
           </section>
         </div>
@@ -95,15 +102,15 @@ const ComputerRoom: React.FC = () => {
             val.isConnected && (
               <div key={key} className="all--usersbanner">   
                 <div>
-                {imgAll.reduce((img, index) => (
+
                   <img
-                    src={index}
+                    src={val.img}
                     width="40px"
                     height="40px"
                     className="smile--img"
-                    alt={index}
+                    alt={val.img}
                   /> 
-                ))}
+
                 </div>
                 <p>{val.firstName} {val.isConnected
                     ? "Connected" : null}
