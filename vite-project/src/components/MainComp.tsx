@@ -1,5 +1,9 @@
 import React from 'react'
 import { userType } from '../models/userType';
+import rebeka from '../assets/rebeka_smile.jpg'
+import jeanne from '../assets/jeanne_smile.jpg'
+import paula from '../assets/paula_smile.jpg'
+import celestine from '../assets/celestine_smile.jpg'
 import './styleComponents/MainComp.scss'
 
 interface MainCompProps {
@@ -25,6 +29,13 @@ const MainComp: React.FC = (props: MainCompProps) => {
               <div key={user.id}>
               {user.isConnected ? (
                 <div className="div--connection">
+                  <img
+                    src={user.img}
+                    width="40px"
+                    height="40px"
+                    className="img--connector"
+                    alt={user.img}
+                  />
                   {user.firstName} {user.lastName} :&nbsp;
                     <div 
                       style={{

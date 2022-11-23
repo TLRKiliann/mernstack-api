@@ -34,9 +34,9 @@ export default class NavBar extends Component {
             <li>
               <Link
                 className="link--tagnav"
-                to='/contact'
+                to='/help'
               >
-                Contact
+                Help
               </Link>
             </li>
           </ul>

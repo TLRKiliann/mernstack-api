@@ -1,5 +1,18 @@
+.div--imgservices {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.img--services {
+  opacity: 0.6;
+}
+
 .title--services {
-	margin-top: 80px;
-	margin-left: 20px;
-	color: white;
+  margin-top: 80px;
+  margin-left: 20px;
+  color: white;
 }

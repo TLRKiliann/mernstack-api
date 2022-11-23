@@ -4,22 +4,11 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background: #000a26;
+  background: #003176;
   z-index: 1;
 }
 
 .div--animationroomStyle {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  display: flex;
-  background-color: #fff;
-  z-index: 2;
-}
-
-.div--animationGigabyte {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -85,65 +74,116 @@
 
 .div--terminaluser {
   width: 90%;
+  height: 75vh;
   margin: auto;
-  height: 70vh;
   display: flex;
   flex-direction: inline-block;
 
   background: transparent;
+  border: 1px solid slategray;
+  box-shadow: 0px 0px 4px slategray;
 }
 
 .section--terminal {
   width: 80%;
   height: 100%;
   display: flex;
-
-  border: 1px solid slategray;
-  box-shadow: 0px 0px 4px slategray;
 }
 
 .div--worldbg {
   position: fixed;
   margin: auto;
   width: 90%;
-  height: 70%;
+  height: 75%;
   z-index: -1;
 }
 
 .terminal {
   width: 90%;
-  height: calc(100% - 40px);
+  height: 90%;
   margin: auto;
-
-  background-color: #161616;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0px 0px 4px slategray;
   border: 1px solid slategray;
-  color: lightgreen;
 }
 
-.terminal p {
-  margin-top: 20px;
+.div--terminal {
+  height: calc(100% - 40px);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.div--terminal p {
   margin-left: 10px;
+  color: #3de23d;
 }
 
 .subterminal {
   width: 100%;
   height: 40px;
-  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border-top: 1px solid slategray;
+  /*border: 1px solid orange;*/
+}
 
-  border: 1px solid orange;
+.subterminal input {
+  width: 87%;
+  padding: 8px 10px;
+  font-size: 1.0rem;
+  background: transparent;
+  color: #3de23d;
+}
+
+.subterminal button {
+  width: 10%;
+  padding: 7px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  background: #003176;
+  border: 1px solid #003176;
+  border-radius: 3px;
+  color: whitesmoke;
+  &:hover {
+    background: royalblue;
+    border: 1px solid royalblue;
+    color: lightgrey;
+  }
+  &:active {
+    transform: scale(1.1);
+    background: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: yellow;
+
+  }
 }
 
 .user--online {
   width: 25%;
   padding-left: 20px;
-  background-color: rgba(15,82,186, 0.9);
-  color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: rgba(10,10,100, 0.9);
+  border-left: 1px solid slateblue;
+  color: #50bcfe;
 }
 
-.user--online p {
-  border-bottom: 1px dashed white;
+.all--usersbanner {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+
+  border-bottom: 1px dashed darkslategrey;
 }
 
-.all--userbanner {
+.smile--img {
+  margin-right: 10px;
+  border-radius: 50% 50%;
+  object-fit: cover;
 }
