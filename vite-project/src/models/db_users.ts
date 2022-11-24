@@ -2,15 +2,19 @@ import rebeka from '../assets/rebeka_smile.jpg'
 import jeanne from '../assets/jeanne_smile.jpg'
 import paula from '../assets/paula_smile.jpg'
 import celestine from '../assets/celestine_smile.jpg'
+import ronaldo from '../assets/ronaldo.png'
+import clooney from '../assets/clooney.png'
+import tim from '../assets/tim.png'
+import jason from '../assets/jason.png'
 
 export const db_users = [
 	{
 		"id": 1,
-		"img": rebeka,
-		"firstName": "Pierre",
-		"lastName": "Dujardin",
-		"age": 44,
-		"email": "dujardin.pierre@gmail.com",
+		"img": ronaldo,
+		"firstName": "Christiano",
+		"lastName": "Ronaldo",
+		"age": 28,
+		"email": "chris.ronaldo@gmail.com",
 		"location": "St-Laurent",
 		"gender": "male",
 		"isConnected": true
@@ -18,10 +22,10 @@ export const db_users = [
 	{
 		"id": 2,
 		"img": jeanne,
-		"firstName": "Celestine",
-		"lastName": "Chakra",
+		"firstName": "Jeanne",
+		"lastName": "Dark",
 		"age": 37,
-		"email": "Chakra.Celestine@gmail.com",
+		"email": "jeanne.dark@protonmail.com",
 		"location": "Grancy",
 		"gender": "female",
 		"isConnected": true	
@@ -29,10 +33,10 @@ export const db_users = [
 	{
 		"id": 3,
 		"img": paula,
-		"firstName": "Gérard",
+		"firstName": "Paula",
 		"lastName": "Golan",
 		"age": 28,
-		"email": "gg.golan@mail.com",
+		"email": "gg.golan@hotmail.com",
 		"location": "Gibs",
 		"gender": "male",
 		"isConnected": true
@@ -40,46 +44,46 @@ export const db_users = [
 	{
 		"id": 4,
 		"img": celestine,
-		"firstName": "Juju",
-		"lastName": "Ptitcoeur",
+		"firstName": "Celestine",
+		"lastName": "Duchemin",
 		"age": 42,
-		"email": "juju.atouspris@mail.com",
+		"email": "juju.atouspris@gmail.com",
 		"location": "Nolathan",
 		"gender": "female",
-		"isConnected": false
+		"isConnected": true
 	},
 	{
 		"id": 5,
-		"img": celestine,
-		"firstName": "Nathi",
-		"lastName": "Naelle",
+		"img": rebeka,
+		"firstName": "Rebeka",
+		"lastName": "Snowville",
 		"age": 34,
 		"email": "nathanelle.nord@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"isConnected": false
+		"isConnected": true
 	},
 	{
 		"id": 6,
-		"img": celestine,
-		"firstName": "Simly",
-		"lastName": "Farwth",
-		"age": 35,
-		"email": "simly.farfar@mail.com",
+		"img": clooney,
+		"firstName": "Georges",
+		"lastName": "Clooney",
+		"age": 55,
+		"email": "gg.clooney@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
 		"isConnected": true
 	},
 	{
 		"id": 7,
-		"img": celestine,
-		"firstName": "Jess",
-		"lastName": "Natinger",
+		"img": tim,
+		"firstName": "Tim",
+		"lastName": "Berners-Lee",
 		"age": 31,
-		"email": "Jess.natinger@mail.com",
+		"email": "tim.berners@protonmail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"isConnected": false
+		"isConnected": true
 	},
 	{
 		"id": 8,
@@ -90,13 +94,13 @@ export const db_users = [
 		"email": "nathanelle.nord@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 9,
-		"img": celestine,
-		"firstName": "Bill",
-		"lastName": "Gates",
+		"img": jason,
+		"firstName": "Jason",
+		"lastName": "Statham",
 		"age": 35,
 		"email": "simly.farfar@mail.com",
 		"location": "Rushfort",
@@ -105,13 +109,13 @@ export const db_users = [
 	},
 	{
 		"id": 10,
-		"img": celestine,
-		"firstName": "Jason",
-		"lastName": "Statham",
+		"img": clooney,
+		"firstName": "Gérard",
+		"lastName": "Lambert",
 		"age": 31,
 		"email": "Jess.natinger@mail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"isConnected": true
+		"isConnected": false
 	}
 ]

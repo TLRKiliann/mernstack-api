@@ -3,22 +3,24 @@ import { useParams } from 'react-router-dom'
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
 import worldData from '../assets/world_connected.png'
-//import rebeka from '../assets/rebeka_smile.jpg'
-//import jeanne from '../assets/jeanne_smile.jpg'
-//import paula from '../assets/paula_smile.jpg'
-//import celestine from '../assets/celestine_smile.jpg'
 import './styleComponents/ComputerRoom.scss'
 
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: object }>()
-  console.log("params", params)
+  //console.log("params", params)
 
   const [users, setUsers] = useState<Array<userType>>([])
+  //console.log(users, "users")
+
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
-  console.log(roomStyle, "roomStyle")
-  const [inputUser, setInputUser] = useState<Array<string>>([])
+  //console.log(roomStyle, "roomStyle")
+
+  const [message, setMessage] = useState<Array<string>>([])
+  console.log(message, "message")
+
   const [enteredData, setEnteredData] = useState<Array<string>>([])
+  console.log(enteredData, "enteredData")
 
   useEffect(() => {
     setUsers(db_users)
@@ -41,19 +43,25 @@ const ComputerRoom: React.FC = () => {
     }
   }, [])
 
-  /*
-  const imgAll = [rebeka, jeanne, paula, celestine]
-  console.log(imgAll)
-  */
-
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputUser(e.target.value)
+  const changeInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMessage(event.target.value)
   }
+
+  const generateId = () => {
+    const maxId = enteredData.length > 0
+      ? Math.max(...enteredData.map(d => d.id))
+      : 0
+    return maxId + 1;
+  };
 
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    setEnteredData(inputUser)
-    setInputUser("")
+    const newMessage = {
+      id: generateId(),
+      msg: message
+    }
+    setEnteredData([newMessage])
+    setMessage([])
   }
 
   return(
@@ -75,21 +83,25 @@ const ComputerRoom: React.FC = () => {
           </div>
 
           <section className="terminal">
+
             <div className="div--terminal">
-              <p>└─ $ ▶ Jerry :&nbsp;{enteredData}</p>
+            {enteredData.map((data) => (
+              <p key={data.id}>└─ $ ▶ koala :&nbsp;{data.msg}</p>
+              ))
+            }
             </div>
             
             <div className="subterminal">
               <input
                 type="text"
-                value={inputUser}
-                onChange={(e) => handleChangeInput(e)}
+                value={message}
+                onChange={(e) => changeInputUser(e)}
                 placeholder="└─ $ ▶"
                 required
               /> 
               <button
                 type="button"
-                onClick={(e) => handleInput(e)}
+                onClick={handleInput}
               >
                 Enter
               </button>
@@ -99,7 +111,7 @@ const ComputerRoom: React.FC = () => {
         
         <section className="user--online">
           {Object.values(users).map((val, key) => (
-            val.isConnected && (
+
               <div key={key} className="all--usersbanner">   
                 <div>
 
@@ -112,11 +124,19 @@ const ComputerRoom: React.FC = () => {
                   /> 
 
                 </div>
-                <p>{val.firstName} {val.isConnected
-                    ? "Connected" : null}
+                <p>{val.firstName} {val.isConnected ? (
+                  <span style={{color: 'lightgreen'}}>
+                    ✔
+                  </span>
+                  ) : (
+                  <span style={{color: 'orange', fontSize: '0.6rem'}}>
+                    ❌
+                  </span>
+                  )
+                }
                 </p>
               </div>
-            )
+            
           ))}
         </section>
       </div>
