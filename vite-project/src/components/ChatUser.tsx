@@ -72,9 +72,12 @@ const ChatRoom: React.FC = () => {
       <div className="three--components">
         <div className="external--user">
           <h2>
-            {firstName} - {Object.values(newNames).map((val) => (
+            {firstName} - {Object.values(users).map((val, key) => (
               <div>
-                <p key={val} style={{margin: "auto"}}>{val}</p>
+                <p key={key} style={{margin: "auto"}}>
+                  {val.firstName}
+                </p>
+                <img src={val.img} width="80px" height="50px" alt={val.img} />
               </div>
               ))
             }
