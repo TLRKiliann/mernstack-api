@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
 import worldData from '../assets/world_connected.png'
+import btnWorld from '../assets/btn-world.png'
 import './styleComponents/ComputerRoom.scss'
 
 const ComputerRoom: React.FC = () => {
@@ -16,11 +17,8 @@ const ComputerRoom: React.FC = () => {
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
   //console.log(roomStyle, "roomStyle")
 
-  const [message, setMessage] = useState<Array<string>>([])
-  console.log(message, "message")
-
-  const [enteredData, setEnteredData] = useState<Array<string>>([])
-  console.log(enteredData, "enteredData")
+  const [message, setMessage] = useState<string>("")
+  const [messages, setMessages] = useState<Array<string>>([])
 
   useEffect(() => {
     setUsers(db_users)
@@ -43,25 +41,12 @@ const ComputerRoom: React.FC = () => {
     }
   }, [])
 
-  const changeInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage(event.target.value)
-  }
-
-  const generateId = () => {
-    const maxId = enteredData.length > 0
-      ? Math.max(...enteredData.map(d => d.id))
-      : 0
-    return maxId + 1;
-  };
-
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const newMessage = {
-      id: generateId(),
-      msg: message
+    if (message) {
+      setMessages([...messages, {id: Date.now(), msg: `${message} ✉`}])
     }
-    setEnteredData([newMessage])
-    setMessage([])
+    setMessage("")
   }
 
   return(
@@ -77,33 +62,58 @@ const ComputerRoom: React.FC = () => {
       
       <div className="div--terminaluser">
 
-        <div className="section--terminal">          
+        <div className="section--terminal">
           <div className="div--worldbg">
-            <img src={worldData} width="100%" height="100%" alt={worldData} />
+            <img
+              src={worldData}
+              width="100%"
+              height="100%"
+              className="img--bgterminal"
+              alt={worldData}
+            />
           </div>
 
           <section className="terminal">
 
             <div className="div--terminal">
-            {enteredData.map((data) => (
-              <p key={data.id}>└─ $ ▶ koala :&nbsp;{data.msg}</p>
-              ))
-            }
+
+              <span className="intro--terminal">Wellcome</span>
+              
+              {messages.map((data) => (
+                <p key={data.id} className="map--msg">
+                  ▶ {data.id} :&nbsp;{data.msg}
+                </p>
+                ))
+              }
             </div>
             
             <div className="subterminal">
               <input
                 type="text"
                 value={message}
-                onChange={(e) => changeInputUser(e)}
-                placeholder="└─ $ ▶"
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="$ ▶"
                 required
-              /> 
+              />
               <button
                 type="button"
                 onClick={handleInput}
+                className="btn--user"
               >
+              <div className="div--btnworld">
+                <img
+                  src={btnWorld}
+                  width="60px"
+                  height="60px"
+                  className="btn--world"
+                  alt={btnWorld}
+                />
+              </div>
+
+              <p className="text--btn">
                 Enter
+              </p>
+
               </button>
             </div>
           </section>
