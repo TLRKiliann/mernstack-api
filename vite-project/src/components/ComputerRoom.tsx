@@ -6,19 +6,17 @@ import worldData from '../assets/world_connected.png'
 import btnWorld from '../assets/btn-world.png'
 import './styleComponents/ComputerRoom.scss'
 
+
+
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: object }>()
-  //console.log("params", params)
 
   const [users, setUsers] = useState<Array<userType>>([])
-  //console.log(users, "users")
-
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
-  //console.log(roomStyle, "roomStyle")
-
   const [message, setMessage] = useState<string>("")
   const [messages, setMessages] = useState<Array<string>>([])
+  const [myLocalStorage, setMyLocalStorage] = useState<Array<userType>>([])
 
   useEffect(() => {
     setUsers(db_users)
@@ -41,10 +39,16 @@ const ComputerRoom: React.FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem("Messages", JSON.stringify([messages]))
+    const refreshTerminal = localStorage.getItem("Messages")
+    setMyLocalStorage(refreshTerminal)
+  }, [messages])
+
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (message) {
-      setMessages([...messages, {id: Date.now(), msg: `${message} ✉`}])
+      setMessages([...messages, {id: Date.now(), usr: "Alphred", msg: `${message} ✉`}])
     }
     setMessage("")
   }
@@ -77,14 +81,19 @@ const ComputerRoom: React.FC = () => {
 
             <div className="div--terminal">
 
-              <span className="intro--terminal">Wellcome</span>
+              <span className="intro--terminal">{roomStyle}</span>
               
               {messages.map((data) => (
                 <p key={data.id} className="map--msg">
-                  ▶ {data.id} :&nbsp;{data.msg}
+                  $ ▶ {data.usr} ~ {data.msg}
+                  <legend className="legend--date">{Date().slice(0, 24)}</legend>
                 </p>
                 ))
               }
+              <h4>From localStorage()</h4>
+              <p>
+                {myLocalStorage}
+              </p>
             </div>
             
             <div className="subterminal">
@@ -103,9 +112,9 @@ const ComputerRoom: React.FC = () => {
               <div className="div--btnworld">
                 <img
                   src={btnWorld}
-                  width="60px"
-                  height="60px"
-                  className="btn--world"
+                  width="80px"
+                  height="70px"
+                  className="img--world"
                   alt={btnWorld}
                 />
               </div>
