@@ -11,6 +11,10 @@
 @import './components/styleComponents/Footer.scss';
 @import './components/styleComponents/MainComp.scss';
 @import './components/styleComponents/NavBar.scss';
+@import './components/privatechat/PrivateMessage.scss';
+
+@import "@fontsource/junction";
+@import "@fontsource/dejavu-sans";
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

@@ -8,7 +8,7 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
-import bgImg from '../assets/wallpaper_riverforest.jpg'
+import bgImg from '../assets/planet-connection.jpg'
 import '../stylePages/Home.scss'
 
 

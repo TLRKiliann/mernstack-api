@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { useParams } from "react-router-dom"
+import TerminalComponent from './terminalchat/TerminalComponent'
+import UsersOnline from './terminalchat/UsersOnline'
 import worldData from '../assets/world_connected.png'
-import btnWorld from '../assets/btn-world.png'
 import './styleComponents/ComputerRoom.scss'
-
 
 
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: object }>()
-
-  const [users, setUsers] = useState<Array<userType>>([])
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
-  const [message, setMessage] = useState<string>("")
-  const [messages, setMessages] = useState<Array<string>>([])
-  const [myLocalStorage, setMyLocalStorage] = useState<Array<userType>>([])
 
   useEffect(() => {
-    setUsers(db_users)
     switch(roomStyle[0]) {
       case 'RAM 4GB 8GB 16GB':
         setRoomStyle("Gigabyte RAM")
@@ -38,20 +30,6 @@ const ComputerRoom: React.FC = () => {
         break
     }
   }, [])
-
-  useEffect(() => {
-    localStorage.setItem("Messages", JSON.stringify([messages]))
-    const refreshTerminal = localStorage.getItem("Messages")
-    setMyLocalStorage(refreshTerminal)
-  }, [messages])
-
-  const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    if (message) {
-      setMessages([...messages, {id: Date.now(), usr: "Alphred", msg: `${message} ✉`}])
-    }
-    setMessage("")
-  }
 
   return(
     <div className="nextcomp--room">
@@ -77,91 +55,22 @@ const ComputerRoom: React.FC = () => {
             />
           </div>
 
-          <section className="terminal">
+          <TerminalComponent roomStyle={roomStyle} />
 
-            <div className="div--terminal">
-
-              <span className="intro--terminal">{roomStyle}</span>
-              
-              {messages.map((data) => (
-                <p key={data.id} className="map--msg">
-                  $ ▶ {data.usr} ~ {data.msg}
-                  <legend className="legend--date">{Date().slice(0, 24)}</legend>
-                </p>
-                ))
-              }
-              <h4>From localStorage()</h4>
-              <p>
-                {myLocalStorage}
-              </p>
-            </div>
-            
-            <div className="subterminal">
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="$ ▶"
-                required
-              />
-              <button
-                type="button"
-                onClick={handleInput}
-                className="btn--user"
-              >
-              <div className="div--btnworld">
-                <img
-                  src={btnWorld}
-                  width="80px"
-                  height="70px"
-                  className="img--world"
-                  alt={btnWorld}
-                />
-              </div>
-
-              <p className="text--btn">
-                Enter
-              </p>
-
-              </button>
-            </div>
-          </section>
         </div>
         
-        <section className="user--online">
-          {Object.values(users).map((val, key) => (
+        <UsersOnline />
 
-              <div key={key} className="all--usersbanner">   
-                <div>
-
-                  <img
-                    src={val.img}
-                    width="40px"
-                    height="40px"
-                    className="smile--img"
-                    alt={val.img}
-                  /> 
-
-                </div>
-                <p>{val.firstName} {val.isConnected ? (
-                  <span style={{color: 'lightgreen'}}>
-                    ✔
-                  </span>
-                  ) : (
-                  <span style={{color: 'orange', fontSize: '0.6rem'}}>
-                    ❌
-                  </span>
-                  )
-                }
-                </p>
-              </div>
-            
-          ))}
-        </section>
       </div>
-
     </div>
   )
 }
 
 export default ComputerRoom;
+
+/*
+              <h4>From localStorage()</h4>
+              <p>
+                {myLocalStorage}
+              </p>
+*/

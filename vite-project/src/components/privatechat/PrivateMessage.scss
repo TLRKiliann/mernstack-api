@@ -1,0 +1,59 @@
+.private--chat {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #003a94;
+  color: whitesmoke;
+  z-index: 1;
+
+  .title--privatechat {
+    margin-top: 90px;
+    margin-left: 20px;
+  }
+}
+
+.private--terminal {
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(10,10,100, 0.9);
+  border: 1px solid slategray;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.sub--privateterminal {
+  width: auto;
+  height: 70px;
+  padding-left: 10px;
+
+  border: 1px solid slategray;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.private--messagebox {
+  border: 1px solid slategray;
+  width: auto;
+  height: calc(100% - 90px);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.inputbtn--privateterminal {
+  border: 1px solid slategray;
+  width: auto;
+  padding: 10px;
+  input {
+    width: 85%;
+    padding: 3px 10px;
+  }
+  button {
+    width: 10%;
+    padding: 3px 10px;
+    margin-left: 10px;
+  }
+}
