@@ -60,10 +60,6 @@ export const db_computeThree = [
   {
     "title": 4,
     "link": "Read-Write speed",
-  },
-  {
-    "title": 5,
-    "link": "Input- Output"
   }
 ]
 
