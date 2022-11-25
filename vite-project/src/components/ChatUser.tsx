@@ -9,7 +9,6 @@ const ChatRoom: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
   const [newNames, setNewNames] = useState<Array<userType>>([])
-  console.log(newNames, "newNames")
 
   const [message, setMessage] = useState<string | null>('')
   const [frameMsg, setFrameMsg] = useState<string | null>([])
@@ -20,12 +19,10 @@ const ChatRoom: React.FC = () => {
   const [vsDisplay, setVsDisplay] = useState<boolean>(false);
 
   const {firstName} = useParams<{firstName?: string}>();
-  console.log({firstName})
 
   useEffect(() => {
     setUsers(db_users)
     const findName = db_users.find(user => user.firstName === firstName)
-    console.log(findName, "i'm findid")
     setNewNames(findName)
     setDisplay(false)
     setVsDisplay(false)
@@ -37,7 +34,6 @@ const ChatRoom: React.FC = () => {
 
   const handleSubmitMsg = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(message)
     setFrameMsg(frameMsg.concat(message))
     setMessage("")
     setDisplay(true)
@@ -49,7 +45,6 @@ const ChatRoom: React.FC = () => {
 
   const handleVsSubmitMsg = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(vsMsg)
     setVsFrameMsg(vsMsg)
     setVsMsg("")
     setVsDisplay(true)
