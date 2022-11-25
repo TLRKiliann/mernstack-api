@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/dejavu-sans': ^4.5.4
   '@fontsource/junction': ^4.5.3
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^13.4.0
@@ -20,6 +21,7 @@ specifiers:
   vitest: ^0.25.0
 
 dependencies:
+  '@fontsource/dejavu-sans': 4.5.4
   '@fontsource/junction': 4.5.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -341,6 +343,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource/dejavu-sans/4.5.4:
+    resolution: {integrity: sha512-3SaRz+0N8h1vHpIGwErMhg8EujGQc9HUZU55tSJHvRkk21N8KZNGu0HvnJ2hhmhbvDdT/xIuDin8WFYCgw6fAQ==}
+    dev: false
 
   /@fontsource/junction/4.5.3:
     resolution: {integrity: sha512-3TQb2xHl12po7Sgfd7Xe4jNX/vmHQi9WOIBmBe6aB+i4U/lg6791AXvunacW0b19hmwmwYsaMp4LYth7PWbuAw==}
