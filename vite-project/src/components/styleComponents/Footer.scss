@@ -1,9 +1,9 @@
 .div--navfooter {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  width: 100%;
   margin: auto;
+  bottom: auto;
+  height: 70px;
   display: flex;
   background-color: #242424;
   border-top: 1px solid slategray;
@@ -11,9 +11,8 @@
 }
 
 .div--navfooter ul {
-  width: 100vw;
+  width: 98%;
   margin: auto;
-  padding-left: 0px;
   display: flex;
   justify-content: center;
 }
