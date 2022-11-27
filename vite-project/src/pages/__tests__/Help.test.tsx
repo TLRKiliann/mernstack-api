@@ -5,9 +5,9 @@ import {fireEvent, render, screen} from '@testing-library/react';
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 import {create} from 'react-test-renderer';
-import Contact from "../Contact.tsx";
+import Help from "../Help.tsx";
 
-test('MatchSnapShot test Contact', () => {
-	const tree = create(<Contact />)
+test('MatchSnapShot test Help', () => {
+	const tree = create(<Help />)
 	expect(tree.toJSON()).toMatchSnapshot();
 })

@@ -9,16 +9,16 @@ export default class Header extends Component<HeaderProps> {
 
   myColor = {
     width: '40%',
+    height: 'auto',
     margin: 'auto',
     marginTop: '100px',
-    height: 'auto',
     textAlign: 'center',
     fontFamily: "Consolas, serif",
+    textShadow: '2px 1px 1px purple',
     backgroundColor: 'rgba(45, 85, 255, 0.4)',
     border: '2mm ridge royalblue',
     borderRadius: '12px',
-    color: 'whitesmoke',
-    textShadow: '2px 1px 1px purple'
+    color: 'whitesmoke'
   }
   render() {
     return(

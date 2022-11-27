@@ -1,22 +1,36 @@
 import React from "react";
+import { screen } from '@testing-library/react';
+import { expect, vi } from 'vitest'
+import App from "./App.tsx";
+
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
 //import {fireEvent, render, screen} from '@testing-library/react';
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
-import {create} from 'react-test-renderer';
-import { expect, vi } from 'vitest'
-import App from "./App.tsx";
+//import {create} from 'react-test-renderer';
 
-/*const fn = vi.fn()
 
-fn('hello', 1)
+test('full app rendering/navigating', async () => {
+  const {user} = renderWithRouter(<App />)
+  expect(screen.getByText(/Home/i)).toBeInTheDocument()
 
-expect(vi.isMockFunction(fn)).toBe(true)
-expect(fn.mock.calls[0]).toEqual(['hello', 1])
+  await user.click(screen.getByText(/Services/i))
 
-fn.mockImplementation(arg => arg)
+  expect(screen.getByText(/Help/i)).toBeInTheDocument()
+})
 
-fn('world', 2)
+test('landing on a bad page', () => {
+  renderWithRouter(<App />, {route: '/something-that-does-not-match'})
 
-expect(fn.mock.results[1].value).toBe('world')*/
+  expect(screen.getByText(/no match/i)).toBeInTheDocument()
+})
+
+/*
+test('rendering a component that uses useLocation', () => {
+  const route = '/some-route'
+  renderWithRouter(<LocationDisplay />, {route})
+
+  expect(screen.getByTestId('location-display')).toHaveTextContent(route)
+})
+*/

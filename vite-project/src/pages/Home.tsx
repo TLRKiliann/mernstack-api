@@ -8,7 +8,7 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
-import bgImg from '../assets/planet-connection.jpg'
+//import bgImg from '../assets/home_bg2.png'
 import '../stylePages/Home.scss'
 
 
@@ -39,30 +39,21 @@ export default class Home extends Component {
   render() {
     //console.log(this.state.users)
     return(
-      <div>
-        <div className="div--imgbg">
-          <img
-            src={bgImg}
-            width="100%"
-            height="100%"
-            className='img--bg'
-            alt='no bg'
-          />
-        </div>
+      <div className="div--home">
 
         <div className="wallIntro">
-          <h1>Wellcome To Chat-Room !</h1>
+          <h1 className="wallIntro--h1">Wellcome To Chat-Room !</h1>
         </div>
         
-        {!this.state.isOpenRight && <div className="btn--voletsRight">
-            <button onClick={this.handleVoletsRight}>
+        {!this.state.isOpenRight && <div className="div--voletsRight">
+            <button onClick={this.handleVoletsRight} className="btn--voletRight">
               Computing
             </button>
           </div>
         }
 
-        {!this.state.isOpenL && <div className="btn--voletsLeft">
-            <button onClick={this.handleVoletsLeft}>
+        {!this.state.isOpenL && <div className="div--voletsLeft">
+            <button onClick={this.handleVoletsLeft} className="btn--voletLeft">
               Chat-Room
             </button>
           </div>
@@ -103,3 +94,15 @@ export default class Home extends Component {
     )
   }
 }
+
+/*
+        <div className="div--imgbg">
+          <img
+            src={bgImg}
+            width="100%"
+            height="100%"
+            className='img--bg'
+            alt='no bg'
+          />
+        </div>
+*/
