@@ -6,10 +6,10 @@ const PageNotFound: React.FC = () => {
 
 	const colorErrorNotFound = {
 		marginTop: '25%',
-		backgroundColor: '#242424',
 		textAlign: 'center',
 		fontSize: '2rem',
 		fontFamily: 'Consolas',
+		backgroundColor: '#242424',
 		color: 'white'
 	};
 

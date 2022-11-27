@@ -4,8 +4,8 @@ import { db_users } from '../../models/db_users'
 import { userType } from '../../models/userType'
 import './UsersOnline.scss'
 
-const UserOnline: React.FC = () => {
 
+const UserOnline: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
 
