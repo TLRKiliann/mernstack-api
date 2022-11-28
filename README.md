@@ -10,17 +10,56 @@ with MySQL db in LAN
 
 # Structure
 
-
+src
+|
+|--App.tsx (react-router-dom (v6))
+|
+|--assets (img of project)
+|
+|--components
+|
+|--models (db will be replaced by axios)
+|
+|--pages (main pages for navbar & subscribe)
+|
+|--services (authentification)
 
 ---
 
 # Install
 
-└─ $ ▶ pnpm add -D vitest
+└─ $ ▶ pnpm create vite
+
+└─ $ ▶ cd vite-project
+
+└─ $ ▶ pnpm install
 
 └─ $ ▶ pnpm install react-router-dom
 
 └─ $ ▶ pnpm install -D sass
+
+---
+
+(index.html)
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style lang="sass">
+      @import url('./src/index.scss')
+    </style>
+    <title>MERN-stack API</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+```
 
 (package.json)
 
@@ -118,6 +157,8 @@ export default defineConfig({
 }
 ```
 
+└─ $ ▶ pnpm run dev
+
 ---
 
 # Testing
@@ -132,10 +173,19 @@ export default defineConfig({
   }
 ```
 
+## Install
+
+└─ $ ▶ pnpm add -D vitest
 
 └─ $ ▶ npm i -D jsdom @testing-library/react
 
 └─ $ ▶ pnpm install -D react-test-renderer
+
+└─ $ ▶ pnpm run test
+
+└─ $ ▶ pnpm run coverage
+
+---
 
 (vitest.config.ts)
 
@@ -197,19 +247,3 @@ or
 
 Coverage of moment :
 
- % Coverage report from c8
-----------------|---------|----------|---------|---------|-------------------
-File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------|---------|----------|---------|---------|-------------------
-All files       |     100 |      100 |     100 |     100 |                   
- src            |     100 |      100 |     100 |     100 |                   
-  App.tsx       |     100 |      100 |     100 |     100 |                   
- src/components |     100 |      100 |     100 |     100 |                   
-  Footer.tsx    |     100 |      100 |     100 |     100 |                   
-  Header.tsx    |     100 |      100 |     100 |     100 |                   
-  MainComp.tsx  |     100 |      100 |     100 |     100 |                   
-  MainTitle.tsx |     100 |      100 |     100 |     100 |                   
-  Review.tsx    |     100 |      100 |     100 |     100 |                   
- src/notes      |     100 |      100 |     100 |     100 |                   
-  db_notes.ts   |     100 |      100 |     100 |     100 |                   
-----------------|---------|----------|---------|---------|-------------------

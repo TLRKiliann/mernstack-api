@@ -39,7 +39,7 @@ const Login: React.FC = () => {
     let newForm: Form = form;
 
     // Validator username
-    if (form.username.value.length < 3) {
+    if (form.username.value.length < 1) {
       const errorMsg: string = 'Votre prénom doit faire au moins 3 caractères de long.';
       const newField: Field = { value: form.username.value, error: errorMsg, isValid: false };
       newForm = { ...newForm, ...{ username: newField } };
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
     }
 
     // Validator password
-    if (form.password.value.length < 6) {
+    if (form.password.value.length < 1) {
       const errorMsg: string = 'Votre mot de passe doit faire au moins 6 caractères de long.';
       const newField: Field = { value: form.password.value, error: errorMsg, isValid: false };
       newForm = { ...newForm, ...{ password: newField } };

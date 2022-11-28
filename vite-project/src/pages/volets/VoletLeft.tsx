@@ -22,7 +22,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
   }
 
   const handleSearchUser = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    const findByFirstName = props.users.map(user => user).filter(user => {
+    const findByFirstName = props.users?.map(user => user).filter(user => {
       return user.firstName === searchUser
       ? `${user.firstname} ${user.lastName}`
       : null
@@ -66,7 +66,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
               </button>
             </div>
 
-            {userFound.map(userf => (
+            {userFound?.map(userf => (
               <div key={userf.firstName} className="result--search">
                 <p>{userf.firstName} {userf.lastName} 
                   <span 
@@ -80,7 +80,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
               ))}
 
             <section className="section--voletl">
-              {props.users.map(user => (
+              {props.users?.map(user => (
                 <li key={user.id} className="li"
                   style={user.isConnected 
                   ? {color: 'lightgreen'}
@@ -143,7 +143,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             </div>
 
             <section className="section--voletl">
-              {props.users.map(user => (
+              {props.users?.map(user => (
                 <li key={user.id} className="li">
                   {user.isConnected ? (
                     <MdConnectWithoutContact

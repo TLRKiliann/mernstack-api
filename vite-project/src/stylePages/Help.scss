@@ -1,18 +1,22 @@
 .class--planet {
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	z-index: -1;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: linear-gradient(180deg, 
+    purple, orange);
+  z-index: -1;
 }
 
 .img--planetcontact {
-	opacity: 0.4;
+  opacity: 0.4;
 }
 
 .title--contact {
-	margin-top: 80px;
-	margin-left: 20px;
-	color: white;
+  margin-top: 80px;
+  margin-left: 20px;
+  font-family: "Junction";
+  text-shadow: 2px 1px 1px #000;
+  color: whitesmoke;
 }

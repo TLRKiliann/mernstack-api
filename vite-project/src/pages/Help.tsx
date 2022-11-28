@@ -15,7 +15,7 @@ export default class Help extends Component {
             alt={planet}
           />
         </div>
-        <div className="title--contact">
+        <div data-testid="divtestone" className="title--contact">
           <h1>Help</h1>
         </div>
       </div>

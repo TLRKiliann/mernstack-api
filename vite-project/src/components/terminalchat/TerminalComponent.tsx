@@ -27,7 +27,8 @@ const TerminalComponent: React.FC = (props: TerminalProps) => {
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (message) {
-      setMessages([...messages, {id: Date().slice(0, 24), usr: "Alphred", msg: `${message} ✉`}])
+      setMessages([...messages, {id: Date().slice(0, 24),
+        usr: "Alphred", msg: `${message} ✉`}])
     }
     setMessage("")
   }
@@ -37,9 +38,11 @@ const TerminalComponent: React.FC = (props: TerminalProps) => {
 
       <div className="div--terminal">
 
-        <span className="intro--terminal">{props.roomStyle}</span>
+        <span data-testid="spantestid" className="intro--terminal">
+          {props.roomStyle}
+        </span>
         
-        {messages.map((data) => (
+        {messages?.map((data) => (
           <div key={data.id} className="map--msg">
             <p className="para--chat">$ ▶ {data.usr} ~ {data.msg}</p>
               <span className="legend--date">{data.id}</span>

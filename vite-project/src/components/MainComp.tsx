@@ -22,7 +22,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
         </h2>
 
         <div>
-          {props.users.slice(0, 10).map(user => (
+          {props.users?.slice(0, 20).map(user => (
             <div key={user.id}>
             {user.isConnected ? (
               <div className="div--connection">

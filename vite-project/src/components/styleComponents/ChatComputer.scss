@@ -14,8 +14,8 @@
 }
 
 .title--computerroom h1 {
-  font-family: 'Consolas';
-  color: #50bcfe;
+  font-family: "Junction";
+  color: whitesmoke;
 }
 
 .compter--room {
@@ -35,6 +35,6 @@
   border: 2mm ridge royalblue;
   box-shadow: 0px 0px 4px slategrey;
   &:hover {
-    color: rgba(25, 10, 10, 0.4);
+    color: orange;
   }
 }

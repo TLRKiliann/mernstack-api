@@ -1,11 +1,17 @@
-import rebeka from '../assets/rebeka_smile.jpg'
-import jeanne from '../assets/jeanne_smile.jpg'
-import paula from '../assets/paula_smile.jpg'
-import celestine from '../assets/celestine_smile.jpg'
-import ronaldo from '../assets/ronaldo.png'
-import clooney from '../assets/clooney.png'
-import tim from '../assets/tim.png'
-import jason from '../assets/jason.png'
+import rebeka from '../assets/snapface/rebeka_smile.jpg'
+import jeanne from '../assets/snapface/jeanne_smile.jpg'
+import paula from '../assets/snapface/paula_smile.jpg'
+import celestine from '../assets/snapface/celestine_smile.jpg'
+import ronaldo from '../assets/snapface/ronaldo.png'
+import clooney from '../assets/snapface/clooney.png'
+import tim from '../assets/snapface/tim.png'
+import jason from '../assets/snapface/jason.png'
+import justine from '../assets/snapface/justine.jpg'
+import oliver from '../assets/snapface/oliver.jpg'
+import bruce from '../assets/snapface/bruce.jpg'
+import jean from '../assets/snapface/jean.jpg'
+import maria from '../assets/snapface/maria.jpg'
+import ingrid from '../assets/snapface/ingrid.jpg'
 
 export const db_users = [
 	{
@@ -17,6 +23,7 @@ export const db_users = [
 		"email": "chris.ronaldo@gmail.com",
 		"location": "St-Laurent",
 		"gender": "male",
+		"room": "RAM",
 		"isConnected": true
 	},
 	{
@@ -28,6 +35,7 @@ export const db_users = [
 		"email": "jeanne.dark@protonmail.com",
 		"location": "Grancy",
 		"gender": "female",
+		"room": "Cybersecurity",
 		"isConnected": true	
 	},
 	{
@@ -39,6 +47,7 @@ export const db_users = [
 		"email": "gg.golan@hotmail.com",
 		"location": "Gibs",
 		"gender": "male",
+		"room": "Cybersecurity",
 		"isConnected": true
 	},
 	{
@@ -50,6 +59,7 @@ export const db_users = [
 		"email": "juju.atouspris@gmail.com",
 		"location": "Nolathan",
 		"gender": "female",
+		"room": "RAM",
 		"isConnected": true
 	},
 	{
@@ -61,6 +71,7 @@ export const db_users = [
 		"email": "nathanelle.nord@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
+		"room": "CPU",
 		"isConnected": true
 	},
 	{
@@ -72,6 +83,7 @@ export const db_users = [
 		"email": "gg.clooney@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
+		"room": "Systemd",
 		"isConnected": true
 	},
 	{
@@ -83,18 +95,20 @@ export const db_users = [
 		"email": "tim.berners@protonmail.com",
 		"location": "Leviathan",
 		"gender": "female",
+		"room": "Cybersecurity",
 		"isConnected": true
 	},
 	{
 		"id": 8,
-		"img": celestine,
-		"firstName": "Steve",
-		"lastName": "Jobs",
+		"img": justine,
+		"firstName": "Justine",
+		"lastName": "Props",
 		"age": 34,
 		"email": "nathanelle.nord@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"isConnected": false
+		"room": "Systemd",
+		"isConnected": true
 	},
 	{
 		"id": 9,
@@ -105,17 +119,67 @@ export const db_users = [
 		"email": "simly.farfar@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
+		"room": "Systemd",
 		"isConnected": true
 	},
 	{
 		"id": 10,
-		"img": clooney,
-		"firstName": "Gérard",
-		"lastName": "Lambert",
+		"img": jean,
+		"firstName": "Jean",
+		"lastName": "Dujardin",
 		"age": 31,
 		"email": "Jess.natinger@mail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"isConnected": false
+		"room": "Process",
+		"isConnected": true
+	},
+	{
+		"id": 11,
+		"img": maria,
+		"firstName": "Maria",
+		"lastName": "Hooks",
+		"age": 31,
+		"email": "tim.berners@protonmail.com",
+		"location": "Leviathan",
+		"gender": "female",
+		"room": "Process",
+		"isConnected": true
+	},
+	{
+		"id": 12,
+		"img": bruce,
+		"firstName": "Bruce",
+		"lastName": "Func",
+		"age": 34,
+		"email": "nathanelle.nord@mail.com",
+		"location": "Taiwan",
+		"gender": "female",
+		"room": "CPU",
+		"isConnected": true
+	},
+	{
+		"id": 13,
+		"img": oliver,
+		"firstName": "Oliver",
+		"lastName": "Duran",
+		"age": 35,
+		"email": "simly.farfar@mail.com",
+		"location": "Rushfort",
+		"gender": "female",
+		"room": "CPU",
+		"isConnected": true
+	},
+	{
+		"id": 14,
+		"img": ingrid,
+		"firstName": "Ingrid",
+		"lastName": "Summer",
+		"age": 31,
+		"email": "Jess.natinger@mail.com",
+		"location": "Leviathan",
+		"gender": "female",
+		"room": "Cybersecurity",
+		"isConnected": true
 	}
 ]

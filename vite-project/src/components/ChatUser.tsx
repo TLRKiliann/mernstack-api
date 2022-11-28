@@ -22,7 +22,7 @@ const ChatRoom: React.FC = () => {
 
   useEffect(() => {
     setUsers(db_users)
-    const findName = db_users.find(user => user.firstName === firstName)
+    const findName = db_users?.find(user => user.firstName === firstName)
     setNewNames(findName)
     setDisplay(false)
     setVsDisplay(false)
@@ -67,7 +67,7 @@ const ChatRoom: React.FC = () => {
       <div className="three--components">
         <div className="external--user">
           <h2>
-            {firstName} - {Object.values(users).map((val, key) => (
+            {firstName} - {Object.values(users)?.map((val, key) => (
               <div>
                 <p key={key} style={{margin: "auto"}}>
                   {val.firstName}

@@ -1,4 +1,11 @@
 import React from "react";
-import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
-import {fireEvent, render, screen} from '@testing-library/react';
-import VoletLeft from "../VoletLeft.tsx";
+import { screen, render } from '@testing-library/react';
+import { expect, vi } from 'vitest'
+import '@testing-library/jest-dom'
+import VoletRight from "../VoletRight.tsx";
+
+test('renders chat rooms link', () => {
+  render(<VoletRight />);
+  const linkElement = screen.getByText(/chat rooms/i);
+  expect(linkElement).toBeInTheDocument();
+});
