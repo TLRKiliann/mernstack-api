@@ -10,7 +10,19 @@ with MySQL db in LAN
 
 # Structure
 
-
+src
+|
+|--App.tsx (react-router-dom (v6))
+|
+|--assets (img of project)
+|
+|--components
+|
+|--models (db will be replaced by axios)
+|
+|--pages (main pages for navbar & subscribe)
+|
+|--services (authentification)
 
 ---
 
@@ -161,11 +173,19 @@ export default defineConfig({
   }
 ```
 
+## Install
+
 └─ $ ▶ pnpm add -D vitest
 
 └─ $ ▶ npm i -D jsdom @testing-library/react
 
 └─ $ ▶ pnpm install -D react-test-renderer
+
+└─ $ ▶ pnpm run test
+
+└─ $ ▶ pnpm run coverage
+
+---
 
 (vitest.config.ts)
 
