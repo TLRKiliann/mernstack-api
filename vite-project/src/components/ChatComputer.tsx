@@ -35,8 +35,7 @@ const ChatComputer: React.FC = () => {
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
 
-
-  console.log(links, "links")
+  //console.log(links, "links")
   //console.log("computerDb2", computerDb)
 
   useEffect(() => {
@@ -45,7 +44,7 @@ const ChatComputer: React.FC = () => {
   
   //let myRoom = []
   const { id } = useParams<{id?: string}>();
-  console.log("id", id)
+  //console.log("id", id)
 
   useEffect(() => {
     switch(id.toString()) {
@@ -118,7 +117,7 @@ const ChatComputer: React.FC = () => {
 
   return(
     <div>
-      <div className="div--imgcompute">
+      <div data-testid="chatctestid" className="div--imgcompute">
         <img
           src={imgBg}
           width="100%"

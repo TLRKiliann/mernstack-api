@@ -56,7 +56,7 @@ export const db_computers = [
 	},
 	{
 		'id': 12,
-		'title': "Cyber-Security",
+		'title': "Cybersecurity",
 		'img_bg': '../assets/world_bin.png'
 	},
 ]

@@ -1,7 +1,9 @@
 .div--home {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background: radial-gradient(orange, purple);
 
   .wallIntro {
     position: absolute;
@@ -35,13 +37,12 @@
 
 @keyframes wall {
   0% {
-    opacity: 1;
+    opacity: 0;
     overflow: hidden;
     z-index: 20;
-
   }
   70% {
-    opacity: 1;
+    opacity: 0;
     overflow: hidden;
     z-index: 20;
   }
@@ -54,7 +55,7 @@
 
 .div--voletsLeft {
   position: absolute;
-  margin-top: 1%;
+  margin-top: 100px;
   margin-left: 7%;
   border-radius: 15px;
   z-index: 3;
@@ -67,6 +68,7 @@
     border: 2mm ridge royalblue;
     border-radius: 40px;
     background-color: rgba(45, 85, 255, 0.4);
+    color: orange;
 
     &:hover {
       background-color: rgba(45, 85, 255, 0.6);
@@ -79,7 +81,7 @@
 .div--voletsRight {
   position: absolute;
   right: 0px;
-  margin-top: 1%;
+  margin-top: 100px;
   margin-right: 7%;
   border-radius: 15px;
   z-index: 3;
@@ -89,10 +91,11 @@
     font-family: 'Consolas';
     font-size: 1.2rem;
     font-weight: bold;
-
     border: 2mm ridge royalblue;
     border-radius: 40px;
     background-color: rgba(45, 85, 255, 0.4);
+    color: orange;
+
     &:hover {
       background-color: rgba(45, 85, 255, 0.6);
       border: 2mm ridge royalblue;
@@ -109,11 +112,12 @@
   left: 0px;
   width: 85%;
   margin: auto;
-  margin-top: 300px;
+  margin-top: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Consolas';
+  font-family: "Junction";
+  color: whitesmoke;
 }
 /*
   .webdevanim {

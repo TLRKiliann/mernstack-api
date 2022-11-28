@@ -1,7 +1,7 @@
 import React from "react";
 import {assert, afterEach, describe, expect, test, it, vi} from 'vitest';
-import {fireEvent, render, screen} from '@testing-library/react';
-import {create} from 'react-test-renderer';
+//import {fireEvent, render, screen} from '@testing-library/react';
+import { create } from 'react-test-renderer';
 import Header from "../Home.tsx";
 import MainTitle from "../Home.tsx";
 import MainComp from "../Home.tsx";

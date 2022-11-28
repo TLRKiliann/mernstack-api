@@ -16,8 +16,8 @@ export default class Home extends Component {
   state = {
     users: [],
     computers: [],
-    textHeader: "Text Header",
-    secondTextHeader: "MY SECOND TEXT HEADER",
+    textHeader: "Login and Chat",
+    secondTextHeader: "Only for StackSociety members",
     isOpenRight: false,
     isOpenL: false
   }
@@ -42,7 +42,7 @@ export default class Home extends Component {
       <div className="div--home">
 
         <div className="wallIntro">
-          <h1 className="wallIntro--h1">Wellcome To Chat-Room !</h1>
+          <h1 className="wallIntro--h1">Chat-Room for StackSociety</h1>
         </div>
         
         {!this.state.isOpenRight && <div className="div--voletsRight">

@@ -3,7 +3,7 @@ export default class AuthenticationService {
   static isAuthenticated: boolean = false;
 
   static login(username: string, password: string): Promise<boolean> {
-    const isAuthenticated = (username === 'koala' && password === 'koalatree');
+    const isAuthenticated = (username === '1' && password === '1');
 
     return new Promise(resolve => {
       setTimeout(() => {

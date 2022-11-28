@@ -14,10 +14,6 @@ export const db_computeOne = [
   {
     "title": 4,
     "link": "read-write speed",
-  },
-  {
-    "title": 5,
-    "link": "Input- Output"
   }
 ]
 
@@ -36,11 +32,7 @@ export const db_computeTwo = [
   },
   {
     "title": 4,
-    "link": "Read-Write speed",
-  },
-  {
-    "title": 5,
-    "link": "Input- Output"
+    "link": "Game, Desktop",
   }
 ]
 
@@ -51,7 +43,7 @@ export const db_computeThree = [
   },
   {
     "title": 2,
-    "link": "Corasaire - Asus",
+    "link": "Corsaire - Asus",
   },
   {
     "title": 3,
@@ -79,10 +71,6 @@ export const db_computeFour = [
   {
     "title": 4,
     "link": "Device Controller",
-  },
-  {
-    "title": 5,
-    "link": "Input- Output"
   }
 ]
 
@@ -93,7 +81,7 @@ export const db_computeFive = [
   },
   {
     "title": 2,
-    "link": "files/folder",
+    "link": "files - folder",
   },
   {
     "title": 3,
@@ -120,7 +108,7 @@ export const db_computeSix = [
   },
   {
     "title": 3,
-    "link": "/proc/(pid)",
+    "link": "proc & pid",
   },
   {
     "title": 4,
@@ -129,10 +117,6 @@ export const db_computeSix = [
   {
     "title": 5,
     "link": "vmstat -s",
-  },
-  {
-    "title": 6,
-    "link": "Input- Output"
   }
 ]
 
