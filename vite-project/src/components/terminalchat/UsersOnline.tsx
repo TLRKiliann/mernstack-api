@@ -4,7 +4,12 @@ import { db_users } from '../../models/db_users'
 import { userType } from '../../models/userType'
 import './UsersOnline.scss'
 
-const UserOnline: React.FC = () => {
+interface UserOnlineProps {
+  id: number
+  handeAskUserPrivate: (event: React.MouseEvent<HTMLButtonElement>) => void
+}
+
+const UserOnline: React.FC = (props: UserOnlineProps) => {
 
   const [users, setUsers] = useState<Array<userType>>([])
 
@@ -46,13 +51,13 @@ const UserOnline: React.FC = () => {
                 )
               }
 
-              <Link 
-                to={`/computerroom/privatemessage/${val.firstName}`}
+              <span 
+                onClick={() => props.handeAskUserPrivate(val.id)}
                 className="span--useronline styleusr--span"
                 style={{color: 'orange', fontSize: '20px'}}
               >
                 ✉
-              </Link>
+              </span>
 
             </p>
           </div>
@@ -62,3 +67,13 @@ const UserOnline: React.FC = () => {
 }
 
 export default UserOnline
+
+/*
+              <Link 
+                to={`/computerroom/privatemessage/${val.firstName}`}
+                className="span--useronline styleusr--span"
+                style={{color: 'orange', fontSize: '20px'}}
+              >
+                ✉
+              </Link>
+*/
