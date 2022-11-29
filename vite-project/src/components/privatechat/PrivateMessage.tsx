@@ -9,26 +9,72 @@ const PrivateMessage: React.FC = () => {
 
   const [users, setUsers] = useState<Array<userType>>([])
   const [newNames, setNewNames] = useState<{firstName?: string}>("")
-  //console.log(typeof newNames, "state")
+  const [displayName, setDisplayName] = useState<Arrayy<string>>([])
 
   const retrieveFirst = useParams<{firstName?: string}>("");
-  //console.log(typeof retrieveFirst, "useParams")
 
   useEffect(() => {
     setUsers(db_users)
     setNewNames(retrieveFirst)
+    handleSearchUser()
   }, [])
+
+  const handleSearchUser = () => {
+    const [arr] = Object.values(newNames)
+    const truc = [arr]
+    const [newTruc] = truc
+
+    const findByFirstName = users?.map(user => user).filter(user => {
+      return user.firstName === newTruc
+        ? `${user.firstName} ${user.lastName} ${user.age} ${user.email}`
+        : null
+    })
+    if (findByFirstName === "") {
+      setDisplayName([]);
+    } else {
+      setDisplayName(findByFirstName)
+    }
+  };
 
   return(
     <div className="private--chat">
 
-      <h2 className="title--privatechat">
-        {Object.values(newNames)}
-      </h2>
+      <h1 className="title--privatechat">
+        Private Chat
+      </h1>
 
       <div className="private--terminal">
         <div className="sub--privateterminal">
-          <h3>Talk with {Object.values(newNames)}</h3>
+          {displayName.map(display => (
+            <div key={display.id} className="flex--imgnameroom">
+              <img
+                src={display.img}
+                width="95px"
+                height="65px"
+                className="img--private"
+                alt="no img"
+              />
+              <h4 className="title--private">{display.firstName}</h4>
+              <h4 className="title--private">{display.lastName}</h4>
+              <h4 className="title--private">{display.age} years</h4>
+              <h4 className="title--private">{display.email}</h4>
+              <h4 className="title--private">{display.isConnected ? (
+                <span
+                  className="span--useronline"
+                  style={{color: 'lightgreen'}}
+                >
+                  ✔
+                </span>
+                ) : (
+                <span 
+                  className="span--useronline" style={{fontSize:"12px"}}>
+                  ❌
+                </span>
+                )
+              }
+              </h4>
+            </div>
+            ))}
         </div>
 
         <div className="private--messagebox">

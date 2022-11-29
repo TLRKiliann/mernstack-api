@@ -15,7 +15,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
   const [searchUser, setSearchUser] = useState<Array<string>>([])
   const [userFound, setUserFound] = useState<Array<string>>([])
-  console.log(searchUser)
+  //console.log(searchUser)
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLIputElement>): void => {
     setSearchUser(e.target.value)
@@ -24,8 +24,8 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
   const handleSearchUser = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const findByFirstName = props.users?.map(user => user).filter(user => {
       return user.firstName === searchUser
-      ? `${user.firstname} ${user.lastName}`
-      : null
+        ? `${user.firstname} ${user.lastName}`
+        : null
     })
     event.preventDefault();
     if (searchUser === "") {
@@ -44,7 +44,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             <button 
               className="btn--volet"
               onClick={props.handleVoletsLeft}>X</button>
-            <p>Users State Connection</p>
+            <p>Private Chat</p>
               
             <span className="span">
               <BsFillChatDotsFill size={64}/>
@@ -66,18 +66,20 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
               </button>
             </div>
 
-            {userFound?.map(userf => (
-              <div key={userf.firstName} className="result--search">
-                <p>{userf.firstName} {userf.lastName} 
-                  <span 
-                    style={userf.isConnected ? {color: 'lightgreen'} 
-                      : {color: 'orange'}}
-                  >
-                    &nbsp;{userf.isConnected ? "Connected" : "No Connected"}
-                  </span>
-                </p>
-              </div>
-              ))}
+            
+            <div className="result--search">
+            {userFound?.map(userFirst => (
+              <p key={userFirst.firstName} className="result--searchp">{userFirst.firstName} {userFirst.lastName} 
+                <span 
+                  style={userFirst.isConnected ? {color: 'lightgreen'} 
+                    : {color: 'orange'}}
+                >
+                  &nbsp;{userFirst.isConnected ? "Connected" : "No Connected"}
+                </span>
+              </p>
+            ))}
+            </div>
+
 
             <section className="section--voletl">
               {props.users?.map(user => (

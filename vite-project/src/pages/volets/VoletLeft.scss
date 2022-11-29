@@ -63,14 +63,6 @@
   color: whitesmoke;
 }
 
-.section--voletl {
-  margin: 0px 20px;
-  padding: 10px 40px;
-  background-color: rgba(45, 85, 255, 0.6);
-  border: 2mm ridge royalblue;
-  border-radius: 10px;
-}
-
 .span {
   display: flex;
   align-items: center;
@@ -79,46 +71,65 @@
 
 /*Search UserName*/
 .form--search {
-  margin: 20px 0px;
-  margin-left: 40px;
-  display: inline-block;
-  align-items: center;
-}
-
-.search--input {
+  width: auto;
   margin: auto;
-  padding: 3px 10px;
-  font-size: 1.0rem;
-  color: whitesmoke;
-  border: 3px inset rgba(45, 85, 255, 0.6);
-  background-color: rgba(45, 85, 255, 0.6);
-}
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
 
-.search--input::placeholder {
-  color: whitesmoke;
-  opacity: 1;
-}
+  .search--input {
+    margin: auto;
+    padding: 3px 5px;
+    font-size: 1.0rem;
+    color: whitesmoke;
+    border: 3px inset #383838;
+    background-color: #383838;
+  }
 
-.btn--search {
-  padding: 7px 10px;
-  margin: auto;
-  margin-top: 0px;
-  margin-left: 10px;
-  font-weight: bold;
-  border: 1px solid royalblue;
-  outline: 0;
-  border-radius: 7px;
-  background-color: royalblue;
-  &:hover {
-    background-color: rgba(45, 85, 255, 0.4);
-    border: 1px solid rgba(45, 85, 255, 0.4);
+  .search--input::placeholder {
+    color: whitesmoke;
+    opacity: 0.5;
+  }
+
+  .btn--search {
+    padding: 7px 20px;
+    margin: auto;
+    margin-top: 0px;
+    margin-left: 10px;
+    font-weight: bold;
+    border: 1px solid #383838;
+    outline: 0;
+    border-radius: 7px;
+    background-color: #383838;
+    &:hover {
+      background-color: rgba(45, 85, 255, 0.4);
+      border: 1px solid rgba(45, 85, 255, 0.4);
+    }
   }
 }
 
 .result--search {
-  margin: auto;
-  display: flex;
-  justify-content: center;
+  width: auto;
+
+  .result--searchp {
+    width: auto;
+    margin: auto;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-family: "Junction";
+    font-size: 18px;
+    font-weight: bold;
+    border: 2mm ridge royalblue;
+  }
+}
+
+.section--voletl {
+  margin: 20px 20px;
+  padding: 10px 40px;
+  background-color: rgba(45, 85, 255, 0.6);
+  border: 2mm ridge royalblue;
+  border-radius: 10px;
 }
 
 .li {
@@ -133,7 +144,6 @@
 .link--tagvoletl {
   margin: 2px 0px;
   text-decoration: none;
-  font-family: 'Consolas';
   font-size: 1.2rem;
   color: whitesmoke;
   &:hover {
