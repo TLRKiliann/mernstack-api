@@ -8,6 +8,7 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
+import cool from '../assets/coolnection.jpg'
 import '../stylePages/Home.scss'
 
 
@@ -37,6 +38,16 @@ export default class Home extends Component {
   render() {
     return(
       <div className="div--home">
+
+        <div>
+          <img
+            src={cool}
+            width="100%"
+            height="100%"
+            className="img--home"
+            alt={cool}
+          />
+        </div>
 
         <div className="wallIntro">
           <h1 className="wallIntro--h1">Chat-Room for StackSociety</h1>

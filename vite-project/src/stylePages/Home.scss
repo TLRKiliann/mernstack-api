@@ -35,6 +35,18 @@
   }
 }
 
+.img--home {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 150%;
+  height: 100%;
+  margin: auto;
+  opacity: 0.1;
+}
+
 @keyframes wall {
   0% {
     opacity: 0;
