@@ -103,7 +103,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                     )
                   }
                   <Link className="link--tagvoletl"
-                    to={`/chatuser/${user.firstName}`}
+                    to={`/computerroom/privatemessage/${user.firstName}`}
                   >
                     {user.firstName} {user.lastName}
                   </Link>
@@ -160,7 +160,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                     )
                   }
                   <Link className="link--tagvoletl"
-                    to={`/chatuser/${user.firstName}`}
+                    to={`/computerroom/privatemessage/${user.firstName}`}
                   >
                     {user.firstName} {user.lastName}
                   </Link>
