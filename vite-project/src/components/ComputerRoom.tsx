@@ -55,7 +55,17 @@ const ComputerRoom: React.FC = () => {
             className="form--invitation"
           >
             <label htmlFor="users" className="lbl--invite">
-              Invite {catchById.firstName} to private chat :
+              Invite
+              <img
+                src={catchById.img}
+                width="50px"
+                height="50px"
+                className="img--invite"
+                alt="no img panel ask invite"
+              />
+              <span className="span--invite">
+                {catchById.firstName}&nbsp;
+              </span> to private chat :
             </label>
             <select name="users" id="users">
               <option

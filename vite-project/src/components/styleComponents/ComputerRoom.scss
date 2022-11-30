@@ -78,7 +78,7 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  width: 450px;
+  width: 550px;
   height: 240px;
   margin: auto;
   margin-top: 20%;
@@ -100,11 +100,25 @@
 
 .lbl--invite {
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-family: "Junction";
   font-size: 1.4rem;
   font-weight: 600;
   color: purple;
-  text-shadow: 2px 1px 1px navajowhite;
+}
+
+.img--invite {
+  margin-left: 10px;
+  border-radius: 50% 50%;
+  object-fit: cover;
+}
+
+.span--invite {
+  margin-left: 10px;
+  color: #50bcfe;
+  text-shadow: 2px 1px 1px navy;
 }
 
 #users {
