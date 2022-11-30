@@ -4,6 +4,7 @@ import { db_users } from '../models/db_users'
 import { userType } from '../models/userType'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
+import AskMessageBox from './AskMessageBox'
 import worldData from '../assets/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
 
@@ -50,45 +51,11 @@ const ComputerRoom: React.FC = () => {
       </div>
 
       {switchAsk &&
-        <div key={catchById.id} className="boolean--result">
-          <div 
-            className="form--invitation"
-          >
-            <label htmlFor="users" className="lbl--invite">
-              Invite
-              <img
-                src={catchById.img}
-                width="50px"
-                height="50px"
-                className="img--invite"
-                alt="no img panel ask invite"
-              />
-              <span className="span--invite">
-                {catchById.firstName}&nbsp;
-              </span> to private chat :
-            </label>
-            <select name="users" id="users">
-              <option
-                className="option--invite"
-                value="invite">Invitation</option>
-              <option
-                className="option--invite"
-                value="message">Message</option>
-            </select> 
-            <button
-              onClick={() => handleInvitation(catchById.id)}
-              className="btn--invitation"
-            >
-              Invite
-            </button>
-            <button
-              onClick={handleClose}
-              className="btn--close"
-            >
-              X
-            </button>
-          </div>
-        </div>
+        <AskMessageBox
+          catchById={catchById}
+          handleInvitation={handleInvitation}
+          handleClose={handleClose}
+        />
       }
 
       <h1 className="title--room">Room {Object.values(params)}</h1>
@@ -121,29 +88,3 @@ const ComputerRoom: React.FC = () => {
 }
 
 export default ComputerRoom;
-
-/*
-              <h4>From localStorage()</h4>
-              <p>
-                {myLocalStorage}
-              </p>
-
-
-    switch(roomStyle[0]) {
-      case 'RAM 4GB 8GB 16GB':
-        setRoomStyle("Gigabyte RAM")
-        break
-      case 'Corasaire - Asus':
-        setRoomStyle("Model of RAM")
-        break
-      case 'USB - Ext.HDD - RAM':
-        setRoomStyle("USB - Ext.HDD - RAM")
-        break
-      case 'Read-Write speed':
-        setRoomStyle("Read-Write speed")
-        break
-      default:
-        console.log("End of loop")
-        break
-    }
-*/
