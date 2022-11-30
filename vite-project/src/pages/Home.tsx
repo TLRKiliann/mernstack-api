@@ -8,7 +8,6 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
-//import bgImg from '../assets/home_bg2.png'
 import '../stylePages/Home.scss'
 
 
@@ -23,7 +22,6 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    console.log("Mounted !")
     this.setState({users: db_users})
     this.setState({computers: db_computers})
   }
@@ -37,7 +35,6 @@ export default class Home extends Component {
   }
 
   render() {
-    //console.log(this.state.users)
     return(
       <div className="div--home">
 

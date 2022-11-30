@@ -35,30 +35,37 @@ export default class Services extends Component {
 
             {Object.values(this.state.users).map(user =>
               <span key={user.id} className="span--saloon">
-                {user.room === computer.title && user.isConnected 
-                  ? <div className="user--imgsaloon">
-                      <img
-                        width="40px"
-                        height="40px"
-                        src={user.img} 
-                        className="img--saloon"
-                      />
-                      <p>
-                      {user.firstName} {user.isConnected 
-                        && <span
-                            style={{
-                              color: 'lightgreen',
-                              marginLeft: "5px"
-                            }}
-                          >
-                            ✔
-                          </span> 
-                      }
-                      </p>
-                    </div>
-                  : null}
+                {user.mainroom === computer.title ? (
+                  <div className="user--imgsaloon">
+                    <img
+                      width="40px"
+                      height="40px"
+                      src={user.img} 
+                      className="img--saloon"
+                    />
+                    <p>
+                    {user.firstName} {user.isConnected ? (
+                      <span
+                        style={{
+                          color: 'lightgreen',
+                          marginLeft: "5px"
+                        }}
+                      >
+                        ✔
+                      </span>
+                      ):(
+                      <span
+                        className="span--useronline" style={{fontSize:"12px"}}>
+                        ❌
+                      </span>
+                      ) 
+                    }
+                    </p>
+                  </div>
+                  ) : null
+                }
               </span>
-            )}
+              )}
           </section>
         )}
         </div>

@@ -5,7 +5,7 @@
 @import './stylePages/Help.scss';
 @import './pages/volets/VoletRight.scss';
 @import './pages/volets/VoletLeft.scss';
-@import './components/styleComponents/ChatUser.scss';
+@import './components/styleComponents/AskMessageBox.scss';
 @import './components/styleComponents/ChatComputer.scss';
 @import './components/styleComponents/ComputerRoom.scss';
 @import './components/styleComponents/Footer.scss';
@@ -14,7 +14,6 @@
 @import './components/terminalchat/TerminalComponent.scss';
 @import './components/terminalchat/UsersOnline.scss';
 @import './components/privatechat/PrivateMessage.scss';
-
 @import "@fontsource/junction";
 @import "@fontsource/dejavu-sans";
 

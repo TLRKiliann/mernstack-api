@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
+import { db_users } from '../models/db_users'
+import { userType } from '../models/userType'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
+import AskMessageBox from './AskMessageBox'
 import worldData from '../assets/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
 
@@ -9,11 +12,34 @@ import './styleComponents/ComputerRoom.scss'
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: object }>()
+  const [users, setUsers] = useState<Array<userType>>([])
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
+  const [catchById, setCatchById] = useState<Array<userType>>([])
+  const [switchAsk, setSwitchAsk] = useState<boolean>(false)
+
+  //console.log(Object.values(catchById), "catchById")
 
   useEffect(() => {
+    setUsers(db_users)
     setRoomStyle(roomStyle[0])
   }, [])
+
+  const handeAskUserPrivate = (id: number) => {
+    console.log(id,"id")
+    const catchUser = users.find(user => user.id === id)
+    console.log(catchUser)
+    setCatchById(catchUser)
+    setSwitchAsk(!switchAsk)
+  }
+
+  const handleClose = () => {
+    setSwitchAsk(false)
+  }
+
+  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>,id: number): void => {
+    console.log(id, "id")
+    console.log("clicked post")
+  }
 
   return(
     <div className="nextcomp--room">
@@ -23,6 +49,14 @@ const ComputerRoom: React.FC = () => {
           <h1>{roomStyle}</h1>
         </div>
       </div>
+
+      {switchAsk &&
+        <AskMessageBox
+          catchById={catchById}
+          handleInvitation={handleInvitation}
+          handleClose={handleClose}
+        />
+      }
 
       <h1 className="title--room">Room {Object.values(params)}</h1>
       
@@ -43,7 +77,10 @@ const ComputerRoom: React.FC = () => {
 
         </div>
         
-        <UsersOnline roomStyle={roomStyle} />
+        <UsersOnline
+          roomStyle={roomStyle}
+          handeAskUserPrivate={handeAskUserPrivate}
+        />
 
       </div>
     </div>
@@ -51,29 +88,3 @@ const ComputerRoom: React.FC = () => {
 }
 
 export default ComputerRoom;
-
-/*
-              <h4>From localStorage()</h4>
-              <p>
-                {myLocalStorage}
-              </p>
-
-
-    switch(roomStyle[0]) {
-      case 'RAM 4GB 8GB 16GB':
-        setRoomStyle("Gigabyte RAM")
-        break
-      case 'Corasaire - Asus':
-        setRoomStyle("Model of RAM")
-        break
-      case 'USB - Ext.HDD - RAM':
-        setRoomStyle("USB - Ext.HDD - RAM")
-        break
-      case 'Read-Write speed':
-        setRoomStyle("Read-Write speed")
-        break
-      default:
-        console.log("End of loop")
-        break
-    }
-*/

@@ -11,18 +11,30 @@ interface MainCompProps {
 }
 
 const MainComp: React.FC = (props: MainCompProps) => {
-
   return(
     <div className="master--maincomp">
           
       <div className="bg--colormaincomp">
 
         <h2 className='h2--maincomp'>
-          Member Connected !
+          All Members :&nbsp;
+          <span style={{color: "orange"}}>
+            {props.users.length}
+          </span>
         </h2>
+        
+        <h3 className="h3--maincomp">
+          Users online (connected) :&nbsp;
+          <span
+            style={{color:'orange'}}
+          >
+            {props.users?.reduce((prev, curr) =>
+            prev + curr.isConnected, 0)}
+          </span>
+        </h3>
 
         <div>
-          {props.users?.slice(0, 20).map(user => (
+          {props.users?.slice(0, `${props.users.length}`).map(user => (
             <div key={user.id}>
             {user.isConnected ? (
               <div className="div--connection">

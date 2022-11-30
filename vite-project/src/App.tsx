@@ -3,10 +3,11 @@ import { Routes, Route } from 'react-router-dom'
 //import PrivateRoute from './PrivateRoute'
 import NavBar from './components/NavBar'
 //import Login from './pages/Login'
+//import Subscribe from './pages/Subscribe'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Help from './pages/Help'
-import ChatUser from './components/ChatUser'
+//import ChatUser from './components/ChatUser'
 import ChatComputer from './components/ChatComputer'
 import ComputerRoom from './components/ComputerRoom'
 import PrivateMessage from './components/privatechat/PrivateMessage'
@@ -25,9 +26,6 @@ const App:React.FC = () => {
         } />
         <Route exact path='/help' element={
             <Help />
-        } />
-        <Route exact path='/chatuser/:firstName' element={
-            <ChatUser />
         } />
         <Route exact path='/chatcomputer/:id' element={
             <ChatComputer />
@@ -54,6 +52,7 @@ export default App
       <NavBar />
       <Routes>
         <Route exact path='/login' element={<Login />} />
+        <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/services' element={
           <PrivateRoute>
@@ -92,4 +91,10 @@ export default App
     </div>
   )
 }
+
+Je ne pense pas garder ça...
+        <Route exact path='/chatuser/:firstName' element={
+            <ChatUser />
+        } />
+
 */

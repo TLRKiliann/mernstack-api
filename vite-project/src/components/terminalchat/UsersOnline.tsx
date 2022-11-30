@@ -4,14 +4,20 @@ import { db_users } from '../../models/db_users'
 import { userType } from '../../models/userType'
 import './UsersOnline.scss'
 
-const UserOnline: React.FC = () => {
+interface UserOnlineProps {
+  id: number
+  roomStyle: object
+  handeAskUserPrivate: (event: React.MouseEvent<HTMLButtonElement>) => void
+}
+
+const UserOnline: React.FC = (props: UserOnlineProps) => {
 
   const [users, setUsers] = useState<Array<userType>>([])
 
   useEffect(() => {
     setUsers(db_users)
   }, [])
-
+  console.log(props.roomStyle, "roomStyle")
   return(
     <section className="user--online">
       <div className="div--userolinetitle">
@@ -19,6 +25,7 @@ const UserOnline: React.FC = () => {
       </div>
       
         {Object.values(users)?.map((val, key) => (
+          val.room === props.roomStyle && (
           <div key={key} className="all--usersbanner">   
             <div>
               <img
@@ -46,6 +53,25 @@ const UserOnline: React.FC = () => {
                 )
               }
 
+              <span 
+                onClick={() => props.handeAskUserPrivate(val.id)}
+                className="span--useronline styleusr--span"
+                style={{color: 'orange', fontSize: '20px'}}
+              >
+                ✉
+              </span>
+
+            </p>
+          </div>
+          )
+        ))}
+    </section>
+  )
+}
+
+export default UserOnline
+
+/*
               <Link 
                 to={`/computerroom/privatemessage/${val.firstName}`}
                 className="span--useronline styleusr--span"
@@ -53,12 +79,4 @@ const UserOnline: React.FC = () => {
               >
                 ✉
               </Link>
-
-            </p>
-          </div>
-        ))}
-    </section>
-  )
-}
-
-export default UserOnline
+*/
