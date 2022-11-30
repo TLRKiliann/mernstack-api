@@ -1,0 +1,78 @@
+/*Invitation message*/
+.boolean--result {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 550px;
+  height: 240px;
+  margin: auto;
+  margin-top: 20%;
+  display: flex;
+
+  background: linear-gradient(180deg,
+    orange, purple);
+  border-radius: 15px;
+  z-index: 4;
+
+  .form--invitation {
+    padding: 20px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .lbl--invite {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-family: "Junction";
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: purple;
+    }
+
+    .img--invite {
+      margin-left: 10px;
+      border-radius: 50% 50%;
+      object-fit: cover;
+    }
+
+    .span--invite {
+      margin-left: 10px;
+      color: #50bcfe;
+      text-shadow: 2px 1px 1px navy;
+    }
+
+    #users {
+      margin-top: 20px;
+    }
+
+    .option--invite {
+      margin-top: 20px;
+    }
+
+    .btn--invitation {
+      margin-top: 20px;
+      padding: 3px 10px;
+    }
+
+    .btn--close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      object-fit: cover;
+      background: radial-gradient(orange, purple);
+      border: 1px solid orange;
+      border-radius: 50% 50%;
+      color: black;
+      &:hover {
+        background: purple;
+        color: whitesmoke;
+      }
+    }
+  }
+}
