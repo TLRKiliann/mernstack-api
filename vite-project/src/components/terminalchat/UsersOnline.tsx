@@ -6,6 +6,7 @@ import './UsersOnline.scss'
 
 interface UserOnlineProps {
   id: number
+  roomStyle: object
   handeAskUserPrivate: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
@@ -16,7 +17,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
   useEffect(() => {
     setUsers(db_users)
   }, [])
-
+  console.log(props.roomStyle, "roomStyle")
   return(
     <section className="user--online">
       <div className="div--userolinetitle">
@@ -24,6 +25,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
       </div>
       
         {Object.values(users)?.map((val, key) => (
+          val.room === props.roomStyle && (
           <div key={key} className="all--usersbanner">   
             <div>
               <img
@@ -61,6 +63,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
 
             </p>
           </div>
+          )
         ))}
     </section>
   )
