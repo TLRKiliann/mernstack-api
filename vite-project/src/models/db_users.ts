@@ -23,7 +23,8 @@ export const db_users = [
 		"email": "chris.ronaldo@gmail.com",
 		"location": "St-Laurent",
 		"gender": "male",
-		"room": "RAM",
+		"mainroom": "RAM",
+		"room": "RAM-4GB-8GB-16GB",
 		"isConnected": true
 	},
 	{
@@ -35,7 +36,8 @@ export const db_users = [
 		"email": "jeanne.dark@protonmail.com",
 		"location": "Grancy",
 		"gender": "female",
-		"room": "Cybersecurity",
+		"mainroom": "Cybersecurity",
+		"room": "Scapy",
 		"isConnected": true	
 	},
 	{
@@ -47,7 +49,8 @@ export const db_users = [
 		"email": "gg.golan@hotmail.com",
 		"location": "Gibs",
 		"gender": "male",
-		"room": "Cybersecurity",
+		"mainroom": "Cybersecurity",
+		"room": "Scapy",
 		"isConnected": true
 	},
 	{
@@ -59,7 +62,8 @@ export const db_users = [
 		"email": "celestine.duchemin@gmail.com",
 		"location": "Nolathan",
 		"gender": "female",
-		"room": "RAM",
+		"mainroom": "RAM",
+		"room": "RAM-4GB-8GB-16GB",
 		"isConnected": true
 	},
 	{
@@ -71,7 +75,8 @@ export const db_users = [
 		"email": "nathanelle.nord@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"room": "CPU",
+		"mainroom": "CPU",
+		"room": "Generation-i3-i5-i7",
 		"isConnected": true
 	},
 	{
@@ -83,7 +88,8 @@ export const db_users = [
 		"email": "gg.clooney@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
-		"room": "Systemd",
+		"mainroom": "Systemd",
+		"room": "inode-modules-runlevel",
 		"isConnected": true
 	},
 	{
@@ -95,7 +101,8 @@ export const db_users = [
 		"email": "tim.berners@protonmail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"room": "Cybersecurity",
+		"mainroom": "Cybersecurity",
+		"room": "Scapy",
 		"isConnected": true
 	},
 	{
@@ -107,7 +114,8 @@ export const db_users = [
 		"email": "justine.props@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"room": "Systemd",
+		"mainroom": "Systemd",
+		"room": "inode-modules-runlevel",
 		"isConnected": true
 	},
 	{
@@ -119,7 +127,8 @@ export const db_users = [
 		"email": "jason.statham@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
-		"room": "Systemd",
+		"mainroom": "Systemd",
+		"room": "inode-modules-runlevel",
 		"isConnected": true
 	},
 	{
@@ -131,7 +140,8 @@ export const db_users = [
 		"email": "jean.dujardin@mail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"room": "Process",
+		"mainroom": "Process",
+		"room": "PID(PPID)-JOBS-Daemons-Nice",
 		"isConnected": true
 	},
 	{
@@ -143,7 +153,8 @@ export const db_users = [
 		"email": "maria.hooks@protonmail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"room": "Process",
+		"mainroom": "Process",
+		"room": "PID(PPID)-JOBS-Daemons-Nice",
 		"isConnected": true
 	},
 	{
@@ -155,7 +166,8 @@ export const db_users = [
 		"email": "bruce.func@mail.com",
 		"location": "Taiwan",
 		"gender": "female",
-		"room": "CPU",
+		"mainroom": "CPU",
+		"room": "Generation-i3-i5-i7",
 		"isConnected": true
 	},
 	{
@@ -167,7 +179,8 @@ export const db_users = [
 		"email": "olivier.duran@mail.com",
 		"location": "Rushfort",
 		"gender": "female",
-		"room": "CPU",
+		"mainroom": "CPU",
+		"room": "Generation-i3-i5-i7",
 		"isConnected": true
 	},
 	{
@@ -179,7 +192,8 @@ export const db_users = [
 		"email": "ingrid.summer@mail.com",
 		"location": "Leviathan",
 		"gender": "female",
-		"room": "Cybersecurity",
+		"mainroom": "Cybersecurity",
+		"room": "Scapy",
 		"isConnected": true
 	}
 ]

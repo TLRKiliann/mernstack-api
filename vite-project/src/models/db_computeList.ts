@@ -1,26 +1,26 @@
 export const db_computeOne = [
   {
     "title": 1,
-    "link": "diff HDD - SSD",
+    "link": "HDD-SSD",
   },
   {
     "title": 2,
-    "link": "HDD rpm",
+    "link": "HDD-rpm",
   },
   {
     "title": 3,
-    "link": "SSD cell memory",
+    "link": "SSD-cell-memory",
   },
   {
     "title": 4,
-    "link": "read-write speed",
+    "link": "read-write",
   }
 ]
 
 export const db_computeTwo = [
   {
     "title": 1,
-    "link": "Generation i3-i5-i7",
+    "link": "Generation-i3-i5-i7",
   },
   {
     "title": 2,
@@ -28,87 +28,87 @@ export const db_computeTwo = [
   },
   {
     "title": 3,
-    "link": "Ghz & Max Boost",
+    "link": "Ghz-Max-Boost",
   },
   {
     "title": 4,
-    "link": "Game, Desktop",
+    "link": "Game-Desktop",
   }
 ]
 
 export const db_computeThree = [
   {
     "title": 1,
-    "link": "RAM 4GB 8GB 16GB",
+    "link": "RAM-4GB-8GB-16GB",
   },
   {
     "title": 2,
-    "link": "Corsaire - Asus",
+    "link": "Corsaire-Asus",
   },
   {
     "title": 3,
-    "link": "USB - Ext.HDD - RAM",
+    "link": "USB-Ext.HDD-RAM",
   },
   {
     "title": 4,
-    "link": "Read-Write speed",
+    "link": "Read-Write",
   }
 ]
 
 export const db_computeFour = [
   {
     "title": 1,
-    "link": "Devices Drivers",
+    "link": "Devices-Drivers",
   },
   {
     "title": 2,
-    "link": "UART - SPI - I2C",
+    "link": "UART-SPI-I2C",
   },
   {
     "title": 3,
-    "link": "System Calls",
+    "link": "System-Calls",
   },
   {
     "title": 4,
-    "link": "Device Controller",
+    "link": "Device-Controller",
   }
 ]
 
 export const db_computeFive = [
   {
     "title": 1,
-    "link": "System V5 - Systemd",
+    "link": "System V5-Systemd",
   },
   {
     "title": 2,
-    "link": "files - folder",
+    "link": "files-folder",
   },
   {
     "title": 3,
-    "link": "inode - modules - runlevel",
+    "link": "inode-modules-runlevel",
   },
   {
     "title": 4,
-    "link": "Read-Write speed",
+    "link": "Read-Write",
   },
   {
     "title": 5,
-    "link": "Input- Output"
+    "link": "Input-Output"
   }
 ]
 
 export const db_computeSix = [
   {
     "title": 1,
-    "link": "Process - RAM - CPU",
+    "link": "Process-RAM-CPU",
   },
   {
     "title": 2,
-    "link": "PID(PPID) - JOBS - Daemons -Nice",
+    "link": "PID(PPID)-JOBS-Daemons-Nice",
   },
   {
     "title": 3,
-    "link": "proc & pid",
+    "link": "proc-pid",
   },
   {
     "title": 4,
@@ -123,30 +123,30 @@ export const db_computeSix = [
 export const db_computeSeven = [
   {
     "title": 1,
-    "link": "Database (MySQL - mariadb - Mongoose)",
+    "link": "Database (MySQL-mariadb-Mongoose)",
   },
   {
     "title": 2,
-    "link": "Web-App - Web-Site",
+    "link": "Web-App-Web-Site",
   },
   {
     "title": 3,
-    "link": "Update - Upgrade",
+    "link": "Update-Upgrade",
   },
   {
     "title": 4,
-    "link": "Passwd - Usr - Root",
+    "link": "Passwd-Usr-Root",
   },
   {
     "title": 5,
-    "link": "Hyper-Virtualisation - Security"
+    "link": "Hyper-Virtualisation-Security"
   }
 ]
 
 export const db_computeEight = [
   {
     "title": 1,
-    "link": "SSH & SCP",
+    "link": "SSH-SCP",
   },
   {
     "title": 2,
@@ -158,14 +158,14 @@ export const db_computeEight = [
   },
   {
     "title": 4,
-    "link": "HTTP & HTTPS",
+    "link": "HTTP-HTTPS",
   }
 ]
 
 export const db_computeNine = [
   {
     "title": 1,
-    "link": "HTTP: header, body, data",
+    "link": "HTTP-header-body-data",
   },
   {
     "title": 2,
@@ -192,30 +192,30 @@ export const db_computeTen = [
   },
   {
     "title": 3,
-    "link": "Data & Metadata",
+    "link": "Data-Metadata",
   },
   {
     "title": 4,
-    "link": "Model OSI",
+    "link": "Model-OSI",
   },
   {
     "title": 5,
-    "link": "WireShark - TCPdump"
+    "link": "WireShark-TCPdump"
   }
 ]
 
 export const db_computeEleven = [
   {
     "title": 1,
-    "link": "Internal proxy",
+    "link": "Internal-proxy",
   },
   {
     "title": 2,
-    "link": "External proxy",
+    "link": "External-proxy",
   },
   {
     "title": 3,
-    "link": "kaliproxy, torproxify",
+    "link": "kaliproxy-torproxify",
   },
   {
     "title": 4,
@@ -227,14 +227,14 @@ export const db_computeEleven = [
   },
   {
     "title": 5,
-    "link": "WireShark - TCPdump"
+    "link": "WireShark-TCPdump"
   }
 ]
 
 export const db_computeTwelve = [
   {
     "title": 1,
-    "link": "nmap - zenmap",
+    "link": "nmap-zenmap",
   },
   {
     "title": 2,
