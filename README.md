@@ -11,9 +11,9 @@ with MySQL db in LAN
 # Structure
 
 src
-|
-|--App.tsx (react-router-dom (v6))
-|
+|\
+|--App.tsx (react-router-dom (v6)) \
+| \
 |--assets (img of project)
 |
 |--components
@@ -184,6 +184,10 @@ export default defineConfig({
 └─ $ ▶ pnpm run test
 
 └─ $ ▶ pnpm run coverage
+
+pnpm install -D @testing-library/dom@>=7.21.4
+
+pnpm install -D @testing-library/user-event
 
 ---
 
