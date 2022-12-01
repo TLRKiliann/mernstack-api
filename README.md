@@ -14,7 +14,7 @@ src
 |\
 |--App.tsx (react-router-dom (v6)) \
 | \
-|--assets (img of project)
+|--assets (img of project)\
 |
 |--components
 |
@@ -78,14 +78,18 @@ src
     "typecheck": "vitest typecheck"
   },
   "dependencies": {
+    "@fontsource/dejavu-sans": "^4.5.4",
+    "@fontsource/junction": "^4.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
@@ -163,6 +167,8 @@ export default defineConfig({
 
 # Testing
 
+(package.json)
+
 ```
   "scripts": {
     "dev": "vite",
@@ -170,6 +176,8 @@ export default defineConfig({
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage"
+
+    ("typecheck": "vitest typecheck" that's experimental...)
   }
 ```
 
@@ -181,13 +189,29 @@ export default defineConfig({
 
 └─ $ ▶ pnpm install -D react-test-renderer
 
+└─ $ ▶ pnpm install -D @testing-library/dom@>=7.21.4
+
+└─ $ ▶ pnpm install -D @testing-library/user-event
+
 └─ $ ▶ pnpm run test
 
 └─ $ ▶ pnpm run coverage
 
-pnpm install -D @testing-library/dom@>=7.21.4
+---
 
-pnpm install -D @testing-library/user-event
+(src/setupTest.ts)
+
+```
+import '@testing-library/jest-dom';
+```
+
+---
+
+(tsconfig.json)
+
+```
+  "include": ["src", "./setupTest.ts"],
+```
 
 ---
 
@@ -206,21 +230,9 @@ export default defineConfig({
     test: {
       globals: true,
       environment: 'jsdom',
+      setupFiles: ['src/setupTest.ts']
     }
 })
-```
-
----
-
-```
-import React from "react";
-import {beforeEach, describe, expect, test, it, vi} from 'vitest';
-import {fireEvent, render, screen, waitFor} from '@testing-library/react';
-import "@testing-library/jest-dom/extend-expect"
-import "@testing-library/jest-dom";
-import { act } from 'react-dom/test-utils';
-import {create} from 'react-test-renderer';
-import App from "../App.jsx";
 ```
 
 ---
