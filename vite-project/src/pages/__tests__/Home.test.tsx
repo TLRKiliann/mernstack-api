@@ -2,35 +2,41 @@ import React from "react";
 import {assert, afterEach, describe, expect, test, it, vi} from 'vitest';
 //import {fireEvent, render, screen} from '@testing-library/react';
 import { create } from 'react-test-renderer';
-import Header from "../Home.tsx";
-import MainTitle from "../Home.tsx";
+//import Header from "../Home.tsx";
+//import MainTitle from "../Home.tsx";
 import MainComp from "../Home.tsx";
-import Footer from "../Home.tsx";
+//import MainComp from "../MainComp.tsx"
+//import Footer from "../Home.tsx";
 
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 //assertType, expectTypeOf
 
+/*
 test('MatchSnapShot test Header 1', () => {
   const tree = create(<Header />)
   expect(tree.toJSON()).toMatchSnapshot();
 })
-
+*/
+/*
 test('MatchSnapShot test MainTitle 1', () => {
   const tree = create(<MainTitle />)
   expect(tree.toJSON()).toMatchSnapshot();
 })
+*/
 
-test('MatchSnapShot test MainComp 1', () => {
+/*
+test('MatchSnapShot test MainComp', () => {
   const tree = create(<MainComp />)
-  expect(tree.toJSON()).toMatchSnapshot();
-})
+  expect(tree.toJSON()).toMatchInlineSnapshot();
+})*/
 
+/*
 test('MatchSnapShot test Footer 1', () => {
   const tree = create(<Footer />)
   expect(tree.toJSON()).toMatchSnapshot();
-})
+})*/
 
 describe('suite name', () => {
   it('foo', () => {
