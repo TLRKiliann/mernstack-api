@@ -181,7 +181,7 @@ export const db_users = [
 		"gender": "female",
 		"mainroom": "CPU",
 		"room": "Generation-i3-i5-i7",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 14,

@@ -17,6 +17,7 @@ const PrivateMessage: React.FC = () => {
     setUsers(db_users)
     setNewNames(retrieveFirst)
     handleSearchUser()
+    return () => handleSearchUser()
   }, [])
 
   const handleSearchUser = () => {

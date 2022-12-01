@@ -19,7 +19,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
   }, [])
   console.log(props.roomStyle, "roomStyle")
   return(
-    <section className="user--online">
+    <section data-testid="ptestid" className="user--online">
       <div className="div--userolinetitle">
         <h3 className="userolinetitle">Online Users</h3>
       </div>
@@ -37,7 +37,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
               /> 
             </div>
             
-            <p data-testid="ptestid" className="para--spanchat">
+            <p className="para--spanchat">
               {val.firstName} {val.isConnected ? (
                 <span
                   className="span--useronline"

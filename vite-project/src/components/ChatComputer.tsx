@@ -47,7 +47,7 @@ const ChatComputer: React.FC = () => {
   //console.log("id", id)
 
   useEffect(() => {
-    switch(id.toString()) {
+    switch(id?.toString()) {
       case "1":
         setComputerDb("Hard Disk - SSD")
         setImgBg(img_1)

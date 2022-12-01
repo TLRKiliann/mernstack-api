@@ -12,6 +12,6 @@ import '@testing-library/jest-dom'
 
 test('renders services link', () => {
   render(<Services />);
-  const linkElement = screen.getByText(/services/i);
+  const linkElement = screen.getByText(/rooms/i);
   expect(linkElement).toBeInTheDocument();
 });

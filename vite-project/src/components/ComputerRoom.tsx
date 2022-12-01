@@ -11,7 +11,7 @@ import './styleComponents/ComputerRoom.scss'
 
 const ComputerRoom: React.FC = () => {
 
-  const params = useParams<{ link?: object }>()
+  const params = useParams<{ link?: string }>()
   const [users, setUsers] = useState<Array<userType>>([])
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
   const [catchById, setCatchById] = useState<Array<userType>>([])

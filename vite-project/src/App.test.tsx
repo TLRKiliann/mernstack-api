@@ -1,39 +1,78 @@
-// app.test.js
-import {render, screen} from '@testing-library/react'
-//import userEvent from '@testing-library/user-event'
+//import {fireEvent, render, screen} from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
+import { assert, afterEach, describe, expect, test, it, vi } from 'vitest';
+import userEvent from '@testing-library/user-event'
+import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
-//import '@testing-library/jest-dom'
-import {Home} from './App.tsx'
-import {BrowserRouter, MemoryRouter} from 'react-router-dom'
+import App from './App.tsx'
+import { Home } from './App.tsx'
+//import { ErrorPageNotFound } from './App.tsx'
 
-test('full app rendering/navigating', async () => {
-  render(<Home />, {wrapper: BrowserRouter})
-  //const user = userEvent.setup()
 
-  // verify page content for default route
-  expect(screen.getByText(/home/i)).toBeInTheDocument()
+test('Click the services router Route Home', async () => {
+  render(<App />, {wrapper: BrowserRouter})
 
-  // verify page content for expected route after navigating
-  //await user.click(screen.getByText(/about/i))
-  expect(screen.getByText(/home/i)).toBeInTheDocument()
-})
+  expect(screen.getByText('Home')).toBeInTheDocument()
+  
+  const user = userEvent.setup()
+  const home = vi.spyOn(user, 'click')
+  const homeLink = screen.getByText(/home/i)
 
-test('rendering a component that uses useLocation', () => {
-  const route = '/home'
+  await user.click(homeLink)
+  expect(home).toHaveBeenCalledTimes(1)
+});
 
-  // use <MemoryRouter> when you want to manually control the history
-  render(
-    <MemoryRouter initialEntries={[route]}>
-      <Home />
-    </MemoryRouter>,
-  )
+it('Click the services router Route Services', async () => {
+  render(<App />, {wrapper: BrowserRouter})
 
-  // verify location display is rendered
-  expect(screen.getByTestId('location-display')).toHaveTextContent(route)
-})
+  expect(screen.getByText('Services')).toBeInTheDocument()
+  
+  const user = userEvent.setup()
+  const Services = vi.spyOn(user, 'click')
+  const ServicesLink = screen.getByText(/services/i)
+
+  await user.click(ServicesLink)
+  expect(Services).toHaveBeenCalledTimes(1)
+});
+
+it('Click the services router Route Help', async () => {
+  render(<App />, {wrapper: BrowserRouter})
+
+  expect(screen.getByText('Help')).toBeInTheDocument()
+  
+  const user = userEvent.setup()
+  const help = vi.spyOn(user, 'click')
+  const helpLink = screen.getByText(/help/i)
+
+  await user.click(helpLink)
+  expect(help).toHaveBeenCalledTimes(1)
+});
 
 
 /*
+TWEET
+  import { describe, test, expect } from 'vitest'
+  import { render, screen } from '@testing-library/react'
+  import App from './App'
+
+  describe('<App />', () => {
+    test('App mounts properly', () => {
+      const wrapper = render(<App />)
+      expect(wrapper).toBeTruthy()
+
+      // Get by h1
+      const h1 = wrapper.container.querySelector('h1')
+      expect(h1?.textContent).toBe('Vite + React')
+
+      // Get by text using the React testing library
+      const text = screen.getByText(
+        /Click on the Vite and React logos to learn more/i
+      );
+      expect(text.textContent).toBeTruthy()
+    })
+  });
+
+
 import React from "react";
 import { screen } from '@testing-library/react';
 import { create } from 'react-test-renderer';
