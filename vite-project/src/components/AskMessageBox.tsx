@@ -1,29 +1,36 @@
 import React from 'react'
+import { db_users } from '../models/db_users'
+import { userType } from '../models/userType'
 import './styleComponents/AskMessageBox.scss'
 
+interface db_usersProps {
+  db_users: Array<userType>
+}
+
 interface AskMessageBoxProps {
-  catchById: userType[]
+  catchById: db_usersProps
   handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
   return(
-    <div key={props.catchById.id} className="boolean--result">
-      <div 
+    <div key={props.catchById?.id} className="boolean--result">
+      <div
+        data-testid="asktestid" 
         className="form--invitation"
       >
         <label htmlFor="users" className="lbl--invite">
           Invite
           <img
-            src={props.catchById.img}
+            src={props.catchById?.img}
             width="50px"
             height="50px"
             className="img--invite"
             alt="no img panel ask invite"
           />
           <span className="span--invite">
-            {props.catchById.firstName}&nbsp;
+            {props.catchById?.firstName}&nbsp;
           </span> to private chat :
         </label>
         <select name="users" id="users">
@@ -35,7 +42,7 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
             value="message">Message</option>
         </select> 
         <button
-          onClick={() => props.handleInvitation(props.catchById.id)}
+          onClick={() => props.handleInvitation(props.catchById?.id)}
           className="btn--invitation"
         >
           Invite

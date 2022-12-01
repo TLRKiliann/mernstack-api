@@ -7,7 +7,7 @@ import './styleComponents/NavBar.scss'
 export default class NavBar extends Component {
   render() {
     return(
-      <div className="div--headernav">
+      <div data-test-id="testId" className="div--headernav">
         <nav >
 
           <div className="div--img">

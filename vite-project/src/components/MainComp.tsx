@@ -1,9 +1,5 @@
 import React from 'react'
 import { userType } from '../models/userType';
-import rebeka from '../assets/rebeka_smile.jpg'
-import jeanne from '../assets/jeanne_smile.jpg'
-import paula from '../assets/paula_smile.jpg'
-import celestine from '../assets/celestine_smile.jpg'
 import './styleComponents/MainComp.scss'
 
 interface MainCompProps {
@@ -19,7 +15,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
         <h2 className='h2--maincomp'>
           All Members :&nbsp;
           <span style={{color: "orange"}}>
-            {props.users.length}
+            {props.users?.length}
           </span>
         </h2>
         
@@ -34,7 +30,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
         </h3>
 
         <div>
-          {props.users?.slice(0, `${props.users.length}`).map(user => (
+          {props.users?.slice(0, `${props.users?.length}`).map(user => (
             <div key={user.id}>
             {user.isConnected ? (
               <div className="div--connection">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
 import zoomImg from '../assets/bg_login.png'
 import '../stylePages/Login.scss'
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
     let newForm: Form = form;
 
     // Validator username
-    if (form.username.value.length < 1) {
+    if (form.username.value.length < 3) {
       const errorMsg: string = 'Votre prénom doit faire au moins 3 caractères de long.';
       const newField: Field = { value: form.username.value, error: errorMsg, isValid: false };
       newForm = { ...newForm, ...{ username: newField } };
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
     }
 
     // Validator password
-    if (form.password.value.length < 1) {
+    if (form.password.value.length < 6) {
       const errorMsg: string = 'Votre mot de passe doit faire au moins 6 caractères de long.';
       const newField: Field = { value: form.password.value, error: errorMsg, isValid: false };
       newForm = { ...newForm, ...{ password: newField } };
@@ -80,7 +80,7 @@ const Login: React.FC = () => {
   }
 
   return(
-    <div className="bg--loginimg">
+    <div data-testid="logintest" className="bg--loginimg">
       <div className="zoom--img">
         <img
           src={zoomImg}
@@ -133,6 +133,7 @@ const Login: React.FC = () => {
           } 
           <button type="submit">Enter</button>
         </form>
+        <li><Link to="/subscribe">Subscribe</Link></li>
       </div>
 
     </div>
