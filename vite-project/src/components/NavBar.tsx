@@ -17,13 +17,18 @@ const NavBar: React.FC = () => {
 
   return(
     <div data-test-id="testId" className="div--headernav">
-      <nav >
+      <nav className="navbar--nav">
 
         <div className="div--img">
-          <img src={koalatree} width='53px' height='58px' alt='no img navbar'/>
+          <img
+            src={koalatree}
+            width='53px'
+            height='58px'
+            alt='no img navbar'
+          />
         </div>
 
-        <ul>
+        <ul className="ul--navbar">
           <li>
             <Link
               className="link--tagnav"
@@ -55,7 +60,7 @@ const NavBar: React.FC = () => {
           <span 
             style={{
               margin: "0px 20px",
-              padding: "10px",
+              padding: "5px",
               fontFamily: "Consolas",
               textShadow: "1px 1px 1px purple",
               background: "steelblue",
@@ -72,7 +77,7 @@ const NavBar: React.FC = () => {
           <span
             style={{
               margin: "0px 20px",
-              padding: "10px",
+              padding: "5px",
               background: "red",
               borderRadius: "10px",
               color: "white"

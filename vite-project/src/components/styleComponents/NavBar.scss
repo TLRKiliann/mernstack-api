@@ -9,30 +9,31 @@
   flex-direction: column;
   background-color: purple;
   border-bottom: 1px solid slategray;
-  box-shadow: 0px 0px 10px slategray;
+  box-shadow: 0px 0px 7px slategray;
   z-index: 4;
 }
 
-nav {
+.navbar--nav {
   width: 100%;
   margin: auto;
   display: flex;
-  justify-content: right;
-  z-index: 4;
+
+  border: 1px solid orange;
 }
 
 .div--img {
-  position: relative;
   width: 55px;
   margin: auto;
+  display: flex;
   z-index: 4;
+
+  border: 1px solid orange;
 }
 
-.div--headernav ul {
-  min-width: 90%;
+.ul--navbar {
   margin: auto;
   display: flex;
-  justify-content: right;
+  flex-direction: row;
 }
 
 .div--headernav > nav > ul > li {
