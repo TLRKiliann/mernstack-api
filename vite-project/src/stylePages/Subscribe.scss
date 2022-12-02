@@ -3,43 +3,116 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg, purple, orange);
 }
 
 .title--subscribe {
   margin-top: 80px;
   margin-left: 20px;
+  font-family: "Junction", sans-serif;
 }
 
 .form--subscribe {
-  width: 60%;
+  width: 480px;
+  height: auto;
   padding: 20px;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 7%;
+  margin-bottom: 12%;
   display: flex;
   flex-direction: column;
-
-  background-color: rgba(45, 85, 255, 0.4);
+  border: 2mm ridge royalblue;
+  background: rgba(45, 85, 255, 0.4);
   border-radius: 12px;
-}
 
-.lbl--sub {
-  font-family: 'Consolas';
-  font-size: 1.2rem;
-  font-weight: bold;
-}
+  .message--sub {
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: lightgreen;
+  }
 
-.input--sub {
-  margin: 5px 0px;
-}
+  .firstname--error {
 
-.select--sub {
-  margin: 15px 0px; 
-}
+  }
 
-.btn--sub {
-  width: 100px;
-  margin: auto;
-  padding: 3px 10px;
+  .password--error {
+    
+  }
+
+
+  .div--subscribe {
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title--framesub {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .lbl--sub {
+    font-family: 'Junction';
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .input--sub {
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+
+    font-family: 'Junction';
+    font-size: 1.0rem;
+    font-weight: bold;
+
+    border: 1mm inset rgba(45, 85, 255, 0.4);
+    &::placeholder {
+      color: lightgrey;
+    }
+  }
+
+  .div--subselect {
+    width: 100%;
+    margin: auto;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .select--sub {
+      width: 100px;
+      margin: 15px 0px;
+      margin-left: 10px;
+      padding: 5px 10px;
+    }
+  }
+  
+  .btn--sub {
+    margin: auto;
+    padding: 10px 20px;
+    
+    font-family: 'Junction';
+    font-size: 1.0rem;
+    font-weight: bold;
+    
+    background: royalblue;
+    border: 3px outset royalblue;
+    border-radius: 12px;
+
+    color: whitesmoke;
+    &:hover {
+      background-color: dodgerblue;
+      border: 3px outset dodgerblue;
+      cursor: pointer;
+      transform: scale(1.1);
+      color: lightblue;
+    }
+  }
 }

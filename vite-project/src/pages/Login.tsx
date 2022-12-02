@@ -25,7 +25,7 @@ const Login: React.FC = () => {
     password: {value: ''}
   })
 
-  const [message, setMessage] = useState<string>('Not connected! (koala / koalatree)');
+  const [message, setMessage] = useState<string>('Not connected! (myuser / user123)');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -90,11 +90,18 @@ const Login: React.FC = () => {
         />
       </div>
 
+      <div className="title--login">
+        <h1>Login</h1>
+      </div>
+
       <div className="div--submit">
         <form
           onSubmit={(e) => handleSubmit(e)}
           className="submit"
+          placeholder="lastname"
+
         >
+          <h1 className="title--framelogin">Login</h1>
 
           {message && <div className="form-group">
             <div className="error--message">
@@ -110,6 +117,7 @@ const Login: React.FC = () => {
             onChange={(e) => handleInputChange(e)}
             placeholder="username"
             autoComplete="off"
+            className="input--login"
             required
           />
           {form.username.error &&
@@ -124,16 +132,27 @@ const Login: React.FC = () => {
             value={form.password.value}
             onChange={(e) => handleInputChange(e)}
             placeholder="password"
+            className="input--login"
             required
           />
+
           {form.password.error &&
             <div className="error password"> 
               {form.password.error} 
             </div>
           } 
           <button type="submit">Enter</button>
+
+          <p className="p--loginframe">
+            <Link
+              to="/subscribe"
+              className="link--subscribe"
+            >
+              subscribe
+            </Link>
+          </p>
+
         </form>
-        <li><Link to="/subscribe">Subscribe</Link></li>
       </div>
 
     </div>

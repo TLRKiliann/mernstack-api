@@ -1,9 +1,10 @@
+//Basic authentication
 export default class AuthenticationService {
 
   static isAuthenticated: boolean = false;
 
   static login(username: string, password: string): Promise<boolean> {
-    const isAuthenticated = (username === 'koalatr33' && password === 'koalatr33');
+    const isAuthenticated = (username === 'myuser' && password === 'user123');
 
     return new Promise(resolve => {
       setTimeout(() => {
