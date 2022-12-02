@@ -71,7 +71,7 @@
 
 /*Search UserName*/
 .form--search {
-  width: auto;
+  width: 340px;
   margin: auto;
   margin-top: 20px;
   display: flex;
@@ -80,10 +80,11 @@
   .search--input {
     margin: auto;
     padding: 3px 5px;
+    font-family: 'Junction';
     font-size: 1.0rem;
-    color: whitesmoke;
-    border: 3px inset #383838;
-    background-color: #383838;
+    color: lightblue;
+    border: 3px inset royalblue;
+    background-color: #424242;
   }
 
   .search--input::placeholder {
@@ -92,18 +93,18 @@
   }
 
   .btn--search {
-    padding: 7px 20px;
+    padding: 4px 20px;
     margin: auto;
     margin-top: 0px;
     margin-left: 10px;
     font-weight: bold;
-    border: 1px solid #383838;
+    border: 2px outset #424242;
     outline: 0;
     border-radius: 7px;
-    background-color: #383838;
+    background-color: #424242;
     &:hover {
-      background-color: rgba(45, 85, 255, 0.4);
-      border: 1px solid rgba(45, 85, 255, 0.4);
+      background-color: royalblue;
+      border: 2px outset royalblue;
     }
   }
 }
@@ -144,7 +145,8 @@
 .link--tagvoletl {
   margin: 2px 0px;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-family: 'Junction';
+  font-size: 1.0rem;
   color: whitesmoke;
   &:hover {
     color: steelblue;
