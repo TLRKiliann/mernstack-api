@@ -98,6 +98,8 @@ const Login: React.FC = () => {
         <form
           onSubmit={(e) => handleSubmit(e)}
           className="submit"
+          placeholder="lastname"
+
         >
           <h1 className="title--framelogin">Login</h1>
 
@@ -133,6 +135,7 @@ const Login: React.FC = () => {
             className="input--login"
             required
           />
+
           {form.password.error &&
             <div className="error password"> 
               {form.password.error} 
