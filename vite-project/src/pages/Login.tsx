@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
+import { useAuthLogin } from '../context/AuthProvider'
 import zoomImg from '../assets/bg_login.png'
 import '../stylePages/Login.scss'
 
@@ -26,6 +27,11 @@ const Login: React.FC = () => {
   })
 
   const [message, setMessage] = useState<string>('Not connected! (myuser / user123)');
+
+  const { toggle,
+    switchLogin,
+    setUserName,
+    setAuth } = useAuthLogin();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -74,7 +80,12 @@ const Login: React.FC = () => {
             setMessage('🔐 Identifiant ou mot de passe incorrect.');
             return;
           }
-        Navigate('/')
+
+        setAuth(form.username.value, form.password.value)
+        setUserName(form.username.value)
+        toggle()
+        console.log("login ok")
+        Navigate('/services')
       });
     }
   }
