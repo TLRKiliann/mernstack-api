@@ -10,26 +10,56 @@ const Subscribe: React.FC = () => {
       </div>
 
       <form className="form--subscribe">
-        <label className="lbl--sub" htmlFor="sub">Firstname</label>
-        <input className="input--sub" type="text" placeholder="firstname" required />
+        <div className="div--subscribe">
+          <h1 className="title--framesub">Subscribe</h1>
+          <label className="lbl--sub" htmlFor="sub">Firstname</label>
+          <input
+            className="input--sub"
+            type="text"
+            placeholder="firstname"
+            required
+          />
 
-        <label className="lbl--sub" htmlFor="sub">Lastname</label>
-        <input className="input--sub" type="text" placeholder="lastname" required />
+          <label className="lbl--sub" htmlFor="sub">Lastname</label>
+          <input
+            className="input--sub"
+            type="text"
+            placeholder="lastname"
+            required
+          />
 
-        <label className="lbl--sub" htmlFor="sub">Age</label>
-        <input className="input--sub" type="number" placeholder="age" required />
+          <label className="lbl--sub" htmlFor="sub">Age</label>
+          <input
+            className="input--sub"
+            type="number"
+            min="20" max="120"
+            placeholder="age"
+            required
+          />
 
-        <label className="lbl--sub" htmlFor="sub">Email</label>
-        <input className="input--sub" type="email" placeholder="email" required />
+          <label className="lbl--sub" htmlFor="sub">Email</label>
+          <input
+            className="input--sub"
+            type="email"
+            placeholder="email"
+            required
+          />
 
-        <label className="lbl--sub" htmlFor="sub">Location</label>
-        <input className="input--sub" type="text" placeholder="location" required />
-
-        <select className="select--sub">
-          <option>Gender</option>
-          <option>Male</option>
-          <option>Female</option>
-        </select>
+          <label className="lbl--sub" htmlFor="sub">Location</label>
+          <input
+            className="input--sub"
+            type="text"
+            placeholder="location"
+            required
+          />
+          <div className="div--subselect">
+            <label htmlFor="gender" className="lbl--sub">Choose : </label>
+            <select name="gender" id="gender" className="select--sub">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
 
         <button className="btn--sub">Sign Up</button>
       </form>
