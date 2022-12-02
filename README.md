@@ -1,4 +1,4 @@
-# MERN-stack API
+# MERN-stack API (under development)
 
 with MySQL db in LAN
 
