@@ -1,4 +1,4 @@
-# MERN-stack API
+# MERN-stack API (under development)
 
 with MySQL db in LAN
 
@@ -10,19 +10,19 @@ with MySQL db in LAN
 
 # Structure
 
-src
-|\
+src \
+| \
 |--App.tsx (react-router-dom (v6)) \
 | \
-|--assets (img of project)\
-|
-|--components
-|
-|--models (db will be replaced by axios)
-|
-|--pages (main pages for navbar & subscribe)
-|
-|--services (authentification)
+|--assets (img of project) \
+| \
+|--components \
+| \
+|--models (db will be replaced by axios) \
+| \
+|--pages (main pages for navbar & subscribe) \
+| \
+|--services (authentification) \
 
 ---
 
