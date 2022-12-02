@@ -8,7 +8,7 @@ const PageNotFound: React.FC = () => {
 		marginTop: '25%',
 		textAlign: 'center',
 		fontSize: '2rem',
-		fontFamily: 'Consolas',
+		fontFamily: 'Junction, sans-serif',
 		backgroundColor: '#242424',
 		color: 'white'
 	};
