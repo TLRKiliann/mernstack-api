@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
+import { useAuthLogin } from '../context/AuthProvider'
 import zoomImg from '../assets/bg_login.png'
 import '../stylePages/Login.scss'
 
@@ -25,7 +26,14 @@ const Login: React.FC = () => {
     password: {value: ''}
   })
 
-  const [message, setMessage] = useState<string>('Not connected! (myuser / user123)');
+  const [message, setMessage] = useState<string>('Not connected! (esteban / 123)');
+
+  const { 
+    toggle,
+    switchLogin,
+    setUserName,
+    setAuth
+  } = useAuthLogin();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -74,6 +82,11 @@ const Login: React.FC = () => {
             setMessage('🔐 Identifiant ou mot de passe incorrect.');
             return;
           }
+
+        setAuth(form.username.value, form.password.value)
+        setUserName(form.username.value)
+        toggle()
+        console.log("login ok")
         Navigate('/')
       });
     }
@@ -86,12 +99,9 @@ const Login: React.FC = () => {
           src={zoomImg}
           width="100%"
           height="100%"
+          className="img--login"
           alt={zoomImg}
         />
-      </div>
-
-      <div className="title--login">
-        <h1>Login</h1>
       </div>
 
       <div className="div--submit">
@@ -109,7 +119,9 @@ const Login: React.FC = () => {
             </div>
           </div>
           }
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username" className="lbl--login">
+            Username
+          </label>
           <input
             type="text"
             name="username"
@@ -125,7 +137,9 @@ const Login: React.FC = () => {
              {form.username.error} 
             </div>
           } 
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="lbl--login">
+            Password
+          </label>
           <input
             type="password"
             name="password"
@@ -141,7 +155,9 @@ const Login: React.FC = () => {
               {form.password.error} 
             </div>
           } 
-          <button type="submit">Enter</button>
+          <button type="submit" className="btn--submitlogin">
+            Enter
+          </button>
 
           <p className="p--loginframe">
             <Link

@@ -108,10 +108,6 @@ const Subscribe: React.FC = () => {
   return (
     <div className="subscribe">
 
-      <div className="title--subscribe">
-        <h1>Subscribe</h1>
-      </div>
-
       <form
         className="form--subscribe"
         autoComplete="off"
