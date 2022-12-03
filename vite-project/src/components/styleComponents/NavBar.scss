@@ -1,3 +1,14 @@
+$font_junction: 'Junction';
+$lightgrey_54: #545454;
+$lightgrey_50: #505050;
+$lightgrey_48: #484848;
+$lightgrey_42: #424242;
+$lightgrey_38: #383838;
+$lightgreen: #90ee90;
+$slategray: #708090;
+$purple: #800080;
+$orange: #ffa500;
+
 .div--headernav {
   position: fixed;
   top: 0px;
@@ -7,38 +18,47 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: purple;
-  border-bottom: 1px solid slategray;
-  box-shadow: 0px 0px 10px slategray;
+  background-color: $purple;
+  border-bottom: 1px solid $slategray;
+  box-shadow: 0px 0px 10px $slategray;
   z-index: 4;
-}
 
-.navbar--nav {
-  width: 100%;
-  margin: auto;
-  display: flex;
-}
+  .navbar--nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
 
-.div--img {
-  position: absolute;
-  width: 55px;
-  margin: auto;
-  top: 5px;
-  left: 10px;
-  display: flex;
-  background: linear-gradient(180deg, purple, orange);
-  border-radius: 50% 50%;
-  box-shadow: 0px 0px 7px purple;
-  z-index: 4;
-}
+    .div--img {
+      position: absolute;
+      width: 55px;
+      margin: auto;
+      top: 5px;
+      left: 10px;
+      display: flex;
+      background: linear-gradient(180deg, $purple, $orange);
+      border-radius: 50% 50%;
+      box-shadow: 0px 0px 7px $purple;
+      z-index: 4;
+    }
+    .ul--navbar {
+      padding-left: 40px;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
 
-.ul--navbar {
-  padding-left: 40px;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+      .link--tagnav {
+        text-decoration: none;
+        text-shadow: 1px 1px 0px black;
+        color: whitesmoke;
+        
+        &:hover {
+         color: $orange;
+        }
+      }
+    }
+  }
 }
 
 .div--headernav > nav > ul > li {
@@ -47,19 +67,9 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-family: 'Junction';
+  font-family: $font_junction;
   font-size: 1.4rem;
   font-weight: bold;
-}
-
-.link--tagnav {
-  text-decoration: none;
-  text-shadow: 1px 1px 0px black;
-  color: whitesmoke;
-}
-
-.link--tagnav:hover {
-  color: orange;
 }
 
 /*right side of navbar*/
@@ -70,101 +80,99 @@
   margin-right: 10px;
   display: flex;
   flex-direction: row;
-  background-color: #424242;
+  background-color: $lightgrey_42;
   border-radius: 15px;
-  border: 1mm inset #484848;
-}
+  border: 1mm inset $lightgrey_48;
 
-/*user item*/
-.div--userplace {
-  margin-left: 10px;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .div--userplace {
+    margin-left: 10px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.span--navbarusername {
-  padding: 10px;
+    .span--navbarusername {
+      padding: 10px;
 
-  font-family: 'Junction';
-  font-size: 0.9rem;
-  font-weight: bold;
+      font-family: $font_junction;
+      font-size: 0.9rem;
+      font-weight: bold;
 
-  background-color: #383838;
-  border: 1mm inset #424242;
-  border-radius: 30px;
-}
+      background-color: $lightgrey_38;
+      border: 1mm inset $lightgrey_42;
+      border-radius: 30px;
+    }
 
-.span--usrnavbar {
-  padding: 5px 10px;
-  background-color: #383838;
-  box-shadow: 0px 0px 4px lightgreen;
-  border-radius: 5px;
-  color: lightgreen;
-}
-
-/*login item*/
-.div--login {
-  margin-right: 10px;
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.link--logintag {
-  padding: 5px 10px;
-
-  display: flex;
-  margin: auto;
-  text-decoration: none;
-  font-family: 'Junction', sans-serif;
-  font-size: 0.9rem;
-  
-  background-color: #383838;
-  border-radius: 10px;
-  border: 1mm outset #505050;
-  color: whitesmoke;
-
-  &:hover {
-    background: #505050;
-    border: 1mm outset #545454;
+    .span--usrnavbar {
+      padding: 5px 10px;
+      background-color: $lightgrey_38;
+      box-shadow: 0px 0px 4px $lightgreen;
+      border-radius: 5px;
+      color: $lightgreen;
+    }
   }
 
-  &:active {
-    transform: scale(0.95);
-    background-color: #383838;
-    border: 1mm inset #505050;
-    color: lightgreen;
+  /*login item*/
+  .div--login {
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .link--logintag {
+      padding: 5px 10px;
+
+      display: flex;
+      margin: auto;
+      text-decoration: none;
+      font-family: 'Junction', sans-serif;
+      font-size: 0.9rem;
+      
+      background-color: $lightgrey_38;
+      border-radius: 10px;
+      border: 1mm outset $lightgrey_50;
+      color: whitesmoke;
+
+      &:hover {
+        background: $lightgrey_50;
+        border: 1mm outset $lightgrey_54;
+      }
+
+      &:active {
+        transform: scale(0.95);
+        background-color: $lightgrey_38;
+        border: 1mm inset $lightgrey_50;
+        color: $lightgreen;
+      }
+    }
   }
-}
+  .link--logout {
+    padding: 16px 5px;
+    display: flex;
+    align-items: center;
 
-.link--logout {
-  padding: 16px 5px;
-  display: flex;
-  align-items: center;
+    text-decoration: none;
+    font-family: $font_junction;
+    font-size: 0.6rem;
 
-  text-decoration: none;
-  font-family: 'Junction';
-  font-size: 0.6rem;
-
-  background-color: #383838;
-  border: 1mm outset #505050;
-  border-radius: 50% 50%;
-  color: whitesmoke;
-  
-  &:hover {
-    transform: scale(1);
-    background-color: #505050;
-    border: 1mm outset #505050;
-    color: whitesmoke
-  }
-  
-  &:active {
-    transform: scale(0.9);
-    background-color: #383838;
-    border: 1mm inset #424242;
-    color: orange;
+    background-color: $lightgrey_38;
+    border: 1mm outset $lightgrey_50;
+    border-radius: 50% 50%;
+    color: whitesmoke;
+    
+    &:hover {
+      transform: scale(1);
+      background-color: $lightgrey_50;
+      border: 1mm outset $lightgrey_50;
+      color: whitesmoke
+    }
+    
+    &:active {
+      transform: scale(0.9);
+      background-color: $lightgrey_38;
+      border: 1mm inset $lightgrey_42;
+      color: $orange;
+    }
   }
 }
