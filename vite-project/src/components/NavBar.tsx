@@ -56,7 +56,7 @@ const NavBar: React.FC = () => {
         </ul>
 
       <div className="div--userloginnavbar">
-          <div className="div--userplace">
+        <div className="div--userplace">
           {username ? (
             <span 
               className="span--navbarusername"
@@ -89,7 +89,7 @@ const NavBar: React.FC = () => {
                 Logout
               </Link></span>
             )}
-            </div>
+          </div>
         </div>
       </nav>
     </div>

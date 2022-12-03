@@ -28,10 +28,12 @@ const Login: React.FC = () => {
 
   const [message, setMessage] = useState<string>('Not connected! (esteban / 123)');
 
-  const { toggle,
+  const { 
+    toggle,
     switchLogin,
     setUserName,
-    setAuth } = useAuthLogin();
+    setAuth
+  } = useAuthLogin();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -85,7 +87,7 @@ const Login: React.FC = () => {
         setUserName(form.username.value)
         toggle()
         console.log("login ok")
-        Navigate('/services')
+        Navigate('/')
       });
     }
   }
@@ -97,12 +99,9 @@ const Login: React.FC = () => {
           src={zoomImg}
           width="100%"
           height="100%"
+          className="img--login"
           alt={zoomImg}
         />
-      </div>
-
-      <div className="title--login">
-        <h1>Login</h1>
       </div>
 
       <div className="div--submit">
@@ -120,7 +119,9 @@ const Login: React.FC = () => {
             </div>
           </div>
           }
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username" className="lbl--login">
+            Username
+          </label>
           <input
             type="text"
             name="username"
@@ -136,7 +137,9 @@ const Login: React.FC = () => {
              {form.username.error} 
             </div>
           } 
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="lbl--login">
+            Password
+          </label>
           <input
             type="password"
             name="password"
@@ -152,7 +155,9 @@ const Login: React.FC = () => {
               {form.password.error} 
             </div>
           } 
-          <button type="submit">Enter</button>
+          <button type="submit" className="btn--submitlogin">
+            Enter
+          </button>
 
           <p className="p--loginframe">
             <Link
