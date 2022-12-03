@@ -23,28 +23,22 @@ import img_6 from '../assets/process.jpg'
 import img_7 from '../assets/world_bin.png'
 import img_8 from '../assets/reqres.jpg'
 import img_9 from '../assets/firewall.jpg'
-//import img_10 from '../assets/proxy.jpg'
 import img_12 from '../assets/Cybersecurity.jpg'
 import './styleComponents/ChatComputer.scss'
 
 
 const ChatComputer: React.FC = () => {
 
+  const { id } = useParams<{id?: string}>();
+
   const [newComputer, setNewComputer] = useState<computerType>([])
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
 
-  //console.log(links, "links")
-  //console.log("computerDb2", computerDb)
-
   useEffect(() => {
     setNewComputer(db_computers)
   }, [])
-  
-  //let myRoom = []
-  const { id } = useParams<{id?: string}>();
-  //console.log("id", id)
 
   useEffect(() => {
     switch(id?.toString()) {

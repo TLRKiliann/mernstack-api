@@ -4,29 +4,30 @@ import { db_users } from '../../models/db_users'
 import { userType } from '../../models/userType'
 import './PrivateMessage.scss'
 
+interface PrivateProps {
+  firstName: object
+}
 
-const PrivateMessage: React.FC = () => {
-
-  const [users, setUsers] = useState<Array<userType>>([])
-  const [newNames, setNewNames] = useState<{firstName?: string}>("")
-  const [displayName, setDisplayName] = useState<Arrayy<string>>([])
+const PrivateMessage: React.FC = ({firstName: PrivateProps}) => {
 
   const retrieveFirst = useParams<{firstName?: string}>("");
 
+  const [users, setUsers] = useState<Array<userType>>([])
+  const [newNames, setNewNames] = useState<{firstName?: string}>({retrieveFirst})
+  const [displayName, setDisplayName] = useState<Arrayy<string>>([])
+
   useEffect(() => {
     setUsers(db_users)
-    setNewNames(retrieveFirst)
+    setNewNames({retrieveFirst})
     handleSearchUser()
-    return () => handleSearchUser()
   }, [])
 
   const handleSearchUser = () => {
     const [arr] = Object.values(newNames)
-    const truc = [arr]
-    const [newTruc] = truc
+    const truc = arr
 
     const findByFirstName = users?.map(user => user).filter(user => {
-      return user.firstName === newTruc
+      return user.firstName === truc.firstName
         ? `${user.firstName} ${user.lastName} ${user.age} ${user.email}`
         : null
     })

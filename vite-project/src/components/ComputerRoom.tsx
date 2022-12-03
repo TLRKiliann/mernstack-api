@@ -12,12 +12,14 @@ import './styleComponents/ComputerRoom.scss'
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: string }>()
+  
   const [users, setUsers] = useState<Array<userType>>([])
   const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
+  
+  console.log(roomStyle, "roomStyle")
+
   const [catchById, setCatchById] = useState<Array<userType>>([])
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
-
-  //console.log(Object.values(catchById), "catchById")
 
   useEffect(() => {
     setUsers(db_users)
@@ -36,7 +38,7 @@ const ComputerRoom: React.FC = () => {
     setSwitchAsk(false)
   }
 
-  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>,id: number): void => {
+  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>, id: number): void => {
     console.log(id, "id")
     console.log("clicked post")
   }
@@ -61,7 +63,6 @@ const ComputerRoom: React.FC = () => {
       <h1 className="title--room">Room {Object.values(params)}</h1>
       
       <div data-testid="testdiv" className="div--terminaluser">
-
         <div className="section--terminal">
           <div className="div--worldbg">
             <img

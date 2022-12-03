@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { useAuthLogin } from '../../context/AuthProvider'
 import { db_users } from '../../models/db_users'
 import { userType } from '../../models/userType'
 import btnWorld from '../../assets/btn-world.png'
 import './TerminalComponent.scss'
 
+
 interface TerminalProps {
   roomStyle: object
 }
 
-const TerminalComponent: React.FC = (props: TerminalProps) => {
+interface UsernameProps {
+  username: string
+}
+
+const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
   const [message, setMessage] = useState<string>("")
   const [messages, setMessages] = useState<Array<string>>([])
@@ -24,11 +30,13 @@ const TerminalComponent: React.FC = (props: TerminalProps) => {
     setMyLocalStorage(refreshTerminal)
   }, [messages])
 
+  const { username } = useAuthLogin()
+
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (message) {
       setMessages([...messages, {id: Date().slice(0, 24),
-        usr: "Alphred", msg: `${message} ✉`}])
+        usr: `${username}`, msg: `${message} ✉`}])
     }
     setMessage("")
   }

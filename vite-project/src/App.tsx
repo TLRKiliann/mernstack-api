@@ -45,7 +45,7 @@ const App:React.FC = () => {
 
         <Route path='/computerroom/privatemessage/:firstName' element={
           <PrivateRoute>
-            <ComputerRoom />
+            <PrivateMessage />
           </PrivateRoute>
         } />
 

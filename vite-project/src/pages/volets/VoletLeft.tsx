@@ -69,7 +69,8 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             
             <div className="result--search">
             {userFound?.map(userFirst => (
-              <p key={userFirst.firstName} className="result--searchp">{userFirst.firstName} {userFirst.lastName} 
+              <p key={userFirst.firstName}
+                className="result--searchp">{userFirst.firstName} {userFirst.lastName} 
                 <span 
                   style={userFirst.isConnected ? {color: 'lightgreen'} 
                     : {color: 'orange'}}
