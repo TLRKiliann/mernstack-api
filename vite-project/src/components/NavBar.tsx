@@ -55,84 +55,42 @@ const NavBar: React.FC = () => {
           </li>
         </ul>
 
+      <div className="div--userloginnavbar">
+          <div className="div--userplace">
+          {username ? (
+            <span 
+              className="span--navbarusername"
+            >
+              {username}
+            </span>
+            ) : (
+            <span className="span--usrnavbar"> 
+              &#8614;
+            </span>
+            )}
+            </div>
 
-        {username ? (
-          <span 
-            style={{
-              margin: "0px 20px",
-              padding: "5px",
-              fontFamily: "Consolas",
-              textShadow: "1px 1px 1px purple",
-              background: "steelblue",
-              borderRadius: "10px",
-              boxShadow: "0px 3px 5px grey",
-              color: "white"
-            }}
-          >
-            {username}
-          </span>
+            <div className="div--login">
+            {switchLogin ? (
+              <p className="p--navbarlogin"><Link
+                to="/login"
+                className="link--logintag"
+              >
+                Login
+              </Link></p>
 
-          ) : (
-          
-          <span
-            style={{
-              margin: "0px 20px",
-              padding: "5px",
-              background: "red",
-              borderRadius: "10px",
-              color: "white"
-            }}> &#8614; </span>
-          )}
-
-        {switchLogin ? (
-          <li><Link
-            to="/login"
-            style={{
-              marginRight: "20px",
-              width: "55px", 
-              height: "55px", 
-              position: "relative", 
-              display: "flex", 
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "Consolas",
-              fontSize: "0.9rem",
-              textShadow: "1px 1px 1px white",
-              background: "whitesmoke",
-              color: "black", 
-              border: "1px solid grey",
-              borderRadius: "50%"
-            }}
-
-          >
-            Login
-          </Link></li>
-
-          ) : (
-          
-          <li><Link
-            to="/login"
-            onClick={() => handleChange()}
-            style={{
-              marginRight: "20px",
-              width: "55px", 
-              height: "55px", 
-              position: "relative", 
-              display: "flex", 
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "Consolas",
-              fontSize: "0.8rem",
-              color: "black", 
-              border: "1px solid grey",
-              borderRadius: "50%",
-            }}
-
-          >
-            Logout
-          </Link></li>
-        )}
-
+              ) : (
+              
+              <span className="span--navbarlogin"><Link
+                to="/login"
+                onClick={() => handleChange()}
+                className="link--logout"
+              >
+                Logout
+              </Link></span>
+            )}
+            </div>
+        </div>
       </nav>
     </div>
   )
