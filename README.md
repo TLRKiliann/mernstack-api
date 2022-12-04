@@ -193,6 +193,10 @@ if not installed run:
 
 └─ $ ▶ pnpm install express
 
+└─ $ ▶ pnpm install cors
+
+└─ $ ▶ pnpm install dotenv
+
 ## CMD Line
 
 └─ $ ▶ pnpm start (server.js)
