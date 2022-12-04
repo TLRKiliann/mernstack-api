@@ -22,7 +22,7 @@ src \
 | \
 |--pages (main pages for navbar & subscribe) \
 | \
-|--services (authentification) \
+|--services (authentification)
 
 ---
 
@@ -37,6 +37,8 @@ src \
 └─ $ ▶ pnpm install react-router-dom
 
 └─ $ ▶ pnpm install -D sass
+
+└─ $ ▶ pnpm install axios
 
 ---
 
@@ -162,6 +164,42 @@ export default defineConfig({
 ```
 
 └─ $ ▶ pnpm run dev
+
+---
+
+# Backend
+
+└─ $ ▶ pnpm init
+
+└─ $ ▶ pnpm install --save-dev json-server
+
+└─ $ ▶ pnpm install --save-dev nodemon
+
+└─ $ ▶ tsc --version \
+//Version 4.8.4 \
+if not installed run:
+
+└─ $ ▶ pnpm install -g typescript
+
+└─ $ ▶ tsc --init (or npx tsc --init)
+
+└─ $ ▶ pnpm install -D typescript
+
+└─ $ ▶ pnpm install -D @types/node
+
+└─ $ ▶ pnpm install -D @types/express
+
+└─ $ ▶ pnpm install -D ts-node
+
+└─ $ ▶ pnpm install express
+
+## CMD Line
+
+└─ $ ▶ pnpm start (server.js)
+
+└─ $ ▶ pnpm run dev (server.js restart in every changes)
+
+└─ $ ▶ pnpm run server (db.json restart in every changes)
 
 ---
 
