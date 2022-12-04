@@ -1,6 +1,5 @@
 import express, {Request, Response, NextFunction} from 'express';
 const cors = require('cors');
-//const notes = require('./db.json');
 import dotenv from 'dotenv';
 
 const PORT = 5000;
@@ -8,12 +7,13 @@ const date = new Date();
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-
 dotenv.config();
 
-/*const requestLogger = (req:Request, res:Response, next:NextFunction) => {
+/*
+to verify error with middleware
+const requestLogger = (req:Request, res:Response, next:NextFunction) => {
   console.log('Method:', req.method)
   console.log('Path:  ', req.path)
   console.log('Body:  ', req.body)
@@ -23,13 +23,7 @@ dotenv.config();
 
 //app.use(requestLogger);
 
-app.use(function(req:Request, res:Response, next:NextFunction) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-  res.header('Content-Type', 'application/json');
-  next();
-});
+//const getAllMembers = require('./routes/allMembers');
 
 let notes = [
   {
@@ -52,21 +46,53 @@ let notes = [
   },
 ];
 
-app.get("/", (req:Request, res:Response) => {
-  res.send("<h1>Hello from server !</h1>").status(200).end();
+app.use(function(req:Request, res:Response, next:NextFunction) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.header('Content-Type', 'application/json');
+  next();
 });
 
-app.get("/info", (req:Request, res:Response) => {
+app.get("/api/getAllMembers", (req:Request, res:Response, next:NextFunction): void => {
+  try {
+    res.json(notes).status(200).end();
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
+app.listen(PORT, () => {
+  console.log(`[+] Server is running on port ${PORT} !`)
+});
+
+//For real api with routes folder
+//app.use('/api/getAllMembers', getAllMembers);
+
+/*
+Middleware to verify
+const unknownEndpoint = (req:Request, res:Response) => {
+  res.status(404).send({ error: 'unknown endpoint' })
+};
+
+app.use(unknownEndpoint);*/
+
+/*
+//server-json training
+app.get("/", (req:Request, res:Response, next:NextFunction): void => {
+  res.send("<h1>Hello from server !</h1>").status(200).end();
+  next();
+});
+
+app.get("/info", (req:Request, res:Response, next:NextFunction): void => {
   console.log("Access to info !")
   res.send(`<h4>Number of contacts : ${notes.length}\
     people</h4> ${date}`).status(200).end();
+  next();
 });
 
-app.get("/api/notes", (req:Request, res:Response) => {
-  res.json(notes).status(200).end();
-});
-
-app.get('/api/notes/:id', (req:Request, res:Response) => {
+app.get('/api/notes/:id', (req:Request, res:Response, next:NextFunction): void => {
   const id = Number(req.params.id);
   console.log(id)
   const note = notes.find(note => note.id === id);
@@ -76,14 +102,5 @@ app.get('/api/notes/:id', (req:Request, res:Response) => {
   } else {
     res.status(404).end();
   }
-});
-
-/*const unknownEndpoint = (req:Request, res:Response) => {
-  res.status(404).send({ error: 'unknown endpoint' })
-};*/
-
-//app.use(unknownEndpoint);
-
-app.listen(PORT, () => {
-  console.log(`[+] Server is running on port ${PORT} !`)
-});
+  next();
+});*/
