@@ -7,7 +7,7 @@ import './UsersOnline.scss'
 interface UserOnlineProps {
   id: number
   roomStyle: object
-  handeAskUserPrivate: (event: React.MouseEvent<HTMLButtonElement>) => void
+  handleAskUserPrivate: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const UserOnline: React.FC = (props: UserOnlineProps) => {
@@ -54,7 +54,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
               }
 
               <span 
-                onClick={() => props.handeAskUserPrivate(val.id)}
+                onClick={() => props.handleAskUserPrivate(val.id)}
                 className="span--useronline styleusr--span"
                 style={{color: 'orange', fontSize: '20px'}}
               >

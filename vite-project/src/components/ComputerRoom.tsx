@@ -14,9 +14,9 @@ const ComputerRoom: React.FC = () => {
   const params = useParams<{ link?: string }>()
   
   const [users, setUsers] = useState<Array<userType>>([])
-  const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
+  const [roomStyle, setRoomStyle] = useState<{params?: string}>(Object.values(params))
   
-  console.log(roomStyle, "roomStyle")
+  //console.log(roomStyle, "roomStyle")
 
   const [catchById, setCatchById] = useState<Array<userType>>([])
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
@@ -26,21 +26,21 @@ const ComputerRoom: React.FC = () => {
     setRoomStyle(roomStyle[0])
   }, [])
 
-  const handeAskUserPrivate = (id: number) => {
-    console.log(id,"id")
-    const catchUser = users.find(user => user.id === id)
+  const handleAskUserPrivate = (id: number) => {
+    console.log(id,"id1")
+    const catchUser = users?.find(user => user.id === id)
     console.log(catchUser)
     setCatchById(catchUser)
     setSwitchAsk(!switchAsk)
   }
 
-  const handleClose = () => {
-    setSwitchAsk(false)
+  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>, id: number): void => {
+    console.log("clicked post")
+    console.log(catchById, "newId")
   }
 
-  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>, id: number): void => {
-    console.log(id, "id")
-    console.log("clicked post")
+  const handleClose = () => {
+    setSwitchAsk(false)
   }
 
   return(
@@ -80,7 +80,7 @@ const ComputerRoom: React.FC = () => {
         
         <UsersOnline
           roomStyle={roomStyle}
-          handeAskUserPrivate={handeAskUserPrivate}
+          handleAskUserPrivate={handleAskUserPrivate}
         />
 
       </div>

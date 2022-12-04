@@ -42,7 +42,7 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
             value="message">Message</option>
         </select> 
         <button
-          onClick={() => props.handleInvitation(props.catchById?.id)}
+          onClick={() => props.handleInvitation()}
           className="btn--invitation"
         >
           Invite
