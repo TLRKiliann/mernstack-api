@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { db_users } from '../../models/db_users'
-import { userType } from '../../models/userType'
+import { UserType } from '../../models/usertype'
 import './PrivateMessage.scss'
 
 interface PrivateProps {
@@ -12,7 +12,7 @@ const PrivateMessage: React.FC = ({firstName: PrivateProps}) => {
 
   const retrieveFirst = useParams<{firstName?: string}>("");
 
-  const [users, setUsers] = useState<Array<userType>>([])
+  const [users, setUsers] = useState<Array<UserType>>([])
   const [newNames, setNewNames] = useState<{firstName?: string}>({retrieveFirst})
   const [displayName, setDisplayName] = useState<Arrayy<string>>([])
 

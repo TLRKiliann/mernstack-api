@@ -1,10 +1,10 @@
 import React from 'react'
 import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { UserType } from '../models/usertype'
 import './styleComponents/AskMessageBox.scss'
 
 interface db_usersProps {
-  db_users: Array<userType>
+  db_users: Array<UserType>
 }
 
 interface AskMessageBoxProps {
@@ -42,7 +42,7 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
             value="message">Message</option>
         </select> 
         <button
-          onClick={() => props.handleInvitation()}
+          onClick={props.handleInvitation}
           className="btn--invitation"
         >
           Invite

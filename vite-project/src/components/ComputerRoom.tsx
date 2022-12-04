@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+//import serviceRouting from '../services/serviceRouting';
 import { useParams } from "react-router-dom"
 import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { UserType } from '../models/usertype'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
 import AskMessageBox from './AskMessageBox'
@@ -13,12 +14,12 @@ const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: string }>()
   
-  const [users, setUsers] = useState<Array<userType>>([])
+  const [users, setUsers] = useState<Array<UserType>>([])
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(Object.values(params))
   
   //console.log(roomStyle, "roomStyle")
 
-  const [catchById, setCatchById] = useState<Array<userType>>([])
+  const [catchById, setCatchById] = useState<Array<UserType>>([])
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
 
   useEffect(() => {
@@ -26,17 +27,39 @@ const ComputerRoom: React.FC = () => {
     setRoomStyle(roomStyle[0])
   }, [])
 
+  /*useEffect(() => {
+    serviceRouting
+    .getAllMembers()
+    .then(initialData => {
+      setUsers(initialData)
+    })
+    //setUsers(db_users)
+    setRoomStyle(roomStyle[0])
+  }, [])*/
+
   const handleAskUserPrivate = (id: number) => {
-    console.log(id,"id1")
+    //console.log(id,"id1")
     const catchUser = users?.find(user => user.id === id)
-    console.log(catchUser)
+    //console.log(catchUser, "catchUser")
     setCatchById(catchUser)
     setSwitchAsk(!switchAsk)
   }
 
-  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>, id: number): void => {
-    console.log("clicked post")
-    console.log(catchById, "newId")
+  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    console.log(catchById, "catchUser")
+
+    /*const sendMessage = users?.find(user => user === catchById)
+    console.log(sendMessage, "sendMessage")*/
+
+    /*serviceRouting
+      .getAllMembers(sendMessage, id)
+      .then(initialData => {
+        setUsers(initialData)
+      })
+      .catch((error) => {
+        console.log("error", error)
+      })
+    */
   }
 
   const handleClose = () => {
@@ -55,7 +78,7 @@ const ComputerRoom: React.FC = () => {
       {switchAsk &&
         <AskMessageBox
           catchById={catchById}
-          handleInvitation={handleInvitation}
+          handleInvitation={() => handleInvitation()}
           handleClose={handleClose}
         />
       }

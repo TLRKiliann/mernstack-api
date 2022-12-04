@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useAuthLogin } from '../../context/AuthProvider'
 import { db_users } from '../../models/db_users'
-import { userType } from '../../models/userType'
+import { UserType } from '../../models/usertype'
 import btnWorld from '../../assets/btn-world.png'
 import './TerminalComponent.scss'
 
@@ -18,7 +18,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
   const [message, setMessage] = useState<string>("")
   const [messages, setMessages] = useState<Array<string>>([])
-  const [myLocalStorage, setMyLocalStorage] = useState<Array<userType>>([])
+  const [myLocalStorage, setMyLocalStorage] = useState<Array<UserType>>([])
 
   useEffect(() => {
     const localMessages = JSON.parse(localStorage.getItem('Messages'))

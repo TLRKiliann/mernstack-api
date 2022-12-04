@@ -40,9 +40,9 @@ const NavBar: React.FC = () => {
           <li>
             <Link
               className="link--tagnav"
-              to='/services'
+              to='/online'
             >
-              Services
+              Online
             </Link>
           </li>
           <li>

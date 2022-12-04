@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { db_users } from '../../models/db_users'
-import { userType } from '../../models/userType'
+import { UserType } from '../../models/usertype'
 import './UsersOnline.scss'
 
 interface UserOnlineProps {
@@ -12,12 +12,14 @@ interface UserOnlineProps {
 
 const UserOnline: React.FC = (props: UserOnlineProps) => {
 
-  const [users, setUsers] = useState<Array<userType>>([])
+  const [users, setUsers] = useState<Array<UserType>>([])
 
   useEffect(() => {
     setUsers(db_users)
   }, [])
+
   console.log(props.roomStyle, "roomStyle")
+  
   return(
     <section data-testid="ptestid" className="user--online">
       <div className="div--userolinetitle">
