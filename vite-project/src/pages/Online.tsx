@@ -141,6 +141,8 @@ const Online: React.FC = () => {
 
       {switchResponse && 
         <ResponsePrivateMsg
+          form={form.invite.value}
+          catchById={catchById}
           handleCloseResponse={handleCloseResponse}
         />
       }
