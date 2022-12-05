@@ -1,0 +1,30 @@
+.response--private {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 30;
+}
+
+.section--response {
+  width: 30%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20%;
+  background: linear-gradient(180deg, purple, orange);
+  border-radius: 15px;
+  box-shadow: 0px 0px 7px whitesmoke;
+}
+
+.title--response {
+  text-align: center;
+}
+
+.p--response {
+  text-align: center;
+  font-family: 'Junction';
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: purple;
+}
