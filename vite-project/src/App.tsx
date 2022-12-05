@@ -43,7 +43,7 @@ const App:React.FC = () => {
           </PrivateRoute>
         } />
 
-        <Route path='/computerroom/privatemessage/:firstName' element={
+        <Route path='/computerroom/privatemessage' element={
           <PrivateRoute>
             <PrivateMessage />
           </PrivateRoute>
