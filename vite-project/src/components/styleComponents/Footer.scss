@@ -5,25 +5,26 @@
   bottom: auto;
   height: 70px;
   display: flex;
+  justify-content: center;
   background-color: purple;
   border-top: 1px solid slategray;
   box-shadow: 0px 0px 10px slategray;
-}
 
-.div--navfooter ul {
-  width: 98%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
+  .navbar--ul {
+    width: 96vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 
-.div--navfooter li {
-  width: 20vw;
-  margin: auto;
-  padding: 20px 0px;
-  display: flex;
-  justify-content: space-around;
-  font-family: 'Consolase';
-  font-size: 1.4rem;
-  color: whitesmoke;
+  }
+
+  .navbar--nav .navbar--ul .navbar--li {
+    margin: auto;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Consolase';
+    font-size: 1.4rem;
+    color: whitesmoke;
+  }
 }

@@ -17,13 +17,15 @@ $dodgerblue: #1e90ff;
     height: auto;
     padding: 20px;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 12%;
     margin-bottom: 12%;
     display: flex;
     flex-direction: column;
-    border: 2mm ridge $royalblue;
-    background: rgba(45, 85, 255, 0.4);
-    border-radius: 12px;
+
+    background-color: rgba(45, 85, 255, 0.4);
+    border: 1mm outset rgba(150, 120, 255, 0.4);
+
+    border-radius: 15px;
 
     .div--subscribe {
       width: 300px;
@@ -35,6 +37,10 @@ $dodgerblue: #1e90ff;
         margin: auto;
         margin-bottom: 20px;
         margin-left: 0px;
+        font-family: 'Junction';
+        color: whitesmoke;
+        text-shadow: 2px 2px 1px purple,
+        4px 3px 2px #000;
       }
 
       .message--sub {
