@@ -68,14 +68,13 @@ const ComputerRoom: React.FC = () => {
   console.log(form, 'render of form')
 
   const handleAskUserPrivate = (id: number) => {
-    //console.log(id,"id1")
     const catchUser = users?.find(user => user.id === id)
-    //console.log(catchUser, "catchUser")
     setCatchById(catchUser)
     setSwitchAsk(!switchAsk)
   }
 
-  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleInvitation = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
     console.log(catchById, "catchUser")
     setOtherUser(catchById)
     Navigate('/computerroom/privatemessage')
