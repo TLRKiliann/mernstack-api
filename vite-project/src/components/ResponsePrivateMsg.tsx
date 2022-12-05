@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ResponsePrivateMsg: React.FC = () => {
+interface ResponsePrivateMsgProps {
+  handleCloseResponse: () => void
+}
+
+const ResponsePrivateMsg: React.FC = (props: ResponsePrivateMsgProps) => {
+
   return(
-    <div>
-      <section>
-        <h2>State of Invitation</h2>
-        <p>Message sent !</p>
+    <div className="response--private">
+      <section className="section--response">
+        <h2 className="title--response">State of Invitation</h2>
+        <p className="p--response">Message sent !</p>
+        <button
+          onClick={props.handleCloseResponse}
+          className="btn--response"
+        >
+          Close
+        </button>
       </section>
     </div>
   )
