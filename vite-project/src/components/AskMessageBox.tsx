@@ -18,7 +18,8 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
     
   return(
     <div key={props.catchById?.id} className="boolean--result">
-      <div
+      <form
+        onSubmit={props.handleInvitation}
         data-testid="asktestid" 
         className="form--invitation"
       >
@@ -54,7 +55,7 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
         </select> 
         
         <button
-          onClick={props.handleInvitation}
+          type='submit'
           className="btn--invitation"
         >
           Invite
@@ -66,7 +67,7 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
         >
           X
         </button>
-      </div>
+      </form>
     </div>
   )
 }
