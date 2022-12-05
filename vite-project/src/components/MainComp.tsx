@@ -22,7 +22,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
         <h3 className="h3--maincomp">
           Users online (connected) :&nbsp;
           <span
-            style={{color:'orange'}}
+            style={{color:'whitesmoke'}}
           >
             {props.users?.reduce((prev, curr) =>
             prev + curr.isConnected, 0)}
@@ -44,11 +44,11 @@ const MainComp: React.FC = (props: MainCompProps) => {
                 {user.firstName} {user.lastName} :&nbsp;
                   <div 
                     style={{
-                      fontSize: '1.1rem',
-                      fontWeight: 'bold',
+                      fontFamily: 'Junction',
+                      fontSize: '1.2rem',
                       color: 'lightgreen'
                     }}>
-                    "Connected"
+                    Connected
                   </div>
               </div>
               ) : null

@@ -57,14 +57,20 @@ export default class Home extends Component<DataAllType> {
         </div>
         
         {!this.state.isOpenRight && <div className="div--voletsRight">
-            <button onClick={this.handleVoletsRight} className="btn--voletRight">
+            <button
+              onClick={this.handleVoletsRight}
+              className="btn--voletRight"
+            >
               Computing
             </button>
           </div>
         }
 
         {!this.state.isOpenL && <div className="div--voletsLeft">
-            <button onClick={this.handleVoletsLeft} className="btn--voletLeft">
+            <button
+              onClick={this.handleVoletsLeft}
+              className="btn--voletLeft"
+            >
               Chat-Room
             </button>
           </div>
