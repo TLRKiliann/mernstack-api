@@ -1,4 +1,4 @@
-export type userType = {
+export type UserType = {
 	id: number
 	img: string
 	firstName: string
@@ -10,4 +10,8 @@ export type userType = {
 	mainroom: string
 	room: string
 	isConnected: boolean
+}
+
+export type UserTypeProps = {
+	usertype: UserType
 }

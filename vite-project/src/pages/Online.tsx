@@ -1,12 +1,15 @@
 import { Component } from 'react'
 import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { UserType } from '../models/usertype'
 import { db_computers } from '../models/db_computers'
 import { computerType } from '../models/computerType'
-import '../stylePages/Services.scss'
+import '../stylePages/Online.scss'
 
+type DataAllType = {
+  db_users: UserType[]
+}
 
-export default class Services extends Component {
+export default class Online extends Component<DataAllType> {
   state = {
     users: [],
     computers: []

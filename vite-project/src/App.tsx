@@ -5,7 +5,7 @@ import NavBar from './components/NavBar'
 import Login from './pages/Login'
 import Subscribe from './pages/Subscribe'
 import Home from './pages/Home'
-import Services from './pages/Services'
+import Online from './pages/Online'
 import Help from './pages/Help'
 import ChatComputer from './components/ChatComputer'
 import ComputerRoom from './components/ComputerRoom'
@@ -22,9 +22,9 @@ const App:React.FC = () => {
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
-        <Route exact path='/services' element={
+        <Route exact path='/online' element={
           <PrivateRoute>
-            <Services />
+            <Online />
           </PrivateRoute>
         } />
         <Route exact path='/help' element={
@@ -43,9 +43,9 @@ const App:React.FC = () => {
           </PrivateRoute>
         } />
 
-        <Route path='/computerroom/privatemessage/:firstName' element={
+        <Route path='/computerroom/privatemessage' element={
           <PrivateRoute>
-            <ComputerRoom />
+            <PrivateMessage />
           </PrivateRoute>
         } />
 

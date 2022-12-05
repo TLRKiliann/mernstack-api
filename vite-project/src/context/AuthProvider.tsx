@@ -8,10 +8,12 @@ type Props = {
 type AuthContextProps = {
   auth: object
   setAuth: React.Dispatch<React.SetStateAction<object>>
-  usrname: string
+  username: string
   setUserName: React.Dispatch<React.SetStateAction<string>>
   switchLogin: boolean
   setSwitchLogin: React.Dispatch<React.SetStateAction<boolean>>
+  otherUser: object
+  setOtherUser: React.Dispatch<React.SetStateAction<object>>
   toggle: () => void
   eraseAll: () => void
 }
@@ -25,6 +27,9 @@ export const useAuthLogin: React.FC = () => {
 export const AuthProvider: React.FC = ({ children }: Props) => {
 
   const [auth, setAuth] = useState<object>({});
+
+  const [otherUser, setOtherUser] = useState<object>({});
+
   const [switchLogin, setSwitchLogin] = useState(true);
 
   const [username, setUserName] = useState("");
@@ -46,6 +51,8 @@ export const AuthProvider: React.FC = ({ children }: Props) => {
       setUserName,
       switchLogin,
       setSwitchLogin,
+      otherUser,
+      setOtherUser,
       toggle,
       eraseAll
       }}

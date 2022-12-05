@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { UserType } from '../models/usertype'
 import { db_computers } from '../models/db_computers'
 import { computerType } from '../models/computerType'
 import MainTitle from '../components/MainTitle'
@@ -11,8 +11,11 @@ import VoletLeft from './volets/VoletLeft'
 import cool from '../assets/coolnection.jpg'
 import '../stylePages/Home.scss'
 
+type DataAllType = {
+  db_users: UserType[]
+}
 
-export default class Home extends Component {
+export default class Home extends Component<DataAllType> {
   state = {
     users: [],
     computers: [],

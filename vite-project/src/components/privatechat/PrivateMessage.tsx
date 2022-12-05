@@ -1,41 +1,27 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+//import { useParams } from 'react-router-dom'
+import { useAuthLogin } from '../../context/AuthProvider'
 import { db_users } from '../../models/db_users'
-import { userType } from '../../models/userType'
+import { UserType } from '../../models/usertype'
 import './PrivateMessage.scss'
 
 
 const PrivateMessage: React.FC = () => {
 
-  const [users, setUsers] = useState<Array<userType>>([])
-  const [newNames, setNewNames] = useState<{firstName?: string}>("")
-  const [displayName, setDisplayName] = useState<Arrayy<string>>([])
+  //const retrieveFirst = useParams<{firstName?: string}>("");
+  const {otherUser} = useAuthLogin();
+  console.log(otherUser, "otherUser")
 
-  const retrieveFirst = useParams<{firstName?: string}>("");
+  //const [users, setUsers] = useState<Array<UserType>>([])
+  //const [newNames, setNewNames] = useState<{firstName?: string}>({retrieveFirst})
+  const [displayName, setDisplayName] = useState<object>({otherUser})
 
-  useEffect(() => {
+  /*useEffect(() => {
     setUsers(db_users)
-    setNewNames(retrieveFirst)
-    handleSearchUser()
-    return () => handleSearchUser()
-  }, [])
+    setNewNames({retrieveFirst})
+  }, [])*/
 
-  const handleSearchUser = () => {
-    const [arr] = Object.values(newNames)
-    const truc = [arr]
-    const [newTruc] = truc
 
-    const findByFirstName = users?.map(user => user).filter(user => {
-      return user.firstName === newTruc
-        ? `${user.firstName} ${user.lastName} ${user.age} ${user.email}`
-        : null
-    })
-    if (findByFirstName === "") {
-      setDisplayName([]);
-    } else {
-      setDisplayName(findByFirstName)
-    }
-  };
 
   return(
     <div className="private--chat">
@@ -46,7 +32,7 @@ const PrivateMessage: React.FC = () => {
 
       <div className="private--terminal">
         <div className="sub--privateterminal">
-          {displayName.map(display => (
+          {Object.values(displayName)?.map(display => (
             <div key={display.id} className="flex--imgnameroom">
               <img
                 src={display.img}

@@ -5,7 +5,7 @@ import '../stylePages/Help.scss'
 export default class Help extends Component {
   render() {
     return(
-      <div>
+      <div className="help">
         <div className="class--planet">
           <img
             src={planet}
@@ -15,6 +15,7 @@ export default class Help extends Component {
             alt={planet}
           />
         </div>
+
         <div data-testid="divtestone" className="title--contact">
           <h1>Help</h1>
         </div>

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { UserType } from '../models/usertype'
 import './styleComponents/AskMessageBox.scss'
 
+
 interface db_usersProps {
-  db_users: Array<userType>
+  db_users: Array<UserType>
 }
 
 interface AskMessageBoxProps {
@@ -14,6 +15,7 @@ interface AskMessageBoxProps {
 }
 
 const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
+    
   return(
     <div key={props.catchById?.id} className="boolean--result">
       <div
@@ -33,20 +35,31 @@ const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
             {props.catchById?.firstName}&nbsp;
           </span> to private chat :
         </label>
-        <select name="users" id="users">
+
+        <select 
+          name="invite" 
+          id="invite"
+          value={props.form}
+          onChange={props.handleInviteChoice}
+        >
+        {props.options.map((option) => (
           <option
-            className="option--invite"
-            value="invite">Invitation</option>
-          <option
-            className="option--invite"
-            value="message">Message</option>
+            key={option.value}
+            name="invite"
+            value={option.value}
+          >
+            {option.label}
+          </option>
+        ))}
         </select> 
+        
         <button
-          onClick={() => props.handleInvitation(props.catchById?.id)}
+          onClick={props.handleInvitation}
           className="btn--invitation"
         >
           Invite
         </button>
+
         <button
           onClick={props.handleClose}
           className="btn--close"

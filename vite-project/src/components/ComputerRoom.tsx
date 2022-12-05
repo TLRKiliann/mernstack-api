@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from 'react-router-dom'
+//import serviceRouting from '../services/serviceRouting';
+import { useAuthLogin } from '../context/AuthProvider'
 import { db_users } from '../models/db_users'
-import { userType } from '../models/userType'
+import { UserType } from '../models/usertype'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
 import AskMessageBox from './AskMessageBox'
@@ -9,36 +11,90 @@ import worldData from '../assets/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
 
 
+type Field = {
+  value?: sting
+  label?: string
+}
+
+type Form = {
+  invite: Field
+}
+
+const options: Field[] = [
+  {
+    label: "Private",
+    value: "Private",
+  },
+  {
+    label: "Rdv",
+    value: "Rdv",
+  },
+  {
+    label: "Briefing",
+    value: "Briefing",
+  }
+]
+
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: string }>()
-  const [users, setUsers] = useState<Array<userType>>([])
-  const [roomStyle, setRoomStyle] = useState<object>(Object.values(params))
-  const [catchById, setCatchById] = useState<Array<userType>>([])
-  const [switchAsk, setSwitchAsk] = useState<boolean>(false)
+  const Navigate = useNavigate()
+  const { setOtherUser } = useAuthLogin();
 
-  //console.log(Object.values(catchById), "catchById")
+  const [users, setUsers] = useState<Array<UserType>>([])
+  const [roomStyle, setRoomStyle] = useState<{params?: string}>(Object.values(params))
+  const [catchById, setCatchById] = useState<Array<UserType>>([])
+  const [switchAsk, setSwitchAsk] = useState<boolean>(false)
 
   useEffect(() => {
     setUsers(db_users)
     setRoomStyle(roomStyle[0])
   }, [])
 
-  const handeAskUserPrivate = (id: number) => {
-    console.log(id,"id")
-    const catchUser = users.find(user => user.id === id)
-    console.log(catchUser)
+  //console.log(roomStyle, "roomStyle")
+
+  const [form, setForm] = useState<Form>({
+    invite: {value: 'Private'}
+  })
+
+  const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const fieldName: string = e.target.name;
+    const fieldValue: string | number  = e.target.value;
+    const newField: Field = {[fieldName]: {value: fieldValue}}
+
+    setForm({...form, ...newField});
+  }
+
+  console.log(form, 'render of form')
+
+  const handleAskUserPrivate = (id: number) => {
+    //console.log(id,"id1")
+    const catchUser = users?.find(user => user.id === id)
+    //console.log(catchUser, "catchUser")
     setCatchById(catchUser)
     setSwitchAsk(!switchAsk)
   }
 
-  const handleClose = () => {
-    setSwitchAsk(false)
+  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    console.log(catchById, "catchUser")
+    setOtherUser(catchById)
+    Navigate('/computerroom/privatemessage')
+    /*const sendMessage = users?.find(user => user === catchById)
+    console.log(sendMessage, "sendMessage")*/
+
+    /*serviceRouting
+      .getAllMembers(sendMessage, id)
+      .then(initialData => {
+        setUsers(initialData)
+      })
+      .catch((error) => {
+        console.log("error", error)
+      })
+    */
   }
 
-  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>,id: number): void => {
-    console.log(id, "id")
-    console.log("clicked post")
+  const handleClose = () => {
+    setSwitchAsk(false)
   }
 
   return(
@@ -53,7 +109,10 @@ const ComputerRoom: React.FC = () => {
       {switchAsk &&
         <AskMessageBox
           catchById={catchById}
-          handleInvitation={handleInvitation}
+          form={form.invite.value}
+          options={options}
+          handleInviteChoice={(e) => handleInviteChoice(e)}
+          handleInvitation={(e) => handleInvitation(e)}
           handleClose={handleClose}
         />
       }
@@ -61,7 +120,6 @@ const ComputerRoom: React.FC = () => {
       <h1 className="title--room">Room {Object.values(params)}</h1>
       
       <div data-testid="testdiv" className="div--terminaluser">
-
         <div className="section--terminal">
           <div className="div--worldbg">
             <img
@@ -79,7 +137,7 @@ const ComputerRoom: React.FC = () => {
         
         <UsersOnline
           roomStyle={roomStyle}
-          handeAskUserPrivate={handeAskUserPrivate}
+          handleAskUserPrivate={handleAskUserPrivate}
         />
 
       </div>
@@ -88,3 +146,13 @@ const ComputerRoom: React.FC = () => {
 }
 
 export default ComputerRoom;
+
+  /*useEffect(() => {
+    serviceRouting
+    .getAllMembers()
+    .then(initialData => {
+      setUsers(initialData)
+    })
+    //setUsers(db_users)
+    setRoomStyle(roomStyle[0])
+  }, [])*/
