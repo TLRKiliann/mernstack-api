@@ -10,16 +10,17 @@
     margin-top: 40px;
     padding-bottom: 20px;
 
-    border: 2mm ridge royalblue;
-    border-radius: 12px;
     background-color: rgba(45, 85, 255, 0.4);
+    border: 1mm outset rgba(150, 120, 255, 0.4);
+    border-radius: 15px;
   }
 
   .h2--maincomp {
     text-align: center;
     font-family: "Junction";
-    text-shadow: 2px 1px 1px purple; 
     color: whitesmoke;
+    text-shadow: 2px 2px 1px purple,
+    4px 3px 2px #000;
   }
 
   .h3--maincomp {
@@ -37,8 +38,8 @@
     align-items: center;
     
     font-size: 1.1rem;
-    font-weight: bold;
-    font-family: "DejaVu Sans", sans-serif;
+
+    font-family: "DejaVu Sans";
     color: lightblue;
 
     background-color: rgba(45, 85, 255, 0.6);
