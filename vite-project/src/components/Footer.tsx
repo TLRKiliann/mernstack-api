@@ -6,15 +6,15 @@ export default class Footer extends Component {
   render() {
     return(
       <div className="div--navfooter">
-        <nav>
-          <ul>
-            <li>
+        <nav className="navbar--nav">
+          <ul className="navbar--ul">
+            <li className="navbar--li">
               Contact
             </li>
-            <li>
+            <li className="navbar--li">
               About US
             </li>
-            <li>
+            <li className="navbar--li">
               Rules
             </li>
           </ul>
