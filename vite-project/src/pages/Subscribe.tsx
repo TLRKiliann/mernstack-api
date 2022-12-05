@@ -135,7 +135,9 @@ const Subscribe: React.FC = () => {
           />
 
           {form.firstname.error && 
-            <div className="firstname--error">{form.firstname.error}</div>
+            <div 
+              className="firstname--error">{form.firstname.error}
+            </div>
           }
 
           <label className="lbl--sub" htmlFor="sub">
@@ -165,7 +167,9 @@ const Subscribe: React.FC = () => {
           />
 
           {form.password.error && 
-            <div className="password--error">{form.password.error}</div>
+            <div 
+              className="password--error">{form.password.error}
+            </div>
           }
 
           <label className="lbl--sub" htmlFor="sub">
@@ -207,29 +211,35 @@ const Subscribe: React.FC = () => {
             className="input--sub"
             required
           />
+
           <div className="div--subselect">
             <label htmlFor="gender" className="lbl--sub">
               Choose : 
             </label>
             <select
-              name="gender"
               id="gender"
+              name="gender"
               value={form.gender.value}
               onChange={(e) => handleInputChange(e)}
               className="select--sub"
             >
             {options.map((option) => (
-              <option key={option.value} name="gender" value={option.value}>
-                {option.label}
+              <option
+                key={option.value}
+                name="gender"
+                value={option.value}>
+                  {option.label}
               </option>
             ))}
             </select>
           </div>
+
         </div>
 
         <button type="submit" className="btn--sub">
           Sign Up
         </button>
+
       </form>
     </div>
   )
