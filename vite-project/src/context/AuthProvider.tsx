@@ -14,6 +14,8 @@ type AuthContextProps = {
   setSwitchLogin: React.Dispatch<React.SetStateAction<boolean>>
   otherUser: object
   setOtherUser: React.Dispatch<React.SetStateAction<object>>
+  tweekGroup: any
+  setTweekGroup: React.Dispatch<React.SetStateAction<object>>
   toggle: () => void
   eraseAll: () => void
 }
@@ -28,11 +30,13 @@ export const AuthProvider: React.FC = ({ children }: Props) => {
 
   const [auth, setAuth] = useState<object>({});
 
+  const [switchLogin, setSwitchLogin] = useState<boolean>(true);
+
+  const [username, setUserName] = useState<string>("");
+
   const [otherUser, setOtherUser] = useState<object>({});
 
-  const [switchLogin, setSwitchLogin] = useState(true);
-
-  const [username, setUserName] = useState("");
+  const [tweekGroup, setTweekGroup] = useState<object>({});
 
   const toggle = () => {
       setSwitchLogin(!switchLogin);
@@ -40,6 +44,7 @@ export const AuthProvider: React.FC = ({ children }: Props) => {
 
   const eraseAll = () => {
       setUserName("");
+      setTweekGroup("");
       setAuth("");
   };
 
@@ -53,6 +58,8 @@ export const AuthProvider: React.FC = ({ children }: Props) => {
       setSwitchLogin,
       otherUser,
       setOtherUser,
+      tweekGroup,
+      setTweekGroup,
       toggle,
       eraseAll
       }}

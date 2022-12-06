@@ -1,10 +1,12 @@
 # MERN-stack API (under development)
 
+CHAT application with Vite - React - TypeScript
+
 with MySQL db in LAN
 
-- code : class react with ts
+- front : react-router-dom v6 with security access
 
-- style : Sass
+- backend: express - cors - dotenv - mysql
 
 ---
 

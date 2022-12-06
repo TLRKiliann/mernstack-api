@@ -40,6 +40,14 @@ const NavBar: React.FC = () => {
           <li>
             <Link
               className="link--tagnav"
+              to='/profile'
+            >
+              Profile
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link--tagnav"
               to='/online'
             >
               Online

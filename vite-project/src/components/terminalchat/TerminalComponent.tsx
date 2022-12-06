@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useAuthLogin } from '../../context/AuthProvider'
 import { db_users } from '../../models/db_users'
 import { UserType } from '../../models/usertype'
-import btnWorld from '../../assets/btn-world.png'
+//import btnWorld from '../../assets/btn-world.png'
 import './TerminalComponent.scss'
 
 
@@ -60,35 +60,30 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
       </div>
       
       <div className="subterminal">
+        
+        <div className="div--psubterminal">
+          <p className="arrow">$ ▶</p>
+        </div>
+
         <input
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="input--message"
-          placeholder="$ ▶"
+          placeholder="Write something here..."
           required
         />
+        
         <button
           type="button"
           onClick={handleInput}
           className="btn--user"
         >
-          <div className="div--btnworld">
-            <img
-              src={btnWorld}
-              width="80px"
-              height="70px"
-              className="img--world"
-              alt={btnWorld}
-            />
-          </div>
-
-          <p className="text--btn">
-            Enter
-          </p>
-
+          Enter
         </button>
+
       </div>
+
     </section>
   )
 }

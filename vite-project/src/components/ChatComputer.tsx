@@ -111,6 +111,7 @@ const ChatComputer: React.FC = () => {
 
   return(
     <div>
+      
       <div data-testid="chatctestid" className="div--imgcompute">
         <img
           src={imgBg}
@@ -119,20 +120,23 @@ const ChatComputer: React.FC = () => {
           alt={imgBg}
         />
       </div>
+      
       <div className="title--computerroom">
-        <h1>{computerDb}</h1>
+        <h1 className="compter--roomdb">{computerDb}</h1>
       </div>
-        <div className='compter--room'>
-          {Object.values(links).map((val) => (
-            <h2 key={val.title}>
-              <Link to={`/computerroom/${val.link}`}
-                className="link--toroom">
-                {val.link}
-              </Link>
-            </h2>
-            ))
-          }
-        </div>
+
+      <div className='compter--room'>
+        {Object.values(links).map((val) => (
+          <h2 key={val.title} className="links--computer">
+            <Link to={`/computerroom/${val.link}`}
+              className="link--toroom">
+              {val.link}
+            </Link>
+          </h2>
+          ))
+        }
+      </div>
+
     </div>
   )
 }

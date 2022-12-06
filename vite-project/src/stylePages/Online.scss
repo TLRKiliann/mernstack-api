@@ -95,17 +95,20 @@
 
         .btn--lastspanservice {
           margin-left: 10px;
-          padding: 3px 10px;
+          padding: 0px 7.5px;
           cursor: pointer;
-          background: #606060;
+          background: linear-gradient(30deg, purple, orange);
+          border: none;
+          outline: none;
           border-radius: 50% 50%;
           font-size: 1.0rem;
           font-weight: bold;
-          color: #50bcfe;
+          /*color: #50bcfe;*/
+          color: lightgrey;
 
           &:hover {
-            background: #707070;
-            color: lightgreen;
+            background: orange;
+            color: purple;
           }
         }
       }

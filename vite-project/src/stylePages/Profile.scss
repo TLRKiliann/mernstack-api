@@ -1,0 +1,81 @@
+.profile {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, purple, orange);
+
+  .div--mainimgprofile {
+    width: 100%;
+    margin: auto;
+    color: whitesmoke;
+
+    .img--bgprofile {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      opacity: 0.1;
+    }
+  }
+
+  .div--maintitle {
+    width: 100%;
+    margin: auto;
+    margin-top: 80px;
+    color: whitesmoke;
+
+    .title--profileh1 {
+      margin-left: 20px;
+      font-family: 'Junction';
+      color: whitesmoke;
+      text-shadow: 2px 1px 1px #242424;
+    }
+  }
+
+  .tweekGroup--friends {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+
+    .div--profileh2 {
+      width: 100%;
+      margin-bottom: 20px;
+
+      .titleh2--profile {
+        width: 80%;
+        margin: auto;
+        font-family: 'Junction';
+      }
+    }
+
+    .div--usersgroup {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #242424;
+      border: 1px solid slategrey;
+
+      .img--profileusers {
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 50% 50%;
+        object-fit: cover;
+      }
+
+      .p--profile {
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ export const db_users = [
 		"age": 37,
 		"email": "jeanne.dark@protonmail.com",
 		"location": "Grancy",
-		"gender": "female",
+		"gender": "male",
 		"mainroom": "Cybersecurity",
 		"room": "Scapy",
 		"isConnected": true	
@@ -87,7 +87,7 @@ export const db_users = [
 		"age": 55,
 		"email": "gg.clooney@mail.com",
 		"location": "Rushfort",
-		"gender": "female",
+		"gender": "male",
 		"mainroom": "Systemd",
 		"room": "inode-modules-runlevel",
 		"isConnected": true
@@ -100,7 +100,7 @@ export const db_users = [
 		"age": 31,
 		"email": "tim.berners@protonmail.com",
 		"location": "Leviathan",
-		"gender": "female",
+		"gender": "male",
 		"mainroom": "Cybersecurity",
 		"room": "Scapy",
 		"isConnected": true
@@ -126,7 +126,7 @@ export const db_users = [
 		"age": 35,
 		"email": "jason.statham@mail.com",
 		"location": "Rushfort",
-		"gender": "female",
+		"gender": "male",
 		"mainroom": "Systemd",
 		"room": "inode-modules-runlevel",
 		"isConnected": true
@@ -139,7 +139,7 @@ export const db_users = [
 		"age": 31,
 		"email": "jean.dujardin@mail.com",
 		"location": "Leviathan",
-		"gender": "female",
+		"gender": "male",
 		"mainroom": "Process",
 		"room": "PID(PPID)-JOBS-Daemons-Nice",
 		"isConnected": true
@@ -164,8 +164,8 @@ export const db_users = [
 		"lastName": "Func",
 		"age": 34,
 		"email": "bruce.func@mail.com",
-		"location": "Taiwan",
-		"gender": "female",
+		"location": "California",
+		"gender": "male",
 		"mainroom": "CPU",
 		"room": "Generation-i3-i5-i7",
 		"isConnected": true
@@ -178,7 +178,7 @@ export const db_users = [
 		"age": 35,
 		"email": "olivier.duran@mail.com",
 		"location": "Rushfort",
-		"gender": "female",
+		"gender": "male",
 		"mainroom": "CPU",
 		"room": "Generation-i3-i5-i7",
 		"isConnected": false

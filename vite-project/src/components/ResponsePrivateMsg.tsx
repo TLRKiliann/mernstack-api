@@ -29,10 +29,16 @@ const ResponsePrivateMsg: React.FC = (props: {
     <div className="response--private">
       <section className="section--response">
         <h2 className="title--response">
-          State of <span style={{color: 'orange'}}>{props.form}</span>
+          State of&nbsp;
+            <span className="title--subresponse">
+              {props.form}
+            </span>
+          &nbsp;request
         </h2>
         <p className="p--response">Message sent to&nbsp;
-          <span className="span--response">{props.catchById.firstName}!</span>
+          <span className="span--response">
+            {props.catchById.firstName}!
+          </span>
         </p>
         <button
           onClick={props.handleCloseResponse}

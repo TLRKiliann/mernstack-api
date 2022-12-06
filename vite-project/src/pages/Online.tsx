@@ -59,7 +59,7 @@ const Online: React.FC = () => {
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [switchResponse, setSwitchResponse] = useState<boolean>(false)
 
-  const { setOtherUser } = useAuthLogin();
+  const { setOtherUser, setTweekGroup } = useAuthLogin();
 
   useEffect(() => {
     setUsers(db_users)
@@ -71,6 +71,7 @@ const Online: React.FC = () => {
     const userTodAdd = users.find(user => user.id === id)
     console.log(userTodAdd, "userTodAdd")
     setGroup([...group, userTodAdd])
+    setTweekGroup([...group, userTodAdd])
   }
 
   const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>): void => {
