@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
 import { useAuthLogin } from '../context/AuthProvider'
-import zoomImg from '../assets/bg_login.png'
+import zoomImg from '../assets/circle.jpg'
 import '../stylePages/Login.scss'
 
 
