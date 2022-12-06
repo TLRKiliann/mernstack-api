@@ -1,11 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ResponsePrivateMsg: React.FC = () => {
+
+interface db_usersProps {
+  db_users: Array<UserType>
+}
+
+type Field = {
+  value?: string
+}
+
+type Form = {
+  invite: Field
+}
+
+interface ResponsePrivateMsgProps {
+  form: object
+  catchById: db_usersProps
+  handleCloseResponse: () => void
+}
+
+const ResponsePrivateMsg: React.FC = (props: {
+  ResponsePrivateMsgProps,
+  db_usersProps,
+  Form,
+  Field}) => {
+
   return(
-    <div>
-      <section>
-        <h2>State of Invitation</h2>
-        <p>Message sent !</p>
+    <div className="response--private">
+      <section className="section--response">
+        <h2 className="title--response">
+          State of <span style={{color: 'orange'}}>{props.form}</span>
+        </h2>
+        <p className="p--response">Message sent to&nbsp;
+          <span className="span--response">{props.catchById.firstName}!</span>
+        </p>
+        <button
+          onClick={props.handleCloseResponse}
+          className="btn--response"
+        >
+          Close
+        </button>
       </section>
     </div>
   )

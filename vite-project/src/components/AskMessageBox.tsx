@@ -8,13 +8,22 @@ interface db_usersProps {
   db_users: Array<UserType>
 }
 
+type Field = {
+  value?: string
+}
+
+type Form = {
+  invite: Field
+}
+
 interface AskMessageBoxProps {
+  form: object
   catchById: db_usersProps
   handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const AskMessageBox: React.FC = (props: AskMessageBoxProps) => {
+const AskMessageBox: React.FC = (props: {db_users, AskMessageBoxProps, Form, Field}) => {
     
   return(
     <div key={props.catchById?.id} className="boolean--result">

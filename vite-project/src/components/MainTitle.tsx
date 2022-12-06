@@ -13,12 +13,12 @@ export default class Header extends Component<HeaderProps> {
     margin: 'auto',
     marginTop: '100px',
     textAlign: 'center',
-    fontFamily: "Consolas, serif",
-    textShadow: '2px 1px 1px purple',
-    backgroundColor: 'rgba(45, 85, 255, 0.4)',
-    border: '2mm ridge royalblue',
-    borderRadius: '12px',
-    color: 'whitesmoke'
+    fontFamily: "Junction, serif",
+    color: "whitesmoke",
+    textShadow: "4px 3px 1px #383838",
+    backgroundColor: "rgba(45, 85, 255, 0.4)",
+    border: "1mm outset rgba(150, 120, 255, 0.4)",
+    borderRadius: '15px'
   }
   render() {
     return(

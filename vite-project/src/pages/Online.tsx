@@ -115,6 +115,10 @@ const Online: React.FC = () => {
     setSwitchAsk(false)
   }
 
+  const handleCloseResponse = () => {
+    setSwitchResponse(false)
+  }
+
   return(
     <div className="saloon--byusers">
 
@@ -136,7 +140,11 @@ const Online: React.FC = () => {
       }
 
       {switchResponse && 
-        <ResponsePrivateMsg />
+        <ResponsePrivateMsg
+          form={form.invite.value}
+          catchById={catchById}
+          handleCloseResponse={handleCloseResponse}
+        />
       }
 
       {Object.values(computers)?.slice(0, 12).map(computer =>
