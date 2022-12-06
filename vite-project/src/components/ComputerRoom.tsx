@@ -51,8 +51,6 @@ const ComputerRoom: React.FC = () => {
     setRoomStyle(roomStyle[0])
   }, [])
 
-  //console.log(roomStyle, "roomStyle")
-
   const [form, setForm] = useState<Form>({
     invite: {value: 'Private'}
   })
