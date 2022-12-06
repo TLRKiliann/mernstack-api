@@ -80,9 +80,7 @@ $orange: #ffa500;
   margin-right: 10px;
   display: flex;
   flex-direction: row;
-  /*background-color: $lightgrey_42;
-  border: 1mm inset $lightgrey_48;*/
-  background: linear-gradient(180deg, purple, orange);
+  background: linear-gradient(180deg, $purple, $orange);
   border: 1mm inset purple;
   border-radius: 15px;
 
@@ -94,15 +92,16 @@ $orange: #ffa500;
     justify-content: center;
 
     .span--navbarusername {
-      padding: 10px;
+      padding: 5px 10px;
 
       font-family: $font_junction;
       font-size: 0.9rem;
       font-weight: bold;
 
       background-color: $lightgrey_38;
-      border: 1mm inset $lightgrey_42;
-      border-radius: 30px;
+      border: 1mm outset $lightgrey_50;
+      border-radius: 7px;
+      color: $orange;
     }
 
     .span--usrnavbar {
@@ -132,8 +131,8 @@ $orange: #ffa500;
       font-size: 0.9rem;
       
       background-color: $lightgrey_38;
-      border-radius: 10px;
       border: 1mm outset $lightgrey_50;
+      border-radius: 10px;
       color: whitesmoke;
 
       &:hover {
@@ -150,17 +149,17 @@ $orange: #ffa500;
     }
   }
   .link--logout {
-    padding: 16px 5px;
+    padding: 5px 10px;
     display: flex;
     align-items: center;
 
     text-decoration: none;
     font-family: $font_junction;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
 
     background-color: $lightgrey_38;
     border: 1mm outset $lightgrey_50;
-    border-radius: 50% 50%;
+    border-radius: 10px;
     color: whitesmoke;
     
     &:hover {
