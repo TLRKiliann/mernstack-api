@@ -37,10 +37,10 @@ $dodgerblue: #1e90ff;
         margin: auto;
         margin-bottom: 20px;
         margin-left: 0px;
-        font-family: 'Junction';
+        font-family: 'Junction', sans-serif;
         color: whitesmoke;
         text-shadow: 2px 2px 1px purple,
-        4px 3px 2px #000;
+        4px 3px 2px #242424;
       }
 
       .message--sub {
@@ -65,8 +65,9 @@ $dodgerblue: #1e90ff;
         font-family: 'Junction';
         font-size: 1.0rem;
         font-weight: bold;
+        background-color: rgba(85, 45, 255, 0.4);
+        border: 1mm inset rgba(150, 45, 255, 0.8);
 
-        border: 1mm inset rgba(45, 85, 255, 0.4);
         &::placeholder {
           color: lightgrey;
         }
@@ -86,6 +87,14 @@ $dodgerblue: #1e90ff;
           margin: 15px 0px;
           margin-left: 10px;
           padding: 5px 10px;
+
+          font-family: 'Junction';
+          font-size: 0.9rem;
+          font-weight: bold;
+
+          background-color: rgba(85, 45, 255, 0.4);
+          border: 1mm outset rgba(150, 45, 255, 0.8);
+
         }
       }
     }

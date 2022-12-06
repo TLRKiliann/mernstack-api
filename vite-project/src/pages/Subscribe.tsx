@@ -214,7 +214,7 @@ const Subscribe: React.FC = () => {
 
           <div className="div--subselect">
             <label htmlFor="gender" className="lbl--sub">
-              Choose : 
+              Gender : 
             </label>
             <select
               id="gender"
