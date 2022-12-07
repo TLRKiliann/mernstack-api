@@ -41,21 +41,18 @@ const options: Field[] = [
 const Online: React.FC = () => {
 
   const Navigate = useNavigate()
-  
-  const [users, setUsers] = useState<Array<DataAllType>>([])
-  console.log(users)
 
   const [form, setForm] = useState<Form>({
     invite: {value: 'Private'}
   })
 
+  const [users, setUsers] = useState<Array<DataAllType>>([])
   const [computers, setComputers] = useState<Array<computerType>>([])
-  console.log(computers)
-
   const [group, setGroup] = useState<Array<string | number | boolean>>([])
-  console.log(group)
-  
   const [catchById, setCatchById] = useState<Array<UserType>>([])
+  
+  //console.log(catchById, "catchById")
+
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [switchResponse, setSwitchResponse] = useState<boolean>(false)
 
@@ -66,12 +63,19 @@ const Online: React.FC = () => {
     setComputers(db_computers)
   }, [])
 
-  const addUserById = (id: number): void => {
-    console.log(id, "id")
+  const addUserById = (id: number) => {
     const userTodAdd = users.find(user => user.id === id)
-    console.log(userTodAdd, "userTodAdd")
-    setGroup([...group, userTodAdd])
-    setTweekGroup([...group, userTodAdd])
+    const verifyAlreadyExist = group.find(g => g.id === id)
+    if (verifyAlreadyExist === userTodAdd) {
+      console.log("This user already exists")
+      setGroup(group.filter(g => g.id !== id))
+    } else {
+      console.log("Ok, new user accepted")
+      setGroup([...group, userTodAdd])
+      setTweekGroup([...group, userTodAdd])
+      alert(`User ${userTodAdd.firstName} added to your group
+        (look at your Profile !)`)
+    }
   }
 
   const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -82,8 +86,6 @@ const Online: React.FC = () => {
     setForm({...form, ...newField});
   }
 
-  console.log(form, 'render of form')
-
   const handleAskUserPrivate = (id: number) => {
     const catchUser = users?.find(user => user.id === id)
     setCatchById(catchUser)
@@ -92,7 +94,7 @@ const Online: React.FC = () => {
 
   const handleInvitation = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
-    console.log(catchById, "catchUser")
+    //console.log(catchById, "catchUser")
     setOtherUser(catchById)
     setSwitchAsk(!switchAsk)
     setSwitchResponse(!switchResponse)
@@ -120,6 +122,10 @@ const Online: React.FC = () => {
     setSwitchResponse(false)
   }
 
+  const handleCloseConfirm = () => {
+    setConfirmRequest(false)
+  }
+
   return(
     <div className="saloon--byusers">
 
@@ -128,7 +134,7 @@ const Online: React.FC = () => {
       </div>
 
       <div className="divsection--saloon">
-        
+
       {switchAsk &&
         <AskMessageBox
           catchById={catchById}

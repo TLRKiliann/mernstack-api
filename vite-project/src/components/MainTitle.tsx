@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import './styleComponents/MainTitle.scss'
 
 interface HeaderProps {
   textHeader: string
@@ -7,7 +8,7 @@ interface HeaderProps {
 
 export default class Header extends Component<HeaderProps> {
 
-  myColor = {
+  /*myColor = {
     width: '40%',
     height: 'auto',
     margin: 'auto',
@@ -19,11 +20,11 @@ export default class Header extends Component<HeaderProps> {
     backgroundColor: "rgba(45, 85, 255, 0.4)",
     border: "1mm outset rgba(180, 85, 255, 0.2)",
     borderRadius: '15px'
-  }
+  }*/
   render() {
     return(
-      <div style={this.myColor}>
-        <h1>Chat-Room STACK</h1>
+      <div className="maintitle">
+        <h1>Chat-Society</h1>
         <h2>{this.props.textHeader}</h2>
         <h4>{this.props.secondTextHeader}</h4>
       </div>
