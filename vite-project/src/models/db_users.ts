@@ -134,7 +134,7 @@ export const db_users = [
 	{
 		"id": 10,
 		"img": jean,
-		"firstName": "Jean",
+		"firstName": "Jean-Michel",
 		"lastName": "Dujardin",
 		"age": 31,
 		"email": "jean.dujardin@mail.com",
