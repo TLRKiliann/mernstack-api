@@ -17,17 +17,22 @@
 
   .h2--maincomp {
     text-align: center;
-    font-family: "Junction";
-    color: whitesmoke;
-    text-shadow: 2px 2px 1px purple,
-    4px 3px 2px #000;
+    font-family: "Junction", sans-serif;
+    color: lightgrey;
+    text-shadow: 3px 3px 2px darkorchid,
+      4px 4px 3px #000;
+
+    .span--lengthuser {
+      color: orange;
+      text-shadow: 3px 3px 2px #242424;
+    }
   }
 
   .h3--maincomp {
     text-align: center;
     font-family: "Junction";
     text-shadow: 2px 1px 1px purple; 
-    color: whitesmoke;
+    color: lightgrey;
   }
 
   .div--connection {

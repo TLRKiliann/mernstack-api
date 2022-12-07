@@ -14,7 +14,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
 
         <h2 className='h2--maincomp'>
           All Members :&nbsp;
-          <span style={{color: "orange"}}>
+          <span className="span--lengthuser">
             {props.users?.length}
           </span>
         </h2>
