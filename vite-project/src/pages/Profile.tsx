@@ -32,8 +32,8 @@ const Profile: React.FC = () => {
       </div>
 
       <div className="tweekGroup--friends">
-        <div className="div--profileh2">
-          <h2 className="titleh2--profile">Members of your group :</h2>
+        <div className="div--profileh4">
+          <h4 className="titleh4--profile">Members of your group :</h4>
         </div>
         
         <div className="div--titleusersgroup">

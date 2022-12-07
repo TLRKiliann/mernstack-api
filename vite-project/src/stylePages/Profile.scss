@@ -47,12 +47,12 @@
     flex-direction: column;
     color: whitesmoke;
 
-    .div--profileh2 {
+    .div--profileh4 {
       width: 100%;
       margin-bottom: 20px;
 
-      .titleh2--profile {
-        width: 80%;
+      .titleh4--profile {
+        width: 1000px;
         margin: auto;
         font-family: 'Junction';
       }
@@ -148,10 +148,11 @@
       .btn--deletefromgroup {
         margin-right: 10px;
         padding: 3px 10px;
-        background: #161616;
+        /*background: #161616;*/
+        background: linear-gradient(180deg, purple, orange);
         border: 1px solid orange;
         border-radius: 5px;
-        color: whitesmoke;
+        color: lightgrey;
         cursor: pointer;
         &:hover {
           background: orange;
