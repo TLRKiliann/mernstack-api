@@ -20,7 +20,7 @@ export default class Home extends Component<DataAllType> {
     users: [],
     computers: [],
     textHeader: "Login and Chat",
-    secondTextHeader: "Only for StackSociety members",
+    secondTextHeader: "Only for Stack-Society members",
     isOpenRight: false,
     isOpenL: false
   }
@@ -53,7 +53,7 @@ export default class Home extends Component<DataAllType> {
         </div>
 
         <div className="wallIntro">
-          <h1 className="wallIntro--h1">Chat-Room for StackSociety</h1>
+          <h1 className="wallIntro--h1">Chat-Society</h1>
         </div>
         
         {!this.state.isOpenRight && <div className="div--voletsRight">
