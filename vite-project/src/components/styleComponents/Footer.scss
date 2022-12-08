@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   margin: auto;
-  bottom: auto;
+
   height: 70px;
   display: flex;
   justify-content: center;
@@ -11,11 +11,10 @@
   box-shadow: 0px 0px 10px slategray;
 
   .navbar--ul {
-    width: 96vw;
+    width: 94vw;
     margin: auto;
     display: flex;
     justify-content: center;
-
   }
 
   .navbar--nav .navbar--ul .navbar--li {
@@ -23,8 +22,13 @@
     padding: 20px 0px;
     display: flex;
     justify-content: space-around;
-    font-family: 'Consolase';
+    font-family: 'Junction';
     font-size: 1.4rem;
+    font-weight: bold;
     color: whitesmoke;
+    cursor: pointer;
+    &:hover {
+      color: orange;
+    }
   }
 }

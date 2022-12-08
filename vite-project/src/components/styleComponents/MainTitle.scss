@@ -17,22 +17,26 @@
 
 .div--bamimg {
   position: absolute;
-  width: 40%;
-  height: 250px;
-  margin: auto;
-  margin-top: -45px;
+  width: 44%;
+  height: 340px;
+  /*height: 250px;*/
+  margin-top: -90px;
+  margin-left: -20px;
   opacity: 0.4;
 }
 
 .bam--img {
-  width: 400px;
+  width: 100%;
   margin: auto;
 }
 
 .main--h1 {
   margin: auto;
-  margin-bottom: 5px;
-  font-size: 3.4rem;
+  margin-top: -30px;
+  margin-bottom: 0px;
+  font-size: 5.2rem;
+  text-shadow: -3px 3px 2px darkorchid,
+    -10px 14px 5px #242424;
   color: lightgrey;
   transform: rotate3d(1, 1, -1, 15deg);
 }
@@ -40,9 +44,9 @@
 .main--h2 {
   margin: auto;
   margin-bottom: 15px;
-  font-size: 2.2rem;
+  font-size: 3.4rem;
   text-shadow: -3px 3px 2px orangered,
-    -4px 4px 3px #000;
+    -10px 10px 5px #000;
   color: orange;
   transform: rotate3d(1, 1, -1, 15deg);
 }
@@ -52,7 +56,7 @@
   margin-bottom: 10px;
   font-size: 1.1rem;
   text-shadow: -3px 3px 2px darkorchid,
-    -4px 4px 3px #000;
-  color: lightblue;
+    -10px 7px 3px #000;
+  color: lightgrey;
   transform: rotate3d(1, 1, -1, 15deg);
 }

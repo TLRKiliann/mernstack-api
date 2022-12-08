@@ -35,7 +35,7 @@
   z-index: 11;
 }
 
-.subvolet--R button {
+.subvolet--R .btn--voletr {
   margin-top: 10px;
   margin-left: 20px;
   width: 30px;
@@ -85,6 +85,7 @@
   padding-bottom: 10px;
   border-bottom: 1px dashed whitesmoke;
   color: whitesmoke;
+  
   &:hover {
     color: orange;
   }
@@ -139,7 +140,7 @@
   }
 }
 
-.subvolet--R2 button {
+.subvolet--R2 .btn--voletr {
   margin-top: 10px;
   margin-left: 20px;
   width: 30px;

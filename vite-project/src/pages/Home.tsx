@@ -8,7 +8,6 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
-//import cool from '../assets/coolnection.jpg'
 import cool from '../assets/background/chat-logobg.png'
 import '../stylePages/Home.scss'
 
@@ -112,15 +111,3 @@ export default class Home extends Component<DataAllType> {
     )
   }
 }
-
-/*
-        <div className="div--imgbg">
-          <img
-            src={bgImg}
-            width="100%"
-            height="100%"
-            className='img--bg'
-            alt='no bg'
-          />
-        </div>
-*/
