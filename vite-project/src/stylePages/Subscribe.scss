@@ -36,7 +36,8 @@ $dodgerblue: #1e90ff;
         margin: auto;
         margin-bottom: 20px;
         margin-left: 0px;
-        font-family: 'Junction', sans-serif;
+        font-family: "Acme", sans-serif;
+        font-size: 2.4rem;
         color: whitesmoke;
         text-shadow: 2px 2px 1px purple,
         4px 3px 2px #242424;
@@ -53,6 +54,10 @@ $dodgerblue: #1e90ff;
         font-family: 'Junction';
         font-size: 1.2rem;
         font-weight: bold;
+        
+        &::placeholder {
+          color: lightgrey;
+        }
       }
 
       .input--sub {
@@ -93,24 +98,24 @@ $dodgerblue: #1e90ff;
 
           background-color: rgba(85, 45, 255, 0.4);
           border: 1mm outset rgba(150, 45, 255, 0.8);
-
+          color: whitesmoke;
         }
       }
     }
   }
   .btn--sub {
     margin: auto;
-    padding: 10px 20px;
+    padding: 3px 20px;
     
-    font-family: 'Junction';
-    font-size: 1.0rem;
+    font-family: "Acme", sans-serif;
+    font-size: 1.4rem;
     font-weight: bold;
     
     background: $royalblue;
     border: 3px outset $royalblue;
-    border-radius: 12px;
-
+    border-radius: 10px;
     color: whitesmoke;
+
     &:hover {
       background-color: $dodgerblue;
       border: 3px outset $dodgerblue;

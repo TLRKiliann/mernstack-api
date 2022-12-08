@@ -25,10 +25,12 @@ const Profile: React.FC = () => {
         />
       </div>
 
-      <div className="div--maintitle">
+      <div className="div--maintitlepro">
         <h1 className="title--profileh1">
-          Profile of <span style={{color: 'orange'}}>{username}</span>
+          Profile of
         </h1>
+
+        <p className="p--maintitlepro">{username}</p>
       </div>
 
       <div className="tweekGroup--friends">

@@ -181,9 +181,9 @@ const Online: React.FC = () => {
                     ):(
                     <span
                       style={{
-                        color: 'lightgreen',
+                        color: 'red',
                         marginLeft: "5px",
-                        fontSize: "12px"
+                        fontSize: "18px"
                       }}
                     >
                       ❌
@@ -199,10 +199,10 @@ const Online: React.FC = () => {
                     ✉
                   </span>
 
-                  <span key={user.id} className="lastspan--service">
+                  <span key={user.id} className="lastspan--online">
                     <button
                       onClick={() => addUserById(user.id)}
-                      className="btn--lastspanservice"
+                      className="btn--lastspanonline"
                       title="Add as Your Friend"
                     >
                       +

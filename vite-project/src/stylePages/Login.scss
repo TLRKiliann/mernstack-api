@@ -1,5 +1,6 @@
 $royalblue: #4169e1;
 $orange: #ffa500;
+$purple: #800080;
 
 .bg--loginimg {
   position: absolute;
@@ -7,7 +8,7 @@ $orange: #ffa500;
   right: 0px;
   left: 0px;
   min-height: 100vh;
-  background: linear-gradient(180deg, purple, $orange);
+  background: linear-gradient(180deg, $purple, $orange);
   z-index: -1;
 
   .zoom--img {
@@ -45,9 +46,10 @@ $orange: #ffa500;
       width: 64%;
       margin: auto;
       margin: 20px auto;
-      font-family: 'Junction', sans-serif;
+      font-family: "Acme", sans-serif;
+      font-size: 2.4rem;
       color: whitesmoke;
-      text-shadow: 2px 2px 1px purple,
+      text-shadow: 2px 2px 1px $purple,
       4px 3px 2px #242424;
     }
 
@@ -68,18 +70,22 @@ $orange: #ffa500;
       font-size: 1.2rem;
       background-color: rgba(85, 45, 255, 0.4);
       border: 1mm inset rgba(150, 45, 255, 0.8);
+      color: lightgrey;
     }
 
     .btn--submitlogin {
-      width: 140px;
       margin: auto;
       margin-top: 30px;
-      padding: 5px 10px;
-      font-size: 1.2rem;
+      padding: 3px 20px;
+
+      font-family: "Acme", sans-serif;
+      font-size: 1.4rem;
       font-weight: bold;
+      
       background-color: $royalblue;
       border: 3px outset $royalblue;
-      border-radius: 12px;
+      border-radius: 10px;
+      color: lightgrey;
 
       &:hover {
         background-color: dodgerblue;
@@ -108,10 +114,10 @@ $orange: #ffa500;
     .link--subscribe {
       text-decoration: none;
       color: whitesmoke;
-      text-shadow: 2px 1px 2px purple;
+      text-shadow: 2px 1px 2px $purple;
       &:hover {
         color: $orange;
-        text-shadow: 0px 0px 0px purple;
+        text-shadow: 0px 0px 0px $purple;
       }
     }
 

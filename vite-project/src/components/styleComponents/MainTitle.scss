@@ -1,14 +1,62 @@
 .maintitle {
   width: 40%;
-  height: auto;
+  height: 150px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 120px;
   text-align: center;
-  font-family: "Junction", sans-serif;
+  font-family: "Acme", sans-serif;
+  /*font-family: "DejaVu Sans", sans-serif;*/
   color: lightgrey;
-  text-shadow: 3px 3px 2px darkorchid,
-    4px 4px 3px #000;
+  text-shadow: -3px 3px 2px darkorchid,
+    -4px 4px 3px #000;
   background-color: rgba(45, 85, 255, 0.4);
   border: 1mm outset rgba(180, 85, 255, 0.2);
   border-radius: 15px;
+}
+
+.div--bamimg {
+  position: absolute;
+  width: 44%;
+  height: 280px;
+  margin-top: -64px;
+  margin-left: -20px;
+  opacity: 0.4;
+}
+
+.bam--img {
+  width: 90%;
+  margin: auto;
+}
+
+.main--h1 {
+  margin: auto;
+  margin-top: -30px;
+  margin-bottom: 0px;
+  font-size: 5.2rem;
+  text-shadow: -3px 3px 2px darkorchid,
+    -10px 14px 7px #000;
+  color: pink;
+  transform: rotate3d(1, 1, -1, 15deg);
+}
+
+.main--h2 {
+  margin: auto;
+  margin-bottom: 15px;
+  font-size: 3.4rem;
+  text-shadow: -3px 3px 2px orangered,
+    -10px 14px 7px #000;
+  color: orange;
+  transform: rotate3d(1, 1, -1, 15deg);
+}
+
+.main--h4 {
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-shadow: -3px 3px 2px darkorchid,
+    -10px 10px 3px #000;
+  color: lightgrey;
+  transform: rotate3d(1, 1, -1, 15deg);
 }

@@ -35,56 +35,65 @@
   }
 }
 
+@keyframes wall {
+  0% {
+    opacity: 1;
+    overflow: hidden;
+    z-index: 22;
+  }
+  70% {
+    opacity: 1;
+    overflow: hidden;
+    z-index: 22;
+  }
+  100% {
+    opacity: 0;
+    overflow: hidden;
+    z-index: 22;
+  }
+}
+
 .img--home {
   position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  width: 150%;
-  height: 100%;
+  width: 90%;
+  height: 70%;
   margin: auto;
   opacity: 0.1;
+  z-index: 1;
 }
 
-@keyframes wall {
-  0% {
-    opacity: 1;
-    overflow: hidden;
-    z-index: 20;
-  }
-  70% {
-    opacity: 1;
-    overflow: hidden;
-    z-index: 20;
-  }
-  100% {
-    opacity: 0;
-    overflow: hidden;
-    z-index: 20;
+@media screen and (max-width: 800px) {
+  .img--home {
+    width: 600px;
+    height: 400px;
   }
 }
 
 .div--voletsLeft {
   position: absolute;
-  margin-top: 100px;
+  margin-top: 120px;
   margin-left: 7%;
   border-radius: 15px;
   z-index: 3;
 
   .btn--voletLeft {
     padding: 20px 40px;
-    font-family: 'Consolas';
-    font-size: 1.2rem;
+    font-family: "Acme", sans-serif;
+    font-size: 1.4rem;
     font-weight: bold;
     
-    background-color: rgba(45, 85, 255, 0.4);
+    background: linear-gradient(30deg, 
+      rgba(45, 85, 255, 0.4), purple,
+      rgba(45, 85, 255, 0.4));
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
     color: orange;
-
     &:hover {
-      background-color: rgba(85, 45, 255, 0.6);
+      background: purple;
       border: 1mm outset rgba(150, 45, 255, 0.6);
       color: lightgreen;
       cursor: pointer;
@@ -102,24 +111,25 @@
 .div--voletsRight {
   position: absolute;
   right: 0px;
-  margin-top: 100px;
+  margin-top: 120px;
   margin-right: 7%;
   border-radius: 15px;
   z-index: 3;
 
   .btn--voletRight {
     padding: 20px 40px;
-    font-family: 'Consolas';
-    font-size: 1.2rem;
+    font-family: "Acme", sans-serif;
+    font-size: 1.4rem;
     font-weight: bold;
 
-    background-color: rgba(45, 85, 255, 0.4);
+    background: linear-gradient(30deg, 
+      rgba(45, 85, 255, 0.4), purple,
+      rgba(45, 85, 255, 0.4));
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
     color: orange;
-    
     &:hover {
-      background-color: rgba(85, 45, 255, 0.6);
+      background: purple;
       border: 1mm outset rgba(150, 45, 255, 0.6);
       color: lightgreen;
       cursor: pointer;
@@ -145,10 +155,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Junction";
+  font-family: "Acme", sans-serif;
+  font-size: 1.4rem;
   color: darkorange;
 }
-  /*.webdevanim {
+/*
+  .webdevanim {
 
     animation-name: rotate-logo;
     animation-delay: 0s;
