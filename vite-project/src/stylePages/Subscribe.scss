@@ -36,7 +36,8 @@ $dodgerblue: #1e90ff;
         margin: auto;
         margin-bottom: 20px;
         margin-left: 0px;
-        font-family: 'Junction', sans-serif;
+        font-family: "Acme", sans-serif;
+        font-size: 2.4rem;
         color: whitesmoke;
         text-shadow: 2px 2px 1px purple,
         4px 3px 2px #242424;
@@ -104,10 +105,10 @@ $dodgerblue: #1e90ff;
   }
   .btn--sub {
     margin: auto;
-    padding: 7px 16px;
+    padding: 3px 20px;
     
-    font-family: 'DejaVu Sans', sans-serif;
-    font-size: 1.1rem;
+    font-family: "Acme", sans-serif;
+    font-size: 1.4rem;
     font-weight: bold;
     
     background: $royalblue;

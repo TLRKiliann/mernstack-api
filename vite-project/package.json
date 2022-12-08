@@ -12,6 +12,8 @@
     "typecheck": "vitest typecheck"
   },
   "dependencies": {
+    "@fontsource/acme": "^4.5.9",
+    "@fontsource/allura": "^4.5.11",
     "@fontsource/dejavu-sans": "^4.5.4",
     "@fontsource/junction": "^4.5.3",
     "axios": "^1.2.0",

@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/acme': ^4.5.9
+  '@fontsource/allura': ^4.5.11
   '@fontsource/dejavu-sans': ^4.5.4
   '@fontsource/junction': ^4.5.3
   '@testing-library/dom': ^8.19.0
@@ -24,6 +26,8 @@ specifiers:
   vitest: ^0.25.0
 
 dependencies:
+  '@fontsource/acme': 4.5.9
+  '@fontsource/allura': 4.5.11
   '@fontsource/dejavu-sans': 4.5.4
   '@fontsource/junction': 4.5.3
   axios: 1.2.0
@@ -349,6 +353,14 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource/acme/4.5.9:
+    resolution: {integrity: sha512-lrxnIjfdTnihl1dH/8GpBKg3AqZnjCZ1hP3a/zGcXrL89OTT2q/N8DSAcNA/yxk9sENOXEYq2HuiQmp47jw5Og==}
+    dev: false
+
+  /@fontsource/allura/4.5.11:
+    resolution: {integrity: sha512-PRQyWHVYaC1Rmd3b8S8sRhvTF1CWVDduZsmja+oCk54AyMOIizQ8v4zozX02F4KI2XVSA9SaNIwmvDGdEVOsAQ==}
+    dev: false
 
   /@fontsource/dejavu-sans/4.5.4:
     resolution: {integrity: sha512-3SaRz+0N8h1vHpIGwErMhg8EujGQc9HUZU55tSJHvRkk21N8KZNGu0HvnJ2hhmhbvDdT/xIuDin8WFYCgw6fAQ==}

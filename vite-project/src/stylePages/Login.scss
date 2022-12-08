@@ -46,7 +46,8 @@ $purple: #800080;
       width: 64%;
       margin: auto;
       margin: 20px auto;
-      font-size: 2.2rem;
+      font-family: "Acme", sans-serif;
+      font-size: 2.4rem;
       color: whitesmoke;
       text-shadow: 2px 2px 1px $purple,
       4px 3px 2px #242424;
@@ -75,10 +76,10 @@ $purple: #800080;
     .btn--submitlogin {
       margin: auto;
       margin-top: 30px;
-      padding: 7px 16px;
+      padding: 3px 20px;
 
-      font-family: 'DejaVu Sans', sans-serif;
-      font-size: 1.1rem;
+      font-family: "Acme", sans-serif;
+      font-size: 1.4rem;
       font-weight: bold;
       
       background-color: $royalblue;
