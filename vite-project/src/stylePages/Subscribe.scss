@@ -53,6 +53,10 @@ $dodgerblue: #1e90ff;
         font-family: 'Junction';
         font-size: 1.2rem;
         font-weight: bold;
+        
+        &::placeholder {
+          color: lightgrey;
+        }
       }
 
       .input--sub {
@@ -93,7 +97,7 @@ $dodgerblue: #1e90ff;
 
           background-color: rgba(85, 45, 255, 0.4);
           border: 1mm outset rgba(150, 45, 255, 0.8);
-
+          color: whitesmoke;
         }
       }
     }
@@ -102,15 +106,15 @@ $dodgerblue: #1e90ff;
     margin: auto;
     padding: 10px 20px;
     
-    font-family: 'Junction';
+    font-family: 'DejaVu Sans', sans-serif;
     font-size: 1.0rem;
     font-weight: bold;
     
     background: $royalblue;
     border: 3px outset $royalblue;
     border-radius: 12px;
-
     color: whitesmoke;
+
     &:hover {
       background-color: $dodgerblue;
       border: 3px outset $dodgerblue;

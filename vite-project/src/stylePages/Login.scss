@@ -45,7 +45,7 @@ $orange: #ffa500;
       width: 64%;
       margin: auto;
       margin: 20px auto;
-      font-family: 'Junction', sans-serif;
+      font-size: 2.2rem;
       color: whitesmoke;
       text-shadow: 2px 2px 1px purple,
       4px 3px 2px #242424;
@@ -68,6 +68,7 @@ $orange: #ffa500;
       font-size: 1.2rem;
       background-color: rgba(85, 45, 255, 0.4);
       border: 1mm inset rgba(150, 45, 255, 0.8);
+      color: lightgrey;
     }
 
     .btn--submitlogin {
@@ -80,6 +81,7 @@ $orange: #ffa500;
       background-color: $royalblue;
       border: 3px outset $royalblue;
       border-radius: 12px;
+      color: lightgrey;
 
       &:hover {
         background-color: dodgerblue;
