@@ -8,7 +8,8 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
-import cool from '../assets/coolnection.jpg'
+//import cool from '../assets/coolnection.jpg'
+import cool from '../assets/background/chat-logobg.png'
 import '../stylePages/Home.scss'
 
 type DataAllType = {
@@ -20,7 +21,7 @@ export default class Home extends Component<DataAllType> {
     users: [],
     computers: [],
     textHeader: "Login and Chat",
-    secondTextHeader: "Only for Stack-Society members",
+    secondTextHeader: "(Only for Stack-Society Members)",
     isOpenRight: false,
     isOpenL: false
   }
@@ -45,8 +46,8 @@ export default class Home extends Component<DataAllType> {
         <div>
           <img
             src={cool}
-            width="100%"
-            height="100%"
+            width="1920px"
+            height="1080px"
             className="img--home"
             alt={cool}
           />
