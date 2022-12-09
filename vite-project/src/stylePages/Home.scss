@@ -84,16 +84,15 @@
     padding: 20px 40px;
     font-family: "Acme", sans-serif;
     font-size: 1.4rem;
-    font-weight: bold;
     
     background: linear-gradient(30deg, 
-      rgba(45, 85, 255, 0.4), purple,
+      rgba(45, 85, 255, 0.4), #7e53ae,
       rgba(45, 85, 255, 0.4));
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
     color: orange;
     &:hover {
-      background: purple;
+      background: #7e53ae;
       border: 1mm outset rgba(150, 45, 255, 0.6);
       color: lightgreen;
       cursor: pointer;
@@ -123,13 +122,13 @@
     font-weight: bold;
 
     background: linear-gradient(30deg, 
-      rgba(45, 85, 255, 0.4), purple,
+      rgba(45, 85, 255, 0.4), #7e53ae,
       rgba(45, 85, 255, 0.4));
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
     color: orange;
     &:hover {
-      background: purple;
+      background: #7e53ae;
       border: 1mm outset rgba(150, 45, 255, 0.6);
       color: lightgreen;
       cursor: pointer;
@@ -226,3 +225,35 @@
   }
 }
 */
+
+@media screen and (min-width: 360px) and (max-width: 1050px) {
+  .div--voletsLeft {
+    position: absolute;
+    margin-top: 33vh;
+    margin-left: 4%;
+    border-radius: 15px;
+
+    .btn--voletLeft {
+      padding: 10px 20px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.0rem;
+    }
+  }
+  .div--voletsRight {
+    position: absolute;
+    right: 0px;
+    margin-top: 33vh;
+    margin-right: 4%;
+    border-radius: 15px;
+    z-index: 3;
+
+    .btn--voletRight {
+      padding: 10px 20px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.0rem;
+    }
+  }
+  .animation--alternrota {
+    display: none;
+  }
+}

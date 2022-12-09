@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-//import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../../context/AuthProvider'
 import { db_users } from '../../models/db_users'
 import { UserType } from '../../models/usertype'
@@ -8,20 +7,21 @@ import './PrivateMessage.scss'
 
 const PrivateMessage: React.FC = () => {
 
-  //const retrieveFirst = useParams<{firstName?: string}>("");
-  const {otherUser} = useAuthLogin();
-  console.log(otherUser, "otherUser")
+  const {otherUser, username} = useAuthLogin();
 
-  //const [users, setUsers] = useState<Array<UserType>>([])
-  //const [newNames, setNewNames] = useState<{firstName?: string}>({retrieveFirst})
   const [displayName, setDisplayName] = useState<object>({otherUser})
+  const [privateMsg, setPrivateMsg] = useState<string>("")
+  const [privateSeveralMsg, setPrivateSeveralMsg] = useState<Array<string>>([])
 
-  /*useEffect(() => {
-    setUsers(db_users)
-    setNewNames({retrieveFirst})
-  }, [])*/
-
-
+  const handleUserMessage = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    console.log(typeof(privateMsg), 'privateMsg')
+    e.preventDefault()
+    if (privateMsg) {
+      setPrivateSeveralMsg([...privateSeveralMsg, {id: Date().slice(0, 24),
+        usr: `${username}`, msg: `${privateMsg} ✉`}])
+    }
+    setPrivateMsg("")
+  }
 
   return(
     <div className="private--chat">
@@ -62,19 +62,31 @@ const PrivateMessage: React.FC = () => {
               </h4>
             </div>
             ))}
+
         </div>
 
         <div className="private--messagebox">
-
+          <div>
+          {privateSeveralMsg?.map((data) => (
+            <div key={data.id} className="map--msg">
+              <p className="para--chat">$ ▶ {data.usr} ~ {data.msg}</p>
+                <span className="legend--date">{data.id}</span>
+            </div>
+            ))
+          }
+          </div>
         </div>
 
         <div className="inputbtn--privateterminal">
           <input
             type="text"
+            value={privateMsg}
+            onChange={(e) => setPrivateMsg(e.target.value)}
             placeholder="Enter your message"
           />
           <button
             type="button"
+            onClick={handleUserMessage}
             className="private--btn"
           >
             Enter
@@ -87,4 +99,3 @@ const PrivateMessage: React.FC = () => {
 }
 
 export default PrivateMessage
-

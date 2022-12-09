@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
+import { app } from "../api/axiosconfig";
 import { useAuthLogin } from '../context/AuthProvider'
 import zoomImg from '../assets/circle.jpg'
 import '../stylePages/Login.scss'
@@ -20,13 +21,15 @@ type Form = {
 const Login: React.FC = () => {
 
   const Navigate = useNavigate()
-
+  
+  const LOGIN_URL = '/login';
+  
   const [form, setForm] = useState<Form>({
     username: {value: ''},
     password: {value: ''}
   })
 
-  const [message, setMessage] = useState<string>('Not connected! (esteban / 123456)');
+  const [message, setMessage] = useState<string>('Not connected! (Esteban / 1234)');
 
   const { 
     toggle,
@@ -42,6 +45,7 @@ const Login: React.FC = () => {
 
     setForm({ ...form, ...newField});
   }
+  //console.log(form.username, "-- form --")
 
   const validateForm = () => {
     let newForm: Form = form;
@@ -82,9 +86,17 @@ const Login: React.FC = () => {
             setMessage('🔐 Identifiant ou mot de passe incorrect.');
             return;
           }
-
+        /*const response = await app.post(LOGIN_URL, JSON.stringify(form.username.value, 
+          form.password.value),
+          {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: false
+          }
+        )*/
         setAuth(form.username.value, form.password.value)
         setUserName(form.username.value)
+        localStorage.setItem("user-info",
+          JSON.stringify([form.username.value, form.password.value]))
         toggle()
         console.log("login ok")
         Navigate('/')

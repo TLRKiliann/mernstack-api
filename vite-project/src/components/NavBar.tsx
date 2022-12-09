@@ -22,8 +22,9 @@ const NavBar: React.FC = () => {
         <div className="div--img">
           <img
             src={koalatree}
-            width='65px'
-            height='70px'
+            width="65px"
+            height="70px"
+            className="img--koala"
             alt='no img navbar'
           />
         </div>

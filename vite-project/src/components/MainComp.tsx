@@ -43,11 +43,8 @@ const MainComp: React.FC = (props: MainCompProps) => {
                 />
                 {user.firstName} {user.lastName} :&nbsp;
                   <div 
-                    style={{
-                      fontFamily: 'Junction',
-                      fontSize: '1.2rem',
-                      color: 'lightgreen'
-                    }}>
+                    className="data--maincomp"
+                  >
                     Connected
                   </div>
               </div>
