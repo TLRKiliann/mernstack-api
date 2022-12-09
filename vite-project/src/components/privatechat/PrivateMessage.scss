@@ -68,6 +68,31 @@
       padding-left: 10px;
       overflow: scroll;
       overflow-x: hidden;
+    
+      .map--msg {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .para--chat {
+          margin-top: 5px;
+          margin-bottom: 0px;
+          text-align: justify;
+          font-family: "DejaVu Sans", sans-serif;
+          font-size: 1.1rem;
+          color: cyan;
+        }
+
+        .legend--date {
+          margin-top: 0px;
+          font-size: 0.8rem;
+          color: slategray;
+        }
+      }
     }
 
     .inputbtn--privateterminal {
