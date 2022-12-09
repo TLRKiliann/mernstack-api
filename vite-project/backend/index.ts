@@ -2,14 +2,35 @@ import express, {Request, Response, NextFunction} from 'express';
 const cors = require('cors');
 import dotenv from 'dotenv';
 
+
 const PORT = 5000;
 const date = new Date();
 const app = express();
+const users: any[] = [];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 dotenv.config();
+
+//Simple login
+app.get('/login', (req:Request, res:Response, next:NextFunction) => {
+  res.json(users)
+  next()
+})
+
+app.post('/login', (req:Request, res:Response, next:NextFunction) => {
+  const user = { username: req.body.username, password: req.body.password }
+  users.push(user)
+  console.log(users)
+  res.status(201).send()
+  next()
+})
+console.log(users)
+app.listen(PORT, () => {
+  console.log(`[+] Server is running on port ${PORT} !`)
+});
+
 
 /*
 to verify error with middleware
@@ -25,27 +46,7 @@ const requestLogger = (req:Request, res:Response, next:NextFunction) => {
 
 //const getAllMembers = require('./routes/allMembers');
 
-let notes = [
-  {
-    "id": 1,
-    "name": "Jeremy",
-    "number": "022 343 56 78",
-    "editNum": false
-  },
-  {
-    "id": 2,
-    "name": "Agnes",
-    "number": "021 324 44 54",
-    "editNum": false
-  },
-  {
-    "id": 3,
-    "name": "Sarah",
-    "number": "024 535 33 22",
-    "editNum": false
-  },
-];
-
+/*
 app.use(function(req:Request, res:Response, next:NextFunction) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', '*');
@@ -53,8 +54,11 @@ app.use(function(req:Request, res:Response, next:NextFunction) {
   res.header('Content-Type', 'application/json');
   next();
 });
+*/
 
-app.get("/api/getAllMembers", (req:Request, res:Response, next:NextFunction): void => {
+/*
+//retrieve all members
+app.get("/api/getAllMembers", (req:Request, res:Response, next:NextFunction) => {
   try {
     res.json(notes).status(200).end();
   } catch (err) {
@@ -63,9 +67,26 @@ app.get("/api/getAllMembers", (req:Request, res:Response, next:NextFunction): vo
   next();
 });
 
-app.listen(PORT, () => {
-  console.log(`[+] Server is running on port ${PORT} !`)
+//MySQL login
+app.post('/login', async (req:Request, res:Response, next:NextFunction) => {
+  const username:string = req.body.username;
+  console.log(username, 'username')
+
+  const password:string = req.body.password;
+  console.log(password, 'password')
+  
+  try {
+    const result = await pool.query('select * from\
+      loggers where username = ? and password = ?',
+    [username, password]);
+    res.status(201).json("Accepted !")
+  } catch (err) {
+    throw err;
+  }
+  next();
 });
+*/
+
 
 //For real api with routes folder
 //app.use('/api/getAllMembers', getAllMembers);
