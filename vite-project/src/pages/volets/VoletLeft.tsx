@@ -28,8 +28,9 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
         : null
     })
     event.preventDefault();
-    if (searchUser === "") {
+    if (searchUser === "" || findByFirstName !== searchUser) {
       setSearchUser([]);
+      alert("User undefined or not existing...")
     } else {
       setUserFound(findByFirstName)
       setSearchUser("")
