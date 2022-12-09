@@ -63,12 +63,14 @@
 
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .maintitle {
-    width: 70%;
+    width: 360px;
     height: 50%;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: auto;
     margin-top: 120px;
+    background: none;
+    border: none;
     .div--bamimg {
       display: none;
     }
