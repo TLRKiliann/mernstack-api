@@ -30,7 +30,7 @@
 
   .h3--maincomp {
     text-align: center;
-    font-family: "Junction";
+    font-family: "Junction", sans-serif;
     text-shadow: 2px 1px 1px purple; 
     color: lightgrey;
   }
@@ -42,9 +42,8 @@
     display: flex;
     align-items: center;
     
-    font-family: "DejaVu Sans";
+    font-family: "DejaVu Sans", sans-serif;
     font-size: 1.1rem;
-    font-weight: bold;
     color: lightblue;
 
     background-color: rgba(85, 45, 255, 0.4);
@@ -57,6 +56,45 @@
       margin-left: 10px;
       border-radius: 50% 50%;
       object-fit: cover;
+    }
+    .data--maincomp {
+      font-family: Junction, sans-serif;
+      font-size: 1.2rem;
+      color: lightgreen;
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 1050px) {
+  .master--maincomp {
+    width: 360px;
+    height: auto;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+    .bg--colormaincomp {
+
+      padding-bottom: 5px;
+
+    }
+    .h2--maincomp {
+      font-size: 1.4rem;
+    }
+    
+    .div--connection {
+      width: auto;
+      font-size: 0.9rem;
+
+      .img--connector {
+        margin-right: 3px;
+        margin-left: 3px;
+      }
+      .data--maincomp {
+
+        font-size: 0.9rem;
+
+      }
     }
   }
 }

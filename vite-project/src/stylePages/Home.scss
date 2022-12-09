@@ -84,7 +84,6 @@
     padding: 20px 40px;
     font-family: "Acme", sans-serif;
     font-size: 1.4rem;
-    font-weight: bold;
     
     background: linear-gradient(30deg, 
       rgba(45, 85, 255, 0.4), purple,
@@ -226,3 +225,35 @@
   }
 }
 */
+
+@media screen and (min-width: 360px) and (max-width: 1050px) {
+  .div--voletsLeft {
+    position: absolute;
+    margin-top: 42vh;
+    margin-left: 4%;
+    border-radius: 15px;
+
+    .btn--voletLeft {
+      padding: 10px 20px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.0rem;
+    }
+  }
+  .div--voletsRight {
+    position: absolute;
+    right: 0px;
+    margin-top: 42vh;
+    margin-right: 4%;
+    border-radius: 15px;
+    z-index: 3;
+
+    .btn--voletRight {
+      padding: 10px 20px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.0rem;
+    }
+  }
+  .animation--alternrota {
+    font-size: 0.9rem;
+  }
+}
