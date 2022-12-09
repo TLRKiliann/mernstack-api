@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useAuthLogin } from '../../context/AuthProvider'
 import { db_users } from '../../models/db_users'
 import { UserType } from '../../models/usertype'
-//import btnWorld from '../../assets/btn-world.png'
 import './TerminalComponent.scss'
 
 
