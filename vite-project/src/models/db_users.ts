@@ -195,5 +195,18 @@ export const db_users = [
 		"mainroom": "Cybersecurity",
 		"room": "Scapy",
 		"isConnected": true
+	},
+	{
+		"id": 15,
+		"img": jason,
+		"firstName": "Esteban",
+		"lastName": "Catanea",
+		"age": 31,
+		"email": "esteban@hotmail.com",
+		"location": "Blueberry",
+		"gender": "male",
+		"mainroom": "Cybersecurity",
+		"room": "Scapy",
+		"isConnected": true
 	}
 ]
