@@ -29,23 +29,19 @@ export const useAuthLogin: React.FC = () => {
 export const AuthProvider: React.FC = ({ children }: Props) => {
 
   const [auth, setAuth] = useState<object>({});
-
   const [switchLogin, setSwitchLogin] = useState<boolean>(true);
-
   const [username, setUserName] = useState<string>("");
-
   const [otherUser, setOtherUser] = useState<object>({});
-
   const [tweekGroup, setTweekGroup] = useState<object>({});
 
   const toggle = () => {
-      setSwitchLogin(!switchLogin);
+    setSwitchLogin(!switchLogin);
   };
 
   const eraseAll = () => {
-      setUserName("");
-      setTweekGroup("");
-      setAuth("");
+    setUserName("");
+    setTweekGroup("");
+    setAuth("");
   };
 
   return (
