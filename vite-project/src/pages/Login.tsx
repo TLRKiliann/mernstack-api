@@ -86,13 +86,12 @@ const Login: React.FC = () => {
             setMessage('🔐 Identifiant ou mot de passe incorrect.');
             return;
           }
-        /*const response = await app.post(LOGIN_URL, JSON.stringify(form.username.value, 
-          form.password.value),
+        const response = app.post(LOGIN_URL, JSON.stringify(form),
           {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: false
           }
-        )*/
+        )
         setAuth(form.username.value, form.password.value)
         setUserName(form.username.value)
         localStorage.setItem("user-info",
