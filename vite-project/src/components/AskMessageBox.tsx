@@ -19,6 +19,7 @@ type Form = {
 interface AskMessageBoxProps {
   form: object
   catchById: db_usersProps
+  handleInviteChoice: (e: React.ChangeEvent<HTMLInputElement>) => void
   handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
@@ -28,7 +29,7 @@ const AskMessageBox: React.FC = (props: {db_users, AskMessageBoxProps, Form, Fie
   return(
     <div key={props.catchById?.id} className="boolean--result">
       <form
-        onSubmit={props.handleInvitation}
+        onSubmit={(e) => props.handleInvitation(e)}
         data-testid="asktestid" 
         className="form--invitation"
       >
@@ -46,22 +47,26 @@ const AskMessageBox: React.FC = (props: {db_users, AskMessageBoxProps, Form, Fie
           </span> to private chat :
         </label>
 
-        <select 
-          name="invite" 
-          id="invite"
-          value={props.form}
-          onChange={props.handleInviteChoice}
-        >
-        {props.options.map((option) => (
-          <option
-            key={option.value}
-            name="invite"
-            value={option.value}
+        <label>
+          Would you like&nbsp;
+          <select 
+            name="invite" 
+            id="invite"
+            value={props.form}
+            onChange={(e) => props.handleInviteChoice(e)}
           >
-            {option.label}
-          </option>
-        ))}
-        </select> 
+          {props.options.map((option) => (
+            <option
+              key={option.value}
+              name="invite"
+              value={option.value}
+            >
+              {option.label}
+            </option>
+          ))}
+          </select>
+          &nbsp;chat.
+        </label> 
         
         <button
           type='submit'

@@ -8,7 +8,7 @@ const Profile: React.FC = () => {
 
   const { username, tweekGroup, setTweekGroup } = useAuthLogin()
   //console.log(tweekGroup, "tweekGroup")
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: number): void => {
     setTweekGroup(tweekGroup.filter(t => t.id !== id))
     alert(`Member deleted from your group`)
   }
