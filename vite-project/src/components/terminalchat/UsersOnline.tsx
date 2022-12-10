@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import usePersonnalHook from '../../hook/personnal.hook'
 //import { db_users } from '../../models/db_users'
-import { UserType } from '../../models/usertype'
+//import { UserType } from '../../models/usertype'
 import './UsersOnline.scss'
 
 interface UserOnlineProps {
@@ -14,9 +14,6 @@ interface UserOnlineProps {
 const UserOnline: React.FC = (props: UserOnlineProps) => {
 
   const allUsers = usePersonnalHook()
-  console.log(allUsers)
-
-  console.log(props.roomStyle, "roomStyle")
   
   return(
     <section data-testid="ptestid" className="user--online">
