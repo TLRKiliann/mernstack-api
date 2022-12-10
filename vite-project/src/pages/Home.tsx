@@ -55,13 +55,6 @@ export default class Home extends Component<DataAllType> {
         <div className="wallIntro">
           <h1 className="wallIntro--h1">Chat-Society</h1>
         </div>
-        
-        <MainTitle
-          textHeader={this.state.textHeader}
-          secondTextHeader={this.state.secondTextHeader}
-        />
-        <MainComp users={this.state.users} />
-        <Footer />
 
         {!this.state.isOpenRight && <div className="div--voletsRight">
             <button
@@ -104,6 +97,14 @@ export default class Home extends Component<DataAllType> {
           isOpenL={this.state.isOpenL}
           handleVoletsLeft={this.handleVoletsLeft} 
         />
+
+        <MainTitle
+          textHeader={this.state.textHeader}
+          secondTextHeader={this.state.secondTextHeader}
+        />
+        <MainComp users={this.state.users} />
+        <Footer />
+
       </div>
     )
   }
