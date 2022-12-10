@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 //import serviceRouting from '../services/serviceRouting';
 import { useAuthLogin } from '../context/AuthProvider'
-import { db_users } from '../models/db_users'
-import { UserType } from '../models/usertype'
+import usePersonnalHook from '../hook/personnal.hook'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
 import AskMessageBox from './AskMessageBox'
@@ -38,21 +37,19 @@ const options: Field[] = [
 const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: string }>()
+
   const Navigate = useNavigate()
+
   const { setOtherUser } = useAuthLogin();
 
-  const [users, setUsers] = useState<Array<UserType>>([])
-  const [roomStyle, setRoomStyle] = useState<{params?: string}>(Object.values(params))
+  const users = usePersonnalHook()
+
+  const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
   const [catchById, setCatchById] = useState<Array<UserType>>([])
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
 
-  useEffect(() => {
-    setUsers(db_users)
-    setRoomStyle(roomStyle[0])
-  }, [])
-
   const [form, setForm] = useState<Form>({
-    invite: {value: 'Private'}
+    invite: {value: ''}
   })
 
   const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -151,5 +148,5 @@ export default ComputerRoom;
       setUsers(initialData)
     })
     //setUsers(db_users)
-    setRoomStyle(roomStyle[0])
+    setRoomStyle(roomStyle)
   }, [])*/
