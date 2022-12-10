@@ -8,7 +8,6 @@ const date = new Date();
 const app = express();
 
 const users: any[] = [];
-console.log(users, "users list info")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,7 +22,6 @@ app.get('/login', (req:Request, res:Response, next:NextFunction) => {
 
 app.post('/login', (req:Request, res:Response, next:NextFunction) => {
   const user = { username: req.body.username, password: req.body.password }
-  console.log(user, 'user')
   users.push(user)
   res.status(201).send()
   next()
@@ -32,3 +30,14 @@ app.post('/login', (req:Request, res:Response, next:NextFunction) => {
 app.listen(PORT, () => {
   console.log(`[+] Server is running on port ${PORT} !`)
 });
+
+/*
+app.post('/login', (req:Request, res:Response, next:NextFunction) => {
+  const user = { username: req.body.username, password: req.body.password }
+  console.log(user, 'user')
+  users.push(user)
+  console.log(users, "users list info")
+  res.status(201).send()
+  next()
+})
+*/
