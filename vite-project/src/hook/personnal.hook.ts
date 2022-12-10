@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { db_users } from '../models/db_users'
 import { UserType } from '../models/usertype'
 
-export default function usePersonnalHook() {
+const usePersonnalHook: React.FC = () => {
 
   const [users, setUsers] = useState<Array<UserType>>([])
 
@@ -12,3 +12,5 @@ export default function usePersonnalHook() {
 
   return users
 }
+
+export default usePersonnalHook

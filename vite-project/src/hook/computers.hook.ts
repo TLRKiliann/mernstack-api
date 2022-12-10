@@ -3,7 +3,7 @@ import { db_computers } from '../models/db_computers'
 import { computerType } from '../models/computerType'
 
 
-const useComputerHook = () => {
+const useComputerHook: React.FC = () => {
 
 	const [computers, setComputers] = useState<Array<computerType>>([])
 
