@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
+import { useAuthLogin } from '../context/AuthProvider'
+import usePersonnalHook from '../hook/personnal.hook'
 import { db_computers } from '../models/db_computers'
 import { db_computeOne } from '../models/db_computeList'
 import { db_computeTwo } from '../models/db_computeList'
@@ -30,15 +32,47 @@ import './styleComponents/ChatComputer.scss'
 const ChatComputer: React.FC = () => {
 
   const { id } = useParams<{id?: string}>();
+  const { username } = useAuthLogin()
+  const Navigate = useNavigate()
+  const users = usePersonnalHook()
 
-  const [newComputer, setNewComputer] = useState<computerType>([])
+  const [userRoom, setUserRoom] = useState<Array<UserType>>([])
+  console.log(userRoom, 'userRoom state')
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
 
-  useEffect(() => {
-    setNewComputer(db_computers)
-  }, [])
+  const handleNavigation = (link: string) => {
+    const myTimeOut = setTimeout(() => {
+      Navigate(`/computerroom/${link}`)
+    }, 1000)
+  }
+
+  const handleSetUserRoom = (link: string) => {
+    const user = Object.values(users)?.find(user => user.firstName === username)
+    console.log(user, 'user obj.val')
+    const addRoomUser = {
+      id: user.id,
+      img: user.img,
+      firstName: username,
+      lastName: user.lastName,
+      age: user.age,
+      email: user.email,
+      location: user.location,
+      gender: user.gender,
+      mainroom: computerDb,
+      room: link,
+      isConnected: true
+    }
+    if (user) {
+      console.log(user)
+      setUserRoom(addRoomUser)
+      console.log(userRoom, 'userRoom state')
+      handleNavigation(link)
+    } else {
+      alert("ERROR !!!")
+    }
+  }
 
   useEffect(() => {
     switch(id?.toString()) {
@@ -128,10 +162,14 @@ const ChatComputer: React.FC = () => {
       <div className='compter--room'>
         {Object.values(links).map((val) => (
           <h2 key={val.title} className="links--computer">
-            <Link to={`/computerroom/${val.link}`}
-              className="link--toroom">
+
+            <span
+              onClick={() => handleSetUserRoom(val.link)} 
+              className="span--linktoroom"
+            >
               {val.link}
-            </Link>
+            </span>
+
           </h2>
           ))
         }
