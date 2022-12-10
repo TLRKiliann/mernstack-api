@@ -6,8 +6,8 @@ type UserTypeProps = {
 }
 
 //server-json conf
-const getUrl: string = 'http://localhost:3001/getAllMembers'
-const postUrl: string = 'http://localhost:3001/postMsg'
+//const getUrl: string = 'http://localhost:3001/getAllMembers'
+//const postUrl: string = 'http://localhost:3001/postMsg'
 
 /*real server
 const getUrl: string = '/api/getAllMembers';*/
