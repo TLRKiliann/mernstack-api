@@ -6,6 +6,7 @@ import usePersonnalHook from '../hook/personnal.hook'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
 import AskMessageBox from './AskMessageBox'
+import VerifyInvitation from './VerifyInvitation'
 import worldData from '../assets/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
 
@@ -40,19 +41,23 @@ const ComputerRoom: React.FC = () => {
 
   const Navigate = useNavigate()
 
-  const { setOtherUser } = useAuthLogin();
+  const { username, setOtherUser } = useAuthLogin();
 
   const users = usePersonnalHook()
 
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
   const [catchById, setCatchById] = useState<Array<UserType>>([])
+  const [userRoom, setUserRoom] = useState<Array<UserType>>([])
+  console.log(userRoom, "userROOM!!!")
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
+  const [displayVerifyInvite, setDisplayVerifyInvite] = useState<boolean>(false)
+  const [isChecked, setIsChecked] = useState<boolean>(false)
 
   const [form, setForm] = useState<Form>({
-    invite: {value: ''}
+    invite: {value: 'Private'}
   })
 
-  const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldName: string = e.target.name;
     const fieldValue: string | number  = e.target.value;
     const newField: Field = {[fieldName]: {value: fieldValue}}
@@ -68,16 +73,22 @@ const ComputerRoom: React.FC = () => {
     setSwitchAsk(!switchAsk)
   }
 
-  const handleInvitation = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleInvitation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(catchById, "catchUser")
     setOtherUser(catchById)
-    Navigate('/computerroom/privatemessage')
+    setSwitchAsk(false)
+
+    const timerId = setTimeout(() => {
+      setDisplayVerifyInvite(!displayVerifyInvite)
+      console.log("timeout...", displayVerifyInvite)
+    }, 1000)
+
     /*const sendMessage = users?.find(user => user === catchById)
     console.log(sendMessage, "sendMessage")*/
 
     /*serviceRouting
-      .getAllMembers(sendMessage, id)
+      .postInvitation(sendMessage, id)
       .then(initialData => {
         setUsers(initialData)
       })
@@ -85,6 +96,48 @@ const ComputerRoom: React.FC = () => {
         console.log("error", error)
       })
     */
+  }
+
+  const handleCheckBox = () => {
+    setIsChecked(!isChecked)
+  }
+
+  const handleTime = () => {
+    const timerIdTwo = setTimeout(() => {
+      Navigate('/computerroom/privatemessage')
+    }, 1000)
+  }
+
+  const handleValidInvitation = () => {
+    const invitation = form.invite.value
+    console.log(invitation, "invitation")
+    if (isChecked === true) {
+      const user = Object.values(users)?.find(user => user.firstName === username)
+      const addPrivateRoom = {
+        id: user.id,
+        img: user.img,
+        firstName: username,
+        lastName: user.lastName,
+        age: user.age,
+        email: user.email,
+        location: user.location,
+        gender: user.gender,
+        mainroom: user.mainroom,
+        room: invitation,
+        isConnected: true
+      }
+      if (user) {
+        console.log(user, "user true")
+        setUserRoom(addPrivateRoom)
+        setDisplayVerifyInvite(false)
+        handleTime()
+      } else {
+        console.log("user undefined")
+      }
+    } else {
+      setDisplayVerifyInvite(false)
+      console.log("not confirmed")
+    }
   }
 
   const handleClose = () => {
@@ -99,6 +152,14 @@ const ComputerRoom: React.FC = () => {
           <h1>{roomStyle}</h1>
         </div>
       </div>
+
+      {displayVerifyInvite &&
+        <VerifyInvitation
+          isChecked={isChecked}
+          handleCheckBox={handleCheckBox}
+          handleValidInvitation={handleValidInvitation}
+        />
+      }
 
       {switchAsk &&
         <AskMessageBox
