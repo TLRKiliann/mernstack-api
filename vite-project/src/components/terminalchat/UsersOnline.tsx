@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
-import { db_users } from '../../models/db_users'
-import { UserType } from '../../models/usertype'
+import usePersonnalHook from '../../hook/personnal.hook'
+//import { db_users } from '../../models/db_users'
+//import { UserType } from '../../models/usertype'
 import './UsersOnline.scss'
 
 interface UserOnlineProps {
@@ -12,13 +13,7 @@ interface UserOnlineProps {
 
 const UserOnline: React.FC = (props: UserOnlineProps) => {
 
-  const [users, setUsers] = useState<Array<UserType>>([])
-
-  useEffect(() => {
-    setUsers(db_users)
-  }, [])
-
-  console.log(props.roomStyle, "roomStyle")
+  const allUsers = usePersonnalHook()
   
   return(
     <section data-testid="ptestid" className="user--online">
@@ -26,7 +21,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
         <h3 className="userolinetitle">Online Users</h3>
       </div>
       
-        {Object.values(users)?.map((val, key) => (
+        {Object.values(allUsers)?.map((val, key) => (
           val.room === props.roomStyle && (
           <div key={key} className="all--usersbanner">   
             <div>

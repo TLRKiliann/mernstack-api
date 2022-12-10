@@ -55,7 +55,7 @@ export default class Home extends Component<DataAllType> {
         <div className="wallIntro">
           <h1 className="wallIntro--h1">Chat-Society</h1>
         </div>
-        
+
         {!this.state.isOpenRight && <div className="div--voletsRight">
             <button
               onClick={this.handleVoletsRight}
@@ -102,9 +102,7 @@ export default class Home extends Component<DataAllType> {
           textHeader={this.state.textHeader}
           secondTextHeader={this.state.secondTextHeader}
         />
-
         <MainComp users={this.state.users} />
-
         <Footer />
 
       </div>

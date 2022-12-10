@@ -103,7 +103,7 @@ export const db_users = [
 		"gender": "male",
 		"mainroom": "Cybersecurity",
 		"room": "Scapy",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 8,
@@ -155,7 +155,7 @@ export const db_users = [
 		"gender": "female",
 		"mainroom": "Process",
 		"room": "PID(PPID)-JOBS-Daemons-Nice",
-		"isConnected": true
+		"isConnected": false
 	},
 	{
 		"id": 12,

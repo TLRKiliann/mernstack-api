@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
-import { db_users } from '../models/db_users'
-import { UserType } from '../models/usertype'
-import { db_computers } from '../models/db_computers'
-import { computerType } from '../models/computerType'
+import usePersonnalHook from '../hook/personnal.hook'
+import useComputerHook from '../hook/computers.hook'
 import AskMessageBox from '../components/AskMessageBox'
 import ResponsePrivateMsg from '../components/ResponsePrivateMsg'
 import '../stylePages/Online.scss'
@@ -46,22 +44,16 @@ const Online: React.FC = () => {
     invite: {value: 'Private'}
   })
 
-  const [users, setUsers] = useState<Array<DataAllType>>([])
-  const [computers, setComputers] = useState<Array<computerType>>([])
   const [group, setGroup] = useState<Array<string | number | boolean>>([])
   const [catchById, setCatchById] = useState<Array<UserType>>([])
-  
-  //console.log(catchById, "catchById")
-
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [switchResponse, setSwitchResponse] = useState<boolean>(false)
 
   const { setOtherUser, setTweekGroup } = useAuthLogin();
 
-  useEffect(() => {
-    setUsers(db_users)
-    setComputers(db_computers)
-  }, [])
+  //hooks
+  const users = usePersonnalHook()
+  const computers = useComputerHook()
 
   const addUserById = (id: number) => {
     const userTodAdd = users.find(user => user.id === id)
