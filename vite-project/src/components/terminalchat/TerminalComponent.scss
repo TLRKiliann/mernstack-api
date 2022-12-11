@@ -2,7 +2,6 @@
   width: 90%;
   height: 90%;
   margin: auto;
-
   box-shadow: 0px 0px 4px slategray;
   border: 1px solid slategray;
   border-radius: 15px 15px 0px 0px;
@@ -18,24 +17,28 @@
     overflow: scroll;
     overflow-x: hidden;
 
+
     .intro--terminal {
       width: auto;
-      height: 40px;
+      
+      height: 60px;
+
       margin-left: 10px;
       margin-right: 10px;
       display: flex;
       align-items: center;
-      font-family: "Junction";
-      font-size: 1.2rem;
+      font-family: "Junction", sans-serif;
       font-weight: bold;
       color: orange;
       border-bottom: 1px dashed slategray;
     }
 
+
     .map--msg {
       width: auto;
       height: auto;
       max-width: 100%;
+      padding-top: 10px;
       padding-right: 10px;
       padding-left: 10px;
       display: flex;
@@ -45,14 +48,15 @@
         margin-top: 5px;
         margin-bottom: 0px;
         text-align: justify;
+        text-justify: inter-word;
         font-family: "DejaVu Sans", sans-serif;
-        font-size: 1.1rem;
-        color: cyan;
+        font-size: 0.9rem;
+        color: lightgreen;
       }
 
       .legend--date {
         margin-top: 0px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         color: slategray;
       }
     }

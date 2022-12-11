@@ -151,6 +151,7 @@ const ChatComputer: React.FC = () => {
           src={imgBg}
           width="100%"
           height="100%"
+          className="img--chatcomputerroom"
           alt={imgBg}
         />
       </div>

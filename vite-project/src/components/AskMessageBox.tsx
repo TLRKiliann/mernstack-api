@@ -47,19 +47,21 @@ const AskMessageBox: React.FC = (props: {db_users, AskMessageBoxProps, Form, Fie
           </span> to private chat :
         </label>
 
-        <label>
+        <label className="lbl--choicechat">
           Would you like&nbsp;
           <select 
             name="invite" 
             id="invite"
             value={props.form}
             onChange={(e) => props.handleInviteChoice(e)}
+            className="select--invite"
           >
           {props.options.map((option) => (
             <option
               key={option.value}
               name="invite"
               value={option.value}
+              className="option--invite"
             >
               {option.label}
             </option>

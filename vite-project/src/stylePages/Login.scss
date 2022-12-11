@@ -70,7 +70,10 @@ $purple: #800080;
       font-size: 1.2rem;
       background-color: rgba(85, 45, 255, 0.4);
       border: 1mm inset rgba(150, 45, 255, 0.8);
-      color: lightgrey;
+      color: whitesmoke;
+      &::placeholder {
+        color: #999;
+      }
     }
 
     .btn--submitlogin {
