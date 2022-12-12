@@ -27,12 +27,12 @@ const options: Field[] = [
     value: "Private",
   },
   {
-    label: "Rdv",
-    value: "Rdv",
+    label: "More Info",
+    value: "More Info",
   },
   {
-    label: "Briefing",
-    value: "Briefing",
+    label: "Question",
+    value: "Question",
   }
 ]
 

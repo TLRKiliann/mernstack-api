@@ -6,11 +6,13 @@ type UserTypeProps = {
 }
 
 //server-json conf
-//const getUrl: string = 'http://localhost:3001/getAllMembers'
+const getUrl: string = 'http://localhost:3001/db_users'
 //const postUrl: string = 'http://localhost:3001/postMsg'
+const updateNameRoom: string = 'http://localhost:3001/db_users'
 
 /*real server
 const getUrl: string = '/api/getAllMembers';*/
+//const updateNameRoom: string = '/api/updateRoom';
 
 //GET all members of chat
 const getAllMembers = async () => {
@@ -26,13 +28,31 @@ const getAllMembers = async () => {
   } 
 };
 
+//PUT firstname
+const updateRoomName = (id: number, addRoomUser: UserTypeProps) => {
+  try {
+    let request = app.put<any>(`${updateNameRoom}/${id}`, addRoomUser)
+    return request.then((response: any) => {
+      response
+      //console.log(response, "-- response --")
+    })
+  } catch (err: any) {
+    console.error("Error response PUT:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err;
+  } 
+};
+
+/*
 //POST msg from console
 const postMsg = async (formData: any) => {
   try {
     const req = app.post<any>(postUrl)
     return await req.then((res: any) => res.data)
   } catch (err: any) {
-    console.error("Error response PUT:");
+    console.error("Error response POST:");
     console.error("erd", err.response.data);    // ***
     console.error("ers", err.response.status);  // ***
     console.error("erh", err.response.headers); // ***
@@ -46,17 +66,17 @@ const postNewUser = async (user: string) => {
     const req = app.post<string>(postUrl)
     return await req.then((res: string) => res.data)
   } catch (err: any) {
-    console.error("Error response PUT:");
+    console.error("Error response POST:");
     console.error("erd", err.response.data);    // ***
     console.error("ers", err.response.status);  // ***
     console.error("erh", err.response.headers); // ***
     throw err;
   } 
-};
+};*/
 
 const functionToCall = {
-  getAllMembers
-  postMsg
+  getAllMembers,
+  updateRoomName
 };
 
 export default functionToCall

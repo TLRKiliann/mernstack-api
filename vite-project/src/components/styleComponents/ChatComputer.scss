@@ -6,6 +6,9 @@
   left: 0px;
   opacity: 0.7;
   z-index: -1;
+  .img--chatcomputerroom {
+    opacity: 0.7;
+  }
 }
 
 .title--computerroom {
@@ -20,7 +23,8 @@
 .compter--room {
   margin-top: 40px;
   .links--computer {
-    font-family: "DejaVu Sans";
+    font-family: "DejaVu Sans", sans-serif;
+    cursor: pointer;
     .span--linktoroom {
       padding: 20px 0px;
       padding-left: 20px;
@@ -35,7 +39,12 @@
       text-decoration: none;
       color: whitesmoke;
       &:hover {
+        background-color: rgba(85, 45, 255, 0.4);
         color: orange;
+      }
+      &:active {
+        background-color: rgba(85, 45, 255, 0.6);
+        color: lightgreen;
       }
     }
   }

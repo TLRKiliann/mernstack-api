@@ -11,7 +11,7 @@ const VerifyInvitation: React.FC = (props: VerifyInvitationProps) => {
   console.log(props, "props")
   return (
     <div className="box--confirminvitation">
-      <h4>Confirm invitation ?</h4>
+      <h4 className="confirm">Confirm invitation ?</h4>
       <label>
         <input
           type="checkbox"

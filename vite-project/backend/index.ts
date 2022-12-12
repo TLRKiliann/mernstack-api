@@ -1,7 +1,7 @@
 import express, {Request, Response, NextFunction} from 'express';
 const cors = require('cors');
+const db_users = require('db.json');
 import dotenv from 'dotenv';
-
 
 const PORT = 5000;
 const date = new Date();
@@ -26,6 +26,31 @@ app.post('/login', (req:Request, res:Response, next:NextFunction) => {
   res.status(201).send()
   next()
 })
+
+//catch all users
+app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
+  res.json(db_users)
+  next()
+})
+
+//update room - username - connection
+/*app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
+  res.json(users)
+  next()
+})*/
+
+app.put('/db_users', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = req.body.id;
+  const mainroom: string = req.body.mainroom;
+  const room: string = req.body.room;
+  const isConnected: boolean = req.body.isConnected;
+  try {
+    res.status(200).send();
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
 
 app.listen(PORT, () => {
   console.log(`[+] Server is running on port ${PORT} !`)

@@ -66,13 +66,6 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 800px) {
-  .img--home {
-    width: 600px;
-    height: 400px;
-  }
-}
-
 .div--voletsLeft {
   position: absolute;
   margin-top: 120px;
@@ -225,6 +218,13 @@
   }
 }
 */
+
+@media screen and (max-width: 800px) {
+  .img--home {
+    width: 600px;
+    height: 400px;
+  }
+}
 
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--voletsLeft {
