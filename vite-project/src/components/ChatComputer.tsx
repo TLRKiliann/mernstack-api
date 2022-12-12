@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import usePersonnalHook from '../hook/personnal.hook'
+import serviceRouting from '../services/serviceRouting'
 import { db_computers } from '../models/db_computers'
 import { db_computeOne } from '../models/db_computeList'
 import { db_computeTwo } from '../models/db_computeList'
@@ -34,10 +35,13 @@ const ChatComputer: React.FC = () => {
   const { id } = useParams<{id?: string}>();
   const { username } = useAuthLogin()
   const Navigate = useNavigate()
+  
   const users = usePersonnalHook()
+  
+  console.log(users, "- object users")
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
-  console.log(userRoom, 'userRoom state')
+  //console.log(userRoom, 'userRoom state')
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
@@ -49,8 +53,9 @@ const ChatComputer: React.FC = () => {
   }
 
   const handleSetUserRoom = (link: string) => {
+    //const user = Object.values(users)?.find(user => user.firstName === username)
     const user = Object.values(users)?.find(user => user.firstName === username)
-    console.log(user, 'user obj.val')
+    console.log(user, "into function")
     const addRoomUser = {
       id: user.id,
       img: user.img,
@@ -64,10 +69,32 @@ const ChatComputer: React.FC = () => {
       room: link,
       isConnected: true
     }
+    const id = addRoomUser.id;
+    //console.log(addRoomUser.id, 'by id')
     if (user) {
-      console.log(user)
+      serviceRouting
+        .updateRoomName(id, addRoomUser)
+        .then(initialUserRoom => {
+          setUserRoom(users?.map(user => user.id === id ? {
+            id: user.id,
+            img: user.img,
+            firstName: username,
+            lastName: user.lastName,
+            age: user.age,
+            email: user.email,
+            location: user.location,
+            gender: user.gender,
+            mainroom: computerDb,
+            room: link,
+            isConnected: true
+            } : user
+          ))
+        })
+        .catch((error) => {
+          alert(`Register name Room issue: ${user.firstName} not found !`)
+          setUserRoom(users?.filter(user => user.firstName !== username))
+        })
       setUserRoom(addRoomUser)
-      console.log(userRoom, 'userRoom state')
       handleNavigation(link)
     } else {
       alert("ERROR !!!")
