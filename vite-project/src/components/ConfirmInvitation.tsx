@@ -1,10 +1,10 @@
 import React from 'react'
+import './styleComponents/ConfirmInvitation.scss'
 
 interface ConfirmInvitationProps {
   isChecked: boolean
   handleCheckBox: () => void
   handleValidInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
-  //handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
