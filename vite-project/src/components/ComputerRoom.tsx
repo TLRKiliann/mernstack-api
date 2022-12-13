@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-//import serviceRouting from '../services/serviceRouting';
+import serviceRouting from '../services/serviceRouting';
 import { useAuthLogin } from '../context/AuthProvider'
 import usePersonnalHook from '../hook/personnal.hook'
 import TerminalComponent from './terminalchat/TerminalComponent'
 import UsersOnline from './terminalchat/UsersOnline'
 import AskMessageBox from './AskMessageBox'
-import VerifyInvitation from './VerifyInvitation'
+import DisplayInvitationOtherUsr from './DisplayInvitationOtherUsr'
+import ConfirmInvitation from './ConfirmInvitation'
+
 import worldData from '../assets/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
 
@@ -49,13 +51,12 @@ const ComputerRoom: React.FC = () => {
   const [catchById, setCatchById] = useState<Array<UserType>>([])
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
   console.log(userRoom, "userROOM!!!")
-  const [switchAsk, setSwitchAsk] = useState<boolean>(false)
-  const [displayVerifyInvite, setDisplayVerifyInvite] = useState<boolean>(false)
-  const [isChecked, setIsChecked] = useState<boolean>(false)
+
 
   const [form, setForm] = useState<Form>({
     invite: {value: 'Private'}
   })
+  console.log(form, 'form')
 
   const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldName: string = e.target.name;
@@ -65,37 +66,97 @@ const ComputerRoom: React.FC = () => {
     setForm({...form, ...newField});
   }
 
-  console.log(form, 'render of form')
+  const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
+  //console.log(informUsrMsg, "informUsrMsg !!!!!!")
 
+  const [switchAsk, setSwitchAsk] = useState<boolean>(false)
+  const [isChecked, setIsChecked] = useState<boolean>(false)
+
+  const [displayInvite, setDisplayInvite] = useState<boolean>(false)
+  console.log(displayInvite, 'displayInvite')
+
+  const [isCheckInvite, setIsCheckInvite] = useState<boolean>(false)
+  
+  const [displayInvitation, setDisplayInvitation] = useState<boolean>(false)
+  const [displayConfirmInvite, setDisplayConfirmInvite] = useState<boolean>(false)
+  
+  //Ask to otherUser for invitation
   const handleAskUserPrivate = (id: number) => {
     const catchUser = users?.find(user => user.id === id)
     setCatchById(catchUser)
     setSwitchAsk(!switchAsk)
   }
 
+  //Invitation MSG
   const handleInvitation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(catchById, "catchUser")
+    //console.log(catchById, "catchUser")
     setOtherUser(catchById)
     setSwitchAsk(false)
 
-    const timerId = setTimeout(() => {
-      setDisplayVerifyInvite(!displayVerifyInvite)
-      console.log("timeout...", displayVerifyInvite)
-    }, 1000)
+    const definedRoom = form.invite.value;
+    //console.log(definedRoom, "type of definedRoom !!!")
+    const msg = `You've received msg from ${username} for ${definedRoom} chat !`
+    console.log(msg, '*** msg ***')
 
-    /*const sendMessage = users?.find(user => user === catchById)
-    console.log(sendMessage, "sendMessage")*/
+    const verifyName = catchById.firstName
+    const id = catchById.id
 
-    /*serviceRouting
-      .postInvitation(sendMessage, id)
-      .then(initialData => {
-        setUsers(initialData)
-      })
-      .catch((error) => {
-        console.log("error", error)
-      })
-    */
+    if (username === verifyName) {
+      alert("It's you  !!!")
+    } else if (catchById.isConnected === false) {
+      alert(`${catchById.firstName} ${catchById.lastName} is not connected !`)
+    } else {
+      const timerId = setTimeout(() => {
+        setDisplayConfirmInvite(!displayConfirmInvite)
+        console.log("timeout...", displayConfirmInvite)
+      }, 1000)
+      const customMsg = {
+        id: catchById.id,
+        img: catchById.img,
+        firstName: catchById.firstName,
+        lastName: catchById.lastName,
+        age: catchById.age,
+        email: catchById.email,
+        location: catchById.location,
+        gender: catchById.gender,
+        mainroom: catchById.mainroom,
+        room: catchById.room,
+        isConnected: catchById.isConnected,
+        signalRecieve: true,
+        messagebox: msg
+      }
+      if (customMsg) {
+        serviceRouting
+          .putInvitation(id, customMsg)
+          .then(initialData => {
+            setInformUsrMsg(users?.map(cust => cust.id === id ? 
+              {
+                id: cust.id,
+                img: cust.img,
+                firstName: cust.firstName,
+                lastName: cust.lastName,
+                age: cust.age,
+                email: cust.email,
+                location: cust.location,
+                gender: cust.gender,
+                mainroom: cust.mainroom,
+                room: cust.room,
+                isConnected: cust.isConnected,
+                signalRecieve: true,
+                messagebox: msg
+              } : cust
+            ))
+          })
+          .catch((error) => {
+            setInformUsrMsg(users?.map(cust => cust.id !== id))
+            alert(`${catchById.firstName} do not received msg`)
+          })
+        setDisplayInvite(!displayInvitation)
+      } else {
+        alert("Error msg invitation with customMsg!")
+      }
+    }
   }
 
   const handleCheckBox = () => {
@@ -129,13 +190,13 @@ const ComputerRoom: React.FC = () => {
       if (user) {
         console.log(user, "user true")
         setUserRoom(addPrivateRoom)
-        setDisplayVerifyInvite(false)
+        setDisplayConfirmInvite(false)
         handleTime()
       } else {
         console.log("user undefined")
       }
     } else {
-      setDisplayVerifyInvite(false)
+      setDisplayConfirmInvite(false)
       console.log("not confirmed")
     }
   }
@@ -143,6 +204,16 @@ const ComputerRoom: React.FC = () => {
   const handleClose = () => {
     setSwitchAsk(false)
   }
+
+  const handleSwitchBox = () => {
+    setIsCheckInvite(!isCheckInvite)
+  }
+
+  const handleInvitedResponse = () => {
+    console.log("is clicked")
+    setDisplayInvitation(false)
+  }
+
 
   return(
     <div className="nextcomp--room">
@@ -153,11 +224,19 @@ const ComputerRoom: React.FC = () => {
         </div>
       </div>
 
-      {displayVerifyInvite &&
-        <VerifyInvitation
+      {displayConfirmInvite &&
+        <ConfirmInvitation
           isChecked={isChecked}
           handleCheckBox={handleCheckBox}
           handleValidInvitation={handleValidInvitation}
+        />
+      }
+
+      {displayInvitation &&
+        <DisplayInvitationOtherUsr
+          isCheckInvite={isCheckInvite}
+          handleSwitchBox={handleSwitchBox}
+          handleInvitedResponse={handleInvitedResponse}
         />
       }
 
@@ -201,13 +280,3 @@ const ComputerRoom: React.FC = () => {
 }
 
 export default ComputerRoom;
-
-  /*useEffect(() => {
-    serviceRouting
-    .getAllMembers()
-    .then(initialData => {
-      setUsers(initialData)
-    })
-    //setUsers(db_users)
-    setRoomStyle(roomStyle)
-  }, [])*/
