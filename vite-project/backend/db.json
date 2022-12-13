@@ -11,7 +11,9 @@
       "gender": "male",
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": true,
+      "messagebox": "You've received msg from Celestine for Private chat !"
     },
     {
       "id": 2,
@@ -24,7 +26,9 @@
       "gender": "male",
       "mainroom": "Cybersecurity",
       "room": "Scapy",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 3,
@@ -37,7 +41,9 @@
       "gender": "male",
       "mainroom": "Cybersecurity",
       "room": "Scapy",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 4,
@@ -50,7 +56,9 @@
       "gender": "female",
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": true,
+      "messagebox": "You've received msg from Esteban for Private chat !"
     },
     {
       "id": 5,
@@ -63,7 +71,9 @@
       "gender": "female",
       "mainroom": "CPU",
       "room": "Generation-i3-i5-i7",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 6,
@@ -76,7 +86,9 @@
       "gender": "male",
       "mainroom": "Systemd",
       "room": "inode-modules-runlevel",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 7,
@@ -89,7 +101,9 @@
       "gender": "male",
       "mainroom": "Cybersecurity",
       "room": "Scapy",
-      "isConnected": false
+      "isConnected": false,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 8,
@@ -102,7 +116,9 @@
       "gender": "female",
       "mainroom": "Systemd",
       "room": "inode-modules-runlevel",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 9,
@@ -115,7 +131,9 @@
       "gender": "male",
       "mainroom": "Systemd",
       "room": "inode-modules-runlevel",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 10,
@@ -128,7 +146,9 @@
       "gender": "male",
       "mainroom": "Process",
       "room": "PID(PPID)-JOBS-Daemons-Nice",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 11,
@@ -141,7 +161,9 @@
       "gender": "female",
       "mainroom": "Process",
       "room": "PID(PPID)-JOBS-Daemons-Nice",
-      "isConnected": false
+      "isConnected": false,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 12,
@@ -154,7 +176,9 @@
       "gender": "male",
       "mainroom": "CPU",
       "room": "Generation-i3-i5-i7",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 13,
@@ -167,7 +191,9 @@
       "gender": "male",
       "mainroom": "CPU",
       "room": "Generation-i3-i5-i7",
-      "isConnected": false
+      "isConnected": false,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 14,
@@ -180,7 +206,9 @@
       "gender": "female",
       "mainroom": "Cybersecurity",
       "room": "Scapy",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     },
     {
       "id": 15,
@@ -193,7 +221,9 @@
       "gender": "male",
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
-      "isConnected": true
+      "isConnected": true,
+      "signalRecieve": false,
+      "messagebox": ""
     }
   ]
 }

@@ -53,7 +53,6 @@ const ChatComputer: React.FC = () => {
   }
 
   const handleSetUserRoom = (link: string) => {
-    //const user = Object.values(users)?.find(user => user.firstName === username)
     const user = Object.values(users)?.find(user => user.firstName === username)
     console.log(user, "into function")
     const addRoomUser = {
@@ -67,7 +66,9 @@ const ChatComputer: React.FC = () => {
       gender: user.gender,
       mainroom: computerDb,
       room: link,
-      isConnected: true
+      isConnected: true,
+      signalRecieve: user.signalRecieve,
+      messagebox: user.messagebox
     }
     const id = addRoomUser.id;
     //console.log(addRoomUser.id, 'by id')
@@ -86,15 +87,17 @@ const ChatComputer: React.FC = () => {
             gender: user.gender,
             mainroom: computerDb,
             room: link,
-            isConnected: true
+            isConnected: true,
+            signalRecieve: user.signalRecieve,
+            messagebox: user.messagebox
             } : user
           ))
         })
         .catch((error) => {
-          alert(`Register name Room issue: ${user.firstName} not found !`)
           setUserRoom(users?.filter(user => user.firstName !== username))
+          alert(`Register name Room issue: ${user.firstName} not found !`)
         })
-      setUserRoom(addRoomUser)
+      //setUserRoom(addRoomUser)
       handleNavigation(link)
     } else {
       alert("ERROR !!!")

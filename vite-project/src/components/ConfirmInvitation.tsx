@@ -1,13 +1,13 @@
 import React from 'react'
+import './styleComponents/ConfirmInvitation.scss'
 
-interface VerifyInvitationProps {
+interface ConfirmInvitationProps {
   isChecked: boolean
   handleCheckBox: () => void
   handleValidInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
-  handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const VerifyInvitation: React.FC = (props: VerifyInvitationProps) => {
+const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
   console.log(props, "props")
   return (
     <div className="box--confirminvitation">
@@ -33,4 +33,4 @@ const VerifyInvitation: React.FC = (props: VerifyInvitationProps) => {
   )
 }
 
-export default VerifyInvitation
+export default ConfirmInvitation

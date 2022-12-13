@@ -1,5 +1,4 @@
 //Basic authentication
-
 export default class AuthenticationService {
 
   static isAuthenticated: boolean = false;

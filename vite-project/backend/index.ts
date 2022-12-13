@@ -7,7 +7,8 @@ const PORT = 5000;
 const date = new Date();
 const app = express();
 
-const users: any[] = [];
+const users: any = [];
+console.log(users)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +24,7 @@ app.get('/login', (req:Request, res:Response, next:NextFunction) => {
 app.post('/login', (req:Request, res:Response, next:NextFunction) => {
   const user = { username: req.body.username, password: req.body.password }
   users.push(user)
+  console.log(users)
   res.status(201).send()
   next()
 })
@@ -39,7 +41,7 @@ app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
   next()
 })*/
 
-app.put('/db_users', async (req:Request, res:Response, next:NextFunction) => {
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
   const id: number | null = req.body.id;
   const mainroom: string = req.body.mainroom;
   const room: string = req.body.room;
@@ -50,6 +52,18 @@ app.put('/db_users', async (req:Request, res:Response, next:NextFunction) => {
     throw err;
   }
   next();
+});
+
+app.put('db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = req.body.id;
+  const signalRecieve: boolean = req.body.signalRecieve;
+  const messagebox: string = req.body.customMsg;
+
+  try {
+    res.status(200).send();
+  } catch (err) {
+    throw err;
+  }
 });
 
 app.listen(PORT, () => {

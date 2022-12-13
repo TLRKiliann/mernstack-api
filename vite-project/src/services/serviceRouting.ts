@@ -7,8 +7,8 @@ type UserTypeProps = {
 
 //server-json conf
 const getUrl: string = 'http://localhost:3001/db_users'
-//const postUrl: string = 'http://localhost:3001/postMsg'
-const updateNameRoom: string = 'http://localhost:3001/db_users'
+const updateNameRoom: string = 'http://localhost:3001/db_users/'
+const postInvite: string = 'http://localhost:3001/db_users/'
 
 /*real server
 const getUrl: string = '/api/getAllMembers';*/
@@ -45,21 +45,20 @@ const updateRoomName = (id: number, addRoomUser: UserTypeProps) => {
   } 
 };
 
-/*
-//POST msg from console
-const postMsg = async (formData: any) => {
+//PUT invitation
+const putInvitation = (id: number, customMsg: any) => {
   try {
-    const req = app.post<any>(postUrl)
-    return await req.then((res: any) => res.data)
+    const req = app.put<any>(`${postInvite}/${id}`, customMsg)
+    return req.then((res: any) => res)
   } catch (err: any) {
-    console.error("Error response POST:");
+    console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
     console.error("ers", err.response.status);  // ***
     console.error("erh", err.response.headers); // ***
     throw err;
   } 
 };
-
+/*
 //POST (add) new user
 const postNewUser = async (user: string) => {
   try {
@@ -76,7 +75,8 @@ const postNewUser = async (user: string) => {
 
 const functionToCall = {
   getAllMembers,
-  updateRoomName
+  updateRoomName,
+  putInvitation
 };
 
 export default functionToCall
