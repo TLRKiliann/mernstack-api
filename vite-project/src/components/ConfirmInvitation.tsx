@@ -19,7 +19,7 @@ const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
           onChange={props.handleCheckBox}
           className="input--validationInvite"
         />
-        yes
+        &nbsp;yes
       </label>
 
       <button

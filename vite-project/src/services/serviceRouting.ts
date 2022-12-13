@@ -7,9 +7,9 @@ type UserTypeProps = {
 
 //server-json conf
 const getUrl: string = 'http://localhost:3001/db_users'
-const updateNameRoom: string = 'http://localhost:3001/db_users/'
-const postInvite: string = 'http://localhost:3001/db_users/'
-
+const updateNameRoom: string = 'http://localhost:3001/db_users'
+const postInvite: string = 'http://localhost:3001/db_users'
+const postLastConfirm: string = 'http://localhost:3001/db_users'
 /*real server
 const getUrl: string = '/api/getAllMembers';*/
 //const updateNameRoom: string = '/api/updateRoom';
@@ -58,6 +58,21 @@ const putInvitation = (id: number, customMsg: any) => {
     throw err;
   } 
 };
+
+//PUT returnConfirm (db)
+const updateFinalConfirm = (id: number, otherValidatingUser: any) => {
+  try {
+    const req = app.put<any>(`${postLastConfirm}/${id}`, otherValidatingUser)
+    return req.then((res: any) => res)
+  } catch (err: any) {
+    console.error("Error response PUT:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err;
+  } 
+};
+
 /*
 //POST (add) new user
 const postNewUser = async (user: string) => {
@@ -76,7 +91,8 @@ const postNewUser = async (user: string) => {
 const functionToCall = {
   getAllMembers,
   updateRoomName,
-  putInvitation
+  putInvitation,
+  updateFinalConfirm
 };
 
 export default functionToCall

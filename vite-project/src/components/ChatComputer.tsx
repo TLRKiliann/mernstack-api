@@ -68,7 +68,9 @@ const ChatComputer: React.FC = () => {
       room: link,
       isConnected: true,
       signalRecieve: user.signalRecieve,
-      messagebox: user.messagebox
+      messagebox: user.messagebox,
+      returnConfirm: user.returnConfirm
+
     }
     const id = addRoomUser.id;
     //console.log(addRoomUser.id, 'by id')
@@ -89,7 +91,8 @@ const ChatComputer: React.FC = () => {
             room: link,
             isConnected: true,
             signalRecieve: user.signalRecieve,
-            messagebox: user.messagebox
+            messagebox: user.messagebox,
+            returnConfirm: user.returnConfirm
             } : user
           ))
         })

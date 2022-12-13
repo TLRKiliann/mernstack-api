@@ -35,12 +35,7 @@ app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
   next()
 })
 
-//update room - username - connection
-/*app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
-  res.json(users)
-  next()
-})*/
-
+//Setting room & isConnect
 app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
   const id: number | null = req.body.id;
   const mainroom: string = req.body.mainroom;
@@ -54,11 +49,22 @@ app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) =>
   next();
 });
 
-app.put('db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+//Ask invitation
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
   const id: number | null = req.body.id;
   const signalRecieve: boolean = req.body.signalRecieve;
-  const messagebox: string = req.body.customMsg;
+  const messagebox: string = req.body.messagebox;
+  try {
+    res.status(200).send();
+  } catch (err) {
+    throw err;
+  }
+});
 
+//
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = req.body.id;
+  const returnConfirm: boolean = req.body.returnConfirm;
   try {
     res.status(200).send();
   } catch (err) {
@@ -71,6 +77,12 @@ app.listen(PORT, () => {
 });
 
 /*
+//update room - username - connection
+/*app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
+  res.json(users)
+  next()
+})
+
 app.post('/login', (req:Request, res:Response, next:NextFunction) => {
   const user = { username: req.body.username, password: req.body.password }
   console.log(user, 'user')
