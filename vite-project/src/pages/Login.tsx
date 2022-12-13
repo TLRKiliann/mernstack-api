@@ -83,13 +83,13 @@ const Login: React.FC = () => {
         .login(form.username.value, form.password.value)
         .then(isAuthenticated => {
           if (!isAuthenticated) {
-            setMessage('🔐 Identifiant ou mot de passe incorrect.');
+            setMessage('🔐  Identifiant ou mot de passe incorrect.');
             return;
           }
         const response = app.post(LOGIN_URL, JSON.stringify(form),
           {
             headers: { 'Content-Type': 'application/json' },
-            withCredentials: false
+            withCredentials: true
           }
         )
         setAuth(form.username.value, form.password.value)
