@@ -37,7 +37,7 @@ app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
 
 //Setting room & isConnect
 app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
-  const id: number | null = req.body.id;
+  const id: number | null = Number(req.params.id);
   const mainroom: string = req.body.mainroom;
   const room: string = req.body.room;
   const isConnected: boolean = req.body.isConnected;
@@ -51,7 +51,7 @@ app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) =>
 
 //Ask invitation
 app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
-  const id: number | null = req.body.id;
+  const id: number | null = Number(req.params.id);
   const signalRecieve: boolean = req.body.signalRecieve;
   const messagebox: string = req.body.messagebox;
   try {
@@ -63,7 +63,7 @@ app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) =>
 
 //
 app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
-  const id: number | null = req.body.id;
+  const id: number | null = Number(req.params.id);
   const returnConfirm: boolean = req.body.returnConfirm;
   try {
     res.status(200).send();

@@ -60,8 +60,8 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": false,
-      "messagebox": "",
+      "signalRecieve": true,
+      "messagebox": "You've received msg from Esteban for Question chat !",
       "returnConfirm": false
     },
     {
@@ -235,9 +235,9 @@
       "gender": "male",
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
-      "isConnected": false,
-      "signalRecieve": false,
-      "messagebox": "",
+      "isConnected": true,
+      "signalRecieve": true,
+      "messagebox": "You've received msg from Celestine for Private chat !",
       "returnConfirm": false
     }
   ]

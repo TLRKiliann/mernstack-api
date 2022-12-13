@@ -33,8 +33,8 @@ const updateRoomName = (id: number, addRoomUser: UserTypeProps) => {
   try {
     let request = app.put<any>(`${updateNameRoom}/${id}`, addRoomUser)
     return request.then((response: any) => {
-      response
-      //console.log(response, "-- response --")
+      //response
+      console.log(response.data, "-- response --")
     })
   } catch (err: any) {
     console.error("Error response PUT:");
@@ -46,10 +46,12 @@ const updateRoomName = (id: number, addRoomUser: UserTypeProps) => {
 };
 
 //PUT invitation
-const putInvitation = (id: number, customMsg: any) => {
+const putInvitation = (id: number, dataForSigMsg: any) => {
   try {
-    const req = app.put<any>(`${postInvite}/${id}`, customMsg)
-    return req.then((res: any) => res)
+    const req = app.put<any>(`${postInvite}/${id}`, dataForSigMsg)
+    return req.then((res: any) => {
+      console.log(res.data)
+    })
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -60,10 +62,12 @@ const putInvitation = (id: number, customMsg: any) => {
 };
 
 //PUT returnConfirm (db)
-const updateFinalConfirm = (id: number, otherValidatingUser: any) => {
+const updateFinalConfirm = (id: number, changeReturnConf: any) => {
   try {
-    const req = app.put<any>(`${postLastConfirm}/${id}`, otherValidatingUser)
-    return req.then((res: any) => res)
+    const req = app.put<any>(`${postLastConfirm}/${id}`, changeReturnConf)
+    return req.then((res: any) => {
+      console.log(res.data)
+    })
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -74,6 +78,14 @@ const updateFinalConfirm = (id: number, otherValidatingUser: any) => {
 };
 
 /*
+2 derniers echecs
+--------------------------------------------------
+
+PUT /db_users/[object%20Object] 400 0.973 ms - -
+PUT /db_users/[object%20Object] 404 4.045 ms - 2
+
+--------------------------------------------------
+
 //POST (add) new user
 const postNewUser = async (user: string) => {
   try {

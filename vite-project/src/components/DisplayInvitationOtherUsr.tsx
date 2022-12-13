@@ -10,7 +10,6 @@ type Form = {
 }
 
 interface DisplayInvitationOtherUsrProps {
-  otherUser: string
   username: string
   form: object
   isCheckInvite: boolean
@@ -23,7 +22,7 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
   return (
     <div className="invitation--display">
       <h4 className="invitation--h4">
-        {props.otherUser} you've recieved invitation from {props.username}.
+        You've recieved invitation from {props.username}.
       </h4>
       <h4 className="invitation--h4">
         Are you ok for {props.form} chat ?
