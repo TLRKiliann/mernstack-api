@@ -16,17 +16,10 @@ interface UsernameProps {
 const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
   const [message, setMessage] = useState<string>("")
-  const [messages, setMessages] = useState<Array<string>>([])
-  const [myLocalStorage, setMyLocalStorage] = useState<Array<UserType>>([])
-
-  useEffect(() => {
-    const localMessages = JSON.parse(localStorage.getItem('Messages'))
-  }, [])
+  const [messages, setMessages] = useState<Array<string>>(JSON.parse(localStorage.getItem("Messages")))
 
   useEffect(() => {
     localStorage.setItem("Messages", JSON.stringify(messages))
-    const refreshTerminal = localStorage.getItem("Messages")
-    setMyLocalStorage(refreshTerminal)
   }, [messages])
 
   const { username } = useAuthLogin()
@@ -50,9 +43,9 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
         </span>
         
         {messages?.map((data) => (
-          <div key={data.id} className="map--msg">
-            <p className="para--chat">$ ▶ {data.usr} ~ {data.msg}</p>
-              <span className="legend--date">{data.id}</span>
+          <div key={data?.id} className="map--msg">
+            <p className="para--chat">$ ▶ {data?.usr} ~ {data?.msg}</p>
+              <span className="legend--date">{data?.id}</span>
           </div>
           ))
         }
