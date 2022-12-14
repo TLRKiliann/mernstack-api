@@ -61,12 +61,24 @@ app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) =>
   }
 });
 
-//
+//update username + returnConfirm
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = Number(req.params.id);
+  const firstName: string = req.body.firstName;
+  const returnConfirm: boolean = req.body.returnConfirm;
+  try {
+    res.status(200).send()
+  } catch (err) {
+    throw err;
+  }
+});
+
+//update returnConfirm by id
 app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
   const id: number | null = Number(req.params.id);
   const returnConfirm: boolean = req.body.returnConfirm;
   try {
-    res.status(200).send();
+    res.status(200).send()
   } catch (err) {
     throw err;
   }

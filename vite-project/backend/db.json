@@ -52,17 +52,17 @@
       "id": 4,
       "img": "http://localhost:5173/src/assets/snapface/celestine_smile.jpg",
       "firstName": "Celestine",
-      "lastName": "Duchemin",
+      "lastName": "Du Chemin",
       "age": 42,
-      "email": "celestine.duchemin@gmail.com",
+      "email": "celestine@hotmail.com",
       "location": "Nolathan",
       "gender": "female",
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": true,
-      "messagebox": "You've received msg from Esteban for Question chat !",
-      "returnConfirm": false
+      "signalRecieve": false,
+      "messagebox": "",
+      "returnConfirm": true
     },
     {
       "id": 5,
@@ -236,9 +236,9 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": true,
-      "messagebox": "You've received msg from Celestine for Private chat !",
-      "returnConfirm": false
+      "signalRecieve": false,
+      "messagebox": "",
+      "returnConfirm": true
     }
   ]
 }

@@ -32,7 +32,7 @@ import './styleComponents/ChatComputer.scss'
 
 const ChatComputer: React.FC = () => {
 
-  const { id } = useParams<{id?: string}>();
+  const {id} = useParams<{id?: string}>();
   const { username } = useAuthLogin()
   const Navigate = useNavigate()
   
@@ -53,7 +53,10 @@ const ChatComputer: React.FC = () => {
   }
 
   const handleSetUserRoom = (link: string) => {
-    const user = Object.values(users)?.find(user => user.firstName === username)
+    const user = users?.find(user => user.firstName === username)
+    console.log(user, "user")
+    const id: number = user.id;
+    const changeConfRoom = {...user, isConnected: true}
     console.log(user, "into function")
     const addRoomUser = {
       id: user.id,
@@ -70,13 +73,11 @@ const ChatComputer: React.FC = () => {
       signalRecieve: user.signalRecieve,
       messagebox: user.messagebox,
       returnConfirm: user.returnConfirm
-
     }
-    const id = addRoomUser.id;
     //console.log(addRoomUser.id, 'by id')
     if (user) {
       serviceRouting
-        .updateRoomName(id, addRoomUser)
+        .updateRoomName(id, changeConfRoom)
         .then(initialUserRoom => {
           setUserRoom(users?.map(user => user.id === id ? {
             id: user.id,
@@ -97,7 +98,7 @@ const ChatComputer: React.FC = () => {
           ))
         })
         .catch((error) => {
-          setUserRoom(users?.filter(user => user.firstName !== username))
+          setUserRoom(users?.map(user => user.firstName !== username))
           alert(`Register name Room issue: ${user.firstName} not found !`)
         })
       //setUserRoom(addRoomUser)

@@ -8,8 +8,9 @@ type UserTypeProps = {
 //server-json conf
 const getUrl: string = 'http://localhost:3001/db_users'
 const updateNameRoom: string = 'http://localhost:3001/db_users'
-const postInvite: string = 'http://localhost:3001/db_users'
-const postLastConfirm: string = 'http://localhost:3001/db_users'
+const putInvite: string = 'http://localhost:3001/db_users'
+const putLastConfirm: string = 'http://localhost:3001/db_users'
+const putChgUsrRetConf: string = 'http://localhost:3001/db_users'
 /*real server
 const getUrl: string = '/api/getAllMembers';*/
 //const updateNameRoom: string = '/api/updateRoom';
@@ -29,9 +30,9 @@ const getAllMembers = async () => {
 };
 
 //PUT firstname
-const updateRoomName = (id: number, addRoomUser: UserTypeProps) => {
+const updateRoomName = (id: number, changeConfRoom: UserTypeProps) => {
   try {
-    let request = app.put<any>(`${updateNameRoom}/${id}`, addRoomUser)
+    let request = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
     return request.then((response: any) => {
       //response
       console.log(response.data, "-- response --")
@@ -48,7 +49,23 @@ const updateRoomName = (id: number, addRoomUser: UserTypeProps) => {
 //PUT invitation
 const putInvitation = (id: number, dataForSigMsg: any) => {
   try {
-    const req = app.put<any>(`${postInvite}/${id}`, dataForSigMsg)
+    const req = app.put<any>(`${putInvite}/${id}`, dataForSigMsg)
+    return req.then((res: any) => {
+      console.log(res.data)
+    })
+  } catch (err: any) {
+    console.error("Error response PUT:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err;
+  } 
+};
+
+//PUT username + returnConfirm
+const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
+  try {
+    const req = app.put<any>(`${putChgUsrRetConf}/${id}`, changeUserNameReturnConfirm)
     return req.then((res: any) => {
       console.log(res.data)
     })
@@ -64,7 +81,7 @@ const putInvitation = (id: number, dataForSigMsg: any) => {
 //PUT returnConfirm (db)
 const updateFinalConfirm = (id: number, changeReturnConf: any) => {
   try {
-    const req = app.put<any>(`${postLastConfirm}/${id}`, changeReturnConf)
+    const req = app.put<any>(`${putLastConfirm}/${id}`, changeReturnConf)
     return req.then((res: any) => {
       console.log(res.data)
     })
@@ -104,6 +121,7 @@ const functionToCall = {
   getAllMembers,
   updateRoomName,
   putInvitation,
+  updateUsrRetConf,
   updateFinalConfirm
 };
 
