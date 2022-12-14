@@ -38,7 +38,7 @@ const ChatComputer: React.FC = () => {
   
   const users = usePersonnalHook()
   
-  console.log(users, "- object users")
+  //console.log(users, "- object users")
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
   //console.log(userRoom, 'userRoom state')
@@ -54,10 +54,8 @@ const ChatComputer: React.FC = () => {
 
   const handleSetUserRoom = (link: string) => {
     const user = users?.find(user => user.firstName === username)
-    console.log(user, "user")
     const id: number = user.id;
     const changeConfRoom = {...user, isConnected: true}
-    console.log(user, "into function")
     const addRoomUser = {
       id: user.id,
       img: user.img,
@@ -101,7 +99,6 @@ const ChatComputer: React.FC = () => {
           setUserRoom(users?.map(user => user.firstName !== username))
           alert(`Register name Room issue: ${user.firstName} not found !`)
         })
-      //setUserRoom(addRoomUser)
       handleNavigation(link)
     } else {
       alert("ERROR !!!")
@@ -114,7 +111,6 @@ const ChatComputer: React.FC = () => {
         setComputerDb("Hard Disk - SSD")
         setImgBg(img_1)
         setLinks(db_computeOne)
-        //console.log(db_computeOne)
         break
       case "2":
         setComputerDb("CPU")
