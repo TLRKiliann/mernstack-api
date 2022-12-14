@@ -60,8 +60,8 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": false,
-      "messagebox": "",
+      "signalRecieve": true,
+      "messagebox": "You've received msg from  for Private chat !",
       "returnConfirm": true
     },
     {

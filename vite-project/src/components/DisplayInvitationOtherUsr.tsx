@@ -9,7 +9,12 @@ type Form = {
   invite: Field
 }
 
+type UserProps = {
+  firstName: string
+}
+
 interface DisplayInvitationOtherUsrProps {
+  otherUser: UserProps
   username: string
   form: object
   isCheckInvite: boolean
@@ -18,15 +23,23 @@ interface DisplayInvitationOtherUsrProps {
 }
 
 const DisplayInvitationOtherUsr: React.FC = (props: {
-  DisplayInvitationOtherUsrProps, Form, Field }) => {
+  DisplayInvitationOtherUsrProps, UserProps, Form, Field }) => {
   return (
     <div className="invitation--display">
       <h4 className="invitation--h4">
-        You've recieved invitation from {props.username}.
+        <span className="span--h4">
+          {props.otherUser}
+        </span>! You've recieved invitation from
+        <span className="span--h4">
+          {props.username}.
+        </span>
       </h4>
-      <h4 className="invitation--h4">
-        Are you ok for {props.form} chat ?
-      </h4>
+      <p className="invitation--p">
+        Are you ok for
+        <span className="span--h4">
+          {props.form}
+        </span>chat ?
+      </p>
       <label>
         <input
           type="checkbox"

@@ -11,6 +11,7 @@ const updateNameRoom: string = 'http://localhost:3001/db_users'
 const putInvite: string = 'http://localhost:3001/db_users'
 const putLastConfirm: string = 'http://localhost:3001/db_users'
 const putChgUsrRetConf: string = 'http://localhost:3001/db_users'
+
 /*real server
 const getUrl: string = '/api/getAllMembers';*/
 //const updateNameRoom: string = '/api/updateRoom';

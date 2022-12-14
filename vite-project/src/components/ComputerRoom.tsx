@@ -117,36 +117,33 @@ const ComputerRoom: React.FC = () => {
         messagebox: msg,
         returnConfirm: catchById.returnConfirm
       }
-      if (customMsg) {
-        serviceRouting
-          .putInvitation(id, dataForSigMsg)
-          .then(initialData => {
-            setInformUsrMsg(users?.map(cust => cust.id === id ? 
-              {
-                id: cust.id,
-                img: cust.img,
-                firstName: cust.firstName,
-                lastName: cust.lastName,
-                age: cust.age,
-                email: cust.email,
-                location: cust.location,
-                gender: cust.gender,
-                mainroom: cust.mainroom,
-                room: cust.room,
-                isConnected: cust.isConnected,
-                signalRecieve: true,
-                messagebox: msg,
-                returnConfirm: cust.returnConfirm
-              } : cust
-            ))
-          })
-          .catch((error) => {
-            setInformUsrMsg(users?.map(cust => cust.id !== id))
-            alert(`${catchById.firstName} do not received msg`)
-          })
-      } else {
-        alert("Error msg invitation with customMsg!")
-      }
+
+      serviceRouting
+        .putInvitation(id, dataForSigMsg)
+        .then(initialData => {
+          setInformUsrMsg(users?.map(cust => cust.id === id ? 
+            {
+              id: cust.id,
+              img: cust.img,
+              firstName: cust.firstName,
+              lastName: cust.lastName,
+              age: cust.age,
+              email: cust.email,
+              location: cust.location,
+              gender: cust.gender,
+              mainroom: cust.mainroom,
+              room: cust.room,
+              isConnected: cust.isConnected,
+              signalRecieve: true,
+              messagebox: msg,
+              returnConfirm: cust.returnConfirm
+            } : cust
+          ))
+        })
+        .catch((error) => {
+          setInformUsrMsg(users?.map(cust => cust.id !== id))
+          alert(`${catchById.firstName} do not received msg`)
+        })
     }
   }
 
@@ -314,6 +311,7 @@ const ComputerRoom: React.FC = () => {
 
       {displayConfirmInvite &&
         <ConfirmInvitation
+          username={username}
           isChecked={isChecked}
           handleCheckBox={handleCheckBox}
           handleValidInvitation={handleValidInvitation}
@@ -322,6 +320,7 @@ const ComputerRoom: React.FC = () => {
 
       {displayInvitation &&
         <DisplayInvitationOtherUsr
+          otherUser={otherUser.firstName}
           username={username}
           form={form.invite.value}
           isCheckInvite={isCheckInvite}

@@ -2,6 +2,7 @@ import React from 'react'
 import './styleComponents/ConfirmInvitation.scss'
 
 interface ConfirmInvitationProps {
+  username: string
   isChecked: boolean
   handleCheckBox: () => void
   handleValidInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
@@ -11,7 +12,7 @@ const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
   console.log(props, "props")
   return (
     <div className="box--confirminvitation">
-      <h4 className="confirm">Confirm invitation ?</h4>
+      <h4 className="confirm">{props.username} do you confirm invitation ?</h4>
       <label>
         <input
           type="checkbox"
