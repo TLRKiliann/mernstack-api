@@ -3,40 +3,61 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  width: 400px;
-  height: 400px;
+  width: 700px;
   margin: auto;
   margin-top: 20%;
-
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
   background: linear-gradient(180deg,
     orange, purple);
   border-radius: 15px;
   z-index: 2;
-}
-
-.invitation--h4 {
-  color: whitesmoke;
-}
-
-.btn--displayotheruser {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 5px 10px;
-  font-family: "DejaVu Sans", sans-serif;
-  font-size: 0.9rem;
-  font-weight: bold;
-  background: linear-gradient(180deg,
-    orange, orangered, #ae3c52);
-  border: 1px solid purple;
-  border-radius: 7px;
-  color: whitesmoke;
-  &:hover {
-    background: orange;
-    color: #ae3c52;
+  .invitation--h4 {
+    width: 520px;
+    margin: auto;
+    font-family: "Junction", sans-serif;
+    font-size: 1.4rem;
+    color: purple;
+    .span--h4 {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.8rem;
+      text-shadow: 2px 1px 1px purple;
+      color: #50bcfe;
+    }
+  }
+  .invitation--p {
+    font-family: "Junction", sans-serif;
+    font-size: 1.4rem;
+    color: whitesmoke;
+    .span--h4 {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.8rem;
+      text-shadow: 2px 1px 1px orangered;
+      color: orange;
+    }
+  }
+  .btn--displayotheruser {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: linear-gradient(180deg,
+      orange, orangered, #ae3c52);
+    border: 1px solid purple;
+    border-radius: 7px;
+    color: whitesmoke;
+    &:hover {
+      background: orange;
+      color: #ae3c52;
+    }
   }
 }

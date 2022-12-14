@@ -85,21 +85,22 @@ const Login: React.FC = () => {
           if (!isAuthenticated) {
             setMessage('🔐  Identifiant ou mot de passe incorrect.');
             return;
+          } else {
+            setAuth(form.username.value, form.password.value)
+            setUserName(form.username.value)
+            localStorage.setItem("user-info",
+              JSON.stringify([form.username.value, form.password.value]))
+            toggle()
+            console.log("login ok")
+            Navigate('/')
           }
-        const response = app.post(LOGIN_URL, JSON.stringify(form),
-          {
-            headers: { 'Content-Type': 'application/json' },
-            withCredentials: true
-          }
-        )
-        setAuth(form.username.value, form.password.value)
-        setUserName(form.username.value)
-        localStorage.setItem("user-info",
-          JSON.stringify([form.username.value, form.password.value]))
-        toggle()
-        console.log("login ok")
-        Navigate('/')
-      });
+        });
+      /*const response = app.post(LOGIN_URL, JSON.stringify(form),
+        {
+          headers: { 'Content-Type': 'application/json' },
+          withCredentials: true
+        }
+      )*/
     }
   }
 

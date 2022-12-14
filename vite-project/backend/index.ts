@@ -35,14 +35,9 @@ app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
   next()
 })
 
-//update room - username - connection
-/*app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
-  res.json(users)
-  next()
-})*/
-
+//Setting room & isConnect
 app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
-  const id: number | null = req.body.id;
+  const id: number | null = Number(req.params.id);
   const mainroom: string = req.body.mainroom;
   const room: string = req.body.room;
   const isConnected: boolean = req.body.isConnected;
@@ -54,13 +49,36 @@ app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) =>
   next();
 });
 
-app.put('db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
-  const id: number | null = req.body.id;
+//Ask invitation
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = Number(req.params.id);
   const signalRecieve: boolean = req.body.signalRecieve;
-  const messagebox: string = req.body.customMsg;
-
+  const messagebox: string = req.body.messagebox;
   try {
     res.status(200).send();
+  } catch (err) {
+    throw err;
+  }
+});
+
+//update username + returnConfirm
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = Number(req.params.id);
+  const firstName: string = req.body.firstName;
+  const returnConfirm: boolean = req.body.returnConfirm;
+  try {
+    res.status(200).send()
+  } catch (err) {
+    throw err;
+  }
+});
+
+//update returnConfirm by id
+app.put('/db_users/:id', async (req:Request, res:Response, next:NextFunction) => {
+  const id: number | null = Number(req.params.id);
+  const returnConfirm: boolean = req.body.returnConfirm;
+  try {
+    res.status(200).send()
   } catch (err) {
     throw err;
   }
@@ -71,6 +89,12 @@ app.listen(PORT, () => {
 });
 
 /*
+//update room - username - connection
+/*app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
+  res.json(users)
+  next()
+})
+
 app.post('/login', (req:Request, res:Response, next:NextFunction) => {
   const user = { username: req.body.username, password: req.body.password }
   console.log(user, 'user')

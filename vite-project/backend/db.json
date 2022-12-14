@@ -12,8 +12,9 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": true,
-      "messagebox": "You've received msg from Celestine for Private chat !"
+      "signalRecieve": false,
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 2,
@@ -28,7 +29,8 @@
       "room": "Scapy",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 3,
@@ -43,26 +45,28 @@
       "room": "Scapy",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 4,
       "img": "http://localhost:5173/src/assets/snapface/celestine_smile.jpg",
       "firstName": "Celestine",
-      "lastName": "Duchemin",
+      "lastName": "Du Chemin",
       "age": 42,
-      "email": "celestine.duchemin@gmail.com",
+      "email": "celestine@hotmail.com",
       "location": "Nolathan",
       "gender": "female",
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
       "signalRecieve": true,
-      "messagebox": "You've received msg from Esteban for Private chat !"
+      "messagebox": "You've received msg from  for Private chat !",
+      "returnConfirm": true
     },
     {
       "id": 5,
-      "img": "http://localhost:5173/src/assets/snapface/ronaldo.png",
+      "img": "http://localhost:5173/src/assets/snapface/rebeka_smile.jpg",
       "firstName": "Rebeka",
       "lastName": "Snowville",
       "age": 34,
@@ -73,7 +77,8 @@
       "room": "Generation-i3-i5-i7",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 6,
@@ -88,7 +93,8 @@
       "room": "inode-modules-runlevel",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 7,
@@ -103,7 +109,8 @@
       "room": "Scapy",
       "isConnected": false,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 8,
@@ -118,7 +125,8 @@
       "room": "inode-modules-runlevel",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 9,
@@ -133,7 +141,8 @@
       "room": "inode-modules-runlevel",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 10,
@@ -148,7 +157,8 @@
       "room": "PID(PPID)-JOBS-Daemons-Nice",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 11,
@@ -163,7 +173,8 @@
       "room": "PID(PPID)-JOBS-Daemons-Nice",
       "isConnected": false,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 12,
@@ -178,7 +189,8 @@
       "room": "Generation-i3-i5-i7",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 13,
@@ -193,7 +205,8 @@
       "room": "Generation-i3-i5-i7",
       "isConnected": false,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 14,
@@ -208,7 +221,8 @@
       "room": "Scapy",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": false
     },
     {
       "id": 15,
@@ -223,7 +237,8 @@
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
       "signalRecieve": false,
-      "messagebox": ""
+      "messagebox": "",
+      "returnConfirm": true
     }
   ]
 }

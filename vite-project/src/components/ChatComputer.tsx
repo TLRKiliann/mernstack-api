@@ -32,13 +32,11 @@ import './styleComponents/ChatComputer.scss'
 
 const ChatComputer: React.FC = () => {
 
-  const { id } = useParams<{id?: string}>();
+  const {id} = useParams<{id?: string}>();
   const { username } = useAuthLogin()
   const Navigate = useNavigate()
   
   const users = usePersonnalHook()
-  
-  console.log(users, "- object users")
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
   //console.log(userRoom, 'userRoom state')
@@ -53,8 +51,9 @@ const ChatComputer: React.FC = () => {
   }
 
   const handleSetUserRoom = (link: string) => {
-    const user = Object.values(users)?.find(user => user.firstName === username)
-    console.log(user, "into function")
+    const user = users?.find(user => user.firstName === username)
+    const id: number = user.id;
+    const changeConfRoom = {...user, isConnected: true}
     const addRoomUser = {
       id: user.id,
       img: user.img,
@@ -68,13 +67,13 @@ const ChatComputer: React.FC = () => {
       room: link,
       isConnected: true,
       signalRecieve: user.signalRecieve,
-      messagebox: user.messagebox
+      messagebox: user.messagebox,
+      returnConfirm: user.returnConfirm
     }
-    const id = addRoomUser.id;
     //console.log(addRoomUser.id, 'by id')
     if (user) {
       serviceRouting
-        .updateRoomName(id, addRoomUser)
+        .updateRoomName(id, changeConfRoom)
         .then(initialUserRoom => {
           setUserRoom(users?.map(user => user.id === id ? {
             id: user.id,
@@ -89,15 +88,15 @@ const ChatComputer: React.FC = () => {
             room: link,
             isConnected: true,
             signalRecieve: user.signalRecieve,
-            messagebox: user.messagebox
+            messagebox: user.messagebox,
+            returnConfirm: user.returnConfirm
             } : user
           ))
         })
         .catch((error) => {
-          setUserRoom(users?.filter(user => user.firstName !== username))
+          setUserRoom(users?.map(user => user.firstName !== username))
           alert(`Register name Room issue: ${user.firstName} not found !`)
         })
-      //setUserRoom(addRoomUser)
       handleNavigation(link)
     } else {
       alert("ERROR !!!")
@@ -110,7 +109,6 @@ const ChatComputer: React.FC = () => {
         setComputerDb("Hard Disk - SSD")
         setImgBg(img_1)
         setLinks(db_computeOne)
-        //console.log(db_computeOne)
         break
       case "2":
         setComputerDb("CPU")
