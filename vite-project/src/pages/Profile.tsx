@@ -29,7 +29,6 @@ const Profile: React.FC = () => {
         <h1 className="title--profileh1">
           Profile of
         </h1>
-
         <p className="p--maintitlepro">{username}</p>
       </div>
 
