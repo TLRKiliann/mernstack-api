@@ -37,8 +37,6 @@ const ChatComputer: React.FC = () => {
   const Navigate = useNavigate()
   
   const users = usePersonnalHook()
-  
-  //console.log(users, "- object users")
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
   //console.log(userRoom, 'userRoom state')
