@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useAuthLogin } from '../../context/AuthProvider'
-import { db_users } from '../../models/db_users'
-import { UserType } from '../../models/usertype'
+//import { db_users } from '../../models/db_users'
+//import { UserType } from '../../models/usertype'
 import './TerminalComponent.scss'
 
 
@@ -16,10 +16,18 @@ interface UsernameProps {
 const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
   const [message, setMessage] = useState<string>("")
-  const [messages, setMessages] = useState<Array<string>>(JSON.parse(localStorage.getItem("Messages")))
+  const [messages, setMessages] = useState<Array<string>>([JSON.parse(localStorage.getItem("Messages"))])
 
   useEffect(() => {
-    localStorage.setItem("Messages", JSON.stringify(messages))
+    if (message) {
+      localStorage.setItem("Messages", JSON.stringify(messages))
+    } else {
+      console.log("No message for useEffect")
+    }
+  }, [])
+
+  useEffect(() => {
+      localStorage.setItem("Messages", JSON.stringify(messages))
   }, [messages])
 
   const { username } = useAuthLogin()
@@ -29,6 +37,8 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
     if (message) {
       setMessages([...messages, {id: Date().slice(0, 24),
         usr: `${username}`, msg: `${message} ✉`}])
+    } else {
+      console.log("message === undefined")
     }
     setMessage("")
   }
@@ -42,9 +52,10 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           {props.roomStyle}
         </span>
         
-        {messages?.map((data) => (
-          <div key={data?.id} className="map--msg">
-            <p className="para--chat">$ ▶ {data?.usr} ~ {data?.msg}</p>
+        {messages?.map((data, index) => (
+          <div key={index} className="map--msg">
+            <p className="para--chat">{data?.usr} {data?.msg !== undefined 
+              ? `$ ▶ ${data?.msg}` : null}</p>
               <span className="legend--date">{data?.id}</span>
           </div>
           ))
