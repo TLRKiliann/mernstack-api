@@ -26,12 +26,16 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
       <h4 className="invitation--h4">
         
         <span className="span--h4">
-          {props.invited}
-        </span>! You've recieved invitation from
+          {props.invited} !
+        </span>
+        
+        <p style={{marginTop: "30px"}}>
+          You've recieved invitation from
+        </p>
 
         {props.initialSender?.map((s) => (
           <span key={s.id} className="span--h4">
-            {s.firstName}
+            {s.firstName}.
           </span>
         ))}
 

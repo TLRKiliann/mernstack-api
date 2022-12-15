@@ -343,7 +343,8 @@ const ComputerRoom: React.FC = () => {
         />
       }
 
-      {displayInvitation && (
+      {Object.values(otherUser)?.map((other) => (
+        other.signalRecieve === true && other.firstName === username ? (
         <DisplayInvitationOtherUsr
           key={catchById.id}
           invited={catchById.firstName}
@@ -353,7 +354,8 @@ const ComputerRoom: React.FC = () => {
           handleSwitchBox={handleSwitchBox}
           handleInvitedResponse={handleInvitedResponse}
         />
-      )}
+        ) : null
+      ))}
 
       {switchAsk &&
         <AskMessageBox

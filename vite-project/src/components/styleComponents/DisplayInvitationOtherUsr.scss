@@ -14,13 +14,19 @@
   background: linear-gradient(180deg,
     orange, purple);
   border-radius: 15px;
-  z-index: 2;
+  z-index: 10;
   .invitation--h4 {
-    width: 520px;
+    width: 600px;
     margin: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-family: "Junction", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: purple;
+
     .span--h4 {
       margin-right: 5px;
       margin-left: 5px;

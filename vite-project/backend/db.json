@@ -65,7 +65,7 @@
       "isConnected": true,
       "signalRecieve": true,
       "sentMsg": false,
-      "messagebox": "You've received msg from  for Private chat !",
+      "messagebox": "You've received msg from Esteban for Private chat !",
       "returnConfirm": true
     },
     {
@@ -250,9 +250,9 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": false,
+      "signalRecieve": true,
       "sentMsg": false,
-      "messagebox": "",
+      "messagebox": "You've received msg from Celestine for Private chat !",
       "returnConfirm": true
     }
   ]
