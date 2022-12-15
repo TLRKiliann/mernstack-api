@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import usePersonnalHook from '../hook/personnal.hook'
@@ -7,9 +7,12 @@ import AskMessageBox from '../components/AskMessageBox'
 import ResponsePrivateMsg from '../components/ResponsePrivateMsg'
 import '../stylePages/Online.scss'
 
+import { computerType } from '../models/computerType'
+import { UserType } from '../models/usertype'
+
 type DataAllType = {
-  db_users: UserType[]
-  db_computers: computerType[]
+  users: UserType[]
+  computers: computerType[]
 }
 
 type Field = {
@@ -49,17 +52,25 @@ const Online: React.FC = () => {
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [switchResponse, setSwitchResponse] = useState<boolean>(false)
 
-  const { setOtherUser, setTweekGroup } = useAuthLogin();
+  const {username, setOtherUser, setTweekGroup } = useAuthLogin();
 
   //hooks
+  /*
+  const users = usePersonnalHook<{users: UserType}>({})
+  const computers = useComputerHook<{computers: computerType}>()
+  */
   const users = usePersonnalHook()
   const computers = useComputerHook()
+
+  useEffect(() => {
+    localStorage.setItem("Group", JSON.stringify(group))
+  }, [group])
 
   const addUserById = (id: number) => {
     const userTodAdd = users.find(user => user.id === id)
     const verifyAlreadyExist = group.find(g => g.id === id)
-    if (verifyAlreadyExist === userTodAdd) {
-      console.log("This user already exists")
+    if (username === userTodAdd.firstName) {
+      alert("It's you...")
       setGroup(group.filter(g => g.id !== id))
     } else {
       console.log("Ok, new user accepted")
@@ -155,12 +166,12 @@ const Online: React.FC = () => {
               {user.mainroom === computer.title ? (
                 <div className="user--imgsaloon">
                   <img
-                    width="40px"
-                    height="40px"
+                    width="100%"
+                    height="100%"
                     src={user.img} 
                     className="img--saloon"
                   />
-                  <p style={{fontSize: '16px'}}>
+                  <p className="font--online">
                   {user.firstName} {user.isConnected ? (
                     <span
                       style={{
