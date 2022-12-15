@@ -121,7 +121,6 @@ const Login: React.FC = () => {
           onSubmit={(e) => handleSubmit(e)}
           className="submit"
           placeholder="lastname"
-
         >
           <h1 className="title--framelogin">Login</h1>
 
