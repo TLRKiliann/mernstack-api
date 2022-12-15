@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import serviceRouting from '../services/serviceRouting'
-//import { db_users } from '../models/db_users'
+//(file.ts) import { db_users } from '../models/db_users'
 import { UserType } from '../models/usertype'
 
 const usePersonnalHook: React.FC = () => {
@@ -19,18 +19,3 @@ const usePersonnalHook: React.FC = () => {
 }
 
 export default usePersonnalHook
-
-/*
-  useEffect(() => {
-    serviceRouting
-      .getAllMembers()
-      .then(initialNote => {
-        setUsers(initialNote);
-      })
-  }, []);
-
-  console.log(users, "usePersonnalHook")
-
-        const returnData = response
-        console.log(returnData, 'returnData')
-*/

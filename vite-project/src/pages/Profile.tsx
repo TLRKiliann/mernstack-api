@@ -8,6 +8,12 @@ const Profile: React.FC = () => {
 
   const { username, tweekGroup, setTweekGroup } = useAuthLogin()
   //console.log(tweekGroup, "tweekGroup")
+  const handleRefresh = () => {
+    console.log("Refresh !")
+    const refreshGroup = JSON.parse(localStorage.getItem("Group"))
+    setTweekGroup(refreshGroup)
+  }
+
   const handleDelete = (id: number): void => {
     setTweekGroup(tweekGroup.filter(t => t.id !== id))
     alert(`Member deleted from your group`)
@@ -29,13 +35,19 @@ const Profile: React.FC = () => {
         <h1 className="title--profileh1">
           Profile of
         </h1>
-
         <p className="p--maintitlepro">{username}</p>
       </div>
 
       <div className="tweekGroup--friends">
         <div className="div--profileh4">
           <h4 className="titleh4--profile">Members of your group :</h4>
+          <button 
+            type="button" 
+            onClick={handleRefresh}
+            className="btn--refreshgroup"
+          >
+            Refresh
+          </button>
         </div>
         
         <div className="div--titleusersgroup">
@@ -93,7 +105,6 @@ const Profile: React.FC = () => {
               onClick={() => handleDelete(val.id)}
               className="btn--deletefromgroup"
             >
-              Delete
             </button>
           </div>
         ))}

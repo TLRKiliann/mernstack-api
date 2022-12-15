@@ -13,6 +13,7 @@
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -29,6 +30,7 @@
       "room": "Scapy",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -45,6 +47,7 @@
       "room": "Scapy",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -61,7 +64,8 @@
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
       "signalRecieve": true,
-      "messagebox": "You've received msg from  for Private chat !",
+      "sentMsg": false,
+      "messagebox": "You've received msg from Esteban for Private chat !",
       "returnConfirm": true
     },
     {
@@ -77,6 +81,7 @@
       "room": "Generation-i3-i5-i7",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -93,6 +98,7 @@
       "room": "inode-modules-runlevel",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -109,6 +115,7 @@
       "room": "Scapy",
       "isConnected": false,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -125,6 +132,7 @@
       "room": "inode-modules-runlevel",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -141,6 +149,7 @@
       "room": "inode-modules-runlevel",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -157,6 +166,7 @@
       "room": "PID(PPID)-JOBS-Daemons-Nice",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -173,6 +183,7 @@
       "room": "PID(PPID)-JOBS-Daemons-Nice",
       "isConnected": false,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -189,6 +200,7 @@
       "room": "Generation-i3-i5-i7",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -205,6 +217,7 @@
       "room": "Generation-i3-i5-i7",
       "isConnected": false,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -221,6 +234,7 @@
       "room": "Scapy",
       "isConnected": true,
       "signalRecieve": false,
+      "sentMsg": false,
       "messagebox": "",
       "returnConfirm": false
     },
@@ -236,8 +250,9 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": false,
-      "messagebox": "",
+      "signalRecieve": true,
+      "sentMsg": false,
+      "messagebox": "You've received msg from Celestine for Private chat !",
       "returnConfirm": true
     }
   ]

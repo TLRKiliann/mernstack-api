@@ -67,6 +67,7 @@ const ChatComputer: React.FC = () => {
       room: link,
       isConnected: true,
       signalRecieve: user.signalRecieve,
+      sentMsg: user.sentMsg,
       messagebox: user.messagebox,
       returnConfirm: user.returnConfirm
     }
@@ -88,6 +89,7 @@ const ChatComputer: React.FC = () => {
             room: link,
             isConnected: true,
             signalRecieve: user.signalRecieve,
+            sentMsg: user.sentMsg,
             messagebox: user.messagebox,
             returnConfirm: user.returnConfirm
             } : user

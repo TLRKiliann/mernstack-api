@@ -2,16 +2,15 @@ $orange: #ffa500;
 $lightgreen: #90ee90;
 $purple: #800080;
 
-
 .saloon--byusers {
   position: absolute;
   top: 0px;
   right: 0px;
   left: 0px;
+  width: 100%;
   min-height: 100vh;
   background: linear-gradient(180deg, 
     $purple, $orange);
-
   .title--services {
     margin-top: 120px;
     margin-left: 20px;
@@ -20,7 +19,6 @@ $purple: #800080;
     text-shadow: 2px 1px 1px #000;
     color: lightgrey;
   }
-
   .divsection--saloon {
     width: 80%;
     margin: auto;
@@ -31,32 +29,28 @@ $purple: #800080;
     grid-template-columns: 1Fr 1Fr 1Fr 1Fr;
     grid-template-rows: 1Fr 1Fr 1Fr;
     margin-bottom: 40px;
-
     .titlebyroom {
       margin: auto;
       padding: 7px 0px;
-      font-family: "Junction";
+      font-family: "Junction", sans-serif;
       text-align: center;
       background: $purple;
       border-bottom: 1px solid slategray;
       border-radius: 15px 15px 0px 0px;
       color: lightgrey;
     }
-
     .section--saloon {
       background: #383838;
       border: none;
-      border-radius: 15px;
+      border-radius: 15px 15px 0px 0px;
       box-shadow: 0 0 4px #000;
-
       .span--saloon {
         display: flex;
-        background: #242424;
         font-family: "DejaVu Sans";
-        font-size: 18px;
+
+        background: #242424;
         color: #50bcfe;
       }
-
       .user--imgsaloon {
         width: 100%;
         display: flex;
@@ -65,11 +59,15 @@ $purple: #800080;
         justify-content: flex-start;
         border-bottom: 1px solid slategray;
       }
-
       .img--saloon {
         margin: 0px 10px;
-        border-radius: 50% 50%;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
         object-fit: cover;
+      }
+      .font--online {
+        font-size: 14px;
       }
 
       .askprivate--service {
@@ -82,12 +80,10 @@ $purple: #800080;
         cursor: pointer;
         color: $orange;
         z-index: 3;
-
         &:hover {
           color: cyan;
         }
       }
-
       .lastspan--online {
         position: absolute;
         width: 18%;  
@@ -99,21 +95,17 @@ $purple: #800080;
         font-family: "DejaVu Sans";
         font-weight: thin;
         color: $orange;
-
         .btn--lastspanonline {
           margin-left: 10px;
           padding: 2px 7px;
-
           font-size: 1.0rem;
           font-weight: bold;
           color: lightgrey;
-
           background: linear-gradient(30deg, $purple, $orange);
           border: none;
           outline: none;
           border-radius: 50%;
           cursor: pointer;
-
           &:hover {
             background: $orange;
             color: $purple;
@@ -122,6 +114,57 @@ $purple: #800080;
             background: $purple;
             color: $lightgreen;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .saloon--byusers {
+    .title--services {
+      margin-top: 100px;
+      margin-left: 10px;
+    }
+    .divsection--saloon {
+      display: flex;
+      flex-direction: column;
+      .titlebyroom {
+        padding-top: 10px;
+        padding-bottom: 7px;
+        margin: auto;
+        font-family: "Junction", sans-serif;
+        text-align: center;
+      }
+      .section--saloon {
+        .span--saloon {
+        }
+        .img--saloon {
+          width: 30px;
+          height: 30px;
+          margin: 0px 10px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .font--online {
+          font-size: 12px;
+        }
+        .askprivate--service {
+          position: absolute;
+          width: 65%;
+          display: flex;
+          justify-content: right;
+          z-index: 3;
+        }
+        .lastspan--online {
+          position: absolute;
+          width: 75%;  
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          font-size: 14px;
+          font-family: "DejaVu Sans";
+          font-weight: thin;
         }
       }
     }

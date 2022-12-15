@@ -9,7 +9,10 @@ const PrivateMessage: React.FC = () => {
 
   const {otherUser, username} = useAuthLogin();
 
-  const [displayName, setDisplayName] = useState<object>({otherUser})
+  const [displayName, setDisplayName] = useState<object>(otherUser)
+  console.log(displayName.id, "displayName")
+  console.log(typeof(displayName), "typeof displayName")
+
   const [privateMsg, setPrivateMsg] = useState<string>("")
   const [privateSeveralMsg, setPrivateSeveralMsg] = useState<Array<string>>([])
 
@@ -32,20 +35,19 @@ const PrivateMessage: React.FC = () => {
 
       <div className="private--terminal">
         <div className="sub--privateterminal">
-          {Object.values(displayName)?.map(display => (
-            <div key={display.id} className="flex--imgnameroom">
+            <div className="flex--imgnameroom">
               <img
-                src={display.img}
+                src={displayName.img}
                 width="95px"
                 height="65px"
                 className="img--private"
                 alt="no img"
               />
-              <h4 className="title--private">{display.firstName}</h4>
-              <h4 className="title--private">{display.lastName}</h4>
-              <h4 className="title--private">{display.age} years</h4>
-              <h4 className="title--private">{display.email}</h4>
-              <h4 className="title--private">{display.isConnected ? (
+              <h4 className="title--private">{displayName.firstName}</h4>
+              <h4 className="title--private">{displayName.lastName}</h4>
+              <h4 className="title--private">{displayName.age} years</h4>
+              <h4 className="title--private">{displayName.email}</h4>
+              <h4 className="title--private">{displayName.isConnected ? (
                 <span
                   className="span--useronline"
                   style={{color: 'lightgreen'}}
@@ -61,7 +63,6 @@ const PrivateMessage: React.FC = () => {
               }
               </h4>
             </div>
-            ))}
 
         </div>
 

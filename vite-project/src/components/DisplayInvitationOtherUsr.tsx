@@ -9,13 +9,9 @@ type Form = {
   invite: Field
 }
 
-type UserProps = {
-  firstName: string
-}
-
 interface DisplayInvitationOtherUsrProps {
-  otherUser: UserProps
-  username: string
+  invited: string
+  initialSender: Array<any>
   form: object
   isCheckInvite: boolean
   handleSwitchBox: () => void
@@ -23,23 +19,35 @@ interface DisplayInvitationOtherUsrProps {
 }
 
 const DisplayInvitationOtherUsr: React.FC = (props: {
-  DisplayInvitationOtherUsrProps, UserProps, Form, Field }) => {
+  DisplayInvitationOtherUsrProps, Form, Field }) => {
+
   return (
     <div className="invitation--display">
       <h4 className="invitation--h4">
+        
         <span className="span--h4">
-          {props.otherUser}
-        </span>! You've recieved invitation from
-        <span className="span--h4">
-          {props.username}.
+          {props.invited} !
         </span>
+        
+        <p style={{marginTop: "30px"}}>
+          You've recieved invitation from
+        </p>
+
+        {props.initialSender?.map((s) => (
+          <span key={s.id} className="span--h4">
+            {s.firstName}.
+          </span>
+        ))}
+
       </h4>
+
       <p className="invitation--p">
         Are you ok for
         <span className="span--h4">
           {props.form}
         </span>chat ?
       </p>
+
       <label>
         <input
           type="checkbox"
@@ -48,6 +56,7 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
         />
         &nbsp;yes
       </label>
+
       <button
         type="button"
         onClick={props.handleInvitedResponse}

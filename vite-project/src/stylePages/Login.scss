@@ -142,48 +142,94 @@ $purple: #800080;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .submit {
-    margin: auto;
-    margin-top: 2%;
-  }
-}
+@media only screen and (max-width: 900px) {
+  .bg--loginimg {
+    .zoom--img {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
 
-@media only screen and (min-width: 800px) {
-  .submit {
-    margin: auto;
-    margin-top: 20%;
-  }
-}
+      margin: auto;
+      opacity: 0.1;
+      z-index: -2;
+    }
+    .img--login {
+      width: 100vw;
+      min-height: 100%;
+      margin: auto;
+    }
+    .submit {
+      padding-bottom: 20px;
+      width: 300px;
+      margin: auto;
+      margin-top: 250px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
 
-@media screen and (min-width: 370px) and (max-width: 412px) {
-  .zoom--img {
-    width: 400px;
-    height: 400px;
-    margin: auto;
+      .title--framelogin {
+        width: 64%;
+        margin: auto;
+        margin: 20px auto;
+        font-family: "Acme", sans-serif;
+        font-size: 2.4rem;
+      }
+      .lbl--login {
+        width: 64%;
+        margin: auto;
+        margin-top: 10px;
+        font-family: 'Junction';
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .input--login {
+        width: 60%;
+        padding: 3px 10px;
+        margin: auto;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+      .btn--submitlogin {
+        margin: auto;
+        margin-top: 30px;
+        padding: 3px 20px;
+      }
+      .p--loginframe {
+        width: auto;
+        margin: auto;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      .link--subscribe {
+        text-decoration: none;
+        color: whitesmoke;
+        text-shadow: 2px 1px 2px $purple;
+        &:hover {
+          color: $orange;
+          text-shadow: 0px 0px 0px $purple;
+        }
+      }
+      .error--message {
+        width: 60%;
+        margin: auto;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: $orange;
+        background-color: #282828;
+        border-radius: 5px;
+      }
+      .error {
+        margin: 10px 70px;
+        text-align: justify;
+      }
+    }
   }
-  .submit {
-    margin-top: 60%;
-    margin-right: 5%;
-    margin-left: 5%;
-    font-size: 0.8rem;
-  }
-}
 
-@media screen and (min-width: 400px) and (max-width: 999px) {
-  .submit {
-    margin-top: 67%;
-  }
-}
 
-@media only screen and (min-width: 400px) and (max-width: 1024px) {
-  .zoom--img {
-    width: 900px;
-  }
-  .submit {
-    margin-top: 240px;
-    margin-right: 30%;
-    margin-left: 30%;
-    font-size: 1.2rem;
-  }
 }

@@ -3,7 +3,7 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  width: 400px;
+  width: 500px;
   margin: auto;
   margin-top: 23%;
   display: flex;
@@ -21,6 +21,14 @@
     font-family: "DejaVu Sans", sans-serif;
     font-size: 1.2rem;
     color: purple;
+    .span--confirmation {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-family: "Acme", sans-serif;
+      font-size: 1.8rem;
+      text-shadow: 2px 1px 1px purple;
+      color: #50bcfe;
+    }
   }
   .input--validationInvite {
     background-color: #242424;
