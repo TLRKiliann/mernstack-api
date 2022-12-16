@@ -4,7 +4,7 @@ import { UserType } from '../models/usertype'
 import './styleComponents/AskMessageBox.scss'
 
 
-interface db_usersProps {
+interface DbUsersProps {
   db_users: Array<UserType>
 }
 
@@ -18,13 +18,13 @@ type Form = {
 
 interface AskMessageBoxProps {
   form: object
-  catchById: db_usersProps
+  catchById: DbUsersProps
   handleInviteChoice: (e: React.ChangeEvent<HTMLInputElement>) => void
-  handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
+  handleInvitation: (e: React.FormEvent<HTMLFormElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const AskMessageBox: React.FC = (props: {db_users, AskMessageBoxProps, Form, Field}) => {
+const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form, Field}) => {
     
   return(
     <div key={props.catchById?.id} className="boolean--result">

@@ -190,7 +190,7 @@ const ChatComputer: React.FC = () => {
         <h1 className="compter--roomdb">{computerDb}</h1>
       </div>
 
-      <div className='compter--room'>
+      <div className='computer--room'>
         {Object.values(links).map((val) => (
           <h2 key={val.title} className="links--computer">
 
