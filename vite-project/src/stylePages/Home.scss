@@ -3,7 +3,8 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  background: radial-gradient(orange, purple);
+  background: radial-gradient(900px at 50% 50%, 
+    orange, purple);
 
   .wallIntro {
     position: absolute;

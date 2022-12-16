@@ -21,59 +21,56 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
         <h3 className="userolinetitle">Online Users</h3>
       </div>
       
-        {Object.values(allUsers)?.map((val, key) => (
-          val.room === props.roomStyle && (
-          <div key={key} className="all--usersbanner">   
-            <div>
-              <img
-                src={val.img}
-                width="40px"
-                height="40px"
-                className="smile--img"
-                alt={val.img}
-              /> 
-            </div>
-            
-            <p className="para--spanchat">
-              {val.firstName} {val.isConnected ? (
-                <span
-                  className="span--useronline"
-                  style={{color: 'lightgreen'}}
-                >
-                  ✔
-                </span>
-                ) : (
-                <span 
-                  className="span--useronline" style={{fontSize:"12px"}}>
-                  ❌
-                </span>
-                )
-              }
+      {Object.values(allUsers)?.map((val, key) => (
+        val.room === props.roomStyle && (
+        <div key={key} className="all--usersbanner">   
+          <div className="username--useronline">
+            <img
+              src={val.img}
+              width="100%"
+              height="100%"
+              className="smile--img"
+              alt={val.img}
+            /> 
 
-              <span 
-                onClick={() => props.handleAskUserPrivate(val.id)}
-                className="span--useronline styleusr--span"
-                style={{color: 'orange', fontSize: '20px'}}
-              >
-                ✉
-              </span>
+            <span className="useronline--username">
+              {val.firstName}
+            </span>
 
-            </p>
           </div>
-          )
-        ))}
+          
+          <p className="para--spanchat"> 
+            {val.isConnected ? (
+              <span
+                className="span--useronline connector--icon"
+                style={{color: 'lightgreen'}}
+              >
+                ✔
+              </span>
+              ) : (
+              <span 
+                className="span--useronline connector--icon"
+                style={{fontSize:"12px"}}
+              >
+                ❌
+              </span>
+              )
+            }
+
+            <span 
+              onClick={() => props.handleAskUserPrivate(val.id)}
+              className="span--useronline styleusr--span"
+              style={{color: 'orange', fontSize: '22px'}}
+            >
+              ✉
+            </span>
+
+          </p>
+        </div>
+        )
+      ))}
     </section>
   )
 }
 
 export default UserOnline
-
-/*
-              <Link 
-                to={`/computerroom/privatemessage/${val.firstName}`}
-                className="span--useronline styleusr--span"
-                style={{color: 'orange', fontSize: '20px'}}
-              >
-                ✉
-              </Link>
-*/
