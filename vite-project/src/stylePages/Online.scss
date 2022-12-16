@@ -1,6 +1,11 @@
 $orange: #ffa500;
 $lightgreen: #90ee90;
 $purple: #800080;
+/*"Junction", sans-serif;
+"DejaVu Sans", sans-serif;
+lightgrey
+20px
+*/
 
 .saloon--byusers {
   position: absolute;
@@ -163,7 +168,7 @@ $purple: #800080;
           align-items: center;
           justify-content: right;
           font-size: 14px;
-          font-family: "DejaVu Sans";
+          font-family: "DejaVu Sans", sans-serif;
           font-weight: thin;
         }
       }

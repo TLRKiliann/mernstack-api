@@ -1,4 +1,10 @@
-/*Right volet*/
+/*Right volet
+whitesmoke
+lightgreen
+100vh
+'Junction', sans-serif;
+*/
+
 .volet--R {
   position: absolute;
   top: 0px;
@@ -94,7 +100,7 @@
 .link--tagvoletr {
   margin: 2px 0px;
   text-decoration: none;
-  font-family: 'Junction';
+  font-family: 'Junction', sans-serif;
   font-size: 1.0rem;
   color: whitesmoke;
 

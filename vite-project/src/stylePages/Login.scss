@@ -1,6 +1,14 @@
 $royalblue: #4169e1;
 $orange: #ffa500;
 $purple: #800080;
+/*"Acme", sans-serif;
+dodgerblue
+10px 
+20px
+#282828
+100vh
+100%
+*/
 
 .bg--loginimg {
   position: absolute;
@@ -125,7 +133,6 @@ $purple: #800080;
         text-shadow: 0px 0px 0px $purple;
       }
     }
-
     .error--message {
       width: 60%;
       margin: auto;
@@ -136,7 +143,6 @@ $purple: #800080;
       background-color: #282828;
       border-radius: 5px;
     }
-
     .error {
       margin: 10px 70px;
       text-align: justify;
@@ -232,6 +238,4 @@ $purple: #800080;
       }
     }
   }
-
-
 }
