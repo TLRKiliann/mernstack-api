@@ -2,11 +2,11 @@
 
 CHAT application with Vite - React - TypeScript
 
-with MySQL db in LAN
+with mariadb in LAN
 
 - front : react-router-dom v6 with security access
 
-- backend: express - cors - dotenv - mongoose
+- backend: express - cors - dotenv - mariadb
 
 ---
 
@@ -24,7 +24,15 @@ src \
 | \
 |--pages (main pages for navbar & subscribe) \
 | \
-|--services (authentification)
+|--services (authentification) \
+| \
+|--backend \
+	| \
+	-----> index.ts \
+	| \
+	-----> routes \
+	| \
+	-----> dbConnection.ts \
 
 ---
 
@@ -198,6 +206,8 @@ if not installed run:
 └─ $ ▶ pnpm install cors
 
 └─ $ ▶ pnpm install dotenv
+
+└─ $ ▶ pnpm install --save-dev mariadb
 
 ## CMD Line
 
