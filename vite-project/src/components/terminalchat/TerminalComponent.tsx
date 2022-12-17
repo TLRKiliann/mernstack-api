@@ -49,7 +49,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
       <div className="div--terminal">
 
         <span data-testid="spantestid" className="intro--terminal">
-          {props.roomStyle}
+          <h3 className="intro--terminalh3">{props.roomStyle}</h3>
         </span>
         
         {messages?.map((data, index) => (

@@ -1,3 +1,20 @@
+/*
+10px
+20px
+30px
+50px
+100%
+100px
+auto
+purple
+orange
+slategray
+#242424
+#383838
+"Allura", cursive;
+"DejaVu Sans", sans-serif;
+*/
+
 .profile {
   position: absolute;
   top: 0px;
@@ -10,7 +27,6 @@
     width: 100%;
     margin: auto;
     color: whitesmoke;
-
     .img--bgprofile {
       position: fixed;
       top: 0px;
@@ -138,7 +154,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-family: 'Deja-vu', sans-serif;
+      font-family: 'DejaVu Sans', sans-serif;
       font-size: 0.9rem;
       background: #242424;
       border-radius: 7px;

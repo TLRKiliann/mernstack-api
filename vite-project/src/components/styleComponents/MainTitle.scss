@@ -1,14 +1,18 @@
+/*
+darkorchid
+lightgrey
+*/
+
 .maintitle {
   width: 40%;
-  height: 150px;
+  min-height: 150px;
   padding-top: 60px;
   padding-bottom: 60px;
   margin: auto;
   margin-top: 120px;
   text-align: center;
   font-family: "Acme", sans-serif;
-  /*font-family: "DejaVu Sans", sans-serif;*/
-  color: lightgrey;
+
   text-shadow: -3px 3px 2px darkorchid,
     -4px 4px 3px #000;
   background-color: rgba(45, 85, 255, 0.4);
@@ -17,9 +21,9 @@
 
   .div--bamimg {
     position: absolute;
-    width: 44%;
-    height: 280px;
-    margin-top: -64px;
+    width: 42%;
+    height: 270px;
+    margin-top: -54px;
     margin-left: -20px;
     opacity: 0.4;
 
@@ -33,31 +37,36 @@
     margin: auto;
     margin-top: -30px;
     margin-bottom: 0px;
-    font-size: 5.2rem;
+
+    font-size: 5.4rem;
     text-shadow: -3px 3px 2px darkorchid,
       -10px 14px 7px #000;
-    color: pink;
     transform: rotateZ(-10deg);
+    color: pink;
   }
 
   .main--h2 {
     margin: auto;
+    margin-top: -15px;
     margin-bottom: 15px;
+    margin-left: 40px;
     font-size: 3.4rem;
     text-shadow: -3px 3px 2px orangered,
       -10px 14px 5px #000;
-    color: orange;
     transform: rotateZ(-10deg);
+    color: orange;
   }
 
   .main--h4 {
     margin: auto;
+    margin-top: -10px;
     margin-bottom: 10px;
+    margin-left: 60px;
     font-size: 1.1rem;
     text-shadow: -3px 3px 2px darkorchid,
       -10px 10px 3px #000;
-    color: lightgrey;
     transform: rotateZ(-10deg);
+    color: pink;
   }
 }
 

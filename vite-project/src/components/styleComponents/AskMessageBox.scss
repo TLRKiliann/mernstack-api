@@ -1,4 +1,10 @@
-/*Invitation message*/
+/*Invitation message
+purple
+orange
+#ae3c52
+"Junction", sans-serif;
+*/
+
 .boolean--result {
   position: absolute;
   top: 0px;
@@ -62,10 +68,8 @@
     .btn--invitation {
       margin-top: 20px;
       padding: 5px 20px;
-
       font-size: 1.0rem;
       font-weight: bold;
-
       background: linear-gradient(180deg,
         orange, orangered, #ae3c52);
       border: 1px solid purple;

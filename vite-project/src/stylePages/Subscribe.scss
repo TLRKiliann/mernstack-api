@@ -3,6 +3,11 @@ $orange: #ffa500;
 $lightgreen: #90ee90;
 $purple: #800080;
 $dodgerblue: #1e90ff;
+/*"DejaVu Sans", sans-serif
+"Acme", sans-serif;
+20px
+auto
+*/
 
 .subscribe {
   position: absolute;
@@ -22,8 +27,9 @@ $dodgerblue: #1e90ff;
     flex-direction: column;
 
     background-color: rgba(45, 85, 255, 0.4);
-    box-shadow: 0px 0px 3px orange;
-    border-radius: 15px;
+    border: 3mm groove rgba(185, 45, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px slategrey;
 
     .div--subscribe {
       width: 300px;
@@ -38,7 +44,7 @@ $dodgerblue: #1e90ff;
         font-family: "Acme", sans-serif;
         font-size: 2.4rem;
         color: whitesmoke;
-        text-shadow: 2px 2px 1px purple,
+        text-shadow: 2px 2px 1px $purple,
         4px 3px 2px #242424;
       }
 
@@ -50,9 +56,8 @@ $dodgerblue: #1e90ff;
       }
 
       .lbl--sub {
-        font-family: 'Junction';
+        font-family: 'Junction', sans-serif;
         font-size: 1.2rem;
-        font-weight: bold;
         
         &::placeholder {
           color: lightgrey;
@@ -64,15 +69,13 @@ $dodgerblue: #1e90ff;
         margin-top: 5px;
         margin-bottom: 10px;
         padding: 5px 5px;
-
-        font-family: 'Junction';
+        font-family: 'DejaVu Sans', sans-serif;
         font-size: 1.0rem;
         font-weight: bold;
         background-color: rgba(85, 45, 255, 0.4);
-        border: 1mm inset rgba(150, 45, 255, 0.8);
-
+        border: 1mm inset rgba(150, 85, 255, 0.6);
         &::placeholder {
-          color: lightgrey;
+          color: #999;
         }
       }
 
@@ -84,17 +87,13 @@ $dodgerblue: #1e90ff;
         display: flex;
         flex-direction: row;
         align-items: center;
-
         .select--sub {
           width: 100px;
           margin: 15px 0px;
           margin-left: 10px;
           padding: 5px 10px;
-
-          font-family: 'Junction';
+          font-family: 'DejaVu Sans', sans-serif;
           font-size: 0.9rem;
-          font-weight: bold;
-
           background-color: rgba(85, 45, 255, 0.4);
           border: 1mm outset rgba(150, 45, 255, 0.8);
           color: whitesmoke;

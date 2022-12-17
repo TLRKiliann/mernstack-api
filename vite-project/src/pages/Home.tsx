@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   const users = usePersonnalHook()
   const computers = useComputerHook()
 
-  const textHeader = "Login and Chat";
+  const textHeader = "Login and Chat !";
   const secondTextHeader = "(Only for Stack-Society Members)";
 
   const [isOpenRight, setIsOpenRight] = useState<boolean>(false)

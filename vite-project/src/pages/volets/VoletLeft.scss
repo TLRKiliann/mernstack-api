@@ -1,4 +1,10 @@
-/*Left volet*/
+/*Left volet
+whitesmoke
+lightgreen
+100vh
+'Junction', sans-serif;
+*/
+
 .volet--L {
   position: absolute;
   top: 0px;
@@ -82,7 +88,7 @@
   .search--input {
     margin: auto;
     padding: 3px 5px;
-    font-family: 'Junction';
+    font-family: 'Junction', sans-serif;
     font-size: 1.0rem;
     color: lightblue;
     background-color: rgba(85, 45, 255, 0.4);
@@ -123,7 +129,7 @@
     margin-top: 20px;
     margin-right: 20px;
     margin-left: 20px;
-    font-family: "Junction";
+    font-family: "Junction", sans-serif;
     font-size: 18px;
     font-weight: bold;
   }
@@ -142,14 +148,13 @@
   padding-bottom: 10px;
   display: flex;
   align-items: center;
-
   border-bottom: 1px dashed whitesmoke;
 }
 
 .link--tagvoletl {
   margin: 2px 0px;
   text-decoration: none;
-  font-family: 'Junction';
+  font-family: 'Junction', sans-serif;
   font-size: 1.0rem;
   color: whitesmoke;
 
@@ -202,7 +207,6 @@
   background: transparent;
   border: 1mm outset rgba(150, 45, 255, 0.4);
   border-radius: 50% 50%;
-
   color: whitesmoke;
   &:hover {
     cursor: pointer;

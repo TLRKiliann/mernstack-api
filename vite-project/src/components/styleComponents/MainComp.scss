@@ -1,56 +1,53 @@
+/*
+ligtblue
+"Acme", sans-serif;
+*/
+
 .master--maincomp {
   width: 40%;
   height: auto;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
-
   .bg--colormaincomp {
     margin: auto;
     margin-top: 40px;
     padding-bottom: 20px;
-
     background-color: rgba(45, 85, 255, 0.4);
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 15px;
-  }
-
-  .h2--maincomp {
-    text-align: center;
-    font-family: "Junction", sans-serif;
-    color: lightgrey;
-    text-shadow: 3px 3px 2px darkorchid,
-      4px 4px 3px #000;
-
-    .span--lengthuser {
-      color: orange;
-      text-shadow: 3px 3px 2px #242424;
+    .h2--maincomp {
+      text-align: center;
+      font-family: "Acme", sans-serif;
+      font-size: 2.4rem;
+      text-shadow: 2px 2px 5px purple;
+      color: sandybrown;
+      .span--lengthuser {
+        text-shadow: 2px 2px 5px purple;
+        color: pink;
+      }
+    }
+    .h3--maincomp {
+      text-align: center;
+      font-family: "Acme", sans-serif;
+      font-size: 1.8rem;
+      text-shadow: 2px 1px 1px purple;
+      color: sandybrown;
     }
   }
-
-  .h3--maincomp {
-    text-align: center;
-    font-family: "Junction", sans-serif;
-    text-shadow: 2px 1px 1px purple; 
-    color: lightgrey;
-  }
-
   .div--connection {
     width: 80%;
     padding: 5px 5px;
     margin: 10px auto;
     display: flex;
     align-items: center;
-    
     font-family: "DejaVu Sans", sans-serif;
     font-size: 1.1rem;
     color: lightblue;
-
     background-color: rgba(85, 45, 255, 0.4);
     border: 1mm outset rgba(150, 45, 255, 0.4);
     outline: none;
     border-radius: 7px;
-
     .img--connector {
       margin-right: 10px;
       margin-left: 10px;
@@ -58,7 +55,7 @@
       object-fit: cover;
     }
     .data--maincomp {
-      font-family: Junction, sans-serif;
+      font-family: "Junction", sans-serif;
       font-size: 1.2rem;
       color: lightgreen;
     }
@@ -72,28 +69,25 @@
     margin: auto;
     margin-top: 80px;
     margin-bottom: 40px;
-
     .bg--colormaincomp {
-
       padding-bottom: 5px;
-
-    }
-    .h2--maincomp {
-      font-size: 1.4rem;
-    }
-    
+      .h2--maincomp {
+        font-size: 1.6rem;
+      }
+      .h3--maincomp {
+        font-size: 1.4rem;
+      }
+    }  
     .div--connection {
       width: auto;
+      width: 80%;
       font-size: 0.9rem;
-
       .img--connector {
         margin-right: 3px;
         margin-left: 3px;
       }
       .data--maincomp {
-
         font-size: 0.9rem;
-
       }
     }
   }

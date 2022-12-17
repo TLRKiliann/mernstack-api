@@ -1,5 +1,11 @@
 $orange: #ffa500;
 $purple: #800080;
+/*
+#000
+whitesmoke
+rgba(45, 85, 255, 0.6);
+'Junction', sans-serif;
+*/
 
 .response--private {
   position: absolute;
@@ -21,7 +27,7 @@ $purple: #800080;
 
     .title--response {
       text-align: center;
-      font-family: 'Junction';
+      font-family: 'Junction', sans-serif;
       color: whitesmoke;
       text-shadow: 2px 1px 1px $purple,
       4px 2px 2px #000,
@@ -34,7 +40,7 @@ $purple: #800080;
 
     .p--response {
       text-align: center;
-      font-family: 'Junction';
+      font-family: 'Junction', sans-serif;
       font-size: 1.2rem;
       font-weight: bold;
       color: whitesmoke;

@@ -1,41 +1,40 @@
+/*
+whitesmoke
+lightgreen
+slategray
+orange
+#88ec88
+'Junction', sans-serif;
+*/
 .terminal {
   width: 90%;
   height: 90%;
   margin: auto;
-  box-shadow: 0px 0px 4px slategray;
-  border: 1px solid slategray;
-  border-radius: 15px 15px 0px 0px;
-
+  border-radius: 0px 0px 15px 15px;
   .div--terminal {
     width: 100%;
-    height: calc(100% - 40px);
+    height: calc(100% - 60px);
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: rgba(10,10,100, 0.95);
-
-    border-radius: 15px 15px 0px 0px;
+    background: rgba(10, 10, 100, 0.6);
+    border-radius: 15px 0px 0px 0px;
     overflow: scroll;
     overflow-x: hidden;
-
-
-    /*(102, 51, 153);, 1 
-    rgba(75,0,130, 0.9)*/
-
     .intro--terminal {
       width: auto;
-      
-      height: 50px;
-      margin-left: 10px;
-      margin-right: 10px;
       display: flex;
       align-items: center;
-      font-family: "Junction", sans-serif;
-      font-weight: bold;
-      color: orange;
       border-bottom: 1px dashed slategray;
+      color: orange;
+      .intro--terminalh3 {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        font-family: "Junction", sans-serif;
+        font-size: 1.2rem;
+      }
     }
-
     .map--msg {
       width: auto;
       height: auto;
@@ -45,17 +44,15 @@
       padding-left: 10px;
       display: flex;
       flex-direction: column;
-
       .para--chat {
         margin-top: 0px;
         margin-bottom: 0px;
         text-align: justify;
         text-justify: inter-word;
-        font-family: "DejaVu Sans", sans-serif;
+        font-family: "Junction", sans-serif;
         font-size: 0.9rem;
-        color: lightgreen;
+        color: #88ec88;
       }
-
       .legend--date {
         margin-top: 0px;
         font-size: 0.7rem;
@@ -65,58 +62,61 @@
   }
   .subterminal {
     width: 100%;
-    height: 40px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: transparent;
-    border-top: 1px solid slategray;
-
+    border: 1px solid lightgrey;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 0px 7px lightgrey;
     .div--psubterminal {
       position: absolute;
-      margin-top: 0px;
-      margin-left: 0px;
-
+      margin-left: 10px;
       .arrow {
         margin-left: 10px;
-        color: lightgreen;
+        color: #88ec88;
       }
     }
-
     .input--message {
-      width: 80%;
+      width: 77%;
+      margin-left: 10px;
       padding: 8px 45px;
+
       font-size: 1.0rem;
-      background-color: rgba(10,10,100, 0.6);
+      background: rgba(10,10,100, 0.4);
       border: none;
       outline: none;
       box-shadow: 0px 0px 7px whitesmoke;
-      color: lightgreen;
+      border-radius: 15px;
+      color: #88ec88;
     }
-
     .btn--user {
-      padding: 18px 10px;
-      margin: auto 20px;
-      margin-top: -6px;
+      padding: 20px 10px;
+      margin: auto 2%;
+      font-family: "DejaVu Sans", sans-serif;
+      font-size: 0.9rem;
+      font-weight: bold;
       background: rgba(10, 10, 100, 0.4);
       border: none;
       outline: none;
       border-radius: 50%;
-      box-shadow: 0px 0px 4px whitesmoke;
-      font-weight: bold;
+      box-shadow: 0px 0px 7px whitesmoke;
       color: #88ec88;
       z-index: 4;
-
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.15);
         background: rgba(10, 10, 100, 0.2);
-        border: 1px solid whitesmoke;
+        box-shadow: 0px 0px 0px lightgreen;
         color: orange;
         cursor: pointer;
       }
       &:active {
-        transform: scale(1.1);
-        color: yellow;
+        transform: scale(0.9);
+        background: rgba(10, 10, 100, 0.4);
+        border: none;
+        box-shadow: 0px 0px 0px whitesmoke;
+        color: lightgreen;
       }
     }
   }

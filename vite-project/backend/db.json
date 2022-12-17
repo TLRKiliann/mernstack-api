@@ -15,7 +15,7 @@
       "signalRecieve": false,
       "sentMsg": false,
       "messagebox": "",
-      "returnConfirm": false
+      "returnConfirm": true
     },
     {
       "id": 2,
@@ -250,9 +250,9 @@
       "mainroom": "RAM",
       "room": "RAM-4GB-8GB-16GB",
       "isConnected": true,
-      "signalRecieve": true,
+      "signalRecieve": false,
       "sentMsg": false,
-      "messagebox": "You've received msg from Celestine for Private chat !",
+      "messagebox": "",
       "returnConfirm": true
     }
   ]

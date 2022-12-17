@@ -1,3 +1,10 @@
+/*
+purple
+orange
+transparent
+90%
+*/
+
 .nextcomp--room {
   position: absolute;
   top: 0px;
@@ -7,108 +14,144 @@
   background: linear-gradient(160deg, purple,
     orange);
   z-index: 1;
-}
 
-.div--animationroomStyle {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  width: 85%;
-  margin: auto;
-  margin-top: 25%;
-  display: flex;
-  opacity: 0;
-
-  animation-name: rotation--bg;
-  animation-delay: 0s;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-  z-index: 2;
-
-  .rotation--roomstyle {
+  .div--animationroomStyle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 85%;
     margin: auto;
-    font-family: "Junction", sans-serif;
-    font-size: 2rem;
-    background: linear-gradient(to right, #f32170,
-    #ff6b08, #cf23cf, #eedd44);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    opacity: 0;
-
-    animation-name: rotation--room;
-    animation-delay: 0s;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-direction: linear;
-  }
-}
-
-@keyframes rotation--bg {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes rotation--room {
-  0% {
-    transform: rotate3d(2, -2, 1, 0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate3d(-3, 2, -3, 360deg);
-    opacity: 1;
-  }
-}
-
-.title--room {
-  width: 90%;
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: 20px;
-  color: orange;
-  text-shadow: 1px 1px 2px white,
-    3px 3px 2px orangered;
-}
-
-.div--terminaluser {
-  width: 90%;
-  height: 75vh;
-  margin: auto;
-  display: flex;
-  flex-direction: inline-block;
-
-  background: transparent;
-  border: 1px solid slategray;
-  box-shadow: 0px 0px 4px slategray;
-  border-radius: 15px 15px 15px 15px;
-
-  .section--terminal {
-    width: 80%;
-    height: 100%;
+    margin-top: 25%;
     display: flex;
+    opacity: 0;
+
+    animation-name: rotation--bg;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    z-index: 2;
+
+    .rotation--roomstyle {
+      margin: auto;
+      font-family: "Junction", sans-serif;
+      font-size: 2rem;
+      background: linear-gradient(to right, #f32170,
+      #ff6b08, #cf23cf, #eedd44);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      opacity: 0;
+      transform: scale(0);
+      overflow: hidden;
+
+      animation-name: rotation--room;
+      animation-delay: 0s;
+      animation-duration: 4s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+      animation-direction: linear;
+    }
   }
 
-  .div--worldbg {
-    position: fixed;
-    margin: auto;
+  @keyframes rotation--bg {
+    0% {
+      transform: rotate3d(0,0,0, 0deg);
+      opacity: 1;
+    }
+    5% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+      transform: rotate3d(-2, -2, -2, 720deg);
+    }
+    80% {
+      transform: rotate3d(-3, 2, -3, 720deg);
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotation--room {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    5% {
+      transform: scale(0.1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(2.0);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(2.5);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1.8);
+      opacity: 1;
+    }
+    80% {
+      transform: scale(2.5);
+      opacity: 1;
+    }
+    99% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  .title--room {
     width: 90%;
-    height: 75%;
-    border-radius: 15px 15px 15px 15px;
-    z-index: -1;
+    margin: auto;
+    margin-top: 130px;
+    margin-bottom: 30px;
+    color: orange;
+    text-shadow: 1px 1px 2px white,
+      3px 3px 2px orangered;
   }
 
-  .img--bgterminal {
-    border-radius: 15px 15px 15px 15px;
+  .div--terminaluser {
+    width: 90%;
+    height: 75vh;
+    margin: auto;
+    display: flex;
+    flex-direction: inline-block;
+
+    background: transparent;
+    border: none;
+    box-shadow: 0px 0px 14px lightgrey;
+    border-radius: 15px 0px 0px 15px;
+
+    .section--terminal {
+      width: 80%;
+      height: 100%;
+      display: flex;
+    }
+
+    .div--worldbg {
+      position: fixed;
+      margin: auto;
+      width: 90%;
+      height: 75%;
+      background: linear-gradient(160deg, purple, orange);
+      border-radius: 15px 0px 0px 15px;
+      z-index: -1;
+    }
+
+    .img--bgterminal {
+      opacity: 0.2;
+      border-radius: 15px 0px 0px 15px;
+    }
   }
 }

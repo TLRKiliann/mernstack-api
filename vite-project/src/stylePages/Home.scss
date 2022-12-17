@@ -1,54 +1,92 @@
+/*"Acme", sans-serif;
+absolute
+slategray
+orange
+lightgreen
+*/
+
 .div--home {
   position: absolute;
   top: 0px;
   right: 0px;
   left: 0px;
-  background: radial-gradient(orange, purple);
+  background: radial-gradient(900px at 50% 50%, 
+    orange, purple);
 
   .wallIntro {
     position: absolute;
     top: 0px;
     right: 0px;
     left: 0px;
-    min-height: 100vh;
+    min-height: 100%;
     background-color: #161616;
     overflow: hidden;
     opacity: 0;
 
     animation-name: wall;
     animation-delay: 0s;
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-timing-function: ease;
   }
-
   .wallIntro--h1 {
     margin-top: 25%;
-    padding: 20px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
-    font-family: "Junction", sans-serif;
-    font-size: 3rem;
-    background-color: #242424;
-    border-top: 1px solid slategray;
-    border-bottom: 1px solid slategray;
-    box-shadow: 0px 0px 10px slategray;
-    color: whitesmoke;
+    font-family: "Acme", sans-serif;
+    font-size: 9rem;
+    text-shadow: 5px 3px 1px orangered,
+      8px 5px 10px whitesmoke;
+    color: sandybrown;
+
+    animation-name: main--titleintro;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-direction: linear;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes main--titleintro {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+    z-index: 22;
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.4);
+    z-index: 22;
+  }
+  45% {
+    opacity: 1;
+    transform: scale(0.8);
+    z-index: 22;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+    z-index: 22;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    z-index: 22;
   }
 }
 
 @keyframes wall {
   0% {
     opacity: 1;
-    overflow: hidden;
     z-index: 22;
   }
   70% {
     opacity: 1;
-    overflow: hidden;
     z-index: 22;
   }
   100% {
     opacity: 0;
-    overflow: hidden;
     z-index: 22;
   }
 }
@@ -68,16 +106,14 @@
 
 .div--voletsLeft {
   position: absolute;
-  margin-top: 120px;
+  margin-top: 12%;
   margin-left: 7%;
   border-radius: 15px;
   z-index: 3;
-
   .btn--voletLeft {
     padding: 20px 40px;
     font-family: "Acme", sans-serif;
     font-size: 1.4rem;
-    
     background: linear-gradient(30deg, 
       rgba(45, 85, 255, 0.4), #7e53ae,
       rgba(45, 85, 255, 0.4));
@@ -103,7 +139,7 @@
 .div--voletsRight {
   position: absolute;
   right: 0px;
-  margin-top: 120px;
+  margin-top: 12%;
   margin-right: 7%;
   border-radius: 15px;
   z-index: 3;
@@ -218,7 +254,6 @@
   }
 }
 */
-
 @media screen and (max-width: 800px) {
   .img--home {
     width: 600px;

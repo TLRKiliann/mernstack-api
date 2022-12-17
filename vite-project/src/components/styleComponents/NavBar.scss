@@ -8,6 +8,9 @@ $lightgreen: #90ee90;
 $slategray: #708090;
 $purple: #800080;
 $orange: #ffa500;
+/*
+whitesmoke
+*/
 
 .div--headernav {
   position: absolute;
@@ -20,8 +23,8 @@ $orange: #ffa500;
   display: flex;
   flex-direction: column;
   background-color: $purple;
-  border-bottom: 1px solid purple;
-  box-shadow: 0px 0px 7px orange;
+  border-bottom: 1px solid $purple;
+  box-shadow: 0px 0px 7px $orange;
   z-index: 2;
   .navbar--nav {
     width: 100%;
@@ -51,11 +54,11 @@ $orange: #ffa500;
       justify-content: flex-end;
       .link--tagnav {
         text-decoration: none;
-        text-shadow: 1px 1px 0px black;
+        text-shadow: 1px 1px 0px #000;
         color: whitesmoke;
         &:hover {
          color: $orange;
-         text-shadow: 1px 1px 0px purple;
+         text-shadow: 1px 1px 0px $purple;
         }
       }
     }
@@ -73,7 +76,6 @@ $orange: #ffa500;
   font-weight: bold;
 }
 
-/*right side of navbar*/
 .div--userloginnavbar {
   width: auto;
   height: 50px;
@@ -83,7 +85,7 @@ $orange: #ffa500;
   flex-direction: row;
   background: linear-gradient(180deg,
     $purple, $orange);
-  border: 1mm inset purple;
+  border: 1mm inset $purple;
   border-radius: 15px;
   .div--userplace {
     margin-left: 10px;
@@ -109,7 +111,6 @@ $orange: #ffa500;
     }
   }
 
-  /*login item*/
   .div--login {
     margin-right: 10px;
     margin-left: 10px;
@@ -139,6 +140,7 @@ $orange: #ffa500;
       }
     }
   }
+  
   .link--logout {
     padding: 5px 10px;
     display: flex;

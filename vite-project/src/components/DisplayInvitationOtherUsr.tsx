@@ -11,7 +11,7 @@ type Form = {
 
 interface DisplayInvitationOtherUsrProps {
   invited: string
-  initialSender: Array<any>
+  initialSender: string
   form: object
   isCheckInvite: boolean
   handleSwitchBox: () => void
@@ -33,11 +33,9 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
           You've recieved invitation from
         </p>
 
-        {props.initialSender?.map((s) => (
-          <span key={s.id} className="span--h4">
-            {s.firstName}.
-          </span>
-        ))}
+        <span className="span--h4">
+          {props.initialSender}.
+        </span>
 
       </h4>
 
