@@ -6,7 +6,7 @@ with MySQL db in LAN
 
 - front : react-router-dom v6 with security access
 
-- backend: express - cors - dotenv - mysql
+- backend: express - cors - dotenv - server-json
 
 ---
 
