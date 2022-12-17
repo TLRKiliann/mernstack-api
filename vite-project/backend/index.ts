@@ -1,7 +1,10 @@
 import express, {Request, Response, NextFunction} from 'express';
-const cors = require('cors');
-const db_users = require('db.json');
+import mariadb from 'mariadb';
 import dotenv from 'dotenv';
+
+const cors = require('cors');
+//const db_users = require('db.json');
+//FAST_REFRESH=false; (.env)
 
 const PORT = 5000;
 const date = new Date();
@@ -13,15 +16,74 @@ console.log(users)
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+
 dotenv.config();
 
+app.use(function(req: Request, res: Response, next: NextFunction) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.header('Content-Type', 'application/json');
+  next();
+});
+
+const pool = mariadb.createPool({
+  host: process.env.DB_HOST,
+  //port: process.env.DB_PORT,
+  port: 3306,
+  user: process.env.DB_USER,
+  password: process.env.DB_PWD,
+  database: process.env.DB_DATABASE
+})
+
+console.log("Total connections: ", pool.totalConnections());
+console.log("Active connections: ", pool.activeConnections());
+console.log("Idle connections: ", pool.idleConnections());
+
+app.post('/api/createMembers', async (req: Request, res: Response) => {
+  const id: number = req.body.id;
+  const firstName: string = req.body.firstName;
+  const lastName: string = req.body.lastName;
+  const age: number = req.body.age;
+  const email: string = req.body.email;
+  const location: string = req.body.location;
+  const gender: string = rquest.body.gender;
+  const mainroom: string = req.body.mainroom;
+  const room: string = req.body.room;
+  const isConnected: boolean = req.body.isConnected;
+  const signalRecieve: boolean = req.body.signalRecieve;
+  const sentMsg: boolean = req.body.sentMsg;
+  const messagebox: string = req.body.messagebox;
+  const returnConfirm: boolean = req.body.returnConfirm;
+  console.log("ALL data", id, firstName, lastName, age, email, location,
+    gender, mainroom, room, isConnected, signalRecieve, sentMsg, messagebox,
+    returnConfirm)
+  
+  try {
+    const result = await pool.query('insert into members (id, firstName,\
+      lastName, age, email, location) values (?,?,?,?,?,?)',
+      [id, firstName, lastName, age, email, location, gender, mainroom, room,
+        isConnected, signalRecieve, sentMsg, messagebox, returnConfirm]);
+    res.status(201).json("New Member Was Created !");
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
+app.listen(PORT, () => {
+  console.log(`[+] Server is running on port ${PORT} !`)
+});
+
+
+/*
 //Simple login get - post
 app.get('/login', (req:Request, res:Response, next:NextFunction) => {
   res.json(users)
   next()
 })
 
-app.post('/login', (req:Request, res:Response, next:NextFunction) => {
+app.post('/login', (req:Request, res:Response, next: NextFunction) => {
   const user = { username: req.body.username, password: req.body.password }
   users.push(user)
   console.log(users)
@@ -88,9 +150,8 @@ app.listen(PORT, () => {
   console.log(`[+] Server is running on port ${PORT} !`)
 });
 
-/*
 //update room - username - connection
-/*app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
+app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
   res.json(users)
   next()
 })
@@ -103,4 +164,8 @@ app.post('/login', (req:Request, res:Response, next:NextFunction) => {
   res.status(201).send()
   next()
 })
+
 */
+
+
+
