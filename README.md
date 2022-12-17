@@ -6,7 +6,11 @@ with mariadb in LAN
 
 - front : react-router-dom v6 with security access
 
+<<<<<<< HEAD
 - backend: express - cors - dotenv - mariadb
+=======
+- backend: express - cors - dotenv - server-json
+>>>>>>> 35c9e3c98dcd226613ae5767c9856134c0012125
 
 ---
 
