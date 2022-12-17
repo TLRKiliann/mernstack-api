@@ -34,20 +34,25 @@ const pool = mariadb.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PWD,
   database: process.env.DB_DATABASE
-})
+});
+
 
 console.log("Total connections: ", pool.totalConnections());
 console.log("Active connections: ", pool.activeConnections());
 console.log("Idle connections: ", pool.idleConnections());
 
-app.post('/api/createMembers', async (req: Request, res: Response) => {
+
+app.post('/api/createMembers', async (req: Request, res: Response, next: NextFunction) => {
   const id: number = req.body.id;
   const firstName: string = req.body.firstName;
   const lastName: string = req.body.lastName;
+
+  const password: any = req.body.lastName;
+
   const age: number = req.body.age;
   const email: string = req.body.email;
   const location: string = req.body.location;
-  const gender: string = rquest.body.gender;
+  const gender: string = req.body.gender;
   const mainroom: string = req.body.mainroom;
   const room: string = req.body.room;
   const isConnected: boolean = req.body.isConnected;

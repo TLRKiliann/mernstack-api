@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { UserType } from '../models/usertype'
 import { useNavigate } from 'react-router-dom'
 import '../stylePages/Subscribe.scss'
 
@@ -10,8 +11,8 @@ type Field = {
 }
 
 type Form = {
-  firstname: Field
-  lastname: Field
+  firstName: Field
+  lastName: Field
   password: Field
   age: Field
   email: Field
@@ -35,8 +36,8 @@ const Subscribe: React.FC = () => {
   const Navigate = useNavigate()
 
   const [form, setForm] = useState<Form>({
-    firstname: {value: ''},
-    lastname: {value: ''},
+    firstName: {value: ''},
+    lastName: {value: ''},
     password: {value: ''},
     age: {value: 20},
     email: {value: ''},
@@ -44,6 +45,8 @@ const Subscribe: React.FC = () => {
     gender: {value: 'Male'}
   })
 
+  //const datas = usePersonnalHook()
+  const [datas, setDatas] = useState<Array<UserType>>([])
   const [message, setMessage] = useState<string>("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -81,25 +84,51 @@ const Subscribe: React.FC = () => {
     return newForm.firstname.isValid && newForm.password.isValid;
   }
 
+  const generateId = () => {
+    const maxId = datas.length > 0
+      ? Math.max(...datas.map(d => d.id))
+      : 0
+    return maxId + 1;
+  };
+
   const handleValidateSub = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const isFormValid = validateFormSub();
     if (isFormValid) {
       setMessage("👉  Registration en cours ...")
-      Navigate('/login')
+
+      const newMember = {
+        id: generateId(),
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        
+        password: form.password.value,
+
+        age: form.age.value,
+        email: form.email.value,
+        location: form.location.value,
+        gender: form.gender.value,
+        mainroom: "",
+        room: "",
+        isConnected: false,
+        signalRecieve: false,
+        sentMsg: false,
+        messagebox "",
+        returnConfirm: false
+      }
       
-      /*AxiosPostService
-        .subscribe(form.firstname.value,
-          form.lastname.value, form.password.value,
-          form.age.value, form.email.value,
-          form.location.value, form.gender.value)
-        .then(initialValue) {
-          if (!initialValue) {
-            setMessage("Non enregistré dans la db.")
-            return;
-          }
-        Navigate('/login')
-        } else provisoire*/
+      console.log(newMember, "newMember")
+
+      serviceRouting
+        .createMember(newMember)
+        .then(initialData => {
+          setDatas(datas.concat(newMember))
+        })
+        .catch((err) => {
+          console.log("Error during creation of new Member !")
+          setDatas([])
+        })
+      Navigate('/login')
     } else {
       setMessage("something went wrong")
     }
@@ -127,16 +156,16 @@ const Subscribe: React.FC = () => {
           <input
             type="text"
             name="firstname"
-            value={form.firstname.value}
+            value={form.firstName.value}
             onChange={(e) => handleInputChange(e)}
             placeholder="firstname"
             className="input--sub"
             required
           />
 
-          {form.firstname.error && 
+          {form.firstName.error && 
             <div 
-              className="firstname--error">{form.firstname.error}
+              className="firstname--error">{form.firstName.error}
             </div>
           }
 
@@ -146,7 +175,7 @@ const Subscribe: React.FC = () => {
           <input
             type="text"
             name="lastname"
-            value={form.lastname.value}
+            value={form.lastName.value}
             onChange={(e) => handleInputChange(e)}
             placeholder="lastname"
             className="input--sub"

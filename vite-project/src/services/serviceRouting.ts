@@ -6,15 +6,32 @@ type UserTypeProps = {
 }
 
 //server-json conf
-const getUrl: string = 'http://localhost:3001/db_users'
+/*const getUrl: string = 'http://localhost:3001/db_users'
 const updateNameRoom: string = 'http://localhost:3001/db_users'
 const putInvite: string = 'http://localhost:3001/db_users'
 const putLastConfirm: string = 'http://localhost:3001/db_users'
 const putChgUsrRetConf: string = 'http://localhost:3001/db_users'
+*/
 
-/*real server
-const getUrl: string = '/api/getAllMembers';*/
+//real server
+/*const getUrl: string = '/api/getAllMembers';*/
 //const updateNameRoom: string = '/api/updateRoom';
+const postNewMember: string = "api/createMembers";
+
+
+//Create & POST new Member
+const createMember = (newMember: UserTypeProps) => {
+  try {
+    const req = app.post<any>(postNewMember, newMember)
+    return req.then((res: any) => res.data)
+  } catch (err: any) {
+    console.log("Error response POST (create new member)")
+    console.log("erd", err.res.data);
+    console.log("ers", err.res.status);
+    console.log("erh", err.res.headers);
+    throw err;
+  }
+}
 
 //GET all members of chat
 const getAllMembers = async () => {
@@ -119,6 +136,7 @@ const postNewUser = async (user: string) => {
 };*/
 
 const functionToCall = {
+  createMember,
   getAllMembers,
   updateRoomName,
   putInvitation,
