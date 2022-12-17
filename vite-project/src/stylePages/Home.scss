@@ -22,7 +22,7 @@ lightgreen
     background-color: #161616;
     overflow: hidden;
     opacity: 0;
-    z-index: 22;
+
     animation-name: wall;
     animation-delay: 0s;
     animation-duration: 3s;
@@ -52,34 +52,42 @@ lightgreen
   0% {
     opacity: 1;
     transform: scale(0);
+    z-index: 22;
   }
   40% {
     opacity: 1;
     transform: scale(1.4);
+    z-index: 22;
   }
   45% {
     opacity: 1;
     transform: scale(0.8);
+    z-index: 22;
   }
   50% {
     opacity: 1;
     transform: scale(1.8);
+    z-index: 22;
   }
   100% {
     opacity: 0;
     transform: scale(0);
+    z-index: 22;
   }
 }
 
 @keyframes wall {
   0% {
     opacity: 1;
+    z-index: 22;
   }
   70% {
     opacity: 1;
+    z-index: 22;
   }
   100% {
     opacity: 0;
+    z-index: 22;
   }
 }
 

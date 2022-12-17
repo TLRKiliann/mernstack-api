@@ -93,12 +93,11 @@ const ComputerRoom: React.FC = () => {
       alert("Hey, wake-up ! It's YOU !!! :D")
     } else if (catchById.isConnected === false) {
       alert(`${catchById.firstName} ${catchById.lastName} is not connected !`)
-    } else {
+    } else {    
       const timerId = setTimeout(() => {
         console.log("setTimeout 1")
         setDisplayInvitation(true)
       }, 1000)
-      console.log("après timeout")
       const customMsg = {
         id: catchById.id,
         img: catchById.img,
@@ -171,7 +170,7 @@ const ComputerRoom: React.FC = () => {
       setInitialSender("")
       setInformUsrMsg("")
     } else {
-      console.log("Confirmation is not validated...")
+      console.log("HandleTime is not validated...")
     }
   }
 
@@ -231,7 +230,7 @@ const ComputerRoom: React.FC = () => {
       console.log("handleValidInvitation confirmed")
       handleTime()
     } else {
-      console.log("not confirmed...")
+      console.log("Confirmation not confirmed...")
     }
     setDisplayConfirmInvite(false)
   }

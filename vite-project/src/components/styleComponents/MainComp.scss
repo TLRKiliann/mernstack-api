@@ -1,3 +1,8 @@
+/*
+ligtblue
+"Acme", sans-serif;
+*/
+
 .master--maincomp {
   width: 40%;
   height: auto;
@@ -15,12 +20,11 @@
       text-align: center;
       font-family: "Acme", sans-serif;
       font-size: 2.4rem;
-      color: lightgrey;
-      text-shadow: 3px 3px 2px darkorchid,
-        4px 4px 3px #000;
+      text-shadow: 2px 2px 5px purple;
+      color: sandybrown;
       .span--lengthuser {
-        color: orange;
-        text-shadow: 3px 3px 2px #242424;
+        text-shadow: 2px 2px 5px purple;
+        color: pink;
       }
     }
     .h3--maincomp {
@@ -28,7 +32,7 @@
       font-family: "Acme", sans-serif;
       font-size: 1.8rem;
       text-shadow: 2px 1px 1px purple;
-      color: lightgrey;
+      color: sandybrown;
     }
   }
   .div--connection {
