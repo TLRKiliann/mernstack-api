@@ -6,7 +6,7 @@ with MySQL db in LAN
 
 - front : react-router-dom v6 with security access
 
-- backend: express - cors - dotenv - mysql
+- backend: express - cors - dotenv - mongoose
 
 ---
 
@@ -306,4 +306,28 @@ or
 ---
 
 Coverage of moment :
+
+---
+
+MariaDB [mytable]> SHOW COLUMNS FROM members;
++---------------+------------------+------+-----+---------+-------+
+| Field         | Type             | Null | Key | Default | Extra |
++---------------+------------------+------+-----+---------+-------+
+| order_id      | int(11)          | NO   | PRI | NULL    |       |
+| img           | varchar(255)     | YES  |     | NULL    |       |
+| firstName     | varchar(255)     | YES  |     | NULL    |       |
+| lastName      | varchar(255)     | YES  |     | NULL    |       |
+| age           | int(10) unsigned | YES  |     | NULL    |       |
+| email         | varchar(255)     | YES  |     | NULL    |       |
+| location      | varchar(255)     | YES  |     | NULL    |       |
+| gender        | varchar(255)     | YES  |     | NULL    |       |
+| mainroom      | varchar(255)     | YES  |     | NULL    |       |
+| room          | varchar(255)     | YES  |     | NULL    |       |
+| isConnected   | tinyint(1)       | YES  |     | NULL    |       |
+| signalRecieve | tinyint(1)       | YES  |     | NULL    |       |
+| sentMsg       | tinyint(1)       | YES  |     | NULL    |       |
+| messagebox    | varchar(255)     | YES  |     | NULL    |       |
+| returnConfirm | tinyint(1)       | YES  |     | NULL    |       |
++---------------+------------------+------+-----+---------+-------+
+15 rows in set (0.005 sec)
 
