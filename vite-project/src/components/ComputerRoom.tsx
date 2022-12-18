@@ -113,7 +113,8 @@ const ComputerRoom: React.FC = () => {
         signalRecieve: true,
         sentMsg: catchById.sentMsg,
         messagebox: msg,
-        returnConfirm: catchById.returnConfirm
+        returnConfirm: catchById.returnConfirm,
+        password: catchById.password
       }
 
       serviceRouting
@@ -135,7 +136,8 @@ const ComputerRoom: React.FC = () => {
               signalRecieve: true,
               sentMsg: cust.sentMsg,
               messagebox: msg,
-              returnConfirm: cust.returnConfirm
+              returnConfirm: cust.returnConfirm,
+              password: catchById.password
             } : cust
           ))
         })
@@ -197,7 +199,8 @@ const ComputerRoom: React.FC = () => {
         signalRecieve: user.signalRecieve,
         sentMsg: user.sentMsg,
         messagebox: user.messagebox,
-        returnConfirm: true
+        returnConfirm: true,
+        password: user.password
       }
     
       serviceRouting
@@ -219,7 +222,8 @@ const ComputerRoom: React.FC = () => {
               signalRecieve: user.signalRecieve,
               sentMsg: user.sentMsg,
               messagebox: user.messagebox,
-              returnConfirm: true
+              returnConfirm: true,
+              password: user.password
             } : user
           ))
         })
@@ -268,7 +272,8 @@ const ComputerRoom: React.FC = () => {
       signalRecieve: catchById.signalRecieve,
       sentMsg: catchById.sentMsg,
       messagebox: catchById.messagebox,
-      returnConfirm: true
+      returnConfirm: true,
+      password: user.password
     }
 
     serviceRouting
@@ -290,7 +295,8 @@ const ComputerRoom: React.FC = () => {
             signalRecieve: user.signalRecieve,
             sentMsg: catchById.sentMsg,
             messagebox: user.messagebox,
-            returnConfirm: true
+            returnConfirm: true,
+            password: user.password
           } : user
         ))
       })
