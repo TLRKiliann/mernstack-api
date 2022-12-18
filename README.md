@@ -6,15 +6,15 @@ with mariadb in LAN
 
 - front : react-router-dom v6 with security access
 
-<<<<<<< HEAD
 - backend: express - cors - dotenv - mariadb
-=======
+
 - backend: express - cors - dotenv - server-json
 
 ---
 
 # Structure
 
+```
 src \
 | \
 |--App.tsx (react-router-dom (v6)) \
@@ -36,6 +36,7 @@ src \
 	-----> routes \
 	| \
 	-----> dbConnection.ts \
+```
 
 ---
 
