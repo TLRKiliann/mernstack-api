@@ -10,7 +10,6 @@ with mariadb in LAN
 - backend: express - cors - dotenv - mariadb
 =======
 - backend: express - cors - dotenv - server-json
->>>>>>> 35c9e3c98dcd226613ae5767c9856134c0012125
 
 ---
 
@@ -323,6 +322,7 @@ Coverage of moment :
 
 ---
 
+```
 MariaDB [mytable]> SHOW COLUMNS FROM members;
 +---------------+------------------+------+-----+---------+-------+
 | Field         | Type             | Null | Key | Default | Extra |
@@ -344,4 +344,4 @@ MariaDB [mytable]> SHOW COLUMNS FROM members;
 | returnConfirm | tinyint(1)       | YES  |     | NULL    |       |
 +---------------+------------------+------+-----+---------+-------+
 15 rows in set (0.005 sec)
-
+```
