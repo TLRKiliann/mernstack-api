@@ -15,27 +15,27 @@ with mariadb in LAN
 # Structure
 
 ```
-src \
-| \
-|--App.tsx (react-router-dom (v6)) \
-| \
-|--assets (img of project) \
-| \
-|--components \
-| \
-|--models (db will be replaced by axios) \
-| \
-|--pages (main pages for navbar & subscribe) \
-| \
-|--services (authentification) \
-| \
-|--backend \
-	| \
-	-----> index.ts \
-	| \
-	-----> routes \
-	| \
-	-----> dbConnection.ts \
+src
+|
+|--App.tsx (react-router-dom (v6))
+|
+|--assets (img of project)
+|
+|--components
+|
+|--models (db will be replaced by axios)
+|
+|--pages (main pages for navbar & subscribe)
+|
+|--services (authentification)
+|
+|--backend
+	|
+	-----> index.ts
+	|
+	-----> routes
+	|
+	-----> dbConnection.ts
 ```
 
 ---
