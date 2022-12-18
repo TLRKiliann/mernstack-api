@@ -95,12 +95,6 @@ const Login: React.FC = () => {
             Navigate('/')
           }
         });
-      /*const response = app.post(LOGIN_URL, JSON.stringify(form),
-        {
-          headers: { 'Content-Type': 'application/json' },
-          withCredentials: true
-        }
-      )*/
     }
   }
 

@@ -14,13 +14,13 @@ const putChgUsrRetConf: string = 'http://localhost:3001/db_users'
 */
 
 //real server
-/*const getUrl: string = '/api/getAllMembers';*/
+const getUrl: string = "/api/getAllMembers";
 //const updateNameRoom: string = '/api/updateRoom';
-const postNewMember: string = "api/createMembers";
+const postNewMember: string = "/api/createMembers";
 
 
 //Create & POST new Member
-const createMember = (newMember: UserTypeProps) => {
+const createMember = (newMember: any) => {
   try {
     const req = app.post<any>(postNewMember, newMember)
     return req.then((res: any) => res.data)
@@ -36,13 +36,13 @@ const createMember = (newMember: UserTypeProps) => {
 //GET all members of chat
 const getAllMembers = async () => {
   try {
-    const req = app.get<UserTypeProps>(getUrl)
+    const req = app.get<UserType>(getUrl)
     return await req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response POST:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
+    //console.error("erd", err.response.data);    // ***
+    //console.error("ers", err.response.status);  // ***
+    //console.error("erh", err.response.headers); // ***
     throw err;
   } 
 };
@@ -136,8 +136,8 @@ const postNewUser = async (user: string) => {
 };*/
 
 const functionToCall = {
-  createMember,
   getAllMembers,
+  createMember,
   updateRoomName,
   putInvitation,
   updateUsrRetConf,
@@ -145,3 +145,6 @@ const functionToCall = {
 };
 
 export default functionToCall
+
+/*
+*/

@@ -69,7 +69,8 @@ const ChatComputer: React.FC = () => {
       signalRecieve: user.signalRecieve,
       sentMsg: user.sentMsg,
       messagebox: user.messagebox,
-      returnConfirm: user.returnConfirm
+      returnConfirm: user.returnConfirm,
+      password: user.password
     }
     //console.log(addRoomUser.id, 'by id')
     if (user) {
@@ -91,7 +92,8 @@ const ChatComputer: React.FC = () => {
             signalRecieve: user.signalRecieve,
             sentMsg: user.sentMsg,
             messagebox: user.messagebox,
-            returnConfirm: user.returnConfirm
+            returnConfirm: user.returnConfirm,
+            password: user.password
             } : user
           ))
         })

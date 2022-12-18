@@ -7,7 +7,7 @@ const cors = require('cors');
 //FAST_REFRESH=false; (.env)
 
 const PORT = 5000;
-const date = new Date();
+//const date = new Date();
 const app = express();
 
 const users: any = [];
@@ -41,14 +41,21 @@ console.log("Total connections: ", pool.totalConnections());
 console.log("Active connections: ", pool.activeConnections());
 console.log("Idle connections: ", pool.idleConnections());
 
+app.get('/api/getAllMembers', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+      const result = await pool.query("select * from members");
+      res.status(200).json(result);
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
 
 app.post('/api/createMembers', async (req: Request, res: Response, next: NextFunction) => {
-  const id: number = req.body.id;
+  const order_id: number | null = req.body.id;
+  const img: string = req.body.img;
   const firstName: string = req.body.firstName;
   const lastName: string = req.body.lastName;
-
-  const password: any = req.body.lastName;
-
   const age: number = req.body.age;
   const email: string = req.body.email;
   const location: string = req.body.location;
@@ -60,15 +67,17 @@ app.post('/api/createMembers', async (req: Request, res: Response, next: NextFun
   const sentMsg: boolean = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
-  console.log("ALL data", id, firstName, lastName, age, email, location,
+  const password: string = req.body.password;
+  console.log("ALL data", order_id, img, firstName, lastName, age, email, location,
     gender, mainroom, room, isConnected, signalRecieve, sentMsg, messagebox,
-    returnConfirm)
+    returnConfirm, password)
   
   try {
-    const result = await pool.query('insert into members (id, firstName,\
-      lastName, age, email, location) values (?,?,?,?,?,?)',
-      [id, firstName, lastName, age, email, location, gender, mainroom, room,
-        isConnected, signalRecieve, sentMsg, messagebox, returnConfirm]);
+    const result = await pool.query('insert into members (order_id, img, firstName, lastName, age, email,\
+      location, gender, mainroom, room, isConnected, signalRecieve, sentMsg,\
+      messagebox, returnConfirm, password) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+      [order_id, img, firstName, lastName, age, email, location, gender, mainroom, room,
+        isConnected, signalRecieve, sentMsg, messagebox, returnConfirm, password]);
     res.status(201).json("New Member Was Created !");
   } catch (err) {
     throw err;

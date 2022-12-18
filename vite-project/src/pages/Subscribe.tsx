@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import serviceRouting from '../services/serviceRouting'
+import usePersonnalHook from '../hook/personnal.hook'
 import { UserType } from '../models/usertype'
 import { useNavigate } from 'react-router-dom'
 import '../stylePages/Subscribe.scss'
@@ -45,8 +47,8 @@ const Subscribe: React.FC = () => {
     gender: {value: 'Male'}
   })
 
-  //const datas = usePersonnalHook()
-  const [datas, setDatas] = useState<Array<UserType>>([])
+  const users = usePersonnalHook()
+  const [datas, setDatas] = useState<Array<UserType>>([users])
   const [message, setMessage] = useState<string>("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -61,13 +63,13 @@ const Subscribe: React.FC = () => {
     let newForm: Form = form;
 
     //Validate firstname
-    if (form.firstname.value.length < 3) {
+    if (form.firstName.value.length < 3) {
       const errorMsg: string = "Votre prénom doit faire minimum 3 charactères";
-      const newField: Field = {value: form.firstname.value, error: errorMsg, isValid: false};
-      newForm = {...newForm, ...{ firstname: newField }};
+      const newField: Field = {value: form.firstName.value, error: errorMsg, isValid: false};
+      newForm = {...newForm, ...{ firstName: newField }};
     } else {
-      const newField: Field = {value: form.firstname.value, error: '', isValid: true};
-      newForm = {...newForm, ...{ firstname: newField }};
+      const newField: Field = {value: form.firstName.value, error: '', isValid: true};
+      newForm = {...newForm, ...{ firstName: newField }};
     }
 
     //Validate password
@@ -81,15 +83,15 @@ const Subscribe: React.FC = () => {
     }
 
     setForm(newForm);
-    return newForm.firstname.isValid && newForm.password.isValid;
+    return newForm.firstName.isValid && newForm.password.isValid;
   }
 
-  const generateId = () => {
-    const maxId = datas.length > 0
-      ? Math.max(...datas.map(d => d.id))
+  /*const generateId = () => {
+    const maxId: number = datas.length > 0
+      ? Math.max(...datas?.map(d => d.id))
       : 0
     return maxId + 1;
-  };
+  };*/
 
   const handleValidateSub = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -98,12 +100,10 @@ const Subscribe: React.FC = () => {
       setMessage("👉  Registration en cours ...")
 
       const newMember = {
-        id: generateId(),
+        id: 1,
+        img: "http://localhost:5173/src/assets/snapface/ronaldo.png",
         firstName: form.firstName.value,
         lastName: form.lastName.value,
-        
-        password: form.password.value,
-
         age: form.age.value,
         email: form.email.value,
         location: form.location.value,
@@ -113,8 +113,9 @@ const Subscribe: React.FC = () => {
         isConnected: false,
         signalRecieve: false,
         sentMsg: false,
-        messagebox "",
-        returnConfirm: false
+        messagebox: "",
+        returnConfirm: false,
+        password: form.password.value,
       }
       
       console.log(newMember, "newMember")
@@ -122,7 +123,7 @@ const Subscribe: React.FC = () => {
       serviceRouting
         .createMember(newMember)
         .then(initialData => {
-          setDatas(datas.concat(newMember))
+          setDatas(datas.concat(initialData))
         })
         .catch((err) => {
           console.log("Error during creation of new Member !")
@@ -155,7 +156,7 @@ const Subscribe: React.FC = () => {
           </label>
           <input
             type="text"
-            name="firstname"
+            name="firstName"
             value={form.firstName.value}
             onChange={(e) => handleInputChange(e)}
             placeholder="firstname"
@@ -174,7 +175,7 @@ const Subscribe: React.FC = () => {
           </label>
           <input
             type="text"
-            name="lastname"
+            name="lastName"
             value={form.lastName.value}
             onChange={(e) => handleInputChange(e)}
             placeholder="lastname"
