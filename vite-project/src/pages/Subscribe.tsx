@@ -48,7 +48,8 @@ const Subscribe: React.FC = () => {
   })
 
   const users = usePersonnalHook()
-  const [datas, setDatas] = useState<Array<UserType>>([users])
+  const [datas, setDatas] = useState<Array<UserType>>([])
+  //console.log(datas, "datas")
   const [message, setMessage] = useState<string>("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -86,12 +87,13 @@ const Subscribe: React.FC = () => {
     return newForm.firstName.isValid && newForm.password.isValid;
   }
 
-  /*const generateId = () => {
-    const maxId: number = datas.length > 0
-      ? Math.max(...datas?.map(d => d.id))
+  const generateId = () => {
+    const maxId: number = users.length > 0
+      ? Math.max(...users?.map(d => d.order_id))
       : 0
+    console.log(maxId, "maxId")
     return maxId + 1;
-  };*/
+  };
 
   const handleValidateSub = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -100,8 +102,8 @@ const Subscribe: React.FC = () => {
       setMessage("👉  Registration en cours ...")
 
       const newMember = {
-        id: 1,
-        img: "http://localhost:5173/src/assets/snapface/ronaldo.png",
+        order_id: generateId(),
+        img: "http://localhost:5173/src/assets/snapface/jeanne_smile.jpg",
         firstName: form.firstName.value,
         lastName: form.lastName.value,
         age: form.age.value,
@@ -123,7 +125,7 @@ const Subscribe: React.FC = () => {
       serviceRouting
         .createMember(newMember)
         .then(initialData => {
-          setDatas(datas.concat(initialData))
+          setDatas(users.concat(initialData))
         })
         .catch((err) => {
           console.log("Error during creation of new Member !")
