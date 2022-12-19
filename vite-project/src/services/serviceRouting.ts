@@ -14,13 +14,25 @@ const putChgUsrRetConf: string = 'http://localhost:3001/db_users'
 */
 
 //real server
-/*const getUrl: string = '/api/getAllMembers';*/
-//const updateNameRoom: string = '/api/updateRoom';
-const postNewMember: string = "api/createMembers";
+const getUrl: string = "/api/getAllMembers";
+const postNewMember: string = "/api/createMembers";
+const updateNameRoom: string = '/api/updateRoom';
+const putInvite: string = '/api/inviteOtherUser';
+const putLastConfirm: string = '/api/confirmation';
+const putChgUsrRetConf: string = '/api/setUserConfirm';
 
+//GET all members of chat
+const getAllMembers = async () => {
+  try {
+    const req = app.get<UserType>(getUrl)
+    return await req.then((res: any) => res.data)
+  } catch (err: any) {
+    throw err;
+  } 
+}
 
-//Create & POST new Member
-const createMember = (newMember: UserTypeProps) => {
+//POST new Member
+const createMember = (newMember: any) => {
   try {
     const req = app.post<any>(postNewMember, newMember)
     return req.then((res: any) => res.data)
@@ -33,28 +45,11 @@ const createMember = (newMember: UserTypeProps) => {
   }
 }
 
-//GET all members of chat
-const getAllMembers = async () => {
-  try {
-    const req = app.get<UserTypeProps>(getUrl)
-    return await req.then((res: any) => res.data)
-  } catch (err: any) {
-    console.error("Error response POST:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-  } 
-};
-
 //PUT firstname
 const updateRoomName = (id: number, changeConfRoom: UserTypeProps) => {
   try {
     let request = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
-    return request.then((response: any) => {
-      //response
-      console.log(response.data, "-- response --")
-    })
+    return request.then((response: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -62,15 +57,13 @@ const updateRoomName = (id: number, changeConfRoom: UserTypeProps) => {
     console.error("erh", err.response.headers); // ***
     throw err;
   } 
-};
+}
 
 //PUT invitation
 const putInvitation = (id: number, dataForSigMsg: any) => {
   try {
     const req = app.put<any>(`${putInvite}/${id}`, dataForSigMsg)
-    return req.then((res: any) => {
-      console.log(res.data)
-    })
+    return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -78,7 +71,7 @@ const putInvitation = (id: number, dataForSigMsg: any) => {
     console.error("erh", err.response.headers); // ***
     throw err;
   } 
-};
+}
 
 //PUT username + returnConfirm
 const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
@@ -94,7 +87,7 @@ const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
     console.error("erh", err.response.headers); // ***
     throw err;
   } 
-};
+}
 
 //PUT returnConfirm (db)
 const updateFinalConfirm = (id: number, changeReturnConf: any) => {
@@ -110,17 +103,9 @@ const updateFinalConfirm = (id: number, changeReturnConf: any) => {
     console.error("erh", err.response.headers); // ***
     throw err;
   } 
-};
+}
 
 /*
-2 derniers echecs
---------------------------------------------------
-
-PUT /db_users/[object%20Object] 400 0.973 ms - -
-PUT /db_users/[object%20Object] 404 4.045 ms - 2
-
---------------------------------------------------
-
 //POST (add) new user
 const postNewUser = async (user: string) => {
   try {
@@ -136,8 +121,8 @@ const postNewUser = async (user: string) => {
 };*/
 
 const functionToCall = {
-  createMember,
   getAllMembers,
+  createMember,
   updateRoomName,
   putInvitation,
   updateUsrRetConf,
@@ -145,3 +130,6 @@ const functionToCall = {
 };
 
 export default functionToCall
+
+/*
+*/
