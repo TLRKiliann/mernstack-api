@@ -10,7 +10,7 @@ const PrivateMessage: React.FC = () => {
   const {otherUser, username} = useAuthLogin();
 
   const [displayName, setDisplayName] = useState<object>(otherUser)
-  console.log(displayName.id, "displayName")
+  console.log(displayName.order_id, "displayName")
   console.log(typeof(displayName), "typeof displayName")
 
   const [privateMsg, setPrivateMsg] = useState<string>("")
@@ -20,7 +20,7 @@ const PrivateMessage: React.FC = () => {
     console.log(typeof(privateMsg), 'privateMsg')
     e.preventDefault()
     if (privateMsg) {
-      setPrivateSeveralMsg([...privateSeveralMsg, {id: Date().slice(0, 24),
+      setPrivateSeveralMsg([...privateSeveralMsg, {order_id: Date().slice(0, 24),
         usr: `${username}`, msg: `${privateMsg} ✉`}])
     }
     setPrivateMsg("")
@@ -69,9 +69,9 @@ const PrivateMessage: React.FC = () => {
         <div className="private--messagebox">
           <div>
           {privateSeveralMsg?.map((data) => (
-            <div key={data.id} className="map--msg">
+            <div key={data.order_id} className="map--msg">
               <p className="para--chat">$ ▶ {data.usr} ~ {data.msg}</p>
-                <span className="legend--date">{data.id}</span>
+                <span className="legend--date">{data.order_id}</span>
             </div>
             ))
           }
