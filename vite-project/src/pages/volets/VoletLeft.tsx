@@ -27,7 +27,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
         ? `${user.firstname} ${user.lastName}`
         : null
     })
-    event.preventDefault();
+    e.preventDefault();
     if (searchUser === "") {
       setSearchUser([]);
       alert("User undefined or not existing...")
@@ -70,7 +70,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             
             <div className="result--search">
             {userFound?.map(userFirst => (
-              <p key={userFirst.firstName}
+              <p key={userFirst.id}
                 className="result--searchp">{userFirst.firstName} {userFirst.lastName} 
                 <span 
                   style={userFirst.isConnected ? {color: 'lightgreen'} 
