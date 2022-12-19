@@ -46,7 +46,7 @@ const createMember = (newMember: any) => {
 }
 
 //PUT firstname
-const updateRoomName = (id: number, changeConfRoom: UserTypeProps) => {
+const updateRoomName = (id: number, changeConfRoom: UserType) => {
   try {
     let request = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
     return request.then((response: any) => res.data)
@@ -75,11 +75,10 @@ const putInvitation = (id: number, dataForSigMsg: any) => {
 
 //PUT username + returnConfirm
 const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
+  console.log(id, "id service")
   try {
     const req = app.put<any>(`${putChgUsrRetConf}/${id}`, changeUserNameReturnConfirm)
-    return req.then((res: any) => {
-      console.log(res.data)
-    })
+    return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -91,11 +90,10 @@ const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
 
 //PUT returnConfirm (db)
 const updateFinalConfirm = (id: number, changeReturnConf: any) => {
+  console.log(id, "id")
   try {
     const req = app.put<any>(`${putLastConfirm}/${id}`, changeReturnConf)
-    return req.then((res: any) => {
-      console.log(res.data)
-    })
+    return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -104,21 +102,6 @@ const updateFinalConfirm = (id: number, changeReturnConf: any) => {
     throw err;
   } 
 }
-
-/*
-//POST (add) new user
-const postNewUser = async (user: string) => {
-  try {
-    const req = app.post<string>(postUrl)
-    return await req.then((res: string) => res.data)
-  } catch (err: any) {
-    console.error("Error response POST:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-  } 
-};*/
 
 const functionToCall = {
   getAllMembers,
@@ -130,6 +113,3 @@ const functionToCall = {
 };
 
 export default functionToCall
-
-/*
-*/
