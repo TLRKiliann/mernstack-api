@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import serviceRouting from '../../services/serviceRouting'
 import { useAuthLogin } from '../../context/AuthProvider'
-//import { db_users } from '../../models/db_users'
-//import { UserType } from '../../models/usertype'
 import './TerminalComponent.scss'
 
 
@@ -15,15 +14,17 @@ interface UsernameProps {
 
 const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
+  const dateOfTheDay = Date()
   const [message, setMessage] = useState<string>("")
-  const [messages, setMessages] = useState<Array<string>>([JSON.parse(localStorage.getItem("Messages"))])
+  const [messages, setMessages] = useState<Array<string>>(JSON.parse(localStorage.getItem("Messages")) || null)
+  console.log(messages, "messages")
 
   useEffect(() => {
-    if (message) {
-      localStorage.setItem("Messages", JSON.stringify(messages))
-    } else {
-      console.log("No message for useEffect")
-    }
+    serviceRouting
+      .getMsgTerminal()
+      .then(response => {
+        setMessages(response)
+      })
   }, [])
 
   useEffect(() => {
@@ -32,16 +33,29 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
   const { username } = useAuthLogin()
 
+
+
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (message) {
-      setMessages([...messages, {id: Date().slice(0, 24),
+      setMessages([...messages, {id: dateOfTheDay.slice(0, 24),
         usr: `${username}`, msg: `${message} ✉`}])
+
+      serviceRouting
+        .postMsgTerminal(message)
+        .then(initialData => {
+          setMessages(messages.concat(message))
+        })
+        .catch((error) => {
+          setMessages(newMsg.filter((n) => n.order_id !== id))
+          console.log("Send msg error (Terminal)!")
+        })
     } else {
       console.log("message === undefined")
     }
     setMessage("")
   }
+
 
   return(
     <section className="terminal">
@@ -52,11 +66,15 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           <h3 className="intro--terminalh3">{props.roomStyle}</h3>
         </span>
         
-        {messages?.map((data, index) => (
+        {messages?.map((m, index) => (
           <div key={index} className="map--msg">
-            <p className="para--chat">{data?.usr} {data?.msg !== undefined 
-              ? `$ ▶ ${data?.msg}` : null}</p>
-              <span className="legend--date">{data?.id}</span>
+            <p className="para--chat">{m?.usr} {m?.msg !== undefined 
+              ? `$ ▶ ${m?.msg}`
+              : null}
+            </p>
+              <span className="legend--date">
+                {m?.order_id}
+              </span>
           </div>
           ))
         }
