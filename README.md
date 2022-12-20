@@ -323,6 +323,8 @@ Coverage of moment :
 
 ---
 
+Table for all members:
+
 ```
 MariaDB [mytable]> SHOW COLUMNS FROM members;
 +---------------+------------------+------+-----+---------+-------+
@@ -345,4 +347,20 @@ MariaDB [mytable]> SHOW COLUMNS FROM members;
 | returnConfirm | tinyint(1)       | YES  |     | NULL    |       |
 +---------------+------------------+------+-----+---------+-------+
 15 rows in set (0.005 sec)
+```
+
+Table for terminal chat:
+
+```
+MariaDB [mytable]> SHOW COLUMNS FROM tableroom;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int(11)      | NO   | PRI | NULL    |       |
+| date  | varchar(255) | YES  |     | NULL    |       |
+| usr   | varchar(150) | YES  |     | NULL    |       |
+| msg   | varchar(255) | YES  |     | NULL    |       |
+| room  | varchar(200) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+5 rows in set (0.005 sec)
 ```

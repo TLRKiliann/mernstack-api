@@ -1,12 +1,6 @@
-import React, { useState } from 'react'
-import { db_users } from '../models/db_users'
+import React from 'react'
 import { UserType } from '../models/usertype'
 import './styleComponents/AskMessageBox.scss'
-
-
-interface DbUsersProps {
-  db_users: Array<UserType>
-}
 
 type Field = {
   value?: string
@@ -17,19 +11,20 @@ type Form = {
 }
 
 interface AskMessageBoxProps {
-  form: object
-  catchById: DbUsersProps
+  catchById: UserType
+  form: Form
   handleInviteChoice: (e: React.ChangeEvent<HTMLInputElement>) => void
-  handleInvitation: (e: React.FormEvent<HTMLFormElement>) => void
+  handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form, Field}) => {
-    
-  return(
-    <div key={props.catchById?.id} className="boolean--result">
+
+  console.log(props.catchById, 'props.users')
+  
+  return (
+    <div className="boolean--result">
       <form
-        onSubmit={(e) => props.handleInvitation(e)}
         data-testid="asktestid" 
         className="form--invitation"
       >
@@ -71,7 +66,8 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form,
         </label> 
         
         <button
-          type='submit'
+          type="button"
+          onClick={(e) => props.handleInvitation(e)}
           className="btn--invitation"
         >
           Invite

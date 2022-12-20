@@ -20,7 +20,7 @@ type AuthContextProps = {
   eraseAll: () => void
 }
 
-const AuthContext = createContext({} as AuthContextProps);
+const AuthContext = createContext({} as AuthContextProps)
 
 export const useAuthLogin: React.FC = () => {
   return useContext(AuthContext)
@@ -28,21 +28,21 @@ export const useAuthLogin: React.FC = () => {
 
 export const AuthProvider: React.FC = ({ children }: Props) => {
 
-  const [auth, setAuth] = useState<object>({});
-  const [switchLogin, setSwitchLogin] = useState<boolean>(true);
-  const [username, setUserName] = useState<string>("");
-  const [otherUser, setOtherUser] = useState<object>({});
-  const [tweekGroup, setTweekGroup] = useState<object>({});
+  const [auth, setAuth] = useState<object>({})
+  const [switchLogin, setSwitchLogin] = useState<boolean>(true)
+  const [username, setUserName] = useState<string>("")
+  const [otherUser, setOtherUser] = useState<object>({})
+  const [tweekGroup, setTweekGroup] = useState<object>({})
 
   const toggle = () => {
     setSwitchLogin(!switchLogin);
-  };
+  }
 
   const eraseAll = () => {
-    setUserName("");
-    setTweekGroup("");
-    setAuth("");
-  };
+    setUserName("")
+    setTweekGroup("")
+    setAuth("")
+  }
 
   return (
     <AuthContext.Provider value={{
@@ -62,5 +62,5 @@ export const AuthProvider: React.FC = ({ children }: Props) => {
     >
       {children}
     </AuthContext.Provider>
-  );
-};
+  )
+}

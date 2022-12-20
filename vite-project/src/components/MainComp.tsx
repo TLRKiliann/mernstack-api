@@ -7,6 +7,8 @@ interface MainCompProps {
 }
 
 const MainComp: React.FC = (props: MainCompProps) => {
+  console.log(props.users, 'users')
+  console.log(typeof(props.users), 'type users')
   return(
     <div className="master--maincomp">
           
@@ -31,7 +33,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
 
         <div>
           {props.users?.slice(0, `${props.users?.length}`).map(user => (
-            <div key={user.id}>
+            <div key={user.order_id}>
             {user.isConnected ? (
               <div className="div--connection">
                 <img

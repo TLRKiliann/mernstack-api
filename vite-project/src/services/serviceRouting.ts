@@ -20,6 +20,8 @@ const updateNameRoom: string = '/api/updateRoom';
 const putInvite: string = '/api/inviteOtherUser';
 const putLastConfirm: string = '/api/confirmation';
 const putChgUsrRetConf: string = '/api/setUserConfirm';
+const postRouteMsgTerminal: string = '/api/msgTerminal';
+const retrieveMsgTerminal: string = '/api/retrieveMsgTerminal';
 
 //GET all members of chat
 const getAllMembers = async () => {
@@ -46,15 +48,15 @@ const createMember = (newMember: any) => {
 }
 
 //PUT firstname
-const updateRoomName = (id: number, changeConfRoom: UserTypeProps) => {
+const updateRoomName = (id: number, changeConfRoom: UserType) => {
   try {
-    let request = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
-    return request.then((response: any) => res.data)
+    let req = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
+    return req.then((res: any) => res.data)
   } catch (err: any) {
-    console.error("Error response PUT:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
+    console.error("Error res PUT:");
+    console.error("erd", err.res.data);    // ***
+    console.error("ers", err.res.status);  // ***
+    console.error("erh", err.res.headers); // ***
     throw err;
   } 
 }
@@ -75,11 +77,10 @@ const putInvitation = (id: number, dataForSigMsg: any) => {
 
 //PUT username + returnConfirm
 const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
+  console.log(id, "id service")
   try {
     const req = app.put<any>(`${putChgUsrRetConf}/${id}`, changeUserNameReturnConfirm)
-    return req.then((res: any) => {
-      console.log(res.data)
-    })
+    return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -91,11 +92,10 @@ const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
 
 //PUT returnConfirm (db)
 const updateFinalConfirm = (id: number, changeReturnConf: any) => {
+  console.log(id, "id")
   try {
     const req = app.put<any>(`${putLastConfirm}/${id}`, changeReturnConf)
-    return req.then((res: any) => {
-      console.log(res.data)
-    })
+    return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
@@ -105,20 +105,28 @@ const updateFinalConfirm = (id: number, changeReturnConf: any) => {
   } 
 }
 
-/*
-//POST (add) new user
-const postNewUser = async (user: string) => {
+const getMsgTerminal = async () => {
   try {
-    const req = app.post<string>(postUrl)
-    return await req.then((res: string) => res.data)
+    const req = app.get<UserType>(retrieveMsgTerminal);
+    return await req.then((res: any) => res.data)
   } catch (err: any) {
-    console.error("Error response POST:");
+    throw err;
+  }
+}
+
+const postMsgTerminal = (msgTerminal: string) => {
+  console.log(msgTerminal)
+  try {
+    const req = app.post<any>(postRouteMsgTerminal, msgTerminal)
+    return req.then((res: any) => res.data)
+  } catch (err: any) {
+    console.error("Error response PUT:");
     console.error("erd", err.response.data);    // ***
     console.error("ers", err.response.status);  // ***
     console.error("erh", err.response.headers); // ***
-    throw err;
-  } 
-};*/
+    throw err
+  }
+}
 
 const functionToCall = {
   getAllMembers,
@@ -126,10 +134,9 @@ const functionToCall = {
   updateRoomName,
   putInvitation,
   updateUsrRetConf,
-  updateFinalConfirm
+  updateFinalConfirm,
+  getMsgTerminal,
+  postMsgTerminal
 };
 
 export default functionToCall
-
-/*
-*/

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import serviceRouting from '../../services/serviceRouting'
 import { useAuthLogin } from '../../context/AuthProvider'
-//import { db_users } from '../../models/db_users'
-//import { UserType } from '../../models/usertype'
 import './TerminalComponent.scss'
 
 
@@ -15,28 +14,49 @@ interface UsernameProps {
 
 const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
+  const dateOfTheDay = Date()
   const [message, setMessage] = useState<string>("")
-  const [messages, setMessages] = useState<Array<string>>([JSON.parse(localStorage.getItem("Messages"))])
+  const [messages, setMessages] = useState<Array<string>>(
+    JSON.parse(localStorage.getItem("Messages")) || null)
+  console.log(messages, "messages")
 
   useEffect(() => {
-    if (message) {
-      localStorage.setItem("Messages", JSON.stringify(messages))
-    } else {
-      console.log("No message for useEffect")
-    }
+    serviceRouting
+      .getMsgTerminal()
+      .then(response => {
+        setMessages(response)
+      })
   }, [])
 
-  useEffect(() => {
-      localStorage.setItem("Messages", JSON.stringify(messages))
-  }, [messages])
-
   const { username } = useAuthLogin()
+
+  const generateId = () => {
+    const maxId: number = messages.length > 0
+      ? Math.max(...messages.map(msg => msg.id))
+      : 0
+    return maxId + 1
+  }
 
   const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (message) {
-      setMessages([...messages, {id: Date().slice(0, 24),
-        usr: `${username}`, msg: `${message} ✉`}])
+      const msgTerminal = {
+        id: generateId(),
+        date: dateOfTheDay.slice(0, 24),
+        usr: `${username}`,
+        msg: `${message} ✉`,
+        room: props.roomStyle
+      }
+
+      serviceRouting
+        .postMsgTerminal(msgTerminal)
+        .then(initialData => {
+          setMessages(messages.concat(msgTerminal))
+        })
+        .catch((error) => {
+          setMessages([])
+          console.log("Send msg error (Terminal)!")
+        })
     } else {
       console.log("message === undefined")
     }
@@ -52,12 +72,19 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           <h3 className="intro--terminalh3">{props.roomStyle}</h3>
         </span>
         
-        {messages?.map((data, index) => (
-          <div key={index} className="map--msg">
-            <p className="para--chat">{data?.usr} {data?.msg !== undefined 
-              ? `$ ▶ ${data?.msg}` : null}</p>
-              <span className="legend--date">{data?.id}</span>
-          </div>
+
+        {messages?.map((m) => (
+          m.room === props.roomStyle ? (
+            <div key={m.id} className="map--msg">
+              <p className="para--chat">{m?.usr} {m?.msg !== undefined 
+                ? `$ ▶ ${m?.msg} ${m.room}`
+                : null}
+              </p>
+                <span className="legend--date">
+                  {m?.date}
+                </span>
+            </div>
+            ) : null
           ))
         }
       </div>

@@ -8,7 +8,7 @@ import './styleComponents/NavBar.scss'
 
 const NavBar: React.FC = () => {
 
-  const { switchLogin, username, toggle, eraseAll } = useAuthLogin()
+  const { switchLogin, username, toggle, eraseAll, changeStatusUser } = useAuthLogin()
 
   const handleChange = () => {
     toggle()
@@ -92,7 +92,7 @@ const NavBar: React.FC = () => {
               
               <span className="span--navbarlogin"><Link
                 to="/login"
-                onClick={() => handleChange()}
+                onClick={handleChange}
                 className="link--logout"
               >
                 Logout

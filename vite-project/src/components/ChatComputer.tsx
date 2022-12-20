@@ -39,7 +39,8 @@ const ChatComputer: React.FC = () => {
   const users = usePersonnalHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
-  //console.log(userRoom, 'userRoom state')
+  console.log(userRoom, 'userRoom state')
+  
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
@@ -52,55 +53,42 @@ const ChatComputer: React.FC = () => {
 
   const handleSetUserRoom = (link: string) => {
     const user = users?.find(user => user.firstName === username)
-    const id: number = user.id;
-    const changeConfRoom = {...user, isConnected: true}
-    const addRoomUser = {
-      id: user.id,
-      img: user.img,
-      firstName: username,
-      lastName: user.lastName,
-      age: user.age,
-      email: user.email,
-      location: user.location,
-      gender: user.gender,
-      mainroom: computerDb,
-      room: link,
-      isConnected: true,
-      signalRecieve: user.signalRecieve,
-      sentMsg: user.sentMsg,
-      messagebox: user.messagebox,
-      returnConfirm: user.returnConfirm,
-      password: user.password
-    }
-    //console.log(addRoomUser.id, 'by id')
-    if (user) {
+    const id = user.order_id
+    console.log(id, 'id')
+    const newuser = users?.find(u => u.order_id === id)
+    const changeConfRoom = {...newuser, firstName: username, mainroom: computerDb,
+      room: link, isConnected: !newuser.isConnected}
+    //console.log(changeConfRoom, "changeConfRoom !")
+    
+    if (newuser) {
       serviceRouting
         .updateRoomName(id, changeConfRoom)
         .then(initialUserRoom => {
-          setUserRoom(users?.map(user => user.id === id ? {
-            id: user.id,
-            img: user.img,
+          setUserRoom(users.map(newuser => newuser.order_id === id ? {
+            order_id: id,
+            img: newuser.img,
             firstName: username,
-            lastName: user.lastName,
-            age: user.age,
-            email: user.email,
-            location: user.location,
-            gender: user.gender,
+            lastName: newuser.lastName,
+            age: newuser.age,
+            email: newuser.email,
+            location: newuser.location,
+            gender: newuser.gender,
             mainroom: computerDb,
             room: link,
-            isConnected: true,
-            signalRecieve: user.signalRecieve,
-            sentMsg: user.sentMsg,
-            messagebox: user.messagebox,
-            returnConfirm: user.returnConfirm,
-            password: user.password
-            } : user
+            isConnected: !newuser.isConnected,
+            signalRecieve: newuser.signalRecieve,
+            sentMsg: newuser.sentMsg,
+            messagebox: newuser.messagebox,
+            returnConfirm: newuser.returnConfirm,
+            password: newuser.password
+            } : newuser
           ))
         })
         .catch((error) => {
-          setUserRoom(users?.map(user => user.firstName !== username))
-          alert(`Register name Room issue: ${user.firstName} not found !`)
+          setUserRoom(users?.filter(u => u.order_id !== id))
+          alert("Register name Room issue: User not found !")
         })
+
       handleNavigation(link)
     } else {
       alert("ERROR !!!")
