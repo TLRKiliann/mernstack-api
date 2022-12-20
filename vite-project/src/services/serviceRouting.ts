@@ -20,6 +20,8 @@ const updateNameRoom: string = '/api/updateRoom';
 const putInvite: string = '/api/inviteOtherUser';
 const putLastConfirm: string = '/api/confirmation';
 const putChgUsrRetConf: string = '/api/setUserConfirm';
+const postRouteMsgTerminal: string = '/api/msgTerminal';
+const retrieveMsgTerminal: string = '/api/retrieveMsgTerminal';
 
 //GET all members of chat
 const getAllMembers = async () => {
@@ -48,13 +50,13 @@ const createMember = (newMember: any) => {
 //PUT firstname
 const updateRoomName = (id: number, changeConfRoom: UserType) => {
   try {
-    let request = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
-    return request.then((response: any) => res.data)
+    let req = app.put<any>(`${updateNameRoom}/${id}`, changeConfRoom)
+    return req.then((res: any) => res.data)
   } catch (err: any) {
-    console.error("Error response PUT:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
+    console.error("Error res PUT:");
+    console.error("erd", err.res.data);    // ***
+    console.error("ers", err.res.status);  // ***
+    console.error("erh", err.res.headers); // ***
     throw err;
   } 
 }
@@ -103,13 +105,38 @@ const updateFinalConfirm = (id: number, changeReturnConf: any) => {
   } 
 }
 
+const getMsgTerminal = async () => {
+  try {
+    const req = app.get<UserType>(retrieveMsgTerminal);
+    return await req.then((res: any) => res.data)
+  } catch (err: any) {
+    throw err;
+  }
+}
+
+const postMsgTerminal = (message: string) => {
+  console.log(message)
+  try {
+    const req = app.post<any>(postRouteMsgTerminal, message)
+    return req.then((res: any) => res.data)
+  } catch (err: any) {
+    console.error("Error response PUT:");
+    console.error("erd", err.response.data);    // ***
+    console.error("ers", err.response.status);  // ***
+    console.error("erh", err.response.headers); // ***
+    throw err
+  }
+}
+
 const functionToCall = {
   getAllMembers,
   createMember,
   updateRoomName,
   putInvitation,
   updateUsrRetConf,
-  updateFinalConfirm
+  updateFinalConfirm,
+  getMsgTerminal,
+  postMsgTerminal
 };
 
 export default functionToCall

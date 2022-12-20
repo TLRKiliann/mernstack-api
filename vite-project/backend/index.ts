@@ -92,7 +92,7 @@ app.put('/api/updateRoom/:id', async (req: Request, res: Response, next: NextFun
   const room: string = req.body.room;
   const isConnected: boolean = req.body.isConnected;
   //console.log(order_id, "server id")
-  //console.log(firstName, mainroom, room, isConnected, order_id)
+  console.log(firstName, mainroom, room, isConnected, order_id)
   try {
     const result = await pool.query('update members set\
       firstName=?, mainroom=?, room=?, isConnected=? where order_id=?',
@@ -108,7 +108,7 @@ app.put('/api/inviteOtherUser/:id', async (req: Request, res: Response, next: Ne
   const order_id: number | null = Number(req.params.id);
   const signalRecieve: boolean = req.body.signalRecieve;
   const messagebox: string = req.body.messagebox;
-  console.log(signalRecieve, messagebox, order_id)
+  console.log(signalRecieve, messagebox, order_id);
   
   try {
     const result = await pool.query('update members set\
@@ -126,7 +126,7 @@ app.put('/api/setUserConfirm/:id', async (req: Request, res: Response, next: Nex
   const firstName: string = req.body.firstName;
   const room: string = req.body.room;
   const returnConfirm: boolean = req.body.returnConfirm;
-  //console.log(order_id, "server id")
+  console.log(order_id, firstName, room, returnConfirm, "setUserConfirm");
 
   try {
     const result = await pool.query('update members set\
@@ -142,11 +142,39 @@ app.put('/api/setUserConfirm/:id', async (req: Request, res: Response, next: Nex
 app.put('/api/confirmation/:id', async (req: Request, res: Response, next: NextFunction) => {
   const order_id: number | null = Number(req.params.id);
   const returnConfirm: boolean = req.body.returnConfirm;
-  
+  console.log(order_id, returnConfirm, "confirmation");
   try {
     const result = await pool.query('update members set\
       returnConfirm=? where order_id=?', [returnConfirm, order_id]);
     res.status(200).send();
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
+//POST msg from terminal
+app.post('/api/msgTerminal', async (req: Request, res: Response, next: NextFunction) => {
+  const id: string = req.body.id;
+  const usr: string = req.body.usr;
+  const msg: string = req.body.msg;
+  console.log(id, usr, msg, "msg post terminal")
+
+  try {
+  const result = await pool.query("insert into tableroom (id, usr, msg) values (?,?,?)",
+    [id, usr, msg]);
+  res.status(201).send("msg from terminal created");
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
+//Retrive msg from db for terminal
+app.get('/api/retrieveMsgTerminal', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+  const result = await pool.query('select * from tableroom');
+  res.status(200).json(result);
   } catch (err) {
     throw err;
   }
