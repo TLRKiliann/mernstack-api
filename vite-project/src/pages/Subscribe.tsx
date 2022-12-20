@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import serviceRouting from '../services/serviceRouting'
 import usePersonnalHook from '../hook/personnal.hook'
+import { useAuthLogin } from '../context/AuthProvider'
 import { UserType } from '../models/usertype'
 import { useNavigate } from 'react-router-dom'
 import '../stylePages/Subscribe.scss'
@@ -48,9 +49,9 @@ const Subscribe: React.FC = () => {
   })
 
   const users = usePersonnalHook()
-  const [datas, setDatas] = useState<Array<UserType>>([])
   //console.log(datas, "datas")
   const [message, setMessage] = useState<string>("")
+  const [datas, setDatas] = useState<Array<UserType>>([])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -91,7 +92,6 @@ const Subscribe: React.FC = () => {
     const maxId: number = users.length > 0
       ? Math.max(...users?.map(d => d.order_id))
       : 0
-    console.log(maxId, "maxId")
     return maxId + 1;
   };
 
