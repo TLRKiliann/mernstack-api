@@ -72,29 +72,23 @@ const ComputerRoom: React.FC = () => {
   }
   
   //Press mail icon to ask for invitation
-  const handleAskUserPrivate = (id: number) => {
-    const catchUser = users?.find(user => user.id === id)
+  const handleAskUserPrivate = (order_id: number) => {
+    console.log(order_id, "order_id handleAskUserPrivate !")
+    const catchUser = users?.find(user => user.order_id === order_id)
     setCatchById(catchUser)
     setSwitchAsk(true)
   }
 
   //Click btn to MsgBox to validate chat mode of invitation. 
-  const handleInvitation = (order_id: number, e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log(order_id, "id of handleInvitation")
+  const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("handleInvitation")
     setOtherUser(catchById)
     setSwitchAsk(false)
-
     const sender = users?.find((user) => user.firstName === username)
     setInitialSender(sender)
-    
-    const definedRoom = form.invite.value;
-    
+    const definedRoom = form.invite.value
     const id = catchById.order_id
-    console.log(id, 'id')
     const data = users?.find((u) => u.order_id === id)
-    console.log(data, 'data')
-
     const msg = `You've received msg from ${username} for ${definedRoom} chat !`
     const dataForSigMsg = {...data, signalRecieve: true, messagebox: msg}
     console.log(dataForSigMsg)
@@ -305,11 +299,12 @@ const ComputerRoom: React.FC = () => {
 
       {switchAsk &&
         <AskMessageBox
+          key={catchById.order_id}
           catchById={catchById}
           form={form.invite.value}
           options={options}
           handleInviteChoice={handleInviteChoice}
-          handleInvitation={(e) => handleInvitation(e, order_id)}
+          handleInvitation={(e) => handleInvitation(e)}
           handleClose={handleClose}
         />
       }
@@ -331,12 +326,21 @@ const ComputerRoom: React.FC = () => {
           <TerminalComponent roomStyle={roomStyle} />
 
         </div>
-        
-        <UsersOnline
-          roomStyle={roomStyle}
-          handleAskUserPrivate={handleAskUserPrivate}
-        />
 
+        <section className="user--online">
+          <div className="div--userolinetitle">
+            <h3 className="userolinetitle">Online Users</h3>
+          </div>
+
+          {users.map(user => (
+            <UsersOnline
+              key={user.order_id}
+              user={user}
+              roomStyle={roomStyle}
+              handleAskUserPrivate={() => handleAskUserPrivate(user.order_id)}
+            />
+          ))}
+        </section>
       </div>
     </div>
   )
