@@ -39,7 +39,8 @@ const ChatComputer: React.FC = () => {
   const users = usePersonnalHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
-  //console.log(userRoom, 'userRoom state')
+  console.log(userRoom, 'userRoom state')
+  
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
@@ -52,8 +53,9 @@ const ChatComputer: React.FC = () => {
 
   const handleSetUserRoom = (link: string) => {
     const user = users?.find(user => user.firstName === username)
-    const id: number = user.order_id
-    const newuser = users?.find(user => user.order_id === id)
+    const id = user.order_id
+    console.log(id, 'id')
+    const newuser = users?.find(u => u.order_id === id)
     const changeConfRoom = {...newuser, firstName: username, mainroom: computerDb,
       room: link, isConnected: !newuser.isConnected}
     //console.log(changeConfRoom, "changeConfRoom !")
@@ -62,7 +64,7 @@ const ChatComputer: React.FC = () => {
       serviceRouting
         .updateRoomName(id, changeConfRoom)
         .then(initialUserRoom => {
-          setUserRoom(users.find(newuser => newuser.order_id === id ? {
+          setUserRoom(users.map(newuser => newuser.order_id === id ? {
             order_id: id,
             img: newuser.img,
             firstName: username,
@@ -71,9 +73,9 @@ const ChatComputer: React.FC = () => {
             email: newuser.email,
             location: newuser.location,
             gender: newuser.gender,
-            mainroom: newuser.mainroom,
-            room: newuser.room,
-            isConnected: newuser.isConnected,
+            mainroom: computerDb,
+            room: link,
+            isConnected: !newuser.isConnected,
             signalRecieve: newuser.signalRecieve,
             sentMsg: newuser.sentMsg,
             messagebox: newuser.messagebox,
@@ -83,8 +85,8 @@ const ChatComputer: React.FC = () => {
           ))
         })
         .catch((error) => {
-          setUserRoom(users?.filter(newuser => newuser.order_id !== id))
-          alert(`Register name Room issue: ${newuser.firstName} not found !`)
+          setUserRoom(users?.filter(u => u.order_id !== id))
+          alert("Register name Room issue: User not found !")
         })
 
       handleNavigation(link)
