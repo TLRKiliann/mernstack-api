@@ -156,13 +156,15 @@ app.put('/api/confirmation/:id', async (req: Request, res: Response, next: NextF
 //POST msg from terminal
 app.post('/api/msgTerminal', async (req: Request, res: Response, next: NextFunction) => {
   const id: string = req.body.id;
+  const date: string = req.body.date;
   const usr: string = req.body.usr;
   const msg: string = req.body.msg;
-  console.log(id, usr, msg, "msg post terminal")
+  const room: string = req.body.room;
+  console.log(id, date, usr, msg, room, "msg post terminal")
 
   try {
-  const result = await pool.query("insert into tableroom (id, usr, msg) values (?,?,?)",
-    [id, usr, msg]);
+  const result = await pool.query("insert into tableroom (id, date, usr, msg, room) values (?,?,?,?,?)",
+    [id, date, usr, msg, room]);
   res.status(201).send("msg from terminal created");
   } catch (err) {
     throw err;

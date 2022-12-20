@@ -114,10 +114,10 @@ const getMsgTerminal = async () => {
   }
 }
 
-const postMsgTerminal = (message: string) => {
-  console.log(message)
+const postMsgTerminal = (msgTerminal: string) => {
+  console.log(msgTerminal)
   try {
-    const req = app.post<any>(postRouteMsgTerminal, message)
+    const req = app.post<any>(postRouteMsgTerminal, msgTerminal)
     return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
