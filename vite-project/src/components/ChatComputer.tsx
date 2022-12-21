@@ -52,20 +52,18 @@ const ChatComputer: React.FC = () => {
   }
 
   const handleSetUserRoom = (link: string) => {
-    const user = users?.find(user => user.firstName === username)
-    const id = user.order_id
-    console.log(id, 'id')
-    const newuser = users?.find(u => u.order_id === id)
-    const changeConfRoom = {...newuser, firstName: username, mainroom: computerDb,
-      room: link, isConnected: !newuser.isConnected}
-    //console.log(changeConfRoom, "changeConfRoom !")
+    const user: UserType = users?.find((u) => u.firstName === username)
+    const id: number = user.id
+    const newuser = users?.find(u => u.id === id)
+    const changeConfRoom: object = {...newuser, firstName: username, mainroom: computerDb,
+      room: link, isConnected: true}
     
     if (newuser) {
       serviceRouting
         .updateRoomName(id, changeConfRoom)
         .then(initialUserRoom => {
-          setUserRoom(users.map(newuser => newuser.order_id === id ? {
-            order_id: id,
+          setUserRoom(users?.map(newuser => newuser.id === id ? {
+            id: id,
             img: newuser.img,
             firstName: username,
             lastName: newuser.lastName,
@@ -75,7 +73,7 @@ const ChatComputer: React.FC = () => {
             gender: newuser.gender,
             mainroom: computerDb,
             room: link,
-            isConnected: !newuser.isConnected,
+            isConnected: true,
             signalRecieve: newuser.signalRecieve,
             sentMsg: newuser.sentMsg,
             messagebox: newuser.messagebox,
@@ -85,13 +83,12 @@ const ChatComputer: React.FC = () => {
           ))
         })
         .catch((error) => {
-          setUserRoom(users?.filter(u => u.order_id !== id))
+          setUserRoom(users?.filter(u => u.id !== id))
           alert("Register name Room issue: User not found !")
         })
-
       handleNavigation(link)
     } else {
-      alert("ERROR !!!")
+      alert("ERROR ChatComputer !!!")
     }
   }
 
@@ -163,7 +160,7 @@ const ChatComputer: React.FC = () => {
     }
   }, [])
 
-  return(
+  return (
     <div>
       
       <div data-testid="chatctestid" className="div--imgcompute">
@@ -190,12 +187,10 @@ const ChatComputer: React.FC = () => {
             >
               {val.link}
             </span>
-
           </h2>
           ))
         }
       </div>
-
     </div>
   )
 }
