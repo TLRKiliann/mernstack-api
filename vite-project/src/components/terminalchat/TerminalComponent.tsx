@@ -18,14 +18,17 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
   const [message, setMessage] = useState<string>("")
   const [messages, setMessages] = useState<Array<string>>(
     JSON.parse(localStorage.getItem("Messages")) || null)
-  console.log(messages, "messages")
+  //console.log(messages, "messages")
 
   useEffect(() => {
-    serviceRouting
-      .getMsgTerminal()
-      .then(response => {
-        setMessages(response)
-      })
+    const intervalId = setInterval(() => {
+      serviceRouting
+        .getMsgTerminal()
+        .then(response => {
+          setMessages(response)
+        })
+    }, 1000)
+    return () => clearInterval(intervalId)
   }, [])
 
   const { username } = useAuthLogin()
@@ -72,7 +75,6 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           <h3 className="intro--terminalh3">{props.roomStyle}</h3>
         </span>
         
-
         {messages?.map((m) => (
           m.room === props.roomStyle ? (
             <div key={m.id} className="map--msg">

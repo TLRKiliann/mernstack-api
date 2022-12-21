@@ -70,7 +70,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             
             <div className="result--search">
             {userFound?.map(userFirst => (
-              <p key={userFirst.order_id}
+              <p key={userFirst.id}
                 className="result--searchp">{userFirst.firstName} {userFirst.lastName} 
                 <span 
                   style={userFirst.isConnected ? {color: 'lightgreen'} 
@@ -85,7 +85,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
             <section className="section--voletl">
               {props.users?.map(user => (
-                <li key={user.order_id} className="li"
+                <li key={user.id} className="li"
                   style={user.isConnected 
                   ? {color: 'lightgreen'}
                   : {color: 'orange'}}
@@ -148,7 +148,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
 
             <section className="section--voletl">
               {props.users?.map(user => (
-                <li key={user.order_id} className="li">
+                <li key={user.id} className="li">
                   {user.isConnected ? (
                     <MdConnectWithoutContact
                       size={24}
