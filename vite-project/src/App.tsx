@@ -24,14 +24,14 @@ const App:React.FC = () => {
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/profile' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <Profile />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
         <Route exact path='/online' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <Online />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
         <Route exact path='/help' element={
           <PrivateRoute>
@@ -39,20 +39,20 @@ const App:React.FC = () => {
           </PrivateRoute>
         } />
         <Route exact path='/chatcomputer/:id' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <ChatComputer />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
         <Route path='/computerroom/:link' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <ComputerRoom />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
 
         <Route path='/computerroom/privatemessage' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <PrivateMessage />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
 
         <Route path='*' element={<ErrorPageNotFound />} />
