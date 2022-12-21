@@ -54,7 +54,7 @@ app.get('/api/getAllMembers', async (req: Request, res: Response, next: NextFunc
 
 //Create new member
 app.post('/api/createMembers', async (req: Request, res: Response, next: NextFunction) => {
-  const order_id: number = req.body.order_id;
+  const id: number = req.body.id;
   const img: string = req.body.img;
   const firstName: string = req.body.firstName;
   const lastName: string = req.body.lastName;
@@ -69,14 +69,13 @@ app.post('/api/createMembers', async (req: Request, res: Response, next: NextFun
   const sentMsg: boolean = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
-  const password: string = req.body.password;
   
   try {
-    const result = await pool.query('insert into members (order_id, img, firstName, lastName, age, email,\
+    const result = await pool.query('insert into members (id, img, firstName, lastName, age, email,\
       location, gender, mainroom, room, isConnected, signalRecieve, sentMsg,\
-      messagebox, returnConfirm, password) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-      [order_id, img, firstName, lastName, age, email, location, gender, mainroom, room,
-        isConnected, signalRecieve, sentMsg, messagebox, returnConfirm, password]);
+      messagebox, returnConfirm) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+      [id, img, firstName, lastName, age, email, location, gender, mainroom, room,
+        isConnected, signalRecieve, sentMsg, messagebox, returnConfirm]);
     res.status(201).json("New Member Was Created !");
   } catch (err) {
     throw err;
@@ -86,17 +85,17 @@ app.post('/api/createMembers', async (req: Request, res: Response, next: NextFun
 
 //Update name of room.
 app.put('/api/updateRoom/:id', async (req: Request, res: Response, next: NextFunction) => {
-  const order_id: number | null = Number(req.params.id);
+  const id: number | null = Number(req.params.id);
   const firstName: string = req.body.firstName;
   const mainroom: string = req.body.mainroom;
   const room: string = req.body.room;
   const isConnected: boolean = req.body.isConnected;
-  //console.log(order_id, "server id")
-  console.log(firstName, mainroom, room, isConnected, order_id)
+  //console.log(id, "server id")
+  console.log(firstName, mainroom, room, isConnected, id)
   try {
     const result = await pool.query('update members set\
-      firstName=?, mainroom=?, room=?, isConnected=? where order_id=?',
-      [firstName, mainroom, room, isConnected, order_id]);
+      firstName=?, mainroom=?, room=?, isConnected=? where id=?',
+      [firstName, mainroom, room, isConnected, id]);
     res.status(200).send()
   } catch (err) {
     throw err;
@@ -105,14 +104,15 @@ app.put('/api/updateRoom/:id', async (req: Request, res: Response, next: NextFun
 });
 
 app.put('/api/inviteOtherUser/:id', async (req: Request, res: Response, next: NextFunction) => {
-  const order_id: number | null = Number(req.params.id);
+  const id: number | null = Number(req.params.id);
   const signalRecieve: boolean = req.body.signalRecieve;
+  const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
-  console.log(signalRecieve, messagebox, order_id);
+  console.log(signalRecieve, sentMsg, messagebox, id);
   
   try {
-    const result = await pool.query('update members set\
-      signalRecieve=?, messagebox=? where order_id=?', [signalRecieve, messagebox, order_id]);
+    const result = await pool.query('update members set signalRecieve=?, sentMsg=?, messagebox=? where id=?',
+      [signalRecieve, sentMsg, messagebox, id]);
     res.status(200).send()
   } catch (err) {
     throw err;
@@ -122,15 +122,17 @@ app.put('/api/inviteOtherUser/:id', async (req: Request, res: Response, next: Ne
 
 //Update user confirmation
 app.put('/api/setUserConfirm/:id', async (req: Request, res: Response, next: NextFunction) => {
-  const order_id: number | null = Number(req.params.id);
+  const id: number | null = Number(req.params.id);
   const firstName: string = req.body.firstName;
   const room: string = req.body.room;
+  const signalRecieve: boolean = req.body.signalRecieve;
   const returnConfirm: boolean = req.body.returnConfirm;
-  console.log(order_id, firstName, room, returnConfirm, "setUserConfirm");
+  console.log(id, firstName, room, signalRecieve, returnConfirm, "setUserConfirm");
 
   try {
     const result = await pool.query('update members set\
-      firstName=?, room=?, returnConfirm=? where order_id=?', [firstName, room, returnConfirm, order_id])
+      firstName=?, room=?, signalRecieve=?, returnConfirm=? where id=?',
+      [firstName, room, signalRecieve, returnConfirm, id]);
     res.status(200).send();
   } catch (err) {
     throw err;
@@ -140,12 +142,12 @@ app.put('/api/setUserConfirm/:id', async (req: Request, res: Response, next: Nex
 
 //Update last confirmation
 app.put('/api/confirmation/:id', async (req: Request, res: Response, next: NextFunction) => {
-  const order_id: number | null = Number(req.params.id);
+  const id: number | null = Number(req.params.id);
   const returnConfirm: boolean = req.body.returnConfirm;
-  console.log(order_id, returnConfirm, "confirmation");
+  console.log(id, returnConfirm, "confirmation");
   try {
     const result = await pool.query('update members set\
-      returnConfirm=? where order_id=?', [returnConfirm, order_id]);
+      returnConfirm=? where id=?', [returnConfirm, id]);
     res.status(200).send();
   } catch (err) {
     throw err;
