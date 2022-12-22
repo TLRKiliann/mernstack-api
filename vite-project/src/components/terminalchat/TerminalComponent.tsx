@@ -14,21 +14,21 @@ interface UsernameProps {
 
 const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
-  const dateOfTheDay = Date()
+  const dateOfTheDay: Date = Date()
   const [message, setMessage] = useState<string>("")
   const [messages, setMessages] = useState<Array<string>>(
     JSON.parse(localStorage.getItem("Messages")) || null)
   //console.log(messages, "messages")
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const interval = setInterval(() => {
       serviceRouting
         .getMsgTerminal()
         .then(response => {
           setMessages(response)
         })
-    }, 1000)
-    return () => clearInterval(intervalId)
+    }, 2000)
+    return () => clearInterval(interval)
   }, [])
 
   const { username } = useAuthLogin()
