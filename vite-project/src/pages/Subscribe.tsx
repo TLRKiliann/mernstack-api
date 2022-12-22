@@ -90,7 +90,7 @@ const Subscribe: React.FC = () => {
 
   const generateId = () => {
     const maxId: number = users.length > 0
-      ? Math.max(...users?.map(d => d.order_id))
+      ? Math.max(...users?.map(d => d.id))
       : 0
     return maxId + 1;
   };
@@ -102,8 +102,8 @@ const Subscribe: React.FC = () => {
       setMessage("👉  Registration en cours ...")
 
       const newMember = {
-        order_id: generateId(),
-        img: "http://localhost:5173/src/assets/snapface/jeanne_smile.jpg",
+        id: generateId(),
+        img: "http://localhost:5173/src/assets/snapface/ronaldo.png",
         firstName: form.firstName.value,
         lastName: form.lastName.value,
         age: form.age.value,
@@ -114,10 +114,9 @@ const Subscribe: React.FC = () => {
         room: "",
         isConnected: false,
         signalRecieve: false,
-        sentMsg: false,
+        sentMsg: "",
         messagebox: "",
-        returnConfirm: false,
-        password: form.password.value,
+        returnConfirm: false
       }
       
       console.log(newMember, "newMember")
