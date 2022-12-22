@@ -10,7 +10,7 @@ type Form = {
 }
 
 interface DisplayInvitationOtherUsrProps {
-  invited: string
+  username: string
   initialSender: string
   form: object
   isCheckInvite: boolean
@@ -26,7 +26,7 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
       <h4 className="invitation--h4">
         
         <span className="span--h4">
-          {props.invited} !
+          {props.username} !
         </span>
         
         <p style={{marginTop: "30px"}}>

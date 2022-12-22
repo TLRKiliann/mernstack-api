@@ -1,27 +1,71 @@
 import React, {useState, useEffect} from 'react'
 import { useAuthLogin } from '../../context/AuthProvider'
-import { db_users } from '../../models/db_users'
+import serviceRouting from '../../services/serviceRouting';
 import { UserType } from '../../models/usertype'
 import './PrivateMessage.scss'
 
-
 const PrivateMessage: React.FC = () => {
 
-  const {otherUser, username} = useAuthLogin();
+  const dateOfTheDay: Date = Date()
+  const {otherUser, username, versusUser} = useAuthLogin()
+  console.log(versusUser, 'versusUser')
+  console.log(otherUser, 'otherUser')
 
-  const [displayName, setDisplayName] = useState<object>(otherUser)
-  console.log(displayName.order_id, "displayName")
-  console.log(typeof(displayName), "typeof displayName")
+  const [displayUser, setDisplayUser] = useState<object>({})
+  console.log(displayUser.id, "displayUser")
+  console.log(typeof(displayUser), "typeof displayUser")
 
   const [privateMsg, setPrivateMsg] = useState<string>("")
   const [privateSeveralMsg, setPrivateSeveralMsg] = useState<Array<string>>([])
 
-  const handleUserMessage = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    console.log(typeof(privateMsg), 'privateMsg')
+  useEffect(() => {
+    if (Object.keys(otherUser).length === 0) {
+      console.log("no otherUser")
+      setDisplayUser(versusUser)
+    } else {
+      console.log("no versusUser")
+      setDisplayUser(otherUser)
+    }
+    const intervalId = setInterval(() => {
+      serviceRouting
+        .getMsgPrivate()
+        .then(response => {
+          setPrivateSeveralMsg(response)
+        })
+    }, 1000)
+    return () => clearInterval(intervalId)
+  }, [])
+
+  const generateId = () => {
+    const maxId: number = privateSeveralMsg.length > 0
+      ? Math.max(...privateSeveralMsg.map(msg => msg.id))
+      : 0
+    return maxId + 1
+  }
+
+  const handleUserMessage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    const privateRoom = "Private"
     if (privateMsg) {
-      setPrivateSeveralMsg([...privateSeveralMsg, {order_id: Date().slice(0, 24),
-        usr: `${username}`, msg: `${privateMsg} ✉`}])
+      const msgPrivate = {
+        id: generateId(),
+        date: dateOfTheDay.slice(0, 24),
+        user: `${username}`,
+        msg: `${privateMsg} ✉`,
+        room: `${privateRoom}`
+      }
+
+      serviceRouting
+        .postMsgPrivate(msgPrivate)
+        .then(initialData => {
+          setPrivateSeveralMsg(privateSeveralMsg.concat(msgPrivate))
+        })
+        .catch((error) => {
+          privateSeveralMsg([])
+          console.log("Send msg error (Private-Chat)!")
+        })
+    } else {
+      console.log("message === undefined")
     }
     setPrivateMsg("")
   }
@@ -37,17 +81,17 @@ const PrivateMessage: React.FC = () => {
         <div className="sub--privateterminal">
             <div className="flex--imgnameroom">
               <img
-                src={displayName.img}
+                src={displayUser.img}
                 width="95px"
                 height="65px"
                 className="img--private"
                 alt="no img"
               />
-              <h4 className="title--private">{displayName.firstName}</h4>
-              <h4 className="title--private">{displayName.lastName}</h4>
-              <h4 className="title--private">{displayName.age} years</h4>
-              <h4 className="title--private">{displayName.email}</h4>
-              <h4 className="title--private">{displayName.isConnected ? (
+              <h4 className="title--private">{displayUser.firstName}</h4>
+              <h4 className="title--private">{displayUser.lastName}</h4>
+              <h4 className="title--private">{displayUser.age} years</h4>
+              <h4 className="title--private">{displayUser.email}</h4>
+              <h4 className="title--private">{displayUser.isConnected ? (
                 <span
                   className="span--useronline"
                   style={{color: 'lightgreen'}}
@@ -69,9 +113,10 @@ const PrivateMessage: React.FC = () => {
         <div className="private--messagebox">
           <div>
           {privateSeveralMsg?.map((data) => (
-            <div key={data.order_id} className="map--msg">
-              <p className="para--chat">$ ▶ {data.usr} ~ {data.msg}</p>
-                <span className="legend--date">{data.order_id}</span>
+            <div key={data.id} className="map--msg">
+              <p className="para--chat">$ ▶ {data.user} ~ {data.msg}</p>
+                <span className="legend--date">{data.id}</span>
+                <legend>{data.date}</legend>
             </div>
             ))
           }

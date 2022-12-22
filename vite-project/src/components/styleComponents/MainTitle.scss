@@ -9,7 +9,7 @@ lightgrey
   padding-top: 60px;
   padding-bottom: 60px;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 140px;
   text-align: center;
   font-family: "Acme", sans-serif;
 
@@ -70,7 +70,7 @@ lightgrey
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (min-width: 360px) and (max-width: 1100px) {
   .maintitle {
     width: 360px;
     height: 50%;
@@ -97,10 +97,10 @@ lightgrey
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1068px) {
+@media screen and (min-width: 1100px) and (max-width: 1068px) {
   .maintitle {
     width: 360px;
-    height: 50%;
+    height: 30%;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: auto;

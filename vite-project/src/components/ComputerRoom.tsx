@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import serviceRouting from '../services/serviceRouting';
 import { useAuthLogin } from '../context/AuthProvider'
@@ -11,7 +11,6 @@ import DisplayInvitationOtherUsr from './DisplayInvitationOtherUsr'
 import ConfirmInvitation from './ConfirmInvitation'
 import worldData from '../assets/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
-
 
 type Field = {
   value?: sting
@@ -37,29 +36,43 @@ const options: Field[] = [
   }
 ]
 
+/*
+    if (Object.keys(otherUser).length === 0) {
+      console.log("no otherUser found")
+    } else {
+      setDisplayInvitation(true)
+      console.log(otherUser)
+    }
+*/
 const ComputerRoom: React.FC = () => {
+
+  const users = usePersonnalHook()
+  const { username, otherUser, setOtherUser, setVersusUser } = useAuthLogin()
+  console.log(otherUser, "otherUser")
+  //const [refreshUser, setRefreshUser] = useState<Array<UserType>>([])
+  //const [displayInvitation, setDisplayInvitation] = useState<boolean>(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      users
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const [catchById, setCatchById] = useState<Array<UserType>>([])  
+  const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
+  const [validMsg, setValidMsg] = useState<Array<UserType>>([])
 
   const params = useParams<{ link?: string }>()
   const Navigate = useNavigate()
-  const { username, otherUser, setOtherUser } = useAuthLogin();
-
-  const users = usePersonnalHook()
-
-  const [initialSender, setInitialSender] = useState<Array<string>>([])
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
-  const [catchById, setCatchById] = useState<Array<UserType>>([])
+  const [form, setForm] = useState<Form>({invite: {value: 'Private'}})
+
   console.log(catchById, "catchById")
-
-  const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
-
-  const [form, setForm] = useState<Form>({
-    invite: {value: 'Private'}
-  })
 
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [isChecked, setIsChecked] = useState<boolean>(false)
   const [isCheckInvite, setIsCheckInvite] = useState<boolean>(false)
-  const [displayInvitation, setDisplayInvitation] = useState<boolean>(false)
   const [displayConfirmInvite, setDisplayConfirmInvite] = useState<boolean>(false)
 
   //Invite someone with chat mode options
@@ -72,44 +85,43 @@ const ComputerRoom: React.FC = () => {
   }
   
   //Press mail icon to ask for invitation
-  const handleAskUserPrivate = (order_id: number) => {
-    console.log(order_id, "order_id handleAskUserPrivate !")
-    const catchUser = users?.find(user => user.order_id === order_id)
+  const handleAskUserPrivate = (id: number) => {
+    console.log("handleAskUserPrivate 1")
+
+    const catchUser = users?.find(user => user.id === id)
     setCatchById(catchUser)
     setSwitchAsk(true)
   }
 
-  //Click btn to MsgBox to validate chat mode of invitation. 
+  //Click btn to MsgBox to validate chat mode of invitation.
+  //Jeanne send to Ronaldo with click validation
   const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("handleInvitation")
-    setOtherUser(catchById)
+    console.log("handleInvitation 2")
+
+    const data: UserType = catchById
+    setOtherUser(data)
     setSwitchAsk(false)
-    const sender = users?.find((user) => user.firstName === username)
-    setInitialSender(sender)
-    const definedRoom = form.invite.value
-    const id = catchById.order_id
-    const data = users?.find((u) => u.order_id === id)
-    const msg = `You've received msg from ${username} for ${definedRoom} chat !`
-    const dataForSigMsg = {...data, signalRecieve: true, messagebox: msg}
-    console.log(dataForSigMsg)
+    const definedRoom: string = form.invite.value
+    const id: number = data?.id
+    //const sender: string = data?.firstName
+    const msg: string = `You've received msg from ${username} for ${definedRoom} chat !`
+    const dataForSigMsg = {...data, room: definedRoom, signalRecieve: true,
+      sentMsg: username, messagebox: msg}
     
     const verifyName = catchById.firstName
     if (verifyName === username) {
       alert("Hey, wake-up ! It's YOU !!! :D")
     } else if (catchById.isConnected === false) {
       alert(`${catchById.firstName} ${catchById.lastName} is not connected !`)
-    } else {    
-      const timerId = setTimeout(() => {
-        console.log("setTimeout 1")
-        setDisplayInvitation(true)
-      }, 1000)
+    } else {
+      console.log("Validate handleInvitation")
 
       serviceRouting
         .putInvitation(id, dataForSigMsg)
         .then(initialData => {
-          setInformUsrMsg(users?.find(cust => cust.id === id ? 
+          setInformUsrMsg(users?.map(cust => cust.id === id ? 
             {
-              order_id: id,
+              id: id,
               img: cust.img,
               firstName: cust.firstName,
               lastName: cust.lastName,
@@ -118,49 +130,46 @@ const ComputerRoom: React.FC = () => {
               location: cust.location,
               gender: cust.gender,
               mainroom: cust.mainroom,
-              room: cust.room,
+              room: definedRoom,
               isConnected: cust.isConnected,
               signalRecieve: true,
-              sentMsg: cust.sentMsg,
+              sentMsg: username,
               messagebox: msg,
-              returnConfirm: cust.returnConfirm,
-              password: cust.password
+              returnConfirm: cust.returnConfirm
             } : cust
           ))
         })
         .catch((error) => {
           setInformUsrMsg(users?.filter(cust => cust.id !== id))
-          alert(`${catchById.firstName} do not received msg`)
+          alert(`${verifyName} do not received msg`)
         })
       console.log("handleInvitation finished !!!")
     }
   }
 
   const handleTime = () => {
-    console.log("handle time ok")
-    console.log(informUsrMsg, "**informUsrMsg**")
+    console.log("handleTime 5")
     const myUser = users?.find((user) => user.firstName === username)
-    console.log(myUser, "myUser")
-
+    //console.log(myUser, "myUser")
     const userSignal = users?.map((u) => u.signalRecieve === true)
-    console.log(userSignal, "userSignal")
-
-    if (userSignal.firstName === username) {
-      console.log("returnConfirm is validate for both !!!")
+    const signalUser: string = userSignal.firstName
+    //console.log(userSignal, "userSignal")
+    if (signalUser === username) {
+      console.log("returnConfirm is validate for both 1!!!")
       const timerIdTwo = setTimeout(() => {
         Navigate('/computerroom/privatemessage')
       }, 1000)
       setCatchById("")
-      setInitialSender("")
       setInformUsrMsg("")
+      setValidMsg("")
     } else if (myUser) {
-      console.log("returnConfirm is validate for both !!!")
+      console.log("returnConfirm is validate for both 2!!!")
       const timerIdTwo = setTimeout(() => {
         Navigate('/computerroom/privatemessage')
       }, 1000)
       setCatchById("")
-      setInitialSender("")
       setInformUsrMsg("")
+      setValidMsg("")
     } else {
       console.log("HandleTime is not validated...")
     }
@@ -169,20 +178,24 @@ const ComputerRoom: React.FC = () => {
 
   //Confirm your invitation after invited has said yes.
   const handleValidInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (isChecked === true) {
-      const invitation = form.invite.value
-      const user = users?.find(user => user.firstName === username)
-      const id = user.order_id;
-      const newuser = users?.find(user => user.order_id === id)
-      const changeUserNameReturnConfirm = {...newuser, firstName: username, room: invitation, returnConfirm: true}
-      console.log(changeUserNameReturnConfirm, "changeUserNameReturnConfirm")
+    console.log("handleValidInvitation 4")
 
+    if (isChecked === true) {
+      console.log("phase :a1")
+
+      const user: string = users?.find(user => user.firstName === username)
+      //const user = users?.find(user => user.signalRecieve === true)
+      const id: number = user.id;
+      const newuser = users?.find(user => user.id === id)
+      const changeUserNameReturnConfirm = {...newuser, firstName: username, returnConfirm: true}
+      //console.log(changeUserNameReturnConfirm, "changeUserNameReturnConfirm")
+      console.log("phase :a2")
       serviceRouting
         .updateUsrRetConf(id, changeUserNameReturnConfirm)
         .then(initialData => {
-          setInformUsrMsg(users?.find(user => user.order_id === id ? 
+          setValidMsg(users?.map(user => user.id === id ? 
             {
-              order_id: id,
+              id: id,
               img: user.img,
               firstName: username,
               lastName: user.lastName,
@@ -191,26 +204,83 @@ const ComputerRoom: React.FC = () => {
               location: user.location,
               gender: user.gender,
               mainroom: user.mainroom,
-              room: invitation,
+              room: user.room,
               isConnected: user.isConnected,
               signalRecieve: user.signalRecieve,
               sentMsg: user.sentMsg,
               messagebox: user.messagebox,
-              returnConfirm: true,
-              password: user.password
+              returnConfirm: true
             } : user
           ))
         })
         .catch((error) => {
-          setInformUsrMsg(users?.filter(cust => cust.order_id !== id))
-          alert(`Problem to confirm msg...`)
+          setValidMsg(users?.filter(cust => cust.id !== id))
+          alert("Problem to confirm msg handleValidInvitation...")
         })
+      console.log("phase :a3")
       console.log("handleValidInvitation confirmed")
       handleTime()
     } else {
       console.log("Confirmation not confirmed...")
     }
     setDisplayConfirmInvite(false)
+    console.log("phase :a4")
+  }
+
+  //Invited receives your invitation
+  const handleInvitedResponse = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("handleInvitedResponse 3")
+
+    console.log("phase :1")
+    const user = users?.find(user => user.firstName === username)
+    //const user = users?.find(user => user.signalRecieve === true)
+    
+    const findSentMsg = users.find((u) => u.sentMsg !== "")
+    //console.log(findSentMsg, "findSentMsg")
+    const senderInvite: string = findSentMsg.sentMsg
+    //console.log(senderInvite, "senderInvite")
+    const searchOtherUser = users.find((u) => u.firstName === senderInvite)
+    //console.log(searchOtherUser, "searchOtherUser")
+    setVersusUser(searchOtherUser)
+
+    const id: number = user.id;
+    const confirmInvitFromOther = users?.find(user => user.id === id)
+    //console.log(confirmInvitFromOther, 'otherchatter')
+    const changeReturnConf: object = {...confirmInvitFromOther, signalRecieve: false, returnConfirm: true}
+    //console.log(changeReturnConf, "changeReturnConf")
+    console.log("phase :2")
+    serviceRouting
+      .updateResponseUser(id, changeReturnConf)
+      .then(initialData => {
+        setInformUsrMsg(users?.map(user => user.id === id ? 
+          {
+            id: id,
+            img: user.img,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            age: user.age,
+            email: user.email,
+            location: user.location,
+            gender: user.gender,
+            mainroom: user.mainroom,
+            room: user.room,
+            isConnected: user.isConnected,
+            signalRecieve: false,
+            sentMsg: user.sentMsg,
+            messagebox: user.messagebox,
+            returnConfirm: true
+          } : user
+        ))
+      })
+      .catch((error) => {
+        setInformUsrMsg(users?.filter(cust => cust.id !== id))
+        alert(`${catchById.firstName} do not received msg`)
+      })
+    console.log("phase :3")
+    //setDisplayInvitation(false)
+    setDisplayConfirmInvite(true)
+    console.log("handleInvitedResponse", handleInvitedResponse)
+    console.log("phase :4")
   }
 
   const handleClose = () => {
@@ -223,46 +293,6 @@ const ComputerRoom: React.FC = () => {
 
   const handleSwitchBox = () => {
     setIsCheckInvite(!isCheckInvite)
-  }
-
-  //Invited receives your invitation
-  const handleInvitedResponse = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setDisplayInvitation(false)
-    const id = catchById.order_id
-    const otherChater = users?.find(user => user.order_id === id)
-    //console.log(otherChater, 'otherchatter')
-    const changeReturnConf = {...otherChater, returnConfirm: true}
-    //console.log(changeReturnConf, "changeReturnConf")
-    serviceRouting
-      .updateFinalConfirm(id, changeReturnConf)
-      .then(initialData => {
-        setInformUsrMsg(users?.find(user => user.order_id === id ? 
-          {
-            order_id: id,
-            img: user.img,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            age: user.age,
-            email: user.email,
-            location: user.location,
-            gender: user.gender,
-            mainroom: user.mainroom,
-            room: user.room,
-            isConnected: user.isConnected,
-            signalRecieve: user.signalRecieve,
-            sentMsg: user.sentMsg,
-            messagebox: user.messagebox,
-            returnConfirm: true,
-            password: user.password
-          } : user
-        ))
-      })
-      .catch((error) => {
-        setInformUsrMsg(users?.filter(cust => cust.id !== id))
-        alert(`${catchById.firstName} do not received msg`)
-      })
-    setDisplayConfirmInvite(true)
-    console.log("handleInvitedResponse", handleInvitedResponse)
   }
 
   return(
@@ -283,23 +313,26 @@ const ComputerRoom: React.FC = () => {
         />
       }
 
-      {displayInvitation ? (
-        <div>
-          <DisplayInvitationOtherUsr
-            key={catchById.id}
-            invited={catchById.firstName}
-            initialSender={initialSender.firstName}
-            form={form.invite.value}
-            isCheckInvite={isCheckInvite}
-            handleSwitchBox={handleSwitchBox}
-            handleInvitedResponse={handleInvitedResponse}
-          />
-        </div>
-      ) : null }
+      <div>
+      {users?.map((u) => (
+        (u.signalRecieve === true) && (u.firstName === username) ? (
+        <DisplayInvitationOtherUsr
+          key={u.id}
+          username={u.firstName}
+          initialSender={u.sentMsg}
+          form={form.invite.value}
+          isCheckInvite={isCheckInvite}
+          handleSwitchBox={handleSwitchBox}
+          handleInvitedResponse={handleInvitedResponse}
+        />
+       ) : null 
+      ))}
+      </div>
 
-      {switchAsk &&
+
+      {switchAsk ? ( 
         <AskMessageBox
-          key={catchById.order_id}
+          key={catchById.id}
           catchById={catchById}
           form={form.invite.value}
           options={options}
@@ -307,6 +340,7 @@ const ComputerRoom: React.FC = () => {
           handleInvitation={(e) => handleInvitation(e)}
           handleClose={handleClose}
         />
+        ) : null
       }
 
       <h1 className="title--room">Room {Object.values(params)}</h1>
@@ -332,12 +366,12 @@ const ComputerRoom: React.FC = () => {
             <h3 className="userolinetitle">Online Users</h3>
           </div>
 
-          {users.map(user => (
+          {users?.map(user => (
             <UsersOnline
-              key={user.order_id}
+              key={user?.id}
               user={user}
               roomStyle={roomStyle}
-              handleAskUserPrivate={() => handleAskUserPrivate(user.order_id)}
+              handleAskUserPrivate={() => handleAskUserPrivate(user?.id)}
             />
           ))}
         </section>

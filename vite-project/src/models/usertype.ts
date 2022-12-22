@@ -10,6 +10,10 @@ export type UserType = {
 	mainroom: string
 	room: string
 	isConnected: boolean
+	signalRecieve: boolean
+	sentMsg: boolean
+	messagebox: string
+	returnConfirm: boolean
 }
 
 export type UserTypeProps = {

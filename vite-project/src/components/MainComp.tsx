@@ -33,7 +33,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
 
         <div>
           {props.users?.slice(0, `${props.users?.length}`).map(user => (
-            <div key={user.order_id}>
+            <div key={user.id}>
             {user.isConnected ? (
               <div className="div--connection">
                 <img

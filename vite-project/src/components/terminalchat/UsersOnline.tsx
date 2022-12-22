@@ -6,14 +6,14 @@ import './UsersOnline.scss'
 interface UserOnlineProps {
   user: UserType
   roomStyle: object
-  handleAskUserPrivate: (order_id: number) => void
+  handleAskUserPrivate: (id: number) => void
 }
 
 const UserOnline: React.FC = (props: UserOnlineProps) => {
   
   return(
     props.user.room === props.roomStyle && (
-      <div key={props.user.order_id} className="all--usersbanner">   
+      <div key={props.user.id} className="all--usersbanner">   
         <div className="username--useronline">
           <img
             src={props.user.img}
@@ -47,7 +47,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
           }
 
           <span 
-            onClick={() => props.handleAskUserPrivate(props.user.order_id)}
+            onClick={() => props.handleAskUserPrivate(props.user.id)}
             className="span--useronline styleusr--span"
             style={{color: 'orange', fontSize: '22px'}}
           >
