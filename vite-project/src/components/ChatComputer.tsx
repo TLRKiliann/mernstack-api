@@ -29,17 +29,16 @@ import img_9 from '../assets/firewall.jpg'
 import img_12 from '../assets/Cybersecurity.jpg'
 import './styleComponents/ChatComputer.scss'
 
-
 const ChatComputer: React.FC = () => {
 
-  const {id} = useParams<{id?: string}>();
+  const { id } = useParams<{ id?: string }>();
   const { username } = useAuthLogin()
   const Navigate = useNavigate()
   
   const users = usePersonnalHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
-  console.log(userRoom, 'userRoom state')
+  //console.log(userRoom, 'userRoom state')
   
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
@@ -53,42 +52,47 @@ const ChatComputer: React.FC = () => {
 
   const handleSetUserRoom = (link: string) => {
     const user: UserType = users?.find((u) => u.firstName === username)
-    const id: number = user.id
-    const newuser = users?.find(u => u.id === id)
-    const changeConfRoom: object = {...newuser, firstName: username, mainroom: computerDb,
-      room: link, isConnected: true}
-    
-    if (newuser) {
-      serviceRouting
-        .updateRoomName(id, changeConfRoom)
-        .then(initialUserRoom => {
-          setUserRoom(users?.map(newuser => newuser.id === id ? {
-            id: id,
-            img: newuser.img,
-            firstName: username,
-            lastName: newuser.lastName,
-            age: newuser.age,
-            email: newuser.email,
-            location: newuser.location,
-            gender: newuser.gender,
-            mainroom: computerDb,
-            room: link,
-            isConnected: true,
-            signalRecieve: newuser.signalRecieve,
-            sentMsg: newuser.sentMsg,
-            messagebox: newuser.messagebox,
-            returnConfirm: newuser.returnConfirm,
-            password: newuser.password
-            } : newuser
-          ))
-        })
-        .catch((error) => {
-          setUserRoom(users?.filter(u => u.id !== id))
-          alert("Register name Room issue: User not found !")
-        })
-      handleNavigation(link)
+    const id: number | null = user?.id
+    if (id) {
+      //console.log("id is defined")
+      const notFilled: string = ""
+      const newuser: UserType = users?.find(u => u.id === id)
+      const changeConfRoom: object = {...newuser, firstName: username, mainroom: computerDb,
+        room: link, isConnected: true, signalRecieve: false, sentMsg: notFilled,
+        messagebox: notFilled, returnConfirm: false}      
+      if (newuser) {
+        serviceRouting
+          .updateRoomName(id, changeConfRoom)
+          .then(initialUserRoom => {
+            setUserRoom(users?.map(newuser => newuser.id === id ? {
+              id: id,
+              img: newuser.img,
+              firstName: username,
+              lastName: newuser.lastName,
+              age: newuser.age,
+              email: newuser.email,
+              location: newuser.location,
+              gender: newuser.gender,
+              mainroom: computerDb,
+              room: link,
+              isConnected: true,
+              signalRecieve: false,
+              sentMsg: notFilled,
+              messagebox: notFilled,
+              returnConfirm: false
+              } : newuser
+            ))
+          })
+          .catch((error) => {
+            setUserRoom(users?.filter(u => u.id !== id))
+            alert("Register name Room issue: User not found !")
+          })
+        handleNavigation(link)
+      } else {
+        alert("ERROR ChatComputer !!!")
+      }
     } else {
-      alert("ERROR ChatComputer !!!")
+      alert("Login to have access to a room required !")
     }
   }
 
