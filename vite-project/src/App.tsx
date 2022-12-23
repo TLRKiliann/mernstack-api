@@ -50,9 +50,9 @@ const App:React.FC = () => {
         } />
 
         <Route path='/computerroom/privatemessage' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <PrivateMessage />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
 
         <Route path='*' element={<ErrorPageNotFound />} />
