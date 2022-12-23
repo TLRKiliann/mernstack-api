@@ -12,8 +12,8 @@ const PrivateMessage: React.FC = () => {
   console.log(otherUser, 'otherUser')
 
   const [displayUser, setDisplayUser] = useState<object>({})
-  console.log(displayUser.id, "displayUser")
   console.log(typeof(displayUser), "typeof displayUser")
+  console.log(displayUser.id, "displayUser")
 
   const [privateMsg, setPrivateMsg] = useState<string>("")
   const [privateSeveralMsg, setPrivateSeveralMsg] = useState<Array<string>>([])

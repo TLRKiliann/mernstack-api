@@ -4,6 +4,7 @@ import { UserType } from '../models/usertype'
 import './UsersOnline.scss'
 
 interface UserOnlineProps {
+  id: number | null
   user: UserType
   roomStyle: object
   handleAskUserPrivate: (id: number) => void
@@ -46,8 +47,9 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
             )
           }
 
-          <span 
-            onClick={() => props.handleAskUserPrivate(props.user.id)}
+          <span
+            id={props.id}
+            onClick={() => props.handleAskUserPrivate(props.id)}
             className="span--useronline styleusr--span"
             style={{color: 'orange', fontSize: '22px'}}
           >
