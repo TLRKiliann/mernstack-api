@@ -1,11 +1,12 @@
 $royalblue: #4169e1;
 $orange: #ffa500;
 $purple: #800080;
-/*"Acme", sans-serif;
+$lightgrey_28: #282828;
+$font_acme: "Acme", sans-serif;
+/*
 dodgerblue
 10px 
 20px
-#282828
 100vh
 100%
 */
@@ -18,7 +19,6 @@ dodgerblue
   min-height: 100vh;
   background: linear-gradient(180deg, $purple, $orange);
   z-index: -1;
-
   .zoom--img {
     position: fixed;
     top: 0px;
@@ -30,13 +30,11 @@ dodgerblue
     opacity: 0.1;
     z-index: -2;
   }
-
   .img--login {
     width: 100vw;
     min-height: 100%;
     margin: auto;
   }
-
   .submit {
     padding-bottom: 20px;
     width: 500px;
@@ -45,23 +43,20 @@ dodgerblue
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-
     background-color: rgba(45, 85, 255, 0.4);
     border: 3mm groove rgba(185, 45, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0px 0px 4px slategrey;
-
     .title--framelogin {
       width: 64%;
       margin: auto;
       margin: 20px auto;
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 2.4rem;
       color: whitesmoke;
       text-shadow: 2px 2px 1px $purple,
       4px 3px 2px #242424;
     }
-
     .lbl--login {
       width: 64%;
       margin: auto;
@@ -70,7 +65,6 @@ dodgerblue
       font-size: 1.3rem;
       font-weight: bold;
     }
-
     .input--login {
       width: 60%;
       padding: 3px 10px;
@@ -85,16 +79,13 @@ dodgerblue
         color: #999;
       }
     }
-
     .btn--submitlogin {
       margin: auto;
       margin-top: 30px;
       padding: 3px 20px;
-
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 1.4rem;
       font-weight: bold;
-      
       background-color: $royalblue;
       border: 3px outset $royalblue;
       border-radius: 10px;
@@ -140,7 +131,7 @@ dodgerblue
       font-size: 0.9rem;
       font-weight: bold;
       color: $orange;
-      background-color: #282828;
+      background-color: $lightgrey_28;
       border-radius: 5px;
     }
     .error {
@@ -181,7 +172,7 @@ dodgerblue
         width: 64%;
         margin: auto;
         margin: 20px auto;
-        font-family: "Acme", sans-serif;
+        font-family: $font_acme;
         font-size: 2.4rem;
       }
       .lbl--login {
@@ -229,7 +220,7 @@ dodgerblue
         font-size: 0.9rem;
         font-weight: bold;
         color: $orange;
-        background-color: #282828;
+        background-color: $lightgrey_28;
         border-radius: 5px;
       }
       .error {

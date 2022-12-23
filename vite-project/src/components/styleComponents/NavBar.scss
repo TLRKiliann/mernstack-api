@@ -8,9 +8,7 @@ $lightgreen: #90ee90;
 $slategray: #708090;
 $purple: #800080;
 $orange: #ffa500;
-/*
-whitesmoke
-*/
+$whitesmoke: #f5f5f5;
 
 .div--headernav {
   position: absolute;
@@ -55,7 +53,7 @@ whitesmoke
       .link--tagnav {
         text-decoration: none;
         text-shadow: 1px 1px 0px #000;
-        color: whitesmoke;
+        color: $whitesmoke;
         &:hover {
          color: $orange;
          text-shadow: 1px 1px 0px #purple;
@@ -127,7 +125,7 @@ whitesmoke
       background-color: $lightgrey_38;
       border: 1mm outset $lightgrey_50;
       border-radius: 10px;
-      color: whitesmoke;
+      color: $whitesmoke;
       &:hover {
         background: $lightgrey_50;
         border: 1mm outset $lightgrey_54;
@@ -151,12 +149,12 @@ whitesmoke
     background-color: $lightgrey_38;
     border: 1mm outset $lightgrey_50;
     border-radius: 10px;
-    color: whitesmoke;
+    color: $whitesmoke;
     &:hover {
       transform: scale(1);
       background-color: $lightgrey_50;
       border: 1mm outset $lightgrey_50;
-      color: whitesmoke
+      color: $whitesmoke;
     }
     &:active {
       transform: scale(0.9);

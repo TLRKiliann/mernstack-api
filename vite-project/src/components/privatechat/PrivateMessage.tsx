@@ -100,7 +100,7 @@ const PrivateMessage: React.FC = () => {
                 </span>
                 ) : (
                 <span 
-                  className="span--useronline" style={{fontSize:"12px"}}>
+                  className="span--useronline">
                   ❌
                 </span>
                 )
@@ -128,7 +128,7 @@ const PrivateMessage: React.FC = () => {
             type="text"
             value={privateMsg}
             onChange={(e) => setPrivateMsg(e.target.value)}
-            placeholder="Enter your message"
+            placeholder="Enter your message here !"
           />
           <button
             type="button"
