@@ -47,7 +47,7 @@ const Online: React.FC = () => {
     invite: {value: 'Private'}
   })
 
-  const [group, setGroup] = useState<Array<string | number | boolean>>([])
+  const [group, setGroup] = useState<Array<UserType>>([])
   const [catchById, setCatchById] = useState<Array<UserType>>([])
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [switchResponse, setSwitchResponse] = useState<boolean>(false)
@@ -55,10 +55,6 @@ const Online: React.FC = () => {
   const {username, setOtherUser, setTweekGroup } = useAuthLogin();
 
   //hooks
-  /*
-  const users = usePersonnalHook<{users: UserType}>({})
-  const computers = useComputerHook<{computers: computerType}>()
-  */
   const users = usePersonnalHook()
   const computers = useComputerHook()
 
