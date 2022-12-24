@@ -42,12 +42,12 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
 
       <p className="invitation--p">
         Are you ok for
-        <span className="span--h4">
+        <span className="span--invitationp">
           {props?.form}
         </span>chat ?
       </p>
 
-      <label>
+      <label className="lbl--checkconfirmfirsttime">
         <input
           type="checkbox"
           checked={props?.isCheckInvite}

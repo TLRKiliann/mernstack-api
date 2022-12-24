@@ -44,9 +44,9 @@ const App:React.FC = () => {
           </PrivateRoute>
         } />
         <Route path='/computerroom/:link' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <ComputerRoom />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
 
         <Route path='/computerroom/privatemessage' element={
@@ -62,3 +62,4 @@ const App:React.FC = () => {
 }
 
 export default App
+//computerroom/RAM-4GB-8GB-16GB
