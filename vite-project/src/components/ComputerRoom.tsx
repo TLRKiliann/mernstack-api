@@ -138,11 +138,12 @@ const ComputerRoom: React.FC = () => {
 
   const handleTime = () => {
     console.log("handleTime 5")
-    const myUser = users?.find((user) => user.firstName === username)
-    const userSignal = users?.map((u) => u.signalRecieve === 1)
-    const signalUser: string = userSignal.firstName
-    if (signalUser === username) {
-      console.log("returnConfirm is validate for both 1!!!")
+    const myUser: object = users?.find((user) => user?.firstName === username)
+    //const definedConfirm: boolean = myUser?.returnConfirm
+    const userSignalSearch: object = users?.find((u) => u?.returnConfirm === 1)
+    const signalUserDefined: string = userSignalSearch?.firstName
+    if (signalUserDefined == username) {
+      console.log("Validation confirmed ! 1")
       const timerIdTwo = setTimeout(() => {
         Navigate('/computerroom/privatemessage')
       }, 1000)
@@ -150,7 +151,7 @@ const ComputerRoom: React.FC = () => {
       setInformUsrMsg("")
       setValidMsg("")
     } else if (myUser) {
-      console.log("returnConfirm is validate for both 2!!!")
+      console.log("Validation confirmed ! 2")
       const timerIdTwo = setTimeout(() => {
         Navigate('/computerroom/privatemessage')
       }, 1000)
@@ -167,10 +168,12 @@ const ComputerRoom: React.FC = () => {
   const handleValidInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log("handleValidInvitation 4")
     if (isChecked === true) {
-      const user: string = users?.find(user => user.firstName === username)
+      const user: UserType = users?.find(user => user.firstName === username)
       const id: number = user.id;
       const newuser = users?.find(user => user.id === id)
-      const changeUserNameReturnConfirm = {...newuser, firstName: username, returnConfirm: true}
+      const noString: string = ""
+      const changeUserNameReturnConfirm = {...newuser, firstName: username,
+        sentMsg: noString, messagebox: noString, returnConfirm: true}
 
       serviceRouting
         .updateUsrRetConf(id, changeUserNameReturnConfirm)
@@ -189,8 +192,8 @@ const ComputerRoom: React.FC = () => {
               room: user.room,
               isConnected: user.isConnected,
               signalRecieve: user.signalRecieve,
-              sentMsg: user.sentMsg,
-              messagebox: user.messagebox,
+              sentMsg: noString,
+              messagebox: noString,
               returnConfirm: true
             } : user
           ))
@@ -199,14 +202,12 @@ const ComputerRoom: React.FC = () => {
           setValidMsg(users?.filter(cust => cust.id !== id))
           alert("Problem to confirm msg handleValidInvitation...")
         })
-      console.log("phase :a3")
       console.log("handleValidInvitation confirmed")
       handleTime()
     } else {
       console.log("Confirmation not confirmed...")
     }
     setDisplayConfirmInvite(false)
-    console.log("phase :a4")
   }
 
   //Invited receives your invitation

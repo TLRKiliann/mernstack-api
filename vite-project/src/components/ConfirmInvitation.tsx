@@ -9,7 +9,6 @@ interface ConfirmInvitationProps {
 }
 
 const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
-  console.log(props, "props")
   return (
     <div className="box--confirminvitation">
       <h4 className="confirm">

@@ -5,6 +5,7 @@ $orangered: #ff4500;
 $whitesmoke: #f5f5f5;
 $vivid_pink:#f32170;
 $vivid_orange: #ff6b08;
+$very_dark_desaturated_magenta: #44224f;
 $font_junction: 'Junction', sans-serif;
 
 .nextcomp--room {
@@ -16,7 +17,6 @@ $font_junction: 'Junction', sans-serif;
   background: linear-gradient(160deg, $purple,
     $orange);
   z-index: 1;
-
   .div--animationroomStyle {
     position: absolute;
     top: 0px;
@@ -27,13 +27,11 @@ $font_junction: 'Junction', sans-serif;
     margin-top: 25%;
     display: flex;
     opacity: 0;
-
     animation-name: rotation--bg;
     animation-delay: 0s;
     animation-duration: 4s;
     animation-iteration-count: 1;
     z-index: 2;
-
     .rotation--roomstyle {
       margin: auto;
       font-family: $font_junction;
@@ -54,7 +52,6 @@ $font_junction: 'Junction', sans-serif;
       animation-direction: linear;
     }
   }
-
   @keyframes rotation--bg {
     0% {
       transform: rotate3d(0,0,0, 0deg);
@@ -78,7 +75,6 @@ $font_junction: 'Junction', sans-serif;
       opacity: 0;
     }
   }
-
   @keyframes rotation--room {
     0% {
       transform: scale(0.1);
@@ -112,7 +108,6 @@ $font_junction: 'Junction', sans-serif;
       opacity: 0;
     }
   }
-
   .title--room {
     width: 90%;
     margin: auto;
@@ -122,19 +117,17 @@ $font_junction: 'Junction', sans-serif;
     text-shadow: 1px 1px 2px $whitesmoke,
       3px 3px 2px $orangered;
   }
-
   .div--terminaluser {
     width: 90%;
     height: 75vh;
     margin: auto;
     display: flex;
     flex-direction: inline-block;
-
     background: transparent;
     border: none;
     outline: none;
     border-radius: 15px 0px 0px 15px;
-    box-shadow: 0px 0px 20px #44224f;
+    box-shadow: 0px 0px 20px $very_dark_desaturated_magenta;
     .section--terminal {
       width: 80%;
       height: 100%;
@@ -164,7 +157,6 @@ $font_junction: 'Junction', sans-serif;
       color: #50bcfe;
       overflow: scroll;
       overflow-x: hidden;
-
       .div--userolinetitle {
         margin: auto;
         margin-top: 0px;
@@ -177,7 +169,6 @@ $font_junction: 'Junction', sans-serif;
         background: rgba(10, 10, 100, 0.2);
         border-bottom: 1px dashed $slategray;
         border-radius: 0px 15px 0px 0px;
-
         .userolinetitle {
           margin-top: 15px;
           margin-bottom: 10px;

@@ -14,7 +14,6 @@ import PrivateMessage from './components/privatechat/PrivateMessage'
 import ErrorPageNotFound from './pages/PageNotFound'
 import './App.scss'
 
-
 const App:React.FC = () => {
   return(
     <div>
@@ -44,17 +43,15 @@ const App:React.FC = () => {
           </PrivateRoute>
         } />
         <Route path='/computerroom/:link' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <ComputerRoom />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
-
         <Route path='/computerroom/privatemessage' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <PrivateMessage />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
-
         <Route path='*' element={<ErrorPageNotFound />} />
       </Routes>
     </div>
@@ -62,4 +59,3 @@ const App:React.FC = () => {
 }
 
 export default App
-//computerroom/RAM-4GB-8GB-16GB

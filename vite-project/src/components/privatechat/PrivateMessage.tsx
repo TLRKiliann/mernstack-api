@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useAuthLogin } from '../../context/AuthProvider'
-import serviceRouting from '../../services/serviceRouting';
+import serviceRouting from '../../services/serviceRouting'
 import { UserType } from '../../models/usertype'
 import './PrivateMessage.scss'
 
@@ -8,13 +8,8 @@ const PrivateMessage: React.FC = () => {
 
   const dateOfTheDay: Date = Date()
   const {otherUser, username, versusUser} = useAuthLogin()
-  console.log(versusUser, 'versusUser')
-  console.log(otherUser, 'otherUser')
 
   const [displayUser, setDisplayUser] = useState<object>({})
-  console.log(typeof(displayUser), "typeof displayUser")
-  console.log(displayUser.id, "displayUser")
-
   const [privateMsg, setPrivateMsg] = useState<string>("")
   const [privateSeveralMsg, setPrivateSeveralMsg] = useState<Array<string>>([])
 
@@ -115,8 +110,7 @@ const PrivateMessage: React.FC = () => {
           {privateSeveralMsg?.map((data) => (
             <div key={data.id} className="map--msg">
               <p className="para--chat">$ ▶ {data.user} ~ {data.msg}</p>
-                <span className="legend--date">{data.id}</span>
-                <legend>{data.date}</legend>
+              <legend className="legend--date">{data.date}</legend>
             </div>
             ))
           }
