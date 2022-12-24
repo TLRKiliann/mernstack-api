@@ -1,14 +1,15 @@
-$font_junction: 'Junction', sans-serif;
 $lightgrey_54: #545454;
 $lightgrey_50: #505050;
 $lightgrey_48: #484848;
 $lightgrey_42: #424242;
 $lightgrey_38: #383838;
-$lightgreen: #90ee90;
 $slategray: #708090;
 $purple: #800080;
 $orange: #ffa500;
+$lightgreen: #90ee90;
 $whitesmoke: #f5f5f5;
+$font_junction: 'Junction', sans-serif;
+$font_allura: 'Allura', cursive;
 
 .div--headernav {
   position: absolute;
@@ -69,7 +70,7 @@ $whitesmoke: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-family: "Allura", cursive;
+  font-family: $font_allura;
   font-size: 2.4rem;
   font-weight: bold;
 }

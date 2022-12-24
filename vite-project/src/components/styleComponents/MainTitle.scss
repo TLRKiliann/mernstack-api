@@ -1,7 +1,8 @@
-/*
-darkorchid
-lightgrey
-*/
+$darkorchid: #9932cc;
+$pink: #ffc0cb;
+$orange: #ffa500;
+$orangered: #ff4500;
+$font_acme: 'Acme', sans-serif;
 
 .maintitle {
   width: 40%;
@@ -11,14 +12,12 @@ lightgrey
   margin: auto;
   margin-top: 140px;
   text-align: center;
-  font-family: "Acme", sans-serif;
-
-  text-shadow: -3px 3px 2px darkorchid,
+  font-family: $font_acme;
+  text-shadow: -3px 3px 2px $darkorchid,
     -4px 4px 3px #000;
   background-color: rgba(45, 85, 255, 0.4);
   border: 1mm outset rgba(180, 85, 255, 0.2);
   border-radius: 15px;
-
   .div--bamimg {
     position: absolute;
     width: 42%;
@@ -32,41 +31,38 @@ lightgrey
       margin: auto;
     }
   }
-
   .main--h1 {
     margin: auto;
     margin-top: -30px;
     margin-bottom: 0px;
 
     font-size: 5.4rem;
-    text-shadow: -3px 3px 2px darkorchid,
+    text-shadow: -3px 3px 2px $darkorchid,
       -10px 14px 7px #000;
     transform: rotateZ(-10deg);
-    color: pink;
+    color: $pink;
   }
-
   .main--h2 {
     margin: auto;
     margin-top: -15px;
     margin-bottom: 15px;
     margin-left: 40px;
     font-size: 3.4rem;
-    text-shadow: -3px 3px 2px orangered,
+    text-shadow: -3px 3px 2px $orangered,
       -10px 14px 5px #000;
     transform: rotateZ(-10deg);
-    color: orange;
+    color: $orange;
   }
-
   .main--h4 {
     margin: auto;
     margin-top: -10px;
     margin-bottom: 10px;
     margin-left: 60px;
     font-size: 1.1rem;
-    text-shadow: -3px 3px 2px darkorchid,
+    text-shadow: -3px 3px 2px $darkorchid,
       -10px 10px 3px #000;
     transform: rotateZ(-10deg);
-    color: pink;
+    color: $pink;
   }
 }
 
@@ -112,7 +108,6 @@ lightgrey
       margin-top: -16px;
       margin-left: -20px;
       opacity: 0.4;
-
       .bam--img {
         width: 370px;
         margin: auto;

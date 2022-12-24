@@ -1,9 +1,10 @@
-/*Invitation message
-purple
-orange
-#ae3c52
-"Junction", sans-serif;
-*/
+/*Invitation message*/
+$purple: #800080;
+$orange: #ffa500;
+$whitesmoke: #f5f5f5;
+$dark_moderate_red: #ae3c52;
+$navy: #000080;
+$font_junction: 'Junction', sans-serif;
 
 .boolean--result {
   position: absolute;
@@ -15,7 +16,7 @@ orange
   margin-top: 20%;
   display: flex;
   background: linear-gradient(180deg,
-    orange, purple);
+    $orange, $purple);
   border-radius: 15px;
   z-index: 4;
   .form--invitation {
@@ -30,9 +31,9 @@ orange
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-family: "Junction", sans-serif;
+      font-family: $font_junction;
       font-size: 1.4rem;
-      color: purple;
+      color: $purple;
       .img--invite {
         margin-left: 10px;
         border-radius: 50% 50%;
@@ -41,7 +42,7 @@ orange
       .span--invite {
         margin-left: 10px;
         color: #50bcfe;
-        text-shadow: 2px 1px 1px navy;
+        text-shadow: 2px 1px 1px $navy;
       }
     }
     .lbl--choicechat {
@@ -49,18 +50,16 @@ orange
       padding: 10px;
       display: flex;
       align-items: center;
-
-      font-family: "Junction", sans-serif;
+      font-family: $font_junction;
       font-size: 1.4rem;
-
       .select--invite {
         padding-top: 3px;
         padding-bottom: 3px;
         font-size: 0.9rem;
-        background: orange;
-        border: 1px solid purple;
+        background: $orange;
+        border: 1px solid $purple;
         border-radius: 3px;
-        color: purple;
+        color: $purple;
         .option--invite {
         }
       }
@@ -71,13 +70,13 @@ orange
       font-size: 1.0rem;
       font-weight: bold;
       background: linear-gradient(180deg,
-        orange, orangered, #ae3c52);
-      border: 1px solid purple;
+        $orange, orangered, $dark_moderate_red);
+      border: 1px solid $purple;
       border-radius: 7px;
-      color: whitesmoke;
+      color: $whitesmoke;
       &:hover {
-        background: orange;
-        color: #ae3c52;
+        background: $orange;
+        color: $dark_moderate_red;
       }
     }
     .btn--close {
@@ -86,13 +85,13 @@ orange
       right: 10px;
       padding: 3px 7px;
       object-fit: cover;
-      background: radial-gradient(orange, purple);
-      border: 1px solid orange;
+      background: radial-gradient($orange, $purple);
+      border: 1px solid $orange;
       border-radius: 100%;
-      color: purple;
+      color: $purple;
       &:hover {
-        background: purple;
-        color: whitesmoke;
+        background: $purple;
+        color: $whitesmoke;
       }
     }
   }

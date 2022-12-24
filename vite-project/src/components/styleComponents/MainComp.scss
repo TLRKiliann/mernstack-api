@@ -1,7 +1,10 @@
-/*
-ligtblue
-"Acme", sans-serif;
-*/
+$pink: #ffc0cb;
+$sandybrown: #f4a460;
+$purple: #800080;
+$lightgreen: #90ee90;
+$font_acme: 'Acme', sans-serif;
+$font_dejavu: 'DejaVu Sans', sans-serif;
+$font_junction: 'Junction', sans-serif;
 
 .master--maincomp {
   width: 40%;
@@ -18,21 +21,21 @@ ligtblue
     border-radius: 15px;
     .h2--maincomp {
       text-align: center;
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 2.4rem;
-      text-shadow: 2px 2px 5px purple;
-      color: sandybrown;
+      text-shadow: 2px 2px 5px $purple;
+      color: $sandybrown;
       .span--lengthuser {
-        text-shadow: 2px 2px 5px purple;
-        color: pink;
+        text-shadow: 2px 2px 5px $purple;
+        color: $pink;
       }
     }
     .h3--maincomp {
       text-align: center;
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 1.8rem;
-      text-shadow: 2px 1px 1px purple;
-      color: sandybrown;
+      text-shadow: 2px 1px 1px $purple;
+      color: $sandybrown;
     }
   }
   .div--connection {
@@ -41,7 +44,7 @@ ligtblue
     margin: 10px auto;
     display: flex;
     align-items: center;
-    font-family: "DejaVu Sans", sans-serif;
+    font-family: $font_dejavu;
     font-size: 1.1rem;
     color: lightblue;
     background-color: rgba(85, 45, 255, 0.4);
@@ -55,9 +58,9 @@ ligtblue
       object-fit: cover;
     }
     .data--maincomp {
-      font-family: "Junction", sans-serif;
+      font-family: $font_junction;
       font-size: 1.2rem;
-      color: lightgreen;
+      color: $lightgreen;
     }
   }
 }

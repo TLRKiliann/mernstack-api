@@ -1,9 +1,13 @@
-/*"Acme", sans-serif;
-absolute
-slategray
-orange
-lightgreen
-*/
+$lightgreen: #90ee90;
+$orange: #ffa500;
+$orangered: #ff4500;
+$darkorange: #ff8c00;
+$sandybrown: #f4a460;
+$purple: #800080;
+$dark_moderate_violet: #7e53ae;
+$whitesmoke: #f5f5f5;
+$lightgrey_16: #161616;
+$font_acme: 'Acme', sans-serif;
 
 .div--home {
   position: absolute;
@@ -12,7 +16,7 @@ lightgreen
   left: 0px;
   height: 100%;
   background: radial-gradient(900px at 50% 50%, 
-    orange, purple);
+    $orange, $purple);
 
   .wallIntro {
     position: absolute;
@@ -20,7 +24,7 @@ lightgreen
     right: 0px;
     left: 0px;
     min-height: 100%;
-    background-color: #161616;
+    background-color: $lightgrey_16;
     overflow: hidden;
     opacity: 0;
 
@@ -34,11 +38,11 @@ lightgreen
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    font-family: "Acme", sans-serif;
+    font-family: $font_acme;
     font-size: 9rem;
-    text-shadow: 5px 3px 1px orangered,
-      8px 5px 10px whitesmoke;
-    color: sandybrown;
+    text-shadow: 5px 3px 1px $orangered,
+      8px 5px 10px $whitesmoke;
+    color: $sandybrown;
 
     animation-name: main--titleintro;
     animation-delay: 0s;
@@ -113,18 +117,18 @@ lightgreen
   z-index: 3;
   .btn--voletLeft {
     padding: 20px 40px;
-    font-family: "Acme", sans-serif;
+    font-family: $font_acme;
     font-size: 1.4rem;
     background: linear-gradient(30deg, 
-      rgba(45, 85, 255, 0.4), #7e53ae,
+      rgba(45, 85, 255, 0.4), $dark_moderate_violet,
       rgba(45, 85, 255, 0.4));
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
-    color: orange;
+    color: $orange;
     &:hover {
-      background: #7e53ae;
+      background: $dark_moderate_violet;
       border: 1mm outset rgba(150, 45, 255, 0.6);
-      color: lightgreen;
+      color: $lightgreen;
       cursor: pointer;
     }
     &:active {
@@ -147,20 +151,20 @@ lightgreen
 
   .btn--voletRight {
     padding: 20px 40px;
-    font-family: "Acme", sans-serif;
+    font-family: $font_acme;
     font-size: 1.4rem;
     font-weight: bold;
 
     background: linear-gradient(30deg, 
-      rgba(45, 85, 255, 0.4), #7e53ae,
+      rgba(45, 85, 255, 0.4), $dark_moderate_violet,
       rgba(45, 85, 255, 0.4));
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
-    color: orange;
+    color: $orange;
     &:hover {
-      background: #7e53ae;
+      background: $dark_moderate_violet;
       border: 1mm outset rgba(150, 45, 255, 0.6);
-      color: lightgreen;
+      color: $lightgreen;
       cursor: pointer;
     }
     &:active {
@@ -184,9 +188,9 @@ lightgreen
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Acme", sans-serif;
+  font-family: $font_acme;
   font-size: 1.4rem;
-  color: darkorange;
+  color: $darkorange;
 }
 /*
   .webdevanim {
@@ -271,7 +275,7 @@ lightgreen
 
     .btn--voletLeft {
       padding: 10px 20px;
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 1.0rem;
     }
   }
@@ -285,7 +289,7 @@ lightgreen
 
     .btn--voletRight {
       padding: 10px 20px;
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 1.0rem;
     }
   }

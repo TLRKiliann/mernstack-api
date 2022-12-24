@@ -1,19 +1,16 @@
-/*
-10px
-20px
-30px
-50px
-100%
-100px
-auto
-purple
-orange
-slategray
-#242424
-#383838
-"Allura", cursive;
-"DejaVu Sans", sans-serif;
-*/
+$purple: #800080;
+$orange: #ffa500;
+$slategray: #708090;
+$lightgrey_24: #242424;
+$lightgrey_38: #383838;
+$lightgrey_48: #484848;
+$lightgrey_42: #424242;
+$lightgrey_52: #525252;
+$whitesmoke: #f5f5f5;
+$lightgreen: #90ee90;
+$font_allura: "Allura", cursive;
+$font_dejavu: "DejaVu Sans", sans-serif;
+$font_junction: 'Junction', sans-serif;
 
 .profile {
   position: absolute;
@@ -21,12 +18,12 @@ slategray
   right: 0px;
   left: 0px;
   min-height: 100vh;
-  background: linear-gradient(180deg, purple, orange);
+  background: linear-gradient(180deg, $purple, $orange);
   z-index: -1;
   .div--mainimgprofile {
     width: 100%;
     margin: auto;
-    color: whitesmoke;
+    color: $whitesmoke;
     .img--bgprofile {
       position: fixed;
       top: 0px;
@@ -47,18 +44,18 @@ slategray
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    font-family: "Allura", cursive;
+    font-family: $font_allura;
     font-size: 1.6rem;
-    color: whitesmoke;
-    text-shadow: 2px 1px 1px #242424;
+    color: $whitesmoke;
+    text-shadow: 2px 1px 1px $lightgrey_24;
     .title--profileh1 {
       margin-left: 20px;
     }
     .p--maintitlepro {
       margin-left: 20px;
-      font-family: "Allura", cursive;
+      font-family: $font_allura;
       font-size: 2.6rem;
-      color: orange;
+      color: $orange;
     }
   }
   .tweekGroup--friends {
@@ -66,8 +63,7 @@ slategray
     margin: auto;
     display: flex;
     flex-direction: column;
-    color: whitesmoke;
-
+    color: $whitesmoke;
     .div--profileh4 {
       width: 340px;
       margin-bottom: 20px;
@@ -78,7 +74,7 @@ slategray
         width: 300px;
         margin: auto;
         margin-left: 20px;
-        font-family: 'Junction', sans-serif;
+        font-family: $font_junction;
       }
       .btn--refreshgroup {
         padding-top: 7px;
@@ -87,20 +83,20 @@ slategray
         padding-left: 20px;
         font-family: "Acme", sans-serif;
         font-size: 1.0rem;
-        background-color: #383838;
-        border: 1mm outset #525252;
+        background-color: $lightgrey_38;
+        border: 1mm outset $lightgrey_52;
         border-radius: 7px;
-        color: whitesmoke;
+        color: $whitesmoke;
         &:hover {
-          background: #424242;
-          border: 1mm ouset #484848;
-          color: orange;
+          background: $lightgrey_42;
+          border: 1mm ouset $lightgrey_48;
+          color: $orange;
         }
         &:active {
           transform: scale(0.9);
-          background: #242424;
-          border: 1mm inset #383838;
-          color: lightgreen;
+          background: $lightgrey_24;
+          border: 1mm inset $lightgrey_38;
+          color: $lightgreen;
         }
       }
     }
@@ -111,13 +107,13 @@ slategray
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-family: "DejaVu Sans", sans-serif;
+      font-family: $font_dejavu;
       font-size: 1.0rem;
       font-weight: bold;
-      background: #242424;
+      background: $lightgrey_24;
       border-radius: 7px;
-      box-shadow: 0px 0px 4px slategray;
-      color: slategray;
+      box-shadow: 0px 0px 4px $slategray;
+      color: $slategray;
 
       .p--profile0 {
         margin-left: 60px;
@@ -156,9 +152,9 @@ slategray
       align-items: center;
       font-family: 'DejaVu Sans', sans-serif;
       font-size: 0.9rem;
-      background: #242424;
+      background: $lightgrey_24;
       border-radius: 7px;
-      box-shadow: 0px 0px 4px slategray;
+      box-shadow: 0px 0px 4px $slategray;
       .img--profileusers {
         margin-right: 10px;
         margin-left: 10px;
@@ -193,8 +189,8 @@ slategray
         margin-right: 10px;
         padding: 3px 10px;
         /*background: #161616;*/
-        background: linear-gradient(180deg, purple, orange);
-        border: 1px solid orange;
+        background: linear-gradient(180deg, $purple, $orange);
+        border: 1px solid $orange;
         border-radius: 5px;
         color: lightgrey;
         cursor: pointer;        
@@ -205,8 +201,8 @@ slategray
           content: "Delete";
         }
         &:hover {
-          background: orange;
-          color: #242424;
+          background: $orange;
+          color: $lightgrey_24;
         }
       }
     }

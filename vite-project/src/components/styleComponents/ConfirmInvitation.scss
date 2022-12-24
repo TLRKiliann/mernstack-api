@@ -1,10 +1,13 @@
-/*
-"DejaVu Sans", sans-serif;
-orange
-whitesmoke
-purple
-#ae3c52
-*/
+$soft_blue: #93CAED;
+$yellow: #ffff00;
+$purple: #800080;
+$orange: #ffa500;
+$orangered: #ff4500;
+$whitesmoke: #f5f5f5;
+$lightgrey_24: #242424;
+$dark_moderate_red: #ae3c52;
+$font_dejavu: 'DejaVu Sans', sans-serif;
+$font_acme: 'Acme', sans-serif;
 
 .box--confirminvitation {
   position: absolute;
@@ -19,45 +22,45 @@ purple
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(180deg,
-    orange, purple);
+    $orange, $purple);
   border-radius: 15px;
   z-index: 2;
   .confirm {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-family: "DejaVu Sans", sans-serif;
+    font-family: $font_dejavu;
     font-size: 1.2rem;
-    color: purple;
+    color: $purple;
     .span--confirmation {
       margin-right: 5px;
       margin-left: 5px;
-      font-family: "Acme", sans-serif;
+      font-family: $font_acme;
       font-size: 1.8rem;
-      text-shadow: 2px 1px 1px purple;
-      color: #50bcfe;
+      text-shadow: 2px 1px 1px $purple;
+      color: $soft_blue;
     }
   }
   .input--validationInvite {
-    background-color: #242424;
-    color: whitesmoke;
-    border: 1px solid yellow;
+    background-color: $lightgrey_24;
+    color: $whitesmoke;
+    border: 1px solid $yellow;
   }
   .btn--validationlast {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px 10px;
-    font-family: "DejaVu Sans", sans-serif;
+    font-family: $font_dejavu;
     font-size: 0.9rem;
     font-weight: bold;
     background: linear-gradient(180deg,
-      orange, orangered, #ae3c52);
-    border: 1px solid purple;
+      $orange, $orangered, $dark_moderate_red);
+    border: 1px solid $purple;
     border-radius: 7px;
-    color: whitesmoke;
+    color: $whitesmoke;
     &:hover {
-      background: orange;
-      color: #ae3c52;
+      background: $orange;
+      color: $dark_moderate_red;
     }
   }
 }

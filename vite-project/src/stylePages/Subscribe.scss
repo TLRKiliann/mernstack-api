@@ -2,12 +2,14 @@ $royalblue: #4169e1;
 $orange: #ffa500;
 $lightgreen: #90ee90;
 $purple: #800080;
+$whitesmoke: #f5f5f5;
+$slategray: #708090;
 $dodgerblue: #1e90ff;
-/*"DejaVu Sans", sans-serif
-"Acme", sans-serif;
-20px
-auto
-*/
+$lightgrey: #CDCDCD;
+$lightblue: #add8e6;
+$font_acme: "Acme", sans-serif;
+$font_dejavu: "DejaVu Sans", sans-serif;
+$font_junction: 'Junction', sans-serif;
 
 .subscribe {
   position: absolute;
@@ -29,7 +31,7 @@ auto
     background-color: rgba(45, 85, 255, 0.4);
     border: 3mm groove rgba(185, 45, 255, 0.1);
     border-radius: 20px;
-    box-shadow: 0px 0px 4px slategrey;
+    box-shadow: 0px 0px 4px $slategray;
 
     .div--subscribe {
       width: 300px;
@@ -41,9 +43,9 @@ auto
         margin: auto;
         margin-bottom: 20px;
         margin-left: 0px;
-        font-family: "Acme", sans-serif;
+        font-family: $font_acme;
         font-size: 2.4rem;
-        color: whitesmoke;
+        color: $whitesmoke;
         text-shadow: 2px 2px 1px $purple,
         4px 3px 2px #242424;
       }
@@ -56,11 +58,11 @@ auto
       }
 
       .lbl--sub {
-        font-family: 'Junction', sans-serif;
+        font-family: $font_junction;
         font-size: 1.2rem;
         
         &::placeholder {
-          color: lightgrey;
+          color: $lightgrey;
         }
       }
 
@@ -69,7 +71,7 @@ auto
         margin-top: 5px;
         margin-bottom: 10px;
         padding: 5px 5px;
-        font-family: 'DejaVu Sans', sans-serif;
+        font-family: $font_dejavu;
         font-size: 1.0rem;
         font-weight: bold;
         background-color: rgba(85, 45, 255, 0.4);
@@ -92,11 +94,11 @@ auto
           margin: 15px 0px;
           margin-left: 10px;
           padding: 5px 10px;
-          font-family: 'DejaVu Sans', sans-serif;
+          font-family: $font_dejavu;
           font-size: 0.9rem;
           background-color: rgba(85, 45, 255, 0.4);
           border: 1mm outset rgba(150, 45, 255, 0.8);
-          color: whitesmoke;
+          color: $whitesmoke;
         }
       }
     }
@@ -105,21 +107,21 @@ auto
     margin: auto;
     padding: 3px 20px;
     
-    font-family: "Acme", sans-serif;
+    font-family: $font_acme;
     font-size: 1.4rem;
     font-weight: bold;
     
     background: $royalblue;
     border: 3px outset $royalblue;
     border-radius: 10px;
-    color: whitesmoke;
+    color: $whitesmoke;
 
     &:hover {
       background-color: $dodgerblue;
       border: 3px outset $dodgerblue;
       cursor: pointer;
       transform: scale(1.1);
-      color: lightblue;
+      color: $lightblue;
     }
   }
 }

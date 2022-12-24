@@ -1,7 +1,10 @@
-/*
-purple
-orange
-*/
+$purple: #800080;
+$orange: #ffa500;
+$whitesmoke: #f5f5f5;
+$slategray: #708090;
+$lightgreen: #90ee90;
+$font_acme: 'Acme', sans-serif;
+$font_dejavu: 'DejaVu Sans', sans-serif;
 
 .div--imgcompute {
   position: fixed;
@@ -10,33 +13,28 @@ orange
   bottom: 0px;
   left: 0px;
   opacity: 0.7;
-  background: linear-gradient(180deg, purple, orange);
+  background: linear-gradient(180deg, $purple, $orange);
   z-index: -1;
-
   .img--chatcomputerroom {
     opacity: 0.1;
   }
 }
-
 .title--computerroom {
   .compter--roomdb {
     margin-top: 120px;
     margin-left: 20px;
-    font-family: "Acme", sans-serif;
+    font-family: $font_acme;
     font-size: 2.4rem;
-    color: whitesmoke;
-    text-shadow: 2px 2px 1px purple,
+    color: $whitesmoke;
+    text-shadow: 2px 2px 1px $purple,
     4px 3px 2px #242424;
   }
 }
-
 .computer--room {
   margin-top: 20px;
-  
   .links--computer {
-    font-family: "DejaVu Sans", sans-serif;
+    font-family: $font_dejavu;
     cursor: pointer;
-
     .span--linktoroom {
       padding: 20px 0px;
       padding-left: 20px;
@@ -44,21 +42,19 @@ orange
       margin-right: 20px;
       margin-left: 20px;
       display: flex;
-
       background-color: rgba(85, 45, 255, 0.6);
       border: 2mm outset rgba(85, 45, 255, 0.2);
-      box-shadow: 0px 0px 4px slategrey;
       border-radius: 10px;
-
+      box-shadow: 0px 0px 4px $slategray;
       text-decoration: none;
-      color: whitesmoke;
+      color: $whitesmoke;
       &:hover {
         background-color: rgba(85, 45, 255, 0.4);
-        color: orange;
+        color: $orange;
       }
       &:active {
-        background-color: purple;
-        color: lightgreen;
+        background-color: $purple;
+        color: $lightgreen;
       }
     }
   }

@@ -1,12 +1,12 @@
 $purple: #800080;
 $orange: #ffa500;
+$bright_yellow: #eedd44;
+$vivid_pink: #f32170;
+$slategray: #708090;
 $lightgrey_28: #282828;
 $lightgrey_42: #424242;
 $lightgrey: #CDCDCD;
-$slategray: #708090;
-$specialtextcolor1: #eedd44;
-$specialtextcolor2: #f32170;
-$font_dejavu: "DejaVu Sans", sans-serif;
+$font_dejavu: 'DejaVu Sans', sans-serif;
 
 .private--chat {
   position: absolute;
@@ -61,8 +61,8 @@ $font_dejavu: "DejaVu Sans", sans-serif;
           margin-left: 10px;
           font-size: 1.1rem;
           font-family: "DejaVu Sans", sans-serif;
-          background: linear-gradient(to top, $specialtextcolor1,
-            $specialtextcolor2);
+          background: linear-gradient(to top, $bright_yellow,
+            $vivid_pink);
           -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
           .span--useronline {
@@ -120,8 +120,8 @@ $font_dejavu: "DejaVu Sans", sans-serif;
         border: 3px inset $lightgrey_28;
         background: $lightgrey_28;
         &::placeholder {
-        background: linear-gradient(to top, $specialtextcolor1,
-          $specialtextcolor2);
+        background: linear-gradient(to top, $bright_yellow,
+          $vivid_pink);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         }
