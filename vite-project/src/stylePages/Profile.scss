@@ -1,5 +1,7 @@
 $purple: #800080;
 $orange: #ffa500;
+$bright_yellow: #eedd44;
+$vivid_pink: #f32170;
 $slategray: #708090;
 $lightgrey_24: #242424;
 $lightgrey_38: #383838;
@@ -17,7 +19,9 @@ $font_junction: 'Junction', sans-serif;
   top: 0px;
   right: 0px;
   left: 0px;
+  width: 100%;
   min-height: 100vh;
+
   background: linear-gradient(180deg, $purple, $orange);
   z-index: -1;
   .div--mainimgprofile {
@@ -59,28 +63,32 @@ $font_junction: 'Junction', sans-serif;
     }
   }
   .tweekGroup--friends {
-    width: 100%;
+    width: 99%;
     margin: auto;
     display: flex;
-    flex-direction: column;
     color: $whitesmoke;
     .div--profileh4 {
-      width: 340px;
+      width: auto;
       margin-bottom: 20px;
       display: flex;
       flex-direction: row;
-      justify-content: left;
+      align-items: center;
+
       .titleh4--profile {
-        width: 300px;
         margin: auto;
-        margin-left: 20px;
-        font-family: $font_junction;
+        margin: auto 20px;
+        font-family: $font_dejavu;
+        font-size: 1.8rem;
+        background: linear-gradient(to top, $bright_yellow,
+          $vivid_pink);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
       }
       .btn--refreshgroup {
-        padding-top: 7px;
-        padding-right: 20px;
-        padding-bottom: 5px;
-        padding-left: 20px;
+        padding-top: 3px;
+        padding-right: 10px;
+        padding-bottom: 3px;
+        padding-left: 10px;
         font-family: "Acme", sans-serif;
         font-size: 1.0rem;
         background-color: $lightgrey_38;
@@ -100,112 +108,113 @@ $font_junction: 'Junction', sans-serif;
         }
       }
     }
-    .div--titleusersgroup {
-      width: 1000px;
-      margin: auto;
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-family: $font_dejavu;
-      font-size: 1.0rem;
-      font-weight: bold;
-      background: $lightgrey_24;
-      border-radius: 7px;
-      box-shadow: 0px 0px 4px $slategray;
-      color: $slategray;
+  }
+  .div--titleusersgroup {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: $font_dejavu;
+    font-size: 1.0rem;
+    font-weight: bold;
+    background: $lightgrey_24;
+    border-radius: 7px;
+    box-shadow: 0px 0px 4px $slategray;
+    color: $slategray;
 
-      .p--profile0 {
-        margin-left: 60px;
+    .p--profile0 {
+      margin-left: 60px;
+    }
+    .p--profile1 {
+      margin-right: 10px;
+      width: 100px;
+    }
+    .p--profile2 {
+      margin-right: 10px;
+      width: 120px;
+    }
+    .p--profile3 {
+      margin-right: 10px;
+      width: 30px; 
+    }
+    .p--profile4 {
+      margin-right: 10px;
+      width: 70px; 
+    }
+    .p--profile5 {
+      margin-right: 10px;
+      width: 300px;
+    }
+    .p--profile6 {
+      margin-right: 10px;
+      width: 150px;
+    }
+  }
+  .div--usersgroup {
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'DejaVu Sans', sans-serif;
+    font-size: 0.9rem;
+    background: $lightgrey_24;
+    border-radius: 7px;
+    box-shadow: 0px 0px 4px $slategray;
+    .img--profileusers {
+      margin-right: 10px;
+      margin-left: 10px;
+      border-radius: 50% 50%;
+      object-fit: cover;
+    }
+    .p--profile1 {
+      margin-right: 10px;
+      width: 100px;
+    }
+    .p--profile2 {
+      margin-right: 10px;
+      width: 120px;
+    }
+    .p--profile3 {
+      margin-right: 10px;
+      width: 30px; 
+    }
+    .p--profile4 {
+      margin-right: 10px;
+      width: 70px; 
+    }
+    .p--profile5 {
+      margin-right: 10px;
+      width: 300px;
+    }
+    .p--profile6 {
+      margin-right: 10px;
+      width: 150px;
+    }
+    .btn--deletefromgroup {
+      margin-right: 10px;
+      padding: 3px 10px;
+      /*background: #161616;*/
+      background: linear-gradient(180deg, $purple, $orange);
+      border: 1px solid $orange;
+      border-radius: 5px;
+      color: lightgrey;
+      cursor: pointer;        
+      &::before {
+        content: "";
       }
-      .p--profile1 {
-        margin-right: 10px;
-        width: 100px;
+      &::after {
+        content: "Delete";
       }
-      .p--profile2 {
-        margin-right: 10px;
-        width: 120px;
-      }
-      .p--profile3 {
-        margin-right: 10px;
-        width: 30px; 
-      }
-      .p--profile4 {
-        margin-right: 10px;
-        width: 70px; 
-      }
-      .p--profile5 {
-        margin-right: 10px;
-        width: 300px;
-      }
-      .p--profile6 {
-        margin-right: 10px;
-        width: 150px;
+      &:hover {
+        background: $orange;
+        color: $lightgrey_24;
       }
     }
-    .div--usersgroup {
-      width: 1000px;
-      margin: auto;
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-family: 'DejaVu Sans', sans-serif;
-      font-size: 0.9rem;
-      background: $lightgrey_24;
-      border-radius: 7px;
-      box-shadow: 0px 0px 4px $slategray;
-      .img--profileusers {
-        margin-right: 10px;
-        margin-left: 10px;
-        border-radius: 50% 50%;
-        object-fit: cover;
-      }
-      .p--profile1 {
-        margin-right: 10px;
-        width: 100px;
-      }
-      .p--profile2 {
-        margin-right: 10px;
-        width: 120px;
-      }
-      .p--profile3 {
-        margin-right: 10px;
-        width: 30px; 
-      }
-      .p--profile4 {
-        margin-right: 10px;
-        width: 70px; 
-      }
-      .p--profile5 {
-        margin-right: 10px;
-        width: 300px;
-      }
-      .p--profile6 {
-        margin-right: 10px;
-        width: 150px;
-      }
-      .btn--deletefromgroup {
-        margin-right: 10px;
-        padding: 3px 10px;
-        /*background: #161616;*/
-        background: linear-gradient(180deg, $purple, $orange);
-        border: 1px solid $orange;
-        border-radius: 5px;
-        color: lightgrey;
-        cursor: pointer;        
-        &::before {
-          content: "";
-        }
-        &::after {
-          content: "Delete";
-        }
-        &:hover {
-          background: $orange;
-          color: $lightgrey_24;
-        }
-      }
-    }
+    
   }
 }
 
