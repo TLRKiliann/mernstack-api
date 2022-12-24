@@ -133,13 +133,14 @@ app.put('/api/inviteOtherUser/:id', async (req: Request, res: Response, next: Ne
 app.put('/api/setUserConfirm/:id', async (req: Request, res: Response, next: NextFunction) => {
   const id: number | null = Number(req.params.id);
   const firstName: string = req.body.firstName;
+  const sentMsg: string = req.body.sentMsg;
+  const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
-  console.log(id, firstName, returnConfirm, "setUserConfirm");
+  console.log(id, firstName, sentMsg, messagebox, returnConfirm, "setUserConfirm");
 
   try {
-    const result = await pool.query('update members set\
-      firstName=?, returnConfirm=? where id=?',
-      [firstName, returnConfirm, id]);
+    const result = await pool.query('update members set firstName=?, returnConfirm=?,\
+      sentMsg=?, messagebox=? where id=?', [firstName, returnConfirm, sentMsg, messagebox, id]);
     res.status(200).send();
   } catch (err) {
     throw err;
@@ -152,7 +153,7 @@ app.put('/api/confirmationother/:id', async (req: Request, res: Response, next: 
   const id: number | null = Number(req.params.id);
   const signalRecieve: boolean = req.body.signalRecieve;
   const returnConfirm: boolean = req.body.returnConfirm;
-  console.log(id, signalRecieve, returnConfirm, "confirmationother");
+  //console.log(id, signalRecieve, returnConfirm, "confirmationother");
 
   try {
     const result = await pool.query('update members set\
@@ -171,7 +172,7 @@ app.post('/api/msgTerminal', async (req: Request, res: Response, next: NextFunct
   const usr: string = req.body.usr;
   const msg: string = req.body.msg;
   const room: string = req.body.room;
-  console.log(id, date, usr, msg, room, "msg post terminal")
+  //console.log(id, date, usr, msg, room, "msg post terminal")
 
   try {
     const result = await pool.query("insert into tableroom (id, date, usr, msg, room) values (?,?,?,?,?)",
@@ -212,7 +213,7 @@ app.post('/api/postprivate', async (req: Request, res: Response, next: NextFunct
   const user: string = req.body.user;
   const msg: string = req.body.msg;
   const room: string = req.body.room;
-  console.log(id, date, user, msg, room, "msg post terminal")
+  //console.log(id, date, user, msg, room, "msg post terminal")
 
   try {
     const result = await pool.query("insert into privatechat (id, date, user, msg, room) values (?,?,?,?,?)",

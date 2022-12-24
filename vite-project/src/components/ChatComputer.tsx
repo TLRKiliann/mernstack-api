@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import usePersonnalHook from '../hook/personnal.hook'
 import serviceRouting from '../services/serviceRouting'
-import { db_computers } from '../models/db_computers'
+//import { db_computers } from '../models/db_computers'
 import { db_computeOne } from '../models/db_computeList'
 import { db_computeTwo } from '../models/db_computeList'
 import { db_computeThree } from '../models/db_computeList'
@@ -33,13 +33,10 @@ const ChatComputer: React.FC = () => {
 
   const { id } = useParams<{ id?: string }>();
   const { username } = useAuthLogin()
-  const Navigate = useNavigate()
-  
+  const Navigate = useNavigate()  
   const users = usePersonnalHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
-  //console.log(userRoom, 'userRoom state')
-  
   const [computerDb, setComputerDb] = useState<string>("")
   const [imgBg, setImgBg] = useState<string>("")
   const [links, setLinks] = useState<Array<computerType>>([])
@@ -54,12 +51,11 @@ const ChatComputer: React.FC = () => {
     const user: UserType = users?.find((u) => u.firstName === username)
     const id: number | null = user?.id
     if (id) {
-      //console.log("id is defined")
       const notFilled: string = ""
       const newuser: UserType = users?.find(u => u.id === id)
-      const changeConfRoom: object = {...newuser, firstName: username, mainroom: computerDb,
-        room: link, isConnected: true, signalRecieve: false, sentMsg: notFilled,
-        messagebox: notFilled, returnConfirm: false}      
+      const changeConfRoom: object = {...newuser, firstName: username,
+        mainroom: computerDb, room: link, isConnected: true, signalRecieve: false,
+        sentMsg: notFilled, messagebox: notFilled, returnConfirm: false}      
       if (newuser) {
         serviceRouting
           .updateRoomName(id, changeConfRoom)

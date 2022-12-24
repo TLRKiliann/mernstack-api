@@ -3,11 +3,10 @@ import { useAuthLogin } from '../context/AuthProvider'
 import bgProfile from '../assets/circle.jpg';
 import '../stylePages/Profile.scss'
 
-
 const Profile: React.FC = () => {
 
   const { username, tweekGroup, setTweekGroup } = useAuthLogin()
-  //console.log(tweekGroup, "tweekGroup")
+
   const handleRefresh = () => {
     console.log("Refresh !")
     const refreshGroup = JSON.parse(localStorage.getItem("Group"))
@@ -46,10 +45,12 @@ const Profile: React.FC = () => {
             onClick={handleRefresh}
             className="btn--refreshgroup"
           >
-            Refresh
+            Undo
           </button>
         </div>
-        
+      </div>
+
+      <div>        
         <div className="div--titleusersgroup">
           <p className="p--profile0">
           </p>

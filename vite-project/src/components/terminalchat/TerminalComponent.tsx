@@ -27,7 +27,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
         .then(response => {
           setMessages(response)
         })
-    }, 2000)
+    }, 1000)
     return () => clearInterval(interval)
   }, [])
 

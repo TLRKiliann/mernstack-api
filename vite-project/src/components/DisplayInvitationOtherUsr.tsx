@@ -10,6 +10,7 @@ type Form = {
 }
 
 interface DisplayInvitationOtherUsrProps {
+  id: number | null
   username: string
   initialSender: string
   form: object
@@ -26,7 +27,7 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
       <h4 className="invitation--h4">
         
         <span className="span--h4">
-          {props.username} !
+          {props?.username} !
         </span>
         
         <p style={{marginTop: "30px"}}>
@@ -34,30 +35,31 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
         </p>
 
         <span className="span--h4">
-          {props.initialSender}.
+          {props?.initialSender}.
         </span>
 
       </h4>
 
       <p className="invitation--p">
         Are you ok for
-        <span className="span--h4">
-          {props.form}
+        <span className="span--invitationp">
+          {props?.form}
         </span>chat ?
       </p>
 
-      <label>
+      <label className="lbl--checkconfirmfirsttime">
         <input
           type="checkbox"
-          checked={props.isCheckInvite}
-          onChange={props.handleSwitchBox}
+          checked={props?.isCheckInvite}
+          onChange={props?.handleSwitchBox}
         />
         &nbsp;yes
       </label>
 
       <button
+        id={props?.id}
         type="button"
-        onClick={props.handleInvitedResponse}
+        onClick={(e) => props.handleInvitedResponse(e)}
         className="btn--displayotheruser"
       >
         Validate

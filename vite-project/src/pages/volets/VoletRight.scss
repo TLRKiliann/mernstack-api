@@ -1,9 +1,7 @@
-/*Right volet
-whitesmoke
-lightgreen
-100vh
-'Junction', sans-serif;
-*/
+/*Right volet*/
+$whitesmoke: #f5f5f5;
+$lightgreen: #90ee90;
+$font_junction: 'Junction', sans-serif;
 
 .volet--R {
   position: absolute;
@@ -50,13 +48,13 @@ lightgreen
   background: transparent;
   border: 1mm outset rgba(150, 45, 255, 0.4);
   border-radius: 50% 50%;
-  color: whitesmoke;
+  color: $whitesmoke;
 
   &:hover {
     cursor: pointer;
     background-color: rgba(85, 45, 255, 0.4);
     border: 1mm outset rgba(85, 45, 255, 0.4);
-    color: lightgreen;
+    color: $lightgreen;
   }
 }
 
@@ -68,7 +66,7 @@ lightgreen
   border: 1mm outset rgba(150, 45, 255, 0.4);
   border-radius: 5px;
   font-weight: bold;
-  color: whitesmoke;
+  color: $whitesmoke;
 }
 
 .subvolet--R img {
@@ -89,8 +87,8 @@ lightgreen
 .li--right {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed whitesmoke;
-  color: whitesmoke;
+  border-bottom: 1px dashed $whitesmoke;
+  color: $whitesmoke;
   
   &:hover {
     color: orange;
@@ -100,9 +98,9 @@ lightgreen
 .link--tagvoletr {
   margin: 2px 0px;
   text-decoration: none;
-  font-family: 'Junction', sans-serif;
+  font-family: $font_junction;
   font-size: 1.0rem;
-  color: whitesmoke;
+  color: $whitesmoke;
 
   &:hover {
     color: orange;
@@ -155,13 +153,13 @@ lightgreen
   background: transparent;
   border: 1mm outset rgba(150, 45, 255, 0.4);
   border-radius: 50% 50%;
-  color: whitesmoke;
+  color: $whitesmoke;
 
   &:hover {
     cursor: pointer;
     background-color: rgba(85, 45, 255, 0.4);
     border: 1mm outset rgba(85, 45, 255, 0.4);
-    color: lightgreen;
+    color: $lightgreen;
   }
 }
 
@@ -173,7 +171,7 @@ lightgreen
   border: 1mm outset rgba(150, 45, 255, 0.4);
   border-radius: 5px;
   font-weight: bold;
-  color: whitesmoke;
+  color: $whitesmoke;
 }
 
 .subvolet--R2 img {

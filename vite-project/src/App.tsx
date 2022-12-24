@@ -14,7 +14,6 @@ import PrivateMessage from './components/privatechat/PrivateMessage'
 import ErrorPageNotFound from './pages/PageNotFound'
 import './App.scss'
 
-
 const App:React.FC = () => {
   return(
     <div>
@@ -48,13 +47,11 @@ const App:React.FC = () => {
             <ComputerRoom />
           </PrivateRoute>
         } />
-
         <Route path='/computerroom/privatemessage' element={
           <PrivateRoute>
             <PrivateMessage />
           </PrivateRoute>
         } />
-
         <Route path='*' element={<ErrorPageNotFound />} />
       </Routes>
     </div>
