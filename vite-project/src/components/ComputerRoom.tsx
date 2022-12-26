@@ -42,6 +42,8 @@ const ComputerRoom: React.FC = () => {
   const { username, otherUser, setOtherUser, versusUser, setVersusUser } = useAuthLogin()
   const [refreshUser, setRefreshUser] = useState<{users?: UserType}>({})
   const [displayConfirmInvite, setDisplayConfirmInvite] = useState<boolean>(false)
+  const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
+  console.log(informUsrMsg, "informUsrMsg")
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,8 +57,8 @@ const ComputerRoom: React.FC = () => {
   }, [])
 
   const [catchById, setCatchById] = useState<Array<UserType>>([])  
-  const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
-  const [validMsg, setValidMsg] = useState<Array<UserType>>([])
+  const [validMsg, setValidMsg] = useState<Array<UserType>>([]) 
+  console.log(validMsg, "validMsg")
 
   const params = useParams<{ link?: string }>()
   const Navigate = useNavigate()
@@ -136,32 +138,20 @@ const ComputerRoom: React.FC = () => {
     }
   }
 
-  const handleTime = () => {
-    console.log("handleTime 5")
-    const myUser: object = users?.find((user) => user?.firstName === username)
-    //const definedConfirm: boolean = myUser?.returnConfirm
-    const userSignalSearch: object = users?.find((u) => u?.returnConfirm === 1)
-    const signalUserDefined: string = userSignalSearch?.firstName
-    if (signalUserDefined == username) {
+  const handleFilterUser = (changeUserNameReturnConfirm: object) => {
+    console.log("handleFilterUser 5")
+    const retrieveUserName: string = changeUserNameReturnConfirm.firstName
+    if (retrieveUserName === username) {
       console.log("Validation confirmed ! 1")
       const timerIdTwo = setTimeout(() => {
         Navigate('/computerroom/privatemessage')
       }, 1000)
-      setCatchById("")
       setInformUsrMsg("")
-      setValidMsg("")
-    } else if (myUser) {
-      console.log("Validation confirmed ! 2")
-      const timerIdTwo = setTimeout(() => {
-        Navigate('/computerroom/privatemessage')
-      }, 1000)
       setCatchById("")
-      setInformUsrMsg("")
       setValidMsg("")
     } else {
-      console.log("HandleTime is not validated...")
+      console.log("HandleFilterUser is not validated...")
     }
-    setCatchById("")
   }
 
   //Confirm your invitation after invited has said yes.
@@ -169,11 +159,11 @@ const ComputerRoom: React.FC = () => {
     console.log("handleValidInvitation 4")
     if (isChecked === true) {
       const user: UserType = users?.find(user => user.firstName === username)
-      const id: number = user.id;
+      const id: number = user?.id;
       const newuser = users?.find(user => user.id === id)
       const noString: string = ""
-      const changeUserNameReturnConfirm = {...newuser, firstName: username,
-        sentMsg: noString, messagebox: noString, returnConfirm: true}
+      const changeUserNameReturnConfirm: object = {...newuser, firstName: username,
+        sentMsg: noString, messagebox: noString, returnConfirm: 1}
 
       serviceRouting
         .updateUsrRetConf(id, changeUserNameReturnConfirm)
@@ -203,7 +193,7 @@ const ComputerRoom: React.FC = () => {
           alert("Problem to confirm msg handleValidInvitation...")
         })
       console.log("handleValidInvitation confirmed")
-      handleTime()
+      handleFilterUser(changeUserNameReturnConfirm)
     } else {
       console.log("Confirmation not confirmed...")
     }
@@ -212,16 +202,20 @@ const ComputerRoom: React.FC = () => {
 
   //Invited receives your invitation
   const handleInvitedResponse = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("handleInvitedResponse - phase :1")
-    const findSentMsg: UserType = refreshUser?.find((u) => u?.sentMsg !== "")
+    console.log("handleInvitedResponse 3")
+    const findSentMsg: UserType = refreshUser?.find((u) => u?.sentMsg.length !== 0) //modif here
+    console.log(findSentMsg, 'findSentMsg')
+
     const senderInvite: string = findSentMsg?.sentMsg
+    console.log(senderInvite, 'senderInvite')
+
     const searchOtherUser = users?.find((u) => u?.firstName === senderInvite)
     setVersusUser(searchOtherUser)
     const user = users?.find(user => user?.firstName === username)
     const id: number | null = user?.id;
     const confirmInvitFromOther = users?.find(user => user.id === id)
-    const changeReturnConf: object = {...confirmInvitFromOther, signalRecieve: false,
-      returnConfirm: true}
+    const changeReturnConf: object = {...confirmInvitFromOther, signalRecieve: 0,
+      returnConfirm: 1}
 
     serviceRouting
       .updateResponseUser(id, changeReturnConf)
@@ -267,7 +261,7 @@ const ComputerRoom: React.FC = () => {
     setIsCheckInvite(!isCheckInvite)
   }
 
-  return(
+  return (
     <div className="nextcomp--room">
 
       <div className="div--animationroomStyle">
@@ -353,3 +347,27 @@ const ComputerRoom: React.FC = () => {
 }
 
 export default ComputerRoom;
+
+/*
+    //const userSignalSearch: object = users?.find((u) => u.returnConfirm === 1)
+    //const signalUserDefined: string = userSignalSearch.firstName
+    /*if (signalUserDefined === username) {
+      console.log("Validation confirmed ! 1")
+      const timerIdTwo = setTimeout(() => {
+        Navigate('/computerroom/privatemessage')
+      }, 1000)
+      setCatchById("")
+      setInformUsrMsg("")
+      setValidMsg("")
+    } else if () {
+      console.log("Validation confirmed ! 2")
+      const timerIdTwo = setTimeout(() => {
+        Navigate('/computerroom/privatemessage')
+      }, 1000)
+      setCatchById("")
+      setInformUsrMsg("")
+      setValidMsg("")
+    } else {
+      console.log("HandleFilterUser is not validated...")
+    }
+*/
