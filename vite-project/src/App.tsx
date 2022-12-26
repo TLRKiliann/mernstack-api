@@ -23,14 +23,14 @@ const App:React.FC = () => {
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/profile' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <Profile />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route exact path='/online' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <Online />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route exact path='/help' element={
           <PrivateRoute>

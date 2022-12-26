@@ -13,7 +13,7 @@ const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
     <div className="box--confirminvitation">
       <h4 className="confirm">
         <span className="span--confirmation">{props.username}</span>
-        do you confirm your invitation ?
+        do you confirm invitation ?
       </h4>
       <label>
         <input

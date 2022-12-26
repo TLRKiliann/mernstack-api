@@ -7,14 +7,6 @@ import AskMessageBox from '../components/AskMessageBox'
 import ResponsePrivateMsg from '../components/ResponsePrivateMsg'
 import '../stylePages/Online.scss'
 
-//import { computerType } from '../models/computerType'
-//import { UserType } from '../models/usertype'
-
-/*type DataAllType = {
-  users: UserType[]
-  computers: computerType[]
-}*/
-
 type Field = {
   value?: sting
   label?: string
