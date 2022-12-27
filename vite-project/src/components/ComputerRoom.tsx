@@ -261,7 +261,7 @@ const ComputerRoom: React.FC = () => {
   //Invited receives your invitation
   const handleInvitedResponse = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log("handleInvitedResponse 3")
-    if ((isCheckInvite === true) && (isNotCheckInvite === false)) {
+    if (isCheckInvite === true) {
       const findSentMsg: UserType = refreshUsers?.find((u) => u?.sentMsg.length !== 0)
       console.log(findSentMsg, 'findSentMsg')
 
@@ -272,14 +272,14 @@ const ComputerRoom: React.FC = () => {
       setVersusUser(searchOtherUser)
       const user = users?.find(user => user?.firstName === username)
       const id: number | null = user?.id;
-      const confirmInvitFromOther = users?.find(user => user.id === id)
+      const confirmInvitFromOther = users?.find((user) => user.id === id)
       const changeReturnConf: object = {...confirmInvitFromOther, signalRecieve: 0,
         returnConfirm: 1}
 
       serviceRouting
         .updateResponseUser(id, changeReturnConf)
         .then(initialData => {
-          setInformUsrMsg(users?.map(user => user?.id === id ? 
+          setInformUsrMsg(users?.map((user) => user?.id === id ? 
             {
               id: id,
               img: user.img,
@@ -300,12 +300,12 @@ const ComputerRoom: React.FC = () => {
           ))
         })
         .catch((error) => {
-          setInformUsrMsg(users?.filter(cust => cust.id !== id))
+          setInformUsrMsg(users?.filter((cust) => cust.id !== id))
           alert("Problem to confirm msg handleValidInvitation...", error)
         })
       setDisplayConfirmInvite(true)
       console.log("handleInvitedResponse - phase :3")
-    } else if ((isNotCheckInvite === true) && (isCheckInvite === false)) {
+    } else if (isNotCheckInvite === true) {
       //const resetUserParams = users.filter((user) => user?.room !== roomStyle)
       const emptyString: string = ""
       const renamedRoom: string = roomStyle
@@ -313,29 +313,33 @@ const ComputerRoom: React.FC = () => {
       //console.log(searchUserParams, 'searchUserParams')
       const resetOneUserSentMsg = searchUserParams.find((s) => s.sentMsg.length !== 0)
       //console.log(resetOneUserSentMsg, 'resetOneUserSentMsg')
-      const idFirst: number | null = resetOneUserSentMsg.id
+      const idFirst: number = resetOneUserSentMsg?.id
       //console.log(idFirst)
       const resetSecondUserSentMsg = searchUserParams.find((s) => s.sentMsg.length === 0)
       //console.log(resetSecondUserSentMsg, 'resetSecondUserSentMsg')
-      const idSecond: number | null = resetSecondUserSentMsg.id
-      //console.log(idSecond)
+      const idSecond: number = resetSecondUserSentMsg?.id
+      console.log(idSecond)
+      
       const findUserOneById = users.find((user) => user.id === idFirst)
       const findUserTwoById = users.find((user) => user.id === idSecond)
+      console.log(findUserTwoById, 'findUserTwoById')
+
       const resetParamsUserOne = { ...findUserOneById,
         room: renamedRoom, signalRecieve: false, sentMsg: emptyString, messagebox: emptyString }
-      //console.log(resetParamsUserOne, 'resetParamsUserOne')
+      console.log(resetParamsUserOne, 'resetParamsUserOne')
+      
       const resetParamsUserTwo = { ...findUserTwoById,
         room: renamedRoom, signalRecieve: false, sentMsg: emptyString, messagebox: emptyString }
-      //console.log(resetParamsUserTwo, 'resetParamsUserTwo')
+      console.log(resetParamsUserTwo, 'resetParamsUserTwo')
 
-      if (findUserOneById) {
+      if (idFirst) {
         console.log("yes ok for first user")
         serviceRouting
-          .updateToResetParamsFirstUser(findUserOneById, resetParamsUserOne)
+          .updateToResetParamsFirstUser(idFirst, resetParamsUserOne)
           .then((initialData) => {
-            setInformUsrMsg(users?.map(user => user?.id === findUserOneById ? 
+            setInformUsrMsg(users?.map((user) => user?.id === idFirst ? 
               {
-                id: findUserOneById,
+                id: idFirst,
                 img: user.img,
                 firstName: user.firstName,
                 lastName: user.lastName,
@@ -354,18 +358,18 @@ const ComputerRoom: React.FC = () => {
             ))
           })
           .catch((error) => {
-            setInformUsrMsg(users?.filter(user => user.id !== findUserOneById))
+            setInformUsrMsg(users?.filter((user) => user.id !== idFirst))
             alert("Problem to reset parameters for first user...", error)
           })
 
-      } else if (findUserTwoById) {
+      } else if (idSecond) {
         console.log("ok for second user")
         serviceRouting
-          .updateToResetParamsSecondUser(findUserTwoById, resetParamsUserTwo)
+          .updateToResetParamsSecondUser(idSecond, resetParamsUserTwo)
           .then((initialData) => {
-            setInformUsrMsg(users?.map(user => user?.id === findUserTwoById ? 
+            setInformUsrMsg(users?.map((user) => user?.id === idSecond ? 
               {
-                id: findUserTwoById,
+                id: idSecond,
                 img: user.img,
                 firstName: user.firstName,
                 lastName: user.lastName,
@@ -384,7 +388,7 @@ const ComputerRoom: React.FC = () => {
             ))
           })
           .catch((error) => {
-            setInformUsrMsg(users?.filter(user => user.id !== findUserTwoById))
+            setInformUsrMsg(users?.filter((user) => user.id !== idSecond))
             alert("Problem to reset parameters for second user...", error)
           })
       } else {
@@ -440,10 +444,8 @@ const ComputerRoom: React.FC = () => {
           roomName={refreshU?.room}
           isCheckInvite={isCheckInvite}
           handleSwitchBox={handleSwitchBox}
-
           isNotCheckInvite={isNotCheckInvite}
           handleRejectInvite={handleRejectInvite}
-
           handleInvitedResponse={(e) => handleInvitedResponse(e)}
         />
        ) : null 

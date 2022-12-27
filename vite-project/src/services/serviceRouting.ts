@@ -163,10 +163,10 @@ const postMsgPrivate = (msgPrivate: string) => {
 }
 
 //PUT returnConfirm (db)
-const updateToResetParamsFirstUser = (findUserOneById: number, resetParamsUserOne: any) => {
-  console.log(findUserOneById, "findUserOneById")
+const updateToResetParamsFirstUser = (id: number, resetParamsUserOne: any) => {
+  console.log(id, "id")
   try {
-    const req = app.put<any>(`${updateResetParamsOne}/${findUserOneById}`, resetParamsUserOne)
+    const req = app.put<any>(`${updateResetParamsOne}/${id}`, resetParamsUserOne)
     return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");
@@ -177,10 +177,10 @@ const updateToResetParamsFirstUser = (findUserOneById: number, resetParamsUserOn
   } 
 }
 
-const updateToResetParamsSecondUser = (findUserTwoById: number, resetParamsUserTwo: any) => {
-  console.log(findUserTwoById, "findUserTwoById")
+const updateToResetParamsSecondUser = (id: number, resetParamsUserTwo: any) => {
+  console.log(id, "id")
   try {
-    const req = app.put<any>(`${updateResetParamsSecond}/${findUserTwoById}`, resetParamsUserTwo)
+    const req = app.put<any>(`${updateResetParamsSecond}/${id}`, resetParamsUserTwo)
     return req.then((res: any) => res.data)
   } catch (err: any) {
     console.error("Error response PUT:");

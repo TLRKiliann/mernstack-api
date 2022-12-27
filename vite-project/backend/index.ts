@@ -258,7 +258,7 @@ app.put('/api/updateFirstUserParams/:id', async (req: Request, res: Response, ne
 });
 
 //To reset params when second user decline invitation.
-app.put('api/updateSecondUserParams', async (req: Request, res: Response, next: NextFunction) => {
+app.put('api/updateSecondUserParams/:id', async (req: Request, res: Response, next: NextFunction) => {
   const id: number | null = Number(req.params.id);
   const room: string = req.body.room;
   const signalRecieve: boolean = req.body.signalRecieve;
