@@ -59,13 +59,22 @@ $font_junction: 'Junction', sans-serif;
       color: $orange;
     }
   }
-  .lbl--checkconfirmfirsttime {
-    margin-top: 10px;
+  .checkbox--firstconfirm {
+    width: 40%;
+    margin: auto;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    &--lbl {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
   }
   .btn--displayotheruser {
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
     padding: 5px 10px;
     font-family: $font_dejavu;
@@ -82,3 +91,5 @@ $font_junction: 'Junction', sans-serif;
     } 
   }
 }
+
+
