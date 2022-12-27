@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
     <div data-test-id="testId" className="div--headernav">
       <nav className="navbar--nav">
 
-        <div className="div--img">
+        <div className="div--imgnavbar">
           <img
             src={koalatree}
             width="65px"

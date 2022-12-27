@@ -47,7 +47,7 @@ const App:React.FC = () => {
             <ComputerRoom />
           </PrivateRoute>
         } />
-        <Route path='/computerroom/privatemessage' element={
+        <Route path='/computerroom/privatechat/:retrieveRoom' element={
           <PrivateRoute>
             <PrivateMessage />
           </PrivateRoute>

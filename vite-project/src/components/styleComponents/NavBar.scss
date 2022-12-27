@@ -29,10 +29,10 @@ $font_allura: 'Allura', cursive;
     width: 100%;
     margin: auto;
     display: flex;
-    .div--img {
+    .div--imgnavbar {
       position: relative;
       margin: auto;
-      left: 10px;
+      left: 20px;
       display: flex;
       background: linear-gradient(180deg,
         $purple, $orange);

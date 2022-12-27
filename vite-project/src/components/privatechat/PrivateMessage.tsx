@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../../context/AuthProvider'
 import serviceRouting from '../../services/serviceRouting'
 import { UserType } from '../../models/usertype'
 import './PrivateMessage.scss'
 
 const PrivateMessage: React.FC = () => {
+
+  const params = useParams<{ retrieveRoom?: string }>()
+  const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.retrieveRoom)
 
   const dateOfTheDay: Date = Date()
   const {otherUser, username, versusUser} = useAuthLogin()
@@ -21,15 +25,16 @@ const PrivateMessage: React.FC = () => {
       console.log("no versusUser")
       setDisplayUser(otherUser)
     }
-    const intervalId = setInterval(() => {
-      serviceRouting
-        .getMsgPrivate()
-        .then(response => {
-          setPrivateSeveralMsg(response)
-        })
-    }, 1000)
-    return () => clearInterval(intervalId)
-  }, [])
+    //const intervalId = setInterval(() => {
+    serviceRouting
+      .getMsgPrivate()
+      .then((response) => {
+        setPrivateSeveralMsg(response)
+      })
+    return () => console.log("Updated ! (2)")
+    //}, 1000)
+    //return () => clearInterval(intervalId)
+  }, [privateSeveralMsg])
 
   const generateId = () => {
     const maxId: number = privateSeveralMsg.length > 0
@@ -69,7 +74,7 @@ const PrivateMessage: React.FC = () => {
     <div className="private--chat">
 
       <h1 className="title--privatechat">
-        Private Chat
+        {roomStyle} Chat
       </h1>
 
       <div className="private--terminal">

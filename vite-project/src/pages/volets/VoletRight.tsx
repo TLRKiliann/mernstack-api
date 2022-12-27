@@ -31,7 +31,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
             />
 
             <section className="section--voletr">
-              {props.computers?.map(computer => (
+              {props.computers?.map((computer) => (
                 <li key={computer.id} className="li--right">
                   <Link className="link--tagvoletr"
                     to={`/chatcomputer/${computer.id}`}
@@ -65,7 +65,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
             />
 
             <section className="section--voletr">
-              {props.computers?.map(computer => (
+              {props.computers?.map((computer) => (
                 <li key={computer.id} className="li--right">
                   <Link className="link--tagvoletr"
                     to={`/chatcomputer/${computer.id}`}

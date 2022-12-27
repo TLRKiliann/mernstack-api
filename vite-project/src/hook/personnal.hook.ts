@@ -10,9 +10,13 @@ const usePersonnalHook: React.FC = () => {
   useEffect(() => {
     serviceRouting
       .getAllMembers()
-      .then(response => {
+      .then((response) => {
         setUsers(response)
       })
+      .catch((err) => {
+        console.log(err)
+      })
+    return () => console.log("clean-up useEffect 1")
   }, []);
 
   return users

@@ -43,18 +43,33 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
       <p className="invitation--p">
         Are you ok for
         <span className="span--invitationp">
-          {props?.form}
+          {props?.roomName}
         </span>chat ?
       </p>
 
-      <label className="lbl--checkconfirmfirsttime">
-        <input
-          type="checkbox"
-          checked={props?.isCheckInvite}
-          onChange={props?.handleSwitchBox}
-        />
-        &nbsp;yes
-      </label>
+      <div className="checkbox--firstconfirm">
+
+        <label className="checkbox--firstconfirm--lbl">
+          <input
+            type="checkbox"
+            checked={props.isCheckInvite}
+            onChange={props.handleSwitchBox}
+            style={{width: "15px", height: "15px"}}
+          />
+          &nbsp;Yes
+        </label>
+
+        <label className="checkbox--firstconfirm--lbl">
+          <input
+            type="checkbox"
+            checked={props.isNotCheckInvite}
+            onChange={props.handleRejectInvite}
+            style={{width: "15px", height: "15px"}}
+          />
+          &nbsp;No
+        </label>
+
+      </div>
 
       <button
         id={props?.id}

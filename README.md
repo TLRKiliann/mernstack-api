@@ -319,10 +319,6 @@ or
 
 ---
 
-Coverage of moment :
-
----
-
 Table for all members:
 
 ```

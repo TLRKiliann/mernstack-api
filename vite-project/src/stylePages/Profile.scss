@@ -41,7 +41,7 @@ $font_junction: 'Junction', sans-serif;
       z-index: -2;
     }
   }
-  .div--maintitlepro {
+  .maintitlepro {
     margin: auto;
     margin-top: 90px;
     display: flex;
@@ -51,14 +51,12 @@ $font_junction: 'Junction', sans-serif;
     font-family: $font_allura;
     font-size: 1.6rem;
     color: $whitesmoke;
-    text-shadow: 2px 1px 1px $lightgrey_24;
-    .title--profileh1 {
+    &--h1title {
       margin-left: 20px;
+      text-shadow: 2px 1px 1px $lightgrey_24;
     }
-    .p--maintitlepro {
+    &--h1name {
       margin-left: 20px;
-      font-family: $font_allura;
-      font-size: 2.6rem;
       color: $orange;
     }
   }
@@ -110,7 +108,7 @@ $font_junction: 'Junction', sans-serif;
     }
   }
   .div--titleusersgroup {
-    width: 90%;
+    width: 900px;
     margin: auto;
     margin-bottom: 10px;
     display: flex;
@@ -122,7 +120,7 @@ $font_junction: 'Junction', sans-serif;
     background: $lightgrey_24;
     border-radius: 7px;
     box-shadow: 0px 0px 4px $slategray;
-    color: $slategray;
+    color: $orange;
 
     .p--profile0 {
       margin-left: 60px;
@@ -146,6 +144,8 @@ $font_junction: 'Junction', sans-serif;
     .p--profile5 {
       margin-right: 10px;
       width: 300px;
+
+      border: 1px solid white;
     }
     .p--profile6 {
       margin-right: 10px;
@@ -153,7 +153,7 @@ $font_junction: 'Junction', sans-serif;
     }
   }
   .div--usersgroup {
-    width: 1000px;
+    width: 900px;
     margin: auto;
     margin-bottom: 10px;
     display: flex;

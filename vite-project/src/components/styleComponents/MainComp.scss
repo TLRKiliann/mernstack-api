@@ -11,7 +11,6 @@ $font_junction: 'Junction', sans-serif;
   height: auto;
   margin: auto;
   margin-top: 40px;
-  margin-bottom: 40px;
   .bg--colormaincomp {
     margin: auto;
     margin-top: 40px;
@@ -19,18 +18,23 @@ $font_junction: 'Junction', sans-serif;
     background-color: rgba(45, 85, 255, 0.4);
     border: 1mm outset rgba(180, 85, 255, 0.2);
     border-radius: 15px;
+
     .h2--maincomp {
+      margin: auto;
+      margin-top: 20px;
       text-align: center;
       font-family: $font_acme;
       font-size: 2.4rem;
-      text-shadow: 2px 2px 5px $purple;
+      text-shadow: 2px 1px 1px $purple;
       color: $sandybrown;
       .span--lengthuser {
-        text-shadow: 2px 2px 5px $purple;
+        text-shadow: 2px 1px 1px $purple;
         color: $pink;
       }
     }
     .h3--maincomp {
+      margin: auto;
+      margin-bottom: 20px;
       text-align: center;
       font-family: $font_acme;
       font-size: 1.8rem;
@@ -71,7 +75,7 @@ $font_junction: 'Junction', sans-serif;
     height: auto;
     margin: auto;
     margin-top: -220px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     .bg--colormaincomp {
       padding-bottom: 5px;
       .h2--maincomp {

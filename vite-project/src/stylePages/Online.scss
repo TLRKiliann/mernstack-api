@@ -36,6 +36,7 @@ $font_allura: 'Allura', cursive;
     grid-template-columns: 1Fr 1Fr 1Fr 1Fr;
     grid-template-rows: 1Fr 1Fr 1Fr;
     margin-bottom: 40px;
+
     .titlebyroom {
       margin: auto;
       padding: 7px 0px;
@@ -51,13 +52,14 @@ $font_allura: 'Allura', cursive;
       border: none;
       border-radius: 15px 15px 0px 0px;
       box-shadow: 0 0 4px #000;
+
       .span--saloon {
         display: flex;
         font-family: $font_dejavu;
-
         background: $lightgrey_24;
         color: $soft_blue;
       }
+
       .user--imgsaloon {
         width: 100%;
         display: flex;
@@ -73,8 +75,22 @@ $font_allura: 'Allura', cursive;
         border-radius: 50%;
         object-fit: cover;
       }
-      .font--online {
+
+      .useronline {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
         font-size: 14px;
+
+        &--iconconnectected {
+          font-size: 18px;
+          color: lightgreen;
+        }
+
+        &--icondeconnectected {
+          font-size: 18px;
+          color: lightgreen;
+        }
       }
 
       .askprivate--service {
@@ -82,7 +98,6 @@ $font_allura: 'Allura', cursive;
         width: 15%;
         display: flex;
         justify-content: right;
-
         font-size: 22px;
         cursor: pointer;
         color: $orange;
@@ -96,19 +111,20 @@ $font_allura: 'Allura', cursive;
         width: 18%;  
         display: flex;
         align-items: center;
-
         justify-content: right;
         font-size: 14px;
         font-family: $font_dejavu;
         font-weight: thin;
         color: $orange;
+
         .btn--lastspanonline {
           margin-left: 10px;
           padding: 2px 7px;
           font-size: 1.0rem;
           font-weight: bold;
           color: $lightgrey;
-          background: linear-gradient(30deg, $purple, $orange);
+          background: linear-gradient(30deg,
+            $purple, $orange);
           border: none;
           outline: none;
           border-radius: 50%;
