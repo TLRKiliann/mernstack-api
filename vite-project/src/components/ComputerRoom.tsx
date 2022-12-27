@@ -361,7 +361,7 @@ const ComputerRoom: React.FC = () => {
       } else if (findUserTwoById) {
         console.log("ok for second user")
         serviceRouting
-          .updateToResetParamsSecondUser(findUserTwoById, resetParamsUserOne)
+          .updateToResetParamsSecondUser(findUserTwoById, resetParamsUserTwo)
           .then((initialData) => {
             setInformUsrMsg(users?.map(user => user?.id === findUserTwoById ? 
               {
