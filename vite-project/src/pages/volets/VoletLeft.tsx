@@ -21,7 +21,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
     setSearchUser(e.target.value)
   }
 
-  const handleSearchUser = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleSearchUser = (e: React.MouseEvent<HTMLButtonElement>) => {
     const findByFirstName = props.users?.map(user => user).filter(user => {
       return user.firstName === searchUser
         ? `${user.firstname} ${user.lastName}`
