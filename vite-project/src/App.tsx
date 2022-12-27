@@ -23,14 +23,14 @@ const App:React.FC = () => {
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/profile' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <Profile />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
         <Route exact path='/online' element={
-          //<PrivateRoute>
+          <PrivateRoute>
             <Online />
-          //</PrivateRoute>
+          </PrivateRoute>
         } />
         <Route exact path='/help' element={
           <PrivateRoute>
@@ -47,7 +47,7 @@ const App:React.FC = () => {
             <ComputerRoom />
           </PrivateRoute>
         } />
-        <Route path='/computerroom/privatemessage' element={
+        <Route path='/computerroom/privatechat/:retrieveRoom' element={
           <PrivateRoute>
             <PrivateMessage />
           </PrivateRoute>

@@ -35,7 +35,6 @@ const pool = mariadb.createPool({
   database: process.env.DB_DATABASE
 });
 
-
 console.log("Total connections: ", pool.totalConnections());
 console.log("Active connections: ", pool.activeConnections());
 console.log("Idle connections: ", pool.idleConnections());
@@ -90,14 +89,11 @@ app.put('/api/updateRoom/:id', async (req: Request, res: Response, next: NextFun
   const room: string = req.body.room;
   const isConnected: boolean = req.body.isConnected;
   const signalRecieve: boolean = req.body.signalRecieve;
-
   const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
-
-  //console.log(id, "server id")
-  console.log(firstName, mainroom, room, isConnected, signalRecieve, sentMsg,
-    messagebox, returnConfirm, id)
+  //console.log(firstName, mainroom, room, isConnected, signalRecieve, sentMsg,
+  //  messagebox, returnConfirm, id)
   try {
     const result = await pool.query('update members set firstName=?, mainroom=?, room=?,\
       isConnected=?, signalRecieve=?, sentMsg=?, messagebox=?, returnConfirm=? where id=?',
@@ -110,18 +106,35 @@ app.put('/api/updateRoom/:id', async (req: Request, res: Response, next: NextFun
   next();
 });
 
+//send msg to user with parameters info
 app.put('/api/inviteOtherUser/:id', async (req: Request, res: Response, next: NextFunction) => {
   const id: number | null = Number(req.params.id);
   const room: string = req.body.room;
   const signalRecieve: boolean = req.body.signalRecieve;
   const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
-  console.log(room, signalRecieve, sentMsg, messagebox, id);
+  //console.log(room, signalRecieve, sentMsg, messagebox, id);
   
   try {
     const result = await pool.query('update members set room=?, signalRecieve=?, sentMsg=?,\
       messagebox=? where id=?',
       [room, signalRecieve, sentMsg, messagebox, id]);
+    res.status(200).send()
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
+//send msg to sender of invitation to update room
+app.put('/api/updateRoomToSender/:id', async (req: Request, res: Response, next: NextFunction) => {
+  const id: number | null = Number(req.params.id);
+  const room: string = req.body.room;
+  //console.log(room, id);
+  
+  try {
+    const result = await pool.query('update members set room=? where id=?',
+      [room, id]);
     res.status(200).send()
   } catch (err) {
     throw err;
@@ -136,11 +149,12 @@ app.put('/api/setUserConfirm/:id', async (req: Request, res: Response, next: Nex
   const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
-  console.log(id, firstName, sentMsg, messagebox, returnConfirm, "setUserConfirm");
+  //console.log(id, firstName, sentMsg, messagebox, returnConfirm, "setUserConfirm");
 
   try {
-    const result = await pool.query('update members set firstName=?, returnConfirm=?,\
-      sentMsg=?, messagebox=? where id=?', [firstName, returnConfirm, sentMsg, messagebox, id]);
+    const result = await pool.query('update members set firstName=?, sentMsg=?, \
+      messagebox=?, returnConfirm=? where id=?',
+      [firstName, sentMsg, messagebox, returnConfirm, id]);
     res.status(200).send();
   } catch (err) {
     throw err;
@@ -225,10 +239,46 @@ app.post('/api/postprivate', async (req: Request, res: Response, next: NextFunct
   next();
 });
 
+//To reset params when first user decline invitation.
+app.put('/api/updateFirstUserParams/:id', async (req: Request, res: Response, next: NextFunction) => {
+  const id: number | null = Number(req.params.id);
+  const room: string = req.body.room;
+  const signalRecieve: boolean = req.body.signalRecieve;
+  const sentMsg: string = req.body.sentMsg;
+  const messagebox: string = req.body.messagebox;
+  console.log(id, room, signalRecieve, sentMsg, messagebox)
+  try {
+    const result = await pool.query('update members set room=?, signalRecieve=?, sentMsg=?,\
+      messagebox=? where id=?', [room, signalRecieve, sentMsg, messagebox, id])
+    res.status(200).send()
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
+//To reset params when second user decline invitation.
+app.put('api/updateSecondUserParams', async (req: Request, res: Response, next: NextFunction) => {
+  const id: number | null = Number(req.params.id);
+  const room: string = req.body.room;
+  const signalRecieve: boolean = req.body.signalRecieve;
+  const sentMsg: string = req.body.sentMsg;
+  const messagebox: string = req.body.messagebox;
+  console.log(id, room, signalRecieve, sentMsg, messagebox)
+
+  try {
+    const result = await pool.query('update members set room=?, signalRecieve=?, sentMsg=?,\
+      messagebox=? where id=?', [room, signalRecieve, sentMsg, messagebox, id])
+    res.status(200).send()
+  } catch (err) {
+    throw err;
+  }
+  next();
+});
+
 app.listen(PORT, (): void => {
   console.log(`[+] Server is running on port ${PORT} !`)
 });
-
 
 /*
 //Simple login get - post
