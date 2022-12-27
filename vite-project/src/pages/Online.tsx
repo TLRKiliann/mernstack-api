@@ -159,23 +159,16 @@ const Online: React.FC = () => {
                     src={user.img} 
                     className="img--saloon"
                   />
-                  <p className="font--online">
+                  <p className="useronline">
                   {user.firstName} {user.isConnected ? (
                     <span
-                      style={{
-                        color: 'lightgreen',
-                        marginLeft: "5px"
-                      }}
+                      className="useronline--iconconnectected"
                     >
                       ✔
                     </span>
                     ):(
                     <span
-                      style={{
-                        color: 'red',
-                        marginLeft: "5px",
-                        fontSize: "18px"
-                      }}
+                      className="useronline--icondeconnectected"
                     >
                       ❌
                     </span>

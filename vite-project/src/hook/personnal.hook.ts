@@ -10,7 +10,7 @@ const usePersonnalHook: React.FC = () => {
   useEffect(() => {
     serviceRouting
       .getAllMembers()
-      .then(response => {
+      .then((response) => {
         setUsers(response)
       })
       .catch((err) => {
