@@ -46,7 +46,7 @@ const ComputerRoom: React.FC = () => {
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
 
   const [refreshUsers, setRefreshUsers] = useState<Array<UserType>>([])
-  console.log(refreshUsers, "refresher")
+  //console.log(refreshUsers, "refresher")
   const [displayConfirmInvite, setDisplayConfirmInvite] = useState<boolean>(false)
   const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
   //console.log(informUsrMsg, "informUsrMsg")
