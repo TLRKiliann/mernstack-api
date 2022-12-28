@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../../context/AuthProvider'
-import serviceRouting from '../../services/serviceRouting'
+import servicePrivate from '../../services/servicePrivate'
 import { UserType } from '../../models/usertype'
 import './PrivateMessage.scss'
 
@@ -26,7 +26,7 @@ const PrivateMessage: React.FC = () => {
       setDisplayUser(otherUser)
     }
     //const intervalId = setInterval(() => {
-    serviceRouting
+    servicePrivate
       .getMsgPrivate()
       .then((response) => {
         setPrivateSeveralMsg(response)
@@ -55,7 +55,7 @@ const PrivateMessage: React.FC = () => {
         room: `${privateRoom}`
       }
 
-      serviceRouting
+      servicePrivate
         .postMsgPrivate(msgPrivate)
         .then(initialData => {
           setPrivateSeveralMsg(privateSeveralMsg.concat(msgPrivate))
