@@ -30,7 +30,7 @@ $font_junction: 'Junction', sans-serif;
   left: 0px;
   width: 400px;
   min-height: 100vh;
-  background-color: rgba(45, 85, 255, 0.4);
+  background-color: rgba(45, 85, 255, 0.2);
   transform: translateX(0px);
 
   animation-name: volet--leftdisplay;
@@ -86,12 +86,12 @@ $font_junction: 'Junction', sans-serif;
 
   .search--input {
     margin: auto;
-    padding: 3px 5px;
+    padding: 4px 5px;
     font-family: $font_junction;
     font-size: 1.0rem;
     color: lightblue;
-    background-color: rgba(85, 45, 255, 0.4);
-    border: 1mm inset rgba(150, 45, 255, 0.8);
+    background-color: rgba(85, 45, 255, 0.3);
+    border: 1mm inset rgba(150, 45, 255, 0.6);
   }
 
   .search--input::placeholder {
@@ -177,7 +177,7 @@ $font_junction: 'Junction', sans-serif;
   left: 0px;
   width: 400px;
   min-height: 100vh;
-  background-color: rgba(45, 85, 255, 0.4);
+  background-color: rgba(45, 85, 255, 0.2);
   transform: translateX(-400px);
 
   animation-name: volet--lefthidden;
@@ -204,13 +204,13 @@ $font_junction: 'Junction', sans-serif;
   width: 30px;
   height: 30px;
   background: transparent;
-  border: 1mm outset rgba(150, 45, 255, 0.4);
+  border: 1mm outset rgba(150, 45, 255, 0.2);
   border-radius: 50% 50%;
   color: $whitesmoke;
   &:hover {
     cursor: pointer;
-    background-color: rgba(85, 45, 255, 0.4);
-    border: 1mm outset rgba(85, 45, 255, 0.4);
+    background-color: rgba(85, 45, 255, 0.2);
+    border: 1mm outset rgba(85, 45, 255, 0.2);
     color: $lightgreen;
   }
 }
@@ -219,8 +219,8 @@ $font_junction: 'Junction', sans-serif;
   margin: 20px 20px;
   padding: 5px 10px;
   text-align: center;
-  background-color: rgba(85, 45, 255, 0.4);
-  border: 1mm outset rgba(150, 45, 255, 0.4);
+  background-color: rgba(85, 45, 255, 0.2);
+  border: 1mm outset rgba(150, 45, 255, 0.2);
   border-radius: 5px;
   font-weight: bold;
   color: $whitesmoke;

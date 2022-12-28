@@ -15,9 +15,10 @@ $font_acme: 'Acme', sans-serif;
   right: 0px;
   left: 0px;
   height: 100%;
-  background: radial-gradient(900px at 50% 50%, 
+  background: radial-gradient(900px at 50% 20%, 
     $orange, $purple);
-
+}
+/*
   .wallIntro {
     position: absolute;
     top: 0px;
@@ -95,7 +96,7 @@ $font_acme: 'Acme', sans-serif;
     z-index: 22;
   }
 }
-
+*/
 .img--home {
   position: fixed;
   top: 0px;
@@ -112,23 +113,26 @@ $font_acme: 'Acme', sans-serif;
 .div--voletsLeft {
   position: absolute;
   margin-top: 12%;
-  margin-left: 7%;
+  margin-left: 8%;
   border-radius: 15px;
   z-index: 3;
   .btn--voletLeft {
     padding: 20px 40px;
     font-family: $font_acme;
     font-size: 1.4rem;
+    color: rgba(128, 0, 128, 0.4);
     background: linear-gradient(30deg, 
-      rgba(45, 85, 255, 0.4), $dark_moderate_violet,
-      rgba(45, 85, 255, 0.4));
-    border: 1mm outset rgba(180, 85, 255, 0.2);
+      rgba(128, 0, 128, 0.4), coral,
+      rgba(128, 0, 128, 0.4));
+    border: 1px outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
-    color: $orange;
+    transition: background 2s, transform 2s;
     &:hover {
-      background: $dark_moderate_violet;
-      border: 1mm outset rgba(150, 45, 255, 0.6);
-      color: $lightgreen;
+      background: linear-gradient(30deg, 
+        rgba(128, 0, 128, 0.8), coral,
+        rgba(128, 0, 128, 0.8));
+      border: 1px outset rgba(180, 85, 255, 0.2);
+      color: rgba(128, 0, 128, 0.6);
       cursor: pointer;
     }
     &:active {
@@ -145,26 +149,27 @@ $font_acme: 'Acme', sans-serif;
   position: absolute;
   right: 0px;
   margin-top: 12%;
-  margin-right: 7%;
+  margin-right: 8%;
   border-radius: 15px;
   z-index: 3;
-
   .btn--voletRight {
     padding: 20px 40px;
     font-family: $font_acme;
     font-size: 1.4rem;
     font-weight: bold;
-
-    background: linear-gradient(30deg, 
-      rgba(45, 85, 255, 0.4), $dark_moderate_violet,
-      rgba(45, 85, 255, 0.4));
-    border: 1mm outset rgba(180, 85, 255, 0.2);
+    color: rgba(128, 0, 128, 0.4);
+    background: linear-gradient(150deg, 
+      rgba(128, 0, 128, 0.4), coral,
+      rgba(128, 0, 128, 0.4));
+    border: 1px outset rgba(180, 85, 255, 0.2);
     border-radius: 40px;
-    color: $orange;
+    transition: background 2s, transform 2s;
     &:hover {
-      background: $dark_moderate_violet;
-      border: 1mm outset rgba(150, 45, 255, 0.6);
-      color: $lightgreen;
+      background: linear-gradient(150deg, 
+        rgba(128, 0, 128, 0.8), coral,
+        rgba(128, 0, 128, 0.8));
+      border: 1px outset rgba(180, 85, 255, 0.2);
+      color: rgba(128, 0, 128, 0.6);
       cursor: pointer;
     }
     &:active {
