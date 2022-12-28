@@ -41,6 +41,13 @@ $font_acme: 'Acme', sans-serif;
       color: $soft_blue;
     }
   }
+  .checkbox--div {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
   .input--validationInvite {
     background-color: $lightgrey_24;
     color: $whitesmoke;

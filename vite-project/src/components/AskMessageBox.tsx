@@ -19,9 +19,7 @@ interface AskMessageBoxProps {
 }
 
 const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form, Field}) => {
-
-  console.log(props.catchById, 'props.users')
-  
+  //console.log(props.catchById, 'props.users')
   return (
     <div className="boolean--result">
       <form
