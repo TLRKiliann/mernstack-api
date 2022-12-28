@@ -40,10 +40,16 @@ const ComputerRoom: React.FC = () => {
 
   const users = usePersonnalHook()
   const { username, otherUser, setOtherUser, versusUser, setVersusUser } = useAuthLogin()
-  const [refreshUsers, setRefreshUsers] = useState<{users?: UserType}>({})
+
+  const params = useParams<{ link?: string }>()
+  const Navigate = useNavigate()
+  const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
+
+  const [refreshUsers, setRefreshUsers] = useState<Array<UserType>>([])
+  //console.log(refreshUsers, "refresher")
   const [displayConfirmInvite, setDisplayConfirmInvite] = useState<boolean>(false)
   const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
-  console.log(informUsrMsg, "informUsrMsg")
+  //console.log(informUsrMsg, "informUsrMsg")
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,34 +61,31 @@ const ComputerRoom: React.FC = () => {
         })
     }, 1000)
     return () => clearInterval(interval)
-  }, [refreshUsers])
+  }, [])
 
   const [catchById, setCatchById] = useState<Array<UserType>>([])  
   const [validMsg, setValidMsg] = useState<Array<UserType>>([]) 
 
-  const params = useParams<{ link?: string }>()
-  const Navigate = useNavigate()
-  const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
   const [form, setForm] = useState<Form>({invite: {value: 'Private'}})
 
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
   const [isChecked, setIsChecked] = useState<boolean>(false)
   const [isCheckInvite, setIsCheckInvite] = useState<boolean>(false)
   const [isNotCheckInvite, setIsNotCheckInvite] = useState<boolean>(false)
+  const [isNotConfirm, setIsNotConfirm] = useState<boolean>(false)
 
   //Invite someone with chat mode options
   const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldName: string = e.target.name;
     const fieldValue: string | number  = e.target.value;
     const newField: Field = {[fieldName]: {value: fieldValue}}
-
     setForm({...form, ...newField});
   }
   
   //Press mail icon to ask for invitation
   const handleAskUserPrivate = (id: number) => {
     console.log("handleAskUserPrivate 1")
-    const catchUser = users?.find(user => user.id === id)
+    const catchUser = users?.find((user) => user.id === id)
     setCatchById(catchUser)
     setSwitchAsk(true)
   }
@@ -112,28 +115,28 @@ const ComputerRoom: React.FC = () => {
       serviceRouting
         .putInvitation(id, dataForVersusUser)
         .then(initialData => {
-          setInformUsrMsg(users?.map((cust) => cust.id === id ? 
+          setInformUsrMsg(users?.map((user) => user.id === id ? 
             {
               id: id,
-              img: cust.img,
-              firstName: cust.firstName,
-              lastName: cust.lastName,
-              age: cust.age,
-              email: cust.email,
-              location: cust.location,
-              gender: cust.gender,
-              mainroom: cust.mainroom,
+              img: user.img,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              age: user.age,
+              email: user.email,
+              location: user.location,
+              gender: user.gender,
+              mainroom: user.mainroom,
               room: definedRoom,
-              isConnected: cust.isConnected,
+              isConnected: user.isConnected,
               signalRecieve: true,
               sentMsg: username,
               messagebox: msg,
-              returnConfirm: cust.returnConfirm
-            } : cust
+              returnConfirm: user.returnConfirm
+            } : user
           ))
         })
         .catch((error) => {
-          setInformUsrMsg(users?.filter(cust => cust.id !== id))
+          setInformUsrMsg(users?.filter((u) => u.id !== id))
           alert(`${verifyName} do not received msg`)
         })
       setDisplayConfirmInvite(true)
@@ -201,24 +204,24 @@ const ComputerRoom: React.FC = () => {
           Navigate(`/computerroom/privatechat/${retrieveRoom}`)
         }, 1000)
       } else {
-        alert("No room was found...")
+        console.log("No room was found...")
       }
     } else {
-      console.log("Confirmation users not validated...")
+      console.log("Not confirmed by all users !")
+      setRoomStyle(roomStyle)
     }
     setInformUsrMsg("")
     setCatchById("")
     setValidMsg("")
-    setRefreshUsers("")
   }
 
   //Confirm your invitation after invited has said yes.
-  const handleValidInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("handleValidInvitation 4")
+  const handleBothConfirmation = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("handleBothConfirmation 4")
     if (isChecked === true) {
-      const user: UserType = refreshUsers?.find(user => user.firstName === username)
+      const user: UserType = refreshUsers?.find((user) => user.firstName === username)
       const id: number = user?.id;
-      const newuser = refreshUsers?.find(user => user.id === id)
+      const newuser = refreshUsers?.find((u) => u.id === id)
       const noString: string = ""
       const changeUserNameReturnConfirm: object = {...newuser, firstName: username,
         sentMsg: noString, messagebox: noString, returnConfirm: 1}
@@ -226,7 +229,7 @@ const ComputerRoom: React.FC = () => {
       serviceRouting
         .updateUsrRetConf(id, changeUserNameReturnConfirm)
         .then(initialData => {
-          setValidMsg(refreshUsers?.map(user => user.id === id ? 
+          setValidMsg(refreshUsers?.map((user) => user.id === id ? 
             {
               id: id,
               img: user.img,
@@ -247,13 +250,53 @@ const ComputerRoom: React.FC = () => {
           ))
         })
         .catch((error) => {
-          setValidMsg(refreshUsers?.filter(cust => cust.id !== id))
-          alert("Problem to confirm msg handleValidInvitation...", error)
+          setValidMsg(refreshUsers?.filter((refresher) => refresher.id !== id))
+          console.log("Problem to confirm msg handleBothConfirmation...", error)
         })
-      console.log("handleValidInvitation confirmed")
+      console.log("handleBothConfirmation confirmed")
       handleFilterUser(changeUserNameReturnConfirm)
-    } else {
+    }
+    if ((isNotConfirm === true) && (isChecked === false)) {
       console.log("Confirmation not confirmed...")
+      const user: UserType = refreshUsers?.find((u) => u.firstName === username)
+      console.log(user, 'user handleBothConfirmation')
+      const id: number = user?.id;
+      console.log(id, 'id handleBothConfirmation')
+      const newuser = refreshUsers?.find((refresher) => refresher.id === id)
+      console.log(newuser, 'newuser')
+      const noString: string = ""
+      const reinitializeCancelConfirm: object = {...newuser, firstName: username,
+        room: roomStyle, sentMsg: noString, messagebox: noString, returnConfirm: false}
+      console.log(reinitializeCancelConfirm, 'reinitializeCancelConfirm')
+
+      serviceRouting
+        .updateUsrCancelConf(id, reinitializeCancelConfirm)
+        .then(initialData => {
+          setValidMsg(refreshUsers?.map((user) => user.id === id ? 
+            {
+              id: id,
+              img: user.img,
+              firstName: username,
+              lastName: user.lastName,
+              age: user.age,
+              email: user.email,
+              location: user.location,
+              gender: user.gender,
+              mainroom: user.mainroom,
+              room: roomStyle,
+              isConnected: user.isConnected,
+              signalRecieve: user.signalRecieve,
+              sentMsg: noString,
+              messagebox: noString,
+              returnConfirm: false
+            } : user
+          ))
+        })
+        .catch((error) => {
+          setValidMsg(refreshUsers?.filter((refresher) => refresher.id !== id))
+          console.log("Not confirmed by both !", error)
+        })
+      handleFilterUser(reinitializeCancelConfirm)
     }
     setDisplayConfirmInvite(false)
   }
@@ -300,102 +343,11 @@ const ComputerRoom: React.FC = () => {
           ))
         })
         .catch((error) => {
-          setInformUsrMsg(users?.filter((cust) => cust.id !== id))
-          alert("Problem to confirm msg handleValidInvitation...", error)
+          setInformUsrMsg(users?.filter((u) => u.id !== id))
+          alert("Problem to confirm msg handleBothConfirmation...", error)
         })
       setDisplayConfirmInvite(true)
       console.log("handleInvitedResponse - phase :3")
-    } else if (isNotCheckInvite === true) {
-      //const resetUserParams = users.filter((user) => user?.room !== roomStyle)
-      const emptyString: string = ""
-      const renamedRoom: string = roomStyle
-      const searchUserParams = users?.filter((user) => user?.room !== renamedRoom && user?.room.length !== 0)
-      //console.log(searchUserParams, 'searchUserParams')
-      const resetOneUserSentMsg = searchUserParams.find((s) => s.sentMsg.length !== 0)
-      //console.log(resetOneUserSentMsg, 'resetOneUserSentMsg')
-      const idFirst: number = resetOneUserSentMsg?.id
-      //console.log(idFirst)
-      const resetSecondUserSentMsg = searchUserParams.find((s) => s.sentMsg.length === 0)
-      //console.log(resetSecondUserSentMsg, 'resetSecondUserSentMsg')
-      const idSecond: number = resetSecondUserSentMsg?.id
-      console.log(idSecond)
-      
-      const findUserOneById = users.find((user) => user.id === idFirst)
-      const findUserTwoById = users.find((user) => user.id === idSecond)
-      console.log(findUserTwoById, 'findUserTwoById')
-
-      const resetParamsUserOne = { ...findUserOneById,
-        room: renamedRoom, signalRecieve: false, sentMsg: emptyString, messagebox: emptyString }
-      console.log(resetParamsUserOne, 'resetParamsUserOne')
-      
-      const resetParamsUserTwo = { ...findUserTwoById,
-        room: renamedRoom, signalRecieve: false, sentMsg: emptyString, messagebox: emptyString }
-      console.log(resetParamsUserTwo, 'resetParamsUserTwo')
-
-      if (idFirst) {
-        console.log("yes ok for first user")
-        serviceRouting
-          .updateToResetParamsFirstUser(idFirst, resetParamsUserOne)
-          .then((initialData) => {
-            setInformUsrMsg(users?.map((user) => user?.id === idFirst ? 
-              {
-                id: idFirst,
-                img: user.img,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                age: user.age,
-                email: user.email,
-                location: user.location,
-                gender: user.gender,
-                mainroom: user.mainroom,
-                room: renamedRoom,
-                isConnected: user.isConnected,
-                signalRecieve: false,
-                sentMsg: emptyString,
-                messagebox: emptyString,
-                returnConfirm: user.returnConfirm
-              } : user
-            ))
-          })
-          .catch((error) => {
-            setInformUsrMsg(users?.filter((user) => user.id !== idFirst))
-            alert("Problem to reset parameters for first user...", error)
-          })
-
-      } else if (idSecond) {
-        console.log("ok for second user")
-        serviceRouting
-          .updateToResetParamsSecondUser(idSecond, resetParamsUserTwo)
-          .then((initialData) => {
-            setInformUsrMsg(users?.map((user) => user?.id === idSecond ? 
-              {
-                id: idSecond,
-                img: user.img,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                age: user.age,
-                email: user.email,
-                location: user.location,
-                gender: user.gender,
-                mainroom: user.mainroom,
-                room: renamedRoom,
-                isConnected: user.isConnected,
-                signalRecieve: false,
-                sentMsg: emptyString,
-                messagebox: emptyString,
-                returnConfirm: user.returnConfirm
-              } : user
-            ))
-          })
-          .catch((error) => {
-            setInformUsrMsg(users?.filter((user) => user.id !== idSecond))
-            alert("Problem to reset parameters for second user...", error)
-          })
-      } else {
-        console.log("No user to reset parameters !")
-      }
-    } else {
-      alert("There is a mistake with confirmation options !")
     }
   }
 
@@ -409,6 +361,10 @@ const ComputerRoom: React.FC = () => {
 
   const handleRejectInvite = () => {
     setIsNotCheckInvite(!isNotCheckInvite)
+  }
+
+  const handleCheckConfirmation = () => {
+    setIsNotConfirm(!isNotConfirm)
   }
 
   const handleSwitchBox = () => {
@@ -429,19 +385,21 @@ const ComputerRoom: React.FC = () => {
           username={username}
           isChecked={isChecked}
           handleCheckBox={handleCheckBox}
-          handleValidInvitation={handleValidInvitation}
+          isNotConfirm={isNotConfirm}
+          handleCheckConfirmation={handleCheckConfirmation}
+          handleBothConfirmation={handleBothConfirmation}
         />
       }
 
       <div>
-      {Object.values(refreshUsers)?.map((refreshU) => (
-        (refreshU?.signalRecieve === 1 && refreshU?.firstName === username) ? (
+      {refreshUsers?.map((refreshU) => (
+        (refreshU?.signalRecieve === 1 && refreshU.firstName === username) ? (
         <DisplayInvitationOtherUsr
-          key={refreshU?.id}
-          id={refreshU?.id}
-          username={refreshU?.firstName}
-          initialSender={refreshU?.sentMsg}
-          roomName={refreshU?.room}
+          key={refreshU.id}
+          id={refreshU.id}
+          username={refreshU.firstName}
+          initialSender={refreshU.sentMsg}
+          roomName={refreshU.room}
           isCheckInvite={isCheckInvite}
           handleSwitchBox={handleSwitchBox}
           isNotCheckInvite={isNotCheckInvite}
@@ -487,16 +445,16 @@ const ComputerRoom: React.FC = () => {
           <div className="div--userolinetitle">
             <h3 className="userolinetitle">Online Users</h3>
           </div>
-
-          {Object.values(refreshUsers)?.map((refreshUser) => (
-            <UsersOnline
-              key={refreshUser?.id}
-              id={refreshUser?.id}
-              refreshUser={refreshUser}
-              roomStyle={roomStyle}
-              handleAskUserPrivate={() => handleAskUserPrivate(refreshUser?.id)}
-            />
-          ))}
+            {refreshUsers?.map((refreshUser) => (
+              <UsersOnline
+                key={refreshUser?.id}
+                id={refreshUser?.id}
+                refreshUser={refreshUser}
+                roomStyle={roomStyle}
+                handleAskUserPrivate={() => handleAskUserPrivate(refreshUser?.id)}
+              />
+              ))
+            }
         </section>
       </div>
     </div>

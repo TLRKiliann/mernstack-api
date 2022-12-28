@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import serviceRouting from '../../services/serviceRouting'
+import serviceTerminal from '../../services/serviceTerminal'
 import { useAuthLogin } from '../../context/AuthProvider'
 import './TerminalComponent.scss'
 
@@ -22,7 +22,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      serviceRouting
+      serviceTerminal
         .getMsgTerminal()
         .then(response => {
           setMessages(response)
@@ -51,7 +51,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
         room: props.roomStyle
       }
 
-      serviceRouting
+      serviceTerminal
         .postMsgTerminal(msgTerminal)
         .then(initialData => {
           setMessages(messages.concat(msgTerminal))

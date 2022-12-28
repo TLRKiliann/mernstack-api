@@ -6,14 +6,15 @@ const pool = require('../dbConnection');
 
 const connection = pool;
 
-router.get('/', async (req:Request, res:Response, next:NextFunction) => {
+//Retrive msg from db for terminal
+router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
-      const result = await pool.query("select * from members");
-      res.status(200).json(result);
+    const result = await pool.query('select * from tableroom');
+    res.status(200).json(result);
   } catch (err) {
     throw err;
   }
+  next();
 });
-
 
 module.exports = router;

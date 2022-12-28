@@ -74,7 +74,7 @@ const DisplayInvitationOtherUsr: React.FC = (props: {
       <button
         id={props?.id}
         type="button"
-        onClick={(e) => props.handleInvitedResponse(e)}
+        onClick={props.handleInvitedResponse}
         className="btn--displayotheruser"
       >
         Validate
