@@ -8,7 +8,7 @@ const connection = pool;
 
 //Update name of room.
 router.put('/', async (req: Request, res: Response, next: NextFunction) => {
-  const id: number | null = Number(req.params.id);
+  const id: number | null = req.body.id;
   const firstName: string = req.body.firstName;
   const mainroom: string = req.body.mainroom;
   const room: string = req.body.room;

@@ -8,7 +8,7 @@ const connection = pool;
 
 //Update user confirmation
 router.put('/', async (req: Request, res: Response, next: NextFunction) => {
-  const id: number | null = Number(req.params.id);
+  const id: number | null = req.body.id;
   const firstName: string = req.body.firstName;
   const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;

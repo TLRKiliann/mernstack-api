@@ -8,7 +8,7 @@ const connection = pool;
 
 //send msg to sender of invitation to update room
 router.put('/', async (req: Request, res: Response, next: NextFunction) => {
-  const id: number | null = Number(req.params.id);
+  const id: number | null = req.body.id;
   const room: string = req.body.room;
   //console.log(room, id);
   try {

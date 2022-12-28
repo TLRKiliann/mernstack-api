@@ -8,7 +8,7 @@ const connection = pool;
 
 //To reset params when second user decline invitation.
 router.put('/', async (req: Request, res: Response, next: NextFunction) => {
-  const id: number | null = Number(req.params.id);
+  const id: number | null = req.body.id;
   const room: string = req.body.room;
   const signalRecieve: boolean = req.body.signalRecieve;
   const sentMsg: string = req.body.sentMsg;

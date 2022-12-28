@@ -8,7 +8,7 @@ const connection = pool;
 
 //Create new member
 router.post('/', async (req: Request, res: Response, next: NextFunction) => {
-  const id: number = req.body.id;
+  const id: number | null = req.body.id;
   const img: string = req.body.img;
   const firstName: string = req.body.firstName;
   const lastName: string = req.body.lastName;
