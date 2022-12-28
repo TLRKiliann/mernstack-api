@@ -12,7 +12,6 @@ router.put('/', async (req: Request, res: Response, next: NextFunction) => {
   const signalRecieve: boolean = req.body.signalRecieve;
   const returnConfirm: boolean = req.body.returnConfirm;
   //console.log(id, signalRecieve, returnConfirm, "confirmationother");
-
   try {
     const result = await pool.query('update members set signalRecieve=?,\
       returnConfirm=? where id=?', [signalRecieve, returnConfirm, id]);

@@ -23,7 +23,6 @@ router.post('/', async (req: Request, res: Response, next: NextFunction) => {
   const sentMsg: boolean = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
-  
   try {
     const result = await pool.query('insert into members (id, img, firstName, lastName, age, email,\
       location, gender, mainroom, room, isConnected, signalRecieve, sentMsg,\

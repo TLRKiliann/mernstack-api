@@ -14,7 +14,6 @@ router.post('/', async (req: Request, res: Response, next: NextFunction) => {
   const msg: string = req.body.msg;
   const room: string = req.body.room;
   //console.log(id, date, usr, msg, room, "msg post terminal")
-
   try {
     const result = await pool.query("insert into tableroom (id, date, usr, msg, room) values (?,?,?,?,?)",
       [id, date, usr, msg, room]);

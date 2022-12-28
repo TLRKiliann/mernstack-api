@@ -79,7 +79,6 @@ const ComputerRoom: React.FC = () => {
     const fieldName: string = e.target.name;
     const fieldValue: string | number  = e.target.value;
     const newField: Field = {[fieldName]: {value: fieldValue}}
-
     setForm({...form, ...newField});
   }
   
@@ -300,7 +299,6 @@ const ComputerRoom: React.FC = () => {
       handleFilterUser(reinitializeCancelConfirm)
     }
     setDisplayConfirmInvite(false)
-    //Navigate(`/computerroom/${roomStyle}`)
   }
 
   //Invited receives your invitation
@@ -350,42 +348,6 @@ const ComputerRoom: React.FC = () => {
         })
       setDisplayConfirmInvite(true)
       console.log("handleInvitedResponse - phase :3")
-    } if ((isCheckInvite === false) && (isNotCheckInvite === true)) {
-        /*const sendRoomToSender: UserType = users.find((user) => user.firstName === username)
-        const newId: number = sendRoomToSender.id
-        const senderUser = users.find((user) => user.id === newId)
-        console.log(senderUser, 'senderUser 2')
-        const parameterFirstCancelConfirm: object = {...confirmInvitFromOther, 
-          signalRecieve: false, returnConfirm: false}
-
-        serviceRouting
-          .updateUsrCancelConf(id, parameterFirstCancelConfirm)
-          .then(initialData => {
-            setInformUsrMsg(users?.map((user) => user?.id === id ? 
-              {
-                id: id,
-                img: user.img,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                age: user.age,
-                email: user.email,
-                location: user.location,
-                gender: user.gender,
-                mainroom: user.mainroom,
-                room: roomStyle,
-                isConnected: user.isConnected,
-                signalRecieve: false,
-                sentMsg: user.sentMsg,
-                messagebox: user.messagebox,
-                returnConfirm: false
-              } : user
-            ))
-          })
-          .catch((error) => {
-            setInformUsrMsg(users?.filter((u) => u.id !== id))
-            alert("Problem to confirm msg handleBothConfirmation...", error)
-          })*/
-        setDisplayConfirmInvite(true)
     }
   }
 

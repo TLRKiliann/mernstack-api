@@ -55,30 +55,3 @@ app.use('/api/retrieveprivate', msgPrivateGet);
 app.listen(PORT, (): void => {
   console.log(`[+] Server is running on port ${PORT} !`)
 });
-
-/*
-//const db_users = require('db.json');
-//FAST_REFRESH=false; (.env)
-const users: any = [];
-console.log(users)
-
-//Simple login get - post
-app.get('/login', (req:Request, res:Response, next:NextFunction) => {
-  res.json(users)
-  next()
-})
-
-app.post('/login', (req:Request, res:Response, next: NextFunction) => {
-  const user = { username: req.body.username, password: req.body.password }
-  users.push(user)
-  console.log(users)
-  res.status(201).send()
-  next()
-})
-
-//catch all users
-app.get('/db_users', (req:Request, res:Response, next:NextFunction) => {
-  res.json(db_users)
-  next()
-})
-*/

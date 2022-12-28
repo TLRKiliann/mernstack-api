@@ -14,7 +14,6 @@ router.put('/', async (req: Request, res: Response, next: NextFunction) => {
   const messagebox: string = req.body.messagebox;
   const returnConfirm: boolean = req.body.returnConfirm;
   //console.log(id, firstName, sentMsg, messagebox, returnConfirm, "setUserConfirm");
-
   try {
     const result = await pool.query('update members set firstName=?, sentMsg=?, \
       messagebox=?, returnConfirm=? where id=?',
