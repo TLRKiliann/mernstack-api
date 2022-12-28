@@ -2,7 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
-import koalatree from '../assets/koala_tree.png'
+import koalatree from '../assets/logo/koala_tree.png'
 import './styleComponents/NavBar.scss'
 
 

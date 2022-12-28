@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import mother from '../../assets/motherboard.png'
+import mother from '../../assets/background/motherboard.png'
 import './VoletRight.scss'
 
 interface VoletRightProps {
@@ -21,7 +21,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
             >
               X
             </button>
-            <p>Chat Rooms</p>
+            <p>Chat Computing</p>
 
             <img
               src={mother}

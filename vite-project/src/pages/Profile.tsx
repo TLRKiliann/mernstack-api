@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAuthLogin } from '../context/AuthProvider'
-import bgProfile from '../assets/circle.jpg';
+import bgProfile from '../assets/background/circle.jpg';
 import '../stylePages/Profile.scss'
 
 const Profile: React.FC = () => {

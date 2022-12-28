@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import planet from '../assets/planet-connection.jpg'
+import planet from '../assets/background/planet-connection.jpg'
 import '../stylePages/Help.scss'
 
 export default class Help extends Component {

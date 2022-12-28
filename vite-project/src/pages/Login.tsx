@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
 import { app } from "../api/axiosconfig";
 import { useAuthLogin } from '../context/AuthProvider'
-import zoomImg from '../assets/circle.jpg'
+import zoomImg from '../assets/background/circle.jpg'
 import '../stylePages/Login.scss'
 
 

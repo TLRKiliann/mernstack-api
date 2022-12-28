@@ -8,7 +8,7 @@ import MainComp from '../components/MainComp'
 import Footer from '../components/Footer'
 import VoletRight from './volets/VoletRight'
 import VoletLeft from './volets/VoletLeft'
-import cool from '../assets/background/chat-logobg.png'
+import cool from '../assets/logo/chat-logobg.png'
 import '../stylePages/Home.scss'
 
 
