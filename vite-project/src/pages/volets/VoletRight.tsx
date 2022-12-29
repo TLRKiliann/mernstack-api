@@ -44,7 +44,11 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                   >
                     {computer.title}
                   </Link>
-                  <span style={{marginLeft: '10px', fontSize: '20px'}}>{callMyLogo(computer.id)}</span>
+                  <span 
+                    className="spanli--right"
+                  >
+                    {callMyLogo(computer.id)}
+                  </span>
                 </li>
                 ))
               }
@@ -62,7 +66,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
             >
               X
             </button>
-            <p>Chat Rooms</p>
+            <p>Chat Computing</p>
 
             <img
               src={mother}
@@ -80,6 +84,11 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                     {computer.title}
                   </Link>
                   {computer.logo}
+                  <span 
+                    className="spanli--right"
+                  >
+                    {callMyLogo(computer.id)}
+                  </span>
                 </li>
                 ))
               }
