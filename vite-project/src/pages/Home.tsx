@@ -23,7 +23,6 @@ const Home: React.FC = () => {
   const [isOpenRight, setIsOpenRight] = useState<boolean>(false)
   const [isOpenL, setIsOpenL] = useState<boolean>(false)
 
-
   const handleVoletsRight = () => {
     setIsOpenRight(!isOpenRight)
   }

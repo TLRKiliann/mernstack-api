@@ -15,8 +15,8 @@ $font_acme: 'Acme', sans-serif;
   right: 0px;
   left: 0px;
   height: 100%;
-  background: radial-gradient(900px at 50% 20%, 
-    $orange, $purple);
+  background: radial-gradient(1400px at 50% 10%, 
+    $orange, rgba(128,0,128,1));
 }
 /*
   .wallIntro {
@@ -122,23 +122,24 @@ $font_acme: 'Acme', sans-serif;
     font-size: 1.4rem;
     color: rgba(128, 0, 128, 0.4);
     background: linear-gradient(30deg, 
-      rgba(128, 0, 128, 0.4), coral,
-      rgba(128, 0, 128, 0.4));
-    border: 1px outset rgba(180, 85, 255, 0.2);
+      rgba(128, 0, 128, 0.4), sandybrown);
+    border: none;
+    outline: none;
     border-radius: 40px;
     transition: background 2s, transform 2s;
+    
     &:hover {
+      transition: ease;
+      transition-duration: 2s;
       background: linear-gradient(30deg, 
-        rgba(128, 0, 128, 0.8), coral,
-        rgba(128, 0, 128, 0.8));
-      border: 1px outset rgba(180, 85, 255, 0.2);
-      color: rgba(128, 0, 128, 0.6);
+        rgba(128, 0, 128, 0.8), sandybrown);
+      color: sandybrown;
       cursor: pointer;
     }
     &:active {
       transform: scale(0.5);
       transition: ease;
-      transition-duration: 0.7s;
+      transition-duration: 2s;
       border: none;
       outline: none;
     }
@@ -159,23 +160,23 @@ $font_acme: 'Acme', sans-serif;
     font-weight: bold;
     color: rgba(128, 0, 128, 0.4);
     background: linear-gradient(150deg, 
-      rgba(128, 0, 128, 0.4), coral,
-      rgba(128, 0, 128, 0.4));
-    border: 1px outset rgba(180, 85, 255, 0.2);
+      sandybrown, rgba(128, 0, 128, 0.4));
+    border: none;
+    outline: none;
     border-radius: 40px;
     transition: background 2s, transform 2s;
     &:hover {
+      transition: ease;
+      transition-duration: 2s;
       background: linear-gradient(150deg, 
-        rgba(128, 0, 128, 0.8), coral,
-        rgba(128, 0, 128, 0.8));
-      border: 1px outset rgba(180, 85, 255, 0.2);
-      color: rgba(128, 0, 128, 0.6);
+        sandybrown, rgba(128, 0, 128, 0.8));
+      color: sandybrown;
       cursor: pointer;
     }
     &:active {
       transform: scale(0.5);
       transition: ease;
-      transition-duration: 0.7s;
+      transition-duration: 2s;
       border: none;
       outline: none;
     }
@@ -195,7 +196,7 @@ $font_acme: 'Acme', sans-serif;
   justify-content: space-between;
   font-family: $font_acme;
   font-size: 1.4rem;
-  color: $darkorange;
+  color: sandybrown;
 }
 /*
   .webdevanim {
