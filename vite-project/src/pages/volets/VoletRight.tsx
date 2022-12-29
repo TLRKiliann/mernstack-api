@@ -10,6 +10,12 @@ interface VoletRightProps {
 
 const VoletRight: React.FC = (props: VoletRightProps) => {
 
+  const callMyLogo = (id: number) => {
+    const logoId = props.computers?.find((c) => c.id === id)
+    const LogoFind = logoId.logo
+    return <LogoFind/>
+  }
+  
   return(
     <div>
       {props.isOpenRight ? (
@@ -38,6 +44,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                   >
                     {computer.title}
                   </Link>
+                  <span style={{marginLeft: '10px', fontSize: '20px'}}>{callMyLogo(computer.id)}</span>
                 </li>
                 ))
               }
@@ -72,6 +79,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                   >
                     {computer.title}
                   </Link>
+                  {computer.logo}
                 </li>
                 ))
               }
