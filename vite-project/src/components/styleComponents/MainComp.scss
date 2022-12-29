@@ -13,15 +13,15 @@ $font_junction: 'Junction', sans-serif;
   margin-top: 40px;
   .bg--colormaincomp {
     margin: auto;
-    margin-top: 40px;
+    padding-top: 20px;
     padding-bottom: 20px;
-    background-color: rgba(45, 85, 255, 0.4);
-    border: 1mm outset rgba(180, 85, 255, 0.2);
-    border-radius: 15px;
-
+    background: rgba(112, 43, 183, 0.4);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    box-shadow: 0px 0px 7px rgba(112, 43, 183, 0.4);
     .h2--maincomp {
       margin: auto;
-      margin-top: 20px;
       text-align: center;
       font-family: $font_acme;
       font-size: 2.4rem;
@@ -34,7 +34,6 @@ $font_junction: 'Junction', sans-serif;
     }
     .h3--maincomp {
       margin: auto;
-      margin-bottom: 20px;
       text-align: center;
       font-family: $font_acme;
       font-size: 1.8rem;

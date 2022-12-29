@@ -9,7 +9,7 @@ import UsersOnline from './terminalchat/UsersOnline'
 import AskMessageBox from './AskMessageBox'
 import DisplayInvitationOtherUsr from './DisplayInvitationOtherUsr'
 import ConfirmInvitation from './ConfirmInvitation'
-import worldData from '../assets/world_connected.png'
+import worldData from '../assets/background/world_connected.png'
 import './styleComponents/ComputerRoom.scss'
 
 type Field = {

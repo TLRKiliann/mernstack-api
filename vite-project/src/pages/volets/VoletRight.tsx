@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import mother from '../../assets/motherboard.png'
+import mother from '../../assets/background/motherboard.png'
 import './VoletRight.scss'
 
 interface VoletRightProps {
@@ -10,6 +10,12 @@ interface VoletRightProps {
 
 const VoletRight: React.FC = (props: VoletRightProps) => {
 
+  const callMyLogo = (id: number) => {
+    const logoId = props.computers?.find((c) => c.id === id)
+    const LogoFind = logoId.logo
+    return <LogoFind/>
+  }
+  
   return(
     <div>
       {props.isOpenRight ? (
@@ -21,7 +27,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
             >
               X
             </button>
-            <p>Chat Rooms</p>
+            <p>Chat Computing</p>
 
             <img
               src={mother}
@@ -38,6 +44,11 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                   >
                     {computer.title}
                   </Link>
+                  <span 
+                    className="spanli--right"
+                  >
+                    {callMyLogo(computer.id)}
+                  </span>
                 </li>
                 ))
               }
@@ -55,7 +66,7 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
             >
               X
             </button>
-            <p>Chat Rooms</p>
+            <p>Chat Computing</p>
 
             <img
               src={mother}
@@ -72,6 +83,12 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                   >
                     {computer.title}
                   </Link>
+                  {computer.logo}
+                  <span 
+                    className="spanli--right"
+                  >
+                    {callMyLogo(computer.id)}
+                  </span>
                 </li>
                 ))
               }
