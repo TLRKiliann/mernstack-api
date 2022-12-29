@@ -1,62 +1,74 @@
+import { BsHdd } from 'react-icons/bs';
+import { BsFillCpuFill } from 'react-icons/bs';
+import { MdOutlineSecurity } from 'react-icons/md';
+import { FaMemory } from 'react-icons/fa';
+import { GiProcessor } from 'react-icons/gi';
+import { GiServerRack } from 'react-icons/gi';
+import { GiPirateSkull } from 'react-icons/gi';
+import { GoGitPullRequest } from 'react-icons/go';
+import { MdVpnLock } from 'react-icons/md';
+import { SiArkecosystem } from 'react-icons/si';
+import { VscServerProcess } from 'react-icons/vsc';
+
 export const db_computers = [
 	{
 		'id': 1,
 		'title': "Hard Disk - SSD",
-		'img_bg': '../assets/world_bin.png'
+		'logo': BsHdd
 	},
 	{
 		'id': 2,
 		'title': "CPU",
-		'img_bg': '../assets/world_bin.png'
+		'logo': BsFillCpuFill
 	},
 	{
 		'id': 3,
 		'title': "RAM",
-		'img_bg': '../assets/world_bin.png'
+		'logo': FaMemory
 	},
 	{
 		'id': 4,
 		'title': "Drivers",
-		'img_bg': '../assets/world_bin.png'
+		'logo': GiProcessor
 	},
 	{
 		'id': 5,
 		'title': "Systemd",
-		'img_bg': '../assets/world_bin.png'
+		'logo': SiArkecosystem
 	},
 	{
 		'id': 6,
 		'title': "Process",
-		'img_bg': '../assets/world_bin.png'
+		'logo': VscServerProcess
 	},
 	{
 		'id': 7,
 		'title': "Client-Server",
-		'img_bg': '../assets/world_bin.png'
+		'logo': GiServerRack
 	},
 	{
 		'id': 8,
 		'title': "Protocols",
-		'img_bg': '../assets/world_bin.png'
+		'logo': BsHdd
 	},
 	{
 		'id': 9,
 		'title': "Request - Response",
-		'img_bg': '../assets/world_bin.png'
+		'logo': GoGitPullRequest
 	},
 	{
 		'id': 10,
-		'title': "Fire-Wall",
-		'img_bg': '../assets/world_bin.png'
+		'title': "Firewall",
+		'logo': MdOutlineSecurity
 	},
 	{
 		'id': 11,
 		'title': "Proxy - VPN",
-		'img_bg': '../assets/world_bin.png'
+		'logo': MdVpnLock
 	},
 	{
 		'id': 12,
 		'title': "Cybersecurity",
-		'img_bg': '../assets/world_bin.png'
+		'logo': GiPirateSkull
 	},
 ]
