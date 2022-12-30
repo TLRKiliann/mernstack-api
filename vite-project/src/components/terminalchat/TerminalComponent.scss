@@ -24,7 +24,6 @@ orange
     flex-direction: column;
     background: rgba(10, 10, 100, 0.6);
     border-radius: 15px 0px 0px 0px;
-    
     box-shadow: 0px 0px 7px #44224f;
     
     overflow: scroll;
@@ -79,15 +78,15 @@ orange
     box-shadow: 0px 0px 4px #44224f;
     .div--psubterminal {
       position: absolute;
-      margin-left: 10px;
+      margin-left: 5px;
       .arrow {
-        margin-left: 10px;
+        margin-left: 15px;
         color: #88ec88;
       }
     }
     .input--message {
       width: 77%;
-      margin-left: 10px;
+      margin-left: 0px;
       padding: 8px 45px;
 
       font-size: 1.0rem;
