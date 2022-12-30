@@ -266,7 +266,7 @@ const ComputerRoom: React.FC = () => {
       console.log(newuser, 'newuser')
       const noString: string = ""
       const reinitializeCancelConfirm: object = {...newuser, firstName: username,
-        room: roomStyle, sentMsg: noString, messagebox: noString, returnConfirm: false}
+        room: roomStyle, sentMsg: noString, messagebox: noString, returnConfirm: 0}
       console.log(reinitializeCancelConfirm, 'reinitializeCancelConfirm')
 
       serviceRouting
