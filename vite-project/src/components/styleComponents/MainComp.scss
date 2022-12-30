@@ -73,7 +73,7 @@ $font_junction: 'Junction', sans-serif;
     width: 360px;
     height: auto;
     margin: auto;
-    margin-top: -220px;
+    margin-top: 80px;
     margin-bottom: 0px;
     .bg--colormaincomp {
       padding-bottom: 5px;
@@ -85,7 +85,6 @@ $font_junction: 'Junction', sans-serif;
       }
     }  
     .div--connection {
-      width: auto;
       width: 80%;
       font-size: 0.9rem;
       .img--connector {
