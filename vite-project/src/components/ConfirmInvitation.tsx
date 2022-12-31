@@ -7,7 +7,7 @@ interface ConfirmInvitationProps {
   handleCheckBox: () => void
   isNotConfirm: boolean
   handleCheckConfirmation: () => void
-  handleBothConfirmation: (e: React.MouseEvent<HTMLButtonElement>) => void
+  handleBothConfirmation: (e: React.MouseEvent<HTMLButtonElement>, id: number) => void
 }
 
 const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
