@@ -25,16 +25,15 @@ const PrivateMessage: React.FC = () => {
       console.log("no versusUser")
       setDisplayUser(otherUser)
     }
-    //const intervalId = setInterval(() => {
-    servicePrivate
-      .getMsgPrivate()
-      .then((response) => {
-        setPrivateSeveralMsg(response)
-      })
-    return () => console.log("Updated ! (2)")
-    //}, 1000)
-    //return () => clearInterval(intervalId)
-  }, [privateSeveralMsg])
+    const intervalId = setInterval(() => {
+      servicePrivate
+        .getMsgPrivate()
+        .then((response) => {
+          setPrivateSeveralMsg(response)
+        })
+    }, 1000)
+    return () => clearInterval(intervalId)
+  }, [])
 
   const generateId = () => {
     const maxId: number = privateSeveralMsg.length > 0
