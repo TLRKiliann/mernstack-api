@@ -69,13 +69,15 @@ const Home: React.FC = () => {
       }
 
       <div className="animation--alternrota">
-        <div className="webdevanim">
-          <h1>Chat-Room</h1>
-        </div>
+        {!isOpenL && <div className="webdevanim">
+            <h1>Chat-Room</h1>
+          </div>
+        }
 
-        <div className="computinganim">
-          <h1>Computing</h1>
-        </div>
+        {!isOpenRight && <div className="computinganim">
+            <h1>Computing</h1>
+          </div>
+        }
       </div>
 
       <VoletRight
