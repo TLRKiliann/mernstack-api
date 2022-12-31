@@ -16,7 +16,7 @@ interface DisplayInvitationOtherUsrProps {
   form: object
   isCheckInvite: boolean
   handleSwitchBox: () => void
-  handleInvitedResponse: (e: React.MouseEvent<HTMLButtonElement>) => void
+  handleInvitedResponse: (e: React.MouseEvent<HTMLButtonElement>, room: string) => void
 }
 
 const DisplayInvitationOtherUsr: React.FC = (props: {
