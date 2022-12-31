@@ -44,8 +44,8 @@ app.use('/api/updateRoomToSender/:id', changeSenderRoom);
 app.use('/api/setUserConfirm/:id', switchSignalRecieve);
 app.use('/api/confirmationother/:id', confirmFromAnotherUser);
 app.use('/api/updateFirstUserParams/:id', declineUserOne);
-app.use('api/updateSecondUserParams/:id', updateParamSecUser);
-app.use('api/cancelconfirmation/:id', declineUserTwo);
+app.use('/api/updateSecondUserParams/:id', updateParamSecUser);
+app.use('/api/cancelconfirmation/:id', declineUserTwo);
 
 app.use('/api/msgTerminal', postMsgTerminal);
 app.use('/api/retrieveMsgTerminal', getTerminalMsg);
