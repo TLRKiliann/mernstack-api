@@ -1,26 +1,19 @@
 import React from 'react'
 import './styleComponents/DisplayInvitationOtherUsr.scss'
 
-type Field = {
-  value?: string
-}
-
-type Form = {
-  invite: Field
-}
-
-interface DisplayInvitationOtherUsrProps {
+interface DisplayOtherUsrProps {
   id: number | null
   username: string
   initialSender: string
-  form: object
+  roomName: string
   isCheckInvite: boolean
+  isNotCheckInvite: boolean
   handleSwitchBox: () => void
   handleInvitedResponse: (e: React.MouseEvent<HTMLButtonElement>, room: string) => void
+  handleReject: () => void
 }
 
-const DisplayInvitationOtherUsr: React.FC = (props: {
-  DisplayInvitationOtherUsrProps, Form, Field }) => {
+const DisplayInvitationOtherUsr: React.FC = (props: DisplayOtherUsrProps) => {
 
   return (
     <div className="invitation--display">
