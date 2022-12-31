@@ -13,7 +13,7 @@ router.put('/', async (req: Request, res: Response, next: NextFunction) => {
   const signalRecieve: boolean = req.body.signalRecieve;
   const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;
-  console.log(id, room, signalRecieve, sentMsg, messagebox);
+  //console.log(id, room, signalRecieve, sentMsg, messagebox);
   
   try {
     const result = await pool.query('update members set room=?, signalRecieve=?,\

@@ -4,6 +4,8 @@ import mother from '../../assets/background/motherboard.png'
 import './VoletRight.scss'
 
 interface VoletRightProps {
+  logoId: object
+  LogoFind: GiPirateSkull
   isOpenRight: boolean
   handleVoletsRight: () => void
 }
@@ -11,7 +13,7 @@ interface VoletRightProps {
 const VoletRight: React.FC = (props: VoletRightProps) => {
 
   const callMyLogo = (id: number) => {
-    const logoId = props.computers?.find((c) => c.id === id)
+    const logoId: object = props.computers?.find((c) => c.id === id)
     const LogoFind = logoId.logo
     return (
       <div>
