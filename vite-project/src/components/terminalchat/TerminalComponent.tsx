@@ -27,7 +27,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
         .then(response => {
           setMessages(response)
         })
-    }, 1000)
+    }, 2000)
     return () => clearInterval(interval)
   }, [])
 
@@ -79,7 +79,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           m.room === props.roomStyle ? (
             <div key={m.id} className="map--msg">
               <p className="para--chat">{m?.usr} {m?.msg !== undefined 
-                ? `$ ▶ ${m?.msg} ${m.room}`
+                ? `▶ ${m?.msg} ${m.room}`
                 : null}
               </p>
                 <span className="legend--date">
@@ -94,7 +94,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
       <div className="subterminal">
         
         <div className="div--psubterminal">
-          <p className="arrow">$ ▶</p>
+          <p className="arrow">▶</p>
         </div>
 
         <input

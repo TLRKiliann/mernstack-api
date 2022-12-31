@@ -13,10 +13,14 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
   const callMyLogo = (id: number) => {
     const logoId = props.computers?.find((c) => c.id === id)
     const LogoFind = logoId.logo
-    return <LogoFind/>
+    return (
+      <div>
+        <LogoFind/>
+      </div>
+    )
   }
   
-  return(
+  return (
     <div>
       {props.isOpenRight ? (
         <div className="volet--R">

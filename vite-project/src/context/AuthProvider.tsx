@@ -7,6 +7,7 @@ type Props = {
 
 type AuthContextProps = {
   auth: object
+  isConnected: boolean
   setAuth: React.Dispatch<React.SetStateAction<object>>
   username: string
   setUserName: React.Dispatch<React.SetStateAction<string>>

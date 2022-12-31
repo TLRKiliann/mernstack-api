@@ -7,11 +7,8 @@ const postNewMember: string = "/api/createMembers";
 const updateNameRoom: string = '/api/updateRoom';
 const putInvite: string = '/api/inviteOtherUser';
 const updateRoomSender: string = '/api/updateRoomToSender';
-const putResponseUser: string = '/api/confirmationother';
-const putChgUsrRetConf: string = '/api/setUserConfirm';
 const updateResetParamsOne: string = '/api/updateFirstUserParams';
 const updateResetParamsSecond: string = '/api/updateSecondUserParams';
-const cancelConf: string = '/api/cancelconfirmation';
 
 //GET all members of chat
 const getAllMembers = async () => {
@@ -79,36 +76,6 @@ const putInvitationSender = (id: number, changeRoomSender: any) => {
   } 
 }
 
-//PUT username + signalRecieve + returnConfirm
-const updateUsrRetConf = (id: number, changeUserNameReturnConfirm: any) => {
-  //console.log(id, "id service")
-  try {
-    const req = app.put<any>(`${putChgUsrRetConf}/${id}`, changeUserNameReturnConfirm)
-    return req.then((res: any) => res.data)
-  } catch (err: any) {
-    console.error("Error response PUT:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-  } 
-}
-
-//PUT returnConfirm (db)
-const updateResponseUser = (id: number, changeReturnConf: any) => {
-  //console.log(id, "id")
-  try {
-    const req = app.put<any>(`${putResponseUser}/${id}`, changeReturnConf)
-    return req.then((res: any) => res.data)
-  } catch (err: any) {
-    console.error("Error response PUT:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-  } 
-}
-
 //PUT returnConfirm (db)
 const updateToResetParamsFirstUser = (id: number, resetParamsUserOne: any) => {
   //console.log(id, "id")
@@ -138,31 +105,14 @@ const updateToResetParamsSecondUser = (id: number, resetParamsUserTwo: any) => {
   }
 }
 
-const updateUsrCancelConf = (id: number, reinitializeCancelConfirm: any) => {
-  //console.log(id, reinitializeCancelConfirm, 'id et reinitializeCancelConfirm')
-  try {
-    const req = app.put<any>(`${cancelConf}/${id}`, reinitializeCancelConfirm)
-    return req.then((res: any) => res.data)
-  } catch (err: any) {
-    console.error("Error response PUT:");
-    console.error("erd", err.response.data);    // ***
-    console.error("ers", err.response.status);  // ***
-    console.error("erh", err.response.headers); // ***
-    throw err;
-  }
-}
-
 const functionToCall = {
   getAllMembers,
   createMember,
   updateRoomName,
   putInvitation,
   putInvitationSender,
-  updateUsrRetConf,
-  updateResponseUser,
   updateToResetParamsFirstUser,
-  updateToResetParamsSecondUser,
-  updateUsrCancelConf
+  updateToResetParamsSecondUser
 };
 
 export default functionToCall

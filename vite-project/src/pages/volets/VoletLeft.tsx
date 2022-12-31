@@ -124,7 +124,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
             <button
               className="btn--volet"
               onClick={props.handleVoletsLeft}>X</button>
-            <p>Users State Connection</p>
+            <p>Private Chat</p>
 
             <span className="span">
               <BsFillChatDotsFill size={64}/>

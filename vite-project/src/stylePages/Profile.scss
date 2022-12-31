@@ -4,6 +4,7 @@ $bright_yellow: #eedd44;
 $vivid_pink: #f32170;
 $slategray: #708090;
 $lightgrey_24: #242424;
+$lightgrey_28: #282828;
 $lightgrey_38: #383838;
 $lightgrey_48: #484848;
 $lightgrey_42: #424242;
@@ -117,7 +118,7 @@ $font_junction: 'Junction', sans-serif;
     font-family: $font_dejavu;
     font-size: 1.0rem;
     font-weight: bold;
-    background: $lightgrey_24;
+    background: $lightgrey_28;
     border-radius: 7px;
     box-shadow: 0px 0px 4px $slategray;
     color: $orange;
@@ -126,26 +127,24 @@ $font_junction: 'Junction', sans-serif;
       margin-left: 60px;
     }
     .p--profile1 {
-      margin-right: 10px;
+      margin-right: 10px;      
       width: 100px;
     }
     .p--profile2 {
-      margin-right: 10px;
+      margin-right: 10px;      
       width: 120px;
     }
     .p--profile3 {
       margin-right: 10px;
-      width: 30px; 
+      width: 35px; 
     }
     .p--profile4 {
-      margin-right: 10px;
-      width: 70px; 
+      margin-right: 15px;
+      width: 67px; 
     }
     .p--profile5 {
       margin-right: 10px;
-      width: 300px;
-
-      border: 1px solid white;
+      width: 250px;
     }
     .p--profile6 {
       margin-right: 10px;
@@ -165,26 +164,26 @@ $font_junction: 'Junction', sans-serif;
     border-radius: 7px;
     box-shadow: 0px 0px 4px $slategray;
     .img--profileusers {
-      margin-right: 10px;
+      margin-right: 13px;
       margin-left: 10px;
       border-radius: 50% 50%;
       object-fit: cover;
     }
     .p--profile1 {
       margin-right: 10px;
-      width: 100px;
+      width: 125px;
     }
     .p--profile2 {
       margin-right: 10px;
-      width: 120px;
+      width: 145px;
     }
     .p--profile3 {
       margin-right: 10px;
-      width: 30px; 
+      width: 40px; 
     }
     .p--profile4 {
       margin-right: 10px;
-      width: 70px; 
+      width: 80px; 
     }
     .p--profile5 {
       margin-right: 10px;

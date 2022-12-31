@@ -122,7 +122,7 @@ $font_acme: 'Acme', sans-serif;
     font-size: 1.4rem;
     color: rgba(128, 0, 128, 0.4);
     background: linear-gradient(30deg, 
-      rgba(128, 0, 128, 0.4), sandybrown);
+      rgba(128, 0, 128, 0.4), $sandybrown);
     border: none;
     outline: none;
     border-radius: 40px;
@@ -132,8 +132,8 @@ $font_acme: 'Acme', sans-serif;
       transition: ease;
       transition-duration: 2s;
       background: linear-gradient(30deg, 
-        rgba(128, 0, 128, 0.8), sandybrown);
-      color: sandybrown;
+        rgba(128, 0, 128, 0.8), $sandybrown);
+      color: $sandybrown;
       cursor: pointer;
     }
     &:active {
@@ -160,7 +160,7 @@ $font_acme: 'Acme', sans-serif;
     font-weight: bold;
     color: rgba(128, 0, 128, 0.4);
     background: linear-gradient(150deg, 
-      sandybrown, rgba(128, 0, 128, 0.4));
+      $sandybrown, rgba(128, 0, 128, 0.4));
     border: none;
     outline: none;
     border-radius: 40px;
@@ -169,8 +169,8 @@ $font_acme: 'Acme', sans-serif;
       transition: ease;
       transition-duration: 2s;
       background: linear-gradient(150deg, 
-        sandybrown, rgba(128, 0, 128, 0.8));
-      color: sandybrown;
+        $sandybrown, rgba(128, 0, 128, 0.8));
+      color: $sandybrown;
       cursor: pointer;
     }
     &:active {
@@ -275,8 +275,8 @@ $font_acme: 'Acme', sans-serif;
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--voletsLeft {
     position: absolute;
-    margin-top: 33vh;
-    margin-left: 4%;
+    margin-top: 35vh;
+    margin-left: 12%;
     border-radius: 15px;
 
     .btn--voletLeft {
@@ -288,8 +288,8 @@ $font_acme: 'Acme', sans-serif;
   .div--voletsRight {
     position: absolute;
     right: 0px;
-    margin-top: 33vh;
-    margin-right: 4%;
+    margin-top: 35vh;
+    margin-right: 12%;
     border-radius: 15px;
     z-index: 3;
 
