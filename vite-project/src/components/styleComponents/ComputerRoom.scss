@@ -14,6 +14,7 @@ $font_junction: 'Junction', sans-serif;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  overflow: hidden;
   background: linear-gradient(160deg, $purple,
     $orange);
   z-index: 1;
@@ -27,22 +28,24 @@ $font_junction: 'Junction', sans-serif;
     margin-top: 25%;
     display: flex;
     opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+
     animation-name: rotation--bg;
     animation-delay: 0s;
     animation-duration: 4s;
     animation-iteration-count: 1;
-    z-index: -1;
+    animation-timing-function: ease-in-out;
     .rotation--roomstyle {
       margin: auto;
-      font-family: $font_junction;
-      font-size: 2rem;
+      font-family: "Acme", sans-serif;
+      font-size: 1.4rem;
       background: linear-gradient(to right, $vivid_pink,
       $vivid_orange, #cf23cf, #eedd44);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       opacity: 0;
       transform: scale(0);
-      overflow: hidden;
 
       animation-name: rotation--room;
       animation-delay: 0s;
@@ -93,22 +96,26 @@ $font_junction: 'Junction', sans-serif;
       z-index: 2;
     }
     50% {
-      transform: scale(2.0);
+      transition: ease;
+      transform: scale(1.8);
       opacity: 1;
       z-index: 2;
     }
     70% {
-      transform: scale(2.5);
+      transition: ease;
+      transform: scale(2.7);
       opacity: 1;
       z-index: 2;
     }
     75% {
+      transition: ease;
       transform: scale(1.8);
       opacity: 1;
       z-index: 2;
     }
     80% {
-      transform: scale(2.5);
+      transition: ease;
+      transform: scale(2.7);
       opacity: 1;
       z-index: 2;
     }

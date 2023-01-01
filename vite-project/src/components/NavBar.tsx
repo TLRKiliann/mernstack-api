@@ -54,14 +54,6 @@ const NavBar: React.FC = () => {
               Online
             </Link>
           </li>
-          <li>
-            <Link
-              className="link--tagnav"
-              to='/help'
-            >
-              Help
-            </Link>
-          </li>
         </ul>
 
       <div className="div--userloginnavbar">

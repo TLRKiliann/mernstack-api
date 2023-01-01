@@ -34,24 +34,27 @@ const MainComp: React.FC = (props: MainCompProps) => {
         <div>
           {props.users?.slice(0, `${props.users?.length}`).map(user => (
             <div key={user.id}>
-            {user.isConnected ? (
-              <div className="div--connection">
-                <img
-                  src={user.img}
-                  width="40px"
-                  height="40px"
-                  className="img--connector"
-                  alt={user.img}
-                />
-                {user.firstName} {user.lastName} :&nbsp;
-                  <div 
-                    className="data--maincomp"
-                  >
+              {user.isConnected ? (
+                <div className="membershome__div">
+                  <div className="membershome__divimg">
+                    <img
+                      src={user.img}
+                      width="95px"
+                      height="60px"
+                      className="membershome__img"
+                      alt={user.img}
+                    />
+                  </div>
+
+                  <div className="membershome__names">
+                    {user.firstName} {user.lastName}
+                  </div>
+                  <div className="membershome__connection">
                     Connected
                   </div>
-              </div>
-              ) : null
-            }
+                </div>
+                ) : null
+              }
             </div>
             ))
           }

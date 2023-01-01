@@ -86,11 +86,13 @@ const PrivateMessage: React.FC = () => {
                 className="img--private"
                 alt="no img"
               />
-              <h4 className="title--private">{displayUser.firstName}</h4>
-              <h4 className="title--private">{displayUser.lastName}</h4>
-              <h4 className="title--private">{displayUser.age} years</h4>
-              <h4 className="title--private">{displayUser.email}</h4>
-              <h4 className="title--private">{displayUser.isConnected ? (
+            </div>
+            <div className="title--private">
+              <h4 className="subtitle--private">{displayUser.firstName}</h4>
+              <h4 className="subtitle--private">{displayUser.lastName}</h4>
+              <h4 className="subtitle--private">{displayUser.age} years</h4>
+              <h4 className="subtitle--private">{displayUser.email}</h4>
+              <h4 className="lastsubtitle--private">{displayUser.isConnected ? (
                 <span
                   className="span--useronline"
                   style={{color: 'lightgreen'}}
@@ -106,12 +108,11 @@ const PrivateMessage: React.FC = () => {
               }
               </h4>
             </div>
-
         </div>
 
         <div className="private--messagebox">
           <div>
-          {privateSeveralMsg?.map((data) => (
+          {privateSeveralMsg?.slice(-15).map((data) => (
             <div key={data.id} className="map--msg">
               <p className="para--chat">$ ▶ {data.user} ~ {data.msg}</p>
               <legend className="legend--date">{data.date}</legend>

@@ -1,4 +1,4 @@
-$orange: #ffa500;
+$sandybrown: #f4a460;
 $purple: #800080;
 $mediumpurple: mediumpurple;
 $whitesmoke: #f5f5f5;
@@ -15,7 +15,7 @@ $font_junction: 'Junction', sans-serif;
   right: 0px;
   left: 0px;
   min-height: 100vh;
-  background: linear-gradient(180deg, $purple, $orange);
+  background: linear-gradient(180deg, $sandybrown, $purple);
   z-index: -1;
   .zoom--img {
     position: fixed;
@@ -120,7 +120,7 @@ $font_junction: 'Junction', sans-serif;
       color: $whitesmoke;
       text-shadow: 2px 1px 2px $lightgrey_24;
       &:hover {
-        color: $orange;
+        color: $sandybrown;
         text-shadow: 0px 0px 0px $lightgrey_24;
       }
     }
@@ -130,7 +130,7 @@ $font_junction: 'Junction', sans-serif;
       padding: 5px 10px;
       font-size: 0.9rem;
       font-weight: bold;
-      color: $orange;
+      color: $sandybrown;
       background-color: $lightgrey_28;
       border-radius: 5px;
     }
@@ -209,7 +209,7 @@ $font_junction: 'Junction', sans-serif;
         color: $whitesmoke;
         text-shadow: 2px 1px 2px $purple;
         &:hover {
-          color: $orange;
+          color: $sandybrown;
           text-shadow: 0px 0px 0px $purple;
         }
       }
@@ -219,7 +219,7 @@ $font_junction: 'Junction', sans-serif;
         padding: 5px 10px;
         font-size: 0.9rem;
         font-weight: bold;
-        color: $orange;
+        color: $sandybrown;
         background-color: $lightgrey_28;
         border-radius: 5px;
       }

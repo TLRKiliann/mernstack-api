@@ -41,10 +41,12 @@ $font_junction: 'Junction', sans-serif;
       color: $sandybrown;
     }
   }
-  .div--connection {
+  .membershome__div {
     width: 80%;
-    padding: 5px 5px;
-    margin: 10px auto;
+    height: 60px;
+    margin: auto;
+    margin-top: 10px;
+
     display: flex;
     align-items: center;
     font-family: $font_dejavu;
@@ -52,15 +54,35 @@ $font_junction: 'Junction', sans-serif;
     color: lightblue;
     background-color: rgba(85, 45, 255, 0.4);
     border: 1mm outset rgba(150, 45, 255, 0.4);
-    outline: none;
     border-radius: 7px;
-    .img--connector {
-      margin-right: 10px;
-      margin-left: 10px;
-      border-radius: 50% 50%;
-      object-fit: cover;
+    .membershome__divimg {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      margin: auto;
+      margin-top: 5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      border-radius: 50%;
+      .membershome__img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        object-fit: cover;
+        border-radius: 50%;
+      }
     }
-    .data--maincomp {
+    .membershome__names {
+      margin: auto;
+      margin-left: 60px;
+      display: flex;
+    }
+    .membershome__connection {
+      margin: auto;
+      margin-right: 10px;
+      display: flex;
       font-family: $font_junction;
       font-size: 1.2rem;
       color: $lightgreen;
@@ -70,28 +92,34 @@ $font_junction: 'Junction', sans-serif;
 
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .master--maincomp {
-    width: 360px;
+    width: 370px;
     height: auto;
     margin: auto;
     margin-top: 80px;
-    margin-bottom: 0px;
     .bg--colormaincomp {
-      padding-bottom: 5px;
       .h2--maincomp {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        .span--lengthuser {
+        }
       }
       .h3--maincomp {
-        font-size: 1.4rem;
+        font-family: $font_acme;
+        font-size: 1.2rem;
       }
-    }  
-    .div--connection {
-      width: 80%;
-      font-size: 0.9rem;
-      .img--connector {
-        margin-right: 3px;
-        margin-left: 3px;
+    }
+    .membershome__div {
+      font-family: $font_dejavu;
+      font-size: 1.0rem;
+      .membershome__divimg {
+        .membershome__img {
+        }
       }
-      .data--maincomp {
+      .membershome__names {
+        font-family: $font_dejavu;
+        font-size: 0.9rem;
+      }
+      .membershome__connection {
+        font-family: $font_dejavu;
         font-size: 0.9rem;
       }
     }

@@ -1,5 +1,5 @@
 $lightgreen: #90ee90;
-$orange: #ffa500;
+$sandybrown: #f4a460;
 $purple: #800080;
 $soft_blue: #50bcfe;
 $slategray: #708090;
@@ -16,8 +16,7 @@ $font_allura: 'Allura', cursive;
   left: 0px;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, 
-    $purple, $orange);
+  background: linear-gradient(180deg, $sandybrown, $purple);
   .title--services {
     margin-top: 120px;
     margin-left: 20px;
@@ -100,7 +99,7 @@ $font_allura: 'Allura', cursive;
         justify-content: right;
         font-size: 22px;
         cursor: pointer;
-        color: $orange;
+        color: $sandybrown;
         z-index: 3;
         &:hover {
           color: cyan;
@@ -115,7 +114,7 @@ $font_allura: 'Allura', cursive;
         font-size: 14px;
         font-family: $font_dejavu;
         font-weight: thin;
-        color: $orange;
+        color: $sandybrown;
 
         .btn--lastspanonline {
           margin-left: 10px;
@@ -124,13 +123,13 @@ $font_allura: 'Allura', cursive;
           font-weight: bold;
           color: $lightgrey;
           background: linear-gradient(30deg,
-            $purple, $orange);
+            $purple, $sandybrown);
           border: none;
           outline: none;
           border-radius: 50%;
           cursor: pointer;
           &:hover {
-            background: $orange;
+            background: $sandybrown;
             color: $purple;
           }
           &:active {

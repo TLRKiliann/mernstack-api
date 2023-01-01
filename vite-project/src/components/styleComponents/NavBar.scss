@@ -5,7 +5,7 @@ $lightgrey_42: #424242;
 $lightgrey_38: #383838;
 $slategray: #708090;
 $purple: #800080;
-$orange: #ffa500;
+$sandybrown: #f4a460;
 $lightgreen: #90ee90;
 $whitesmoke: #f5f5f5;
 $font_junction: 'Junction', sans-serif;
@@ -21,9 +21,8 @@ $font_allura: 'Allura', cursive;
   margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: $purple;
-  border-bottom: 1px solid $purple;
-  box-shadow: 0px 0px 7px $orange;
+  background: linear-gradient(160deg, $sandybrown, $purple);
+  box-shadow: 0px 0px 7px $sandybrown;
   z-index: 2;
   .navbar--nav {
     width: 100%;
@@ -35,9 +34,10 @@ $font_allura: 'Allura', cursive;
       left: 20px;
       display: flex;
       background: linear-gradient(180deg,
-        $purple, $orange);
+        $purple, $sandybrown);
+      border: none;
+      outline: none;
       border-radius: 50%;
-      box-shadow: 0px 0px 7px $purple;
       z-index: 2;
       .img--koala {
         width: 57px;
@@ -56,8 +56,8 @@ $font_allura: 'Allura', cursive;
         text-shadow: 1px 1px 0px #000;
         color: $whitesmoke;
         &:hover {
-         color: $orange;
-         text-shadow: 1px 1px 0px #purple;
+         color: $sandybrown;
+         text-shadow: 0px 0px 0px $purple;
         }
       }
     }
@@ -83,7 +83,7 @@ $font_allura: 'Allura', cursive;
   display: flex;
   flex-direction: row;
   background: linear-gradient(180deg,
-    $purple, $orange);
+    $purple, $sandybrown);
   border: 1mm inset $purple;
   border-radius: 15px;
   .div--userplace {
@@ -100,7 +100,7 @@ $font_allura: 'Allura', cursive;
       background-color: $lightgrey_38;
       border: 1mm outset $lightgrey_50;
       border-radius: 7px;
-      color: $orange;
+      color: $sandybrown;
     }
     .span--usrnavbar {
       padding: 5px 10px;
@@ -161,7 +161,7 @@ $font_allura: 'Allura', cursive;
       transform: scale(0.9);
       background-color: $lightgrey_38;
       border: 1mm inset $lightgrey_42;
-      color: $orange;
+      color: $sandybrown;
     }
   }
 }
@@ -177,7 +177,7 @@ $font_allura: 'Allura', cursive;
       width: 100%;
       margin: auto;
       display: flex;
-      .div--img {
+      .div--imgnavbar {
         position: absolute;
         top: 20px;
         width: 40px;
@@ -186,8 +186,8 @@ $font_allura: 'Allura', cursive;
         align-items: center;
         justify-content: center;
         .img--koala {
-          width: 40px;
-          height: 40px;
+          width: 22px;
+          height: 22px;
         }
       }
       .ul--navbar {
