@@ -34,7 +34,9 @@ const ComputerRoom: React.FC = () => {
   }, [])
 
   const [informUsrMsg, setInformUsrMsg] = useState<Array<UserType>>([])
+
   const [displayConfirmInvite, setDisplayConfirmInvite] = useState<boolean>(false)
+  
   const [catchById, setCatchById] = useState<Array<UserType>>([])
   const [switchAsk, setSwitchAsk] = useState<boolean>(false)
 
