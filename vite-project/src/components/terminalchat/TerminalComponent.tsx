@@ -75,7 +75,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           <h3 className="intro--terminalh3">{props.roomStyle}</h3>
         </span>
         
-        {messages?.map((m) => (
+        {messages?.slice(-13).map((m) => (
           m.room === props.roomStyle ? (
             <div key={m.id} className="map--msg">
               <p className="para--chat">{m?.usr} {m?.msg !== undefined 
