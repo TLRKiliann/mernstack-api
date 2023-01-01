@@ -7,7 +7,6 @@ import Subscribe from './pages/Subscribe'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Online from './pages/Online'
-import Help from './pages/Help'
 import ChatComputer from './components/ChatComputer'
 import ComputerRoom from './components/ComputerRoom'
 import PrivateMessage from './components/privatechat/PrivateMessage'
@@ -23,34 +22,29 @@ const App:React.FC = () => {
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/profile' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <Profile />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route exact path='/online' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <Online />
-          </PrivateRoute>
-        } />
-        <Route exact path='/help' element={
-          <PrivateRoute>
-            <Help />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route exact path='/chatcomputer/:id' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <ChatComputer />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route path='/computerroom/:link' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <ComputerRoom />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route path='/computerroom/privatechat/:retrieveRoom' element={
-          <PrivateRoute>
+          //<PrivateRoute>
             <PrivateMessage />
-          </PrivateRoute>
+          //</PrivateRoute>
         } />
         <Route path='*' element={<ErrorPageNotFound />} />
       </Routes>
