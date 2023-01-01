@@ -71,11 +71,12 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background-color: rgba(255,255,255, 0.1);
+  background: linear-gradient(170deg, rgba(108, 38, 186, 0.3) 25%,
+    rgba(255,255,255, 0.1) 50%, rgba(108, 38, 186, 0.3) 75%);
   border: none;
   outline: none;
-  box-shadow: 0px 0px 7px $sandybrown;
   border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
 }
 
 .span {
@@ -99,11 +100,12 @@ $font_junction: 'Junction', sans-serif;
     font-family: $font_junction;
     font-size: 1.0rem;
     color: lightblue;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255, 0.1);
     border: none;
     outline: none;
-    box-shadow: 0px 0px 7px $sandybrown;
-  }
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
+    }
 
   .search--input::placeholder {
     color: $whitesmoke;
@@ -151,11 +153,12 @@ $font_junction: 'Junction', sans-serif;
 .section--voletl {
   margin: 20px 20px;
   padding: 20px 40px;
-  background-color: rgba(255,255,255, 0.1);
+  background: linear-gradient(170deg, rgba(108, 38, 186, 0.3) 25%,
+    rgba(255,255,255, 0.1) 50%, rgba(108, 38, 186, 0.3) 75%);
   border: none;
   outline: none;
-  border-radius: 10px;
-  box-shadow: 0px 0px 7px $sandybrown;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
 }
 
 .li {
@@ -240,9 +243,10 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background-color: rgba(255,255,255, 0.1);
+  background: linear-gradient(170deg, rgba(108, 38, 186, 0.3) 25%,
+    rgba(255,255,255, 0.1) 50%, rgba(108, 38, 186, 0.3) 75%);
   border: none;
   outline: none;
-  box-shadow: 0px 0px 7px $sandybrown;
   border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
 }
