@@ -11,10 +11,10 @@ export default class Footer extends Component {
               Contact
             </li>
             <li className="navbar--li">
-              About US
+              Info
             </li>
             <li className="navbar--li">
-              Rules
+              Sponsors
             </li>
           </ul>
         </nav>
