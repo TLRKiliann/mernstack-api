@@ -55,6 +55,9 @@ const Home: React.FC = () => {
           >
             Computing
           </button>
+          <div className="computinganim">
+            <h1>Computing</h1>
+          </div>
         </div>
       }
 
@@ -65,20 +68,11 @@ const Home: React.FC = () => {
           >
             Chat-Room
           </button>
-        </div>
-      }
-
-      <div className="animation--alternrota">
-        {!isOpenL && <div className="webdevanim">
+          <div className="webdevanim">
             <h1>Chat-Room</h1>
           </div>
-        }
-
-        {!isOpenRight && <div className="computinganim">
-            <h1>Computing</h1>
-          </div>
-        }
-      </div>
+        </div>
+      }
 
       <VoletRight
         computers={computers}

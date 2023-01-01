@@ -46,16 +46,17 @@ $font_junction: 'Junction', sans-serif;
     width: 30px;
     height: 30px;
 
-    background: transparent;
-    background-color: rgba(108, 38, 186, 0.4);
-    border: 1mm outset rgba(108, 38, 186, 0.4);
-    border-radius: 50% 50%;
-    box-shadow: 0px 0px 7px $sandybrown;
+    background: rgba(108, 38, 186, 0.3);
+    border: 1mm outset rgba(220, 38, 186, 0.1);
+
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
     color: $lightgrey;
     &:hover {
       cursor: pointer;
       background-color: rgba(108, 38, 186, 0.1);
-      border: 1mm outset rgba(108, 38, 186, 0.1);
+      border: none;
+      outline: none;
       color: $lightgreen;
     }
   }
@@ -71,8 +72,8 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background: linear-gradient(45deg, rgba(108, 38, 186, 0.3) 25%,
-    rgba(255,255,255, 0.1) 50%, rgba(108, 38, 186, 0.3) 75%);
+  background: linear-gradient(60deg, rgba(255,255,255, 0.1) 25%,
+    rgba(108, 38, 186, 0.3) 75%);
   border: none;
   outline: none;
   border-radius: 5px;
@@ -89,8 +90,8 @@ $font_junction: 'Junction', sans-serif;
 .section--voletr {
   margin: 20px 20px;
   padding: 20px 40px;
-  background: linear-gradient(60deg, rgba(108, 38, 186, 0.3) 30%,
-    rgba(255,255,255, 0.1) 50%, rgba(108, 38, 186, 0.3) 70%);
+  background: linear-gradient(60deg, rgba(255,255,255, 0.1) 25%,
+    rgba(108, 38, 186, 0.3) 75%);
   border: none;
   outline: none;
   border-radius: 10px;
@@ -156,15 +157,16 @@ $font_junction: 'Junction', sans-serif;
     width: 30px;
     height: 30px;
     background: transparent;
-    background-color: rgba(108, 38, 186, 0.4);
-    border: 1mm outset rgba(108, 38, 186, 0.4);
-    box-shadow: 0px 0px 7px $sandybrown;
-    border-radius: 50% 50%;
+    background: rgba(108, 38, 186, 0.3);
+    border: 1mm outset rgba(220, 38, 186, 0.1);
+    box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
+    border-radius: 50%;
     color: $lightgrey;
     &:hover {
       cursor: pointer;
       background-color: rgba(108, 38, 186, 0.1);
-      border: 1mm outset rgba(108, 38, 186, 0.1);
+      border: none;
+      outline: none;
       color: $lightgreen;
     }
   }
@@ -191,8 +193,8 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background: linear-gradient(45deg, rgba(108, 38, 186, 0.3) 25%,
-    rgba(255,255,255, 0.1) 50%, rgba(108, 38, 186, 0.3) 75%);
+  background: linear-gradient(60deg, rgba(255,255,255, 0.1) 25%,
+    rgba(108, 38, 186, 0.3) 75%);
   border: none;
   outline: none;
   border-radius: 5px;
