@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../../context/AuthProvider'
 import servicePrivate from '../../services/servicePrivate'
@@ -17,6 +17,8 @@ const PrivateMessage: React.FC = () => {
   const [privateMsg, setPrivateMsg] = useState<string>("")
   const [privateSeveralMsg, setPrivateSeveralMsg] = useState<Array<string>>([])
 
+  const privateRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     if (Object.keys(otherUser).length === 0) {
       console.log("no otherUser")
@@ -34,6 +36,10 @@ const PrivateMessage: React.FC = () => {
     }, 1000)
     return () => clearInterval(intervalId)
   }, [])
+
+  useEffect(() => {
+    privateRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [privateSeveralMsg])
 
   const generateId = () => {
     const maxId: number = privateSeveralMsg.length > 0
@@ -78,42 +84,42 @@ const PrivateMessage: React.FC = () => {
 
       <div className="private--terminal">
         <div className="sub--privateterminal">
-            <div className="flex--imgnameroom">
-              <img
-                src={displayUser.img}
-                width="95px"
-                height="65px"
-                className="img--private"
-                alt="no img"
-              />
-            </div>
-            <div className="title--private">
-              <h4 className="subtitle--private">{displayUser.firstName}</h4>
-              <h4 className="subtitle--private">{displayUser.lastName}</h4>
-              <h4 className="subtitle--private">{displayUser.age} years</h4>
-              <h4 className="subtitle--private email">{displayUser.email}</h4>
-              <h4 className="lastsubtitle--private">{displayUser.isConnected ? (
-                <span
-                  className="span--useronline"
-                  style={{color: 'lightgreen'}}
-                >
-                  ✔
-                </span>
-                ) : (
-                <span 
-                  className="span--useronline">
-                  ❌
-                </span>
-                )
-              }
-              </h4>
-            </div>
+          <div className="flex--imgnameroom">
+            <img
+              src={displayUser.img}
+              width="95px"
+              height="64px"
+              className="img--private"
+              alt="no img"
+            />
+          </div>
+          <div className="title--private">
+            <h4 className="subtitle--private">{displayUser.firstName}</h4>
+            <h4 className="subtitle--private">{displayUser.lastName}</h4>
+            <h4 className="subtitle--private">{displayUser.age} years</h4>
+            <h4 className="subtitle--private email">{displayUser.email}</h4>
+            <h4 className="lastsubtitle--private">{displayUser.isConnected ? (
+              <span
+                className="span--useronline"
+                style={{color: 'lightgreen'}}
+              >
+                ✔
+              </span>
+              ) : (
+              <span 
+                className="span--useronline">
+                ❌
+              </span>
+              )
+            }
+            </h4>
+          </div>
         </div>
 
         <div className="private--messagebox">
           <div>
-          {privateSeveralMsg?.slice(-15).map((data) => (
-            <div key={data.id} className="map--msg">
+          {privateSeveralMsg?.slice(-20).map((data) => (
+            <div key={data.id} ref={privateRef} className="map--msg">
               <p className="para--chat">$ ▶ {data.user} ~ {data.msg}</p>
               <legend className="legend--date">{data.date}</legend>
             </div>
@@ -138,7 +144,6 @@ const PrivateMessage: React.FC = () => {
           </button>
         </div>
       </div>
-
     </div>
   )
 }

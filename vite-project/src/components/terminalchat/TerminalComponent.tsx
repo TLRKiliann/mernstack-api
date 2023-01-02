@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import serviceTerminal from '../../services/serviceTerminal'
 import { useAuthLogin } from '../../context/AuthProvider'
 import './TerminalComponent.scss'
@@ -18,7 +18,9 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
   const [message, setMessage] = useState<string>("")
   const [messages, setMessages] = useState<Array<string>>(
     JSON.parse(localStorage.getItem("Messages")) || null)
-  //console.log(messages, "messages")
+
+  const { username } = useAuthLogin()
+  const myRef = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,11 +33,14 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
     return () => clearInterval(interval)
   }, [])
 
-  const { username } = useAuthLogin()
+
+  useEffect(() => {
+    myRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages])
 
   const generateId = () => {
     const maxId: number = messages.length > 0
-      ? Math.max(...messages.map(msg => msg.id))
+      ? Math.max(...messages.map((msg) => msg.id))
       : 0
     return maxId + 1
   }
@@ -58,29 +63,30 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
         })
         .catch((error) => {
           setMessages([])
-          console.log("Send msg error (Terminal)!")
+          console.log("Send msg error (Terminal)!", error)
         })
     } else {
-      console.log("message === undefined")
+      console.log("message === ''")
     }
     setMessage("")
   }
 
   return(
     <section className="terminal">
+        
+      <span className="intro--terminal">
+        <h3 className="intro--terminalh3">{props.roomStyle}</h3>
+      </span>
 
       <div className="div--terminal">
 
-        <span data-testid="spantestid" className="intro--terminal">
-          <h3 className="intro--terminalh3">{props.roomStyle}</h3>
-        </span>
-        
-        {messages?.slice(-13).map((m) => (
+        {messages?.slice(-20).map((m) => (
           m.room === props.roomStyle ? (
             <div key={m.id} className="map--msg">
-              <p className="para--chat">{m?.usr} {m?.msg !== undefined 
-                ? `▶ ${m?.msg} ${m.room}`
-                : null}
+              <p ref={myRef} className="para--chat">
+                {m?.usr} {m?.msg !== "" 
+                  ? `▶ ${m?.msg} ${m.room}`
+                  : null}
               </p>
                 <span className="legend--date">
                   {m?.date}
