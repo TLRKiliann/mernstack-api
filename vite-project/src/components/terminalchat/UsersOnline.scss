@@ -1,21 +1,14 @@
-/*
-/*
-$royalblue: #4169e1;
-$purple: #800080;
-slategrey
+$orangered: #ff4500;
+$slategray: #708090;
+$font_junction: 'Junction', sans-serif;
 
-user online side
-slategray
-#88ec88
-'Junction', sans-serif;
-*/
 .all--usersbanner {
   margin-left: 10px;
   width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px dashed slategray;
+  border-bottom: 1px dashed $slategray;
   .username--useronline {
     display: flex;
     align-items: center;
@@ -27,7 +20,7 @@ slategray
       border-radius: 100%;
     }
     .useronline--username {
-      font-family: "Junction", sans-serif;
+      font-family: $font_junction;
       font-size: 1.0rem;
     }
   }
@@ -47,7 +40,7 @@ slategray
     .connector--icon {
       margin-right: 10px;
       font-size: 18px;
-      color: orangered;
+      color: $orangered;
     }
     .styleusr--span {
       margin-right: 20px;
