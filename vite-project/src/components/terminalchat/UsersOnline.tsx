@@ -51,7 +51,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
             id={props.refreshUser.id}
             onClick={() => props.handleAskUserPrivate(props.refreshUser.id)}
             className="span--useronline styleusr--span"
-            style={{color: 'orange', fontSize: '22px'}}
+            style={{color: 'sandybrown', fontSize: '22px'}}
           >
             ✉
           </span>

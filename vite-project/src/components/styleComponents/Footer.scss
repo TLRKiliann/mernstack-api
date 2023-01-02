@@ -39,7 +39,7 @@ $font_allura: 'Allura', cursive;
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 770px) {
+@media only screen and (min-width: 360px) and (max-width: 770px) {
   .div--navfooter {
     position: fixed;
     width: 100%;
