@@ -13,9 +13,9 @@ $font_acme: 'Acme', sans-serif;
   top: 0px;
   right: 0px;
   left: 0px;
-  height: 120vh;
+  min-height: 120vh;
   background: linear-gradient(180deg, 
-    $sandybrown, purple);
+    $sandybrown, $purple);
   .img--home {
     position: fixed;
     top: 0px;
@@ -260,7 +260,7 @@ $font_acme: 'Acme', sans-serif;
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--home {
     background: radial-gradient(800px at 50% 20%, 
-      $sandybrown, purple);
+      $sandybrown, $purple);
     .img--home {
     }
     .wallIntro {

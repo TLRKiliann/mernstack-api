@@ -11,6 +11,7 @@ $font_junction: 'Junction', sans-serif;
   height: auto;
   margin: auto;
   margin-top: 40px;
+  margin-bottom: 140px;
   .bg--colormaincomp {
     margin: auto;
     padding-top: 20px;
@@ -92,10 +93,11 @@ $font_junction: 'Junction', sans-serif;
 
 @media only screen and (min-width: 360px) and (max-width: 1050px) {
   .master--maincomp {
-    width: 370px;
+    width: 80%;
     height: auto;
     margin: auto;
     margin-top: 80px;
+    margin-bottom: 80px;
     .bg--colormaincomp {
       .h2--maincomp {
         font-size: 1.4rem;
