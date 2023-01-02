@@ -4,7 +4,7 @@ $lightgrey_48: #484848;
 $lightgrey_42: #424242;
 $lightgrey_38: #383838;
 $slategray: #708090;
-$purple: #800080;
+$darkmagenta: #8B008B;
 $sandybrown: #f4a460;
 $lightgreen: #90ee90;
 $whitesmoke: #f5f5f5;
@@ -21,7 +21,7 @@ $font_allura: 'Allura', cursive;
   margin: auto;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(160deg, $sandybrown, $purple);
+  background: linear-gradient(160deg, $sandybrown, $darkmagenta);
   box-shadow: 0px 0px 7px $sandybrown;
   z-index: 2;
   .navbar--nav {
@@ -34,7 +34,7 @@ $font_allura: 'Allura', cursive;
       left: 20px;
       display: flex;
       background: linear-gradient(180deg,
-        $purple, $sandybrown);
+        $darkmagenta, $sandybrown);
       border: none;
       outline: none;
       border-radius: 50%;
@@ -57,7 +57,7 @@ $font_allura: 'Allura', cursive;
         color: $whitesmoke;
         &:hover {
          color: $sandybrown;
-         text-shadow: 0px 0px 0px $purple;
+         text-shadow: 0px 0px 0px $darkmagenta;
         }
       }
     }
@@ -81,8 +81,8 @@ $font_allura: 'Allura', cursive;
   display: flex;
   flex-direction: row;
   background: linear-gradient(180deg,
-    $purple, $sandybrown);
-  border: 1mm inset $purple;
+    $darkmagenta, $sandybrown);
+  border: 1mm inset $darkmagenta;
   border-radius: 15px;
   .div--userplace {
     margin-left: 10px;

@@ -1,8 +1,9 @@
 /*Right volet*/
+$pink: #ffc0cb;
 $whitesmoke: #f5f5f5;
 $lightgreen: #90ee90;
-$lightgrey: #CDCDCD;
 $sandybrown: #f4a460;
+$darkmagenta: #8B008B;
 $font_junction: 'Junction', sans-serif;
 
 .volet--R {
@@ -45,13 +46,11 @@ $font_junction: 'Junction', sans-serif;
     margin-left: 20px;
     width: 30px;
     height: 30px;
-
     background: rgba(108, 38, 186, 0.3);
     border: 1mm outset rgba(220, 38, 186, 0.1);
-
     border-radius: 50%;
     box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
-    color: $lightgrey;
+    color: $sandybrown;
     &:hover {
       cursor: pointer;
       background-color: rgba(108, 38, 186, 0.1);
@@ -70,8 +69,8 @@ $font_junction: 'Junction', sans-serif;
   text-align: center;
   font-family: $font_junction;
   font-size: 2rem;
-  color: $lightgrey;
-  text-shadow: 1px 1px 0px purple;
+  color: $sandybrown;
+  text-shadow: 1px 1px 0px $darkmagenta;
   
   background: linear-gradient(170deg, rgba(255,255,255, 0.1),
     rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
@@ -107,14 +106,14 @@ $font_junction: 'Junction', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px dashed $whitesmoke;
+  border-bottom: 1px dashed $pink;
   &:hover {
     color: $whitesmoke;
   }
   .spanli--right {
     padding-top: 3px;
     font-size: 20px;
-    color: $lightgrey;
+    color: $sandybrown;
   }
 }
 
@@ -123,8 +122,8 @@ $font_junction: 'Junction', sans-serif;
   text-decoration: none;
   font-family: $font_junction;
   font-size: 1.1rem;
-  color: $lightgrey;
-  text-shadow: 1px 1px 0px purple;
+  color: $sandybrown;
+  text-shadow: 1px 1px 0px $darkmagenta;
   &:hover {
     color: $whitesmoke;
   }
@@ -164,7 +163,7 @@ $font_junction: 'Junction', sans-serif;
     border: 1mm outset rgba(220, 38, 186, 0.1);
     box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
     border-radius: 50%;
-    color: $lightgrey;
+    color: $sandybrown;
     &:hover {
       cursor: pointer;
       background-color: rgba(108, 38, 186, 0.1);
@@ -194,8 +193,8 @@ $font_junction: 'Junction', sans-serif;
   text-align: center;
   font-family: $font_junction;
   font-size: 2rem;
-  color: $lightgrey;
-  text-shadow: 1px 1px 0px purple;
+  color: $sandybrown;
+  text-shadow: 1px 1px 0px $darkmagenta;
   background: linear-gradient(170deg, rgba(255,255,255, 0.1),
     rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
   border: none;

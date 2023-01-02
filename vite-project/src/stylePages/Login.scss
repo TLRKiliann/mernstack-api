@@ -1,5 +1,5 @@
 $sandybrown: #f4a460;
-$purple: #800080;
+$darkmagenta: #8B008B;
 $mediumpurple: mediumpurple;
 $whitesmoke: #f5f5f5;
 $lightgrey_24: #242424;
@@ -15,7 +15,7 @@ $font_junction: 'Junction', sans-serif;
   right: 0px;
   left: 0px;
   min-height: 100vh;
-  background: linear-gradient(180deg, $sandybrown, $purple);
+  background: linear-gradient(180deg, $sandybrown 20%, $darkmagenta 100%);
   z-index: -1;
   .zoom--img {
     position: fixed;
@@ -41,9 +41,10 @@ $font_junction: 'Junction', sans-serif;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    background: rgba(112, 43, 183, 0.4);
+    background: linear-gradient(30deg, rgba(128, 0, 228, 0.1) -10%,
+      sandybrown 100%);
     border-radius: 20px;
-    box-shadow: 0px 0px 4px rgba(85, 45, 255, 0.4);
+    box-shadow: 0px 0px 20px rgba(36, 36, 36, 0.4);
     .title--framelogin {
       width: 64%;
       margin: auto;
@@ -51,7 +52,7 @@ $font_junction: 'Junction', sans-serif;
       font-family: $font_acme;
       font-size: 2.4rem;
       color: $whitesmoke;
-      text-shadow: 2px 2px 1px $purple,
+      text-shadow: 2px 2px 1px $darkmagenta,
       4px 3px 2px $lightgrey_24;
     }
     .lbl--login {
@@ -200,10 +201,10 @@ $font_junction: 'Junction', sans-serif;
       .link--subscribe {
         text-decoration: none;
         color: $whitesmoke;
-        text-shadow: 2px 1px 2px $purple;
+        text-shadow: 2px 1px 2px $darkmagenta;
         &:hover {
           color: $sandybrown;
-          text-shadow: 0px 0px 0px $purple;
+          text-shadow: 0px 0px 0px $darkmagenta;
         }
       }
       .error--message {
