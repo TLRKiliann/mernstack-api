@@ -7,7 +7,7 @@ const pool = require('../dbConnection');
 const connection = pool;
 
 //POST msg from terminal
-router.post('/', async (req: Request, res: Response, next: NextFunction) => {
+router.post('/', async(req: Request, res: Response, next: NextFunction) => {
   const id: string = req.body.id;
   const date: string = req.body.date;
   const user: string = req.body.user;

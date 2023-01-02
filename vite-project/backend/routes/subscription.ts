@@ -7,7 +7,7 @@ const pool = require('../dbConnection');
 const connection = pool;
 
 //Create new member
-router.post('/', async (req: Request, res: Response, next: NextFunction) => {
+router.post('/', async(req: Request, res: Response, next: NextFunction) => {
   const id: number | null = req.body.id;
   const img: string = req.body.img;
   const firstName: string = req.body.firstName;

@@ -7,7 +7,7 @@ const pool = require('../dbConnection');
 const connection = pool;
 
 //Update user confirmation
-router.put('/', async (req: Request, res: Response, next: NextFunction) => {
+router.put('/', async(req: Request, res: Response, next: NextFunction) => {
   const id: number | null = req.body.id;
   const sentMsg: string = req.body.sentMsg;
   const messagebox: string = req.body.messagebox;

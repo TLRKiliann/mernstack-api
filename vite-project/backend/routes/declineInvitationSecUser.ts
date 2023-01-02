@@ -7,7 +7,7 @@ const pool = require('../dbConnection');
 const connection = pool;
 
 //To reset params when second user decline invitation.
-router.put('/', async (req: Request, res: Response, next: NextFunction) => {
+router.put('/', async(req: Request, res: Response, next: NextFunction) => {
   const id: number | null = req.body.id;
   //const firstName: string = req.body.firstName;
   const room: string = req.body.room;

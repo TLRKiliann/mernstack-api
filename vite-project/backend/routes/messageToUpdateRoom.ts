@@ -7,7 +7,7 @@ const pool = require('../dbConnection');
 const connection = pool;
 
 //send msg to sender of invitation to update room
-router.put('/', async (req: Request, res: Response, next: NextFunction) => {
+router.put('/', async(req: Request, res: Response, next: NextFunction) => {
   const id: number | null = req.body.id;
   const room: string = req.body.room;
   //console.log(room, id);
