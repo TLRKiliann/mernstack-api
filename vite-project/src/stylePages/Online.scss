@@ -1,6 +1,7 @@
 $lightgreen: #90ee90;
 $sandybrown: #f4a460;
 $purple: #800080;
+$orangered: #ff4500;
 $soft_blue: #50bcfe;
 $slategray: #708090;
 $lightgrey: #CDCDCD;
@@ -39,6 +40,7 @@ $font_allura: 'Allura', cursive;
     .titlebyroom {
       margin: auto;
       padding: 7px 0px;
+      padding-top: 12px;
       font-family: $font_junction;
       text-align: center;
       background: $purple;
@@ -83,12 +85,12 @@ $font_allura: 'Allura', cursive;
 
         &--iconconnectected {
           font-size: 18px;
-          color: lightgreen;
+          color: $lightgreen;
         }
 
         &--icondeconnectected {
           font-size: 18px;
-          color: lightgreen;
+          color: $orangered;
         }
       }
 
