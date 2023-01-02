@@ -68,7 +68,7 @@ export const db_computers = [
 	},
 	{
 		'id': 12,
-		'title': "Cybersecurity",
+		'title': "Cyber-Security",
 		'logo': GiPirateSkull
 	},
 ]
