@@ -4,13 +4,13 @@ $whitesmoke: #f5f5f5;
 $font_allura: 'Allura', cursive;
 
 .div--navfooter {
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0px;
   height: 80px;
-  bottom: 0px;
-  margin-top: 20px;
+  bottom: 0;
   display: flex;
+  margin-top: 0px;
   justify-content: center;
   background-color: $purple;
   border-top: 1px solid $purple;
@@ -33,7 +33,6 @@ $font_allura: 'Allura', cursive;
     font-weight: bold;
     color: $whitesmoke;
     cursor: pointer;
-
     &:hover {
       color: $orange;
     }
@@ -42,7 +41,7 @@ $font_allura: 'Allura', cursive;
 
 @media screen and (min-width: 360px) and (max-width: 770px) {
   .div--navfooter {
-    position: absolute;
+    position: fixed;
     width: 100%;
     margin: auto;
     height: 40px;

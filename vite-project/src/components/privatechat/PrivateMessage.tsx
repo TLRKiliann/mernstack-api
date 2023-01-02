@@ -91,7 +91,7 @@ const PrivateMessage: React.FC = () => {
               <h4 className="subtitle--private">{displayUser.firstName}</h4>
               <h4 className="subtitle--private">{displayUser.lastName}</h4>
               <h4 className="subtitle--private">{displayUser.age} years</h4>
-              <h4 className="subtitle--private">{displayUser.email}</h4>
+              <h4 className="subtitle--private email">{displayUser.email}</h4>
               <h4 className="lastsubtitle--private">{displayUser.isConnected ? (
                 <span
                   className="span--useronline"

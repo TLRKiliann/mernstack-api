@@ -41,9 +41,9 @@ $font_junction: 'Junction', sans-serif;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(45, 85, 255, 0.4);
+    background: rgba(112, 43, 183, 0.4);
     border-radius: 20px;
-    box-shadow: 0px 0px 4px $lightgrey_42;
+    box-shadow: 0px 0px 4px rgba(85, 45, 255, 0.4);
     .title--framelogin {
       width: 64%;
       margin: auto;
@@ -64,15 +64,14 @@ $font_junction: 'Junction', sans-serif;
     }
     .input--login {
       width: 60%;
-      padding: 3px 10px;
+      padding: 5px 5px;
       margin: auto;
       margin-top: 5px;
       font-family: $font_dejavu;
       font-size: 1.0rem;
 
-
-      background-color: rgba(85, 45, 255, 0.2);
-      border: 1mm inset rgba(150, 85, 255, 0.4);
+      background-color: rgba(85, 45, 255, 0.1);
+      border: 1mm inset rgba(150, 85, 255, 0.2);
 
       color: $whitesmoke;
       &::placeholder {
@@ -87,20 +86,20 @@ $font_junction: 'Junction', sans-serif;
       font-size: 1.2rem;
       font-weight: bold;
       background: rgba(85, 45, 255, 0.6);
-      border: 2mm groove $mediumpurple;
+      border: 1mm outset $mediumpurple;
       border-radius: 5px;
       color: sandybrown;
 
       &:hover {
         background: rgba(85, 45, 255, 0.2);
-        border: 2mm groove $mediumpurple;
+        border: 1mm outset $mediumpurple;
         cursor: pointer;
         transform: scale(1.1);
         color: lightblue;
       }
       &:active {
         background: rgba(85, 45, 255, 0.4);
-        border: 2mm groove $mediumpurple;
+        border: 1mm outset $mediumpurple;
         transform: scale(0.9);
         color: white;
       }
@@ -114,7 +113,6 @@ $font_junction: 'Junction', sans-serif;
         transform: scale(1.2);
       }
     }
-
     .link--subscribe {
       text-decoration: none;
       color: $whitesmoke;
@@ -149,7 +147,6 @@ $font_junction: 'Junction', sans-serif;
       right: 0px;
       bottom: 0px;
       left: 0px;
-
       margin: auto;
       opacity: 0.1;
       z-index: -2;
@@ -167,7 +164,6 @@ $font_junction: 'Junction', sans-serif;
       margin-bottom: 20px;
       display: flex;
       flex-direction: column;
-
       .title--framelogin {
         width: 64%;
         margin: auto;

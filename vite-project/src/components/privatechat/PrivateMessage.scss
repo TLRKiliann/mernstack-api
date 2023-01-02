@@ -1,5 +1,5 @@
 $purple: #800080;
-$orange: #ffa500;
+$sandybrown: #f4a460;
 $bright_yellow: #eedd44;
 $vivid_pink: #f32170;
 $slategray: #708090;
@@ -16,7 +16,7 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
   bottom: 0px;
   left: 0px;
   background: linear-gradient(180deg, $purple,
-    $orange);
+    $sandybrown);
   color: whitesmoke;
   z-index: 1;
   .title--privatechat {
@@ -107,7 +107,7 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
           text-align: justify;
           font-family: $font_dejavu;
           font-size: 1.0rem;
-          color: $orange;
+          color: $sandybrown;
         }
         .legend--date {
           margin-top: 0px;
@@ -148,7 +148,7 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
         color: $lightgrey;
         &:hover {
           background: $lightgrey_42;
-          color: $orange;
+          color: $sandybrown;
         }
       }
     }
@@ -167,10 +167,11 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
         }
         .title--private {
           .subtitle--private {
-            margin-left: 5px;
+            margin-left: 3px;
             font-size: 0.6rem;
+          .email {
+            display: none;
           }
-          .subtitle--private {
             .span--useronline {
             }
           }
@@ -187,9 +188,11 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
       }
       .inputbtn--privateterminal {
         input {
+          width: 65%;
         }
-      }
-      button {
+        .private--btn {
+          width: 20%;
+        }
       }
     }
   }
