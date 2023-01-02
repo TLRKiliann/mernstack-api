@@ -161,9 +161,9 @@ const ChatComputer: React.FC = () => {
   }, [])
 
   return (
-    <div>
+    <div className="main--chatcomputerroom">
       
-      <div data-testid="chatctestid" className="div--imgcompute">
+      <div data-testid="chatctestid" className="div--chatcomputerroom">
         <img
           src={imgBg}
           width="100%"
@@ -173,11 +173,11 @@ const ChatComputer: React.FC = () => {
         />
       </div>
       
-      <div className="title--computerroom">
+      <div className="title--chatcomputerroom">
         <h1 className="compter--roomdb">{computerDb}</h1>
       </div>
 
-      <div className='computer--room'>
+      <div className='computer--chatcomputerroom'>
         {Object.values(links).map((val) => (
           <h2 key={val.title} className="links--computer">
 

@@ -63,7 +63,6 @@ $font_allura: 'Allura', cursive;
     }
   }
 }
-
 .div--headernav > nav > ul > li {
   margin-right: 30px;
   padding: 20px 0px;
@@ -74,7 +73,6 @@ $font_allura: 'Allura', cursive;
   font-size: 2.4rem;
   font-weight: bold;
 }
-
 .div--userloginnavbar {
   width: auto;
   height: 50px;
@@ -109,7 +107,6 @@ $font_allura: 'Allura', cursive;
       color: $lightgreen;
     }
   }
-
   .div--login {
     margin-right: 10px;
     margin-left: 10px;
@@ -139,7 +136,6 @@ $font_allura: 'Allura', cursive;
       }
     }
   }
-  
   .link--logout {
     padding: 5px 10px;
     display: flex;
@@ -166,7 +162,7 @@ $font_allura: 'Allura', cursive;
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media only screen and (min-width: 360px) and (max-width: 768px) {
   .div--headernav {
     position: absolute;
     width: 100%;

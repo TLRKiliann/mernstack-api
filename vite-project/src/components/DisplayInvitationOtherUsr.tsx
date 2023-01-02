@@ -33,35 +33,35 @@ const DisplayInvitationOtherUsr: React.FC = (props: DisplayOtherUsrProps) => {
 
       </h4>
 
-      <p className="invitation--p">
-        Are you ok for
-        <span className="span--invitationp">
-          {props?.roomName}
-        </span>chat ?
-      </p>
+      <div className="definedroom--display">
+        <p className="invitation--p">
+          Are you ok for
+          <span className="span--invitationp">
+            {props?.roomName}
+          </span>chat ?
+        </p>
 
-      <div className="checkbox--firstconfirm">
+        <div className="checkbox--firstconfirm">
 
-        <label className="checkbox--firstconfirm--lbl">
-          <input
-            type="checkbox"
-            checked={props.isCheckInvite}
-            onChange={props.handleSwitchBox}
-            style={{width: "15px", height: "15px"}}
-          />
-          &nbsp;Yes
-        </label>
+          <label className="checkbox--lbl">
+            <input
+              type="checkbox"
+              checked={props.isCheckInvite}
+              onChange={props.handleSwitchBox}
+            />
+            &nbsp;Yes
+          </label>
 
-        <label className="checkbox--firstconfirm--lbl">
-          <input
-            type="checkbox"
-            checked={props.isNotCheckInvite}
-            onChange={props.handleRejectInvite}
-            style={{width: "15px", height: "15px"}}
-          />
-          &nbsp;No
-        </label>
+          <label className="checkbox--lbl">
+            <input
+              type="checkbox"
+              checked={props.isNotCheckInvite}
+              onChange={props.handleRejectInvite}
+            />
+            &nbsp;No
+          </label>
 
+        </div>
       </div>
 
       <button

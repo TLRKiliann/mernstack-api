@@ -1,11 +1,15 @@
 import React from 'react'
 import { useAuthLogin } from '../context/AuthProvider'
-import bgProfile from '../assets/background/circle.jpg';
+import usePersonnalHook from '../hook/personnal.hook'
+import { UserType } from '../models/usertype'
+import bgProfile from '../assets/background/circle.jpg'
 import '../stylePages/Profile.scss'
 
 const Profile: React.FC = () => {
 
   const { username, tweekGroup, setTweekGroup } = useAuthLogin()
+  const users = usePersonnalHook()
+  console.log(users, 'users')
 
   const handleRefresh = () => {
     console.log("Refresh !")
@@ -111,6 +115,27 @@ const Profile: React.FC = () => {
         ))}
       </div>
 
+      {users?.map((user) => user.firstName === username ? (
+        <div key={user.id} className="yourprofile">
+          <div className="yourprofile--divimg">
+            <img 
+              src={user.img} 
+              width="100%"
+              height="100%"
+              className="yourprofile--img"
+              alt="img yourprofile"/>
+          </div>
+          <section className="yourprofile--section">
+            <h2 className="yourprofile--h2">
+              {user.firstName} {user.lastName}
+            </h2>
+            <p className="yourprofile--p">{user.age} years</p>
+            <p className="yourprofile--p">Email: {user.email}</p>
+            <p className="yourprofile--p">Location: {user.location}</p>
+          </section>
+        </div>
+        ) : null
+      )}
     </div>
   )
 }

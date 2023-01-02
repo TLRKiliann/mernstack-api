@@ -1,53 +1,52 @@
-/*
-$royalblue: #4169e1;
-$orange: #ffa500;
-$purple: #800080;
-slategrey
+$slategray: #708090;
+$slateblue: #6a5acd;
+$sandybrown: #f4a460;
+$whitesmoke: #f5f5f5;
+$lightgreen: #90ee90;
+$verysoft_lightgreen: #88ec88;
+$verydark_desaturatedmagenta: #44224f;
+$font_junction: 'Junction', sans-serif;
+$font_dejavu: 'DejaVu Sans', sans-serif;
 
-whitesmoke
-lightgreen
-slategray
-orange
-#88ec88
-'Junction', sans-serif;
-*/
 .terminal {
   width: 90%;
   height: 90%;
   margin: auto;
   border-radius: 0px 0px 15px 15px;
+  .intro--terminal {
+    width: auto;
+    display: flex;
+    align-items: center;
+    background: rgba(10, 10, 100, 0.6);
+    border-bottom: 1px dashed $slategray;
+    border-radius: 15px 0px 0px 0px;
+    box-shadow: 0px 0px 7px $verydark_desaturatedmagenta;
+    color: $sandybrown;
+    .intro--terminalh3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      margin-left: 15px;
+      font-family: $font_junction;
+      font-size: 1.2rem;
+    }
+  }
   .div--terminal {
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 65px);
     margin: auto;
     display: flex;
     flex-direction: column;
     background: rgba(10, 10, 100, 0.6);
-    border-radius: 15px 0px 0px 0px;
-    box-shadow: 0px 0px 7px #44224f;
-    
+    box-shadow: 0px 0px 7px $verydark_desaturatedmagenta;
     overflow: scroll;
     overflow-x: hidden;
-    .intro--terminal {
-      width: auto;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px dashed slategray;
-      color: orange;
-      .intro--terminalh3 {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        margin-left: 15px;
-        font-family: "Junction", sans-serif;
-        font-size: 1.2rem;
-      }
-    }
     .map--msg {
       width: auto;
       height: auto;
       max-width: 100%;
       padding-top: 10px;
       padding-right: 10px;
+      padding-bottom: 10px;
       padding-left: 10px;
       display: flex;
       flex-direction: column;
@@ -56,14 +55,14 @@ orange
         margin-bottom: 0px;
         text-align: justify;
         text-justify: inter-word;
-        font-family: "DejaVu Sans", sans-serif;
+        font-family: $font_dejavu;
         font-size: 1.0rem;
-        color: #88ec88;
+        color: $verysoft_lightgreen;
       }
       .legend--date {
         margin-top: 0px;
         font-size: 0.8rem;
-        color: slateblue;
+        color: $slateblue;
       }
     }
   }
@@ -75,13 +74,14 @@ orange
     justify-content: space-between;
     background-color: rgba(68, 34, 79, 0.5);
     border-radius: 0px 0px 15px 15px;
-    box-shadow: 0px 0px 4px #44224f;
+    box-shadow: 0px 0px 4px $verydark_desaturatedmagenta;
     .div--psubterminal {
       position: absolute;
       margin-left: 5px;
       .arrow {
+        margin-top: 10px;
         margin-left: 15px;
-        color: #88ec88;
+        color: $verysoft_lightgreen;
       }
     }
     .input--message {
@@ -92,35 +92,35 @@ orange
       font-size: 1.0rem;
       background: rgba(10,10,100, 0.4);
       border: none;
-      box-shadow: 0px 0px 7px whitesmoke;
+      box-shadow: 0px 0px 7px $whitesmoke;
       border-radius: 15px;
-      color: #88ec88;
+      color: $verysoft_lightgreen;
     }
     .btn--user {
       padding: 24px 14px;
       margin: auto 2%;
-      font-family: "DejaVu Sans", sans-serif;
+      font-family: $font_dejavu;
       font-size: 0.9rem;
       font-weight: bold;
       background: rgba(10, 10, 100, 0.4);
       border: none;
       border-radius: 50%;
-      box-shadow: 0px 0px 7px whitesmoke;
-      color: #88ec88;
+      box-shadow: 0px 0px 7px $whitesmoke;
+      color: $verysoft_lightgreen;
       z-index: 4;
       &:hover {
         transform: scale(1.15);
         background: rgba(10, 10, 100, 0.2);
-        box-shadow: 0px 0px 10px lightgreen;
-        color: orange;
+        box-shadow: 0px 0px 10px $lightgreen;
+        color: $sandybrown;
         cursor: pointer;
       }
       &:active {
         transform: scale(0.9);
         background: rgba(10, 10, 100, 0.4);
         border: none;
-        box-shadow: 0px 0px 0px whitesmoke;
-        color: lightgreen;
+        box-shadow: 0px 0px 0px $whitesmoke;
+        color: $lightgreen;
       }
     }
   }
