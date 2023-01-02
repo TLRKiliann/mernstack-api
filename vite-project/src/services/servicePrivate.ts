@@ -4,7 +4,7 @@ import { UserType } from '../models/usertype'
 const retrieveMsgPrivate: string = '/api/retrieveprivate';
 const postPrivate: string = '/api/postprivate';
 
-const getMsgPrivate = async () => {
+const getMsgPrivate = async() => {
   try {
     const req = app.get<UserType>(retrieveMsgPrivate);
     return await req.then((res: any) => res.data)

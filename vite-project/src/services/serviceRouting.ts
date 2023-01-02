@@ -11,7 +11,7 @@ const updateResetParamsOne: string = '/api/updateFirstUserParams';
 const updateResetParamsSecond: string = '/api/updateSecondUserParams';
 
 //GET all members of chat
-const getAllMembers = async () => {
+const getAllMembers = async() => {
   try {
     const req = app.get<UserType>(getUrl)
     return await req.then((res: any) => res.data)
