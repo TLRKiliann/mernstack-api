@@ -72,8 +72,10 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background: linear-gradient(60deg, rgba(255,255,255, 0.1) 25%,
-    rgba(108, 38, 186, 0.3) 75%);
+  
+  background: linear-gradient(170deg, rgba(255,255,255, 0.1),
+    rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
+  
   border: none;
   outline: none;
   border-radius: 5px;
@@ -90,8 +92,9 @@ $font_junction: 'Junction', sans-serif;
 .section--voletr {
   margin: 20px 20px;
   padding: 20px 40px;
-  background: linear-gradient(60deg, rgba(255,255,255, 0.1) 25%,
-    rgba(108, 38, 186, 0.3) 75%);
+  background: linear-gradient(60deg,
+    rgba(108, 38, 186, 0.3), rgba(255,255,255, 0.1),
+    rgba(108, 38, 186, 0.3));
   border: none;
   outline: none;
   border-radius: 10px;
@@ -193,8 +196,8 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background: linear-gradient(60deg, rgba(255,255,255, 0.1) 25%,
-    rgba(108, 38, 186, 0.3) 75%);
+  background: linear-gradient(170deg, rgba(255,255,255, 0.1),
+    rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
   border: none;
   outline: none;
   border-radius: 5px;

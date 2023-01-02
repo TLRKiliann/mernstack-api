@@ -5,7 +5,6 @@ $lightgreen: #90ee90;
 $lightgrey: #CDCDCD;
 $font_junction: 'Junction', sans-serif;
 
-
 .volet--L {
   position: absolute;
   top: 0px;
@@ -71,8 +70,11 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background: linear-gradient(145deg, rgba(108, 38, 186, 0.3) 25%,
-    rgba(255,255,255, 0.1) 75%);
+  
+  background: linear-gradient(190deg, rgba(255,255,255, 0.1),
+    rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
+
+
   border: none;
   outline: none;
   border-radius: 5px;
@@ -153,8 +155,9 @@ $font_junction: 'Junction', sans-serif;
 .section--voletl {
   margin: 20px 20px;
   padding: 20px 40px;
-  background: linear-gradient(145deg, rgba(108, 38, 186, 0.3) 25%,
-    rgba(255,255,255, 0.1) 75%);
+  background: linear-gradient(320deg,
+    rgba(108, 38, 186, 0.3), rgba(255,255,255, 0.1),
+    rgba(108, 38, 186, 0.3));
   border: none;
   outline: none;
   border-radius: 5px;
@@ -245,8 +248,8 @@ $font_junction: 'Junction', sans-serif;
   font-size: 2rem;
   color: $lightgrey;
   text-shadow: 1px 1px 0px purple;
-  background: linear-gradient(145deg, rgba(108, 38, 186, 0.3) 25%,
-    rgba(255,255,255, 0.1) 75%);
+  background: linear-gradient(190deg, rgba(255,255,255, 0.1),
+    rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
   border: none;
   outline: none;
   border-radius: 5px;
