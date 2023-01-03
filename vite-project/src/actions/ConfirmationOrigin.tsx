@@ -4,6 +4,8 @@ import serviceConfirm from '../services/serviceConfirm'
 import { UserType } from '../models/usertype'
 import ConfirmInvitation from '../components/ConfirmInvitation'
 
+//Confirmation for sender & receiver befor going on to style room (private, info, question)
+
 interface ConfirmProps {
   id: number
   roomStyle: string
@@ -17,7 +19,6 @@ interface ConfirmProps {
 }
 
 const ConfirmationOrigin = (props: ConfirmProps) => {
-
   const Navigate = useNavigate()
   const [validMsg, setValidMsg] = useState<Array<UserType>>([])
   const [isChecked, setIsChecked] = useState<boolean>(false)
@@ -48,7 +49,7 @@ const ConfirmationOrigin = (props: ConfirmProps) => {
         console.log("No room was found...")
       }
     } else {
-      console.log("Not confirmed by all users !")
+      alert("Not confirmed by all users !")
       props.setRoomStyle(props.roomStyle)
     }
     props.setInformUsrMsg("")
@@ -56,15 +57,11 @@ const ConfirmationOrigin = (props: ConfirmProps) => {
     setValidMsg("")
   }
 
-  //Confirm your invitation after invited has said yes.
   const handleBothConfirmation = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-    console.log(id, "id handleBothConfirmation !!")
-    console.log(isChecked, "isChecked")
     if (isChecked === true) {
       const noString: string = ""
       const noStringTwo: string = ""
       const newuser: UserType = props.refreshUsers?.find((u) => u.id === id)
-      console.log(newuser, 'newuser ++')
       const changeUserNameReturnConfirm: object = {...newuser,
         sentMsg: noString, messagebox: noStringTwo, returnConfirm: true}
 
@@ -96,18 +93,15 @@ const ConfirmationOrigin = (props: ConfirmProps) => {
           console.log("Problem to confirm msg handleBothConfirmation...", error)
         })
       const timerPauseRequest = setTimeout(() => {
-        console.log("setTimeout of handleFilterUser")
         handleFilterUser(changeUserNameReturnConfirm)
       }, 2000)
     } else {
       const definedRoom: string = props.roomStyle      
       const newuser: UserType = props.refreshUsers?.find((refresher) => refresher.id === id)
-      console.log(newuser, 'newuser')
       const noString: string = "---"
       const noStringTwo: string = "---"
       const reinitializeCancelConfirm: object = {...newuser, room: definedRoom,
         sentMsg: noString, messagebox: noStringTwo, returnConfirm: false}
-      console.log(reinitializeCancelConfirm, 'reinitializeCancelConfirm')
 
       serviceConfirm
         .updateUsrCancelConf(id, reinitializeCancelConfirm)

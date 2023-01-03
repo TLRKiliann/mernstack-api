@@ -29,7 +29,7 @@ const Login: React.FC = () => {
     password: {value: ''}
   })
 
-  const [message, setMessage] = useState<string>('Not connected! (Esteban / 1234)');
+  const [message, setMessage] = useState<string>('Not connected!');
 
   const { 
     toggle,

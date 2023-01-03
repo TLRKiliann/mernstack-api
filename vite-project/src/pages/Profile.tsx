@@ -41,9 +41,31 @@ const Profile: React.FC = () => {
         <h1 className="maintitlepro--h1name">{username}</h1>
       </div>
 
+      {users?.map((user) => user.firstName === username ? (
+        <div key={user.id} className="yourprofile">
+          <div className="yourprofile--divimg">
+            <img 
+              src={user.img} 
+              width="100%"
+              height="100%"
+              className="yourprofile--img"
+              alt="img yourprofile"/>
+          </div>
+          <section className="yourprofile--section">
+            <h2 className="yourprofile--h2">
+              {user.firstName} {user.lastName}
+            </h2>
+            <p className="yourprofile--p">{user.age} years</p>
+            <p className="yourprofile--p">Email: {user.email}</p>
+            <p className="yourprofile--p">Location: {user.location}</p>
+          </section>
+        </div>
+        ) : null
+      )}
+
       <div className="tweekGroup--friends">
         <div className="div--profileh4">
-          <h4 className="titleh4--profile">Members of your group :</h4>
+          <h4 className="titleh4--profile">Your Group :</h4>
           <button 
             type="button" 
             onClick={handleRefresh}
@@ -115,27 +137,6 @@ const Profile: React.FC = () => {
         ))}
       </div>
 
-      {users?.map((user) => user.firstName === username ? (
-        <div key={user.id} className="yourprofile">
-          <div className="yourprofile--divimg">
-            <img 
-              src={user.img} 
-              width="100%"
-              height="100%"
-              className="yourprofile--img"
-              alt="img yourprofile"/>
-          </div>
-          <section className="yourprofile--section">
-            <h2 className="yourprofile--h2">
-              {user.firstName} {user.lastName}
-            </h2>
-            <p className="yourprofile--p">{user.age} years</p>
-            <p className="yourprofile--p">Email: {user.email}</p>
-            <p className="yourprofile--p">Location: {user.location}</p>
-          </section>
-        </div>
-        ) : null
-      )}
     </div>
   )
 }

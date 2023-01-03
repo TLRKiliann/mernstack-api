@@ -1,4 +1,4 @@
-$purple: #800080;
+$darkmagenta: #8B008B;
 $orange: #ffa500;
 $whitesmoke: #f5f5f5;
 $font_allura: 'Allura', cursive;
@@ -12,8 +12,8 @@ $font_allura: 'Allura', cursive;
   display: flex;
   margin-top: 0px;
   justify-content: center;
-  background-color: $purple;
-  border-top: 1px solid $purple;
+  background-color: $darkmagenta;
+  border-top: 1px solid $darkmagenta;
   box-shadow: 0px 0px 7px $orange;
   z-index: 3;
   .navbar--ul {

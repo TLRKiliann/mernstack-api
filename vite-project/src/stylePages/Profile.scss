@@ -22,7 +22,8 @@ $font_junction: 'Junction', sans-serif;
   left: 0px;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, $sandybrown, $purple);
+  background: linear-gradient(180deg,
+    $sandybrown, $purple);
   z-index: -1;
   .div--mainimgprofile {
     width: 100%;
@@ -51,13 +52,45 @@ $font_junction: 'Junction', sans-serif;
     font-family: $font_allura;
     font-size: 1.6rem;
     color: $whitesmoke;
-    &--h1title {
+    .maintitlepro--h1title {
       margin-left: 20px;
       text-shadow: 2px 1px 1px $lightgrey_24;
     }
-    &--h1name {
+    .maintitlepro--h1name {
       margin-left: 20px;
       color: $purple;
+    }
+  }
+  .yourprofile {
+    width: 700px;
+    height: 180px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    .yourprofile--divimg {
+      width: 300px;
+      height: 180px;
+      .yourprofile--img {
+        border-radius: 7px 0px 0px 7px;
+      }
+    }
+    .yourprofile--section {
+      width: 400px;
+      height: 180px;
+      padding-left: 20px;
+      font-family: $font_dejavu;
+      background: $lightgrey_28;
+      border-radius: 0px 7px 7px 0px;
+      color: whitesmoke;
+      .yourprofile--h2 {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+      }
+      .yourprofile--p {
+        font-size: 1.0rem;
+      }
     }
   }
   .tweekGroup--friends {
@@ -66,15 +99,16 @@ $font_junction: 'Junction', sans-serif;
     display: flex;
     color: $whitesmoke;
     .div--profileh4 {
-      width: auto;
+      width: 900px;
+      margin: auto;
       margin-bottom: 20px;
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: space-between;
       .titleh4--profile {
-        margin: auto;
-        margin: auto 20px;
-        font-family: $font_dejavu;
+        margin: auto 0px;
+        font-family: $font_allura;
         font-size: 1.8rem;
         color: $whitesmoke;
       }
@@ -113,7 +147,7 @@ $font_junction: 'Junction', sans-serif;
     font-family: $font_dejavu;
     font-size: 1.0rem;
     font-weight: bold;
-    background: $lightgrey_28;
+    background: $lightgrey_24;
     border-radius: 7px;
     box-shadow: 0px 0px 4px $slategray;
     color: $sandybrown;
@@ -154,7 +188,7 @@ $font_junction: 'Junction', sans-serif;
     align-items: center;
     font-family: 'DejaVu Sans', sans-serif;
     font-size: 0.9rem;
-    background: $lightgrey_24;
+    background: $lightgrey_28;
     border-radius: 7px;
     box-shadow: 0px 0px 4px $slategray;
     .img--profileusers {
@@ -208,150 +242,133 @@ $font_junction: 'Junction', sans-serif;
       }
     }
   }
-  .yourprofile {
-    width: 600px;
-    height: 200px;
-    margin: auto;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-
-    .yourprofile--divimg {
-      width: 300px;
-      height: 200px;
-      .yourprofile--img {
-        border-radius: 7px 0px 0px 7px;
-      }
-    }
-    .yourprofile--section {
-      width: 100%;
-      height: 200px;
-      padding-left: 20px;
-      font-family: $font_dejavu;
-      background: $lightgrey_38;
-      border-radius: 0px 7px 7px 0px;
-      color: whitesmoke;
-      .yourprofile--h2 {
-        margin-bottom: 40px;
-        font-size: 1.4rem;
-      }
-      .yourprofile--p {
-        font-size: 1.0rem;
-      }
-    }
-  }
 }
 
-@media screen and (max-width: 900px) {
+@media only screen and (min-width: 360px) and (max-width: 900px) {
   .profile {
     .div--mainimgprofile {
-      width: 100%;
-      margin: auto;
+      display: none;
       .img--bgprofile {
-        width: 240%;
-        height: 100%;
-        margin: auto;
+        display: none;
       }
     }
-    .div--maintitlepro {
-      .title--profileh1 {
-        margin-left: 10px;
+    .maintitlepro {
+      .maintitlepro--h1title {
+        font-size: 2.2rem;
       }
-      .p--maintitlepro {
-        margin-left: 10px;
+      .maintitlepro--h1name {
+        font-size: 2.2rem;
+      }
+    }
+    .yourprofile {
+      width: 400px;
+      height: 100px;
+      margin: auto;
+      margin-bottom: 20px;
+      .yourprofile--divimg {
+        width: 200px;
+        height: 100px;
+        .yourprofile--img {
+          margin: auto;
+          object-fit: cover;
+        }
+      }
+      .yourprofile--section {
+        width: 200px;
+        height: 100px;
+        .yourprofile--h2 {
+          font-size: 0.9rem;
+          margin-bottom: 0px;
+        }
+        .yourprofile--p {
+          margin-top: 7px;
+          margin-bottom: 0px;
+          font-size: 0.7rem;
+        }
       }
     }
     .tweekGroup--friends {
+      width: 500px;
+      margin: auto;
       .div--profileh4 {
         .titleh4--profile {
-          width: 200px;
-          margin-left: 10px;
         }
         .btn--refreshgroup {
-          padding: 3px 5px;
-          font-size: 12px;
+          padding: 2px 5px;
+          font-size: 0.7rem;
         }
       }
-      .div--titleusersgroup {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 10px;
-        font-size: 10px;
-        .p--profile0 {
-          margin-left: 10px;
-        }
-        .p--profile1 {
-          margin-right: 10px;
-          width: 60px;
-        }
-        .p--profile2 {
-          margin-right: 10px;
-          width: 50px;
-        }
-        .p--profile3 {
-          margin-right: 10px;
-          width: 20px; 
-        }
-        .p--profile4 {
-          margin-right: 20px;
-          width: 30px; 
-        }
-        .p--profile5 {
-          margin-right: 10px;
-          width: 50px;
-        }
-        .p--profile6 {
-          margin-right: 10px;
-          width: 80px;
-        }
+    }
+    .div--titleusersgroup {
+      width: 500px;
+      margin: auto;
+      margin-bottom: 5px;
+      font-size: 0.5rem;
+      .p--profile0 {
+        margin-left: 60px;
       }
-      .div--usersgroup {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 10px;
-        font-size: 10px;
-        .img--profileusers {
-          width: 20px;
-          height: 20px;
-          margin-right: 10px;
-          margin-left: 10px;
-          border-radius: 50%;
-          object-fit: cover;
+      .p--profile1 {
+        margin-right: 10px;      
+        width: 100px;
+      }
+      .p--profile2 {
+        margin-right: 10px;      
+        width: 120px;
+      }
+      .p--profile3 {
+        margin-right: 10px;
+        width: 35px; 
+      }
+      .p--profile4 {
+        margin-right: 15px;
+        width: 67px; 
+      }
+      .p--profile5 {
+        margin-right: 10px;
+        width: 250px;
+      }
+      .p--profile6 {
+        margin-right: 50px;
+        width: 150px;
+      }
+    }
+    .div--usersgroup {
+      width: 500px;
+      margin: auto;
+      margin-bottom: 5px;
+      font-size: 0.5rem;
+      .img--profileusers {
+      }
+      .p--profile1 {
+        margin-right: 10px;
+        width: 100px;
+      }
+      .p--profile2 {
+        margin-right: 10px;
+        width: 100px;
+      }
+      .p--profile3 {
+        margin-right: 10px;
+        width: 40px; 
+      }
+      .p--profile4 {
+        margin-right: 10px;
+        width: 80px; 
+      }
+      .p--profile5 {
+        margin-right: 10px;
+        width: 300px;
+      }
+      .p--profile6 {
+        margin-right: 10px;
+        width: 150px;
+      }
+      .btn--deletefromgroup {
+        &::before {
+          content: "";
         }
-        .p--profile1 {
-          margin-right: 10px;
-          width: 100px;
-        }
-        .p--profile2 {
-          margin-right: 10px;
-          width: 120px;
-        }
-        .p--profile3 {
-          margin-right: 10px;
-          width: 30px; 
-        }
-        .p--profile4 {
-          margin-right: 10px;
-          width: 70px; 
-        }
-        .p--profile5 {
-          margin-right: 10px;
-          width: 300px;
-        }
-        .p--profile6 {
-          margin-right: 10px;
-          width: 150px;
-        }
-        .btn--deletefromgroup {
-          border-radius: 100%;
-          &::before {
-            content: "";
-            font-size: 10px;
-          }
-          &::after {
-            content: "D";
-            font-size: 10px;
-          }
+        &::after {
+          content: "D";
         }
       }
     }

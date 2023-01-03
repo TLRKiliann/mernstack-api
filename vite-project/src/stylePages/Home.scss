@@ -2,7 +2,7 @@ $lightgreen: #90ee90;
 $orangered: #ff4500;
 $darkorange: #ff8c00;
 $sandybrown: #f4a460;
-$purple: #800080;
+$darkmagenta: #8B008B;
 $dark_moderate_violet: #7e53ae;
 $whitesmoke: #f5f5f5;
 $lightgrey_16: #161616;
@@ -15,7 +15,7 @@ $font_acme: 'Acme', sans-serif;
   left: 0px;
   min-height: 120vh;
   background: linear-gradient(180deg, 
-    $sandybrown, $purple);
+    $sandybrown, $darkmagenta);
   .img--home {
     position: fixed;
     top: 0px;
@@ -62,7 +62,7 @@ $font_acme: 'Acme', sans-serif;
     }
   }
 
-  /*@keyframes main--titleintro {
+  @keyframes main--titleintro {
     0% {
       opacity: 1;
       transform: scale(0);
@@ -103,8 +103,7 @@ $font_acme: 'Acme', sans-serif;
       opacity: 0;
       z-index: 22;
     }
-  }*/
-  
+  }
   .div--voletsLeft {
     position: absolute;
     margin-top: 12%;
@@ -204,7 +203,7 @@ $font_acme: 'Acme', sans-serif;
     }
   }
 
-  /*@keyframes rotate-logo {
+  @keyframes rotate-logo {
     0% {
       transform: rotate3d(0, 0, 0, 0deg);
     }
@@ -247,7 +246,7 @@ $font_acme: 'Acme', sans-serif;
     100% {
       transform: rotateY(360deg);
     }
-  }*/
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -260,7 +259,7 @@ $font_acme: 'Acme', sans-serif;
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--home {
     background: radial-gradient(800px at 50% 20%, 
-      $sandybrown, $purple);
+      $sandybrown, $darkmagenta);
     .img--home {
     }
     .wallIntro {

@@ -3,6 +3,8 @@ import { UserType } from '../models/usertype'
 import serviceRouting from '../services/serviceRouting'
 import AskMessageBox from '../components/AskMessageBox'
 
+//invitation frame to choice style of chat (private, info, question)
+
 type Field = {
   value?: sting
   label?: string
@@ -39,7 +41,6 @@ interface AskProps {
 }
 
 const AskMessageBoxOrigin: React.FC = (props: AskProps) => {
-
   const [form, setForm] = useState<Form>({invite: {value: 'Private'}})
 
   const handleInviteChoice = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,17 +51,14 @@ const AskMessageBoxOrigin: React.FC = (props: AskProps) => {
   }
 
   const handleInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("handleInvitation 2")
     props.setSwitchAsk(false)
     const data: UserType = props.catchById
-    console.log(data, 'data 1')
     props.setOtherUser(data)
     const definedOptRoom: string = form.invite.value
     const id: number = data?.id
     const msg: string = `You've received msg from ${props.username} for ${definedOptRoom} chat !`
     const dataForVersusUser: object = {...data, room: definedOptRoom, signalRecieve: 1,
       sentMsg: props.username, messagebox: msg}
-    console.log(dataForVersusUser, 'ronaldo - jeanne ? 1')
     
     const verifyName = data.firstName
     if (verifyName === props.username) {
@@ -98,7 +96,6 @@ const AskMessageBoxOrigin: React.FC = (props: AskProps) => {
           console.log(verifyName, "do not received msg", error)
         })
       props.setDisplayConfirmInvite(true)
-      console.log("handleInvitation finished !!!")
     }
     const pauseTimer = setTimeout(() => {
       console.log("Pause 1 request to update room.")
@@ -106,9 +103,7 @@ const AskMessageBoxOrigin: React.FC = (props: AskProps) => {
     const sendRoomToSender: UserType = props.users.find((user) => user.firstName === props.username)
     const newId: number = sendRoomToSender.id
     const senderUser: UserType[] = props.users.find((user) => user.id === newId)
-    console.log(senderUser, 'senderUser 2')
     const changeRoomSender = {...senderUser, room: definedOptRoom}
-    console.log(changeRoomSender, 'ronaldo - jeanne ? 2')
 
     serviceRouting
       .putInvitationSender(newId, changeRoomSender)
