@@ -84,8 +84,8 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
           m.room === props.roomStyle ? (
             <div key={m.id} className="map--msg">
               <p ref={myRef} className="para--chat">
-                {m?.usr} {m?.msg !== "" 
-                  ? `▶ ${m?.msg} ${m.room}`
+                {m.usr} {m.msg !== "" 
+                  ? `▶ ${m.msg} ${m?.room}`
                   : null}
               </p>
                 <span className="legend--date">
