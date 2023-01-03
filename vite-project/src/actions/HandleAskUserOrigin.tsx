@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { UserType } from '../models/usertype'
 import UsersOnline from '../components/terminalchat/UsersOnline'
 
+//Press mail icon to ask for invitation
+
 interface HandleAskUserProps {
   roomStyle: string
   refreshUser: UserType
@@ -11,9 +13,7 @@ interface HandleAskUserProps {
 }
 
 const HandleAskUserOrigin: React.FC = (props: HandleAskUserProps) => {
-  //Press mail icon to ask for invitation
   const handleAskUserPrivate = (id: number) => {
-    console.log("handleAskUserPrivate 1")
     const catchUser = props.users?.find((user) => user.id === id)
     props.setCatchById(catchUser)
     props.setSwitchAsk(true)

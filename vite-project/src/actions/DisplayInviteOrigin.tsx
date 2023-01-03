@@ -3,6 +3,8 @@ import { UserType } from '../models/usertype'
 import serviceConfirm from '../services/serviceConfirm'
 import DisplayInvitationOtherUsr from '../components/DisplayInvitationOtherUsr'
 
+//Other user receives invitation with info (sender & style of invitation)
+
 interface DisplayProps {
   id: number
   roomStyle: string
@@ -17,13 +19,10 @@ interface DisplayProps {
 }
 
 const DisplayInviteOrigin: React.FC = (props: DisplayProps) => {
-  console.log(props, 'props')
   const [isCheckInvite, setIsCheckInvite] = useState<boolean>(false)
   const [isNotCheckInvite, setIsNotCheckInvite] = useState<boolean>(false)
 
-  //Invited receives your invitation
   const handleInvitedResponse = (e: React.MouseEvent<HTMLButtonElement>, roomName: string) => {
-    console.log("handleInvitedResponse 3")
     if (isCheckInvite === true) {
       const newRoom: string = roomName
       const findSentMsg: UserType = props.refreshUsers?.find((u) => u?.sentMsg.length !== 0)
@@ -64,7 +63,6 @@ const DisplayInviteOrigin: React.FC = (props: DisplayProps) => {
           console.log("Problem to confirm msg handleBothConfirmation...", error)
         })
       props.setDisplayConfirmInvite(true)
-      console.log("handleInvitedResponse - phase: 3")
     } else {
       const roomStyleDefined: string = props.roomStyle
       const findSentMsg = props.refreshUsers?.find((u) => u?.sentMsg.length !== 0)
