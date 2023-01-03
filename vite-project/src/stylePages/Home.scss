@@ -62,7 +62,7 @@ $font_acme: 'Acme', sans-serif;
     }
   }
 
-  /*@keyframes main--titleintro {
+  @keyframes main--titleintro {
     0% {
       opacity: 1;
       transform: scale(0);
@@ -103,8 +103,7 @@ $font_acme: 'Acme', sans-serif;
       opacity: 0;
       z-index: 22;
     }
-  }*/
-  
+  }
   .div--voletsLeft {
     position: absolute;
     margin-top: 12%;
@@ -204,7 +203,7 @@ $font_acme: 'Acme', sans-serif;
     }
   }
 
-  /*@keyframes rotate-logo {
+  @keyframes rotate-logo {
     0% {
       transform: rotate3d(0, 0, 0, 0deg);
     }
@@ -247,7 +246,7 @@ $font_acme: 'Acme', sans-serif;
     100% {
       transform: rotateY(360deg);
     }
-  }*/
+  }
 }
 
 @media screen and (max-width: 800px) {
