@@ -21,8 +21,8 @@ $font_allura: 'Allura', cursive;
   margin: auto;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(160deg, $sandybrown, $darkmagenta);
-  box-shadow: 0px 0px 7px $sandybrown;
+  background: linear-gradient(90deg, rgba(244,164,96, 1), rgba(195,87,116, 1));
+  box-shadow: 0px 0px 7px rgba(244,164,96, 1);
   z-index: 2;
   .navbar--nav {
     width: 100%;
@@ -34,7 +34,7 @@ $font_allura: 'Allura', cursive;
       left: 20px;
       display: flex;
       background: linear-gradient(180deg,
-        $darkmagenta, $sandybrown);
+        rgba(195,87,116, 1), rgba(244,164,96, 1));
       border: none;
       outline: none;
       border-radius: 50%;
@@ -53,11 +53,11 @@ $font_allura: 'Allura', cursive;
       justify-content: flex-end;
       .link--tagnav {
         text-decoration: none;
-        text-shadow: 1px 1px 0px #000;
+        text-shadow: 1px 0px 1px #000;
         color: $whitesmoke;
         &:hover {
-         color: $sandybrown;
-         text-shadow: 0px 0px 0px $darkmagenta;
+         color: rgba(244,164,96, 1);
+         text-shadow: 1px 0px 1px rgba(244,164,96, 1);
         }
       }
     }
@@ -81,8 +81,8 @@ $font_allura: 'Allura', cursive;
   display: flex;
   flex-direction: row;
   background: linear-gradient(180deg,
-    $darkmagenta, $sandybrown);
-  border: 1mm inset $darkmagenta;
+    rgba(195,87,116, 1), rgba(244,164,96, 1));
+  border: 1mm inset rgba(195,87,116, 1);
   border-radius: 15px;
   .div--userplace {
     margin-left: 10px;
@@ -98,7 +98,7 @@ $font_allura: 'Allura', cursive;
       background-color: $lightgrey_38;
       border: 1mm outset $lightgrey_50;
       border-radius: 7px;
-      color: $sandybrown;
+      color: rgba(244,164,96, 1);
     }
     .span--usrnavbar {
       padding: 5px 10px;
@@ -157,7 +157,7 @@ $font_allura: 'Allura', cursive;
       transform: scale(0.9);
       background-color: $lightgrey_38;
       border: 1mm inset $lightgrey_42;
-      color: $sandybrown;
+      color: rgba(244,164,96, 1);
     }
   }
 }

@@ -15,8 +15,8 @@ $font_junction: 'Junction', sans-serif;
   bottom: 0px;
   left: 0px;
   overflow: hidden;
-  background: linear-gradient(160deg, $purple,
-    $sandybrown);
+  background: linear-gradient(320deg,
+     rgba(244,164,96, 1), rgba(195,87,116, 1));
   z-index: 1;
   .div--animationroomStyle {
     position: absolute;
@@ -39,8 +39,8 @@ $font_junction: 'Junction', sans-serif;
       margin: auto;
       font-family: "Acme", sans-serif;
       font-size: 1.4rem;
-      background: linear-gradient(to right, $vivid_pink,
-      $vivid_orange, #cf23cf, #eedd44);
+      background: linear-gradient(to top,
+        rgba(195,87,116, 0.8), rgba(244,164,96, 1));
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       opacity: 0;
@@ -133,9 +133,10 @@ $font_junction: 'Junction', sans-serif;
     margin: auto;
     margin-top: 130px;
     margin-bottom: 30px;
-    color: $sandybrown;
-    text-shadow: 1px 1px 2px $whitesmoke,
-      3px 3px 2px $orangered;
+    color: rgba(195,87,116, 0.8);
+    text-shadow:
+      2px 1px 1px rgba(244,164,96, 0.8),
+      5px 3px 4px #242424;
   }
   .div--terminaluser {
     width: 90%;

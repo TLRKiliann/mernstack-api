@@ -1,5 +1,4 @@
 $darkmagenta: #8B008B;
-$orange: #ffa500;
 $whitesmoke: #f5f5f5;
 $font_allura: 'Allura', cursive;
 
@@ -12,9 +11,8 @@ $font_allura: 'Allura', cursive;
   display: flex;
   margin-top: 0px;
   justify-content: center;
-  background-color: $darkmagenta;
-  border-top: 1px solid $darkmagenta;
-  box-shadow: 0px 0px 7px $orange;
+  background: linear-gradient(160deg, rgba(244,164,96, 1), rgba(195,87,116, 1));
+  box-shadow: 0px 0px 7px rgba(244,164,96, 1);
   z-index: 3;
   .navbar--ul {
     width: 80vw;
@@ -32,9 +30,11 @@ $font_allura: 'Allura', cursive;
     font-size: 2.4rem;
     font-weight: bold;
     color: $whitesmoke;
+    text-shadow: 1px 0px 1px #000;
     cursor: pointer;
     &:hover {
-      color: $orange;
+      text-shadow: 1px 0px 1px rgba(244,164,96, 1);
+      color: rgba(244,164,96, 1);
     }
   }
 }

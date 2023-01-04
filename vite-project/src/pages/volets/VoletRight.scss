@@ -32,7 +32,7 @@ $font_junction: 'Junction', sans-serif;
   right: 0px;
   width: 400px;
   min-height: 100vh;
-  background-color: rgba(108, 38, 186, 0.3);
+  background-color: rgba(244,164,96, 0.1);
   transform: translateX(0px);
 
   animation-name: volet--rightdisplay;
@@ -46,11 +46,11 @@ $font_junction: 'Junction', sans-serif;
     margin-left: 20px;
     width: 30px;
     height: 30px;
-    background: rgba(108, 38, 186, 0.3);
-    border: 1mm outset rgba(220, 38, 186, 0.1);
+    background: rgba(195,87,116, 0.5);
+    border: 1mm outset rgba(195,87,116, 0.1);
     border-radius: 50%;
-    box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
-    color: $sandybrown;
+    box-shadow: 0px 0px 4px rgba(195,87,116, 0.5);
+    color: $whitesmoke;
     &:hover {
       cursor: pointer;
       background-color: rgba(108, 38, 186, 0.1);
@@ -69,12 +69,10 @@ $font_junction: 'Junction', sans-serif;
   text-align: center;
   font-family: $font_junction;
   font-size: 2rem;
-  color: $sandybrown;
+  color: $whitesmoke;
   text-shadow: 1px 1px 0px $darkmagenta;
-  
-  background: linear-gradient(170deg, rgba(255,255,255, 0.1),
-    rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
-  
+  background: linear-gradient(170deg,
+    rgba(255,255,255, 0.1) 10%, rgba(195,87,116, 1) 100%);
   border: none;
   outline: none;
   border-radius: 5px;
@@ -92,8 +90,8 @@ $font_junction: 'Junction', sans-serif;
   margin: 20px 20px;
   padding: 20px 40px;
   background: linear-gradient(60deg,
-    rgba(108, 38, 186, 0.3), rgba(255,255,255, 0.1),
-    rgba(108, 38, 186, 0.3));
+    rgba(195,87,116, 0.3), rgba(255,255,255, 0.1),
+    rgba(195,87,116, 0.3));
   border: none;
   outline: none;
   border-radius: 10px;
@@ -113,7 +111,7 @@ $font_junction: 'Junction', sans-serif;
   .spanli--right {
     padding-top: 3px;
     font-size: 20px;
-    color: $sandybrown;
+    color: $whitesmoke;
   }
 }
 
@@ -122,7 +120,7 @@ $font_junction: 'Junction', sans-serif;
   text-decoration: none;
   font-family: $font_junction;
   font-size: 1.1rem;
-  color: $sandybrown;
+  color: $whitesmoke;
   text-shadow: 1px 1px 0px $darkmagenta;
   &:hover {
     color: $whitesmoke;
@@ -145,7 +143,7 @@ $font_junction: 'Junction', sans-serif;
   right: -400px;
   width: 400px;
   min-height: 100vh;
-  background-color: rgba(108, 38, 186, 0.3);
+  background-color: rgba(244,164,96, 0.1);
   transform: translateX(0px);
 
   animation-name: volet--righthidden;
@@ -163,7 +161,7 @@ $font_junction: 'Junction', sans-serif;
     border: 1mm outset rgba(220, 38, 186, 0.1);
     box-shadow: 0px 0px 4px rgba(255,255,255, 0.1);
     border-radius: 50%;
-    color: $sandybrown;
+    color: $whitesmoke;
     &:hover {
       cursor: pointer;
       background-color: rgba(108, 38, 186, 0.1);
@@ -193,10 +191,10 @@ $font_junction: 'Junction', sans-serif;
   text-align: center;
   font-family: $font_junction;
   font-size: 2rem;
-  color: $sandybrown;
+  color: $whitesmoke;
   text-shadow: 1px 1px 0px $darkmagenta;
-  background: linear-gradient(170deg, rgba(255,255,255, 0.1),
-    rgba(108, 38, 186, 0.3), rgba(108, 38, 186, 0.3));
+  background: linear-gradient(170deg,
+    rgba(255,255,255, 0.1) 10%, rgba(195,87,116, 1) 100%);
   border: none;
   outline: none;
   border-radius: 5px;
