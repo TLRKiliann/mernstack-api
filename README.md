@@ -1,41 +1,84 @@
-# MERN-stack API (under development)
+# MERN-stack Chat application
 
-CHAT application with Vite - React - TypeScript
-
-with mariadb in LAN
-
-- front : react-router-dom v6 with security access
-
-- backend: express - cors - dotenv - mariadb
-
-- backend: express - cors - dotenv - server-json
+CHAT application with Vite - React - TypeScript - Sass with mariadb in LAN
 
 ---
 
-# Structure
+This application use hooks & reusable component.
+
+My goal for this application was to make interact users with display message to send them to another chat-room, once both users
+accepted the invitation.
+
+A different message is sended & diplayed properly to user concern.
+
+---
+
+## Hooks
+
+- useState
+
+- useEffect
+
+- useContext
+
+- useRef
+
+- useParams
+
+- useNavigate
+
+- custom hook
+
+---
+
+- front : react-router-dom v6 - axios
+
+- backend mode prod : express - cors - dotenv - mariadb
+
+- backend mode dev : express - cors - dotenv - server-json
+
+---
+
+## Structure
 
 ```
 src
 |
 |--App.tsx (react-router-dom (v6))
 |
+|--index.scss (all indexation of sass files)
+|
 |--assets (img of project)
 |
-|--components
+|--actions (to call services)
 |
-|--models (db will be replaced by axios)
+|--api (config)
 |
-|--pages (main pages for navbar & subscribe)
+|--components (reusable component)
+|     |
+|     -----> terminalchat
+|     |
+|     -----> privatechat
 |
-|--services (authentification)
+|--context (useContext)
+|
+|--hook (custom hook)
+|
+|--models (type)
+|
+|--pages
+|
+|--services (axios services)
 |
 |--backend
-	|
-	-----> index.ts
-	|
-	-----> routes
-	|
-	-----> dbConnection.ts
+  	|
+  	-----> index.ts (server)
+  	|
+  	-----> routes
+  	|
+  	-----> dbConnection.ts
+    |
+    -----> .env (hidden for security)
 ```
 
 ---
@@ -54,6 +97,8 @@ src
 
 └─ $ ▶ pnpm install axios
 
+└─ $ ▶ pnpm install react-icons
+
 ---
 
 (index.html)
@@ -65,9 +110,11 @@ src
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <style lang="sass">
       @import url('./src/index.scss')
     </style>
+    
     <title>MERN-stack API</title>
   </head>
   <body>
@@ -137,44 +184,6 @@ export default defineConfig({
       environment: 'jsdom',
     }
 })
-```
-
-(index.scss)
-
-```
-@import './App.scss';
-@import './stylePages/Login.scss';
-@import './stylePages/Home.scss';
-@import './stylePages/Services.scss';
-@import './stylePages/Contact.scss';
-@import './pages/volets/VoletRight.scss';
-@import './pages/volets/VoletLeft.scss';
-
-@import './stylePages/Login.scss';
-@import './stylePages/Home.scss';
-@import './stylePages/Services.scss';
-@import './stylePages/Contact.scss';
-
-@import './components/styleComponents/ChatUser.scss';
-@import './components/styleComponents/ChatComputer.scss';
-@import './components/styleComponents/Footer.scss';
-@import './components/styleComponents/MainComp.scss';
-@import './components/styleComponents/NavBar.scss';
-
-
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
 ```
 
 └─ $ ▶ pnpm run dev
