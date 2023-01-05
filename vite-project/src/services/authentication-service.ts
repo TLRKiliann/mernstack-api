@@ -4,8 +4,8 @@ export default class AuthenticationService {
   static isAuthenticated: boolean = false;
   
   static login(username: string, password: string): Promise<boolean> {
-    const isAuthenticated = (username === 'Christiano' && 
-      password === '1234567' || username === 'Justine' && password === '1234567');
+    const isAuthenticated = (username === 'Justine' && 
+      password === '1234567' || username === 'Jeanne' && password === '1234567');
     
     return new Promise(resolve => {
       setTimeout(() => {

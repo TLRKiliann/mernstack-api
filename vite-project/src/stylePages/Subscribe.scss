@@ -17,7 +17,8 @@ $font_junction: 'Junction', sans-serif;
   right: 0px;
   left: 0px;
   min-height: 100vh;
-  background: linear-gradient(180deg, $sandybrown 20%, $darkmagenta 100%);
+  background: linear-gradient(180deg,
+    rgba(244,164,96, 1) 10%, rgba(195,87,116, 1) 100%);
   .form--subscribe {
     width: 480px;
     height: auto;
@@ -26,8 +27,8 @@ $font_junction: 'Junction', sans-serif;
     margin-top: 15%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(30deg, rgba(128, 0, 228, 0.1) -10%,
-      sandybrown 100%);
+    background: linear-gradient(180deg, rgba(244,164,96, 1) -10%,
+      rgba(195,87,116, 1) 100%);
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(36, 36, 36, 0.4);
     .div--subscribe {

@@ -15,8 +15,8 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background: linear-gradient(180deg, $purple,
-    $sandybrown);
+  background: linear-gradient(180deg,
+    rgba(244,164,96, 1) -20%, rgba(195,87,116, 1) 200%);
   color: whitesmoke;
   z-index: 1;
   .title--privatechat {
@@ -45,7 +45,7 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
         align-items: center;
         background: $lightgrey_28;
         border-radius: 15px 15px 0px 0px;
-        box-shadow: 0px 3px 12px -2px $lightgrey;
+        box-shadow: 0px 3px 12px -2px rgba(244,164,96, 0.6);
       .flex--imgnameroom {
         margin: auto;
         display: flex;
@@ -122,7 +122,7 @@ $font_dejavu: 'DejaVu Sans', sans-serif;
       padding: 10px;
       background: $lightgrey_42;
       border-radius: 0px 0px 15px 15px;
-      box-shadow: 0px 0px 12px $lightgrey;
+      box-shadow: 0px 0px 12px rgba(244,164,96, 0.6);
       input {
         width: 85%;
         padding: 5px 10px;

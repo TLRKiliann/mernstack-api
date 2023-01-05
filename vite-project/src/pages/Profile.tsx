@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAuthLogin } from '../context/AuthProvider'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import { UserType } from '../models/usertype'
 import bgProfile from '../assets/background/circle.jpg'
 import '../stylePages/Profile.scss'
@@ -8,7 +8,7 @@ import '../stylePages/Profile.scss'
 const Profile: React.FC = () => {
 
   const { username, tweekGroup, setTweekGroup } = useAuthLogin()
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
   console.log(users, 'users')
 
   const handleRefresh = () => {

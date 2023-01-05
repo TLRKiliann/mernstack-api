@@ -17,7 +17,8 @@ $font_allura: 'Allura', cursive;
   left: 0px;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, $sandybrown, $purple);
+  background: linear-gradient(180deg,
+    rgba(244,164,96, 1) 10%, rgba(195,87,116, 1) 100%);
   .title--services {
     margin-top: 120px;
     margin-left: 20px;

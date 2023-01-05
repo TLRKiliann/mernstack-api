@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { ComputerType } from '../models/computerType'
 import { useAuthLogin } from '../context/AuthProvider'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import serviceRouting from '../services/serviceRouting'
-//import { db_computers } from '../models/db_computers'
 import { db_computeOne } from '../models/db_computeList'
 import { db_computeTwo } from '../models/db_computeList'
 import { db_computeThree } from '../models/db_computeList'
@@ -16,7 +16,6 @@ import { db_computeNine } from '../models/db_computeList'
 import { db_computeTen } from '../models/db_computeList'
 import { db_computeEleven } from '../models/db_computeList'
 import { db_computeTwelve } from '../models/db_computeList'
-import { computerType } from '../models/computerType'
 import img_1 from '../assets/background/hdd.jpg'
 import img_2 from '../assets/background/cpu.jpg'
 import img_3 from '../assets/background/ram.jpg'
@@ -30,11 +29,10 @@ import img_12 from '../assets/background/Cybersecurity.jpg'
 import './styleComponents/ChatComputer.scss'
 
 const ChatComputer: React.FC = () => {
-
   const { id } = useParams<{ id?: string }>();
   const { username } = useAuthLogin()
   const Navigate = useNavigate()  
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
   const [computerDb, setComputerDb] = useState<string>("")

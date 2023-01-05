@@ -14,8 +14,8 @@ $font_acme: 'Acme', sans-serif;
   right: 0px;
   left: 0px;
   min-height: 120vh;
-  background: linear-gradient(180deg, 
-    $sandybrown, $darkmagenta);
+  background: linear-gradient(90deg,
+    sandybrown 10%, rgba(195,87,116, 1) 100%);
   .img--home {
     position: fixed;
     top: 0px;
@@ -25,10 +25,10 @@ $font_acme: 'Acme', sans-serif;
     width: 90%;
     height: 70%;
     margin: auto;
-    opacity: 0.1;
+    opacity: 0;
     z-index: 1;
   }
-  .wallIntro {
+  /*.wallIntro {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -60,7 +60,7 @@ $font_acme: 'Acme', sans-serif;
       animation-direction: linear;
       animation-iteration-count: 1;
     }
-  }
+  }*/
 
   @keyframes main--titleintro {
     0% {
@@ -115,8 +115,7 @@ $font_acme: 'Acme', sans-serif;
       font-family: $font_acme;
       font-size: 1.4rem;
       color: rgba(128, 0, 128, 0.4);
-      background: linear-gradient(30deg, 
-        rgba(128, 0, 128, 0.4), $sandybrown);
+      background: linear-gradient(90deg, $sandybrown, rgba(195,87,116, 0.6));
       border: none;
       outline: none;
       border-radius: 40px;
@@ -124,9 +123,10 @@ $font_acme: 'Acme', sans-serif;
       &:hover {
         transition: ease;
         transition-duration: 2s;
-        background: linear-gradient(30deg, 
-          rgba(128, 0, 128, 0.8), $sandybrown);
-        color: $sandybrown;
+
+        background: linear-gradient(90deg, $sandybrown, rgba(195,87,116, 1));
+
+        color: $whitesmoke;
         cursor: pointer;
       }
       &:active {
@@ -142,7 +142,7 @@ $font_acme: 'Acme', sans-serif;
       justify-content: space-between;
       font-family: $font_acme;
       font-size: 1.4rem;
-      color: $sandybrown;
+      color: rgba(195,87,116, 1);
 
       animation-name: rotate-logo;
       animation-delay: 0s;
@@ -165,8 +165,8 @@ $font_acme: 'Acme', sans-serif;
       font-size: 1.4rem;
       font-weight: bold;
       color: rgba(128, 0, 128, 0.4);
-      background: linear-gradient(150deg, 
-        $sandybrown, rgba(128, 0, 128, 0.4));
+      background: linear-gradient(90deg,
+        rgba(244,164,96, 1) 10%, rgba(195,87,116, 0.6) 100%);
       border: none;
       outline: none;
       border-radius: 40px;
@@ -174,9 +174,9 @@ $font_acme: 'Acme', sans-serif;
       &:hover {
         transition: ease;
         transition-duration: 2s;
-        background: linear-gradient(150deg, 
-          $sandybrown, rgba(128, 0, 128, 0.8));
-        color: $sandybrown;
+        background: linear-gradient(90deg,
+          rgba(244,164,96, 1) 0%, rgba(195,87,116, 1) 100%);
+        color: $whitesmoke;
         cursor: pointer;
       }
       &:active {
