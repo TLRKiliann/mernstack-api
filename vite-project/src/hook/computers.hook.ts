@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { db_computers } from '../models/db_computers'
-import { computerType } from '../models/computerType'
+import { ComputerType } from '../models/computerType'
 
 
 const useComputerHook: React.FC = () => {
