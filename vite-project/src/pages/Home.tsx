@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import useComputerHook from '../hook/computers.hook'
 import { UserType } from '../models/usertype'
 import { computerType } from '../models/computerType'
@@ -14,7 +14,7 @@ import '../stylePages/Home.scss'
 
 const Home: React.FC = () => {
   //Custom hooks
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
   const computers = useComputerHook()
 
   const textHeader = "Login and Chat !";

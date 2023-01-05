@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import serviceRouting from '../services/serviceRouting'
-//(file.ts) import { db_users } from '../models/db_users'
 import { UserType } from '../models/usertype'
 
-const usePersonnalHook: React.FC = () => {
+const useRetrieveDataHook: React.FC = () => {
 
   const [users, setUsers] = useState<Array<UserType>>([])
 
@@ -22,4 +21,4 @@ const usePersonnalHook: React.FC = () => {
   return users
 }
 
-export default usePersonnalHook
+export default useRetrieveDataHook

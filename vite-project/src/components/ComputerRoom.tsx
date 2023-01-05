@@ -3,7 +3,7 @@ import serviceRouting from '../services/serviceRouting'
 import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import { UserType } from '../models/usertype'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import HandleAskUserOrigin from '../actions/HandleAskUserOrigin'
 import AskMessageBoxOrigin from '../actions/AskMessageBoxOrigin'
 import DisplayInviteOrigin from '../actions/DisplayInviteOrigin'
@@ -17,7 +17,7 @@ const ComputerRoom: React.FC = () => {
 
   const params = useParams<{ link?: string }>()
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
   const { username, otherUser, setOtherUser, versusUser, setVersusUser } = useAuthLogin()
   const [refreshUsers, setRefreshUsers] = useState<Array<UserType>>([])
 

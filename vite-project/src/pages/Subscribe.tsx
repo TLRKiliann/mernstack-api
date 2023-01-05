@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import serviceRouting from '../services/serviceRouting'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import { useAuthLogin } from '../context/AuthProvider'
 import { UserType } from '../models/usertype'
 import { useNavigate } from 'react-router-dom'
@@ -48,7 +48,7 @@ const Subscribe: React.FC = () => {
     gender: {value: 'Male'}
   })
 
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
   //console.log(datas, "datas")
   const [message, setMessage] = useState<string>("")
   const [datas, setDatas] = useState<Array<UserType>>([])

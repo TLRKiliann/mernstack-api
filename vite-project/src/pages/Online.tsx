@@ -4,7 +4,7 @@ import { ComputerType } from '../models/computerType'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import serviceRouting from '../services/serviceRouting'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import useComputerHook from '../hook/computers.hook'
 import AskMessageBox from '../components/AskMessageBox'
 import DisplayInviteOrigin from '../actions/DisplayInviteOrigin'
@@ -40,7 +40,7 @@ const Online: React.FC = () => {
   const Navigate = useNavigate()
   const params = useParams<{ link?: string }>()
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
   const computers = useComputerHook()
   const { username, otherUser, setOtherUser, versusUser, setVersusUser, setTweekGroup} = useAuthLogin()
   const [refreshUsers, setRefreshUsers] = useState<Array<UserType>>([])

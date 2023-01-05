@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ComputerType } from '../models/computerType'
 import { useAuthLogin } from '../context/AuthProvider'
-import usePersonnalHook from '../hook/personnal.hook'
+import useRetrieveDataHook from '../hook/retrieveData.hook'
 import serviceRouting from '../services/serviceRouting'
 import { db_computeOne } from '../models/db_computeList'
 import { db_computeTwo } from '../models/db_computeList'
@@ -32,7 +32,7 @@ const ChatComputer: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
   const { username } = useAuthLogin()
   const Navigate = useNavigate()  
-  const users = usePersonnalHook()
+  const users = useRetrieveDataHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
   const [computerDb, setComputerDb] = useState<string>("")
