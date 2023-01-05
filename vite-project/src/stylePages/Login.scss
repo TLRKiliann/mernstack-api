@@ -16,7 +16,7 @@ $font_junction: 'Junction', sans-serif;
   left: 0px;
   min-height: 100vh;
   background: linear-gradient(180deg,
-    rgba(244,164,96, 1) 10%, rgba(195,87,116, 1) 100%);
+    rgba(244,164,96, 1) -20%, rgba(195,87,116, 1) 200%);
   z-index: -1;
   .zoom--img {
     position: fixed;
