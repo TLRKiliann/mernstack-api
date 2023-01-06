@@ -1,42 +1,42 @@
-import React from "react";
-import {assert, afterEach, describe, expect, test, it, vi} from 'vitest';
-//import {fireEvent, render, screen} from '@testing-library/react';
-import { create } from 'react-test-renderer';
-//import Header from "../Home.tsx";
-//import MainTitle from "../Home.tsx";
-import MainComp from "../Home.tsx";
-//import MainComp from "../MainComp.tsx"
-//import Footer from "../Home.tsx";
-
+import React from "react"
+import {assert, afterEach, describe, expect, test, it, vi} from 'vitest'
+//import {fireEvent, render, screen} from '@testing-library/react'
+import { create } from 'react-test-renderer'
+import VoletLeft from '../volets/VoletLeft'
+import VoletRight from '../volets/VoletRight'
+import MainTitle from '../../components/MainTitle'
+import MainComp from '../../components/MainComp'
+import Footer from '../../components/Footer'
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 //assertType, expectTypeOf
 
-/*
-test('MatchSnapShot test Header 1', () => {
-  const tree = create(<Header />)
-  expect(tree.toJSON()).toMatchSnapshot();
-})
-*/
-/*
-test('MatchSnapShot test MainTitle 1', () => {
-  const tree = create(<MainTitle />)
-  expect(tree.toJSON()).toMatchSnapshot();
-})
-*/
 
-/*
+test('MatchSnapShot test VoletLeft', () => {
+  const treeVL = create(<VoletLeft />)
+  expect(treeVL.toJSON()).toMatchSnapshot();
+})
+
+test('MatchSnapShot test VoletRight', () => {
+  const treeVR = create(<VoletRight />)
+  expect(treeVR.toJSON()).toMatchSnapshot();
+})
+
+test('MatchSnapShot test MainTitle', () => {
+  const treeMainTitle = create(<MainTitle />)
+  expect(treeMainTitle.toJSON()).toMatchSnapshot()
+})
+
 test('MatchSnapShot test MainComp', () => {
-  const tree = create(<MainComp />)
-  expect(tree.toJSON()).toMatchInlineSnapshot();
-})*/
+  const treeMainComp = create(<MainComp />)
+  expect(treeMainComp.toJSON()).toMatchSnapshot()
+})
 
-/*
 test('MatchSnapShot test Footer 1', () => {
-  const tree = create(<Footer />)
-  expect(tree.toJSON()).toMatchSnapshot();
-})*/
+  const tree2 = create(<Footer />)
+  expect(tree2.toJSON()).toMatchSnapshot();
+})
 
 describe('suite name', () => {
   it('foo', () => {
