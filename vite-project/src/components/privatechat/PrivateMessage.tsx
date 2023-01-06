@@ -20,13 +20,6 @@ const PrivateMessage: React.FC = () => {
   const privateRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (Object.keys(otherUser).length === 0) {
-      console.log("no otherUser")
-      setDisplayUser(versusUser)
-    } else {
-      console.log("no versusUser")
-      setDisplayUser(otherUser)
-    }
     const intervalId = setInterval(() => {
       servicePrivate
         .getMsgPrivate()
@@ -76,7 +69,7 @@ const PrivateMessage: React.FC = () => {
   }
 
   return(
-    <div className="private--chat">
+    <div data-testid="terminaltest" className="private--chat">
 
       <h1 className="title--privatechat">
         {roomStyle} Chat

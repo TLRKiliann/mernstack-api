@@ -137,9 +137,10 @@ const Subscribe: React.FC = () => {
   }
 
   return (
-    <div className="subscribe">
+    <div data-testid="subtest" className="subscribe">
 
       <form
+        data-testid="formsub"
         className="form--subscribe"
         autoComplete="off"
         onSubmit={(e) => handleValidateSub(e)}
@@ -267,7 +268,10 @@ const Subscribe: React.FC = () => {
 
         </div>
 
-        <button type="submit" className="btn--sub">
+        <button
+          type="submit"
+          className="btn--sub"
+        >
           Sign Up
         </button>
 

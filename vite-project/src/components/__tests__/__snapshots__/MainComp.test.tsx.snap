@@ -1,0 +1,33 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test MainComp 1`] = `
+<div
+  className="master--maincomp"
+>
+  <div
+    className="bg--colormaincomp"
+  >
+    <h2
+      className="h2--maincomp"
+    >
+      All Members : 
+      <span
+        className="span--lengthuser"
+      />
+    </h2>
+    <h3
+      className="h3--maincomp"
+    >
+      Users online (connected) : 
+      <span
+        style={
+          {
+            "color": "pink",
+          }
+        }
+      />
+    </h3>
+    <div />
+  </div>
+</div>
+`;

@@ -5,11 +5,17 @@ import { UserType } from '../models/usertype'
 import bgProfile from '../assets/background/circle.jpg'
 import '../stylePages/Profile.scss'
 
+interface ProfileProps {
+  username: string
+  tweekGroup: UserType
+  setTweekGroup: React.Dispatch<React.SetStateAction<UserType[]>>
+}
+
 const Profile: React.FC = () => {
 
-  const { username, tweekGroup, setTweekGroup } = useAuthLogin()
-  const users = useRetrieveDataHook()
-  console.log(users, 'users')
+  const { username, tweekGroup, setTweekGroup } = useAuthLogin<ProfileProps>()
+  const users = useRetrieveDataHook<UserType[]>()
+  console.log(tweekGroup, 'tweekGroup')
 
   const handleRefresh = () => {
     console.log("Refresh !")
@@ -23,7 +29,7 @@ const Profile: React.FC = () => {
   }
 
   return (
-    <div className="profile">
+    <div className="profile" data-testid="profile">
       <div className="div--mainimgprofile">
         <img
           src={bgProfile}
@@ -36,7 +42,7 @@ const Profile: React.FC = () => {
 
       <div className="maintitlepro">
         <h1 className="maintitlepro--h1title">
-          Profile of
+          Profile
         </h1>
         <h1 className="maintitlepro--h1name">{username}</h1>
       </div>
@@ -67,7 +73,8 @@ const Profile: React.FC = () => {
         <div className="div--profileh4">
           <h4 className="titleh4--profile">Your Group :</h4>
           <button 
-            type="button" 
+            data-testid="profile--btn"
+            type="button"
             onClick={handleRefresh}
             className="btn--refreshgroup"
           >
@@ -128,6 +135,7 @@ const Profile: React.FC = () => {
               {val.location}
             </p>
             <button
+              data-testid="profile--btn2"
               type="button"
               onClick={() => handleDelete(val.id)}
               className="btn--deletefromgroup"

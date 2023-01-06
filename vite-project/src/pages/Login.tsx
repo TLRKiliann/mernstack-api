@@ -112,6 +112,7 @@ const Login: React.FC = () => {
 
       <div className="div--submit">
         <form
+          data-testid="formlog"
           onSubmit={(e) => handleSubmit(e)}
           className="submit"
           placeholder="lastname"
@@ -166,6 +167,7 @@ const Login: React.FC = () => {
 
           <p className="p--loginframe">
             <Link
+              data-testid="linktestlogin"
               to="/subscribe"
               className="link--subscribe"
             >

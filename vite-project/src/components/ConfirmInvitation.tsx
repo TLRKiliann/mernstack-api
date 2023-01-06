@@ -12,7 +12,7 @@ interface ConfirmInvitationProps {
 
 const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
   return (
-    <div className="box--confirminvitation">
+    <div data-testid="confirmtestid" className="box--confirminvitation">
       
       <h4 className="confirm">
         <span className="span--confirmation">{props.username}&nbsp;</span>

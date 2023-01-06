@@ -146,6 +146,7 @@ const ConfirmationOrigin = (props: ConfirmProps) => {
 
   return (
     <ConfirmInvitation
+      data-testid="confirmOriginTest"
       key={props.id}
       id={props.id}
       username={props.username}

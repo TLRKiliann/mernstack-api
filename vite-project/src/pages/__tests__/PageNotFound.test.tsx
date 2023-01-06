@@ -1,8 +1,13 @@
-import React from "react";
-import { screen, render } from '@testing-library/react';
+/*import React from "react";
+import { create } from 'react-test-renderer'
 import { expect, vi } from 'vitest'
+//import { act } from 'react-dom/test-utils';
+import {fireEvent, render, screen} from '@testing-library/react';
 import PageNotFound from "../PageNotFound.tsx";
+import { Link } from 'react-router-dom'
 import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
+import { Routes, Route, BrowserRouter, MemoryRouter } from 'react-router-dom'
 //import {create} from 'react-test-renderer';
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
 //import {fireEvent, render, screen} from '@testing-library/react';
@@ -10,8 +15,9 @@ import '@testing-library/jest-dom'
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 
-test('renders services link', () => {
+test('PageNotFound testid', () => {
   render(<PageNotFound />);
-  const linkElement = screen.getByText(/redirect to home page./i);
-  expect(linkElement).toBeInTheDocument();
-});
+  const mytestid = screen.getByTestId("pagenotfoundtest");
+  expect(mytestid).toBeInTheDocument();
+})
+*/

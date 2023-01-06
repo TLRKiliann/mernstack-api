@@ -6,6 +6,6 @@ import UsersOnline from "../UsersOnline.tsx";
 
 test('my test for custom-element id', () => {
   render(<UsersOnline />);
-  const mytestid = screen.getByTestId("ptestid");
+  const mytestid = screen.getByTestId("onlinetest");
   expect(mytestid).toBeInTheDocument();
 })

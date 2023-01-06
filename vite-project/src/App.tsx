@@ -10,14 +10,20 @@ import Online from './pages/Online'
 import ChatComputer from './components/ChatComputer'
 import ComputerRoom from './components/ComputerRoom'
 import PrivateMessage from './components/privatechat/PrivateMessage'
-import ErrorPageNotFound from './pages/PageNotFound'
+import PageNotFound from './pages/PageNotFound'
 import './App.scss'
+
+const AppLayout = () => (
+  <>
+    <NavBar />
+  </>
+);
 
 const App:React.FC = () => {
   return(
     <div>
-      <NavBar />
       <Routes>
+        <Route element={<AppLayout />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
@@ -46,7 +52,7 @@ const App:React.FC = () => {
             <PrivateMessage />
           </PrivateRoute>
         } />
-        <Route path='*' element={<ErrorPageNotFound />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </div>
   )

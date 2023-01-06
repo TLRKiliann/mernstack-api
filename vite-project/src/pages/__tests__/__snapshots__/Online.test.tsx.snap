@@ -1,0 +1,121 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test ChooseMemberToAsk 1`] = `
+<span
+  className="span--saloon"
+  data-testid="chooseMemberId"
+>
+  <div
+    className="user--imgsaloon"
+  >
+    <img
+      className="img--saloon"
+      height="100%"
+      width="100%"
+    />
+    <p
+      className="useronline"
+    >
+       
+      <span
+        className="useronline--icondeconnectected"
+      >
+        ❌
+      </span>
+    </p>
+    <span
+      className="askprivate--service"
+      onClick={[Function]}
+      title="Invite to private chat"
+    >
+      ✉
+    </span>
+    <span
+      className="lastspan--online"
+    >
+      <button
+        className="btn--lastspanonline"
+        onClick={[Function]}
+        title="Add as Your Friend"
+      >
+        +
+      </button>
+    </span>
+  </div>
+</span>
+`;
+
+exports[`MatchSnapShot test DisplayInviteOrigin 1`] = `
+<div
+  className="invitation--display"
+  data-testid="displayOthertestid"
+>
+  <h4
+    className="invitation--h4"
+  >
+    <span
+      className="span--h4"
+    >
+       !
+    </span>
+    <p
+      style={
+        {
+          "marginTop": "30px",
+        }
+      }
+    >
+      You've recieved invitation from
+    </p>
+    <span
+      className="span--h4"
+    >
+      .
+    </span>
+  </h4>
+  <div
+    className="definedroom--display"
+  >
+    <p
+      className="invitation--p"
+    >
+      Are you ok for
+      <span
+        className="span--invitationp"
+      />
+      chat ?
+    </p>
+    <div
+      className="checkbox--firstconfirm"
+    >
+      <label
+        className="checkbox--lbl"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+         Yes
+      </label>
+      <label
+        className="checkbox--lbl"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+         No
+      </label>
+    </div>
+  </div>
+  <button
+    className="btn--displayotheruser"
+    onClick={[Function]}
+    type="button"
+  >
+    Validate
+  </button>
+</div>
+`;

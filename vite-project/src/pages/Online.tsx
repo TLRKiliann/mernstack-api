@@ -197,7 +197,9 @@ const Online: React.FC = () => {
   }
 
   return(
-    <div className="saloon--byusers">
+    <div
+      data-testid="divtestone"
+      className="saloon--byusers">
 
       <div className="title--services">
         <h1>Rooms</h1>

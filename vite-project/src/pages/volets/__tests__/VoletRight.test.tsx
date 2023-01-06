@@ -6,6 +6,6 @@ import VoletRight from "../VoletRight.tsx";
 
 test('renders chat rooms link', () => {
   render(<VoletRight />);
-  const linkElement = screen.getByText(/chat rooms/i);
+  const linkElement = screen.getByText(/chat computing/i);
   expect(linkElement).toBeInTheDocument();
 });

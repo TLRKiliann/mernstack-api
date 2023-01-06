@@ -30,6 +30,7 @@ const options: Field[] = [
 ]
 
 interface AskProps {
+  id: number | undefined
   username: string
   catchById: UserType
   setOtherUser: UserType
@@ -137,7 +138,7 @@ const AskMessageBoxOrigin: React.FC = (props: AskProps) => {
 
   return (
     <AskMessageBox
-      key={props.catchById.id}
+      key={props.catchById?.id}
       catchById={props.catchById}
       form={form.invite.value}
       options={options}
