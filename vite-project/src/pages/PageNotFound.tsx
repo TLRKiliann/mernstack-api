@@ -1,7 +1,5 @@
 import React from 'react'
-//import {fireEvent, render, screen} from '@testing-library/react';
 import { Link } from 'react-router-dom'
-//import { act } from 'react-dom/test-utils';
 import '../stylePages/PageNotFound.scss'
 
 const PageNotFound: React.FC = () => {

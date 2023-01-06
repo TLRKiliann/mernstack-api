@@ -12,7 +12,6 @@ import Footer from '../../components/Footer'
 //import { act } from 'react-dom/test-utils';
 //assertType, expectTypeOf
 
-
 test('MatchSnapShot test VoletLeft', () => {
   const treeVL = create(<VoletLeft />)
   expect(treeVL.toJSON()).toMatchSnapshot();

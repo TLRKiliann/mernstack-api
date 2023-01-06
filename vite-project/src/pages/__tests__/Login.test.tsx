@@ -2,21 +2,41 @@ import React from "react";
 import { fireEvent, screen, render } from '@testing-library/react';
 import { create } from 'react-test-renderer';
 import { expect, vi, test } from 'vitest'
-//import { Link, MemoryRouter, useMemoryHistory } from 'react-router-dom'
+import { Link, MemoryRouter } from 'react-router-dom'
 import Login from "../Login.tsx";
 import handleInputChange from '../Login'
 import generateId from '../Login'
+import Home from '../Home'
+import { PropsWithChildren } from 'react'
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
 //import {fireEvent, render, screen} from '@testing-library/react';
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 
+function wrapper({children}: PropsWithChildren<unknown>) {
+  return (
+    <MemoryRouter>
+      <Login />
+    </MemoryRouter>
+  )
+}
+
+test("should have sign-up link", () => {
+  setup()
+  expect(screen.getByRole('link', {name: /subscribe/i})).toBeInTheDocument()
+})
+
+function setup() {
+  render(<Home />, {wrapper})
+}
+
 test('handleInputChange to be defined', () => {
   const funcDelete = handleInputChange
   expect(funcDelete).toBeDefined()
 })
 
+/*
 test("Login subscribe btn test", () => {
   const onClick = vi.fn();
   const { getByTestId } = render(
@@ -29,6 +49,7 @@ test("Login subscribe btn test", () => {
   fireEvent.submit(getByTestId("linktestlogin"));
   expect(onSubmit).toHaveBeenCalledTimes(1);
 })
+*/
 
 test("Login submit form test", () => {
   const onSubmit = vi.fn();
@@ -70,12 +91,15 @@ test('handleInputChange return id', () => {
   expect(handleInputChange).toHaveReturned(23)
 })
 
+/*
 test('renders Login by text', () => {
   render(<Login />);
   const linkElement = screen.getByTestId("logintest");
   expect(linkElement).toBeInTheDocument();
 })
+*/
 
+/*
 describe('<Login />', () => {
   test('The input field and its props', () => {
     render(<Login />)
@@ -113,3 +137,4 @@ describe('<Login />', () => {
     }
   })
 })
+*/

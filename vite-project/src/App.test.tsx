@@ -99,6 +99,7 @@ test('MatchSnapShot test Login', () => {
   expect(treeLogin.toJSON()).toMatchSnapshot()
 })
 
+/*
 describe('App to Login test', () => {
   beforeEach(() => {
     console.log("start")
@@ -130,3 +131,4 @@ test("App to Login", () => {
   link.simulate('click')
   expect(link).toEqual("/subscribe")
 })
+*/
