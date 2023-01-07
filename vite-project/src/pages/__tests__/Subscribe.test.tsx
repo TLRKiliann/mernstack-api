@@ -1,12 +1,32 @@
-import React from "react";
-import { expect } from 'vitest'
-import {fireEvent, render, screen} from '@testing-library/react'
-import Subscribe from "../Subscribe.tsx"
+import React from 'react'
+import {useNavigate} from 'react-router-dom'
+import { test, expect, vi, beforeEach } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import Subscribe from "../Subscribe"
 import handleInputChange from '../Subscribe'
 import validateFormSub from '../Subscribe'
 import handleValidateSub from '../Subscribe'
 import generateId from '../Subscribe'
+
+//useNavigate
+useNavigate: () => ({
+  navigate: vi.fn().mockImplementation(() => ({}))
+})
+
+vi.mock('react-router-dom', () => ({
+  ...vi.importActual('react-router-dom'),
+  useNavigate: () => mockedNavigate
+}))
+
+beforeEach(async (context) => {
+  // extend context
+  context.foo = 'bar'
+})
+
+test('should work', ({ foo }) => {
+  console.log(foo) // 'bar'
+})
 
 test('Subscribe handleInputChange to be defined', () => {
   const funcInputChange = handleInputChange
@@ -29,33 +49,19 @@ test('Subscribe generateId to be defined', () => {
 })
 
 test("Subscribe submit form test", () => {
-  const onSubmit = vi.fn();
+  const onSubmit = vi.fn()
   const { getByTestId } = render(
     <form
       onSubmit={onSubmit} 
       data-testid="formsub">
-    </form>);
-  fireEvent.submit(getByTestId("formsub"));
-  expect(onSubmit).toHaveBeenCalledTimes(1);
-});
+    </form>)
+  fireEvent.submit(getByTestId("formsub"))
+  expect(onSubmit).toHaveBeenCalledTimes(1)
+})
 
 test('handleValidateSub return id', () => {
   const beverage = {
-    id: 1,
-    img: "http://localhost:5173/src/assets/snapface/oliver.jpg",
-    firstName: "tree",
-    lastName: "leaf",
-    age: 23,
-    email: "mail@gtruc.com",
-    location: "Valley",
-    gender: "male",
-    mainroom: "Cyber-Security",
-    room: "Scapy",
-    isConnected: false,
-    signalRecieve: false,
-    sentMsg: "hello",
-    messagebox: "msg cool",
-    returnConfirm: false
+    sentMsg: "hello"
   }
   const handleValidateSub = vi.fn(beverage => { beverage })
   handleValidateSub()

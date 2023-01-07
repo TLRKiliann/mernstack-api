@@ -45,77 +45,21 @@ exports[`MatchSnapShot test ChooseMemberToAsk 1`] = `
 </span>
 `;
 
-exports[`MatchSnapShot test DisplayInviteOrigin 1`] = `
+exports[`MatchSnapShot test Online 1`] = `
 <div
-  className="invitation--display"
-  data-testid="displayOthertestid"
+  className="saloon--byusers"
+  data-testid="divtestone"
 >
-  <h4
-    className="invitation--h4"
-  >
-    <span
-      className="span--h4"
-    >
-       !
-    </span>
-    <p
-      style={
-        {
-          "marginTop": "30px",
-        }
-      }
-    >
-      You've recieved invitation from
-    </p>
-    <span
-      className="span--h4"
-    >
-      .
-    </span>
-  </h4>
   <div
-    className="definedroom--display"
+    className="title--services"
   >
-    <p
-      className="invitation--p"
-    >
-      Are you ok for
-      <span
-        className="span--invitationp"
-      />
-      chat ?
-    </p>
-    <div
-      className="checkbox--firstconfirm"
-    >
-      <label
-        className="checkbox--lbl"
-      >
-        <input
-          checked={false}
-          onChange={[Function]}
-          type="checkbox"
-        />
-         Yes
-      </label>
-      <label
-        className="checkbox--lbl"
-      >
-        <input
-          checked={false}
-          onChange={[Function]}
-          type="checkbox"
-        />
-         No
-      </label>
-    </div>
+    <h1>
+      Rooms
+    </h1>
   </div>
-  <button
-    className="btn--displayotheruser"
-    onClick={[Function]}
-    type="button"
-  >
-    Validate
-  </button>
+  <div
+    className="divsection--saloon"
+  />
+  <div />
 </div>
 `;

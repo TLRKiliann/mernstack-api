@@ -32,12 +32,12 @@ const App:React.FC = () => {
             <Profile />
           </PrivateRoute>
         } />
-        <Route exact path='/online' element={
+        <Route path='/online' element={
           <PrivateRoute>
             <Online />
           </PrivateRoute>
         } />
-        <Route exact path='/chatcomputer/:id' element={
+        <Route path='/chatcomputer/:id' element={
           <PrivateRoute>
             <ChatComputer />
           </PrivateRoute>
@@ -52,7 +52,7 @@ const App:React.FC = () => {
             <PrivateMessage />
           </PrivateRoute>
         } />
-        <Route path='*' element={<PageNotFound />} />
+        <Route exact path='*' element={<PageNotFound />} />
       </Routes>
     </div>
   )

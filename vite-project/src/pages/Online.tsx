@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { UserType } from '../models/usertype'
 import { ComputerType } from '../models/computerType'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import serviceRouting from '../services/serviceRouting'
 import useRetrieveDataHook from '../hook/retrieveData.hook'
@@ -37,7 +37,6 @@ const options: Field[] = [
 ]
 
 const Online: React.FC = () => {
-  const Navigate = useNavigate()
   const params = useParams<{ link?: string }>()
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
   const users = useRetrieveDataHook()

@@ -31,7 +31,7 @@ import './styleComponents/ChatComputer.scss'
 const ChatComputer: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
   const { username } = useAuthLogin()
-  const Navigate = useNavigate()  
+  const navigation = useNavigate()  
   const users = useRetrieveDataHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
@@ -41,7 +41,7 @@ const ChatComputer: React.FC = () => {
 
   const handleNavigation = (link: string) => {
     const myTimeOut = setTimeout(() => {
-      Navigate(`/computerroom/${link}`)
+      navigation(`/computerroom/${link}`)
     }, 1000)
   }
 

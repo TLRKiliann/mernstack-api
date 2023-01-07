@@ -1,10 +1,10 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { expect, test } from 'vitest';
+import { test, expect, vi } from 'vitest'
 import { MemoryRouter, Link, Router } from 'react-router-dom'
-import { create } from "react-test-renderer";
-import "@testing-library/jest-dom";
-import { act } from 'react-dom/test-utils';
+import { create } from "react-test-renderer"
+import "@testing-library/jest-dom"
+import { act } from 'react-dom/test-utils'
 //import userEvent from '@testing-library/user-event'
 //import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
@@ -112,11 +112,11 @@ describe('App to Login test', () => {
       <MemoryRouter>
         <Login />
       </MemoryRouter>
-    );
+    )
   act(() => {
-    link.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+    link.dispatchEvent(new MouseEvent('click', {bubbles: true}))
   })
-    expect(wrapper).toBeCalledWith('/subscribe');
+    expect(wrapper).toBeCalledWith('/subscribe')
   })
 })
 

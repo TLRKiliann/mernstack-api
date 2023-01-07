@@ -1,5 +1,5 @@
 import React from "react";
-import { expect, vi } from 'vitest'
+import { test, expect, vi } from 'vitest'
 import {fireEvent, render, screen} from '@testing-library/react';
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'

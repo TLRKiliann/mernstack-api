@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render } from '@testing-library/react';
-import { expect, vi } from 'vitest'
+import { test, expect, vi } from 'vitest'
 import '@testing-library/jest-dom'
 import UsersOnline from "../UsersOnline.tsx";
 

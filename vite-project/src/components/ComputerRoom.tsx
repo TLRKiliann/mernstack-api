@@ -43,7 +43,7 @@ const ComputerRoom: React.FC = () => {
   }
 
   return (
-    <div className="nextcomp--room">
+    <div data-testid="computerroomtest" className="nextcomp--room">
 
       <div className="div--animationroomStyle">
         <div className="rotation--roomstyle">

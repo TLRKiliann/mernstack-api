@@ -2,23 +2,55 @@ import React from "react";
 import { fireEvent, screen, render } from '@testing-library/react';
 import { create } from 'react-test-renderer';
 import { expect, vi, test } from 'vitest'
-import { Link, MemoryRouter } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { createMemoryHistory } from "history";
 import Login from "../Login.tsx";
 import handleInputChange from '../Login'
 import generateId from '../Login'
 import Home from '../Home'
+import Subscribe from "../Subscribe"
 import { PropsWithChildren } from 'react'
+
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
 //import {fireEvent, render, screen} from '@testing-library/react';
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 
+test("Login context testing", () => {
+  beforeEach(async (context) => {
+    // extend context
+    context.foo = 'bar'
+  })
+  test('Login state', ({ foo }) => {
+    console.log(foo) // 'bar'
+  })
+})
+
+test("Login hook testing", () => {
+  const mockedNavigate = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useNavigate: () => ({mockedNavigate: "room"})
+  }))
+
+  const mockedAuth = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useAuthLogin: () => ({mockedAuth})
+  }))
+})
+
+test('MatchSnapShot test Subscribe', () => {
+  const tree = create(<Subscribe />)
+  expect(tree.toJSON()).toMatchSnapshot()
+})
+
+/*
 function wrapper({children}: PropsWithChildren<unknown>) {
-  return (
-    <MemoryRouter>
-      <Login />
-    </MemoryRouter>
+  const history = createMemoryHistory("/")
+  render(
+    <Login />
   )
 }
 
@@ -30,6 +62,7 @@ test("should have sign-up link", () => {
 function setup() {
   render(<Home />, {wrapper})
 }
+*/
 
 test('handleInputChange to be defined', () => {
   const funcDelete = handleInputChange
@@ -46,7 +79,7 @@ test("Login subscribe btn test", () => {
     >
     </Link>
   )
-  fireEvent.submit(getByTestId("linktestlogin"));
+  fireEvent.onClick(getByTestId("linktestlogin"));
   expect(onSubmit).toHaveBeenCalledTimes(1);
 })
 */
