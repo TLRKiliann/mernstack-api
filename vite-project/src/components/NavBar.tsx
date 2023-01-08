@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
   }
 
   return(
-    <div data-test-id="testId" className="div--headernav">
+    <div data-testid="testId" className="div--headernav">
       <nav className="navbar--nav">
 
         <div className="div--imgnavbar">

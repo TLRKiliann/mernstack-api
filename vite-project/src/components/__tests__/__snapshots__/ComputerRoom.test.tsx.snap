@@ -1,79 +1,786 @@
 // Vitest Snapshot v1
 
+exports[`ComputerRoom MatchSnapShot test AskMessageBox 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`ComputerRoom MatchSnapShot test AskMessageBoxOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`ComputerRoom MatchSnapShot test ConfirmationOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`ComputerRoom MatchSnapShot test DisplayInviteOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`ComputerRoom MatchSnapShot test HandleAskUserOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`ComputerRoom MatchSnapShot test TerminalComponent 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test AskMessageBox 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
 exports[`MatchSnapShot test AskMessageBoxOrigin 1`] = `
 <div
-  className="boolean--result"
+  className="nextcomp--room"
+  data-testid="computerroomtest"
 >
-  <form
-    className="form--invitation"
-    data-testid="asktestid"
+  <div
+    className="div--animationroomStyle"
   >
-    <label
-      className="lbl--invite"
-      htmlFor="users"
+    <div
+      className="rotation--roomstyle"
     >
-      Invite
-      <img
-        alt="no img panel ask invite"
-        className="img--invite"
-        height="50px"
-        width="50px"
-      />
-      <span
-        className="span--invite"
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
       >
-         
-      </span>
-       to private chat :
-    </label>
-    <label
-      className="lbl--choicechat"
-    >
-      Would you like 
-      <select
-        className="select--invite"
-        id="invite"
-        name="invite"
-        onChange={[Function]}
-        value="Private"
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
       >
-        <option
-          className="option--invite"
-          name="invite"
-          value="Private"
+        <span
+          className="intro--terminal"
         >
-          Private
-        </option>
-        <option
-          className="option--invite"
-          name="invite"
-          value="Info"
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
         >
-          Info
-        </option>
-        <option
-          className="option--invite"
-          name="invite"
-          value="Question"
-        >
-          Question
-        </option>
-      </select>
-       chat.
-    </label>
-    <button
-      className="btn--invitation"
-      onClick={[Function]}
-      type="button"
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
     >
-      Invite
-    </button>
-    <button
-      className="btn--close"
-    >
-      X
-    </button>
-  </form>
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
 </div>
 `;
 
@@ -99,7 +806,104 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
   </h1>
   <div
     className="div--terminaluser"
-    data-testid="testdiv"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test ConfirmationOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
   >
     <div
       className="section--terminal"
@@ -178,162 +982,294 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
 
 exports[`MatchSnapShot test DisplayInviteOrigin 1`] = `
 <div
-  className="invitation--display"
-  data-testid="displayOthertestid"
+  className="nextcomp--room"
+  data-testid="computerroomtest"
 >
-  <h4
-    className="invitation--h4"
-  >
-    <span
-      className="span--h4"
-    >
-       !
-    </span>
-    <p
-      style={
-        {
-          "marginTop": "30px",
-        }
-      }
-    >
-      You've recieved invitation from
-    </p>
-    <span
-      className="span--h4"
-    >
-      .
-    </span>
-  </h4>
   <div
-    className="definedroom--display"
+    className="div--animationroomStyle"
   >
-    <p
-      className="invitation--p"
-    >
-      Are you ok for
-      <span
-        className="span--invitationp"
-      />
-      chat ?
-    </p>
     <div
-      className="checkbox--firstconfirm"
+      className="rotation--roomstyle"
     >
-      <label
-        className="checkbox--lbl"
-      >
-        <input
-          checked={false}
-          onChange={[Function]}
-          type="checkbox"
-        />
-         Yes
-      </label>
-      <label
-        className="checkbox--lbl"
-      >
-        <input
-          checked={false}
-          onChange={[Function]}
-          type="checkbox"
-        />
-         No
-      </label>
+      <h1 />
     </div>
   </div>
-  <button
-    className="btn--displayotheruser"
-    onClick={[Function]}
-    type="button"
+  <div />
+  <h1
+    className="title--room"
   >
-    Validate
-  </button>
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
 </div>
 `;
 
 exports[`MatchSnapShot test HandleAskUserOrigin 1`] = `
 <div
-  className="all--usersbanner"
-  data-testid="onlinetest"
+  className="nextcomp--room"
+  data-testid="computerroomtest"
 >
   <div
-    className="username--useronline"
+    className="div--animationroomStyle"
   >
-    <img
-      className="smile--img"
-      height="100%"
-      width="100%"
-    />
-    <span
-      className="useronline--username"
-    />
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
   </div>
-  <p
-    className="para--spanchat"
+  <div />
+  <h1
+    className="title--room"
   >
-    <span
-      className="span--useronline connector--icon"
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
     >
-      ❌
-    </span>
-    <span
-      className="span--useronline styleusr--span"
-      onClick={[Function]}
-      style={
-        {
-          "color": "sandybrown",
-          "fontSize": "22px",
-        }
-      }
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
     >
-      ✉
-    </span>
-  </p>
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
 </div>
 `;
 
 exports[`MatchSnapShot test TerminalComponent 1`] = `
-<section
-  className="terminal"
-  data-testid="terminaltest"
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
 >
-  <span
-    className="intro--terminal"
-  >
-    <h3
-      className="intro--terminalh3"
-    />
-  </span>
   <div
-    className="div--terminal"
-  />
-  <div
-    className="subterminal"
+    className="div--animationroomStyle"
   >
     <div
-      className="div--psubterminal"
+      className="rotation--roomstyle"
     >
-      <p
-        className="arrow"
-      >
-        ▶
-      </p>
+      <h1 />
     </div>
-    <input
-      className="input--message"
-      onChange={[Function]}
-      placeholder="Write something here..."
-      required={true}
-      type="text"
-      value=""
-    />
-    <button
-      className="btn--user"
-      onClick={[Function]}
-      type="button"
-    >
-      Enter
-    </button>
   </div>
-</section>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
 `;

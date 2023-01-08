@@ -5,7 +5,7 @@ import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
 import DisplayInvitationOtherUsr from "../DisplayInvitationOtherUsr.tsx";
 
-test('my test for custom-element id', () => {
+test('DisplayInvitationOtherUsrmy is present', () => {
   render(<DisplayInvitationOtherUsr />);
   const displayOthertestid = screen.getByTestId("displayOthertestid");
   expect(displayOthertestid).toBeInTheDocument();

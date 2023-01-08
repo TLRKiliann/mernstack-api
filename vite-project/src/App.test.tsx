@@ -4,20 +4,18 @@ import { test, expect, vi } from 'vitest'
 import { MemoryRouter, Link, Router } from 'react-router-dom'
 import { create } from "react-test-renderer"
 import "@testing-library/jest-dom"
-import { act } from 'react-dom/test-utils'
+import App from './App'
+import Home from './App'
+import Subscribe from './App'
+import AppLayout from './App'
+import Profile from './App'
+import Login from './App'
+import ChatComputer from './App'
+import ComputerRoom from './App'
+import PrivateMessage from './App'
+import PageNotFound from './App'
 //import userEvent from '@testing-library/user-event'
-//import { BrowserRouter } from 'react-router-dom'
-import App from './App.tsx'
-import Home from './App.tsx'
-import Subscribe from './App.tsx'
-import AppLayout from './App.tsx'
-import Profile from './App.tsx'
-import Login from './App.tsx'
-import ChatComputer from './App.tsx'
-import ComputerRoom from './App.tsx'
-import PrivateMessage from './App.tsx'
-import PageNotFound from './App.tsx'
-
+//import { act } from 'react-dom/test-utils'
 
 test('MatchSnapShot test App', () => {
   const treeApp = create(
@@ -98,37 +96,3 @@ test('MatchSnapShot test Login', () => {
     </MemoryRouter>)
   expect(treeLogin.toJSON()).toMatchSnapshot()
 })
-
-/*
-describe('App to Login test', () => {
-  beforeEach(() => {
-    console.log("start")
-  })
-  afterEach(() => {
-    console.log("finish")
-  })
-  test('Login should navigate to /subscribe route', () => {
-    const wrapper = create(
-      <MemoryRouter>
-        <Login />
-      </MemoryRouter>
-    )
-  act(() => {
-    link.dispatchEvent(new MouseEvent('click', {bubbles: true}))
-  })
-    expect(wrapper).toBeCalledWith('/subscribe')
-  })
-})
-
-test("App to Login", () => {
-  const wrapper = create(
-    <MemoryRouter>
-      <Login />
-    </MemoryRouter>
-  )
-  const link = {to: '/subscribe'}
-  console.log(link)
-  link.simulate('click')
-  expect(link).toEqual("/subscribe")
-})
-*/

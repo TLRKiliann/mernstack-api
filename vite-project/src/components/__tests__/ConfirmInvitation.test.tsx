@@ -7,7 +7,7 @@ import ConfirmInvitation from "../ConfirmInvitation.tsx";
 
 
 
-test('my test for custom-element id', () => {
+test('ConfirmInvitationmy test present', () => {
   render(<ConfirmInvitation />);
   const confirmtestid = screen.getByTestId("confirmtestid");
   expect(confirmtestid).toBeInTheDocument();

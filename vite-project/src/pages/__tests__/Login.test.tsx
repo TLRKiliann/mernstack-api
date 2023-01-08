@@ -2,8 +2,7 @@ import React from "react";
 import { fireEvent, screen, render } from '@testing-library/react';
 import { create } from 'react-test-renderer';
 import { expect, vi, test } from 'vitest'
-import { Link, useNavigate } from 'react-router-dom'
-import { createMemoryHistory } from "history";
+import { Link, MemoryRouter, useNavigate } from 'react-router-dom'
 import Login from "../Login.tsx";
 import handleInputChange from '../Login'
 import generateId from '../Login'
@@ -41,48 +40,15 @@ test("Login hook testing", () => {
   }))
 })
 
-test('MatchSnapShot test Subscribe', () => {
+test('MatchSnapShot test Subscribe Login', () => {
   const tree = create(<Subscribe />)
   expect(tree.toJSON()).toMatchSnapshot()
 })
 
-/*
-function wrapper({children}: PropsWithChildren<unknown>) {
-  const history = createMemoryHistory("/")
-  render(
-    <Login />
-  )
-}
-
-test("should have sign-up link", () => {
-  setup()
-  expect(screen.getByRole('link', {name: /subscribe/i})).toBeInTheDocument()
-})
-
-function setup() {
-  render(<Home />, {wrapper})
-}
-*/
-
-test('handleInputChange to be defined', () => {
+test('Login handleInputChange to be defined', () => {
   const funcDelete = handleInputChange
   expect(funcDelete).toBeDefined()
 })
-
-/*
-test("Login subscribe btn test", () => {
-  const onClick = vi.fn();
-  const { getByTestId } = render(
-    <Link
-      data-testid="linktestlogin"
-      to="/subscribe"
-    >
-    </Link>
-  )
-  fireEvent.onClick(getByTestId("linktestlogin"));
-  expect(onSubmit).toHaveBeenCalledTimes(1);
-})
-*/
 
 test("Login submit form test", () => {
   const onSubmit = vi.fn();
@@ -101,7 +67,7 @@ test('Login generateId to be defined', () => {
   expect(funcGenIdLog).toBeDefined()
 })
 
-test('handleInputChange return id', () => {
+test('Login handleInputChange return id', () => {
   const beverage = {
     id: 1,
     img: "http://localhost:5173/src/assets/snapface/oliver.jpg",
@@ -123,51 +89,3 @@ test('handleInputChange return id', () => {
   handleInputChange()
   expect(handleInputChange).toHaveReturned(23)
 })
-
-/*
-test('renders Login by text', () => {
-  render(<Login />);
-  const linkElement = screen.getByTestId("logintest");
-  expect(linkElement).toBeInTheDocument();
-})
-*/
-
-/*
-describe('<Login />', () => {
-  test('The input field and its props', () => {
-    render(<Login />)
-    const input = document.querySelector(
-      'input'
-    ) as HTMLInputElement | null;
-    
-    // input exists in the form component
-    expect(input).toBeTruthy()
-    
-    // is empty
-    expect(input?.textContent).toBe('')
-
-    if (input) {
-      // test the input text
-      input.textContent = 'gaston'
-      expect(input.textContent).toBe('gaston')
-
-      // test the type prop
-      expect(input.type).toBe('username')
-      
-      // test the name prop
-      expect(input.name).toBe('username')
-
-      // test the value prop
-      fireEvent.change(input, {
-        target: {
-          value: '1234567'
-        }
-      })
-      expect(input.value).toBe('1234567')
-
-      // test the required prop with the jest-dom
-      expect(input).toBeRequired()
-    }
-  })
-})
-*/

@@ -13,17 +13,21 @@ type Form = {
 interface AskMessageBoxProps {
   catchById: UserType
   form: Form
+  option: Field
+  options: Field[]
   handleInviteChoice: (e: React.ChangeEvent<HTMLInputElement>) => void
   handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form, Field}) => {
+const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
   //console.log(props.catchById, 'props.users')
   return (
-    <div className="boolean--result">
+    <div
+      data-testid="asktestid" 
+      className="boolean--result"
+    >
       <form
-        data-testid="asktestid" 
         className="form--invitation"
       >
         <label htmlFor="users" className="lbl--invite">

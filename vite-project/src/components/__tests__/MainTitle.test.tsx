@@ -5,7 +5,7 @@ import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
 import MainTitle from "../MainTitle.tsx";
 
-test('renders learn react link', () => {
+test('MainTitle getByText', () => {
   render(<MainTitle />);
   const linkElement = screen.getByText(/Chat-Society/i);
   expect(linkElement).toBeInTheDocument();

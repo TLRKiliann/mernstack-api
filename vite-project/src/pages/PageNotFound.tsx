@@ -18,7 +18,7 @@ const PageNotFound: React.FC = () => {
 			data-testid="pagenotfoundtest"
 			style={colorErrorNotFound}>
 			<h1>Error page not found !</h1>
-			<Link to="/" >Redirect to home page.</Link>
+			<Link to="/login" >Redirect to home page.</Link>
 		</div>
 	)
 }

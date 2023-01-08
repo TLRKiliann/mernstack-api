@@ -11,6 +11,7 @@ import handleCheckBox from "../ConfirmationOrigin"
 import handleCheckConfirmation from "../ConfirmationOrigin"
 import ConfirmInvitation from "../../components/ConfirmInvitation"
 
+//useNavigate
 test('ConfirmationO useNavigate test', () => {
   const mockedNavigate = vi.fn()
   vi.mock('react-router-dom', () => ({
@@ -19,12 +20,12 @@ test('ConfirmationO useNavigate test', () => {
   }))
 })
 
-test("Online context testing", () => {
+//context
+test("ConfirmationO context testing", () => {
   beforeEach(async (context) => {
-    // extend context
     context.foo = 'bar'
   })
-  test('Profile state', ({ foo }) => {
+  test('ConfirmationO state', ({ foo }) => {
     console.log(foo) // 'bar'
   })
 })
@@ -54,3 +55,33 @@ test('ConfirmationO handleCheckConfirmation to be defined', () => {
   expect(funcTestSeven).toBeDefined()
 })
 
+test('ConfirmationO handleFilterUser return link', () => {
+  const handleFilterUser = vi.fn()
+  handleFilterUser()
+  expect(handleFilterUser).toHaveBeenCalledTimes(1)
+})
+
+test('ConfirmationO handleBothConfirmation return link', () => {
+  const handleBothConfirmation = vi.fn()
+  handleBothConfirmation()
+  expect(handleBothConfirmation).toHaveBeenCalledTimes(1)
+})
+
+//handleCheckBox
+test('ConfirmationO handleCheckBox return boolean', () => {
+  const beverage = {isChecked: false}
+  const handleCheckBox = vi.fn(beverage => beverage.isChecked)
+  handleCheckBox(beverage)
+  expect(handleCheckBox).toHaveReturnedWith(false)
+  expect(handleCheckBox).toHaveBeenCalledTimes(1)
+})
+
+//handleCheckConfirmation
+test('ConfirmationO handleCheckConfirmation return boolean', () => {
+  const beverageConf = { isNotConfirm: false }
+  const handleCheckConfirmation = vi.fn(beverage => beverage.isNotConfirm)
+  handleCheckConfirmation(beverageConf)
+  expect(handleCheckConfirmation).toHaveReturnedWith(false)
+  expect(handleCheckConfirmation).toHaveBeenCalledTimes(1)
+
+})

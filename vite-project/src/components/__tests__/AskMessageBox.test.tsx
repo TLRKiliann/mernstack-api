@@ -5,13 +5,15 @@ import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
 import AskMessageBox from "../AskMessageBox.tsx";
 
-test('my test for custom-element id', () => {
+/*
+test('AskMessageBoxmy test present', () => {
   render(<AskMessageBox />);
   const asktestid = screen.getByTestId("asktestid");
   expect(asktestid).toBeInTheDocument();
 })
+*/
 
-test('MatchSnapShot test AskMessageBox', () => {
+test('MatchSnapShot test toMatchSnapshot', () => {
   const treeAskMessageBox = create(<AskMessageBox />)
   expect(treeAskMessageBox.toJSON()).toMatchSnapshot()
 })

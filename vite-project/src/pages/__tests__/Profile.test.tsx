@@ -1,16 +1,36 @@
 import React from "react"
 import { test, expect, vi, beforeEach } from 'vitest'
-import {useNavigate} from 'react-router-dom'
-import Profile from "../Profile.tsx"
+import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom'
 import {create} from 'react-test-renderer'
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest'
-import {fireEvent, render, screen} from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { useAuthLogin } from '../../context/AuthProvider'
+import Profile from "../Profile"
 import handleDelete from '../Profile'
 import handleRefresh from '../Profile'
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom"
 //import { act } from 'react-dom/test-utils'
+
+/*
+test("Profile toMatchSnapshot", () => {
+  const treeProf = create(
+    <Profile />
+  )
+  expect(treeProf).toMatchSnapshot()
+})
+*/
+
+test('Profile testing context', () => {
+  beforeEach(async (context) => {
+    context.foo = 'bar'
+  })
+
+  test('Profile state', ({ foo }) => {
+    console.log(foo) // 'bar'
+  })
+})
 
 //useAuthLogin
 useAuthLogin: () => ({
@@ -22,7 +42,6 @@ vi.mock('react-router-dom', () => ({
   useAuthLogin: () => mockedAuthLogin
 }))
 
-
 test('Profile testing context', () => {
   beforeEach(async (context) => {
     // extend context
@@ -33,8 +52,6 @@ test('Profile testing context', () => {
     console.log(foo) // 'bar'
   })
 })
-
-
 
 test('Profile handleRefresh to be defined', () => {
   const funcRefresh = handleRefresh
@@ -81,3 +98,27 @@ test('Profile handleDelete return id', () => {
   handleDelete()
   expect(handleDelete).toHaveBeenCalledTimes(1)
 })
+
+/*
+//useAuthLogin
+useAuthLogin: () => ({
+  username: vi.fn().mockImplementation(() => ({}))
+})
+
+vi.mock('react-router-dom', () => ({
+  ...vi.importActual('react-router-dom'),
+  useAuthLogin: () => mockedAuthLogin
+}))
+
+
+test('Profile testing context', () => {
+  beforeEach(async (context) => {
+    // extend context
+    context.foo = 'bar'
+  })
+
+  test('Profile state', ({ foo }) => {
+    console.log(foo) // 'bar'
+  })
+})
+*/

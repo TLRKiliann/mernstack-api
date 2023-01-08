@@ -159,7 +159,7 @@ const ChatComputer: React.FC = () => {
   }, [])
 
   return (
-    <div className="main--chatcomputerroom">
+    <div data-testid="chatcomputer" className="main--chatcomputerroom">
       
       <div data-testid="chatctestid" className="div--chatcomputerroom">
         <img
@@ -180,6 +180,7 @@ const ChatComputer: React.FC = () => {
           <h2 key={val.title} className="links--computer">
 
             <span
+              data-testid="btnchatcomp"
               onClick={() => handleSetUserRoom(val.link)} 
               className="span--linktoroom"
             >

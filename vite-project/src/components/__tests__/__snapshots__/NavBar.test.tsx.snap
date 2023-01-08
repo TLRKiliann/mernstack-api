@@ -1,0 +1,83 @@
+// Vitest Snapshot v1
+
+exports[`NavBar toMatchSnapshot 1`] = `
+<div
+  className="div--headernav"
+  data-testid="testId"
+>
+  <nav
+    className="navbar--nav"
+  >
+    <div
+      className="div--imgnavbar"
+    >
+      <img
+        alt="no img navbar"
+        className="img--koala"
+        height="70px"
+        src="/src/assets/logo/koala_tree.png"
+        width="65px"
+      />
+    </div>
+    <ul
+      className="ul--navbar"
+    >
+      <li>
+        <a
+          className="link--tagnav"
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          className="link--tagnav"
+          href="/profile"
+          onClick={[Function]}
+        >
+          Profile
+        </a>
+      </li>
+      <li>
+        <a
+          className="link--tagnav"
+          href="/online"
+          onClick={[Function]}
+        >
+          Online
+        </a>
+      </li>
+    </ul>
+    <div
+      className="div--userloginnavbar"
+    >
+      <div
+        className="div--userplace"
+      >
+        <span
+          className="span--usrnavbar"
+        >
+          ↦
+        </span>
+      </div>
+      <div
+        className="div--login"
+      >
+        <span
+          className="span--navbarlogin"
+        >
+          <a
+            className="link--logout"
+            href="/login"
+            onClick={[Function]}
+          >
+            Logout
+          </a>
+        </span>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

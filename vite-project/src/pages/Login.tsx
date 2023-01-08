@@ -165,9 +165,8 @@ const Login: React.FC = () => {
             Enter
           </button>
 
-          <p className="p--loginframe">
+          <p data-testid="linktestlogin" className="p--loginframe">
             <Link
-              data-testid="linktestlogin"
               to="/subscribe"
               className="link--subscribe"
             >

@@ -105,7 +105,7 @@ const ComputerRoom: React.FC = () => {
 
       <h1 className="title--room">Room {Object.values(params)}</h1>
       
-      <div data-testid="testdiv" className="div--terminaluser">
+      <div className="div--terminaluser">
         <div className="section--terminal">
           <div className="div--worldbg">
             <img
@@ -118,6 +118,7 @@ const ComputerRoom: React.FC = () => {
           </div>
 
           <TerminalComponent roomStyle={roomStyle} />
+
         </div>
 
         <section className="user--online">

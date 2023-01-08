@@ -61,12 +61,12 @@ const messages = {
   getLatest, // can also be a `getter or setter if supported`
 }
 
-describe('reading messages', () => {
+describe('App reading messages', () => {
   afterEach(() => {
     vi.restoreAllMocks()
   })
 
-  it('should get the latest message with a spy', () => {
+  it('App should get the latest message with a spy', () => {
     const spy = vi.spyOn(messages, 'getLatest')
     expect(spy.getMockName()).toEqual('getLatest')
 
@@ -82,7 +82,7 @@ describe('reading messages', () => {
     expect(spy).toHaveBeenCalledTimes(2)
   })
 
-  it('should get with a mock', () => {
+  it('App should get with a mock', () => {
     const mock = vi.fn().mockImplementation(getLatest)
 
     expect(mock()).toEqual(messages.items[messages.items.length - 1])

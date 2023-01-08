@@ -41,6 +41,10 @@ const PrivateMessage: React.FC = () => {
     return maxId + 1
   }
 
+  const changeMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPrivateMsg(event.target.value)
+  }
+
   const handleUserMessage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const privateRoom = "Private"
@@ -123,9 +127,10 @@ const PrivateMessage: React.FC = () => {
 
         <div className="inputbtn--privateterminal">
           <input
+            data-testid="inputTest"
             type="text"
             value={privateMsg}
-            onChange={(e) => setPrivateMsg(e.target.value)}
+            onChange={(e) => changeMessage(e)}
             placeholder="Enter your message here !"
           />
           <button
