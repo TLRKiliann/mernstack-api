@@ -25,13 +25,14 @@ const NavBar: React.FC = () => {
             width="65px"
             height="70px"
             className="img--koala"
-            alt='no img navbar'
+            alt='no-img-navbar'
           />
         </div>
 
         <ul className="ul--navbar">
           <li>
             <Link
+              data-testid="firstLink"
               className="link--tagnav"
               to='/'
             >

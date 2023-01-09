@@ -1,62 +1,68 @@
 // Vitest Snapshot v1
 
-exports[`MatchSnapShot test Subscribe 1`] = `
+exports[`MatchSnapShot test Login Login 1`] = `
 <div
-  className="subscribe"
-  data-testid="subtest"
+  className="bg--loginimg"
+  data-testid="logintest"
 >
-  <form
-    autoComplete="off"
-    className="form--subscribe"
-    data-testid="formsub"
-    onSubmit={[Function]}
+  <div
+    className="zoom--img"
   >
-    <div
-      className="div--subscribe"
+    <img
+      alt="/src/assets/background/circle.jpg"
+      className="img--login"
+      height="100%"
+      src="/src/assets/background/circle.jpg"
+      width="100%"
+    />
+  </div>
+  <div
+    className="div--submit"
+  >
+    <form
+      className="submit"
+      data-testid="formlog"
+      onSubmit={[Function]}
+      placeholder="lastname"
     >
       <h1
-        className="title--framesub"
+        className="title--framelogin"
       >
-        Subscribe
+        Login
       </h1>
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
+      <div
+        className="form-group"
       >
-        Firstname
+        <div
+          className="error--message"
+        >
+          Not connected!
+        </div>
+      </div>
+      <label
+        className="lbl--login"
+        htmlFor="username"
+      >
+        Username
       </label>
       <input
-        className="input--sub"
-        name="firstName"
+        autoComplete="off"
+        className="input--login"
+        name="username"
         onChange={[Function]}
-        placeholder="firstname"
+        placeholder="username"
         required={true}
         type="text"
         value=""
       />
       <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Lastname
-      </label>
-      <input
-        className="input--sub"
-        name="lastName"
-        onChange={[Function]}
-        placeholder="lastname"
-        required={true}
-        type="text"
-        value=""
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
+        className="lbl--login"
+        htmlFor="password"
       >
         Password
       </label>
       <input
-        className="input--sub"
+        className="input--login"
         name="password"
         onChange={[Function]}
         placeholder="password"
@@ -64,242 +70,25 @@ exports[`MatchSnapShot test Subscribe 1`] = `
         type="password"
         value=""
       />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
+      <button
+        className="btn--submitlogin"
+        type="submit"
       >
-        Age
-      </label>
-      <input
-        className="input--sub"
-        max="120"
-        min="20"
-        name="age"
-        onChange={[Function]}
-        placeholder="age"
-        required={true}
-        type="number"
-        value={20}
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
+        Enter
+      </button>
+      <p
+        className="p--loginframe"
       >
-        Email
-      </label>
-      <input
-        className="input--sub"
-        name="email"
-        onChange={[Function]}
-        placeholder="email"
-        required={true}
-        type="email"
-        value=""
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Location
-      </label>
-      <input
-        className="input--sub"
-        name="location"
-        onChange={[Function]}
-        placeholder="location"
-        required={true}
-        type="text"
-        value=""
-      />
-      <div
-        className="div--subselect"
-      >
-        <label
-          className="lbl--sub"
-          htmlFor="gender"
+        <a
+          className="link--subscribe"
+          data-testid="linktosub"
+          href="/subscribe"
+          onClick={[Function]}
         >
-          Gender :
-        </label>
-        <select
-          className="select--sub"
-          id="gender"
-          name="gender"
-          onChange={[Function]}
-          value="Male"
-        >
-          <option
-            name="gender"
-            value="Male"
-          >
-            Male
-          </option>
-          <option
-            name="gender"
-            value="Female"
-          >
-            Female
-          </option>
-        </select>
-      </div>
-    </div>
-    <button
-      className="btn--sub"
-      type="submit"
-    >
-      Sign Up
-    </button>
-  </form>
-</div>
-`;
-
-exports[`MatchSnapShot test Subscribe Login 1`] = `
-<div
-  className="subscribe"
-  data-testid="subtest"
->
-  <form
-    autoComplete="off"
-    className="form--subscribe"
-    data-testid="formsub"
-    onSubmit={[Function]}
-  >
-    <div
-      className="div--subscribe"
-    >
-      <h1
-        className="title--framesub"
-      >
-        Subscribe
-      </h1>
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Firstname
-      </label>
-      <input
-        className="input--sub"
-        name="firstName"
-        onChange={[Function]}
-        placeholder="firstname"
-        required={true}
-        type="text"
-        value=""
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Lastname
-      </label>
-      <input
-        className="input--sub"
-        name="lastName"
-        onChange={[Function]}
-        placeholder="lastname"
-        required={true}
-        type="text"
-        value=""
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Password
-      </label>
-      <input
-        className="input--sub"
-        name="password"
-        onChange={[Function]}
-        placeholder="password"
-        required={true}
-        type="password"
-        value=""
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Age
-      </label>
-      <input
-        className="input--sub"
-        max="120"
-        min="20"
-        name="age"
-        onChange={[Function]}
-        placeholder="age"
-        required={true}
-        type="number"
-        value={20}
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Email
-      </label>
-      <input
-        className="input--sub"
-        name="email"
-        onChange={[Function]}
-        placeholder="email"
-        required={true}
-        type="email"
-        value=""
-      />
-      <label
-        className="lbl--sub"
-        htmlFor="sub"
-      >
-        Location
-      </label>
-      <input
-        className="input--sub"
-        name="location"
-        onChange={[Function]}
-        placeholder="location"
-        required={true}
-        type="text"
-        value=""
-      />
-      <div
-        className="div--subselect"
-      >
-        <label
-          className="lbl--sub"
-          htmlFor="gender"
-        >
-          Gender :
-        </label>
-        <select
-          className="select--sub"
-          id="gender"
-          name="gender"
-          onChange={[Function]}
-          value="Male"
-        >
-          <option
-            name="gender"
-            value="Male"
-          >
-            Male
-          </option>
-          <option
-            name="gender"
-            value="Female"
-          >
-            Female
-          </option>
-        </select>
-      </div>
-    </div>
-    <button
-      className="btn--sub"
-      type="submit"
-    >
-      Sign Up
-    </button>
-  </form>
+          Subscribe
+        </a>
+      </p>
+    </form>
+  </div>
 </div>
 `;

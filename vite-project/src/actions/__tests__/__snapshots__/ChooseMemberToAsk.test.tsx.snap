@@ -25,6 +25,7 @@ exports[`ChooseMember MatchSnapShot 1`] = `
     </p>
     <span
       className="askprivate--service"
+      data-testid="ask"
       onClick={[Function]}
       title="Invite to private chat"
     >
@@ -35,6 +36,7 @@ exports[`ChooseMember MatchSnapShot 1`] = `
     >
       <button
         className="btn--lastspanonline"
+        data-testid="add"
         onClick={[Function]}
         title="Add as Your Friend"
       >

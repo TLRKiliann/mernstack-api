@@ -1,24 +1,47 @@
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { useNavigate, MemoryRouter } from 'react-router-dom'
 import { test, expect, vi, beforeEach } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { create } from 'react-test-renderer'
 import Subscribe from "../Subscribe"
+import Login from "../Subscribe"
 import handleInputChange from '../Subscribe'
 import validateFormSub from '../Subscribe'
 import handleValidateSub from '../Subscribe'
 import generateId from '../Subscribe'
 
+beforeEach(async (context) => {
+  context.foo = 'bar'
+})
+
+test('should work', ({ foo }) => {
+  console.log(foo) // 'bar'
+})
+
+test("Login hook testing", () => {
+  const mockedNavigate = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useNavigate: () => ({mockedNavigate: "/"})
+  }))
+})
+
 test("Subscribe toMatchSnapshot", () => {
   const treeSub = create(
-    <MemoryRouter>
-      <Subscribe />
-    </MemoryRouter>
+    <Subscribe />
   )
   expect(treeSub).toMatchSnapshot()
 })
 
+test("Subscribe toMatchSnapshot", () => {
+  const treeSub = create(
+    <Subscribe>
+      <Login />
+    </Subscribe>
+  )
+  expect(treeSub).toMatchSnapshot()
+})
 
 test('Subscribe handleInputChange to be defined', () => {
   const funcInputChange = handleInputChange
@@ -46,7 +69,8 @@ test("Subscribe submit form test", () => {
     <form
       onSubmit={onSubmit} 
       data-testid="formsub">
-    </form>)
+    </form>
+  )
   fireEvent.submit(getByTestId("formsub"))
   expect(onSubmit).toHaveBeenCalledTimes(1)
 })
@@ -59,24 +83,3 @@ test('Subscribe handleValidateSub return id', () => {
   handleValidateSub()
   expect(handleValidateSub).toHaveReturned("hello")
 })
-
-/*
-//useNavigate
-useNavigate: () => ({
-  navigate: vi.fn().mockImplementation(() => ({}))
-})
-
-vi.mock('react-router-dom', () => ({
-  ...vi.importActual('react-router-dom'),
-  useNavigate: () => mockedNavigate
-}))
-
-beforeEach(async (context) => {
-  // extend context
-  context.foo = 'bar'
-})
-
-test('should work', ({ foo }) => {
-  console.log(foo) // 'bar'
-})
-*/

@@ -13,7 +13,6 @@ type Form = {
 interface AskMessageBoxProps {
   catchById: UserType
   form: Form
-  option: Field
   options: Field[]
   handleInviteChoice: (e: React.ChangeEvent<HTMLInputElement>) => void
   handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
@@ -24,7 +23,7 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
   //console.log(props.catchById, 'props.users')
   return (
     <div
-      data-testid="asktestid" 
+      data-testid="testAskBox"
       className="boolean--result"
     >
       <form
@@ -47,14 +46,16 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
         <label className="lbl--choicechat">
           Would you like&nbsp;
           <select 
-            name="invite" 
+            data-testid="select"
             id="invite"
+            name="invite" 
             value={props.form}
             onChange={(e) => props.handleInviteChoice(e)}
             className="select--invite"
           >
           {props.options.map((option) => (
             <option
+              data-testid="select-option"
               key={option.value}
               name="invite"
               value={option.value}
@@ -68,6 +69,7 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
         </label> 
         
         <button
+          data-testid="btnInvite"
           type="button"
           onClick={(e) => props.handleInvitation(e)}
           className="btn--invitation"
@@ -76,6 +78,7 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
         </button>
 
         <button
+          data-testid="btnClose"
           onClick={props.handleClose}
           className="btn--close"
         >

@@ -272,7 +272,7 @@ const Subscribe: React.FC = () => {
           type="submit"
           className="btn--sub"
         >
-          Sign Up
+          Signup
         </button>
 
       </form>

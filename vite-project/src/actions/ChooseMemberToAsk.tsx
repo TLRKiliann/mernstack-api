@@ -39,6 +39,7 @@ const ChooseMemberToAsk: React.FC = (props: ChooseMemberToAskProps) => {
           }
           </p>
           <span
+            data-testid="ask"
             onClick={() => props.handleAskUserPrivate(props.user?.id)}
             className="askprivate--service"
             title="Invite to private chat"
@@ -48,6 +49,7 @@ const ChooseMemberToAsk: React.FC = (props: ChooseMemberToAskProps) => {
 
           <span key={props.user?.id} className="lastspan--online">
             <button
+              data-testid="add"
               onClick={() => props.addUserById(props.user?.id)}
               className="btn--lastspanonline"
               title="Add as Your Friend"

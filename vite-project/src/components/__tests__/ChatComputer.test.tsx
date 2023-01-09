@@ -1,19 +1,21 @@
 import React from "react"
-import {MemoryRouter} from 'react-router-dom'
+import {useNavigate, useParams, MemoryRouter} from 'react-router-dom'
 import { useAuthLogin } from '../../context/AuthProvider'
 import { screen, render, getByTestId } from '@testing-library/react'
 import { test, expect, vi, beforeEach, describe } from 'vitest'
 import '@testing-library/jest-dom'
 import { create } from 'react-test-renderer'
 import ChatComputer from "../ChatComputer"
+import ComputerRoom from "../ChatComputer"
 import handleSetUserRoom from "../ChatComputer"
 import handleNavigation from "../ChatComputer"
 
-test("ChatComputer context testing", () => {
+test("Login context testing", () => {
   beforeEach(async (context) => {
+    // extend context
     context.foo = 'bar'
   })
-  test('Profile state', ({ foo }) => {
+  test('Login state', ({ foo }) => {
     console.log(foo) // 'bar'
   })
 })
@@ -22,6 +24,15 @@ test('MatchSnapShot test from ChatComputer', () => {
   const treeChatComp = create(
     <MemoryRouter>
       <ChatComputer />
+    </MemoryRouter>
+  )
+  expect(treeChatComp.toJSON()).toMatchSnapshot()
+})
+
+test('MatchSnapShot test from ChatComputer', () => {
+  const treeChatComp = create(
+    <MemoryRouter>
+      <ComputerRoom />
     </MemoryRouter>
   )
   expect(treeChatComp.toJSON()).toMatchSnapshot()
@@ -61,7 +72,9 @@ describe('ChatComputer test of useState', () => {
   })
 })
 
+
 /*
+without memoryrouter!
 test('ChatComputer test of useEffect', () => {
   vi.spyOn(React, 'useEffect').mockImplementation((f) => f())
   render(

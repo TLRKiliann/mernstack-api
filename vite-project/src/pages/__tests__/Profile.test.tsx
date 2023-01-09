@@ -18,7 +18,7 @@ test("Profile toMatchSnapshot", () => {
   const treeProf = create(
     <Profile />
   )
-  expect(treeProf).toMatchSnapshot()
+  expect(treeProf.toJSON()).toMatchSnapshot()
 })
 */
 

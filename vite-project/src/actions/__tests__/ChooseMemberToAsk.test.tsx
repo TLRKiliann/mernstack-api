@@ -1,9 +1,9 @@
-import React from "react";
-import { screen, render } from '@testing-library/react';
+import React from "react"
+import { screen, render, fireEvent } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
-import ChooseMemberToAsk from "../ChooseMemberToAsk.tsx";
+import ChooseMemberToAsk from "../ChooseMemberToAsk.tsx"
 
 test("ChooseMember MatchSnapShot", () => {
   const treeUsrChooseMemb = create(
@@ -13,7 +13,41 @@ test("ChooseMember MatchSnapShot", () => {
 })
 
 test('ChooseMemberToAsk by testid', () => {
-  render(<ChooseMemberToAsk />);
-  const mytestid = screen.getByTestId("chooseMemberId");
-  expect(mytestid).toBeInTheDocument();
+  render(<ChooseMemberToAsk />)
+  const mytestid = screen.getByTestId("chooseMemberId")
+  expect(mytestid).toBeInTheDocument()
+})
+
+const Span = ({onClick, children}) => (
+<span onClick={onClick} data-testid="ask">{children}</span>
+)
+test('calls onClick prop when clicked handleAskUserPrivate', () => {
+  const user = {id: 1}
+  const handleAskUserPrivate = vi.fn(user => user)
+  render(
+    <Span onClick={handleAskUserPrivate} data-testid="ask">
+      ✉
+    </Span>
+  )
+  fireEvent.click(screen.getByText<HTMLSpanElement>(/✉/))
+  expect(handleAskUserPrivate).toHaveBeenCalledTimes(1)
+  const valAsk = screen.getByText(/✉/)
+  expect(valAsk).toBeInTheDocument()
+})
+
+const Button = ({onClick, children}) => (
+<button onClick={onClick} data-testid="add">{children}</button>
+)
+test('calls onClick prop when clicked addUserById', () => {
+  const user = {id: 2}
+  const addUserById = vi.fn(user => user)
+  render(
+    <button onClick={addUserById} data-testid="add">
+      +
+    </button>
+  )
+  fireEvent.click(screen.getByText<HTMLButtonElement>("+"))
+  expect(addUserById).toHaveBeenCalledTimes(1)
+  const valAsk = screen.getByText("+")
+  expect(valAsk).toBeInTheDocument()
 })

@@ -9,11 +9,13 @@ import Home from './App'
 import Subscribe from './App'
 import AppLayout from './App'
 import Profile from './App'
+import Online from './App'
 import Login from './App'
 import ChatComputer from './App'
 import ComputerRoom from './App'
 import PrivateMessage from './App'
 import PageNotFound from './App'
+import NavBar from './App'
 //import userEvent from '@testing-library/user-event'
 //import { act } from 'react-dom/test-utils'
 
@@ -95,4 +97,21 @@ test('MatchSnapShot test Login', () => {
       <Login />
     </MemoryRouter>)
   expect(treeLogin.toJSON()).toMatchSnapshot()
+})
+
+test('MatchSnapShot test Online', () => {
+  const treeSub = create(
+    <MemoryRouter>
+      <Online />
+    </MemoryRouter>
+  )
+  expect(treeSub.toJSON()).toMatchSnapshot()
+})
+
+test('MatchSnapShot test App', () => {
+  const treeApp = create(
+    <MemoryRouter>
+      <NavBar />
+    </MemoryRouter>)
+  expect(treeApp.toJSON()).toMatchSnapshot()
 })

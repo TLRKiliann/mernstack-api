@@ -88,3 +88,10 @@ test('ComputerRoom MatchSnapShot test AskMessageBox', () => {
   )
   expect(treeConfirm.toJSON()).toMatchSnapshot()
 })
+
+test("test func handleClose", () => {
+  const beverage = {switchAsk: true}
+  const handleClose = vi.fn(beverage => beverage)
+  handleClose()
+  expect(handleClose).toHaveReturned(true)
+})

@@ -125,17 +125,17 @@ const ComputerRoom: React.FC = () => {
           <div className="div--userolinetitle">
             <h3 className="userolinetitle">Online Users</h3>
           </div>
-            {refreshUsers?.map((refreshUser) => (
-              <HandleAskUserOrigin
-                key={refreshUser?.id}
-                id={refreshUser?.id}
-                refreshUser={refreshUser}
-                roomStyle={roomStyle}
-                users={users}
-                setCatchById={setCatchById}
-                setSwitchAsk={setSwitchAsk}
-              />
-            ))}
+          {refreshUsers?.map((refreshUser) => (
+            <HandleAskUserOrigin
+              key={refreshUser?.id}
+              id={refreshUser?.id}
+              refreshUser={refreshUser}
+              roomStyle={roomStyle}
+              users={users}
+              setCatchById={setCatchById}
+              setSwitchAsk={setSwitchAsk}
+            />
+          ))}
         </section>
       </div>
       

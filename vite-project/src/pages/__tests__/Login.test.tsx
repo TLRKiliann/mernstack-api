@@ -1,22 +1,23 @@
-import React from "react";
-import { fireEvent, screen, render } from '@testing-library/react';
-import { create } from 'react-test-renderer';
+import React from "react"
+import { fireEvent, screen, render, getByText } from '@testing-library/react'
+import { userEvent } from '@testing-library/user-event'
+import { create } from 'react-test-renderer'
 import { expect, vi, test } from 'vitest'
-import { Link, MemoryRouter, useNavigate } from 'react-router-dom'
-import Login from "../Login.tsx";
+import { Router, Link, MemoryRouter, useNavigate } from 'react-router-dom'
+
+import Login from "../Login"
 import handleInputChange from '../Login'
+import handleSubmit from '../Login'
+import validateForm from '../Login'
 import generateId from '../Login'
-import Home from '../Home'
 import Subscribe from "../Subscribe"
-import { PropsWithChildren } from 'react'
 
-//import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
-//import {fireEvent, render, screen} from '@testing-library/react';
-//import "@testing-library/jest-dom/extend-expect"
-//import "@testing-library/jest-dom";
-//import { act } from 'react-dom/test-utils';
+//import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest'
+import "@testing-library/jest-dom/extend-expect"
+import "@testing-library/jest-dom"
+//import { act } from 'react-dom/test-utils'
 
-test("Login context testing", () => {
+/*test("Login context testing", () => {
   beforeEach(async (context) => {
     // extend context
     context.foo = 'bar'
@@ -30,20 +31,29 @@ test("Login hook testing", () => {
   const mockedNavigate = vi.fn()
   vi.mock('react-router-dom', () => ({
     ...vi.importActual('react-router-dom') as any,
-    useNavigate: () => ({mockedNavigate: "room"})
+    useNavigate: () => ({mockedNavigate: "/"})
   }))
+})
 
+test("Login hook testing", () => {
   const mockedAuth = vi.fn()
   vi.mock('react-router-dom', () => ({
     ...vi.importActual('react-router-dom') as any,
     useAuthLogin: () => ({mockedAuth})
   }))
 })
+*/
 
-test('MatchSnapShot test Subscribe Login', () => {
-  const tree = create(<Subscribe />)
+
+test('MatchSnapShot test Login Login', () => {
+  const tree = create(
+    <MemoryRouter>
+      <Login />
+    </MemoryRouter>
+  )
   expect(tree.toJSON()).toMatchSnapshot()
 })
+
 
 test('Login handleInputChange to be defined', () => {
   const funcDelete = handleInputChange
@@ -51,15 +61,15 @@ test('Login handleInputChange to be defined', () => {
 })
 
 test("Login submit form test", () => {
-  const onSubmit = vi.fn();
+  const onSubmit = vi.fn()
   const { getByTestId } = render(
     <form
       onSubmit={onSubmit} 
       data-testid="formlog">
     </form>
   )
-  fireEvent.submit(getByTestId("formlog"));
-  expect(onSubmit).toHaveBeenCalledTimes(1);
+  fireEvent.submit(getByTestId("formlog"))
+  expect(onSubmit).toHaveBeenCalledTimes(1)
 })
 
 test('Login generateId to be defined', () => {
@@ -67,25 +77,44 @@ test('Login generateId to be defined', () => {
   expect(funcGenIdLog).toBeDefined()
 })
 
+test('Login handleSubmit to be defined', () => {
+  const funcSubmit = handleSubmit
+  expect(funcSubmit).toBeDefined()
+})
+
+test('Login validateForm to be defined', () => {
+  const funcSubmit = validateForm
+  expect(funcSubmit).toBeDefined()
+})
+
 test('Login handleInputChange return id', () => {
-  const beverage = {
-    id: 1,
-    img: "http://localhost:5173/src/assets/snapface/oliver.jpg",
-    firstName: "tree",
-    lastName: "leaf",
-    age: 23,
-    email: "mail@gtruc.com",
-    location: "Valley",
-    gender: "male",
-    mainroom: "Cyber-Security",
-    room: "Scapy",
-    isConnected: false,
-    signalRecieve: false,
-    sentMsg: "hello",
-    messagebox: "msg cool",
-    returnConfirm: false
-  }
+  const beverage = { age: 23 }
   const handleInputChange = vi.fn(beverage => {beverage})
-  handleInputChange()
+  handleInputChange(beverage)
   expect(handleInputChange).toHaveReturned(23)
 })
+
+// include as many test cases as you want here
+const link = { text: 'Subscribe', location: "/subscribe" }
+test("Check if Nav Bar have %s link.", (link) => {
+  render(
+    <MemoryRouter>
+      <Login />
+    </MemoryRouter>
+  )
+  const logoDom = screen.getByTestId("linktosub") 
+  expect(logoDom).toHaveAttribute("href", link.location) 
+  expect(screen.getByText(/Subscribe/i)).toBeInTheDocument() 
+})
+
+/*
+test('clicking the link toggles an answer on/off', () => {
+  render(
+    <Login />
+  )
+  const link = screen.getByText('Subscribe')
+  fireEvent.click(link)
+  // Here you'd want to test if `<FiMinusCircle />` is rendered.
+  expect(link).toBeInTheDocument()
+})
+*/

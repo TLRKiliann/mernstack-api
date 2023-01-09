@@ -3,14 +3,14 @@ import { Link } from "react-router-dom"
 import { UserType } from '../models/usertype'
 import './UsersOnline.scss'
 
-interface UserOnlineProps {
+interface UsersOnlineProps {
   id: number | null
   refreshUser: UserType
   roomStyle: object
   handleAskUserPrivate: (id: number) => void
 }
 
-const UserOnline: React.FC = (props: UserOnlineProps) => {
+const UsersOnline: React.FC = (props: UsersOnlineProps) => {
   //console.log("props", props)
   return (
     props.refreshUser?.room === props?.roomStyle && (
@@ -19,7 +19,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
         key={props.refreshUser?.id}
         className="all--usersbanner"
       >   
-        <div className="username--useronline">
+        <div className="username--usersonline">
           <img
             src={props.refreshUser?.img}
             width="100%"
@@ -28,7 +28,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
             alt={props.refreshUser?.img}
           /> 
 
-          <span className="useronline--username">
+          <span className="usersonline--username">
             {props.refreshUser?.firstName}
           </span>
 
@@ -37,14 +37,14 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
         <p className="para--spanchat"> 
           {props.refreshUser?.isConnected ? (
             <span
-              className="span--useronline connector--icon"
+              className="span--usersonline connector--icon"
               style={{color: 'lightgreen'}}
             >
               ✔
             </span>
             ) : (
             <span 
-              className="span--useronline connector--icon"
+              className="span--usersonline connector--icon"
             >
               ❌
             </span>
@@ -52,9 +52,10 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
           }
 
           <span
+            data-testid="spantestidusers"
             id={props.refreshUser?.id}
             onClick={() => props.handleAskUserPrivate(props.refreshUser?.id)}
-            className="span--useronline styleusr--span"
+            className="span--usersonline styleusr--span"
             style={{color: 'sandybrown', fontSize: '22px'}}
           >
             ✉
@@ -66,4 +67,4 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
   )
 }
 
-export default UserOnline
+export default UsersOnline

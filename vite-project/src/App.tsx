@@ -19,15 +19,15 @@ const AppLayout = () => (
   </>
 );
 
-const App:React.FC = () => {
+const App: React.FC = () => {
   return(
     <div>
       <Routes>
         <Route element={<AppLayout />} />
-        <Route exact path='/login' element={<Login />} />
-        <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/' element={<Home />} />
-        <Route exact path='/profile' element={
+        <Route exact path='/subscribe' element={<Subscribe />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route path='/profile' element={
           <PrivateRoute>
             <Profile />
           </PrivateRoute>

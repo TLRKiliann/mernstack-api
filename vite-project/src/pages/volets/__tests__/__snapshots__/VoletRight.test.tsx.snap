@@ -1,0 +1,61 @@
+// Vitest Snapshot v1
+
+exports[`VoletR test ChatComputer 1`] = `
+<div>
+  <div
+    className="volet--R2"
+  >
+    <div
+      className="subvolet--R2"
+    >
+      <button
+        className="btn--voletr"
+      >
+        X
+      </button>
+      <p>
+        Chat Computing
+      </p>
+      <img
+        alt="no img volet-R 2"
+        height="140px"
+        src="/src/assets/background/motherboard.png"
+        width="240px"
+      />
+      <section
+        className="section--voletr"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`VoletRight MatchSnapShot test VoletRight 1`] = `
+<div>
+  <div
+    className="volet--R2"
+  >
+    <div
+      className="subvolet--R2"
+    >
+      <button
+        className="btn--voletr"
+      >
+        X
+      </button>
+      <p>
+        Chat Computing
+      </p>
+      <img
+        alt="no img volet-R 2"
+        height="140px"
+        src="/src/assets/background/motherboard.png"
+        width="240px"
+      />
+      <section
+        className="section--voletr"
+      />
+    </div>
+  </div>
+</div>
+`;
