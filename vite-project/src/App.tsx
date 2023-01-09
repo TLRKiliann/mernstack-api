@@ -13,17 +13,18 @@ import PrivateMessage from './components/privatechat/PrivateMessage'
 import PageNotFound from './pages/PageNotFound'
 import './App.scss'
 
+/*
 const AppLayout = () => (
-  <>
+  <div>
     <NavBar />
-  </>
-);
-
+  </div>
+);*/
+//<Route element={<AppLayout />} />
 const App: React.FC = () => {
   return(
     <div>
+      <NavBar />
       <Routes>
-        <Route element={<AppLayout />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/subscribe' element={<Subscribe />} />
         <Route exact path='/login' element={<Login />} />

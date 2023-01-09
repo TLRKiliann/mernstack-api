@@ -3,7 +3,7 @@ import { screen, render, fireEvent } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
-import ChooseMemberToAsk from "../ChooseMemberToAsk.tsx"
+import ChooseMemberToAsk from "../ChooseMemberToAsk"
 
 test("ChooseMember MatchSnapShot", () => {
   const treeUsrChooseMemb = create(

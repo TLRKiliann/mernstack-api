@@ -74,22 +74,26 @@ const NavBar: React.FC = () => {
 
             <div className="div--login">
             {switchLogin ? (
-              <p className="p--navbarlogin"><Link
-                to="/login"
-                className="link--logintag"
-              >
-                Login
-              </Link></p>
+              <p className="p--navbarlogin">
+                <Link
+                  to="/login"
+                  className="link--logintag"
+                >
+                  Login
+                </Link>
+              </p>
 
               ) : (
               
-              <span className="span--navbarlogin"><Link
-                to="/login"
-                onClick={handleChange}
-                className="link--logout"
-              >
-                Logout
-              </Link></span>
+              <span className="span--navbarlogin">
+                <Link
+                  to="/login"
+                  onClick={handleChange}
+                  className="link--logout"
+                >
+                  Logout
+                </Link>
+              </span>
             )}
           </div>
         </div>

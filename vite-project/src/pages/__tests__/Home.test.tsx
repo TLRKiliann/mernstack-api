@@ -1,39 +1,69 @@
 import React from "react"
 import {assert, afterEach, describe, expect, test, it, vi} from 'vitest'
-//import {fireEvent, render, screen} from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { create } from 'react-test-renderer'
-import VoletLeft from '../volets/VoletLeft'
-import VoletRight from '../volets/VoletRight'
-import MainTitle from '../../components/MainTitle'
-import MainComp from '../../components/MainComp'
-import Footer from '../../components/Footer'
+import VoletLeft from '../Home'
+import VoletRight from '../Home'
+import MainTitle from '../Home'
+import MainComp from '../Home'
+import Footer from '../Home'
+import NavBar from '../Home'
 //import "@testing-library/jest-dom/extend-expect"
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 //assertType, expectTypeOf
 
 test('MatchSnapShot test VoletLeft', () => {
-  const treeVL = create(<VoletLeft />)
+  const treeVL = create(
+    <MemoryRouter>
+      <VoletLeft />
+    </MemoryRouter>
+  )
   expect(treeVL.toJSON()).toMatchSnapshot();
 })
 
 test('MatchSnapShot test VoletRight', () => {
-  const treeVR = create(<VoletRight />)
+  const treeVR = create(
+    <MemoryRouter>
+      <VoletRight />
+    </MemoryRouter>
+    )
   expect(treeVR.toJSON()).toMatchSnapshot();
 })
 
+test('MatchSnapShot test NavBar', () => {
+  const treeNavBar = create(
+    <MemoryRouter>
+      <NavBar />
+    </MemoryRouter>
+  )
+  expect(treeNavBar.toJSON()).toMatchSnapshot()
+})
+
 test('MatchSnapShot test MainTitle', () => {
-  const treeMainTitle = create(<MainTitle />)
+  const treeMainTitle = create(
+    <MemoryRouter>
+      <MainTitle />
+    </MemoryRouter>
+  )
   expect(treeMainTitle.toJSON()).toMatchSnapshot()
 })
 
 test('MatchSnapShot test MainComp', () => {
-  const treeMainComp = create(<MainComp />)
+  const treeMainComp = create(
+    <MemoryRouter>
+      <MainComp />
+    </MemoryRouter>
+  )
   expect(treeMainComp.toJSON()).toMatchSnapshot()
 })
 
 test('MatchSnapShot test Footer 1', () => {
-  const tree2 = create(<Footer />)
+  const tree2 = create(
+    <MemoryRouter>
+      <Footer />
+    </MemoryRouter>
+    )
   expect(tree2.toJSON()).toMatchSnapshot();
 })
 

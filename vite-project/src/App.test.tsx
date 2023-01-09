@@ -108,10 +108,11 @@ test('MatchSnapShot test Online', () => {
   expect(treeSub.toJSON()).toMatchSnapshot()
 })
 
-test('MatchSnapShot test App', () => {
+test('MatchSnapShot test NavBar', () => {
   const treeApp = create(
     <MemoryRouter>
       <NavBar />
-    </MemoryRouter>)
+    </MemoryRouter>
+  )
   expect(treeApp.toJSON()).toMatchSnapshot()
 })

@@ -10,42 +10,23 @@ import handleInputChange from '../Login'
 import handleSubmit from '../Login'
 import validateForm from '../Login'
 import generateId from '../Login'
-import Subscribe from "../Subscribe"
+import Subscribe from "../Login"
 
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest'
 import "@testing-library/jest-dom/extend-expect"
 import "@testing-library/jest-dom"
 //import { act } from 'react-dom/test-utils'
 
-/*test("Login context testing", () => {
-  beforeEach(async (context) => {
-    // extend context
-    context.foo = 'bar'
-  })
-  test('Login state', ({ foo }) => {
-    console.log(foo) // 'bar'
-  })
+test('MatchSnapShot test Subscribe', () => {
+  const tree = create(
+    <MemoryRouter>
+      <Subscribe />
+    </MemoryRouter>
+  )
+  expect(tree.toJSON()).toMatchSnapshot()
 })
 
-test("Login hook testing", () => {
-  const mockedNavigate = vi.fn()
-  vi.mock('react-router-dom', () => ({
-    ...vi.importActual('react-router-dom') as any,
-    useNavigate: () => ({mockedNavigate: "/"})
-  }))
-})
-
-test("Login hook testing", () => {
-  const mockedAuth = vi.fn()
-  vi.mock('react-router-dom', () => ({
-    ...vi.importActual('react-router-dom') as any,
-    useAuthLogin: () => ({mockedAuth})
-  }))
-})
-*/
-
-
-test('MatchSnapShot test Login Login', () => {
+test('MatchSnapShot test Login', () => {
   const tree = create(
     <MemoryRouter>
       <Login />
@@ -116,5 +97,32 @@ test('clicking the link toggles an answer on/off', () => {
   fireEvent.click(link)
   // Here you'd want to test if `<FiMinusCircle />` is rendered.
   expect(link).toBeInTheDocument()
+})
+
+//without memoryrouter react-router-dom
+test("Login context testing", () => {
+  beforeEach(async (context) => {
+    // extend context
+    context.foo = 'bar'
+  })
+  test('Login state', ({ foo }) => {
+    console.log(foo) // 'bar'
+  })
+})
+
+test("Login hook testing", () => {
+  const mockedNavigate = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useNavigate: () => ({mockedNavigate: "/"})
+  }))
+})
+
+test("Login hook testing", () => {
+  const mockedAuth = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useAuthLogin: () => ({mockedAuth})
+  }))
 })
 */
