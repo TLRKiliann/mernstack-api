@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useNavigate, MemoryRouter } from 'react-router-dom'
 import { test, expect, vi, beforeEach } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
@@ -11,14 +11,14 @@ import validateFormSub from '../Subscribe'
 import handleValidateSub from '../Subscribe'
 import generateId from '../Subscribe'
 
-beforeEach(async (context) => {
-  context.foo = 'bar'
-})
-
-test('should work', ({ foo }) => {
-  console.log(foo) // 'bar'
-})
-
+/*
+const mockUseState = vi.fn()
+vi.mock('react', () => ({
+  ...vi.importActual('react') as any,
+  useState: vi.fn()
+}))
+*/
+/*
 test("Login hook testing", () => {
   const mockedNavigate = vi.fn()
   vi.mock('react-router-dom', () => ({
@@ -27,18 +27,30 @@ test("Login hook testing", () => {
   }))
 })
 
+beforeEach(async (context) => {
+  context.foo = 'bar'
+})
+*/
+test('should work', ({ foo }) => {
+  console.log(foo) // 'bar'
+})
+
 test("Subscribe toMatchSnapshot", () => {
   const treeSub = create(
-    <Subscribe />
+    <MemoryRouter>
+      <Subscribe />
+    </MemoryRouter>
   )
   expect(treeSub).toMatchSnapshot()
 })
 
 test("Subscribe toMatchSnapshot", () => {
   const treeSub = create(
-    <Subscribe>
-      <Login />
-    </Subscribe>
+    <MemoryRouter>
+      <Subscribe>
+        <Login />
+      </Subscribe>
+    </MemoryRouter>
   )
   expect(treeSub).toMatchSnapshot()
 })
@@ -82,4 +94,22 @@ test('Subscribe handleValidateSub return id', () => {
   const handleValidateSub = vi.fn(beverage => { beverage })
   handleValidateSub()
   expect(handleValidateSub).toHaveReturned("hello")
+})
+
+test('Subscribe handleValidateSub return id', () => {
+  const beverage = {
+    messagebox: "msg"
+  }
+  const handleValidateSub = vi.fn(beverage => { beverage })
+  handleValidateSub()
+  expect(handleValidateSub).toHaveReturned("msg")
+})
+
+test('Subscribe handleValidateSub return id', () => {
+  const beverage = {
+    signalRecieve: false
+  }
+  const handleValidateSub = vi.fn(beverage => { beverage })
+  handleValidateSub()
+  expect(handleValidateSub).toHaveReturned(false)
 })

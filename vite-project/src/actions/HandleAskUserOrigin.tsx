@@ -3,7 +3,6 @@ import { UserType } from '../models/usertype'
 import UsersOnline from '../components/terminalchat/UsersOnline'
 
 //Press mail icon to ask for invitation
-
 interface HandleAskUserProps {
   roomStyle: string
   refreshUser: UserType
@@ -13,6 +12,7 @@ interface HandleAskUserProps {
 }
 
 const HandleAskUserOrigin: React.FC = (props: HandleAskUserProps) => {
+  
   const handleAskUserPrivate = (id: number) => {
     const catchUser = props.users?.find((user) => user.id === id)
     props.setCatchById(catchUser)

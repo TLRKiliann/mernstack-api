@@ -210,7 +210,7 @@ const Online: React.FC = () => {
         <section key={computer.id} className="section--saloon">
           <h3 className="titlebyroom">{computer.title}</h3>
 
-          {Object.values(users)?.map(user =>
+          {Object.values(users)?.map((user) =>
             <ChooseMemberToAsk
               key={user.id}
               user={user}
@@ -224,10 +224,10 @@ const Online: React.FC = () => {
       </div>
 
       {displayConfirmInvite &&
-        refreshUsers?.map((refUser) => refUser.firstName === username ? (
+        refreshUsers?.map((refUser) => refUser?.firstName === username ? (
           <ConfirmationOrigin
-            key={refUser.id}
-            id={refUser.id}
+            key={refUser?.id}
+            id={refUser?.id}
             username={username}
             roomStyle={roomStyle}
             setRoomStyle={setRoomStyle}

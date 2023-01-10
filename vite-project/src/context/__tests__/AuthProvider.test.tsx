@@ -7,11 +7,11 @@ import AuthProvider from '../AuthProvider'
 
 test("AuthProvider test", () => {
   vi.mock('react', () => {
-    const ActualReact = jest.requireActual('react')
+    const ActualReact = vi.importActual('react')
     return {
-      ...ActualReact,
+      ...vi.importActual.React,
       useContext: () => ({
-        username: {firstName: "Al"},
+        username: "Al",
         switchLogin: false,
         versusUser: {lastName: "Doug"},
         otherUser: {id: 1}

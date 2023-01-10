@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`ComputerRoom MatchSnapShot test AskMessageBox 1`] = `
+exports[`2 MatchSnapShot test ComputerRoom 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -19,6 +19,7 @@ exports[`ComputerRoom MatchSnapShot test AskMessageBox 1`] = `
     className="title--room"
   >
     Room 
+    /
   </h1>
   <div
     className="div--terminaluser"
@@ -98,7 +99,7 @@ exports[`ComputerRoom MatchSnapShot test AskMessageBox 1`] = `
 </div>
 `;
 
-exports[`ComputerRoom MatchSnapShot test AskMessageBoxOrigin 1`] = `
+exports[`3 ComputerRoom MatchSnapShot test ConfirmationOrigin 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -117,6 +118,7 @@ exports[`ComputerRoom MatchSnapShot test AskMessageBoxOrigin 1`] = `
     className="title--room"
   >
     Room 
+    /
   </h1>
   <div
     className="div--terminaluser"
@@ -196,7 +198,7 @@ exports[`ComputerRoom MatchSnapShot test AskMessageBoxOrigin 1`] = `
 </div>
 `;
 
-exports[`ComputerRoom MatchSnapShot test ConfirmationOrigin 1`] = `
+exports[`4 ComputerRoom MatchSnapShot test ConfirmationOrigin 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -215,6 +217,7 @@ exports[`ComputerRoom MatchSnapShot test ConfirmationOrigin 1`] = `
     className="title--room"
   >
     Room 
+    /
   </h1>
   <div
     className="div--terminaluser"
@@ -294,7 +297,7 @@ exports[`ComputerRoom MatchSnapShot test ConfirmationOrigin 1`] = `
 </div>
 `;
 
-exports[`ComputerRoom MatchSnapShot test DisplayInviteOrigin 1`] = `
+exports[`5 ComputerRoom MatchSnapShot test TerminalComponent 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -313,6 +316,7 @@ exports[`ComputerRoom MatchSnapShot test DisplayInviteOrigin 1`] = `
     className="title--room"
   >
     Room 
+    /
   </h1>
   <div
     className="div--terminaluser"
@@ -392,7 +396,7 @@ exports[`ComputerRoom MatchSnapShot test DisplayInviteOrigin 1`] = `
 </div>
 `;
 
-exports[`ComputerRoom MatchSnapShot test HandleAskUserOrigin 1`] = `
+exports[`6 ComputerRoom MatchSnapShot test HandleAskUserOrigin 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -411,6 +415,7 @@ exports[`ComputerRoom MatchSnapShot test HandleAskUserOrigin 1`] = `
     className="title--room"
   >
     Room 
+    /
   </h1>
   <div
     className="div--terminaluser"
@@ -490,7 +495,7 @@ exports[`ComputerRoom MatchSnapShot test HandleAskUserOrigin 1`] = `
 </div>
 `;
 
-exports[`ComputerRoom MatchSnapShot test TerminalComponent 1`] = `
+exports[`7 ComputerRoom MatchSnapShot test HandleAskUserOrigin 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -509,6 +514,7 @@ exports[`ComputerRoom MatchSnapShot test TerminalComponent 1`] = `
     className="title--room"
   >
     Room 
+    /
   </h1>
   <div
     className="div--terminaluser"
@@ -588,7 +594,7 @@ exports[`ComputerRoom MatchSnapShot test TerminalComponent 1`] = `
 </div>
 `;
 
-exports[`MatchSnapShot test ComputerRoom 1`] = `
+exports[`8 ComputerRoom MatchSnapShot test AskMessageBoxOrigin 1`] = `
 <div
   className="nextcomp--room"
   data-testid="computerroomtest"
@@ -607,6 +613,304 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
     className="title--room"
   >
     Room 
+    /
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`9 ComputerRoom MatchSnapShot test DisplayInviteOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+    /
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`10 ComputerRoom MatchSnapShot test DisplayInviteOrigin 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+    /
+  </h1>
+  <div
+    className="div--terminaluser"
+  >
+    <div
+      className="section--terminal"
+    >
+      <div
+        className="div--worldbg"
+      >
+        <img
+          alt="/src/assets/background/world_connected.png"
+          className="img--bgterminal"
+          height="100%"
+          src="/src/assets/background/world_connected.png"
+          width="100%"
+        />
+      </div>
+      <section
+        className="terminal"
+        data-testid="terminaltest"
+      >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
+        <div
+          className="div--terminal"
+        />
+        <div
+          className="subterminal"
+        >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
+          <input
+            className="input--message"
+            onChange={[Function]}
+            placeholder="Write something here..."
+            required={true}
+            type="text"
+            value=""
+          />
+          <button
+            className="btn--user"
+            onClick={[Function]}
+            type="button"
+          >
+            Enter
+          </button>
+        </div>
+      </section>
+    </div>
+    <section
+      className="user--online"
+    >
+      <div
+        className="div--userolinetitle"
+      >
+        <h3
+          className="userolinetitle"
+        >
+          Online Users
+        </h3>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`11 ComputerRoom MatchSnapShot test AskMessageBox 1`] = `
+<div
+  className="nextcomp--room"
+  data-testid="computerroomtest"
+>
+  <div
+    className="div--animationroomStyle"
+  >
+    <div
+      className="rotation--roomstyle"
+    >
+      <h1 />
+    </div>
+  </div>
+  <div />
+  <h1
+    className="title--room"
+  >
+    Room 
+    /
   </h1>
   <div
     className="div--terminaluser"

@@ -1,7 +1,7 @@
 import React from "react"
 import { fireEvent, screen, render, getByText } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
-import { create } from 'react-test-renderer'
+import { create, renderer } from 'react-test-renderer'
 import { expect, vi, test } from 'vitest'
 import { Router, Link, MemoryRouter, useNavigate } from 'react-router-dom'
 
@@ -27,14 +27,24 @@ test('MatchSnapShot test Subscribe', () => {
 })
 
 test('MatchSnapShot test Login', () => {
-  const tree = create(
+  const treeSub = create(
     <MemoryRouter>
       <Login />
     </MemoryRouter>
   )
-  expect(tree.toJSON()).toMatchSnapshot()
+  expect(treeSub.toJSON()).toMatchSnapshot()
 })
 
+test('renders correctly', () => {
+  const treeLink = create(
+    <MemoryRouter>
+      <Link to="/subscribe">
+        Subscribe
+      </Link>
+    </MemoryRouter>
+  )
+  expect(treeLink.toJSON()).toMatchSnapshot()
+});
 
 test('Login handleInputChange to be defined', () => {
   const funcDelete = handleInputChange
@@ -75,7 +85,7 @@ test('Login handleInputChange return id', () => {
   expect(handleInputChange).toHaveReturned(23)
 })
 
-// include as many test cases as you want here
+//Test of link
 const link = { text: 'Subscribe', location: "/subscribe" }
 test("Check if Nav Bar have %s link.", (link) => {
   render(

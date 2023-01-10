@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { screen, render } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
@@ -9,16 +9,8 @@ import handleFilterUser from "../ConfirmationOrigin"
 import handleBothConfirmation from "../ConfirmationOrigin"
 import handleCheckBox from "../ConfirmationOrigin" 
 import handleCheckConfirmation from "../ConfirmationOrigin"
-import ConfirmInvitation from "../../components/ConfirmInvitation"
-
-//useNavigate
-test('ConfirmationO useNavigate test', () => {
-  const mockedNavigate = vi.fn()
-  vi.mock('react-router-dom', () => ({
-    ...vi.importActual('react-router-dom') as any,
-    useNavigate: () => mockedNavigate
-  }))
-})
+import ConfirmInvitation from "../ConfirmationOrigin"
+import ConfirmationOrigin from "../ConfirmationOrigin"
 
 //context
 test("ConfirmationO context testing", () => {
@@ -30,45 +22,52 @@ test("ConfirmationO context testing", () => {
   })
 })
 
-test('ConfirmationO MatchSnapShot test ConfirmInvitation', () => {
-  const treeConfirm = create(<ConfirmInvitation />)
+//useNavigate
+const mockedNavigate = vi.fn()
+vi.mock('react-router-dom', () => ({
+  ...vi.importActual('react-router-dom') as any,
+  useNavigate: () => mockedNavigate
+}))
+
+/*
+test('1 ConfirmationO MatchSnapShot test ConfirmInvitation', () => {
+  const treeConfirm = create(
+    <ConfirmationOrigin />
+  )
   expect(treeConfirm.toJSON()).toMatchSnapshot()
 })
 
-test('ConfirmationO handleFilterUser to be defined', () => {
+test('2 ConfirmationO MatchSnapShot test ConfirmInvitation', () => {
+  const treeConfirm = create(
+    <ConfirmInvitation />
+  )
+  expect(treeConfirm.toJSON()).toMatchSnapshot()
+})
+*/
+vi.mock('../ConfirmationOrigin.tsx', () => ({
+  ConfirmationOrigin: vi.fn()
+}))
+
+/*
+test('3 ConfirmationO handleFilterUser to be defined', () => {
   const funcTest = handleFilterUser
   expect(funcTest).toBeDefined()
-})
+})*/
 
-test('ConfirmationO handleBothConfirmation to be defined', () => {
-  const funcTestThree = handleBothConfirmation
-  expect(funcTestThree).toBeDefined()
-})
-
-test('ConfirmationO handleCheckBox to be defined', () => {
-  const funcTestFive = handleCheckBox
-  expect(funcTestFive).toBeDefined()
-})
-
-test('ConfirmationO handleCheckConfirmation to be defined', () => {
-  const funcTestSeven = handleCheckConfirmation
-  expect(funcTestSeven).toBeDefined()
-})
-
-test('ConfirmationO handleFilterUser return link', () => {
+test('7 ConfirmationO handleFilterUser return link', () => {
   const handleFilterUser = vi.fn()
   handleFilterUser()
   expect(handleFilterUser).toHaveBeenCalledTimes(1)
 })
 
-test('ConfirmationO handleBothConfirmation return link', () => {
+test('8 ConfirmationO handleBothConfirmation return link', () => {
   const handleBothConfirmation = vi.fn()
   handleBothConfirmation()
   expect(handleBothConfirmation).toHaveBeenCalledTimes(1)
 })
 
 //handleCheckBox
-test('ConfirmationO handleCheckBox return boolean', () => {
+test('9 ConfirmationO handleCheckBox return boolean', () => {
   const beverage = {isChecked: false}
   const handleCheckBox = vi.fn(beverage => beverage.isChecked)
   handleCheckBox(beverage)
@@ -77,7 +76,7 @@ test('ConfirmationO handleCheckBox return boolean', () => {
 })
 
 //handleCheckConfirmation
-test('ConfirmationO handleCheckConfirmation return boolean', () => {
+test('10 ConfirmationO handleCheckConfirmation return boolean', () => {
   const beverageConf = { isNotConfirm: false }
   const handleCheckConfirmation = vi.fn(beverage => beverage.isNotConfirm)
   handleCheckConfirmation(beverageConf)

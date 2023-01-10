@@ -52,10 +52,10 @@ const ComputerRoom: React.FC = () => {
       </div>
 
       {displayConfirmInvite &&
-        refreshUsers?.map((refUser) => refUser.firstName === username ? (
+        refreshUsers?.map((refUser) => refUser?.firstName === username ? (
           <ConfirmationOrigin
-            key={refUser.id}
-            id={refUser.id}
+            key={refUser?.id}
+            id={refUser?.id}
             username={username}
             roomStyle={roomStyle}
             setRoomStyle={setRoomStyle}
@@ -117,7 +117,8 @@ const ComputerRoom: React.FC = () => {
             />
           </div>
 
-          <TerminalComponent roomStyle={roomStyle} />
+          <TerminalComponent 
+            roomStyle={roomStyle} />
 
         </div>
 

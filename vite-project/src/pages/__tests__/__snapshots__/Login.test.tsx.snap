@@ -185,3 +185,12 @@ exports[`MatchSnapShot test Subscribe 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders correctly 1`] = `
+<a
+  href="/subscribe"
+  onClick={[Function]}
+>
+  Subscribe
+</a>
+`;

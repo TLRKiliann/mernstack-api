@@ -16,6 +16,7 @@ import ComputerRoom from './App'
 import PrivateMessage from './App'
 import PageNotFound from './App'
 import NavBar from './App'
+import ChooseMemberToAsk from './App'
 //import userEvent from '@testing-library/user-event'
 //import { act } from 'react-dom/test-utils'
 
@@ -106,6 +107,17 @@ test('MatchSnapShot test Online', () => {
     </MemoryRouter>
   )
   expect(treeSub.toJSON()).toMatchSnapshot()
+})
+
+test('MatchSnapShot test Online', () => {
+  const treeMemberToAsk = create(
+    <MemoryRouter>
+      <Online>
+        <ChooseMemberToAsk />
+      </Online>
+    </MemoryRouter>
+  )
+  expect(treeMemberToAsk.toJSON()).toMatchSnapshot()
 })
 
 test('MatchSnapShot test NavBar', () => {

@@ -161,6 +161,25 @@ exports[`Online MatchSnapShot test ConfirmationOrigin 1`] = `
   </div>
   <div
     className="divsection--saloon"
+  />
+  <div />
+</div>
+`;
+
+exports[`Online MatchSnapShot test DisplayInviteOrigin 1`] = `
+<div
+  className="saloon--byusers"
+  data-testid="divtestone"
+>
+  <div
+    className="title--services"
+  >
+    <h1>
+      Rooms
+    </h1>
+  </div>
+  <div
+    className="divsection--saloon"
   >
     <section
       className="section--saloon"

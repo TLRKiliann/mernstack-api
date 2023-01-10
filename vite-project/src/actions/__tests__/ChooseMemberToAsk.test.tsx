@@ -4,6 +4,7 @@ import { expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
 import ChooseMemberToAsk from "../ChooseMemberToAsk"
+import Online from '../../pages/Online'
 
 test("ChooseMember MatchSnapShot", () => {
   const treeUsrChooseMemb = create(
@@ -50,4 +51,12 @@ test('calls onClick prop when clicked addUserById', () => {
   expect(addUserById).toHaveBeenCalledTimes(1)
   const valAsk = screen.getByText("+")
   expect(valAsk).toBeInTheDocument()
+})
+
+//Parent component to test child component
+test("test child component", () => {
+  const { getByText } = render(
+    <Online />
+  )
+  expect(getByText(/Rooms/)).toBeInTheDocument()
 })
