@@ -186,6 +186,7 @@ const ChatComputer: React.FC = () => {
             >
               {val.link}
             </span>
+            
           </h2>
           ))
         }

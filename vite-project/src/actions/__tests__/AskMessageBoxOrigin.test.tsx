@@ -7,6 +7,7 @@ import AskMessageBoxOrigin from "../AskMessageBoxOrigin"
 import AskMessageBox from "../AskMessageBoxOrigin"
 import handleInvitation from "../AskMessageBoxOrigin"
 import handleInviteChoice from "../AskMessageBoxOrigin"
+import ComputerRoom from '../../components/ComputerRoom'
 
 test('MatchSnapShot test AskMessageBoxOrigin', () => {
   const treeAskMessageBoxOrigin = create(<AskMessageBoxOrigin />)
@@ -17,6 +18,12 @@ test('MatchSnapShot test AskMessageBox', () => {
   const treeAskMessageBox = create(<AskMessageBox />)
   expect(treeAskMessageBox.toJSON()).toMatchSnapshot()
 }) 
+
+test('AskMessageBoxmy test present', () => {
+  render(<AskMessageBox data-testid="testAskBox" />)
+  const testAskBoxById = screen.getByTestId("testAskBox")
+  expect(testAskBoxById).toBeInTheDocument()
+})
 
 test('AskMessageBoxOrigin handleInviteChoice return link', () => {
   const handleInviteChoice = vi.fn()
@@ -30,8 +37,11 @@ test('AskMessageBoxOrigin handleInvitation return link', () => {
   expect(handleInvitation).toHaveBeenCalledTimes(1)
 })
 
-test('AskMessageBoxmy test present', () => {
-  render(<AskMessageBox data-testid="testAskBox" />)
-  const testAskBoxById = screen.getByTestId("testAskBox")
-  expect(testAskBoxById).toBeInTheDocument()
+//Parent component to test child component
+test("test child component", () => {
+  const { getByTestId } = render(
+    <ComputerRoom />
+  )
+  expect(getByTestId("computerroomtest")).toBeInTheDocument()
 })
+

@@ -6,7 +6,7 @@ exports[`UsersOnline MatchSnapShot 1`] = `
   data-testid="onlinetest"
 >
   <div
-    className="username--usersonline"
+    className="username--useronline"
   >
     <img
       className="smile--img"
@@ -14,19 +14,19 @@ exports[`UsersOnline MatchSnapShot 1`] = `
       width="100%"
     />
     <span
-      className="usersonline--username"
+      className="useronline--username"
     />
   </div>
   <p
     className="para--spanchat"
   >
     <span
-      className="span--usersonline connector--icon"
+      className="span--useronline connector--icon"
     >
       ❌
     </span>
     <span
-      className="span--usersonline styleusr--span"
+      className="span--useronline styleusr--span"
       data-testid="spantestidusers"
       onClick={[Function]}
       style={

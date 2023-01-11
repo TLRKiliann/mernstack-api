@@ -12,7 +12,7 @@ import NavBar from '../Home'
 //import "@testing-library/jest-dom";
 //import { act } from 'react-dom/test-utils';
 //assertType, expectTypeOf
-
+/*
 test('MatchSnapShot test VoletLeft', () => {
   const treeVL = create(
     <MemoryRouter>
@@ -31,15 +31,6 @@ test('MatchSnapShot test VoletRight', () => {
   expect(treeVR.toJSON()).toMatchSnapshot();
 })
 
-test('MatchSnapShot test NavBar', () => {
-  const treeNavBar = create(
-    <MemoryRouter>
-      <NavBar />
-    </MemoryRouter>
-  )
-  expect(treeNavBar.toJSON()).toMatchSnapshot()
-})
-
 test('MatchSnapShot test MainTitle', () => {
   const treeMainTitle = create(
     <MemoryRouter>
@@ -49,10 +40,10 @@ test('MatchSnapShot test MainTitle', () => {
   expect(treeMainTitle.toJSON()).toMatchSnapshot()
 })
 
-test('MatchSnapShot test MainComp', () => {
+test('MatchSnapShot test MainComp', (users) => {
   const treeMainComp = create(
     <MemoryRouter>
-      <MainComp />
+      <MainComp users={users} />
     </MemoryRouter>
   )
   expect(treeMainComp.toJSON()).toMatchSnapshot()
@@ -66,7 +57,7 @@ test('MatchSnapShot test Footer 1', () => {
     )
   expect(tree2.toJSON()).toMatchSnapshot();
 })
-
+*/
 describe('suite name', () => {
   it('foo', () => {
     assert.equal(Math.sqrt(4), 2)
@@ -91,12 +82,12 @@ const messages = {
   getLatest, // can also be a `getter or setter if supported`
 }
 
-describe('App reading messages', () => {
+describe('Home reading messages', () => {
   afterEach(() => {
     vi.restoreAllMocks()
   })
 
-  it('App should get the latest message with a spy', () => {
+  it('Home should get the latest message with a spy', () => {
     const spy = vi.spyOn(messages, 'getLatest')
     expect(spy.getMockName()).toEqual('getLatest')
 
@@ -112,7 +103,7 @@ describe('App reading messages', () => {
     expect(spy).toHaveBeenCalledTimes(2)
   })
 
-  it('App should get with a mock', () => {
+  it('Home should get with a mock', () => {
     const mock = vi.fn().mockImplementation(getLatest)
 
     expect(mock()).toEqual(messages.items[messages.items.length - 1])

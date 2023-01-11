@@ -21,7 +21,6 @@ type Form = {
 const Login: React.FC = () => {
 
   const Navigate = useNavigate()
-  
   const LOGIN_URL = '/login'
   
   const [form, setForm] = useState<Form>({
@@ -45,7 +44,6 @@ const Login: React.FC = () => {
 
     setForm({ ...form, ...newField})
   }
-  //console.log(form.username, "-- form --")
 
   const validateForm = () => {
     let newForm: Form = form

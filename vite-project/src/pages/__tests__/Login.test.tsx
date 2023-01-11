@@ -4,18 +4,18 @@ import { userEvent } from '@testing-library/user-event'
 import { create, renderer } from 'react-test-renderer'
 import { expect, vi, test } from 'vitest'
 import { Router, Link, MemoryRouter, useNavigate } from 'react-router-dom'
-
+import { act } from 'react-dom/test-utils'
 import Login from "../Login"
 import handleInputChange from '../Login'
 import handleSubmit from '../Login'
 import validateForm from '../Login'
 import generateId from '../Login'
 import Subscribe from "../Login"
-
 //import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest'
 import "@testing-library/jest-dom/extend-expect"
 import "@testing-library/jest-dom"
 //import { act } from 'react-dom/test-utils'
+
 
 test('MatchSnapShot test Subscribe', () => {
   const tree = create(
@@ -44,7 +44,7 @@ test('renders correctly', () => {
     </MemoryRouter>
   )
   expect(treeLink.toJSON()).toMatchSnapshot()
-});
+})
 
 test('Login handleInputChange to be defined', () => {
   const funcDelete = handleInputChange
@@ -98,17 +98,9 @@ test("Check if Nav Bar have %s link.", (link) => {
   expect(screen.getByText(/Subscribe/i)).toBeInTheDocument() 
 })
 
-/*
-test('clicking the link toggles an answer on/off', () => {
-  render(
-    <Login />
-  )
-  const link = screen.getByText('Subscribe')
-  fireEvent.click(link)
-  // Here you'd want to test if `<FiMinusCircle />` is rendered.
-  expect(link).toBeInTheDocument()
-})
 
+
+/*
 //without memoryrouter react-router-dom
 test("Login context testing", () => {
   beforeEach(async (context) => {

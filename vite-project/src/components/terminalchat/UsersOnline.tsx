@@ -19,7 +19,7 @@ const UsersOnline: React.FC = (props: UsersOnlineProps) => {
         key={props.refreshUser?.id}
         className="all--usersbanner"
       >   
-        <div className="username--usersonline">
+        <div className="username--useronline">
           <img
             src={props.refreshUser?.img}
             width="100%"
@@ -28,7 +28,7 @@ const UsersOnline: React.FC = (props: UsersOnlineProps) => {
             alt={props.refreshUser?.img}
           /> 
 
-          <span className="usersonline--username">
+          <span className="useronline--username">
             {props.refreshUser?.firstName}
           </span>
 
@@ -37,14 +37,15 @@ const UsersOnline: React.FC = (props: UsersOnlineProps) => {
         <p className="para--spanchat"> 
           {props.refreshUser?.isConnected ? (
             <span
-              className="span--usersonline connector--icon"
+              data-testid="spanuserOnline"
+              className="span--useronline connector--icon"
               style={{color: 'lightgreen'}}
             >
               ✔
             </span>
             ) : (
             <span 
-              className="span--usersonline connector--icon"
+              className="span--useronline connector--icon"
             >
               ❌
             </span>
@@ -55,7 +56,7 @@ const UsersOnline: React.FC = (props: UsersOnlineProps) => {
             data-testid="spantestidusers"
             id={props.refreshUser?.id}
             onClick={() => props.handleAskUserPrivate(props.refreshUser?.id)}
-            className="span--usersonline styleusr--span"
+            className="span--useronline styleusr--span"
             style={{color: 'sandybrown', fontSize: '22px'}}
           >
             ✉

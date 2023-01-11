@@ -13,46 +13,6 @@ import handleRefresh from '../Profile'
 //import "@testing-library/jest-dom"
 //import { act } from 'react-dom/test-utils'
 
-/*
-test("Profile toMatchSnapshot", () => {
-  const treeProf = create(
-    <Profile />
-  )
-  expect(treeProf.toJSON()).toMatchSnapshot()
-})
-*/
-
-test('Profile testing context', () => {
-  beforeEach(async (context) => {
-    context.foo = 'bar'
-  })
-
-  test('Profile state', ({ foo }) => {
-    console.log(foo) // 'bar'
-  })
-})
-
-//useAuthLogin
-useAuthLogin: () => ({
-  username: vi.fn().mockImplementation(() => ({}))
-})
-
-vi.mock('react-router-dom', () => ({
-  ...vi.importActual('react-router-dom'),
-  useAuthLogin: () => mockedAuthLogin
-}))
-
-test('Profile testing context', () => {
-  beforeEach(async (context) => {
-    // extend context
-    context.foo = 'bar'
-  })
-
-  test('Profile state', ({ foo }) => {
-    console.log(foo) // 'bar'
-  })
-})
-
 test('Profile handleRefresh to be defined', () => {
   const funcRefresh = handleRefresh
   expect(funcRefresh).toBeDefined()

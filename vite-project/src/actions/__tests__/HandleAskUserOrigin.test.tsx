@@ -13,7 +13,7 @@ vi.mock('../HandleAskUserOrigin.tsx', () => ({
 }))
 */
 
-test("1 test fn HandleAskUserPrivate", () => {
+test("1 test fn HandleAskUserPrivate", (props) => {
   const beverage = { id: 1 }
   const handleAskUserPrivate = vi.fn(beverage => beverage.id)
   handleAskUserPrivate(beverage)

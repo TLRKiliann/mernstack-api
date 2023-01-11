@@ -4,31 +4,17 @@ import { screen, render, fireEvent } from '@testing-library/react'
 import { test, expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
-import UsersOnline from "../UsersOnline.tsx"
-import HandleAskUserOrigin from '../../../actions/HandleAskUserOrigin'
-
+import UsersOnline from "../UsersOnline"
+import HandleAskUserOrigin from "../../../actions/HandleAskUserOrigin"
+//import ComputerRoom from '../../../components/ComputerRoom'
+//Parent component to test child component
 /*
-const mockUsersOnline = vi.fn()
-vi.mock("../UsersOnline.tsx", () => (props) => {
-mockUsersOnline(props)
-return <mock-UsersOnline />
-})
-test("open & data to pass to parent", () => {
-  render(
-    <HandleAskUserOrigin
-      data={some.data}
-    />
-  )
-  expect(mockUsersOnline).toHaveBeenCalledWith(
-    expect.objectContaining({
-      data: "some.data"
-    
-    })
-  )
+test("vi test UsersOnline", () => {
+  vi.mock('../UsersOnline.tsx', () => ({
+    UsersOnline: vi.fn()
+  }))
 })
 */
-
-//Parent component to test child component
 test("test child component", () => {
   const { getByText } = render(
     <HandleAskUserOrigin />
@@ -46,9 +32,8 @@ test('UsersOnlinemy getByTestId', () => {
 
 test("UsersOnline MatchSnapShot", (props) => {
   const treeUsrOnline = create(
-    <MemoryRouter>
-      <UsersOnline props={props} />
-    </MemoryRouter>
+    
+    <UsersOnline props={props} />
   )
   expect(treeUsrOnline.toJSON()).toMatchSnapshot()
 })
@@ -73,3 +58,42 @@ test('calls onClick prop when clicked handleAsk', () => {
   expect(handleAskUserPrivate).toHaveBeenCalledTimes(2)
   expect(valUsers).toBeInTheDocument()
 })
+
+//handleCheckBox
+test('9 ConfirmationO handleCheckBox return boolean', () => {
+  //const beverage = {isConnected: true}
+  render(
+    <span
+      data-testid="spanuserOnline"
+      className="span--useronline connector--icon"
+      style={{color: 'lightgreen'}}
+    >
+      ✔
+    </span>
+  )
+  const valToTest = screen.getByText(/✔/)
+  const valId = screen.getByTestId("spanuserOnline")
+  expect(valToTest).toBeInTheDocument()
+  expect(valId).toBeInTheDocument()
+})
+
+/*
+const mockUsersOnline = vi.fn()
+vi.mock("../UsersOnline.tsx", () => (props) => {
+mockUsersOnline(props)
+return <mock-UsersOnline />
+})
+test("open & data to pass to parent", () => {
+  render(
+    <HandleAskUserOrigin
+      data={some.data}
+    />
+  )
+  expect(mockUsersOnline).toHaveBeenCalledWith(
+    expect.objectContaining({
+      data: "some.data"
+    
+    })
+  )
+})
+*/

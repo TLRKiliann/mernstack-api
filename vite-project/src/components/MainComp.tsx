@@ -7,10 +7,11 @@ interface MainCompProps {
 }
 
 const MainComp: React.FC = (props: MainCompProps) => {
-  console.log(props.users, 'users')
-  console.log(typeof(props.users), 'type users')
+  //console.log(props.users, 'users')
+  //console.log(typeof(props.users), 'type users')
   return(
-    <div className="master--maincomp">
+    <div
+      className="master--maincomp">
           
       <div className="bg--colormaincomp">
 
@@ -26,28 +27,29 @@ const MainComp: React.FC = (props: MainCompProps) => {
           <span
             style={{color:'pink'}}
           >
-            {props.users?.reduce((prev, curr) =>
-            prev + curr.isConnected, 0)}
+            {props.users?.reduce((acc, curr) =>
+            acc + curr.isConnected, 0)}
           </span>
         </h3>
 
         <div>
           {props.users?.slice(0, `${props.users?.length}`).map(user => (
-            <div key={user.id}>
-              {user.isConnected ? (
+            <div key={user?.id}>
+              
+              {user?.isConnected ? (
                 <div className="membershome__div">
                   <div className="membershome__divimg">
                     <img
-                      src={user.img}
+                      src={user?.img}
                       width="95px"
                       height="60px"
                       className="membershome__img"
-                      alt={user.img}
+                      alt={user?.img}
                     />
                   </div>
 
                   <div className="membershome__names">
-                    {user.firstName} {user.lastName}
+                    {user?.firstName} {user?.lastName}
                   </div>
                   <div className="membershome__connection">
                     Connected
@@ -55,6 +57,7 @@ const MainComp: React.FC = (props: MainCompProps) => {
                 </div>
                 ) : null
               }
+              
             </div>
             ))
           }
@@ -63,5 +66,4 @@ const MainComp: React.FC = (props: MainCompProps) => {
     </div>
   )
 }
-
 export default MainComp

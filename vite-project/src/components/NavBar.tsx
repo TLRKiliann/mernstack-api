@@ -41,6 +41,7 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link
+              data-testid="secondlink"
               className="link--tagnav"
               to='/profile'
             >
@@ -49,6 +50,7 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link
+              data-testid="thirdlink"
               className="link--tagnav"
               to='/online'
             >
