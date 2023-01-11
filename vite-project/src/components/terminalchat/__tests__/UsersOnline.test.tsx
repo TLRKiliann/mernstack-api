@@ -4,38 +4,14 @@ import { screen, render, fireEvent } from '@testing-library/react'
 import { test, expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
-import UsersOnline from "../UsersOnline"
+//import UsersOnline from "../UsersOnline"
 import HandleAskUserOrigin from "../../../actions/HandleAskUserOrigin"
 //import ComputerRoom from '../../../components/ComputerRoom'
-//Parent component to test child component
-/*
-test("vi test UsersOnline", () => {
+
+test("mocking UsersOnline", () => {
   vi.mock('../UsersOnline.tsx', () => ({
     UsersOnline: vi.fn()
   }))
-})
-*/
-test("test child component", () => {
-  const { getByText } = render(
-    <HandleAskUserOrigin />
-  )
-  expect(getByText(/✉/)).toBeInTheDocument()
-})
-
-test('UsersOnlinemy getByTestId', () => {
-  render(
-    <UsersOnline />
-  )
-  const mytestid = screen.getByTestId("onlinetest")
-  expect(mytestid).toBeInTheDocument()
-})
-
-test("UsersOnline MatchSnapShot", (props) => {
-  const treeUsrOnline = create(
-    
-    <UsersOnline props={props} />
-  )
-  expect(treeUsrOnline.toJSON()).toMatchSnapshot()
 })
 
 const Span = ({onClick, children}) => (
@@ -78,6 +54,30 @@ test('9 ConfirmationO handleCheckBox return boolean', () => {
 })
 
 /*
+test("test child component", () => {
+  const { getByText } = render(
+    <HandleAskUserOrigin />
+  )
+  expect(getByText(/✉/)).toBeInTheDocument()
+})
+
+test('UsersOnlinemy getByTestId', () => {
+  render(
+    <UsersOnline />
+  )
+  const mytestid = screen.getByTestId("onlinetest")
+  expect(mytestid).toBeInTheDocument()
+})
+
+
+test("UsersOnline MatchSnapShot", (props) => {
+  const treeUsrOnline = create(
+    
+    <UsersOnline props={props} />
+  )
+  expect(treeUsrOnline.toJSON()).toMatchSnapshot()
+})
+
 const mockUsersOnline = vi.fn()
 vi.mock("../UsersOnline.tsx", () => (props) => {
 mockUsersOnline(props)

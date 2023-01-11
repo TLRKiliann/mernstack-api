@@ -21,10 +21,10 @@ test("1 test fn HandleAskUserPrivate", (props) => {
   expect(handleAskUserPrivate).toHaveReturnedWith(1)
 })
 
-test('2 MatchSnapShot test HandleAskUserOrigin', () => {
+test('2 MatchSnapShot test HandleAskUserOrigin', (props) => {
   const treeHandleAskUserOrigin = create(
     <MemoryRouter>
-      <HandleAskUserOrigin />
+      <HandleAskUserOrigin props={props} />
     </MemoryRouter>
   )
   expect(treeHandleAskUserOrigin.toJSON()).toMatchSnapshot()

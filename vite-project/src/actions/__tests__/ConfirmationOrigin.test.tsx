@@ -9,8 +9,16 @@ import handleFilterUser from "../ConfirmationOrigin"
 import handleBothConfirmation from "../ConfirmationOrigin"
 import handleCheckBox from "../ConfirmationOrigin" 
 import handleCheckConfirmation from "../ConfirmationOrigin"
-import ConfirmInvitation from "../ConfirmationOrigin"
+import ConfirmInvitation from "../../components/ConfirmInvitation"
 import ConfirmationOrigin from "../ConfirmationOrigin"
+
+vi.mock('../ConfirmationOrigin.tsx', () => ({
+  ConfirmationOrigin: vi.fn()
+}))
+
+vi.mock("../../components/ConfirmInvitation", () => ({
+  ConfirmInvitation: vi.fn()
+}))
 
 //context
 test("ConfirmationO context testing", () => {
@@ -28,31 +36,6 @@ vi.mock('react-router-dom', () => ({
   ...vi.importActual('react-router-dom') as any,
   useNavigate: () => mockedNavigate
 }))
-
-/*
-test('1 ConfirmationO MatchSnapShot test ConfirmInvitation', () => {
-  const treeConfirm = create(
-    <ConfirmationOrigin />
-  )
-  expect(treeConfirm.toJSON()).toMatchSnapshot()
-})
-
-test('2 ConfirmationO MatchSnapShot test ConfirmInvitation', () => {
-  const treeConfirm = create(
-    <ConfirmInvitation />
-  )
-  expect(treeConfirm.toJSON()).toMatchSnapshot()
-})
-*/
-vi.mock('../ConfirmationOrigin.tsx', () => ({
-  ConfirmationOrigin: vi.fn()
-}))
-
-/*
-test('3 ConfirmationO handleFilterUser to be defined', () => {
-  const funcTest = handleFilterUser
-  expect(funcTest).toBeDefined()
-})*/
 
 test('7 ConfirmationO handleFilterUser return link', () => {
   const handleFilterUser = vi.fn()

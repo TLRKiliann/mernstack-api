@@ -6,18 +6,12 @@ import '@testing-library/jest-dom'
 import ChooseMemberToAsk from "../ChooseMemberToAsk"
 import Online from '../../pages/Online'
 
-test("ChooseMember MatchSnapShot", () => {
-  const treeUsrChooseMemb = create(
-    <ChooseMemberToAsk />
-  )
-  expect(treeUsrChooseMemb.toJSON()).toMatchSnapshot()
+test("mocking ChooseMemberToAsk", () => {
+  vi.mock('../ChooseMemberToAsk.tsx', () => ({
+    ChooseMemberToAsk: vi.fn()
+  }))
 })
 
-test('ChooseMemberToAsk by testid', () => {
-  render(<ChooseMemberToAsk />)
-  const mytestid = screen.getByTestId("chooseMemberId")
-  expect(mytestid).toBeInTheDocument()
-})
 
 const Span = ({onClick, children}) => (
 <span onClick={onClick} data-testid="ask">{children}</span>

@@ -9,8 +9,28 @@ import handleClose from "../AskMessageBox"
 //import handleInviteChoice from "../AskMessageBox"
 import handleInvitation from "../AskMessageBox"
 
+test("mocking AskMessageBox", () => {
+  vi.mock('../AskMessageBox.tsx', () => ({
+    AskMessageBox: vi.fn()
+  }))
+})
 
 const FirstButton = ({onClick, children}) => (
+<button onClick={onClick} data-testid="selectid">{children}</button>
+)
+test('calls onClick prop when clicked Invite', () => {
+  const handleInviteChoice = vi.fn()
+  render(
+    <button onClick={handleInviteChoice} data-testid="selectid">
+      Invite
+    </button>
+  )
+  fireEvent.click(screen.getByTestId("selectid"))
+  expect(handleInviteChoice).toHaveBeenCalledTimes(1)
+})
+
+
+const SecondButton = ({onClick, children}) => (
 <button onClick={onClick} data-testid="btnInvite">{children}</button>
 )
 test('calls onClick prop when clicked Invite', () => {

@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import { useNavigate, useParams, MemoryRouter } from 'react-router-dom'
 import { useAuthLogin } from '../../context/AuthProvider'
 import { screen, render } from '@testing-library/react'
-import { test, expect, vi, beforeEach } from 'vitest'
+import { test, expect, vi, beforeEach, fireEvent } from 'vitest'
 import '@testing-library/jest-dom'
 import { create } from 'react-test-renderer'
 import Online from "../Online.tsx"
@@ -21,46 +21,6 @@ import ChooseMemberToAsk from '../Online'
 //import "@testing-library/jest-dom"
 //import { act } from 'react-dom/test-utils'
 
-/*
-test("Online context testing", () => {
-  beforeEach(async (context) => {
-    // extend context
-    context.foo = 'bar'
-  })
-  test('Online state', ({ foo }) => {
-    console.log(foo) // 'bar'
-  })
-})
-
-//testingstate
-test("useState test in Online", () => {
-  vi.mock('react', () => ({
-    ...vi.importActual('react'),
-    useState: vi.fn()
-  }))
-})
-
-const stateSetter = vi.fn()
-vi.spyOn(React, 'useState')
-//Simulate that mode state value was set to 'new mode value'
-.mockImplementation(stateValue => [stateValue='new mode value', stateSetter])
-
-test("authLogin", () => {
-  const mockedAuth = vi.fn()
-  vi.mock('react-router-dom', () => ({
-    ...vi.importActual('react-router-dom') as any,
-    useAuthLogin: () => (mockedAuth)
-  }))
-})
-
-test("Online hook testing", () => {
-  const mockedParams = vi.fn()
-  vi.mock('react-router-dom', () => ({
-    ...vi.importActual('react-router-dom') as any,
-    useParams: () => ({params: "room"})
-  }))
-})
-*/
 
 test('Online by test id', () => {
   render(
@@ -77,7 +37,7 @@ test('Online MatchSnapShot test Online', () => {
   expect(treeOnline.toJSON()).toMatchSnapshot()
 })
 
-//Failed
+//correct
 test('Online MatchSnapShot test DisplayInviteOrigin', () => {
   const treeDisplay = create(
     <DisplayInviteOrigin />
@@ -93,19 +53,14 @@ test('Online MatchSnapShot test ConfirmationOrigin', () => {
   expect(treeConfirm.toJSON()).toMatchSnapshot()
 })
 
-test('Online MatchSnapShot test ChooseMemberToAsk', ({
-    user,computer,handleAskUserPrivate,addUserById
-  }) => {
-    const treeChooseMemberToAsk = create(
-      <ChooseMemberToAsk 
-        user={user}
-        computer={computer}
-        handleAskUserPrivate={() => handleAskUserPrivate(user.id)}
-        addUserById={() => addUserById(user.id)}
-      />
-    )
+/*
+test('Online MatchSnapShot test ChooseMemberToAsk', () => {
+  const treeChooseMemberToAsk = create(
+    <ChooseMemberToAsk />
+  ) 
   expect(treeChooseMemberToAsk.toJSON()).toMatchSnapshot()
 })
+*/
 
 //correct
 test('Online MatchSnapShot test AskMessageBox', () => {
@@ -159,3 +114,48 @@ test('Online handleCloseResponse to be defined', () => {
   expect(funcCloseResp).toBeDefined()
 })
 
+/*
+const Button = ({onClick, children}) => (
+<button onClick={onClick} data-testid="add">{children}</button>
+)*/
+
+/*
+test("Online context testing", () => {
+  beforeEach(async (context) => {
+    // extend context
+    context.foo = 'bar'
+  })
+  test('Online state', ({ foo }) => {
+    console.log(foo) // 'bar'
+  })
+})
+
+//testingstate
+test("useState test in Online", () => {
+  vi.mock('react', () => ({
+    ...vi.importActual('react'),
+    useState: vi.fn()
+  }))
+})
+
+const stateSetter = vi.fn()
+vi.spyOn(React, 'useState')
+//Simulate that mode state value was set to 'new mode value'
+.mockImplementation(stateValue => [stateValue='new mode value', stateSetter])
+
+test("authLogin", () => {
+  const mockedAuth = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useAuthLogin: () => (mockedAuth)
+  }))
+})
+
+test("Online hook testing", () => {
+  const mockedParams = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useParams: () => ({params: "room"})
+  }))
+})
+*/

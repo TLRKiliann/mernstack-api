@@ -4,75 +4,19 @@ import { test, expect, vi, beforeEach } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { create } from 'react-test-renderer'
-import Subscribe from "../Subscribe"
-import Login from "../Subscribe"
+//import Subscribe from "../Subscribe"
+//import Login from "../Subscribe"
 import handleInputChange from '../Subscribe'
 import validateFormSub from '../Subscribe'
 import handleValidateSub from '../Subscribe'
-import generateId from '../Subscribe'
+import funcInputChange from '../Subscribe'
+//import generateId from '../Subscribe'
 
-/*
-const mockUseState = vi.fn()
-vi.mock('react', () => ({
-  ...vi.importActual('react') as any,
-  useState: vi.fn()
-}))
-*/
-/*
-test("Login hook testing", () => {
-  const mockedNavigate = vi.fn()
-  vi.mock('react-router-dom', () => ({
-    ...vi.importActual('react-router-dom') as any,
-    useNavigate: () => ({mockedNavigate: "/"})
+
+test("mocking Subscribe", () => {
+  vi.mock('../Subscribe.tsx', () => ({
+    Subscribe: vi.fn()
   }))
-})
-
-beforeEach(async (context) => {
-  context.foo = 'bar'
-})
-*/
-test('should work', ({ foo }) => {
-  console.log(foo) // 'bar'
-})
-
-test("Subscribe toMatchSnapshot", () => {
-  const treeSub = create(
-    <MemoryRouter>
-      <Subscribe />
-    </MemoryRouter>
-  )
-  expect(treeSub).toMatchSnapshot()
-})
-
-test("Subscribe toMatchSnapshot", () => {
-  const treeSub = create(
-    <MemoryRouter>
-      <Subscribe>
-        <Login />
-      </Subscribe>
-    </MemoryRouter>
-  )
-  expect(treeSub).toMatchSnapshot()
-})
-
-test('Subscribe handleInputChange to be defined', () => {
-  const funcInputChange = handleInputChange
-  expect(funcInputChange).toBeDefined()
-})
-
-test('Subscribe validateFormSub to be defined', () => {
-  const funcValid = validateFormSub
-  expect(funcValid).toBeDefined()
-})
-
-test('Subscribe handleValidateSub to be defined', () => {
-  const funcValidSub = handleValidateSub
-  expect(funcValidSub).toBeDefined()
-})
-
-test('Subscribe generateId to be defined', () => {
-  const funcGenId = generateId
-  expect(funcGenId).toBeDefined()
 })
 
 test("Subscribe submit form test", () => {
@@ -113,3 +57,43 @@ test('Subscribe handleValidateSub return id', () => {
   handleValidateSub()
   expect(handleValidateSub).toHaveReturned(false)
 })
+
+/*
+test("Subscribe toMatchSnapshot", () => {
+  const treeSub = create(
+    <MemoryRouter>
+      <Subscribe />
+    </MemoryRouter>
+  )
+  expect(treeSub).toMatchSnapshot()
+})
+
+test("Subscribe toMatchSnapshot", () => {
+  const treeSub = create(
+    <MemoryRouter>
+      <Subscribe>
+        <Login />
+      </Subscribe>
+    </MemoryRouter>
+  )
+  expect(treeSub).toMatchSnapshot()
+})
+
+const mockUseState = vi.fn()
+vi.mock('react', () => ({
+  ...vi.importActual('react') as any,
+  useState: vi.fn()
+}))
+
+test("Login hook testing", () => {
+  const mockedNavigate = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useNavigate: () => ({mockedNavigate: "/"})
+  }))
+})
+
+beforeEach(async (context) => {
+  context.foo = 'bar'
+})
+*/

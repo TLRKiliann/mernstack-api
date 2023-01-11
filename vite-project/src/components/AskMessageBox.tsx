@@ -46,7 +46,7 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
         <label className="lbl--choicechat">
           Would you like&nbsp;
           <select 
-            data-testid="select"
+            data-testid="selectid"
             id="invite"
             name="invite" 
             value={props.form}

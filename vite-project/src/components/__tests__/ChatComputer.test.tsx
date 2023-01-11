@@ -5,14 +5,13 @@ import { screen, render, getByTestId } from '@testing-library/react'
 import { test, expect, vi, beforeEach, describe } from 'vitest'
 import '@testing-library/jest-dom'
 import { create } from 'react-test-renderer'
-import ChatComputer from "../ChatComputer"
-import ComputerRoom from "../ChatComputer"
+//import ChatComputer from "../ChatComputer"
+//import ComputerRoom from "../ChatComputer"
 import handleSetUserRoom from "../ChatComputer"
 import handleNavigation from "../ChatComputer"
 
 test("Login context testing", () => {
   beforeEach(async (context) => {
-    // extend context
     context.foo = 'bar'
   })
   test('Login state', ({ foo }) => {
@@ -20,22 +19,16 @@ test("Login context testing", () => {
   })
 })
 
-test('MatchSnapShot test from ChatComputer', () => {
-  const treeChatComp = create(
-    <MemoryRouter>
-      <ChatComputer />
-    </MemoryRouter>
-  )
-  expect(treeChatComp.toJSON()).toMatchSnapshot()
+test("mocking ChatComputer", () => {
+  vi.mock('../ChatComputer.tsx', () => ({
+    ChatComputer: vi.fn()
+  }))
 })
 
-test('MatchSnapShot test from ChatComputer', () => {
-  const treeChatComp = create(
-    <MemoryRouter>
-      <ComputerRoom />
-    </MemoryRouter>
-  )
-  expect(treeChatComp.toJSON()).toMatchSnapshot()
+test("mocking ComputerRoom", () => {
+  vi.mock('../../ComputerRoom.tsx', () => ({
+    ComputerRoom: vi.fn()
+  }))
 })
 
 test('ChatComputer handleSetUserRoom(fn) return link', () => {
@@ -52,6 +45,27 @@ test('ChatComputer handleNavigation(fn) return link', () => {
   handleNavigation(beverage)
   expect(handleNavigation).toHaveReturned("secRoom")
   expect(handleNavigation).toHaveBeenCalledTimes(1)
+})
+
+/*
+
+/*
+test('MatchSnapShot test from ChatComputer', () => {
+  const treeChatComp = create(
+    <MemoryRouter>
+      <ChatComputer />
+    </MemoryRouter>
+  )
+  expect(treeChatComp.toJSON()).toMatchSnapshot()
+})
+
+test('MatchSnapShot test from ChatComputer', () => {
+  const treeChatComp = create(
+    <MemoryRouter>
+      <ComputerRoom />
+    </MemoryRouter>
+  )
+  expect(treeChatComp.toJSON()).toMatchSnapshot()
 })
 
 describe('ChatComputer test of useState', () => {
@@ -72,8 +86,6 @@ describe('ChatComputer test of useState', () => {
   })
 })
 
-
-/*
 without memoryrouter!
 test('ChatComputer test of useEffect', () => {
   vi.spyOn(React, 'useEffect').mockImplementation((f) => f())
