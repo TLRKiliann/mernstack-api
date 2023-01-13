@@ -111,6 +111,7 @@ exports[`MatchSnapShot test App 1`] = `
     >
       <button
         className="btn--voletRight"
+        data-testid="btnhomeright"
         onClick={[Function]}
       >
         Computing
@@ -128,6 +129,7 @@ exports[`MatchSnapShot test App 1`] = `
     >
       <button
         className="btn--voletLeft"
+        data-testid="btnhomeleft"
         onClick={[Function]}
       >
         Chat-Room
@@ -1132,6 +1134,7 @@ exports[`MatchSnapShot test Home 1`] = `
     >
       <button
         className="btn--voletRight"
+        data-testid="btnhomeright"
         onClick={[Function]}
       >
         Computing
@@ -1149,6 +1152,7 @@ exports[`MatchSnapShot test Home 1`] = `
     >
       <button
         className="btn--voletLeft"
+        data-testid="btnhomeleft"
         onClick={[Function]}
       >
         Chat-Room
@@ -1622,6 +1626,7 @@ exports[`MatchSnapShot test NavBar 1`] = `
     >
       <button
         className="btn--voletRight"
+        data-testid="btnhomeright"
         onClick={[Function]}
       >
         Computing
@@ -1639,6 +1644,7 @@ exports[`MatchSnapShot test NavBar 1`] = `
     >
       <button
         className="btn--voletLeft"
+        data-testid="btnhomeleft"
         onClick={[Function]}
       >
         Chat-Room

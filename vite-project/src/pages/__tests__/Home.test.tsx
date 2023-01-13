@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { screen, render, fireEvent } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import "@testing-library/jest-dom/extend-expect"
@@ -18,6 +18,11 @@ import handleVoletsLeft from '../Home'
 //assertType, expectTypeOf
 
 describe("All tests from Home", () => {
+  test("mocking useState", () => {
+    vi.mock('../Home.tsx', () => ({
+      useState: vi.fn()
+    }))
+  })
   test("mocking Home", () => {
     vi.mock('../Home.tsx', () => ({
       Home: vi.fn()
@@ -43,6 +48,7 @@ describe("All tests from Home", () => {
     const handleVoletsRight = vi.fn(beverage => beverage.isOpenRight)
     handleVoletsRight(beverage)
     expect(handleVoletsRight).toHaveBeenCalledTimes(1)
+    expect(handleVoletsRight).toHaveReturnedWith(true)
   })
   test('Home handleVoletsLeft(fn) test', () => {
     const beverage2 = {isOpenL: false}

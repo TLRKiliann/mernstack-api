@@ -13,13 +13,6 @@ import PrivateMessage from './components/privatechat/PrivateMessage'
 import PageNotFound from './pages/PageNotFound'
 import './App.scss'
 
-/*
-const AppLayout = () => (
-  <div>
-    <NavBar />
-  </div>
-);*/
-//<Route element={<AppLayout />} />
 const App: React.FC = () => {
   return(
     <div>

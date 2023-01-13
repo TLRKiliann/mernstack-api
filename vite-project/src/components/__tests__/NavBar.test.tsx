@@ -11,6 +11,7 @@ import Profile from "../NavBar"
 import Online from "../NavBar"
 import Login from "../NavBar"
 import handleChange from "../NavBar"
+import toggle from "../NavBar"
 
 /*
 test("Login hook testing", () => {
@@ -32,6 +33,21 @@ describe("All tests from NavBar", () => {
     vi.mock('../NavBar.tsx', () => ({
       handleChange: vi.fn()
     }))
+  })
+  test("mocking toggle", () => {
+    vi.mock('../NavBar.tsx', () => ({
+      toggle: vi.fn()
+    }))
+  })
+  test("mocking eraseAll", () => {
+    vi.mock('../NavBar.tsx', () => ({
+      eraseAll: vi.fn()
+    }))
+  })
+  test('NavBar toggle(fn) test', () => {
+    const toggle = vi.fn()
+    toggle()
+    expect(toggle).toHaveBeenCalledTimes(1)
   })
   test('NavBar handleChange(fn) test', () => {
     const handleChange = vi.fn()

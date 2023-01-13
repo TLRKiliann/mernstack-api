@@ -42,7 +42,7 @@ exports[`2 MatchSnapShot test HandleAskUserOrigin 1`] = `
 </div>
 `;
 
-exports[`3 MatchSnapShot test UsersOnline 1`] = `
+exports[`3 MatchSnapShot test UsersOnline from HandleAskUserOrigin 1`] = `
 <div
   className="all--usersbanner"
   data-testid="onlinetest"

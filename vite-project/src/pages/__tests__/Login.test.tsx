@@ -22,12 +22,6 @@ test("mocking Login", () => {
   }))
 })
 
-test("mocking Subscribe", () => {
-  vi.mock('../Subscribe.tsx', () => ({
-    Subscribe: vi.fn()
-  }))
-})
-
 test('renders correctly', () => {
   const treeLink = create(
     <MemoryRouter>
