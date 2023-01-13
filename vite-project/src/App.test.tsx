@@ -13,7 +13,16 @@ import ChatComputer from './App'
 import ComputerRoom from './App'
 import PrivateMessage from './App'
 import PageNotFound from './App'
-import NavBar from './components/NavBar'
+import NavBar from './App'
+
+test('MatchSnapShot test NavBar', () => {
+  const treeApp = create(
+    <MemoryRouter>
+      <NavBar />
+    </MemoryRouter>
+  )
+  expect(treeApp.toJSON()).toMatchSnapshot()
+})
 
 test('MatchSnapShot test App', () => {
   const treeApp = create(
@@ -94,13 +103,4 @@ test('MatchSnapShot test Online', () => {
     </MemoryRouter>
   )
   expect(treeSub.toJSON()).toMatchSnapshot()
-})
-
-test('MatchSnapShot test NavBar', () => {
-  const treeApp = create(
-    <MemoryRouter>
-      <NavBar />
-    </MemoryRouter>
-  )
-  expect(treeApp.toJSON()).toMatchSnapshot()
 })

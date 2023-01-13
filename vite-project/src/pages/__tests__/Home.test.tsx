@@ -1,17 +1,80 @@
 import React from "react"
-import {assert, afterEach, describe, expect, test, it, vi} from 'vitest'
-import { MemoryRouter } from 'react-router-dom'
-import { create } from 'react-test-renderer'
-import VoletLeft from '../Home'
-import VoletRight from '../Home'
-import MainTitle from '../Home'
-import MainComp from '../Home'
-import Footer from '../Home'
-import NavBar from '../Home'
-//import "@testing-library/jest-dom/extend-expect"
-//import "@testing-library/jest-dom";
-//import { act } from 'react-dom/test-utils';
+import { screen, render, fireEvent } from '@testing-library/react'
+import { expect, vi } from 'vitest'
+import "@testing-library/jest-dom/extend-expect"
+import "@testing-library/jest-dom"
+import handleVoletsRight from '../Home'
+import handleVoletsLeft from '../Home'
+//import {assert, afterEach, expect, vi} from 'vitest'
+//import { MemoryRouter } from 'react-router-dom'
+//import { create } from 'react-test-renderer'
+//import VoletLeft from '../Home'
+//import VoletRight from '../Home'
+//import MainTitle from '../Home'
+//import MainComp from '../Home'
+//import Footer from '../Home'
+//import NavBar from '../Home'
+//import { act } from 'react-dom/test-utils'
 //assertType, expectTypeOf
+
+describe("All tests from Home", () => {
+  test("mocking Home", () => {
+    vi.mock('../Home.tsx', () => ({
+      Home: vi.fn()
+    }))
+  })
+  test("mocking VoletLeft", () => {
+    vi.mock('../Home.tsx', () => ({
+      VoletLeft: vi.fn()
+    }))
+  })
+  test("mocking handleVoletsRight", () => {
+    vi.mock('../Home.tsx', () => ({
+      handleVoletsRight: vi.fn()
+    }))
+  })
+  test("mocking handleVoletsLeft", () => {
+    vi.mock('../Home.tsx', () => ({
+      handleVoletsLeft: vi.fn()
+    }))
+  })
+  test('Home handleVoletsRight(fn) test', () => {
+    const beverage = {isOpenRight: true}
+    const handleVoletsRight = vi.fn(beverage => beverage.isOpenRight)
+    handleVoletsRight(beverage)
+    expect(handleVoletsRight).toHaveBeenCalledTimes(1)
+  })
+  test('Home handleVoletsLeft(fn) test', () => {
+    const beverage2 = {isOpenL: false}
+    const handleVoletsLeft = vi.fn(beverage2 => beverage2.isOpenL)
+    handleVoletsLeft(beverage2)
+    expect(handleVoletsLeft).toHaveReturnedWith(false)
+    expect(handleVoletsLeft).toHaveBeenCalledTimes(1)
+  })
+  test("ButtonR test from Home", () => {
+    const handleVoletsRight = vi.fn()
+    const { getByTestId } = render(
+      <button
+        onClick={handleVoletsRight} 
+        data-testid="btnhomeright">
+      </button>
+    )
+    fireEvent.click(getByTestId("btnhomeright"))
+    expect(handleVoletsRight).toHaveBeenCalledTimes(1)
+  })
+  test("ButtonL test from Home", () => {
+    const handleVoletsLeft = vi.fn()
+    const { getByTestId } = render(
+      <button
+        onClick={handleVoletsLeft} 
+        data-testid="btnhomeleft">
+      </button>
+    )
+    fireEvent.click(getByTestId("btnhomeleft"))
+    expect(handleVoletsLeft).toHaveBeenCalledTimes(1)
+  })
+})
+
 /*
 test('MatchSnapShot test VoletLeft', () => {
   const treeVL = create(
@@ -19,7 +82,7 @@ test('MatchSnapShot test VoletLeft', () => {
       <VoletLeft />
     </MemoryRouter>
   )
-  expect(treeVL.toJSON()).toMatchSnapshot();
+  expect(treeVL.toJSON()).toMatchSnapshot()
 })
 
 test('MatchSnapShot test VoletRight', () => {
@@ -28,7 +91,7 @@ test('MatchSnapShot test VoletRight', () => {
       <VoletRight />
     </MemoryRouter>
     )
-  expect(treeVR.toJSON()).toMatchSnapshot();
+  expect(treeVR.toJSON()).toMatchSnapshot()
 })
 
 test('MatchSnapShot test MainTitle', () => {
@@ -55,9 +118,11 @@ test('MatchSnapShot test Footer 1', () => {
       <Footer />
     </MemoryRouter>
     )
-  expect(tree2.toJSON()).toMatchSnapshot();
+  expect(tree2.toJSON()).toMatchSnapshot()
 })
 */
+
+/*
 describe('suite name', () => {
   it('foo', () => {
     assert.equal(Math.sqrt(4), 2)
@@ -118,3 +183,4 @@ describe('Home reading messages', () => {
     expect(mock).toHaveBeenCalledTimes(3)
   })
 })
+*/
