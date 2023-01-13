@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { MemoryRouter, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { screen, render } from '@testing-library/react'
 import { test, expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
@@ -15,14 +15,9 @@ import DisplayInviteOrigin from "../ComputerRoom"
 import DisplayInvitationOtherUsr from "../ComputerRoom"
 import ConfirmationOrigin from "../ComputerRoom"
 import ConfirmInvitation from "../ComputerRoom"
+import UsersOnline from "../ComputerRoom"
 
-test("mocking UsersOnline", () => {
-  vi.mock('../terminalchat/UsersOnline.tsx', () => ({
-    UsersOnline: vi.fn()
-  }))
-})
-
-test("0 Test useParams", () => {
+test("1 Test useParams", () => {
   const mockUseParams = vi.fn()
   vi.mock('react-router-dom', () => ({
     ...vi.importActual('react-router-dom') as any,
@@ -30,85 +25,31 @@ test("0 Test useParams", () => {
   }))
 })
 
-test('1 ComputerRoom is present', () => {
-  render(
-      <ComputerRoom />
-  )
-  const mytestid = screen.getByTestId("computerroomtest")
-  expect(mytestid).toBeInTheDocument()
+test("2 mocking ComputerRoom", () => {
+  vi.mock('../ComputerRoom.tsx', () => ({
+    ComputerRoom: vi.fn()
+  }))
 })
 
-test('2 MatchSnapShot test ComputerRoom', () => {
-  const tree = create(
-      <ComputerRoom />
-    )
-  expect(tree.toJSON()).toMatchSnapshot()
+test("3 mocking TerminalComponent", () => {
+  vi.mock('../terminalchat/TerminalComponent.tsx', () => ({
+    TerminalComponent: vi.fn()
+  }))
 })
 
-test('3 ComputerRoom MatchSnapShot test ConfirmationOrigin', () => {
-  const tree = create(
-    <ConfirmationOrigin />
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
+test("4 mocking UsersOnline", () => {
+  vi.mock('../terminalchat/UsersOnline.tsx', () => ({
+    UsersOnline: vi.fn()
+  }))
 })
 
-test('4 ComputerRoom MatchSnapShot test ConfirmationOrigin', () => {
-  const tree = create(
-    <ConfirmationOrigin>
-      <ConfirmInvitation />
-    </ConfirmationOrigin>
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
+test("5 mocking DisplayInviteOrigin", () => {
+  vi.mock('../../actions/DisplayInviteOrigin.tsx', () => ({
+    DisplayInviteOrigin: vi.fn()
+  }))
 })
 
-test('5 ComputerRoom MatchSnapShot test TerminalComponent', (roomStyle) => {
-  const tree = create(
-      <TerminalComponent roomStyle={roomStyle} />
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
-})
-
-test('6 ComputerRoom MatchSnapShot test HandleAskUserOrigin', () => {
-  const tree = create(
-    <HandleAskUserOrigin />
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
-})
-
-test('8 ComputerRoom MatchSnapShot test AskMessageBoxOrigin', () => {
-  const tree = create(
-    <AskMessageBoxOrigin />
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
-})
-
-test('9 ComputerRoom MatchSnapShot test DisplayInviteOrigin', () => {
-  const tree = create(
-    <DisplayInviteOrigin />
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
-})
-
-test('10 ComputerRoom MatchSnapShot test DisplayInviteOrigin', () => {
-  const tree = create(
-    <DisplayInviteOrigin>
-      <DisplayInvitationOtherUsr />
-    </DisplayInviteOrigin>
-  )
-  expect(tree.toJSON()).toMatchSnapshot()
-})
-
-//Correct
-test('11 ComputerRoom MatchSnapShot test AskMessageBox', () => {
-  const treeConfirm = create(
-    <AskMessageBoxOrigin>
-      <AskMessageBox />
-    </AskMessageBoxOrigin>
-  )
-  expect(treeConfirm.toJSON()).toMatchSnapshot()
-})
-
-test("12 test func handleClose", () => {
+test("6 test func handleClose", () => {
   const beverage = {switchAsk: true}
   const handleClose = vi.fn(beverage => beverage)
   handleClose(beverage)

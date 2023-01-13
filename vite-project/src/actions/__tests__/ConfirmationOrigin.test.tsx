@@ -1,6 +1,7 @@
 import React from "react"
 import { useNavigate } from 'react-router-dom'
 import { screen, render } from '@testing-library/react'
+import userEvent from "@testing-library/user-event"
 import { expect, vi } from 'vitest'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
@@ -14,10 +15,6 @@ import ConfirmationOrigin from "../ConfirmationOrigin"
 
 vi.mock('../ConfirmationOrigin.tsx', () => ({
   ConfirmationOrigin: vi.fn()
-}))
-
-vi.mock("../../components/ConfirmInvitation", () => ({
-  ConfirmInvitation: vi.fn()
 }))
 
 //context
@@ -65,5 +62,15 @@ test('10 ConfirmationO handleCheckConfirmation return boolean', () => {
   handleCheckConfirmation(beverageConf)
   expect(handleCheckConfirmation).toHaveReturnedWith(false)
   expect(handleCheckConfirmation).toHaveBeenCalledTimes(1)
+})
 
+test('should render ConfirmInvitation when clicked', async (props) => {
+  const beverage = { id: 2 }
+  const handleBothConfirmation = vi.fn(beverage => beverage)
+  render(
+    <ConfirmInvitation onClick={handleBothConfirmation(beverage)} />
+  ) 
+  const button = screen.getByTestId('btnconfirminvitation') 
+  userEvent.click(button)
+  await expect(screen.getByText(/validate/i)).toBeInTheDocument()
 })

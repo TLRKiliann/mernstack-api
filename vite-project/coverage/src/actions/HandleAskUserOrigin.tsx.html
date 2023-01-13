@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/32</span>
+                <span class='fraction'>16/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/32</span>
+                <span class='fraction'>16/32</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,22 +108,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from 'react'
 import { UserType } from '../models/usertype'
@@ -138,23 +138,23 @@ interface HandleAskUserProps {
   setSwitchAsk: React.Dispatch&lt;SetStateAction&lt;boolean&gt;&gt;
 }
 &nbsp;
-const HandleAskUserOrigin: React.FC = (props: HandleAskUserProps) =&gt; {
-  
-  const handleAskUserPrivate = (<span class="fstat-no" title="function not covered" >id: number) =&gt; {</span>
+const HandleAskUserOrigin: React.FC = (<span class="fstat-no" title="function not covered" >props: HandleAskUserProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  </span>
+<span class="cstat-no" title="statement not covered" >  const handleAskUserPrivate = (id: number) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const catchUser = props.users?.find((user) =&gt; user.id === id)</span>
 <span class="cstat-no" title="statement not covered" >    props.setCatchById(catchUser)</span>
 <span class="cstat-no" title="statement not covered" >    props.setSwitchAsk(true)</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  return (
-    &lt;UsersOnline
-      key={props.id}
-      id={props.id}
-      refreshUser={props.refreshUser}
-      roomStyle={props.roomStyle}
-      handleAskUserPrivate={<span class="fstat-no" title="function not covered" >() =&gt; handleAskUserPrivate(props.id)}</span>
-    /&gt;
-  )
-}
+<span class="cstat-no" title="statement not covered" >  return (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;UsersOnline</span>
+<span class="cstat-no" title="statement not covered" >      key={props.id}</span>
+<span class="cstat-no" title="statement not covered" >      id={props.id}</span>
+<span class="cstat-no" title="statement not covered" >      refreshUser={props.refreshUser}</span>
+<span class="cstat-no" title="statement not covered" >      roomStyle={props.roomStyle}</span>
+<span class="cstat-no" title="statement not covered" >      handleAskUserPrivate={() =&gt; handleAskUserPrivate(props.id)}</span>
+<span class="cstat-no" title="statement not covered" >    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export default HandleAskUserOrigin</pre></td></tr></table></pre>
 
@@ -163,7 +163,7 @@ export default HandleAskUserOrigin</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-13T16:49:57.355Z
+                at 2023-01-13T20:36:12.117Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

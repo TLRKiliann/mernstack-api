@@ -167,7 +167,7 @@ const ChatComputer: React.FC = () => {
           width="100%"
           height="100%"
           className="img--chatcomputerroom"
-          alt={imgBg}
+          alt="imgchatcompute"
         />
       </div>
       

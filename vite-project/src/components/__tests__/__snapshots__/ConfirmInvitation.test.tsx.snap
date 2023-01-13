@@ -35,6 +35,7 @@ exports[`MatchSnapShot test ConfirmInvitation 1`] = `
   </div>
   <button
     className="btn--validationlast"
+    data-testid="btnconfirminvitation"
     type="button"
   >
     Validate

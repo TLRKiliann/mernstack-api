@@ -46,7 +46,7 @@ describe("All tests from UsersOnline", () => {
   test('5 UsersOnline test by id', () => {
     render(
       <span
-        data-testid="spanuserOnline"
+        data-testid="spanuseronlinetrue"
         className="span--useronline connector--icon"
         style={{color: 'lightgreen'}}
       >
@@ -54,7 +54,7 @@ describe("All tests from UsersOnline", () => {
       </span>
     )
     const valToTest = screen.getByText(/✔/)
-    const valId = screen.getByTestId("spanuserOnline")
+    const valId = screen.getByTestId("spanuseronlinetrue")
     expect(valToTest).toBeInTheDocument()
     expect(valId).toBeInTheDocument()
   })
@@ -62,20 +62,20 @@ describe("All tests from UsersOnline", () => {
     const valueTodo = { id: 1, todo: 'ok', isDone: false }
     const changeSize = vi.fn(valueTodo => valueTodo.id)
     const wrapper = render(
-      <span onClick={changeSize} data-testid="spanuserOnline">
+      <span onClick={changeSize} data-testid="spantestidusers">
         ✉
       </span>
     )
     const handleDone = vi.spyOn(React, "useState")
     handleDone.mockImplementation(size => [size, changeSize])
-    fireEvent.click(screen.getByTestId('spanuserOnline'))
+    fireEvent.click(screen.getByTestId('spantestidusers'))
     expect(changeSize).toHaveBeenCalledTimes(1)
   })
   test('7 visibility of <span> TAG with false', () => {
     const isConnected = true
     render(
       <span
-        data-testid="spanuserOnline"
+        data-testid="spanuseronlinetrue"
         style={{visibility: isConnected ? "visible" : "hide" }}
       >
         ✔
@@ -88,7 +88,7 @@ describe("All tests from UsersOnline", () => {
     const isConnected = false
     render(
       <span
-        data-testid="spanuserOnline"
+        data-testid="spanuseronlinefalse"
         style={{visibility: isConnected ? "visible" : "hide" }}
       >
         ❌
@@ -96,5 +96,10 @@ describe("All tests from UsersOnline", () => {
     )
     const checkById = screen.getByText(/❌/)
     expect(checkById).toBeVisible()
+  })
+  test('9 test img of UsersOnline', () => {
+    render(<img alt="imgusersonline" />)
+    const altImg = screen.getByAltText("imgusersonline")
+    expect(altImg).toBeInTheDocument()
   })
 })

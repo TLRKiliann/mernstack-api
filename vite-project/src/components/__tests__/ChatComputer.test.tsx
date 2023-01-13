@@ -5,18 +5,44 @@ import { screen, render, getByTestId } from '@testing-library/react'
 import { test, expect, vi, beforeEach, describe } from 'vitest'
 import '@testing-library/jest-dom'
 import { create } from 'react-test-renderer'
-//import ChatComputer from "../ChatComputer"
+import ChatComputer from "../ChatComputer"
 //import ComputerRoom from "../ChatComputer"
 import handleSetUserRoom from "../ChatComputer"
 import handleNavigation from "../ChatComputer"
 
-test("Login context testing", () => {
+test("ChatComputer context testing", () => {
   beforeEach(async (context) => {
     context.foo = 'bar'
   })
-  test('Login state', ({ foo }) => {
+  test('ChatComputer state', ({ foo }) => {
     console.log(foo) // 'bar'
   })
+})
+
+test("mocking useState", () => {
+  vi.mock('../ChatComputer.tsx', () => ({
+    useState: vi.fn()
+  }))
+})
+
+test("ChatComputer hook testing", () => {
+  const mockedNavigate = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useNavigate: () => mockedNavigate
+  }))
+})
+test("ChatComputer hook testing", () => {
+  const mockedParams = vi.fn()
+  vi.mock('react-router-dom', () => ({
+    ...vi.importActual('react-router-dom') as any,
+    useParams: () => ({mockedParams})
+  }))
+})
+test("ChatComputer hook testing", () => {
+  vi.mock('../../context/AuthProvider.tsx', () => ({
+    useAuthLogin: vi.fn()
+  }))
 })
 
 test("mocking ChatComputer", () => {
@@ -26,7 +52,7 @@ test("mocking ChatComputer", () => {
 })
 
 test("mocking ComputerRoom", () => {
-  vi.mock('../../ComputerRoom.tsx', () => ({
+  vi.mock('../ComputerRoom.tsx', () => ({
     ComputerRoom: vi.fn()
   }))
 })
@@ -47,7 +73,25 @@ test('ChatComputer handleNavigation(fn) return link', () => {
   expect(handleNavigation).toHaveBeenCalledTimes(1)
 })
 
-/*
+test("ChatComputerRoom by test id", () => {
+  render(
+    <span
+      data-testid="btnchatcomp"
+    >
+      Machin
+    </span>
+  )
+  const catchById = screen.getByTestId("btnchatcomp")
+  expect(catchById).toBeInTheDocument()
+})
+
+test("ChatComputerRoom test img", () => {
+  render(
+    <img alt="imgchatcompute" />
+  )
+  const retrieveById = screen.getByAltText("imgchatcompute")
+  expect(retrieveById).toBeInTheDocument()
+})
 
 /*
 test('MatchSnapShot test from ChatComputer', () => {
