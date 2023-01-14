@@ -1,0 +1,44 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test ConfirmInvitation 1`] = `
+<div
+  className="box--confirminvitation"
+  data-testid="confirmtestid"
+>
+  <h4
+    className="confirm"
+  >
+    <span
+      className="span--confirmation"
+    >
+       
+    </span>
+    do you confirm invitation ?
+  </h4>
+  <div
+    className="checkbox--div"
+  >
+    <label>
+      <input
+        className="input--validationInvite"
+        type="checkbox"
+      />
+       Yes
+    </label>
+    <label>
+      <input
+        className="input--validationInvite"
+        type="checkbox"
+      />
+       No
+    </label>
+  </div>
+  <button
+    className="btn--validationlast"
+    data-testid="btnconfirminvitation"
+    type="button"
+  >
+    Validate
+  </button>
+</div>
+`;

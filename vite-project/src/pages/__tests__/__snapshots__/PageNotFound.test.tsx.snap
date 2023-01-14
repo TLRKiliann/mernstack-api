@@ -1,0 +1,27 @@
+// Vitest Snapshot v1
+
+exports[`PageNF Link test 1`] = `
+<div
+  data-testid="pagenotfoundtest"
+  style={
+    {
+      "backgroundColor": "#242424",
+      "color": "white",
+      "fontFamily": "Junction, sans-serif",
+      "fontSize": "2rem",
+      "marginTop": "25%",
+      "textAlign": "center",
+    }
+  }
+>
+  <h1>
+    Error page not found !
+  </h1>
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Redirect to home page.
+  </a>
+</div>
+`;
