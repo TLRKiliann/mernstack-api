@@ -78,7 +78,7 @@ src
   	|
   	-----> dbConnection.ts
     |
-    -----> .env (hidden for security)
+    -----> `.env` (hidden for security)
 ```
 
 ---
