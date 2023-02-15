@@ -2,18 +2,41 @@
 
 CHAT application with Vite - React - TypeScript - Sass with mariadb in LAN
 
+### EN
+
+The objective of this application is to make connected users interact.
+Once connected, the user can invite another user of his choice who is in the same room, by selecting the type of room in which he wants to invite him.
+He can choose between 3 possibilities: "Question, Private, Info".
+If the other user confirms the invitation, both users are in
+the room selected by the user who made the request. Otherwise they
+stay in the current room.
+
+
+### FR
+
+L'objectif de cette application est de faire interagir les utilisateurs connectés.
+Une fois connecté l'utilisateur peur inviter un autre utilisateur de son choix qui
+se trouve dans la même room, en sélectionnant le type de room dans laquelle il
+souhaite l'inviter. Il a le choix entre 3 possibilités : "Question, Private, Info".
+Si l'autre utilisateur confirme l'invitation, les 2 utilisateur se retrouvent dans
+dans la room séléctionnée par l'utilisateur à l'origine de la demande. Sinon, ils
+resent dans la room actuelle.
+
 ---
 
-This application use hooks & reusable component.
+## Install
 
-My goal for this application was to make interact users with display message to send them to another chat-room, once both users
-accepted the invitation.
+cd vite-project
 
-A different message is sended & diplayed properly to user concern.
+└─ $ ▶ pnpm install
+
+└─ $ ▶ pnpm run dev
 
 ---
 
 ## Hooks
+
+used hook for this application :
 
 - useState
 
@@ -30,6 +53,8 @@ A different message is sended & diplayed properly to user concern.
 - custom hook
 
 ---
+
+## Modules
 
 - front : react-router-dom v6 - axios
 
@@ -77,13 +102,14 @@ src
   	-----> routes
   	|
   	-----> dbConnection.ts
-      |
-      -----> .env (hidden for security)
+    |
+    -----> .env (hidden for security)
+
 ```
 
 ---
 
-# Install
+# Initial installation
 
 └─ $ ▶ pnpm create vite
 
@@ -100,6 +126,8 @@ src
 └─ $ ▶ pnpm install react-icons
 
 ---
+
+## Configuration with Sass
 
 (index.html)
 
@@ -185,8 +213,6 @@ export default defineConfig({
     }
 })
 ```
-
-└─ $ ▶ pnpm run dev
 
 ---
 
@@ -304,29 +330,7 @@ export default defineConfig({
 
 ---
 
-## Debug
-
-- install ndb globally
-
-└─ $ ▶ pnpm install -g ndb
-
-or
-
-└─ $ ▶ pnpm install -g ndb
-
-- alternatively, with yarn
-
-└─ $ ▶ yarn global add ndb
-
-- run tests with debugger enabled
-
-└─ $ ▶ ndb npm run test
-
-or
-
-└─ $ ▶ ndb pnpm run test
-
----
+## Table overview
 
 Table for all members:
 
