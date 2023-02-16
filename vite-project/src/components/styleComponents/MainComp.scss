@@ -1,9 +1,29 @@
 $pink: #ffc0cb;
 $purple: rgba(195,87,116, 1);
 $lightgreen: #90ee90;
+$skyblue: #50bcfe;
 $font_acme: 'Acme', sans-serif;
 $font_dejavu: 'DejaVu Sans', sans-serif;
 $font_junction: 'Junction', sans-serif;
+
+@mixin margin-font-family-size($size){
+  margin: auto;
+  text-align: center;
+  font-family: $font_acme;
+  font-size: $size;
+  color: rgba(244,164,96, 1);
+}
+
+@mixin family-size-color($font, $sizef, $color){
+  font-family: $font;
+  font-size: $sizef;
+  color: $color;
+}
+
+@mixin family-size($family, $sizefont){
+  font-family: $family;
+  font-size: $sizefont;
+}
 
 .master--maincomp {
   width: 500px;
@@ -16,31 +36,23 @@ $font_junction: 'Junction', sans-serif;
     padding-top: 20px;
     padding-bottom: 40px;
     background: linear-gradient(90deg,
-      rgba(244,164,96, 0.5) -20%, rgba(195,87,116, 0.5) 100%);
+      rgba(244,164,96, 0.5) -20%,
+      rgba(195,87,116, 0.5) 100%);
     border: none;
     outline: none;
     border-radius: 12px;
     box-shadow: 0px 0px 20px rgba(195,87,116, 0.2);
-
     .h2--maincomp {
-      margin: auto;
-      text-align: center;
-      font-family: $font_acme;
-      font-size: 2.4rem;
+      @include margin-font-family-size(2.4rem);
       text-shadow: 2px 1px 1px $purple;
-      color: rgba(244,164,96, 1);
       .span--lengthuser {
         text-shadow: 2px 1px 1px $purple;
         color: $pink;
       }
     }
     .h3--maincomp {
-      margin: auto;
-      text-align: center;
-      font-family: $font_acme;
-      font-size: 1.8rem;
+      @include margin-font-family-size(1.8rem);
       text-shadow: 2px 1px 1px $purple;
-      color: rgba(244,164,96, 1);
     }
   }
   .membershome__div {
@@ -50,9 +62,7 @@ $font_junction: 'Junction', sans-serif;
     margin-top: 10px;
     display: flex;
     align-items: center;
-    font-family: $font_dejavu;
-    font-size: 1.1rem;
-    color: lightblue;
+    @include family-size-color($font_dejavu, 1.1rem, $skyblue);
     background-color: rgba(85, 45, 255, 0.4);
     border-radius: 7px;
     .membershome__divimg {
@@ -83,9 +93,7 @@ $font_junction: 'Junction', sans-serif;
       margin: auto;
       margin-right: 10px;
       display: flex;
-      font-family: $font_junction;
-      font-size: 1.2rem;
-      color: $lightgreen;
+      @include family-size-color($font_junction, 1.2rem, $lightgreen);
     }
   }
 }
@@ -104,24 +112,20 @@ $font_junction: 'Junction', sans-serif;
         }
       }
       .h3--maincomp {
-        font-family: $font_acme;
-        font-size: 1.2rem;
+        @include family-size($font_acme, 1.2rem);
       }
     }
     .membershome__div {
-      font-family: $font_dejavu;
-      font-size: 1.0rem;
+      @include family-size($font_dejavu, 1.0rem);
       .membershome__divimg {
         .membershome__img {
         }
       }
       .membershome__names {
-        font-family: $font_dejavu;
-        font-size: 0.9rem;
+        @include family-size($font_dejavu, 0.9rem);
       }
       .membershome__connection {
-        font-family: $font_dejavu;
-        font-size: 0.9rem;
+        @include family-size($font_dejavu, 0.9rem);
       }
     }
   }

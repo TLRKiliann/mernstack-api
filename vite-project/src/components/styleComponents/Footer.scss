@@ -10,7 +10,8 @@ $font_allura: 'Allura', cursive;
   display: flex;
   margin-top: 0px;
   justify-content: center;
-  background: linear-gradient(160deg, rgba(244,164,96, 1), rgba(195,87,116, 1));
+  background: linear-gradient(160deg, rgba(244,164,96, 1),
+    rgba(195,87,116, 1));
   box-shadow: 0px 0px 7px rgba(244,164,96, 1);
   z-index: 3;
   .navbar--ul {
@@ -41,8 +42,8 @@ $font_allura: 'Allura', cursive;
 @media only screen and (min-width: 360px) and (max-width: 770px) {
   .div--navfooter {
     position: fixed;
-    width: 100%;
     margin: auto;
+    width: 100%;
     height: 40px;
     display: flex;
     align-items: center;

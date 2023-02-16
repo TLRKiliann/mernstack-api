@@ -8,6 +8,20 @@ $font_acme: 'Acme', sans-serif;
 $font_dejavu: 'DejaVu Sans', sans-serif;
 $font_junction: 'Junction', sans-serif;
 
+@mixin width-margin-display-align-flex($width){
+  width: $width;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row; 
+}
+
+@mixin font-style($family, $size, $color){
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+}
+
 .invitation--display {
   position: absolute;
   top: 0px;
@@ -32,45 +46,29 @@ $font_junction: 'Junction', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: $font_junction;
-    font-size: 1.2rem;
-    color: $purple;
+    @include font-style($font_junction, 1.2rem, $purple);
     .span--h4 {
       margin-right: 10px;
       margin-left: 10px;
-      font-family: $font_acme;
-      font-size: 1.6rem;
+      @include font-style($font_acme, 1.6rem, $soft_blue);
       text-shadow: 2px 1px 1px $purple;
-      color: $soft_blue;
     }
   }
   .definedroom--display {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    @include width-margin-display-align-flex(80%);
     .invitation--p {
       margin-top: 0px;
       margin-bottom: 0px;
-      font-family: $font_dejavu;
-      font-size: 1.2rem;
-      color: $whitesmoke;
+      @include font-style($font_dejavu, 1.2rem, $whitesmoke);
       .span--invitationp {
         margin-right: 10px;
         margin-left: 10px;
-        font-family: $font_acme;
-        font-size: 1.8rem;
+        @include font-style($font_acme, 1.8rem, $sandybrown);
         text-shadow: 2px 1px 1px $orangered;
-        color: $sandybrown;
       }
     }
     .checkbox--firstconfirm {
-      width: 30%;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
+      @include width-margin-display-align-flex(30%);
       justify-content: space-around;
       .checkbox--lbl {
         font-weight: bold;
@@ -81,14 +79,12 @@ $font_junction: 'Junction', sans-serif;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px 10px;
-    font-family: $font_dejavu;
-    font-size: 1.0rem;
+    @include font-style($font_dejavu, 1.0rem, $whitesmoke);    
     font-weight: bold;
     background: linear-gradient(180deg,
       $sandybrown, $orangered, $dark_moderate_red);
     border: 1px solid $purple;
     border-radius: 7px;
-    color: $whitesmoke;
     &:hover {
       background: $sandybrown;
       color: $dark_moderate_red;
