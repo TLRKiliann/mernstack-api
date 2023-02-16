@@ -175,22 +175,13 @@ $font_acme: 'Acme', sans-serif;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .img--home {
-    width: 600px;
-    height: 400px;
-  }
-}
-
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--home {
     .img--home {
-      border: 1px solid blue;
     }
     .wallIntro {
       .wallIntro-h1 {
         margin-left: 0px;
-        border: 1px solid blue;
       }
     }
     .div--voletsLeft {
