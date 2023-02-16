@@ -10,7 +10,69 @@ $lightgrey_52: #525252;
 $whitesmoke: #f5f5f5;
 $lightgreen: #90ee90;
 $font_allura: "Allura", cursive;
+$font_acme: 'Acme', sans-serif;
 $font_dejavu: "DejaVu Sans", sans-serif;
+
+@mixin display-flex-align-content($justify){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin width-margin($params1){
+  width: $params1;
+  margin: auto;
+}
+
+@mixin width-margin-font(){
+  width: 500px;
+  margin: auto;
+  margin-bottom: 5px;
+  font-size: 0.5rem;
+}
+
+@mixin width-height($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin margin-width($right, $width){
+  margin-right: $right;
+  width: $width;
+}
+
+@mixin bg-bd-color($bg, $bd, $color){
+  background: $bg;
+  border: $bd;
+  color: $color;
+}
+
+@mixin bg-bd-radius($bg, $bd, $radius){
+  background: $bg;
+  border: $bd;
+  border-radius: $radius
+}
+
+@mixin font-style($family, $size){
+  font-family: $family;
+  font-size: $size;
+  color: $whitesmoke;
+}
+
+@mixin params-user($size-font, $bg){
+  width: 900px;
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: $font_dejavu;
+  font-size: $size-font;
+  background: $bg;
+  border-radius: 7px;
+  box-shadow: 0px 0px 4px $slategray;
+}
 
 .profile {
   position: absolute;
@@ -23,8 +85,7 @@ $font_dejavu: "DejaVu Sans", sans-serif;
     rgba(244,164,96, 1) 10%, rgba(195,87,116, 1) 100%);
   z-index: -1;
   .div--mainimgprofile {
-    width: 100%;
-    margin: auto;
+    @include width-margin(100%);
     color: $whitesmoke;
     .img--bgprofile {
       position: fixed;
@@ -32,8 +93,7 @@ $font_dejavu: "DejaVu Sans", sans-serif;
       right: 0px;
       bottom: 0px;
       left: 0px;
-      width: 100%;
-      height: 100%;
+      @include width-height(100%, 100%);
       margin: auto;
       opacity: 0.05;
       z-index: -2;
@@ -42,13 +102,8 @@ $font_dejavu: "DejaVu Sans", sans-serif;
   .maintitlepro {
     margin: auto;
     margin-top: 90px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    font-family: $font_allura;
-    font-size: 1.6rem;
-    color: $whitesmoke;
+    @include display-flex-align-content(left);
+    @include font-style($font_allura, 1.6rem);
     .maintitlepro--h1title {
       margin-left: 20px;
       text-shadow: 2px 1px 1px $lightgrey_24;
@@ -59,28 +114,24 @@ $font_dejavu: "DejaVu Sans", sans-serif;
     }
   }
   .yourprofile {
-    width: 700px;
-    height: 180px;
+    @include width-height(700px, 180px);
     margin: auto;
     margin-top: 0px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: row;
     .yourprofile--divimg {
-      width: 300px;
-      height: 180px;
+      @include width-height(300px, 180px);
       .yourprofile--img {
         border-radius: 7px 0px 0px 7px;
       }
     }
     .yourprofile--section {
-      width: 400px;
-      height: 180px;
+      @include width-height(400px, 180px);
       padding-left: 20px;
       font-family: $font_dejavu;
-      background: $lightgrey_28;
-      border-radius: 0px 7px 7px 0px;
-      color: whitesmoke;
+      @include bg-bd-color($lightgrey_28,
+        0px 7px 7px 0px, $whitesmoke);
       .yourprofile--h2 {
         margin-bottom: 20px;
         font-size: 1.4rem;
@@ -91,103 +142,65 @@ $font_dejavu: "DejaVu Sans", sans-serif;
     }
   }
   .tweekGroup--friends {
-    width: 99%;
-    margin: auto;
+    @include width-margin(99%);
     display: flex;
     color: $whitesmoke;
     .div--profileh4 {
-      width: 900px;
-      margin: auto;
+      @include width-margin(900px);
       margin-bottom: 20px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      @include display-flex-align-content(space-between);      
       .titleh4--profile {
         margin: auto 0px;
-        font-family: $font_allura;
-        font-size: 1.8rem;
-        color: $whitesmoke;
+        @include font-style($font_allura, 1.8rem);
       }
       .btn--refreshgroup {
         padding-top: 3px;
         padding-right: 10px;
         padding-bottom: 3px;
         padding-left: 10px;
-        font-family: "Acme", sans-serif;
-        font-size: 1.0rem;
-        background-color: $lightgrey_38;
-        border: 1mm outset $lightgrey_52;
-        border-radius: 7px;
-        color: $whitesmoke;
+        @include font-style($font_acme, 1.0rem);
+        @include bg-bd-radius($lightgrey_38,
+          1mm outset $lightgrey_52, 7px);
         &:hover {
-          background: $lightgrey_42;
-          border: 1mm ouset $lightgrey_48;
-          color: $sandybrown;
+          @include bg-bd-color($lightgrey_42,
+            1mm ouset $lightgrey_48, $sandybrown);
         }
         &:active {
           transform: scale(0.9);
-          background: $lightgrey_24;
-          border: 1mm inset $lightgrey_38;
-          color: $lightgreen;
+          @include bg-bd-color($lightgrey_24,
+            1mm inset $lightgrey_38, $lightgreen);
         }
       }
     }
   }
   .div--titleusersgroup {
-    width: 900px;
-    margin: auto;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-family: $font_dejavu;
-    font-size: 1.0rem;
+    @include params-user(1.0rem, $lightgrey_24);
     font-weight: bold;
-    background: $lightgrey_24;
-    border-radius: 7px;
-    box-shadow: 0px 0px 4px $slategray;
     color: $sandybrown;
     .p--profile0 {
       margin-left: 60px;
     }
     .p--profile1 {
-      margin-right: 10px;      
-      width: 100px;
+      @include margin-width(10px, 100px);
     }
     .p--profile2 {
-      margin-right: 10px;      
-      width: 120px;
+      @include margin-width(10px, 120px);
     }
     .p--profile3 {
-      margin-right: 10px;
-      width: 35px; 
+      @include margin-width(10px, 35px);
     }
     .p--profile4 {
-      margin-right: 15px;
-      width: 67px; 
+      @include margin-width(15px, 67px);
     }
     .p--profile5 {
-      margin-right: 10px;
-      width: 250px;
+      @include margin-width(10px, 250px);
     }
     .p--profile6 {
-      margin-right: 10px;
-      width: 150px;
+      @include margin-width(10px, 150px);
     }
   }
   .div--usersgroup {
-    width: 900px;
-    margin: auto;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-family: 'DejaVu Sans', sans-serif;
-    font-size: 0.9rem;
-    background: $lightgrey_28;
-    border-radius: 7px;
-    box-shadow: 0px 0px 4px $slategray;
+    @include params-user(0.9rem, $lightgrey_28);    
     .img--profileusers {
       margin-right: 13px;
       margin-left: 10px;
@@ -195,36 +208,28 @@ $font_dejavu: "DejaVu Sans", sans-serif;
       object-fit: cover;
     }
     .p--profile1 {
-      margin-right: 10px;
-      width: 125px;
+      @include margin-width(10px, 125px);
     }
     .p--profile2 {
-      margin-right: 10px;
-      width: 145px;
+      @include margin-width(10px, 145px);
     }
     .p--profile3 {
-      margin-right: 10px;
-      width: 40px; 
+      @include margin-width(10px, 40px);
     }
     .p--profile4 {
-      margin-right: 10px;
-      width: 80px; 
+      @include margin-width(10px, 80px);
     }
     .p--profile5 {
-      margin-right: 10px;
-      width: 300px;
+      @include margin-width(10px, 300px);
     }
     .p--profile6 {
-      margin-right: 10px;
-      width: 150px;
+      @include margin-width(10px, 150px);
     }
     .btn--deletefromgroup {
       margin-right: 10px;
       padding: 3px 10px;
-      /*background: #161616;*/
-      background: linear-gradient(180deg, $purple, $sandybrown);
-      border: 1px solid $sandybrown;
-      border-radius: 5px;
+      @include bg-bd-radius(linear-gradient(180deg, $purple, $sandybrown),
+        1px solid $sandybrown, 5px);
       color: lightgrey;
       cursor: pointer;        
       &::before {
@@ -258,21 +263,18 @@ $font_dejavu: "DejaVu Sans", sans-serif;
       }
     }
     .yourprofile {
-      width: 400px;
-      height: 100px;
+      @include width-height(400px, 100px);
       margin: auto;
       margin-bottom: 20px;
       .yourprofile--divimg {
-        width: 200px;
-        height: 100px;
+        @include width-height(200px, 100px);
         .yourprofile--img {
           margin: auto;
           object-fit: cover;
         }
       }
       .yourprofile--section {
-        width: 200px;
-        height: 100px;
+        @include width-height(200px, 100px);
         .yourprofile--h2 {
           font-size: 0.9rem;
           margin-bottom: 0px;
@@ -285,8 +287,7 @@ $font_dejavu: "DejaVu Sans", sans-serif;
       }
     }
     .tweekGroup--friends {
-      width: 500px;
-      margin: auto;
+      @include width-margin(500px);
       .div--profileh4 {
         .titleh4--profile {
         }
@@ -297,68 +298,50 @@ $font_dejavu: "DejaVu Sans", sans-serif;
       }
     }
     .div--titleusersgroup {
-      width: 500px;
-      margin: auto;
-      margin-bottom: 5px;
-      font-size: 0.5rem;
+      @include width-margin-font();
       .p--profile0 {
         margin-left: 60px;
       }
       .p--profile1 {
-        margin-right: 10px;      
-        width: 100px;
+        @include margin-width(10px, 100px);
       }
       .p--profile2 {
-        margin-right: 10px;      
-        width: 120px;
+        @include margin-width(10px, 120px);
       }
       .p--profile3 {
-        margin-right: 10px;
-        width: 35px; 
+        @include margin-width(10px, 35px);
       }
       .p--profile4 {
-        margin-right: 15px;
-        width: 67px; 
+        @include margin-width(15px, 67px);
       }
       .p--profile5 {
-        margin-right: 10px;
-        width: 250px;
+        @include margin-width(10px, 250px);
       }
       .p--profile6 {
-        margin-right: 50px;
-        width: 150px;
+        @include margin-width(50px, 150px);
       }
     }
     .div--usersgroup {
-      width: 500px;
-      margin: auto;
-      margin-bottom: 5px;
-      font-size: 0.5rem;
+      @include width-margin-font();
       .img--profileusers {
       }
       .p--profile1 {
-        margin-right: 10px;
-        width: 100px;
+        @include margin-width(10px, 100px);
       }
       .p--profile2 {
-        margin-right: 10px;
-        width: 100px;
+        @include margin-width(10px, 100px);
       }
       .p--profile3 {
-        margin-right: 10px;
-        width: 40px; 
+        @include margin-width(10px, 40px);
       }
       .p--profile4 {
-        margin-right: 10px;
-        width: 80px; 
+        @include margin-width(10px, 80px); 
       }
       .p--profile5 {
-        margin-right: 10px;
-        width: 300px;
+        @include margin-width(10px, 300px);
       }
       .p--profile6 {
-        margin-right: 10px;
-        width: 150px;
+        @include margin-width(10px, 150px);
       }
       .btn--deletefromgroup {
         &::before {
