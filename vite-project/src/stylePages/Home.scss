@@ -5,6 +5,23 @@ $whitesmoke: #f5f5f5;
 $lightgrey_16: #161616;
 $font_acme: 'Acme', sans-serif;
 
+@mixin params-anim($color){
+  margin-top: 250px;
+  justify-content: space-between;
+  font-family: $font_acme;
+  font-size: 1.4rem;
+  color: $color;
+}
+
+@mixin animation-home($name, $delay, $duration, $count, $function, $direction){
+  animation-name: $name;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-timing-function: $function;
+  animation-direction: $direction;
+}
+
 @keyframes rotate-logo {
   0% {
     transform: rotate3d(0, 0, 0, 0deg);
@@ -78,10 +95,13 @@ $font_acme: 'Acme', sans-serif;
     z-index: 3;
     .btn--voletLeft {
       padding: 20px 40px;
+      
       font-family: $font_acme;
       font-size: 1.4rem;
       color: rgba(128, 0, 128, 0.4);
-      background: linear-gradient(90deg, $sandybrown, rgba(195,87,116, 0.6));
+
+      background: linear-gradient(90deg,
+        $sandybrown, rgba(195,87,116, 0.6));
       border: none;
       outline: none;
       border-radius: 40px;
@@ -89,7 +109,8 @@ $font_acme: 'Acme', sans-serif;
       &:hover {
         transition: ease;
         transition-duration: 2s;
-        background: linear-gradient(90deg, $sandybrown, rgba(195,87,116, 1));
+        background: linear-gradient(90deg,
+          $sandybrown, rgba(195,87,116, 1));
         color: $whitesmoke;
         cursor: pointer;
       }
@@ -102,18 +123,9 @@ $font_acme: 'Acme', sans-serif;
       }
     }
     .webdevanim {
-      margin-top: 250px;
-      justify-content: space-between;
-      font-family: $font_acme;
-      font-size: 1.4rem;
-      color: rgba(195,87,116, 1);
-
-      animation-name: rotate-logo;
-      animation-delay: 0s;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out infinite;
-      animation-direction: alternate;
+      @include params-anim(rgba(195,87,116, 1));
+      @include animation-home(rotate-logo,
+        0s, 3s, infinite, ease-in-out, alternate);
     }
   }
   .div--voletsRight {
@@ -125,12 +137,15 @@ $font_acme: 'Acme', sans-serif;
     z-index: 3;
     .btn--voletRight {
       padding: 20px 40px;
+      
       font-family: $font_acme;
       font-size: 1.4rem;
       font-weight: bold;
       color: rgba(128, 0, 128, 0.4);
+
       background: linear-gradient(90deg,
-        rgba(244,164,96, 1) 10%, rgba(195,87,116, 0.6) 100%);
+        rgba(244,164,96, 1) 10%,
+        rgba(195,87,116, 0.6) 100%);
       border: none;
       outline: none;
       border-radius: 40px;
@@ -139,7 +154,8 @@ $font_acme: 'Acme', sans-serif;
         transition: ease;
         transition-duration: 2s;
         background: linear-gradient(90deg,
-          rgba(244,164,96, 1) 0%, rgba(195,87,116, 1) 100%);
+          rgba(244,164,96, 1) 0%,
+          rgba(195,87,116, 1) 100%);
         color: $whitesmoke;
         cursor: pointer;
       }
@@ -152,18 +168,9 @@ $font_acme: 'Acme', sans-serif;
       }
     }
     .computinganim {
-      margin-top: 250px;
-      justify-content: space-between;
-      font-family: $font_acme;
-      font-size: 1.4rem;
-      color: $sandybrown;
-
-      animation-name: rotate-logo-2;
-      animation-delay: 0s;
-      animation-duration: 8s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out infinite;
-      animation-direction: linear;
+      @include params-anim($sandybrown);
+      @include animation-home(rotate-logo-2,
+        0s, 8s, infinite, ease-in-out, linear);
     }
   }
 }
@@ -177,11 +184,14 @@ $font_acme: 'Acme', sans-serif;
 
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--home {
-    background: radial-gradient(800px at 50% 20%, 
-      $sandybrown, $darkmagenta);
     .img--home {
+      border: 1px solid blue;
     }
     .wallIntro {
+      .wallIntro-h1 {
+        margin-left: 0px;
+        border: 1px solid blue;
+      }
     }
     .div--voletsLeft {
       margin-top: 380px;

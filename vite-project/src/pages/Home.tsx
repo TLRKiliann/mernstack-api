@@ -45,7 +45,7 @@ const Home: React.FC = () => {
       </div>
 
       <div className="wallIntro">
-        <h1 className="wallIntro--h1">Chat-Society</h1>
+        <h1 className="wallIntro-h1">Chat-Society</h1>
       </div>
 
       {!isOpenRight && <div className="div--voletsRight">
