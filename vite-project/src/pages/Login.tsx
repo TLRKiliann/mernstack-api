@@ -108,11 +108,11 @@ const Login: React.FC = () => {
         />
       </div>
 
-      <div className="div--submit">
+      <div className="div--login">
         <form
           data-testid="formlog"
           onSubmit={(e) => handleSubmit(e)}
-          className="submit"
+          className="login"
           placeholder="lastname"
         >
           <h1 className="title--framelogin">Login</h1>
