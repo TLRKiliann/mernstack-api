@@ -21,6 +21,17 @@ $font_acme: 'Acme', sans-serif;
   color: $color;
 }
 
+@mixin margin-top-left-size(){
+  margin-top: 20px;
+  margin-left: -200px;
+  font-size: 3.8rem;
+}
+
+@mixin margin-font($size){
+  margin-top: -10px;
+  font-size: $size;
+}
+
 .maintitle {
   padding-top: 60px;
   @include margin-padding(500px, 150px, 60px, auto, 80px);
@@ -56,18 +67,16 @@ $font_acme: 'Acme', sans-serif;
     @include margin-padding(380px, 200px, 20px, auto, 140px);
     background: linear-gradient(180deg, rgba(112, 43, 183, 0.2),
       rgba(112, 43, 183, 0.4));
+    border-radius: 50%;
     .div--bamimg {
       .bam--img {
       }
     }
     .main--h1 {
-      margin-top: 20px;
-      margin-left: -200px;
-      font-size: 3.8rem;
+      @include margin-top-left-size();
     }
     .main--h2 {
-      margin-top: -10px;
-      font-size: 2.2rem;
+      @include margin-font(2.2rem);
     }
     .main--h4 {
       font-size: 0.9rem;
@@ -77,26 +86,19 @@ $font_acme: 'Acme', sans-serif;
 
 @media only screen and (min-width: 900px) and (max-width: 1068px) {
   .maintitle {
-    @include margin-padding(360px, 160px, 20px, auto, 140px);
+    @include margin-padding(380px, 200px, 20px, auto, 140px);
     background: linear-gradient(180deg, rgba(112, 43, 183, 0.2),
       rgba(112, 43, 183, 0.4));
+    border-radius: 20px;
     .div--bamimg {
-      width: 360px;
-      margin: auto;
-      opacity: 0.4;
       .bam--img {
-        margin: auto;
-        width: 340px;
-        height: 200px;
       }
     }
     .main--h1 {
-      margin-top: 20px;
-      font-size: 3.8rem;
+      @include margin-top-left-size();
     }
     .main--h2 {
-      margin-top: -10px;
-      font-size: 2.8rem;
+      @include margin-font(2.8rem);
     }
     .main--h4 {
       font-size: 1.0rem;
