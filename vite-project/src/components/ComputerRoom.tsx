@@ -137,7 +137,6 @@ const ComputerRoom: React.FC = () => {
             ))}
         </section>
       </div>
-      
     </div>
   )
 }

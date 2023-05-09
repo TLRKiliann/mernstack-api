@@ -15,8 +15,6 @@ test('MatchSnapShot test DisplayInviteOrigin', () => {
   expect(treeApp.toJSON()).toMatchSnapshot()
 })
 
-
-
 describe("testing children DisplayInviteOrigin", () => {
   test("DisplayInviteOrigin", () => {
     const Button = ({onClick, children}) => (

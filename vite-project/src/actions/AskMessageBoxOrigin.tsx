@@ -137,7 +137,7 @@ const AskMessageBoxOrigin: React.FC = (props: AskProps) => {
 
   return (
     <AskMessageBox
-      key={props.catchById.id}
+      key={props.catchById?.id}
       catchById={props.catchById}
       form={form.invite.value}
       options={options}
