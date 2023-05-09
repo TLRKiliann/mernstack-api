@@ -13,25 +13,25 @@ interface UserOnlineProps {
 const UserOnline: React.FC = (props: UserOnlineProps) => {
   //console.log("props", props)
   return(
-    props.refreshUser.room === props.roomStyle && (
-      <div key={props.refreshUser.id} className="all--usersbanner">   
+    props.refreshUser?.room === props.roomStyle && (
+      <div key={props.refreshUser?.id} className="all--usersbanner">   
         <div className="username--useronline">
           <img
-            src={props.refreshUser.img}
+            src={props.refreshUser?.img}
             width="100%"
             height="100%"
             className="smile--img"
-            alt={props.refreshUser.img}
+            alt={props.refreshUser?.img}
           /> 
 
           <span className="useronline--username">
-            {props.refreshUser.firstName}
+            {props.refreshUser?.firstName}
           </span>
 
         </div>
         
         <p className="para--spanchat"> 
-          {props.refreshUser.isConnected ? (
+          {props.refreshUser?.isConnected ? (
             <span
               className="span--useronline connector--icon"
               style={{color: 'lightgreen'}}
@@ -48,8 +48,9 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
           }
 
           <span
-            id={props.refreshUser.id}
-            onClick={() => props.handleAskUserPrivate(props.refreshUser.id)}
+            data-testid="span-useronline"
+            id={props.refreshUser?.id}
+            onClick={() => props.handleAskUserPrivate(props.refreshUser?.id)}
             className="span--useronline styleusr--span"
             style={{color: 'sandybrown', fontSize: '22px'}}
           >

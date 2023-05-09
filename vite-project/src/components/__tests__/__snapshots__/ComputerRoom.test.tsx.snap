@@ -13,6 +13,7 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
       <h1 />
     </div>
   </div>
+  <div />
   <h1
     className="title--room"
   >
@@ -29,31 +30,42 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
         className="div--worldbg"
       >
         <img
-          alt="/src/assets/world_connected.png"
+          alt="/src/assets/background/world_connected.png"
           className="img--bgterminal"
           height="100%"
-          src="/src/assets/world_connected.png"
+          src="/src/assets/background/world_connected.png"
           width="100%"
         />
       </div>
       <section
         className="terminal"
       >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
         <div
           className="div--terminal"
-        >
-          <span
-            className="intro--terminal"
-            data-testid="spantestid"
-          />
-        </div>
+        />
         <div
           className="subterminal"
         >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
           <input
             className="input--message"
             onChange={[Function]}
-            placeholder="$ ▶"
+            placeholder="Write something here..."
             required={true}
             type="text"
             value=""
@@ -63,29 +75,13 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
             onClick={[Function]}
             type="button"
           >
-            <div
-              className="div--btnworld"
-            >
-              <img
-                alt="/src/assets/btn-world.png"
-                className="img--world"
-                height="70px"
-                src="/src/assets/btn-world.png"
-                width="80px"
-              />
-            </div>
-            <p
-              className="text--btn"
-            >
-              Enter
-            </p>
+            Enter
           </button>
         </div>
       </section>
     </div>
     <section
       className="user--online"
-      data-testid="ptestid"
     >
       <div
         className="div--userolinetitle"
@@ -114,6 +110,7 @@ exports[`MatchSnapShot test TerminalComponent 1`] = `
       <h1 />
     </div>
   </div>
+  <div />
   <h1
     className="title--room"
   >
@@ -130,31 +127,42 @@ exports[`MatchSnapShot test TerminalComponent 1`] = `
         className="div--worldbg"
       >
         <img
-          alt="/src/assets/world_connected.png"
+          alt="/src/assets/background/world_connected.png"
           className="img--bgterminal"
           height="100%"
-          src="/src/assets/world_connected.png"
+          src="/src/assets/background/world_connected.png"
           width="100%"
         />
       </div>
       <section
         className="terminal"
       >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
         <div
           className="div--terminal"
-        >
-          <span
-            className="intro--terminal"
-            data-testid="spantestid"
-          />
-        </div>
+        />
         <div
           className="subterminal"
         >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
           <input
             className="input--message"
             onChange={[Function]}
-            placeholder="$ ▶"
+            placeholder="Write something here..."
             required={true}
             type="text"
             value=""
@@ -164,29 +172,13 @@ exports[`MatchSnapShot test TerminalComponent 1`] = `
             onClick={[Function]}
             type="button"
           >
-            <div
-              className="div--btnworld"
-            >
-              <img
-                alt="/src/assets/btn-world.png"
-                className="img--world"
-                height="70px"
-                src="/src/assets/btn-world.png"
-                width="80px"
-              />
-            </div>
-            <p
-              className="text--btn"
-            >
-              Enter
-            </p>
+            Enter
           </button>
         </div>
       </section>
     </div>
     <section
       className="user--online"
-      data-testid="ptestid"
     >
       <div
         className="div--userolinetitle"
@@ -215,6 +207,7 @@ exports[`MatchSnapShot test UsersOnline 1`] = `
       <h1 />
     </div>
   </div>
+  <div />
   <h1
     className="title--room"
   >
@@ -231,31 +224,42 @@ exports[`MatchSnapShot test UsersOnline 1`] = `
         className="div--worldbg"
       >
         <img
-          alt="/src/assets/world_connected.png"
+          alt="/src/assets/background/world_connected.png"
           className="img--bgterminal"
           height="100%"
-          src="/src/assets/world_connected.png"
+          src="/src/assets/background/world_connected.png"
           width="100%"
         />
       </div>
       <section
         className="terminal"
       >
+        <span
+          className="intro--terminal"
+        >
+          <h3
+            className="intro--terminalh3"
+          />
+        </span>
         <div
           className="div--terminal"
-        >
-          <span
-            className="intro--terminal"
-            data-testid="spantestid"
-          />
-        </div>
+        />
         <div
           className="subterminal"
         >
+          <div
+            className="div--psubterminal"
+          >
+            <p
+              className="arrow"
+            >
+              ▶
+            </p>
+          </div>
           <input
             className="input--message"
             onChange={[Function]}
-            placeholder="$ ▶"
+            placeholder="Write something here..."
             required={true}
             type="text"
             value=""
@@ -265,29 +269,13 @@ exports[`MatchSnapShot test UsersOnline 1`] = `
             onClick={[Function]}
             type="button"
           >
-            <div
-              className="div--btnworld"
-            >
-              <img
-                alt="/src/assets/btn-world.png"
-                className="img--world"
-                height="70px"
-                src="/src/assets/btn-world.png"
-                width="80px"
-              />
-            </div>
-            <p
-              className="text--btn"
-            >
-              Enter
-            </p>
+            Enter
           </button>
         </div>
       </section>
     </div>
     <section
       className="user--online"
-      data-testid="ptestid"
     >
       <div
         className="div--userolinetitle"
