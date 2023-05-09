@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.8% </span>
+                <span class="strong">41.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/151</span>
+                <span class='fraction'>63/151</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.8% </span>
+                <span class="strong">41.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/151</span>
+                <span class='fraction'>63/151</span>
             </div>
         
             
@@ -256,29 +256,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -363,6 +350,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useState }  from 'react'
 import { UserType } from '../models/usertype'
 import serviceRouting from '../services/serviceRouting'
@@ -405,17 +405,17 @@ interface AskProps {
   handleClose: () =&gt; void
 }
 &nbsp;
-const AskMessageBoxOrigin: React.FC = (<span class="fstat-no" title="function not covered" >props: AskProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const [form, setForm] = useState&lt;Form&gt;({invite: {value: 'Private'}})</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const handleInviteChoice = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
+const AskMessageBoxOrigin: React.FC = (props: AskProps) =&gt; {
+  const [form, setForm] = useState&lt;Form&gt;({invite: {value: 'Private'}})
+&nbsp;
+  const handleInviteChoice = (<span class="fstat-no" title="function not covered" >e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const fieldName: string = e.target.name;</span>
 <span class="cstat-no" title="statement not covered" >    const fieldValue: string | number  = e.target.value;</span>
 <span class="cstat-no" title="statement not covered" >    const newField: Field = {[fieldName]: {value: fieldValue}}</span>
 <span class="cstat-no" title="statement not covered" >    setForm({...form, ...newField});</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const handleInvitation = (e: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; {</span>
+&nbsp;
+  const handleInvitation = (<span class="fstat-no" title="function not covered" >e: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    props.setSwitchAsk(false)</span>
 <span class="cstat-no" title="statement not covered" >    const data: UserType = props.catchById</span>
 <span class="cstat-no" title="statement not covered" >    props.setOtherUser(data)</span>
@@ -499,19 +499,19 @@ const AskMessageBoxOrigin: React.FC = (<span class="fstat-no" title="function no
 <span class="cstat-no" title="statement not covered" >      })</span>
 <span class="cstat-no" title="statement not covered" >    console.log("invitation successfull sent to sender &amp; invited !")</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;AskMessageBox</span>
-<span class="cstat-no" title="statement not covered" >      key={props.catchById.id}</span>
-<span class="cstat-no" title="statement not covered" >      catchById={props.catchById}</span>
-<span class="cstat-no" title="statement not covered" >      form={form.invite.value}</span>
-<span class="cstat-no" title="statement not covered" >      options={options}</span>
-<span class="cstat-no" title="statement not covered" >      handleInviteChoice={handleInviteChoice}</span>
-<span class="cstat-no" title="statement not covered" >      handleInvitation={(e) =&gt; handleInvitation(e)}</span>
-<span class="cstat-no" title="statement not covered" >      handleClose={props.handleClose}</span>
-<span class="cstat-no" title="statement not covered" >    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >  )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+  return (
+    &lt;AskMessageBox
+      key={props.catchById?.id}
+      catchById={props.catchById}
+      form={form.invite.value}
+      options={options}
+      handleInviteChoice={handleInviteChoice}
+      handleInvitation={(<span class="fstat-no" title="function not covered" >e) =&gt; handleInvitation(e)}</span>
+      handleClose={props.<span class="branch-0 cbranch-no" title="branch not covered" >handleClose}</span>
+    /&gt;
+  )
+}
 &nbsp;
 export default AskMessageBoxOrigin</pre></td></tr></table></pre>
 
@@ -520,7 +520,7 @@ export default AskMessageBoxOrigin</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-09T10:51:11.975Z
+                at 2023-05-09T19:59:22.776Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
