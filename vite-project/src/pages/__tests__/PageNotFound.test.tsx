@@ -1,17 +1,33 @@
-import React from "react";
-import { screen, render } from '@testing-library/react';
-import { expect, vi } from 'vitest'
-import PageNotFound from "../PageNotFound.tsx";
+import React from "react"
+import { test, expect, vi } from 'vitest'
+import {fireEvent, render, screen} from '@testing-library/react'
+import { Link } from 'react-router-dom'
 import '@testing-library/jest-dom'
-//import {create} from 'react-test-renderer';
-//import {assert, assertType, expectTypeOf, beforeEach, afterEach, describe, expect, test, it, vi} from 'vitest';
-//import {fireEvent, render, screen} from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom'
+import { create } from 'react-test-renderer'
+import PageNotFound from "../PageNotFound.tsx"
+//import userEvent from '@testing-library/user-event'
 //import "@testing-library/jest-dom/extend-expect"
-//import "@testing-library/jest-dom";
-//import { act } from 'react-dom/test-utils';
+//import "@testing-library/jest-dom"
+//import { act } from 'react-dom/test-utils'
 
-test('renders services link', () => {
-  render(<PageNotFound />);
-  const linkElement = screen.getByText(/redirect to home page./i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+test('PageNotFound testid', () => {
+  render(    
+    <MemoryRouter>
+      <PageNotFound />
+    </MemoryRouter>
+  )
+  const mytestid = screen.getByTestId("pagenotfoundtest")
+  expect(mytestid).toBeInTheDocument()
+})
+
+
+test("PageNF Link test", () => {
+  const pnfComp = create(
+    <MemoryRouter>
+      <PageNotFound />
+    </MemoryRouter>
+  )
+  expect(pnfComp.toJSON()).toMatchSnapshot()
+})

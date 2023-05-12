@@ -4,7 +4,11 @@ exports[`MatchSnapShot test App 1`] = `
 <div>
   <div
     className="div--headernav"
+<<<<<<< HEAD
     data-test-id="testId"
+=======
+    data-testid="testId"
+>>>>>>> master
   >
     <nav
       className="navbar--nav"
@@ -13,7 +17,11 @@ exports[`MatchSnapShot test App 1`] = `
         className="div--imgnavbar"
       >
         <img
+<<<<<<< HEAD
           alt="no img navbar"
+=======
+          alt="no-img-navbar"
+>>>>>>> master
           className="img--koala"
           height="70px"
           src="/src/assets/logo/koala_tree.png"
@@ -26,6 +34,10 @@ exports[`MatchSnapShot test App 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="firstLink"
+>>>>>>> master
             href="/"
             onClick={[Function]}
           >
@@ -35,6 +47,10 @@ exports[`MatchSnapShot test App 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="secondlink"
+>>>>>>> master
             href="/profile"
             onClick={[Function]}
           >
@@ -44,6 +60,10 @@ exports[`MatchSnapShot test App 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="thirdlink"
+>>>>>>> master
             href="/online"
             onClick={[Function]}
           >
@@ -71,6 +91,10 @@ exports[`MatchSnapShot test App 1`] = `
           >
             <a
               className="link--logout"
+<<<<<<< HEAD
+=======
+              data-testid="linkLogout"
+>>>>>>> master
               href="/login"
               onClick={[Function]}
             >
@@ -107,6 +131,10 @@ exports[`MatchSnapShot test App 1`] = `
     >
       <button
         className="btn--voletRight"
+<<<<<<< HEAD
+=======
+        data-testid="btnhomeright"
+>>>>>>> master
         onClick={[Function]}
       >
         Computing
@@ -124,6 +152,10 @@ exports[`MatchSnapShot test App 1`] = `
     >
       <button
         className="btn--voletLeft"
+<<<<<<< HEAD
+=======
+        data-testid="btnhomeleft"
+>>>>>>> master
         onClick={[Function]}
       >
         Chat-Room
@@ -160,6 +192,7 @@ exports[`MatchSnapShot test App 1`] = `
           />
           <section
             className="section--voletr"
+<<<<<<< HEAD
           />
         </div>
       </div>
@@ -509,6 +542,49 @@ exports[`MatchSnapShot test ChatComputer 1`] = `
             </li>
             <li
               className="li--right"
+=======
+          >
+            <li
+              className="li--right"
+            >
+              <a
+                className="link--tagvoletr"
+                href="/chatcomputer/1"
+                onClick={[Function]}
+              >
+                Hard Disk - SSD
+              </a>
+              <span
+                className="spanli--right"
+              >
+                <div>
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM3 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"
+                    />
+                    <path
+                      d="M16 11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9.51c0-.418.105-.83.305-1.197l2.472-4.531A1.5 1.5 0 0 1 4.094 3h7.812a1.5 1.5 0 0 1 1.317.782l2.472 4.53c.2.368.305.78.305 1.198V11zM3.655 4.26 1.592 8.043C1.724 8.014 1.86 8 2 8h12c.14 0 .276.014.408.042L12.345 4.26a.5.5 0 0 0-.439-.26H4.094a.5.5 0 0 0-.44.26zM1 10v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"
+                    />
+                  </svg>
+                </div>
+              </span>
+            </li>
+            <li
+              className="li--right"
+>>>>>>> master
             >
               <a
                 className="link--tagvoletr"
@@ -1059,11 +1135,19 @@ exports[`MatchSnapShot test ChatComputer 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`MatchSnapShot test ComputerRoom 1`] = `
 <div>
   <div
     className="div--headernav"
     data-test-id="testId"
+=======
+exports[`MatchSnapShot test ChatComputer 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+>>>>>>> master
   >
     <nav
       className="navbar--nav"
@@ -1072,7 +1156,11 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
         className="div--imgnavbar"
       >
         <img
+<<<<<<< HEAD
           alt="no img navbar"
+=======
+          alt="no-img-navbar"
+>>>>>>> master
           className="img--koala"
           height="70px"
           src="/src/assets/logo/koala_tree.png"
@@ -1085,6 +1173,10 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="firstLink"
+>>>>>>> master
             href="/"
             onClick={[Function]}
           >
@@ -1094,6 +1186,10 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="secondlink"
+>>>>>>> master
             href="/profile"
             onClick={[Function]}
           >
@@ -1103,6 +1199,10 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="thirdlink"
+>>>>>>> master
             href="/online"
             onClick={[Function]}
           >
@@ -1130,6 +1230,10 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
           >
             <a
               className="link--logout"
+<<<<<<< HEAD
+=======
+              data-testid="linkLogout"
+>>>>>>> master
               href="/login"
               onClick={[Function]}
             >
@@ -1141,6 +1245,7 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
     </nav>
   </div>
   <div
+<<<<<<< HEAD
     className="div--home"
   >
     <div>
@@ -1363,15 +1468,201 @@ exports[`MatchSnapShot test ComputerRoom 1`] = `
         </ul>
       </nav>
     </div>
+=======
+    className="bg--loginimg"
+    data-testid="logintest"
+  >
+    <div
+      className="zoom--img"
+    >
+      <img
+        alt="/src/assets/background/circle.jpg"
+        className="img--login"
+        height="100%"
+        src="/src/assets/background/circle.jpg"
+        width="100%"
+      />
+    </div>
+    <div
+      className="div--submit"
+    >
+      <form
+        className="submit"
+        data-testid="formlog"
+        onSubmit={[Function]}
+        placeholder="lastname"
+      >
+        <h1
+          className="title--framelogin"
+        >
+          Login
+        </h1>
+        <div
+          className="form-group"
+        >
+          <div
+            className="error--message"
+          >
+            Not connected!
+          </div>
+        </div>
+        <label
+          className="lbl--login"
+          htmlFor="username"
+        >
+          Username
+        </label>
+        <input
+          autoComplete="off"
+          className="input--login"
+          name="username"
+          onChange={[Function]}
+          placeholder="username"
+          required={true}
+          type="text"
+          value=""
+        />
+        <label
+          className="lbl--login"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="input--login"
+          name="password"
+          onChange={[Function]}
+          placeholder="password"
+          required={true}
+          type="password"
+          value=""
+        />
+        <button
+          className="btn--submitlogin"
+          type="submit"
+        >
+          Enter
+        </button>
+        <p
+          className="p--loginframe"
+        >
+          <a
+            className="link--subscribe"
+            data-testid="linktosub"
+            href="/subscribe"
+            onClick={[Function]}
+          >
+            Subscribe
+          </a>
+        </p>
+      </form>
+    </div>
   </div>
 </div>
 `;
 
+exports[`MatchSnapShot test ComputerRoom 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+  >
+    <nav
+      className="navbar--nav"
+    >
+      <div
+        className="div--imgnavbar"
+      >
+        <img
+          alt="no-img-navbar"
+          className="img--koala"
+          height="70px"
+          src="/src/assets/logo/koala_tree.png"
+          width="65px"
+        />
+      </div>
+      <ul
+        className="ul--navbar"
+      >
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="firstLink"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="secondlink"
+            href="/profile"
+            onClick={[Function]}
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="thirdlink"
+            href="/online"
+            onClick={[Function]}
+          >
+            Online
+          </a>
+        </li>
+      </ul>
+      <div
+        className="div--userloginnavbar"
+      >
+        <div
+          className="div--userplace"
+        >
+          <span
+            className="span--usrnavbar"
+          >
+            ↦
+          </span>
+        </div>
+        <div
+          className="div--login"
+        >
+          <span
+            className="span--navbarlogin"
+          >
+            <a
+              className="link--logout"
+              data-testid="linkLogout"
+              href="/login"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+>>>>>>> master
+  </div>
+</div>
+`;
+
+<<<<<<< HEAD
 exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
 <div>
   <div
     className="div--headernav"
     data-test-id="testId"
+=======
+exports[`MatchSnapShot test Home 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+>>>>>>> master
   >
     <nav
       className="navbar--nav"
@@ -1380,7 +1671,11 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
         className="div--imgnavbar"
       >
         <img
+<<<<<<< HEAD
           alt="no img navbar"
+=======
+          alt="no-img-navbar"
+>>>>>>> master
           className="img--koala"
           height="70px"
           src="/src/assets/logo/koala_tree.png"
@@ -1393,6 +1688,10 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="firstLink"
+>>>>>>> master
             href="/"
             onClick={[Function]}
           >
@@ -1402,6 +1701,10 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="secondlink"
+>>>>>>> master
             href="/profile"
             onClick={[Function]}
           >
@@ -1411,6 +1714,10 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="thirdlink"
+>>>>>>> master
             href="/online"
             onClick={[Function]}
           >
@@ -1438,6 +1745,10 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
           >
             <a
               className="link--logout"
+<<<<<<< HEAD
+=======
+              data-testid="linkLogout"
+>>>>>>> master
               href="/login"
               onClick={[Function]}
             >
@@ -1474,6 +1785,10 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
     >
       <button
         className="btn--voletRight"
+<<<<<<< HEAD
+=======
+        data-testid="btnhomeright"
+>>>>>>> master
         onClick={[Function]}
       >
         Computing
@@ -1491,6 +1806,10 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
     >
       <button
         className="btn--voletLeft"
+<<<<<<< HEAD
+=======
+        data-testid="btnhomeleft"
+>>>>>>> master
         onClick={[Function]}
       >
         Chat-Room
@@ -1675,11 +1994,18 @@ exports[`MatchSnapShot test ErrorPageNotFound 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`MatchSnapShot test Home 1`] = `
 <div>
   <div
     className="div--headernav"
     data-test-id="testId"
+=======
+exports[`MatchSnapShot test Login 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
   >
     <nav
       className="navbar--nav"
@@ -1688,7 +2014,7 @@ exports[`MatchSnapShot test Home 1`] = `
         className="div--imgnavbar"
       >
         <img
-          alt="no img navbar"
+          alt="no-img-navbar"
           className="img--koala"
           height="70px"
           src="/src/assets/logo/koala_tree.png"
@@ -1701,6 +2027,7 @@ exports[`MatchSnapShot test Home 1`] = `
         <li>
           <a
             className="link--tagnav"
+            data-testid="firstLink"
             href="/"
             onClick={[Function]}
           >
@@ -1710,6 +2037,7 @@ exports[`MatchSnapShot test Home 1`] = `
         <li>
           <a
             className="link--tagnav"
+            data-testid="secondlink"
             href="/profile"
             onClick={[Function]}
           >
@@ -1719,6 +2047,7 @@ exports[`MatchSnapShot test Home 1`] = `
         <li>
           <a
             className="link--tagnav"
+            data-testid="thirdlink"
             href="/online"
             onClick={[Function]}
           >
@@ -1746,6 +2075,202 @@ exports[`MatchSnapShot test Home 1`] = `
           >
             <a
               className="link--logout"
+              data-testid="linkLogout"
+              href="/login"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="bg--loginimg"
+    data-testid="logintest"
+  >
+    <div
+      className="zoom--img"
+    >
+      <img
+        alt="/src/assets/background/circle.jpg"
+        className="img--login"
+        height="100%"
+        src="/src/assets/background/circle.jpg"
+        width="100%"
+      />
+    </div>
+    <div
+      className="div--submit"
+    >
+      <form
+        className="submit"
+        data-testid="formlog"
+        onSubmit={[Function]}
+        placeholder="lastname"
+      >
+        <h1
+          className="title--framelogin"
+        >
+          Login
+        </h1>
+        <div
+          className="form-group"
+        >
+          <div
+            className="error--message"
+          >
+            Not connected!
+          </div>
+        </div>
+        <label
+          className="lbl--login"
+          htmlFor="username"
+        >
+          Username
+        </label>
+        <input
+          autoComplete="off"
+          className="input--login"
+          name="username"
+          onChange={[Function]}
+          placeholder="username"
+          required={true}
+          type="text"
+          value=""
+        />
+        <label
+          className="lbl--login"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="input--login"
+          name="password"
+          onChange={[Function]}
+          placeholder="password"
+          required={true}
+          type="password"
+          value=""
+        />
+        <button
+          className="btn--submitlogin"
+          type="submit"
+        >
+          Enter
+        </button>
+        <p
+          className="p--loginframe"
+        >
+          <a
+            className="link--subscribe"
+            data-testid="linktosub"
+            href="/subscribe"
+            onClick={[Function]}
+          >
+            Subscribe
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test NavBar 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+>>>>>>> master
+  >
+    <nav
+      className="navbar--nav"
+    >
+      <div
+        className="div--imgnavbar"
+      >
+        <img
+<<<<<<< HEAD
+          alt="no img navbar"
+=======
+          alt="no-img-navbar"
+>>>>>>> master
+          className="img--koala"
+          height="70px"
+          src="/src/assets/logo/koala_tree.png"
+          width="65px"
+        />
+      </div>
+      <ul
+        className="ul--navbar"
+      >
+        <li>
+          <a
+            className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="firstLink"
+>>>>>>> master
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="secondlink"
+>>>>>>> master
+            href="/profile"
+            onClick={[Function]}
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="thirdlink"
+>>>>>>> master
+            href="/online"
+            onClick={[Function]}
+          >
+            Online
+          </a>
+        </li>
+      </ul>
+      <div
+        className="div--userloginnavbar"
+      >
+        <div
+          className="div--userplace"
+        >
+          <span
+            className="span--usrnavbar"
+          >
+            ↦
+          </span>
+        </div>
+        <div
+          className="div--login"
+        >
+          <span
+            className="span--navbarlogin"
+          >
+            <a
+              className="link--logout"
+<<<<<<< HEAD
+=======
+              data-testid="linkLogout"
+>>>>>>> master
               href="/login"
               onClick={[Function]}
             >
@@ -1782,6 +2307,10 @@ exports[`MatchSnapShot test Home 1`] = `
     >
       <button
         className="btn--voletRight"
+<<<<<<< HEAD
+=======
+        data-testid="btnhomeright"
+>>>>>>> master
         onClick={[Function]}
       >
         Computing
@@ -1799,6 +2328,10 @@ exports[`MatchSnapShot test Home 1`] = `
     >
       <button
         className="btn--voletLeft"
+<<<<<<< HEAD
+=======
+        data-testid="btnhomeleft"
+>>>>>>> master
         onClick={[Function]}
       >
         Chat-Room
@@ -1983,11 +2516,19 @@ exports[`MatchSnapShot test Home 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`MatchSnapShot test Layout 1`] = `
 <div>
   <div
     className="div--headernav"
     data-test-id="testId"
+=======
+exports[`MatchSnapShot test Online 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+>>>>>>> master
   >
     <nav
       className="navbar--nav"
@@ -1996,7 +2537,11 @@ exports[`MatchSnapShot test Layout 1`] = `
         className="div--imgnavbar"
       >
         <img
+<<<<<<< HEAD
           alt="no img navbar"
+=======
+          alt="no-img-navbar"
+>>>>>>> master
           className="img--koala"
           height="70px"
           src="/src/assets/logo/koala_tree.png"
@@ -2009,6 +2554,10 @@ exports[`MatchSnapShot test Layout 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="firstLink"
+>>>>>>> master
             href="/"
             onClick={[Function]}
           >
@@ -2018,6 +2567,10 @@ exports[`MatchSnapShot test Layout 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="secondlink"
+>>>>>>> master
             href="/profile"
             onClick={[Function]}
           >
@@ -2027,6 +2580,10 @@ exports[`MatchSnapShot test Layout 1`] = `
         <li>
           <a
             className="link--tagnav"
+<<<<<<< HEAD
+=======
+            data-testid="thirdlink"
+>>>>>>> master
             href="/online"
             onClick={[Function]}
           >
@@ -2054,6 +2611,10 @@ exports[`MatchSnapShot test Layout 1`] = `
           >
             <a
               className="link--logout"
+<<<<<<< HEAD
+=======
+              data-testid="linkLogout"
+>>>>>>> master
               href="/login"
               onClick={[Function]}
             >
@@ -2064,6 +2625,7 @@ exports[`MatchSnapShot test Layout 1`] = `
       </div>
     </nav>
   </div>
+<<<<<<< HEAD
   <div
     className="div--home"
   >
@@ -5291,6 +5853,598 @@ exports[`MatchSnapShot test Subscribe 1`] = `
         </ul>
       </nav>
     </div>
+=======
+</div>
+`;
+
+exports[`MatchSnapShot test PageNotFound 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+  >
+    <nav
+      className="navbar--nav"
+    >
+      <div
+        className="div--imgnavbar"
+      >
+        <img
+          alt="no-img-navbar"
+          className="img--koala"
+          height="70px"
+          src="/src/assets/logo/koala_tree.png"
+          width="65px"
+        />
+      </div>
+      <ul
+        className="ul--navbar"
+      >
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="firstLink"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="secondlink"
+            href="/profile"
+            onClick={[Function]}
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="thirdlink"
+            href="/online"
+            onClick={[Function]}
+          >
+            Online
+          </a>
+        </li>
+      </ul>
+      <div
+        className="div--userloginnavbar"
+      >
+        <div
+          className="div--userplace"
+        >
+          <span
+            className="span--usrnavbar"
+          >
+            ↦
+          </span>
+        </div>
+        <div
+          className="div--login"
+        >
+          <span
+            className="span--navbarlogin"
+          >
+            <a
+              className="link--logout"
+              data-testid="linkLogout"
+              href="/login"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test PrivateMessage 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+  >
+    <nav
+      className="navbar--nav"
+    >
+      <div
+        className="div--imgnavbar"
+      >
+        <img
+          alt="no-img-navbar"
+          className="img--koala"
+          height="70px"
+          src="/src/assets/logo/koala_tree.png"
+          width="65px"
+        />
+      </div>
+      <ul
+        className="ul--navbar"
+      >
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="firstLink"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="secondlink"
+            href="/profile"
+            onClick={[Function]}
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="thirdlink"
+            href="/online"
+            onClick={[Function]}
+          >
+            Online
+          </a>
+        </li>
+      </ul>
+      <div
+        className="div--userloginnavbar"
+      >
+        <div
+          className="div--userplace"
+        >
+          <span
+            className="span--usrnavbar"
+          >
+            ↦
+          </span>
+        </div>
+        <div
+          className="div--login"
+        >
+          <span
+            className="span--navbarlogin"
+          >
+            <a
+              className="link--logout"
+              data-testid="linkLogout"
+              href="/login"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="bg--loginimg"
+    data-testid="logintest"
+  >
+    <div
+      className="zoom--img"
+    >
+      <img
+        alt="/src/assets/background/circle.jpg"
+        className="img--login"
+        height="100%"
+        src="/src/assets/background/circle.jpg"
+        width="100%"
+      />
+    </div>
+    <div
+      className="div--submit"
+    >
+      <form
+        className="submit"
+        data-testid="formlog"
+        onSubmit={[Function]}
+        placeholder="lastname"
+      >
+        <h1
+          className="title--framelogin"
+        >
+          Login
+        </h1>
+        <div
+          className="form-group"
+        >
+          <div
+            className="error--message"
+          >
+            Not connected!
+          </div>
+        </div>
+        <label
+          className="lbl--login"
+          htmlFor="username"
+        >
+          Username
+        </label>
+        <input
+          autoComplete="off"
+          className="input--login"
+          name="username"
+          onChange={[Function]}
+          placeholder="username"
+          required={true}
+          type="text"
+          value=""
+        />
+        <label
+          className="lbl--login"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="input--login"
+          name="password"
+          onChange={[Function]}
+          placeholder="password"
+          required={true}
+          type="password"
+          value=""
+        />
+        <button
+          className="btn--submitlogin"
+          type="submit"
+        >
+          Enter
+        </button>
+        <p
+          className="p--loginframe"
+        >
+          <a
+            className="link--subscribe"
+            data-testid="linktosub"
+            href="/subscribe"
+            onClick={[Function]}
+          >
+            Subscribe
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test Profile 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+  >
+    <nav
+      className="navbar--nav"
+    >
+      <div
+        className="div--imgnavbar"
+      >
+        <img
+          alt="no-img-navbar"
+          className="img--koala"
+          height="70px"
+          src="/src/assets/logo/koala_tree.png"
+          width="65px"
+        />
+      </div>
+      <ul
+        className="ul--navbar"
+      >
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="firstLink"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="secondlink"
+            href="/profile"
+            onClick={[Function]}
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="thirdlink"
+            href="/online"
+            onClick={[Function]}
+          >
+            Online
+          </a>
+        </li>
+      </ul>
+      <div
+        className="div--userloginnavbar"
+      >
+        <div
+          className="div--userplace"
+        >
+          <span
+            className="span--usrnavbar"
+          >
+            ↦
+          </span>
+        </div>
+        <div
+          className="div--login"
+        >
+          <span
+            className="span--navbarlogin"
+          >
+            <a
+              className="link--logout"
+              data-testid="linkLogout"
+              href="/login"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test Subscribe 1`] = `
+<div>
+  <div
+    className="div--headernav"
+    data-testid="testId"
+  >
+    <nav
+      className="navbar--nav"
+    >
+      <div
+        className="div--imgnavbar"
+      >
+        <img
+          alt="no-img-navbar"
+          className="img--koala"
+          height="70px"
+          src="/src/assets/logo/koala_tree.png"
+          width="65px"
+        />
+      </div>
+      <ul
+        className="ul--navbar"
+      >
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="firstLink"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="secondlink"
+            href="/profile"
+            onClick={[Function]}
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            className="link--tagnav"
+            data-testid="thirdlink"
+            href="/online"
+            onClick={[Function]}
+          >
+            Online
+          </a>
+        </li>
+      </ul>
+      <div
+        className="div--userloginnavbar"
+      >
+        <div
+          className="div--userplace"
+        >
+          <span
+            className="span--usrnavbar"
+          >
+            ↦
+          </span>
+        </div>
+        <div
+          className="div--login"
+        >
+          <span
+            className="span--navbarlogin"
+          >
+            <a
+              className="link--logout"
+              data-testid="linkLogout"
+              href="/login"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="subscribe"
+    data-testid="subtest"
+  >
+    <form
+      autoComplete="off"
+      className="form--subscribe"
+      data-testid="formsub"
+      onSubmit={[Function]}
+    >
+      <div
+        className="div--subscribe"
+      >
+        <h1
+          className="title--framesub"
+        >
+          Subscribe
+        </h1>
+        <label
+          className="lbl--sub"
+          htmlFor="sub"
+        >
+          Firstname
+        </label>
+        <input
+          className="input--sub"
+          name="firstName"
+          onChange={[Function]}
+          placeholder="firstname"
+          required={true}
+          type="text"
+          value=""
+        />
+        <label
+          className="lbl--sub"
+          htmlFor="sub"
+        >
+          Lastname
+        </label>
+        <input
+          className="input--sub"
+          name="lastName"
+          onChange={[Function]}
+          placeholder="lastname"
+          required={true}
+          type="text"
+          value=""
+        />
+        <label
+          className="lbl--sub"
+          htmlFor="sub"
+        >
+          Password
+        </label>
+        <input
+          className="input--sub"
+          name="password"
+          onChange={[Function]}
+          placeholder="password"
+          required={true}
+          type="password"
+          value=""
+        />
+        <label
+          className="lbl--sub"
+          htmlFor="sub"
+        >
+          Age
+        </label>
+        <input
+          className="input--sub"
+          max="120"
+          min="20"
+          name="age"
+          onChange={[Function]}
+          placeholder="age"
+          required={true}
+          type="number"
+          value={20}
+        />
+        <label
+          className="lbl--sub"
+          htmlFor="sub"
+        >
+          Email
+        </label>
+        <input
+          className="input--sub"
+          name="email"
+          onChange={[Function]}
+          placeholder="email"
+          required={true}
+          type="email"
+          value=""
+        />
+        <label
+          className="lbl--sub"
+          htmlFor="sub"
+        >
+          Location
+        </label>
+        <input
+          className="input--sub"
+          name="location"
+          onChange={[Function]}
+          placeholder="location"
+          required={true}
+          type="text"
+          value=""
+        />
+        <div
+          className="div--subselect"
+        >
+          <label
+            className="lbl--sub"
+            htmlFor="gender"
+          >
+            Gender :
+          </label>
+          <select
+            className="select--sub"
+            id="gender"
+            name="gender"
+            onChange={[Function]}
+            value="Male"
+          >
+            <option
+              name="gender"
+              value="Male"
+            >
+              Male
+            </option>
+            <option
+              name="gender"
+              value="Female"
+            >
+              Female
+            </option>
+          </select>
+        </div>
+      </div>
+      <button
+        className="btn--sub"
+        type="submit"
+      >
+        Signup
+      </button>
+    </form>
+>>>>>>> master
   </div>
 </div>
 `;

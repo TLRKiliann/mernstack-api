@@ -43,7 +43,7 @@ const ComputerRoom: React.FC = () => {
   }
 
   return (
-    <div className="nextcomp--room">
+    <div data-testid="computerroomtest" className="nextcomp--room">
 
       <div className="div--animationroomStyle">
         <div className="rotation--roomstyle">
@@ -52,10 +52,10 @@ const ComputerRoom: React.FC = () => {
       </div>
 
       {displayConfirmInvite &&
-        refreshUsers?.map((refUser) => refUser.firstName === username ? (
+        refreshUsers?.map((refUser) => refUser?.firstName === username ? (
           <ConfirmationOrigin
-            key={refUser.id}
-            id={refUser.id}
+            key={refUser?.id}
+            id={refUser?.id}
             username={username}
             roomStyle={roomStyle}
             setRoomStyle={setRoomStyle}
@@ -105,7 +105,7 @@ const ComputerRoom: React.FC = () => {
 
       <h1 className="title--room">Room {Object.values(params)}</h1>
       
-      <div data-testid="testdiv" className="div--terminaluser">
+      <div className="div--terminaluser">
         <div className="section--terminal">
           <div className="div--worldbg">
             <img
@@ -117,24 +117,26 @@ const ComputerRoom: React.FC = () => {
             />
           </div>
 
-          <TerminalComponent roomStyle={roomStyle} />
+          <TerminalComponent 
+            roomStyle={roomStyle} />
+
         </div>
 
         <section className="user--online">
           <div className="div--userolinetitle">
             <h3 className="userolinetitle">Online Users</h3>
           </div>
-            {refreshUsers?.map((refreshUser) => (
-              <HandleAskUserOrigin
-                key={refreshUser?.id}
-                id={refreshUser?.id}
-                refreshUser={refreshUser}
-                roomStyle={roomStyle}
-                users={users}
-                setCatchById={setCatchById}
-                setSwitchAsk={setSwitchAsk}
-              />
-            ))}
+          {refreshUsers?.map((refreshUser) => (
+            <HandleAskUserOrigin
+              key={refreshUser?.id}
+              id={refreshUser?.id}
+              refreshUser={refreshUser}
+              roomStyle={roomStyle}
+              users={users}
+              setCatchById={setCatchById}
+              setSwitchAsk={setSwitchAsk}
+            />
+          ))}
         </section>
       </div>
     </div>

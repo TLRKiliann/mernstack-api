@@ -3,25 +3,39 @@ import { Link } from "react-router-dom"
 import { UserType } from '../models/usertype'
 import './UsersOnline.scss'
 
-interface UserOnlineProps {
+interface UsersOnlineProps {
   id: number | null
   refreshUser: UserType
   roomStyle: object
   handleAskUserPrivate: (id: number) => void
 }
 
-const UserOnline: React.FC = (props: UserOnlineProps) => {
+const UsersOnline: React.FC = (props: UsersOnlineProps) => {
   //console.log("props", props)
+<<<<<<< HEAD
   return(
     props.refreshUser?.room === props.roomStyle && (
       <div key={props.refreshUser?.id} className="all--usersbanner">   
+=======
+  return (
+    props.refreshUser?.room === props?.roomStyle && (
+      <div 
+        data-testid="onlinetest"
+        key={props.refreshUser?.id}
+        className="all--usersbanner"
+      >   
+>>>>>>> master
         <div className="username--useronline">
           <img
             src={props.refreshUser?.img}
             width="100%"
             height="100%"
             className="smile--img"
+<<<<<<< HEAD
             alt={props.refreshUser?.img}
+=======
+            alt="imgusersonline"
+>>>>>>> master
           /> 
 
           <span className="useronline--username">
@@ -33,6 +47,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
         <p className="para--spanchat"> 
           {props.refreshUser?.isConnected ? (
             <span
+              data-testid="spanuseronlinetrue"
               className="span--useronline connector--icon"
               style={{color: 'lightgreen'}}
             >
@@ -40,7 +55,7 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
             </span>
             ) : (
             <span 
-              className="span--useronline connector--icon"
+              className="span--useronlinefalse connector--icon"
             >
               ❌
             </span>
@@ -48,7 +63,11 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
           }
 
           <span
+<<<<<<< HEAD
             data-testid="span-useronline"
+=======
+            data-testid="spantestidusers"
+>>>>>>> master
             id={props.refreshUser?.id}
             onClick={() => props.handleAskUserPrivate(props.refreshUser?.id)}
             className="span--useronline styleusr--span"
@@ -56,11 +75,10 @@ const UserOnline: React.FC = (props: UserOnlineProps) => {
           >
             ✉
           </span>
-
         </p>
       </div>
     )
   )
 }
 
-export default UserOnline
+export default UsersOnline

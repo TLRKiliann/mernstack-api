@@ -72,7 +72,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
   }
 
   return(
-    <section className="terminal">
+    <section data-testid ="terminaltest" className="terminal">
         
       <span className="intro--terminal">
         <h3 className="intro--terminalh3">{props.roomStyle}</h3>

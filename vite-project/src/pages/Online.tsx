@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { UserType } from '../models/usertype'
 import { ComputerType } from '../models/computerType'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useAuthLogin } from '../context/AuthProvider'
 import serviceRouting from '../services/serviceRouting'
 import useRetrieveDataHook from '../hook/retrieveData.hook'
@@ -37,7 +37,6 @@ const options: Field[] = [
 ]
 
 const Online: React.FC = () => {
-  const Navigate = useNavigate()
   const params = useParams<{ link?: string }>()
   const [roomStyle, setRoomStyle] = useState<{params?: string}>(params.link)
   const users = useRetrieveDataHook()
@@ -197,7 +196,9 @@ const Online: React.FC = () => {
   }
 
   return(
-    <div className="saloon--byusers">
+    <div
+      data-testid="divtestone"
+      className="saloon--byusers">
 
       <div className="title--services">
         <h1>Rooms</h1>
@@ -209,7 +210,7 @@ const Online: React.FC = () => {
         <section key={computer.id} className="section--saloon">
           <h3 className="titlebyroom">{computer.title}</h3>
 
-          {Object.values(users)?.map(user =>
+          {Object.values(users)?.map((user) =>
             <ChooseMemberToAsk
               key={user.id}
               user={user}
@@ -223,10 +224,10 @@ const Online: React.FC = () => {
       </div>
 
       {displayConfirmInvite &&
-        refreshUsers?.map((refUser) => refUser.firstName === username ? (
+        refreshUsers?.map((refUser) => refUser?.firstName === username ? (
           <ConfirmationOrigin
-            key={refUser.id}
-            id={refUser.id}
+            key={refUser?.id}
+            id={refUser?.id}
             username={username}
             roomStyle={roomStyle}
             setRoomStyle={setRoomStyle}

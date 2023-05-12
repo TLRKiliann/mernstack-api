@@ -91,7 +91,6 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
                   >
                     {computer.title}
                   </Link>
-                  {computer.logo}
                   <span 
                     className="spanli--right"
                   >

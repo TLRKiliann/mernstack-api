@@ -1,4 +1,5 @@
 $purple: rgba(195,87,116, 1);
+$black: #000000;
 $font_junction: 'Junction', sans-serif;
 
 .response--private {
@@ -19,10 +20,10 @@ $font_junction: 'Junction', sans-serif;
     box-shadow: 0px 0px 4px lightgrey;
     .title--response {
       text-align: center;
-      font-family: 'Junction', sans-serif;
+      font-family: $font_junction;
       color: whitesmoke;
       text-shadow: 2px 1px 1px $purple,
-      4px 2px 2px #000,
+      4px 2px 2px $black,
       6px 3px 3px $purple;
       .title--subresponse {
         color: rgba(244,164,96, 1);
@@ -35,7 +36,7 @@ $font_junction: 'Junction', sans-serif;
       font-weight: bold;
       color: whitesmoke;
       text-shadow: 2px 1px 1px $purple,
-      4px 2px 2px #000,
+      4px 2px 2px $black,
       6px 3px 3px $purple;
       .span--response {
         color: rgba(244,164,96, 1);  

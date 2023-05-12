@@ -5,6 +5,68 @@ $whitesmoke: #f5f5f5;
 $lightgrey_16: #161616;
 $font_acme: 'Acme', sans-serif;
 
+@mixin params-anim($color){
+  margin-top: 250px;
+  justify-content: space-between;
+  font-family: $font_acme;
+  font-size: 1.4rem;
+  color: $color;
+}
+
+@mixin animation-home($name, $delay, $duration, $count, $function, $direction){
+  animation-name: $name;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-timing-function: $function;
+  animation-direction: $direction;
+}
+
+@keyframes rotate-logo {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  25% {
+    transform: rotate3d(3, -2, 3, 360deg);
+  }
+}
+
+@keyframes rotate-logo-2 {
+  0% {
+    transform: rotate3d(2, -2, -2, 0deg);
+  }
+  10% {
+    transform: rotate3d(3, -2, 3, 90deg);
+  }
+  20% {
+    transform: rotate3d(-1, 2, -1, 180deg);
+  }
+  30% {
+    transform: rotate3d(-3, 0, -3, 90deg);
+  }
+  40% {
+    transform: rotate3d(-3, -2, -2, 180deg);
+  }
+  50% {
+    transform: rotate3d(3, 0, 3, 90deg);
+  }
+  60% {
+    transform: rotate3d(-3, 2, -2, 180deg);
+  }
+  70% {
+    transform: rotate3d(0, -1, 0, 180deg);
+  }
+  80% {
+    transform: rotateX(360deg);
+  }
+  90% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
 .div--home {
   position: absolute;
   top: 0px;
@@ -25,82 +87,6 @@ $font_acme: 'Acme', sans-serif;
     opacity: 0;
     z-index: 1;
   }
-  /*.wallIntro {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    min-height: 100%;
-    background-color: $lightgrey_16;
-    overflow: hidden;
-    opacity: 0;
-
-    animation-name: wall;
-    animation-delay: 0s;
-    animation-duration: 3s;
-    animation-timing-function: ease;
-    .wallIntro--h1 {
-      margin-top: 25%;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      text-align: center;
-      font-family: $font_acme;
-      font-size: 9rem;
-      text-shadow: 5px 3px 1px $orangered,
-        8px 5px 10px $whitesmoke;
-      color: $sandybrown;
-
-      animation-name: main--titleintro;
-      animation-delay: 0s;
-      animation-duration: 4s;
-      animation-timing-function: ease;
-      animation-direction: linear;
-      animation-iteration-count: 1;
-    }
-  }*/
-
-  @keyframes main--titleintro {
-    0% {
-      opacity: 1;
-      transform: scale(0);
-      z-index: 22;
-    }
-    40% {
-      opacity: 1;
-      transform: scale(1.4);
-      z-index: 22;
-    }
-    45% {
-      opacity: 1;
-      transform: scale(0.8);
-      z-index: 22;
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.8);
-      z-index: 22;
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0);
-      z-index: 22;
-    }
-  }
-
-  @keyframes wall {
-    0% {
-      opacity: 1;
-      z-index: 22;
-    }
-    70% {
-      opacity: 1;
-      z-index: 22;
-    }
-    100% {
-      opacity: 0;
-      z-index: 22;
-    }
-  }
   .div--voletsLeft {
     position: absolute;
     margin-top: 12%;
@@ -109,10 +95,13 @@ $font_acme: 'Acme', sans-serif;
     z-index: 3;
     .btn--voletLeft {
       padding: 20px 40px;
+      
       font-family: $font_acme;
       font-size: 1.4rem;
       color: rgba(128, 0, 128, 0.4);
-      background: linear-gradient(90deg, $sandybrown, rgba(195,87,116, 0.6));
+
+      background: linear-gradient(90deg,
+        $sandybrown, rgba(195,87,116, 0.6));
       border: none;
       outline: none;
       border-radius: 40px;
@@ -120,9 +109,8 @@ $font_acme: 'Acme', sans-serif;
       &:hover {
         transition: ease;
         transition-duration: 2s;
-
-        background: linear-gradient(90deg, $sandybrown, rgba(195,87,116, 1));
-
+        background: linear-gradient(90deg,
+          $sandybrown, rgba(195,87,116, 1));
         color: $whitesmoke;
         cursor: pointer;
       }
@@ -135,18 +123,9 @@ $font_acme: 'Acme', sans-serif;
       }
     }
     .webdevanim {
-      margin-top: 250px;
-      justify-content: space-between;
-      font-family: $font_acme;
-      font-size: 1.4rem;
-      color: rgba(195,87,116, 1);
-
-      animation-name: rotate-logo;
-      animation-delay: 0s;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out infinite;
-      animation-direction: alternate;
+      @include params-anim(rgba(195,87,116, 1));
+      @include animation-home(rotate-logo,
+        0s, 3s, infinite, ease-in-out, alternate);
     }
   }
   .div--voletsRight {
@@ -158,12 +137,15 @@ $font_acme: 'Acme', sans-serif;
     z-index: 3;
     .btn--voletRight {
       padding: 20px 40px;
+      
       font-family: $font_acme;
       font-size: 1.4rem;
       font-weight: bold;
       color: rgba(128, 0, 128, 0.4);
+
       background: linear-gradient(90deg,
-        rgba(244,164,96, 1) 10%, rgba(195,87,116, 0.6) 100%);
+        rgba(244,164,96, 1) 10%,
+        rgba(195,87,116, 0.6) 100%);
       border: none;
       outline: none;
       border-radius: 40px;
@@ -172,7 +154,8 @@ $font_acme: 'Acme', sans-serif;
         transition: ease;
         transition-duration: 2s;
         background: linear-gradient(90deg,
-          rgba(244,164,96, 1) 0%, rgba(195,87,116, 1) 100%);
+          rgba(244,164,96, 1) 0%,
+          rgba(195,87,116, 1) 100%);
         color: $whitesmoke;
         cursor: pointer;
       }
@@ -185,81 +168,21 @@ $font_acme: 'Acme', sans-serif;
       }
     }
     .computinganim {
-      margin-top: 250px;
-      justify-content: space-between;
-      font-family: $font_acme;
-      font-size: 1.4rem;
-      color: $sandybrown;
-
-      animation-name: rotate-logo-2;
-      animation-delay: 0s;
-      animation-duration: 8s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out infinite;
-      animation-direction: linear;
+      @include params-anim($sandybrown);
+      @include animation-home(rotate-logo-2,
+        0s, 8s, infinite, ease-in-out, linear);
     }
-  }
-
-  @keyframes rotate-logo {
-    0% {
-      transform: rotate3d(0, 0, 0, 0deg);
-    }
-    25% {
-      transform: rotate3d(3, -2, 3, 360deg);
-    }
-  }
-
-  @keyframes rotate-logo-2 {
-    0% {
-      transform: rotate3d(2, -2, -2, 0deg);
-    }
-    10% {
-      transform: rotate3d(3, -2, 3, 90deg);
-    }
-    20% {
-      transform: rotate3d(-1, 2, -1, 180deg);
-    }
-    30% {
-      transform: rotate3d(-3, 0, -3, 90deg);
-    }
-    40% {
-      transform: rotate3d(-3, -2, -2, 180deg);
-    }
-    50% {
-      transform: rotate3d(3, 0, 3, 90deg);
-    }
-    60% {
-      transform: rotate3d(-3, 2, -2, 180deg);
-    }
-    70% {
-      transform: rotate3d(0, -1, 0, 180deg);
-    }
-    80% {
-      transform: rotateX(360deg);
-    }
-    90% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .img--home {
-    width: 600px;
-    height: 400px;
   }
 }
 
 @media screen and (min-width: 360px) and (max-width: 1050px) {
   .div--home {
-    background: radial-gradient(800px at 50% 20%, 
-      $sandybrown, $darkmagenta);
     .img--home {
     }
     .wallIntro {
+      .wallIntro-h1 {
+        margin-left: 0px;
+      }
     }
     .div--voletsLeft {
       margin-top: 380px;

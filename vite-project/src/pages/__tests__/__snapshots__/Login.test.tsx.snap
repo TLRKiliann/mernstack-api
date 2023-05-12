@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`renders correctly 1`] = `
+<a
+  href="/subscribe"
+  onClick={[Function]}
+>
+  Subscribe
+</a>
+`;

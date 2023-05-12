@@ -45,16 +45,18 @@ const Home: React.FC = () => {
       </div>
 
       <div className="wallIntro">
-        <h1 className="wallIntro--h1">Chat-Society</h1>
+        <h1 className="wallIntro-h1">Chat-Society</h1>
       </div>
 
       {!isOpenRight && <div className="div--voletsRight">
           <button
             onClick={handleVoletsRight}
             className="btn--voletRight"
+            data-testid="btnhomeright"
           >
             Computing
           </button>
+
           <div className="computinganim">
             <h1>Computing</h1>
           </div>
@@ -65,9 +67,11 @@ const Home: React.FC = () => {
           <button
             onClick={handleVoletsLeft}
             className="btn--voletLeft"
+            data-testid="btnhomeleft"
           >
             Chat-Room
           </button>
+
           <div className="webdevanim">
             <h1>Chat-Room</h1>
           </div>

@@ -7,6 +7,37 @@ $font_acme: "Acme", sans-serif;
 $font_dejavu: "DejaVu Sans", sans-serif;
 $font_junction: 'Junction', sans-serif;
 
+@mixin flex-box($param1, $param2){
+  display: $param1;
+  flex-direction: $param2;
+}
+
+@mixin margin-autobottom($size1, $size2){
+  margin: $size1;
+  margin-bottom: $size2;
+}
+
+@mixin font-style($family, $fontsize, $color){
+  font-family: $family;
+  font-size: $fontsize;
+  color: $color;
+}
+
+@mixin family-size($fam, $f_size){
+  font-family: $fam;
+  font-size: $f_size;
+}
+
+@mixin background-border($back_gd, $bd){
+  background: $back_gd;
+  border: $bd;
+}
+
+@mixin border-outline($bd1, $out){
+  border: $bd1;
+  outline: $out;
+}
+
 .subscribe {
   position: absolute;
   top: 0px;
@@ -21,8 +52,7 @@ $font_junction: 'Junction', sans-serif;
     padding: 20px;
     margin: auto;
     margin-top: 15%;
-    display: flex;
-    flex-direction: column;
+    @include flex-box(flex, column);
     background: linear-gradient(180deg, rgba(244,164,96, 1) -10%,
       rgba(195,87,116, 1) 100%);
     border-radius: 20px;
@@ -30,27 +60,21 @@ $font_junction: 'Junction', sans-serif;
     .div--subscribe {
       width: 300px;
       margin: auto;
-      display: flex;
-      flex-direction: column;
+      @include flex-box(flex, column);      
       .title--framesub {
-        margin: auto;
-        margin-bottom: 20px;
+        @include margin-autobottom(auto, 20px);
         margin-left: 0px;
-        font-family: $font_acme;
-        font-size: 2.4rem;
-        color: $whitesmoke;
+        @include font-style($font_acme, 2.4rem, $whitesmoke);
         text-shadow: 2px 2px 1px $purple,
         4px 3px 2px $lightgrey_24;
       }
       .message--sub {
-        margin: auto;
-        margin-bottom: 20px;
+        @include margin-autobottom(auto, 20px);
         font-size: 1.1rem;
         color: $lightgreen;
       }
       .lbl--sub {
-        font-family: $font_junction;
-        font-size: 1.2rem;
+        @include family-size($font_junction, 1.2rem);
         text-shadow: 2px 1px 1px darkviolet;
       }
       .input--sub {
@@ -58,27 +82,22 @@ $font_junction: 'Junction', sans-serif;
         margin-top: 5px;
         margin-bottom: 10px;
         padding: 5px 5px;
-        font-family: $font_dejavu;
-        font-size: 1.0rem;
-        background: rgba(244, 164, 96, 0.1);
-        border: 1mm inset rgba(244, 164, 96, 0.4);
+        @include family-size($font_dejavu, 1.0rem);
+        @include background-border(rgba(244, 164, 96, 0.1),
+          1mm inset rgba(244, 164, 96, 0.4));
         &::placeholder {
           color: #646464;
         }
         &:focus {
           padding: 8px 5px;
           background: rgba(255,255,255, 0.2);
-          border: none;
-          outline: none;
+          @include border-outline(none, none);
         }
       }
       .div--subselect {
         width: 100%;
-        margin: auto;
-        margin-top: 0px;
-        margin-bottom: 10px;
-        display: flex;
-        flex-direction: row;
+        @include margin-autobottom(auto, 10px);
+        @include flex-box(flex, row);
         align-items: center;
         justify-content: center;
         .select--sub {
@@ -86,14 +105,11 @@ $font_junction: 'Junction', sans-serif;
           margin: 15px 0px;
           margin-left: 10px;
           padding: 5px 10px;
-          font-family: $font_dejavu;
-          font-size: 0.9rem;
-          background-color: rgba(128, 0, 128, 0.6);
-          border: 1mm outset rgba(168, 0, 168, 0.6);
-          color: $whitesmoke;
+          @include font-style($font_dejavu, 0.9rem, $whitesmoke);
+          @include background-border(rgba(128, 0, 128, 0.6),
+            1mm outset rgba(168, 0, 168, 0.6));        
           &:focus {
-            border: 1mm outset rgba(168, 0, 168, 0.6);
-            outline: none;
+            @include border-outline(rgba(168, 0, 168, 0.6), none);          
           }
         }
       }
@@ -102,26 +118,40 @@ $font_junction: 'Junction', sans-serif;
   .btn--sub {
     margin: auto;
     padding: 3px 20px;
-    font-family: $font_acme;
-    font-size: 1.2rem;
     font-weight: bold;
-    background: rgba(128, 0, 128, 0.6);
-    border: 1mm outset rgba(168, 0, 168, 0.6);
+    @include font-style($font_acme, 1.2rem, $sandybrown);
+    @include background-border(rgba(128, 0, 128, 0.6),
+      1mm outset rgba(168, 0, 168, 0.6));
     border-radius: 5px;
-    color: sandybrown;
     &:hover {
-      background: rgba(138, 0, 138, 0.6);
-      border: 1mm outset rgba(168, 0, 168, 0.6);
+      @include background-border(rgba(138, 0, 138, 0.6),
+        1mm outset rgba(168, 0, 168, 0.6));
       outline: none;
       cursor: pointer;
-      color: lightgreen;
+      color: $lightgreen;
     }
     &:active {
-      background: rgba(128, 0, 128, 0.6);
-      border: 1mm inset rgba(128, 0, 128, 0.2);
+      @include background-border(rgba(128, 0, 128, 0.6),
+        1mm inset rgba(128, 0, 128, 0.2));
       outline: none;
       transform: scale(0.9);
-      color: white;
+      color: $whitesmoke;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .subscribe {
+    .form--subscribe {
+      margin-top: 35%;
+      width: 80%;
+      .div--subscribe {
+        width: 70%;
+        margin:auto;
+        .input--sub {
+          width: 90%;
+        }
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthenticationService from '../services/authentication-service'
-import { app } from "../api/axiosconfig";
+import { app } from "../api/axiosconfig"
 import { useAuthLogin } from '../context/AuthProvider'
 import zoomImg from '../assets/background/circle.jpg'
 import '../stylePages/Login.scss'
@@ -21,70 +21,68 @@ type Form = {
 const Login: React.FC = () => {
 
   const Navigate = useNavigate()
-  
-  const LOGIN_URL = '/login';
+  const LOGIN_URL = '/login'
   
   const [form, setForm] = useState<Form>({
     username: {value: ''},
     password: {value: ''}
   })
 
-  const [message, setMessage] = useState<string>('Not connected!');
+  const [message, setMessage] = useState<string>('Not connected!')
 
   const { 
     toggle,
     switchLogin,
     setUserName,
     setAuth
-  } = useAuthLogin();
+  } = useAuthLogin()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const fieldName: string = e.target.name;
-    const fieldValue: string = e.target.value;
-    const newField: Field = { [fieldName]: { value: fieldValue } };
+    const fieldName: string = e.target.name
+    const fieldValue: string = e.target.value
+    const newField: Field = { [fieldName]: { value: fieldValue } }
 
-    setForm({ ...form, ...newField});
+    setForm({ ...form, ...newField})
   }
-  //console.log(form.username, "-- form --")
 
   const validateForm = () => {
-    let newForm: Form = form;
+    let newForm: Form = form
 
     // Validator username
-    if (form.username.value.length < 1) {
-      const errorMsg: string = 'Votre prénom doit faire au moins 3 caractères de long.';
-      const newField: Field = { value: form.username.value, error: errorMsg, isValid: false };
-      newForm = { ...newForm, ...{ username: newField } };
+    if (form.username.value.length < 7) {
+      const errorMsg: string = 'Votre prénom doit faire au moins 3 caractères de long.'
+      const newField: Field = { value: form.username.value, error: errorMsg, isValid: false }
+      newForm = { ...newForm, ...{ username: newField } }
     } else {
-      const newField: Field = { value: form.username.value, error: '', isValid: true };
-      newForm = { ...newForm, ...{ username: newField } };
+      const newField: Field = { value: form.username.value, error: '', isValid: true }
+      newForm = { ...newForm, ...{ username: newField } }
     }
 
     // Validator password
-    if (form.password.value.length < 1) {
-      const errorMsg: string = 'Votre mot de passe doit faire au moins 6 caractères de long.';
-      const newField: Field = { value: form.password.value, error: errorMsg, isValid: false };
-      newForm = { ...newForm, ...{ password: newField } };
+    if (form.password.value.length < 7) {
+      const errorMsg: string = 'Votre mot de passe doit faire au moins 6 caractères de long.'
+      const newField: Field = { value: form.password.value, error: errorMsg, isValid: false }
+      newForm = { ...newForm, ...{ password: newField } }
     } else {
-      const newField: Field = { value: form.password.value, error: '', isValid: true };
-      newForm = { ...newForm, ...{ password: newField } };
+      const newField: Field = { value: form.password.value, error: '', isValid: true }
+      newForm = { ...newForm, ...{ password: newField } }
     }
-    setForm(newForm);
-    return newForm.username.isValid && newForm.password.isValid;
+    setForm(newForm)
+    return newForm.username.isValid && newForm.password.isValid
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const isFormValid = validateForm();
+    e.preventDefault()
+    const isFormValid = validateForm()
     if (isFormValid) {
-      setMessage('👉  Tentative de connexion en cours ...');
+      setMessage('👉  Tentative de connexion en cours ...')
 
       AuthenticationService
         .login(form.username.value, form.password.value)
         .then(isAuthenticated => {
           if (!isAuthenticated) {
-            setMessage('🔐  Identifiant ou mot de passe incorrect.');
-            return;
+            setMessage('🔐  Identifiant ou mot de passe incorrect.')
+            return
           } else {
             setAuth(form.username.value, form.password.value)
             setUserName(form.username.value)
@@ -94,7 +92,7 @@ const Login: React.FC = () => {
             console.log("login ok")
             Navigate('/')
           }
-        });
+        })
     }
   }
 
@@ -110,10 +108,11 @@ const Login: React.FC = () => {
         />
       </div>
 
-      <div className="div--submit">
+      <div className="div--login">
         <form
+          data-testid="formlog"
           onSubmit={(e) => handleSubmit(e)}
-          className="submit"
+          className="login"
           placeholder="lastname"
         >
           <h1 className="title--framelogin">Login</h1>
@@ -166,10 +165,11 @@ const Login: React.FC = () => {
 
           <p className="p--loginframe">
             <Link
+              data-testid="linktosub"
               to="/subscribe"
               className="link--subscribe"
             >
-              subscribe
+              Subscribe
             </Link>
           </p>
 
@@ -180,4 +180,4 @@ const Login: React.FC = () => {
   )
 }
 
-export default Login;
+export default Login

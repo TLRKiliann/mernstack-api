@@ -19,7 +19,7 @@ interface ConfirmProps {
 }
 
 const ConfirmationOrigin = (props: ConfirmProps) => {
-  const Navigate = useNavigate()
+  const navigation = useNavigate()
   const [validMsg, setValidMsg] = useState<Array<UserType>>([])
   const [isChecked, setIsChecked] = useState<boolean>(false)
   const [isNotConfirm, setIsNotConfirm] = useState<boolean>(false)
@@ -33,17 +33,17 @@ const ConfirmationOrigin = (props: ConfirmProps) => {
       if (retrieveRoom === "Private") {
         console.log("Validation confirmed for room private ! 1")
         const timerIdOne = setTimeout(() => {
-          Navigate(`/computerroom/privatechat/${retrieveRoom}`)
+          navigation(`/computerroom/privatechat/${retrieveRoom}`)
         }, 1000)
       } else if (retrieveRoom === "Info") {
         console.log("Validation confirmed for room info ! 2")
         const timerIdOne = setTimeout(() => {
-          Navigate(`/computerroom/privatechat/${retrieveRoom}`)
+          navigation(`/computerroom/privatechat/${retrieveRoom}`)
         }, 1000)
       } else if (retrieveRoom === "Question") {
         console.log("Validation confirmed for room Question ! 3")
         const timerIdOne = setTimeout(() => {
-          Navigate(`/computerroom/privatechat/${retrieveRoom}`)
+          navigation(`/computerroom/privatechat/${retrieveRoom}`)
         }, 1000)
       } else {
         console.log("No room was found...")

@@ -16,7 +16,9 @@ interface DisplayOtherUsrProps {
 const DisplayInvitationOtherUsr: React.FC = (props: DisplayOtherUsrProps) => {
 
   return (
-    <div className="invitation--display">
+    <div
+      data-testid="displayOthertestid" 
+      className="invitation--display">
       <h4 className="invitation--h4">
         
         <span className="span--h4">

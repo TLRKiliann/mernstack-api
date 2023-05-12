@@ -3,6 +3,10 @@
 exports[`MatchSnapShot test ConfirmInvitation 1`] = `
 <div
   className="box--confirminvitation"
+<<<<<<< HEAD
+=======
+  data-testid="confirmtestid"
+>>>>>>> master
 >
   <h4
     className="confirm"
@@ -34,7 +38,11 @@ exports[`MatchSnapShot test ConfirmInvitation 1`] = `
   </div>
   <button
     className="btn--validationlast"
+<<<<<<< HEAD
     data-testid="btn-to-confirm"
+=======
+    data-testid="btnconfirminvitation"
+>>>>>>> master
     type="button"
   >
     Validate

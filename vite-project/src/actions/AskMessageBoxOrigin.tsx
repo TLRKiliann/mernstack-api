@@ -30,6 +30,7 @@ const options: Field[] = [
 ]
 
 interface AskProps {
+  id: number | undefined
   username: string
   catchById: UserType
   setOtherUser: UserType

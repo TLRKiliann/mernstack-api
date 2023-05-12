@@ -11,17 +11,19 @@ interface ChooseMemberToAskProps {
 
 const ChooseMemberToAsk: React.FC = (props: ChooseMemberToAskProps) => {
   return (
-    <span className="span--saloon">
-      {props.user.mainroom === props.computer.title ? (
+    <span 
+      data-testid="chooseMemberId"
+      className="span--saloon">
+      {props.user?.mainroom === props.computer?.title ? (
         <div className="user--imgsaloon">
           <img
             width="100%"
             height="100%"
-            src={props.user.img} 
+            src={props.user?.img} 
             className="img--saloon"
           />
           <p className="useronline">
-          {props.user.firstName} {props.user.isConnected ? (
+          {props.user?.firstName} {props.user?.isConnected ? (
             <span
               className="useronline--iconconnectected"
             >
@@ -37,16 +39,18 @@ const ChooseMemberToAsk: React.FC = (props: ChooseMemberToAskProps) => {
           }
           </p>
           <span
-            onClick={() => props.handleAskUserPrivate(props.user.id)}
+            data-testid="ask"
+            onClick={() => props.handleAskUserPrivate(props.user?.id)}
             className="askprivate--service"
             title="Invite to private chat"
           >
             ✉
           </span>
 
-          <span key={props.user.id} className="lastspan--online">
+          <span key={props.user?.id} className="lastspan--online">
             <button
-              onClick={() => props.addUserById(props.user.id)}
+              data-testid="add"
+              onClick={() => props.addUserById(props.user?.id)}
               className="btn--lastspanonline"
               title="Add as Your Friend"
             >

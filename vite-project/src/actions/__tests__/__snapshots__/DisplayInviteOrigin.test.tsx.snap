@@ -3,6 +3,10 @@
 exports[`MatchSnapShot test DisplayInviteOrigin 1`] = `
 <div
   className="invitation--display"
+<<<<<<< HEAD
+=======
+  data-testid="displayOthertestid"
+>>>>>>> master
 >
   <h4
     className="invitation--h4"

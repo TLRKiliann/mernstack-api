@@ -4,8 +4,40 @@ $lightgrey_42: #424242;
 $lightgrey_38: #383838;
 $lightgreen: #90ee90;
 $whitesmoke: #f5f5f5;
+$black: #000000;
 $font_junction: 'Junction', sans-serif;
 $font_allura: 'Allura', cursive;
+
+@mixin display-align-justify($justify){
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin display-flex-justify(){
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+@mixin weight($font, $size_w){
+  font-family: $font;
+  font-size: $size_w;
+  font-weight: bold;
+}
+
+@mixin no-decoration(){
+  text-decoration: none;
+  font-family: $font_junction;
+  font-size: 0.6rem;
+}
+
+@mixin bg-bd-color($val_px, $color_bbc){
+  background-color: $lightgrey_38;
+  border: 1mm outset $lightgrey_50;
+  border-radius: $val_px;
+  color: $color_bbc;
+}
 
 .div--headernav {
   position: absolute;
@@ -17,7 +49,9 @@ $font_allura: 'Allura', cursive;
   margin: auto;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(90deg, rgba(244,164,96, 1), rgba(195,87,116, 1));
+  background: linear-gradient(90deg,
+    rgba(244,164,96, 1),
+    rgba(195,87,116, 1));
   box-shadow: 0px 0px 7px rgba(244,164,96, 1);
   z-index: 2;
   .navbar--nav {
@@ -44,12 +78,10 @@ $font_allura: 'Allura', cursive;
       padding-left: 40px;
       width: 100%;
       margin: auto;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
+      @include display-flex-justify();
       .link--tagnav {
         text-decoration: none;
-        text-shadow: 1px 0px 1px #000;
+        text-shadow: 1px 0px 1px $black;
         color: $whitesmoke;
         &:hover {
          color: rgba(244,164,96, 1);
@@ -62,12 +94,8 @@ $font_allura: 'Allura', cursive;
 .div--headernav > nav > ul > li {
   margin-right: 30px;
   padding: 20px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-family: $font_allura;
-  font-size: 2.4rem;
-  font-weight: bold;
+  @include display-align-justify(space-around);
+  @include weight($font_allura, 2.4rem);
 }
 .div--userloginnavbar {
   width: auto;
@@ -83,18 +111,11 @@ $font_allura: 'Allura', cursive;
   .div--userplace {
     margin-left: 10px;
     width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-align-justify(center);
     .span--navbarusername {
       padding: 5px 10px;
-      font-family: $font_junction;
-      font-size: 0.9rem;
-      font-weight: bold;
-      background-color: $lightgrey_38;
-      border: 1mm outset $lightgrey_50;
-      border-radius: 7px;
-      color: rgba(244,164,96, 1);
+      @include weight($font_junction, 0.9rem);
+      @include bg-bd-color(7px, rgba(244,164,96, 1));
     }
     .span--usrnavbar {
       padding: 5px 10px;
@@ -106,20 +127,13 @@ $font_allura: 'Allura', cursive;
   .div--login {
     margin-right: 10px;
     margin-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-align-justify(center);
     .link--logintag {
       padding: 5px 10px;
       display: flex;
       margin: auto;
-      text-decoration: none;
-      font-family: 'Junction', sans-serif;
-      font-size: 0.9rem;
-      background-color: $lightgrey_38;
-      border: 1mm outset $lightgrey_50;
-      border-radius: 10px;
-      color: $whitesmoke;
+      @include no-decoration();
+      @include bg-bd-color(10px, $whitesmoke);
       &:hover {
         background: $lightgrey_50;
         border: 1mm outset $lightgrey_54;
@@ -136,13 +150,8 @@ $font_allura: 'Allura', cursive;
     padding: 5px 10px;
     display: flex;
     align-items: center;
-    text-decoration: none;
-    font-family: $font_junction;
-    font-size: 0.9rem;
-    background-color: $lightgrey_38;
-    border: 1mm outset $lightgrey_50;
-    border-radius: 10px;
-    color: $whitesmoke;
+    @include no-decoration();
+    @include bg-bd-color(10px, whitesmoke);
     &:hover {
       transform: scale(1);
       background-color: $lightgrey_50;
@@ -151,6 +160,7 @@ $font_allura: 'Allura', cursive;
     }
     &:active {
       transform: scale(0.9);
+
       background-color: $lightgrey_38;
       border: 1mm inset $lightgrey_42;
       color: rgba(244,164,96, 1);
@@ -174,9 +184,7 @@ $font_allura: 'Allura', cursive;
         top: 20px;
         width: 40px;
         height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include display-align-justify(center);
         .img--koala {
           width: 22px;
           height: 22px;
@@ -186,9 +194,7 @@ $font_allura: 'Allura', cursive;
         padding-left: 10px;
         width: 100%;
         margin: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
+        @include display-flex-justify();
       }
     }
   }
@@ -206,14 +212,10 @@ $font_allura: 'Allura', cursive;
     .div--userplace {
       margin-left: 5px;
       width: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include display-align-justify(center);
       .span--navbarusername {
         padding: 3px 5px;
-        font-family: $font_junction;
-        font-size: 0.6rem;
-        font-weight: bold;
+        @include weight($font_junction, 0.6rem);
       }
       .span--usrnavbar {
         padding: 3px 5px;
@@ -222,25 +224,19 @@ $font_allura: 'Allura', cursive;
     .div--login {
       margin-right: 5px;
       margin-left: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include display-align-justify(center);
       .link--logintag {
         padding: 6px 6px;
         display: flex;
         margin: auto;
-        text-decoration: none;
-        font-family: $font_junction;
-        font-size: 0.6rem;
+        @include no-decoration();
       }
     }
     .link--logout {
       padding: 3px 5px;
       display: flex;
       align-items: center;
-      text-decoration: none;
-      font-family: $font_junction;
-      font-size: 0.6rem;      
+      @include no-decoration();     
     }
   }
 }

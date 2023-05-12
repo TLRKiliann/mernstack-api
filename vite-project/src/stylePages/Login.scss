@@ -8,6 +8,29 @@ $font_acme: 'Acme', sans-serif;
 $font_dejavu: 'DejaVu Sans', sans-serif;
 $font_junction: 'Junction', sans-serif;
 
+@mixin width-margin($param1, $param2){
+  width: $param1;
+  margin: $param2;
+}
+
+@mixin font-styleone($family, $size, $color){
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin font-styletwo($fam2, $size2, $color2){
+  font-family: $fam2;
+  font-size: $size2;
+  font-weight: bold;
+  color: $color2;
+}
+
+@mixin bg-border($bg, $border){
+  background: $bg;
+  border: $border;
+}
+
 .bg--loginimg {
   position: absolute;
   top: 0px;
@@ -23,8 +46,7 @@ $font_junction: 'Junction', sans-serif;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    width: 100vw;
-    margin: auto;
+    @include width-margin(100vw, auto);    
     opacity: 0.05;
     z-index: -2;
   }
@@ -33,10 +55,9 @@ $font_junction: 'Junction', sans-serif;
     min-height: 100%;
     margin: auto;
   }
-  .submit {
+  .login {
     padding-bottom: 20px;
-    width: 500px;
-    margin: auto;
+    @include width-margin(500px, auto);
     margin-top: 20%;
     margin-bottom: 20px;
     display: flex;
@@ -46,40 +67,31 @@ $font_junction: 'Junction', sans-serif;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(36, 36, 36, 0.4);
     .title--framelogin {
-      width: 64%;
-      margin: auto;
-      margin: 20px auto;
-      font-family: $font_acme;
-      font-size: 2.4rem;
-      color: $whitesmoke;
+      @include width-margin(64%, 20px auto);
+      @include font-styleone($font_acme, 2.4rem, $whitesmoke);
       text-shadow: 2px 2px 1px $darkmagenta,
       4px 3px 2px $lightgrey_24;
     }
     .lbl--login {
-      width: 64%;
-      margin: auto;
-      margin-top: 10px;
+      @include width-margin(64%, auto);
+      margin-top: 10px; 
       font-family: $font_junction;
       font-size: 1.2rem;
       text-shadow: 2px 1px 1px darkviolet;
     }
     .input--login {
-      width: 60%;
-      padding: 5px 5px;
-      margin: auto;
+      @include width-margin(60%, auto);
       margin-top: 5px;
-      font-family: $font_dejavu;
-      font-size: 1.0rem;
-      background: rgba(244, 164, 96, 0.1);
-      border: 1mm inset rgba(244, 164, 96, 0.4);
-      color: $whitesmoke;
+      padding: 5px 5px;
+      @include font-styleone($font_dejavu, 1.0rem, $whitesmoke);
+      @include bg-border(rgba(244, 164, 96, 0.1),
+        1mm inset rgba(244, 164, 96, 0.4));
       &::placeholder {
         color: #646464;
       }
       &:focus {
         padding: 8px 5px;
-        background: rgba(255,255,255, 0.2);
-        border: none;
+        @include bg-border(rgba(255,255,255, 0.2), none);
         outline: none;
       }
     }
@@ -87,32 +99,28 @@ $font_junction: 'Junction', sans-serif;
       margin: auto;
       margin-top: 30px;
       padding: 3px 20px;
-      font-family: $font_acme;
-      font-size: 1.2rem;
-      font-weight: bold;
-      background: rgba(128, 0, 128, 0.6);
-      border: 1mm outset rgba(168, 0, 168, 0.6);
+      @include font-styletwo($font_acme, 1.2rem, $sandybrown);
+      @include bg-border(rgba(128, 0, 128, 0.6),
+        1mm outset rgba(168, 0, 168, 0.6));
       outline: none;
       border-radius: 5px;
-      color: sandybrown;
       &:hover {
-        background: rgba(138, 0, 138, 0.6);
-        border: 1mm outset rgba(168, 0, 168, 0.6);
+        @include bg-border(rgba(138, 0, 138, 0.6),
+          1mm outset rgba(168, 0, 168, 0.6));
         outline: none;
         cursor: pointer;
         color: lightgreen;
       }
       &:active {
-        background: rgba(128, 0, 128, 0.6);
-        border: 1mm inset rgba(128, 0, 128, 0.2);
+        @include bg-border(rgba(128, 0, 128, 0.6),
+          1mm inset rgba(128, 0, 128, 0.2));
         outline: none;
         transform: scale(0.9);
         color: white;
       }
     }
     .p--loginframe {
-      width: auto;
-      margin: auto;
+      @include width-margin(auto, auto);
       margin-top: 20px;
       font-size: 1.2rem;
       &:hover {
@@ -129,12 +137,9 @@ $font_junction: 'Junction', sans-serif;
       }
     }
     .error--message {
-      width: 60%;
-      margin: auto;
+      @include width-margin(60%, auto);
       padding: 5px 10px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      color: $sandybrown;
+      @include font-styletwo($font_dejavu, 0.9rem, $sandybrown);
       background-color: $lightgrey_28;
       border-radius: 5px;
     }
@@ -147,88 +152,9 @@ $font_junction: 'Junction', sans-serif;
 
 @media only screen and (max-width: 900px) {
   .bg--loginimg {
-    .zoom--img {
-      position: fixed;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      margin: auto;
-      opacity: 0.1;
-      z-index: -2;
-    }
-    .img--login {
-      width: 100vw;
-      min-height: 100%;
-      margin: auto;
-    }
-    .submit {
-      padding-bottom: 20px;
-      width: 300px;
-      margin: auto;
-      margin-top: 250px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      .title--framelogin {
-        width: 64%;
-        margin: auto;
-        margin: 20px auto;
-        font-family: $font_acme;
-        font-size: 2.4rem;
-      }
-      .lbl--login {
-        width: 64%;
-        margin: auto;
-        margin-top: 10px;
-        font-family: $font_junction;
-        font-size: 1.3rem;
-        font-weight: bold;
-      }
-      .input--login {
-        width: 60%;
-        padding: 3px 10px;
-        margin: auto;
-        margin-top: 5px;
-        font-size: 1.2rem;
-      }
-      .btn--submitlogin {
-        margin: auto;
-        margin-top: 30px;
-        padding: 3px 20px;
-      }
-      .p--loginframe {
-        width: auto;
-        margin: auto;
-        margin-top: 20px;
-        font-size: 1.2rem;
-        &:hover {
-          transform: scale(1.2);
-        }
-      }
-      .link--subscribe {
-        text-decoration: none;
-        color: $whitesmoke;
-        text-shadow: 2px 1px 2px $darkmagenta;
-        &:hover {
-          color: $sandybrown;
-          text-shadow: 0px 0px 0px $darkmagenta;
-        }
-      }
-      .error--message {
-        width: 60%;
-        margin: auto;
-        padding: 5px 10px;
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: $sandybrown;
-        background-color: $lightgrey_28;
-        border-radius: 5px;
-      }
-      .error {
-        margin: 10px 70px;
-        text-align: justify;
-      }
+    .login {
+      margin-top: 50%;
+      width: 80%;
     }
   }
 }

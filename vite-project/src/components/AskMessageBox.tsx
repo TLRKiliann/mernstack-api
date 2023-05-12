@@ -13,17 +13,20 @@ type Form = {
 interface AskMessageBoxProps {
   catchById: UserType
   form: Form
+  options: Field[]
   handleInviteChoice: (e: React.ChangeEvent<HTMLInputElement>) => void
   handleInvitation: (e: React.MouseEvent<HTMLButtonElement>) => void
   handleClose: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form, Field}) => {
+const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
   //console.log(props.catchById, 'props.users')
   return (
-    <div className="boolean--result">
+    <div
+      data-testid="testAskBox"
+      className="boolean--result"
+    >
       <form
-        data-testid="asktestid" 
         className="form--invitation"
       >
         <label htmlFor="users" className="lbl--invite">
@@ -43,14 +46,16 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form,
         <label className="lbl--choicechat">
           Would you like&nbsp;
           <select 
-            name="invite" 
+            data-testid="selectid"
             id="invite"
+            name="invite" 
             value={props.form}
             onChange={(e) => props.handleInviteChoice(e)}
             className="select--invite"
           >
           {props.options.map((option) => (
             <option
+              data-testid="select-option"
               key={option.value}
               name="invite"
               value={option.value}
@@ -64,7 +69,11 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form,
         </label> 
         
         <button
+<<<<<<< HEAD
           data-testid="btn-invitation"
+=======
+          data-testid="btnInvite"
+>>>>>>> master
           type="button"
           onClick={(e) => props.handleInvitation(e)}
           className="btn--invitation"
@@ -73,7 +82,11 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, DbUsersProps, Form,
         </button>
 
         <button
+<<<<<<< HEAD
           data-testid="btn-askoriginclose"
+=======
+          data-testid="btnClose"
+>>>>>>> master
           onClick={props.handleClose}
           className="btn--close"
         >

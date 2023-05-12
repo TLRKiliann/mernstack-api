@@ -21,6 +21,7 @@ router.put('/', async(req: Request, res: Response, next: NextFunction) => {
     res.status(200).send()
   } catch (err) {
     throw err;
+    console.log("error", err)
   }
   next();
 });

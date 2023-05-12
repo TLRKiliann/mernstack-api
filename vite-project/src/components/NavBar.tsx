@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
   }
 
   return(
-    <div data-test-id="testId" className="div--headernav">
+    <div data-testid="testId" className="div--headernav">
       <nav className="navbar--nav">
 
         <div className="div--imgnavbar">
@@ -25,13 +25,14 @@ const NavBar: React.FC = () => {
             width="65px"
             height="70px"
             className="img--koala"
-            alt='no img navbar'
+            alt='no-img-navbar'
           />
         </div>
 
         <ul className="ul--navbar">
           <li>
             <Link
+              data-testid="firstLink"
               className="link--tagnav"
               to='/'
             >
@@ -40,6 +41,7 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link
+              data-testid="secondlink"
               className="link--tagnav"
               to='/profile'
             >
@@ -48,6 +50,7 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link
+              data-testid="thirdlink"
               className="link--tagnav"
               to='/online'
             >
@@ -73,22 +76,28 @@ const NavBar: React.FC = () => {
 
             <div className="div--login">
             {switchLogin ? (
-              <p className="p--navbarlogin"><Link
-                to="/login"
-                className="link--logintag"
-              >
-                Login
-              </Link></p>
+              <p className="p--navbarlogin">
+                <Link
+                  data-testid="loginLink"
+                  to="/login"
+                  className="link--logintag"
+                >
+                  Login
+                </Link>
+              </p>
 
               ) : (
               
-              <span className="span--navbarlogin"><Link
-                to="/login"
-                onClick={handleChange}
-                className="link--logout"
-              >
-                Logout
-              </Link></span>
+              <span className="span--navbarlogin">
+                <Link
+                  data-testid="linkLogout"
+                  to="/login"
+                  onClick={handleChange}
+                  className="link--logout"
+                >
+                  Logout
+                </Link>
+              </span>
             )}
           </div>
         </div>

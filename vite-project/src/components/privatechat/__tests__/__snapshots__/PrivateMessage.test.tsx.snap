@@ -1,8 +1,15 @@
 // Vitest Snapshot v1
 
+<<<<<<< HEAD
 exports[`MatchSnapShot test PrivateMessage 1`] = `
 <div
   className="private--chat"
+=======
+exports[`PrivateMessage MatchSnapShot 1`] = `
+<div
+  className="private--chat"
+  data-testid="terminaltest"
+>>>>>>> master
 >
   <h1
     className="title--privatechat"
@@ -62,6 +69,10 @@ exports[`MatchSnapShot test PrivateMessage 1`] = `
       className="inputbtn--privateterminal"
     >
       <input
+<<<<<<< HEAD
+=======
+        data-testid="inputTest"
+>>>>>>> master
         onChange={[Function]}
         placeholder="Enter your message here !"
         type="text"
@@ -69,7 +80,10 @@ exports[`MatchSnapShot test PrivateMessage 1`] = `
       />
       <button
         className="private--btn"
+<<<<<<< HEAD
         data-testid="btn-privatemsg"
+=======
+>>>>>>> master
         onClick={[Function]}
         type="button"
       >

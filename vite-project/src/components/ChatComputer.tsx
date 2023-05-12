@@ -31,7 +31,7 @@ import './styleComponents/ChatComputer.scss'
 const ChatComputer: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
   const { username } = useAuthLogin()
-  const Navigate = useNavigate()  
+  const navigation = useNavigate()  
   const users = useRetrieveDataHook()
 
   const [userRoom, setUserRoom] = useState<Array<UserType>>([])
@@ -41,7 +41,7 @@ const ChatComputer: React.FC = () => {
 
   const handleNavigation = (link: string) => {
     const myTimeOut = setTimeout(() => {
-      Navigate(`/computerroom/${link}`)
+      navigation(`/computerroom/${link}`)
     }, 1000)
   }
 
@@ -159,7 +159,7 @@ const ChatComputer: React.FC = () => {
   }, [])
 
   return (
-    <div className="main--chatcomputerroom">
+    <div data-testid="chatcomputer" className="main--chatcomputerroom">
       
       <div data-testid="chatctestid" className="div--chatcomputerroom">
         <img
@@ -167,7 +167,7 @@ const ChatComputer: React.FC = () => {
           width="100%"
           height="100%"
           className="img--chatcomputerroom"
-          alt={imgBg}
+          alt="imgchatcompute"
         />
       </div>
       
@@ -180,11 +180,13 @@ const ChatComputer: React.FC = () => {
           <h2 key={val.title} className="links--computer">
 
             <span
+              data-testid="btnchatcomp"
               onClick={() => handleSetUserRoom(val.link)} 
               className="span--linktoroom"
             >
               {val.link}
             </span>
+            
           </h2>
           ))
         }

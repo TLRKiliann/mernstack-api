@@ -21,13 +21,6 @@ const PrivateMessage: React.FC = () => {
 
   /*
   useEffect(() => {
-    if (Object.keys(otherUser).length === 0) {
-      console.log("no otherUser")
-      setDisplayUser(versusUser)
-    } else {
-      console.log("no versusUser")
-      setDisplayUser(otherUser)
-    }
     const intervalId = setInterval(() => {
       servicePrivate
         .getMsgPrivate()
@@ -48,6 +41,10 @@ const PrivateMessage: React.FC = () => {
       ? Math.max(...privateSeveralMsg.map(msg => msg.id))
       : 0
     return maxId + 1
+  }
+
+  const changeMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPrivateMsg(event.target.value)
   }
 
   const handleUserMessage = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -78,7 +75,7 @@ const PrivateMessage: React.FC = () => {
   }
 
   return(
-    <div className="private--chat">
+    <div data-testid="terminaltest" className="private--chat">
 
       <h1 className="title--privatechat">
         {roomStyle} Chat
@@ -133,9 +130,10 @@ const PrivateMessage: React.FC = () => {
 
         <div className="inputbtn--privateterminal">
           <input
+            data-testid="inputTest"
             type="text"
             value={privateMsg}
-            onChange={(e) => setPrivateMsg(e.target.value)}
+            onChange={(e) => changeMessage(e)}
             placeholder="Enter your message here !"
           />
           <button
