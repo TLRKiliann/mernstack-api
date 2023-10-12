@@ -69,7 +69,11 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
         </label> 
         
         <button
+<<<<<<< HEAD
+          data-testid="btn-invitation"
+=======
           data-testid="btnInvite"
+>>>>>>> master
           type="button"
           onClick={(e) => props.handleInvitation(e)}
           className="btn--invitation"
@@ -78,7 +82,11 @@ const AskMessageBox: React.FC = (props: {AskMessageBoxProps, Form, Field}) => {
         </button>
 
         <button
+<<<<<<< HEAD
+          data-testid="btn-askoriginclose"
+=======
           data-testid="btnClose"
+>>>>>>> master
           onClick={props.handleClose}
           className="btn--close"
         >

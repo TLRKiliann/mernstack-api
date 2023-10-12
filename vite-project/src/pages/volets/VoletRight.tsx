@@ -27,7 +27,8 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
       {props.isOpenRight ? (
         <div className="volet--R">
           <div className="subvolet--R">
-            <button 
+            <button
+              data-testid="btn-testvoletright"
               onClick={props.handleVoletsRight}
               className="btn--voletr"
             >
@@ -66,7 +67,8 @@ const VoletRight: React.FC = (props: VoletRightProps) => {
         <div className="volet--R2">
           <div className="subvolet--R2">
 
-            <button 
+            <button
+              data-testid="btn-testvoletright"
               onClick={props.handleVoletsRight}
               className="btn--voletr"
             >

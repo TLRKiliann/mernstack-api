@@ -60,6 +60,7 @@ const VoletLeft: React.FC = (props: VoletLeftProps) => {
                 className="search--input"
               />
               <button
+                data-testid="btn-testvoletleft"
                 onClick={handleSearchUser}
                 className="btn--search"
               >

@@ -1,9 +1,15 @@
 // Vitest Snapshot v1
 
+<<<<<<< HEAD
+exports[`MatchSnapShot test App 1`] = `
+<div
+  className="invitation--display"
+=======
 exports[`MatchSnapShot test DisplayInvitationOtherUsr 1`] = `
 <div
   className="invitation--display"
   data-testid="displayOthertestid"
+>>>>>>> master
 >
   <h4
     className="invitation--h4"

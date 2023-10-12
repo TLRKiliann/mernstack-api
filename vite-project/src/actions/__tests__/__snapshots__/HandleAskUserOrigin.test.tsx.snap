@@ -1,0 +1,42 @@
+// Vitest Snapshot v1
+
+exports[`HandleAskUserOrigin testing 1`] = `
+<div
+  className="all--usersbanner"
+>
+  <div
+    className="username--useronline"
+  >
+    <img
+      className="smile--img"
+      height="100%"
+      width="100%"
+    />
+    <span
+      className="useronline--username"
+    />
+  </div>
+  <p
+    className="para--spanchat"
+  >
+    <span
+      className="span--useronline connector--icon"
+    >
+      ❌
+    </span>
+    <span
+      className="span--useronline styleusr--span"
+      data-testid="span-useronline"
+      onClick={[Function]}
+      style={
+        {
+          "color": "sandybrown",
+          "fontSize": "22px",
+        }
+      }
+    >
+      ✉
+    </span>
+  </p>
+</div>
+`;

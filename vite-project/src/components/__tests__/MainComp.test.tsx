@@ -17,8 +17,16 @@ test('MainComp getByText', () => {
   expect(linkElement).toBeInTheDocument()
 })
 
+<<<<<<< HEAD
+test('renders learn react link', () => {
+  render(<MainComp />);
+  const linkElement = screen.getByText(/all members/i);
+  expect(linkElement).toBeInTheDocument();
+});
+=======
 test('MatchSnapShot test MainComp', () => {
   const treeMainComp = create(<MainComp />)
   expect(treeMainComp.toJSON()).toMatchSnapshot()
 })
 
+>>>>>>> master

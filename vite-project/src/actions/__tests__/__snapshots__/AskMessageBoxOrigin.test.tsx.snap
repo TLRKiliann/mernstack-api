@@ -1,0 +1,80 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test AskMessageBoxOrigin 1`] = `
+<div
+  className="boolean--result"
+>
+  <form
+    className="form--invitation"
+    data-testid="asktestid"
+  >
+    <label
+      className="lbl--invite"
+      htmlFor="users"
+    >
+      Invite
+      <img
+        alt="no img panel ask invite"
+        className="img--invite"
+        height="50px"
+        width="50px"
+      />
+      <span
+        className="span--invite"
+      >
+         
+      </span>
+       to private chat :
+    </label>
+    <label
+      className="lbl--choicechat"
+    >
+      Would you like 
+      <select
+        className="select--invite"
+        id="invite"
+        name="invite"
+        onChange={[Function]}
+        value="Private"
+      >
+        <option
+          className="option--invite"
+          name="invite"
+          value="Private"
+        >
+          Private
+        </option>
+        <option
+          className="option--invite"
+          name="invite"
+          value="Info"
+        >
+          Info
+        </option>
+        <option
+          className="option--invite"
+          name="invite"
+          value="Question"
+        >
+          Question
+        </option>
+      </select>
+       chat.
+    </label>
+    <button
+      className="btn--invitation"
+      data-testid="btn-invitation"
+      onClick={[Function]}
+      type="button"
+    >
+      Invite
+    </button>
+    <button
+      className="btn--close"
+      data-testid="btn-askoriginclose"
+    >
+      X
+    </button>
+  </form>
+</div>
+`;

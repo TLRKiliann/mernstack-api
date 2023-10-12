@@ -1,0 +1,180 @@
+// Vitest Snapshot v1
+
+exports[`MatchSnapShot test Footer 1 1`] = `
+<div
+  className="div--navfooter"
+>
+  <nav
+    className="navbar--nav"
+  >
+    <ul
+      className="navbar--ul"
+    >
+      <li
+        className="navbar--li"
+      >
+        Contact
+      </li>
+      <li
+        className="navbar--li"
+      >
+        Info
+      </li>
+      <li
+        className="navbar--li"
+      >
+        Sponsors
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`MatchSnapShot test MainComp 1`] = `
+<div
+  className="master--maincomp"
+>
+  <div
+    className="bg--colormaincomp"
+  >
+    <h2
+      className="h2--maincomp"
+    >
+      All Members : 
+      <span
+        className="span--lengthuser"
+      />
+    </h2>
+    <h3
+      className="h3--maincomp"
+    >
+      Users online (connected) : 
+      <span
+        style={
+          {
+            "color": "pink",
+          }
+        }
+      />
+    </h3>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test MainTitle 1`] = `
+<div
+  className="maintitle"
+>
+  <h1
+    className="main--h1"
+  >
+    Chat-Society
+  </h1>
+  <h2
+    className="main--h2"
+  />
+  <h4
+    className="main--h4"
+  />
+</div>
+`;
+
+exports[`MatchSnapShot test VoletLeft 1`] = `
+<div>
+  <div
+    className="volet--L2"
+  >
+    <div
+      className="subvolet--L2"
+    >
+      <button
+        className="btn--volet"
+      >
+        X
+      </button>
+      <p>
+        Private Chat
+      </p>
+      <span
+        className="span"
+      >
+        <svg
+          fill="currentColor"
+          height={64}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 16 16"
+          width={64}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+          />
+        </svg>
+      </span>
+      <div
+        className="form--search"
+      >
+        <input
+          className="search--input"
+          onChange={[Function]}
+          placeholder="Search by firstname"
+          type="text"
+          value={[]}
+        />
+        <button
+          className="btn--search"
+          onClick={[Function]}
+        >
+          Enter
+        </button>
+      </div>
+      <section
+        className="section--voletl"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MatchSnapShot test VoletRight 1`] = `
+<div>
+  <div
+    className="volet--R2"
+  >
+    <div
+      className="subvolet--R2"
+    >
+      <button
+        className="btn--voletr"
+      >
+        X
+      </button>
+      <p>
+        Chat Computing
+      </p>
+      <img
+        alt="no img volet-R 2"
+        height="140px"
+        src="/src/assets/background/motherboard.png"
+        width="240px"
+      />
+      <section
+        className="section--voletr"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`suite name > snapshot 1`] = `
+{
+  "foo": "bar",
+}
+`;

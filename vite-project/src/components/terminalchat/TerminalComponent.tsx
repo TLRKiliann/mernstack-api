@@ -113,6 +113,7 @@ const TerminalComponent: React.FC = (props: {TerminalProps, UsernameProps}) => {
         />
         
         <button
+          data-testid="btn-terminal-comp"
           type="button"
           onClick={handleInput}
           className="btn--user"

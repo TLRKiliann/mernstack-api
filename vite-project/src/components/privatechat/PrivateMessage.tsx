@@ -19,6 +19,7 @@ const PrivateMessage: React.FC = () => {
 
   const privateRef = useRef<HTMLDivElement>(null)
 
+  /*
   useEffect(() => {
     const intervalId = setInterval(() => {
       servicePrivate
@@ -29,6 +30,7 @@ const PrivateMessage: React.FC = () => {
     }, 1000)
     return () => clearInterval(intervalId)
   }, [])
+  */
 
   useEffect(() => {
     privateRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -97,6 +99,7 @@ const PrivateMessage: React.FC = () => {
             <h4 className="subtitle--private email">{displayUser.email}</h4>
             <h4 className="lastsubtitle--private">{displayUser.isConnected ? (
               <span
+                data-testid="test-divcolor"
                 className="span--useronline"
                 style={{color: 'lightgreen'}}
               >
@@ -134,6 +137,7 @@ const PrivateMessage: React.FC = () => {
             placeholder="Enter your message here !"
           />
           <button
+            data-testid="btn-privatemsg"
             type="button"
             onClick={handleUserMessage}
             className="private--btn"

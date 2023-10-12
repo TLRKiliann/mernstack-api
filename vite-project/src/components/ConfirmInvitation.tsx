@@ -42,7 +42,11 @@ const ConfirmInvitation: React.FC = (props: ConfirmInvitationProps) => {
       </div>
 
       <button
+<<<<<<< HEAD
+        data-testid="btn-to-confirm"
+=======
         data-testid="btnconfirminvitation"
+>>>>>>> master
         type="button"
         onClick={props.handleBothConfirmation}
         className="btn--validationlast"

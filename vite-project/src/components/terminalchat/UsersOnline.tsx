@@ -12,6 +12,11 @@ interface UsersOnlineProps {
 
 const UsersOnline: React.FC = (props: UsersOnlineProps) => {
   //console.log("props", props)
+<<<<<<< HEAD
+  return(
+    props.refreshUser?.room === props.roomStyle && (
+      <div key={props.refreshUser?.id} className="all--usersbanner">   
+=======
   return (
     props.refreshUser?.room === props?.roomStyle && (
       <div 
@@ -19,13 +24,18 @@ const UsersOnline: React.FC = (props: UsersOnlineProps) => {
         key={props.refreshUser?.id}
         className="all--usersbanner"
       >   
+>>>>>>> master
         <div className="username--useronline">
           <img
             src={props.refreshUser?.img}
             width="100%"
             height="100%"
             className="smile--img"
+<<<<<<< HEAD
+            alt={props.refreshUser?.img}
+=======
             alt="imgusersonline"
+>>>>>>> master
           /> 
 
           <span className="useronline--username">
@@ -53,7 +63,11 @@ const UsersOnline: React.FC = (props: UsersOnlineProps) => {
           }
 
           <span
+<<<<<<< HEAD
+            data-testid="span-useronline"
+=======
             data-testid="spantestidusers"
+>>>>>>> master
             id={props.refreshUser?.id}
             onClick={() => props.handleAskUserPrivate(props.refreshUser?.id)}
             className="span--useronline styleusr--span"
