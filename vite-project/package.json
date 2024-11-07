@@ -16,7 +16,7 @@
     "@fontsource/allura": "^4.5.11",
     "@fontsource/dejavu-sans": "^4.5.4",
     "@fontsource/junction": "^4.5.3",
-    "axios": "^1.6.0",
+    "axios": "^1.7.4",
     "history": "5.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
